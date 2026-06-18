@@ -1,0 +1,275 @@
+{
+  "summary": "AKI next-event benchmark — patient 10003400 (72F) ground truth: Respiratory Ventilation, 24-96 Consecutive Hours",
+  "agentCount": 7,
+  "logs": [
+    "Round 1 / 5: generating question ...",
+    "Round 1: evaluating ...",
+    "Round 1: REJECTED — regenerating.",
+    "Round 2 / 5: generating question ...",
+    "Round 2: evaluating ...",
+    "Round 2: REJECTED — regenerating.",
+    "Round 3 / 5: generating question ...",
+    "[stall] agent \"generator-round-3\" stalled (no progress) after 508s — retrying (1/5)",
+    "Round 3: evaluating ...",
+    "Question PASSED all four criteria at round 3.",
+    "Generating scoring rubric ..."
+  ],
+  "result": {
+    "patient_id": "10003400",
+    "rounds_taken": 3,
+    "passed_evaluation": true,
+    "question": {
+      "stem": "A 72-year-old Female with a known history of multiple myeloma (not in remission), chronic kidney disease (previously stage III), atrial fibrillation, and recurrent acute kidney injury episodes presents to the ICU with severe sepsis and septic shock following disruption of a prior surgical wound. Her complex surgical history includes an abdominoperineal resection complicated by postoperative hemodynamic collapse, acute tubular necrosis, and a prolonged course requiring mechanical ventilation. She now has acute-on-chronic renal deterioration with a progressively declining urine output, accompanied by acute respiratory failure with hypoxia, encephalopathy, and a malignant pleural effusion. On examination she is hemodynamically unstable, poorly responsive to vasoactive support, and markedly oliguric. Her current diagnoses include sepsis of unspecified organism, acute respiratory failure with hypoxia, encephalopathy, and disruption of her external operative wound. Her prior admissions have documented drug-induced pancytopenia, metabolic acidosis, hypotension, and progressive renal dysfunction across multiple hospitalizations. What is the next most probable major procedural intervention for this patient?",
+      "reasoning_gap": "The decision to initiate continuous renal replacement therapy (CRRT) hinges on confirming the KDIGO 2012 AKI stage via serum creatinine rise from baseline and the degree of azotemia reflected by BUN — information that cannot be inferred from the clinical narrative alone — since together they determine the urgency and modality of renal replacement therapy.",
+      "lab_sets": {
+        "L_core": [
+          {
+            "lab_name": "Creatinine",
+            "clinical_rationale": "Serum creatinine is the primary biomarker defining KDIGO 2012 AKI stage (Sections 2.1–2.3): Stage 1 requires a rise of ≥0.3 mg/dL within 48 h or ≥1.5–1.9× baseline; Stage 2 requires 2.0–2.9× baseline; Stage 3 requires ≥3.0× baseline or an absolute value ≥4.0 mg/dL. This patient has known CKD stage III with prior AKI episodes, making baseline creatinine essential to compute the fold-rise and assign a KDIGO stage. Stage 3 AKI in a hemodynamically unstable patient is a recognized trigger for urgent CRRT initiation (PMID 35498879; PMID 25317932)."
+          },
+          {
+            "lab_name": "BUN",
+            "clinical_rationale": "BUN (blood urea nitrogen) reflects uremic solute accumulation and, together with serum creatinine, is used in KDIGO 2012 and real-world ICU practice to assess kidney function and RRT timing — neither marker is fully reliable in isolation during critical illness (PMID 28657585). Elevated BUN is cited in KDIGO 2012 Section 5.1 as a contributor to life-threatening metabolic derangement indicating RRT, and an elevated BUN in the setting of encephalopathy and markedly reduced urine output directly supports the uremia-driven rationale for CRRT initiation (PMID 39720367)."
+          }
+        ],
+        "L_optional": [
+          {
+            "lab_name": "Potassium",
+            "clinical_rationale": "Refractory hyperkalemia is a primary absolute indication for RRT per KDIGO 2012 Section 5.1 and established clinical practice. The potassium value is required to determine whether hyperkalemia is present and refractory to medical management, but it is an RRT initiation criterion rather than a KDIGO staging criterion."
+          },
+          {
+            "lab_name": "Bicarbonate",
+            "clinical_rationale": "Metabolic acidosis (low bicarbonate) is a core RRT initiation criterion under KDIGO 2012 Section 5.1. In this patient with septic shock and prior documented acidosis, bicarbonate quantifies the severity of metabolic derangement but does not determine KDIGO AKI stage."
+          },
+          {
+            "lab_name": "Anion Gap",
+            "clinical_rationale": "An elevated anion gap characterizes unmeasured anion accumulation from uremic acids and lactate, complementing bicarbonate in assessing the severity of metabolic acidosis. It supports but does not independently trigger RRT per KDIGO 2012 staging criteria."
+          },
+          {
+            "lab_name": "Sodium",
+            "clinical_rationale": "Hyponatremia in AKI reflects impaired free water excretion; routinely co-ordered with the basic metabolic panel in ICU patients undergoing RRT assessment."
+          },
+          {
+            "lab_name": "Chloride",
+            "clinical_rationale": "Chloride is part of the complete electrolyte panel used to calculate anion gap and assess chloride-responsive versus non-chloride-responsive metabolic acidosis, contextualizing the metabolic picture."
+          },
+          {
+            "lab_name": "Phosphate",
+            "clinical_rationale": "Hyperphosphatemia is a common metabolic complication of AKI and myeloma-related renal injury; phosphate clearance is a secondary consideration in CRRT modality selection."
+          },
+          {
+            "lab_name": "Calcium, Total",
+            "clinical_rationale": "Hypocalcemia accompanies AKI and is relevant to arrhythmia risk given her atrial fibrillation and to citrate-based CRRT anticoagulation management."
+          },
+          {
+            "lab_name": "Magnesium",
+            "clinical_rationale": "Magnesium is routinely monitored in critically ill AKI patients on CRRT because CRRT continuously clears magnesium, requiring replacement; dysmagnesemia affects cardiac conduction."
+          },
+          {
+            "lab_name": "Hemoglobin",
+            "clinical_rationale": "Severe anemia in a patient with myeloma and prior pancytopenia informs transfusion threshold decisions and hemodynamic tolerance of continuous dialysis before CRRT initiation."
+          },
+          {
+            "lab_name": "Hematocrit",
+            "clinical_rationale": "Accompanies hemoglobin as part of the complete blood count; provides additional assessment of oxygen-carrying capacity before CRRT in a hemodynamically unstable patient."
+          },
+          {
+            "lab_name": "Platelet Count",
+            "clinical_rationale": "Thrombocytopenia (patient has prior drug-induced pancytopenia) directly affects anticoagulation strategy selection for CRRT (heparin vs. citrate vs. no anticoagulation); essential pre-procedure check."
+          },
+          {
+            "lab_name": "INR",
+            "clinical_rationale": "Coagulopathy determines CRRT anticoagulation approach and procedural risk for vascular access placement; standard pre-CRRT assessment given the patient's prior defibrination syndrome."
+          },
+          {
+            "lab_name": "PT",
+            "clinical_rationale": "Prothrombin time complements INR in characterizing coagulation status before CRRT catheter insertion and guides anticoagulation protocol selection."
+          },
+          {
+            "lab_name": "Albumin",
+            "clinical_rationale": "Severe hypoalbuminemia reflects systemic inflammation and malnutrition; influences drug dosing and oncotic pressure considerations during CRRT fluid management."
+          },
+          {
+            "lab_name": "Lactate",
+            "clinical_rationale": "Lactate level in septic shock distinguishes uremic from lactic acidosis, informing whether the metabolic acidosis is predominantly uremic and thus amenable to CRRT rather than requiring further resuscitation optimization."
+          },
+          {
+            "lab_name": "WBC",
+            "clinical_rationale": "Mildly elevated WBC in sepsis tracks infectious burden; universally co-ordered in septic ICU patients undergoing AKI workup."
+          },
+          {
+            "lab_name": "NTproBNP",
+            "clinical_rationale": "Elevated NTproBNP signals cardiac volume overload from malignant pleural effusion and septic cardiomyopathy; fluid overload is a primary RRT indication per KDIGO 2012 Section 5.1 (PMID 39720367)."
+          }
+        ],
+        "L_irrelevant": [
+          {
+            "lab_name": "ALT",
+            "why_irrelevant": "Liver aminotransferases assess hepatocellular injury; ALT is within normal limits and neither the KDIGO 2012 AKI staging determination nor the CRRT initiation decision depends on hepatic transaminase levels."
+          },
+          {
+            "lab_name": "AST",
+            "why_irrelevant": "AST reflects hepatocellular integrity; it is normal here and does not inform KDIGO AKI staging, RRT indications, or CRRT anticoagulation decisions."
+          },
+          {
+            "lab_name": "BNP",
+            "why_irrelevant": "BNP is within normal reference range in this patient; it does not add incremental information about volume overload beyond NTproBNP and does not change the RRT decision."
+          },
+          {
+            "lab_name": "C-Reactive Protein",
+            "why_irrelevant": "CRP is a nonspecific inflammatory marker confirming systemic inflammation already established by the septic shock diagnosis; it does not contribute to KDIGO 2012 AKI staging or RRT initiation criteria."
+          },
+          {
+            "lab_name": "Neutrophils",
+            "why_irrelevant": "Differential white cell counts characterize infection type but do not factor into any KDIGO 2012 AKI staging criterion or RRT initiation threshold."
+          },
+          {
+            "lab_name": "Lymphocytes",
+            "why_irrelevant": "Lymphocyte count reflects immune status and myeloma monitoring but does not inform AKI staging, dialysis threshold assessment, or the CRRT procedural decision."
+          },
+          {
+            "lab_name": "Bands",
+            "why_irrelevant": "Immature neutrophil count is a sepsis marker but is zero here and does not influence KDIGO AKI staging or RRT initiation decisions."
+          },
+          {
+            "lab_name": "Eosinophils",
+            "why_irrelevant": "Eosinophil count would be relevant for eosinophilic interstitial nephritis, but this patient's AKI is attributed to septic shock and ATN; eosinophils do not drive the CRRT decision."
+          },
+          {
+            "lab_name": "Uric Acid",
+            "why_irrelevant": "Uric acid is relevant to gout nephropathy or tumor lysis syndrome, but no tumor lysis is documented; it does not factor into KDIGO AKI staging criteria or the RRT initiation threshold."
+          },
+          {
+            "lab_name": "Glucose",
+            "why_irrelevant": "Hyperglycemia alone is not an RRT indication and does not contribute to KDIGO AKI staging or the dialysis decision in this patient."
+          },
+          {
+            "lab_name": "Urine Casts",
+            "why_irrelevant": "Urine cast morphology aids in distinguishing ATN from other AKI etiologies but does not quantitatively determine KDIGO staging level or trigger RRT initiation; the etiology is already established clinically."
+          }
+        ]
+      }
+    },
+    "rubric": {
+      "answer_rubric": {
+        "c1_exact_answer": "Respiratory Ventilation, 24-96 Consecutive Hours",
+        "c1_accepted_synonyms": [
+          "Mechanical ventilation 24-96 hours",
+          "Invasive mechanical ventilation 24-96 consecutive hours",
+          "Endotracheal intubation with mechanical ventilation 24-96 hours",
+          "Prolonged mechanical ventilation (24-96h)",
+          "Continuous mechanical ventilatory support 24-96 hours",
+          "ICD-10-PCS 5A1955Z (Respiratory ventilation, 24-96 consecutive hours)"
+        ],
+        "c1_scoring_guidance": "Full credit (1.0) for any answer that identifies mechanical/respiratory ventilation specifically in the 24-96 consecutive hour duration band. Partial credit (0.5) if the answer correctly identifies mechanical ventilation but omits or incorrectly states the duration (e.g., says 'mechanical ventilation' without specifying 24-96 hours, or says '>96 hours'). Zero credit for answers identifying a renal procedure (dialysis, CRRT, hemodialysis), thoracentesis alone, vasopressor initiation, or wound debridement as the primary next intervention.",
+        "c1_wrong_answers": [
+          "Hemodialysis / renal replacement therapy / CRRT",
+          "Thoracentesis for pleural effusion",
+          "Vasopressor escalation / norepinephrine initiation",
+          "Wound debridement / surgical wound revision",
+          "Tracheostomy",
+          "Continuous renal replacement therapy (CRRT)",
+          "Plasmapheresis",
+          "Respiratory ventilation >96 consecutive hours",
+          "Respiratory ventilation <24 hours",
+          "Non-invasive positive pressure ventilation (BiPAP/CPAP) only"
+        ],
+        "c2_required_labs_summary": "Creatinine (abnormal, value masked) — elevated creatinine confirms acute-on-chronic kidney injury and contextualizes the clinical setting as AKI, establishing that respiratory deterioration (not renal replacement) is the precipitating life threat driving the next procedural intervention\nBUN (35, ref 6-20) — elevated BUN corroborates uremic burden and renal dysfunction; however, the moderate elevation (35) does not yet mandate emergent dialysis, shifting the immediate priority to respiratory stabilization\nBicarbonate (21, ref 22-32) — mildly low bicarbonate indicates early metabolic acidosis consistent with sepsis/AKI but insufficient alone to mandate emergent CRRT, reinforcing that acute respiratory failure is the more pressing immediate intervention\nAnion Gap (21, ref 8-20) — elevated anion gap confirms metabolic acidosis with likely lactic or uremic component; combined with respiratory failure, this increases urgency of ventilatory support to compensate for the acidosis\nHemoglobin (8.3, ref 11.2-15.7) — significant anemia worsens oxygen delivery and exacerbates hypoxia from respiratory failure, increasing the imperative for mechanical ventilatory support\nAlbumin (2.4, ref 3.5-5.2) — severely low albumin indicates critical illness malnutrition and increases risk of pulmonary edema/pleural effusion, contributing to the respiratory failure requiring ventilation\nPlatelet Count (107, ref 150-400) — thrombocytopenia from drug-induced pancytopenia increases bleeding risk with invasive procedures but does not contraindicate intubation; informs procedural risk stratification\nINR (1.4, ref 0.9-1.1) — mildly elevated INR indicates coagulopathy from sepsis/liver stress; does not contraindicate intubation but adds procedural context\nPT (54.4, ref 25-36.5) — markedly prolonged PT confirms coagulopathy; relevant for procedural risk but does not redirect away from ventilation as the next intervention\nSodium (132, ref 133-145) — mild hyponatremia consistent with SIADH or dilutional state in sepsis; contributes to encephalopathy, reinforcing the need for ventilation to protect the airway in an encephalopathic patient\nLactate (0.8, ref 0.5-2) — normal lactate at this time point suggests the most acute hemodynamic crisis has been partially addressed; does not indicate imminent death from circulatory failure alone, keeping respiratory failure as the dominant acute intervention target\nWBC (10.2, ref 4-10) — mildly elevated WBC consistent with active infection/sepsis; supports the infectious etiology driving respiratory failure",
+        "c2_scoring_guidance": "Full credit requires identifying both core labs (Creatinine and BUN) as supporting AKI context while correctly explaining that their values — though abnormal — do not yet mandate emergent dialysis over ventilation. Partial credit if only one core lab is correctly interpreted, or if labs are cited but the reasoning does not connect them to the decision between ventilation vs. renal intervention. No credit if labs are cited in isolation without connecting them to the procedure selection rationale.",
+        "c2_insufficient_examples": [
+          "BUN is elevated therefore dialysis is the next intervention (ignores acute respiratory failure as primary life threat)",
+          "Creatinine is high therefore CRRT should be started first (fails to weigh respiratory decompensation severity)",
+          "Hemoglobin 8.3 indicates the patient needs a transfusion next (misidentifies the primary procedural intervention)",
+          "Normal lactate means the patient is stable and no procedure is needed urgently"
+        ],
+        "c3_causal_chain": "Severe sepsis from disrupted surgical wound → systemic inflammatory response → acute-on-chronic renal failure (AKI on CKD stage III, BUN 35, creatinine elevated, anion gap 21, bicarbonate 21) + acute respiratory failure with hypoxia → malignant pleural effusion (from multiple myeloma) compounds respiratory compromise → encephalopathy (likely uremic/septic/hypoxic) impairs airway protection → patient is poorly responsive to vasoactive support → hemodynamically unstable with markedly decreased GCS/responsiveness → airway cannot be self-protected → acute respiratory failure with hypoxia is immediately life-threatening → mechanical ventilation (24-96 consecutive hours) is the next required procedural intervention to stabilize oxygenation and protect the airway, prior to any renal replacement consideration",
+        "c3_required_steps": [
+          "Step 1: Identify severe sepsis with septic shock as the inciting physiologic catastrophe following disruption of surgical wound",
+          "Step 2: Recognize acute-on-chronic renal deterioration (AKI on CKD III) supported by elevated BUN (35), masked but abnormal creatinine, anion gap 21, bicarbonate 21 — confirming KDIGO AKI criteria",
+          "Step 3: Recognize that while AKI is present, the BUN/metabolic acidosis values are not at dialysis-emergent thresholds (BUN 35 is elevated but not >100, bicarbonate 21 is low-normal, potassium 3.1 is hypokalemic not hyperkalemic, no refractory pulmonary edema from renal cause alone)",
+          "Step 4: Identify acute respiratory failure with hypoxia as the immediately life-threatening complication, compounded by malignant pleural effusion from multiple myeloma",
+          "Step 5: Identify encephalopathy (septic/uremic/hypoxic) and poor responsiveness as loss of airway protective reflexes — a primary indication for intubation",
+          "Step 6: Note hemodynamic instability with poor vasoactive response — critically ill patient who cannot maintain oxygenation without ventilatory support",
+          "Step 7: Recognize the prior surgical/ventilation history (prior mechanical ventilation after abdominoperineal resection) as establishing a clinical trajectory toward repeated ventilatory support",
+          "Step 8: Conclude that mechanical respiratory ventilation (24-96 consecutive hours) is the next major procedural intervention — airway must be secured and ventilatory support initiated before other procedures"
+        ],
+        "c3_scoring_guidance": "Full credit requires tracing from sepsis → AKI confirmation → recognition that AKI severity does not yet mandate dialysis over ventilation → respiratory failure + encephalopathy as primary drivers → mechanical ventilation as the correct next intervention. Partial credit if the chain is correctly identified but one link is missing (e.g., omits the encephalopathy/airway protection rationale, or does not explain why dialysis is not first). No credit if the chain terminates at dialysis/CRRT or thoracentesis as the next intervention.",
+        "c3_broken_chain_examples": [
+          "Sepsis → AKI → BUN elevated → dialysis next (skips the respiratory failure severity assessment and encephalopathy as airway indication)",
+          "Pleural effusion → thoracentesis next (ignores respiratory failure severity, hypoxia, and encephalopathy requiring intubation first)",
+          "Sepsis → hemodynamic instability → vasopressors next (vasopressors are medical not procedural; misidentifies the procedural intervention)",
+          "AKI + metabolic acidosis → CRRT next (BUN 35 and bicarbonate 21 are not at emergent dialysis thresholds; hyperkalemia not present; respiratory failure takes precedence)"
+        ],
+        "c4_required_patient_facts": "72-year-old female — age and sex establish baseline frailty and increased risk for respiratory failure requiring ventilation\nMultiple myeloma not in remission — explains malignant pleural effusion (direct compression of lung parenchyma worsening hypoxia) and drug-induced pancytopenia (thrombocytopenia, anemia)\nChronic kidney disease previously stage III — establishes baseline renal vulnerability; acute-on-chronic AKI is expected but does not yet mandate emergent dialysis given lab values\nRecurrent AKI episodes — prior AKI history (including post-abdominoperineal resection with ATN) means this patient has diminished renal reserve but is not de novo renal failure\nSevere sepsis with septic shock — primary inciting event driving multiorgan dysfunction including both respiratory and renal failure\nAcute respiratory failure with hypoxia (active diagnosis) — the most immediately life-threatening acute diagnosis, directly mandating ventilatory support\nEncephalopathy unspecified (active diagnosis) — loss of airway protective reflexes from encephalopathy is a primary indication for intubation\nMalignant pleural effusion (active diagnosis) — mechanically compresses lung, worsening hypoxia and reducing lung compliance, increasing ventilatory demand\nDisruption of external operative (surgical) wound — source of sepsis, explaining the fulminant clinical deterioration\nPrior prolonged mechanical ventilation course (history) — establishes this patient's clinical trajectory toward repeated ventilatory dependency in severe illness\nMarkedly oliguric with hemodynamic instability poorly responsive to vasoactive support — confirms severity of illness but the primary acute procedural need is airway/respiratory, not dialysis, given lab values\nHemoglobin 8.3 (abnormal) — severe anemia worsens oxygen-carrying capacity, compounding hypoxia from respiratory failure and increasing urgency for ventilatory support\nAlbumin 2.4 (abnormal) — severe hypoalbuminemia predisposes to pulmonary edema and pleural effusion, worsening respiratory mechanics",
+        "c4_scoring_guidance": "Full credit requires identifying at minimum: (1) acute respiratory failure with hypoxia as the primary life-threatening acute diagnosis, (2) encephalopathy as an airway-protection indication for intubation, (3) malignant pleural effusion as a respiratory complication from myeloma, and (4) AKI lab values not yet at emergent dialysis threshold. Partial credit if 2-3 of these 4 key facts are identified with correct clinical relevance. No credit if facts are listed without explaining why they specifically drive the ventilation decision over competing procedures.",
+        "c4_critical_errors": [
+          "Identifying hyperkalemia as a dialysis indication (potassium is actually 3.1, which is hypokalemic — the opposite)",
+          "Stating BUN >100 or uremic emergency as the primary driver (BUN is only 35)",
+          "Ignoring encephalopathy as an airway-protection indication",
+          "Treating pleural effusion as requiring thoracentesis before airway stabilization",
+          "Stating the patient has no prior ventilation history (prior mechanical ventilation is documented post-abdominoperineal resection)"
+        ]
+      },
+      "lab_scoring_rubric": {
+        "L_core_summary": "Creatinine (abnormal, value masked) — L_core — confirms AKI on CKD background; abnormal flag establishes kidney injury context but masked value prevents quantitative KDIGO staging; supports the clinical picture of acute-on-chronic renal failure driving the ICU presentation\nBUN (35, ref 6-20) — L_core — elevated at 35 mg/dL, nearly double the upper normal limit; confirms uremic burden in the context of AKI; however, BUN 35 is far below the emergent dialysis threshold (typically >100 with symptoms), establishing that renal failure alone does not yet mandate immediate dialysis over ventilation",
+        "L_optional_summary": "Potassium (3.1, ref 3.3-5.1) — L_optional — mildly hypokalemic (NOT hyperkalemic); critically rules out hyperkalemia as an emergent dialysis indication; hypokalemia actually argues against CRRT urgency\nBicarbonate (21, ref 22-32) — L_optional — mildly low; indicates early metabolic acidosis from sepsis/AKI; not at refractory acidosis threshold (<15) that would mandate emergent RRT; supports ventilation to compensate respiratory component\nAnion Gap (21, ref 8-20) — L_optional — mildly elevated; confirms metabolic acidosis with anion gap (uremic/lactic); combined with respiratory failure increases urgency for ventilatory support\nSodium (132, ref 133-145) — L_optional — mild hyponatremia; consistent with SIADH or dilutional state; contributes to encephalopathy rationale for airway protection\nChloride (95, ref 96-108) — L_optional — mildly low; consistent with metabolic alkalosis/acidosis mixed picture; minor contributor to acid-base interpretation\nPhosphate (2.6, ref 2.7-4.5) — L_optional — mildly low (hypophosphatemia); argues against advanced uremic crisis; does not support emergent dialysis\nCalcium, Total (8.1, ref 8.4-10.3) — L_optional — mildly low; hypocalcemia common in critical illness and myeloma; does not drive procedure selection\nMagnesium (2.1, ref 1.6-2.6) — L_optional — within normal range; no contribution to procedure selection\nHemoglobin (8.3, ref 11.2-15.7) — L_optional — significantly low; severe anemia (drug-induced pancytopenia from myeloma treatment); worsens oxygen delivery and compounds hypoxia from respiratory failure, increasing urgency for mechanical ventilation\nHematocrit (25.3, ref 34-45) — L_optional — significantly low; corroborates severe anemia; same clinical significance as hemoglobin\nPlatelet Count (107, ref 150-400) — L_optional — moderately thrombocytopenic; from drug-induced pancytopenia; increases procedural bleeding risk with intubation/airway management but does not contraindicate it\nINR (1.4, ref 0.9-1.1) — L_optional — mildly elevated; coagulopathy from sepsis; modest elevation does not contraindicate intubation\nPT (54.4, ref 25-36.5) — L_optional — markedly prolonged (nearly double normal); significant coagulopathy; contextually important for procedural risk but does not redirect the intervention choice\nAlbumin (2.4, ref 3.5-5.2) — L_optional — severely low; critical illness hypoalbuminemia predisposes to pulmonary edema and pleural effusion, directly worsening respiratory failure mechanics\nLactate (0.8, ref 0.5-2) — L_optional — normal; no evidence of active tissue hypoperfusion at this time point; does not indicate immediate circulatory collapse death threat overriding respiratory intervention priority\nWBC (10.2, ref 4-10) — L_optional — mildly elevated; consistent with active infection/sepsis; corroborates infectious etiology\nNTproBNP (abnormal, value masked) — L_optional — abnormal flag suggests cardiac stress/volume overload; supports respiratory compromise from cardiogenic component alongside pleural effusion; reinforces ventilation priority",
+        "L_irrelevant_summary": "ALT (6, ref 0-40) — L_irrelevant — normal; no hepatic injury; does not inform the procedure selection decision\nAST (18, ref 0-40) — L_irrelevant — normal; no hepatic injury; does not inform the procedure selection decision\nBNP (22, ref 21-30) — L_irrelevant — normal range (borderline); low BNP argues against primary heart failure as the dominant driver; the respiratory failure is pleural/septic rather than cardiogenic; does not alter the ventilation decision\nC-Reactive Protein (abnormal, value masked) — L_irrelevant — inflammatory marker; confirms active inflammation but does not specifically drive procedure selection between ventilation and other interventions\nNeutrophils (14, ref 19-53) — L_irrelevant — low neutrophil percentage; reflects pancytopenia; does not directly drive procedure selection\nLymphocytes (25, ref 5-13) — L_irrelevant — elevated lymphocyte percentage; reflects relative lymphocytosis; does not drive procedure selection\nBands (0, ref 0-5) — L_irrelevant — normal; absence of bandemia does not negate sepsis diagnosis or alter intervention choice\nEosinophils (3, ref 1-7) — L_irrelevant — normal; does not inform procedure selection\nUric Acid (82, no reference range) — L_irrelevant — without reference range, cannot be interpreted quantitatively; mildly elevated uric acid is common in myeloma but does not drive the immediate procedure decision\nGlucose (abnormal, value masked) — L_irrelevant — abnormal flag noted but glucose perturbation in sepsis is managed medically; does not drive procedural intervention selection\nUrine Casts (5.5, ref 5-8) — L_irrelevant — within normal range; mild tubular cast activity; does not provide additional decision-changing information beyond AKI already established by creatinine/BUN",
+        "R_core_formula": "R_core = (number of core labs correctly cited with correct interpretation) / (total core labs = 2)",
+        "R_core_weight": 0.35,
+        "R_core_interpretation": "For this patient: Creatinine (abnormal/elevated) must be cited as confirming AKI context but NOT as mandating immediate dialysis (value is masked but known abnormal, with BUN 35 as the quantitative marker). BUN (35) must be cited as elevated confirming uremic burden while simultaneously recognized as below emergent dialysis threshold. Both labs must be interpreted in the direction of: 'AKI is present but does not yet supersede acute respiratory failure as the immediate procedural priority.' Score 1.0 if both labs cited with this dual interpretation. Score 0.5 if only one lab cited correctly or if both cited but interpretation is one-directional (e.g., only notes elevation without addressing why dialysis is not the next step). Score 0 if neither lab cited or if both are misinterpreted as mandating dialysis.",
+        "R_wrong_formula": "R_wrong = 1 - (number of L_irrelevant labs incorrectly used to support the procedure decision) / (total labs cited)",
+        "R_wrong_weight": 0.2,
+        "R_wrong_interpretation": "For this patient: Penalize use of ALT, AST, BNP (borderline normal), C-Reactive Protein, Neutrophils/Lymphocytes/Bands/Eosinophils percentages, Uric Acid, Glucose, or Urine Casts as primary drivers of the ventilation decision. BNP (22) is particularly important — citing normal BNP as evidence against cardiogenic pulmonary edema is acceptable and relevant. Citing Urine Casts (within normal range) as evidence of ATN requiring dialysis would be a wrong-lab error. Full penalty if irrelevant labs are used as the primary justification for any competing procedure (e.g., using normal BNP to conclude no respiratory failure, or using uric acid to suggest tumor lysis dialysis).",
+        "R_under_formula": "R_under = 1 - β * (number of L_core labs omitted) / (total L_core labs = 2), floored at 0; β = 2",
+        "R_under_weight": 0.1,
+        "R_under_beta": 2,
+        "R_under_interpretation": "For this patient: Both Creatinine and BUN are essential. Omitting BUN (the only quantitative renal marker with a visible value, since creatinine is masked) is a critical omission — BUN 35 is the key evidence that renal failure has not yet reached emergent dialysis threshold. Omitting Creatinine is less critical (value is masked) but still penalized since its abnormal flag establishes AKI. If both core labs are omitted, R_under = 1 - 2*(2/2) = -1, floored to 0. If one is omitted, R_under = 1 - 2*(1/2) = 0.",
+        "R_over_formula": "R_over = 1 / (1 + α * max(0, N_optional_cited - 3)), where N_optional_cited is the number of L_optional labs cited; α = 0.5",
+        "R_over_weight": 0.2,
+        "R_over_alpha": 0.5,
+        "R_over_interpretation": "For this patient: The most informative optional labs are Potassium (3.1 — hypokalemia rules out emergent dialysis), Hemoglobin (8.3 — severe anemia worsens hypoxia), and Bicarbonate (21 — mild acidosis supports ventilation urgency). These three form the optimal optional set. Citing beyond 3 optional labs is penalized as padding — e.g., citing all 17 optional labs would give R_over = 1/(1 + 0.5*14) = 1/8 = 0.125. Citing 4 labs: R_over = 1/(1+0.5) = 0.667. Citing exactly 3: R_over = 1.0.",
+        "justification_weight": 0.15,
+        "justification_score_0": "Score 0: No justification provided, OR justification consists only of listing lab names without any clinical reasoning, OR justification argues for a wrong procedure (e.g., justifies dialysis or thoracentesis as the next intervention using the labs), OR justification contains a critical factual error such as claiming hyperkalemia (potassium is actually 3.1, hypokalemic) or claiming BUN >100 as the trigger for dialysis.",
+        "justification_score_0_5": "Score 0.5: Justification correctly links 1-2 labs to the clinical decision but is incomplete or generic. Examples of 0.5-level justifications: 'BUN is elevated and creatinine is abnormal, suggesting AKI that may need dialysis' (correct labs but wrong conclusion); 'Respiratory failure with hypoxia and hemoglobin 8.3 supports oxygen impairment' (partially correct but does not explain why ventilation over other procedures); 'The patient has sepsis and renal failure, so the next intervention would address the most life-threatening issue' (correct conclusion without specific lab-based reasoning). Generic statements about 'AKI in sepsis typically requires mechanical ventilation' without patient-specific lab values also fall here.",
+        "justification_score_1": "Score 1: Justification explicitly connects patient-specific lab values to the procedure decision with correct clinical reasoning. Must include: (1) recognition that BUN 35 and mild metabolic acidosis (bicarbonate 21, anion gap 21) confirm AKI but do not meet emergent dialysis thresholds; (2) potassium 3.1 (hypokalemia) actively rules out hyperkalemia-driven emergent dialysis; (3) hemoglobin 8.3 and respiratory failure with hypoxia establish that oxygen delivery is critically impaired, driving the mechanical ventilation decision; (4) encephalopathy with these respiratory parameters confirms airway protection need.",
+        "justification_patient_examples": [
+          "BUN of 35 confirms renal injury but is well below the typical emergent dialysis threshold; combined with potassium 3.1 (hypokalemia, not hyperkalemia) and bicarbonate 21 (mild acidosis, not refractory), there is no metabolic emergency requiring immediate CRRT. The acute respiratory failure with hemoglobin 8.3 and malignant pleural effusion creates immediate hypoxic threat requiring mechanical ventilation as the next procedural priority.",
+          "The patient's anion gap of 21 with bicarbonate 21 indicates metabolic acidosis; however, lactate is normal (0.8) and there is no refractory acidosis. The respiratory contribution to this acidosis — from acute hypoxic respiratory failure with pleural effusion — must be treated first with mechanical ventilation to allow respiratory compensation before any renal intervention.",
+          "Severe anemia (hemoglobin 8.3, hematocrit 25.3) critically impairs oxygen-carrying capacity in the context of acute respiratory failure with hypoxia. Encephalopathy with poor responsiveness means the patient cannot protect her airway. These factors collectively mandate intubation and mechanical ventilation as the immediate next procedural intervention, with BUN 35 and potassium 3.1 confirming that emergent dialysis is not yet indicated."
+        ],
+        "justification_generic_examples": [
+          "The labs show AKI and the patient needs intervention (no specific values cited, no reasoning about why ventilation over dialysis)",
+          "Elevated BUN and creatinine mean the kidneys are failing and some intervention is needed (correct observation, wrong conclusion or no conclusion drawn)",
+          "The patient has multiple abnormal labs consistent with critical illness (too generic, no procedure-specific reasoning)"
+        ]
+      },
+      "final_reward_formula": {
+        "formula_string": "Total = w1*R_core + w2*R_wrong + w3*R_under + w4*R_over + w5*R_justification + answer_score = 0.35*R_core + 0.20*R_wrong + 0.10*R_under + 0.20*R_over + 0.15*R_justification + answer_score; where lab_score = 0.35*R_core + 0.20*R_wrong + 0.10*R_under + 0.20*R_over + 0.15*R_justification (max=0.70) and answer_score = mean(c1_score, c2_score, c3_score, c4_score) * 1.0 (max=1.0); all component scores in [0,1]; R_under floored at 0; R_over uses α=0.5 penalty for optional labs beyond 3; R_wrong uses ε=0.000001 floor to avoid division by zero when no labs cited",
+        "max_lab_score": 0.7,
+        "max_answer_score": 1,
+        "notes": "The answer_score (max 1.0) is the average of the four criterion scores c1-c4, each scored 0-1. The lab_score (max 0.70) is the weighted sum of the five rubric components using the specified weights (w1=0.35, w2=0.20, w3=0.10, w4=0.20, w5=0.15). The grand total can range from 0 to 1.70. For normalization to 0-1, divide by 1.70. Key decision point: the correct answer is Respiratory Ventilation 24-96 Consecutive Hours rather than dialysis/CRRT because (1) BUN=35 is not at emergent dialysis threshold, (2) potassium=3.1 is hypokalemic ruling out hyperkalemic emergency, (3) bicarbonate=21 is mild acidosis not refractory, (4) acute respiratory failure with hypoxia + encephalopathy = immediate airway protection need. PubMed search (PMID 42153103, 29124867) confirms that in mechanically ventilated ICU patients with septic shock and AKI, respiratory stabilization precedes renal replacement therapy initiation per KDIGO guidelines."
+      }
+    },
+    "ground_truth": "Respiratory Ventilation, 24-96 Consecutive Hours",
+    "scoring_params": {
+      "weights": {
+        "w1": 0.35,
+        "w2": 0.2,
+        "w3": 0.1,
+        "w4": 0.2,
+        "w5": 0.15
+      },
+      "penalty_params": {
+        "beta": 2,
+        "alpha": 0.5,
+        "epsilon": 0.000001
+      }
+    },
+    "eval_summary": {
+      "criterion_a": "PASS",
+      "criterion_b": "PASS",
+      "criterion_c": "PASS",
+      "criterion_d": "PASS"
+    }
+  }
+}

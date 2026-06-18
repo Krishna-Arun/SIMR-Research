@@ -1,0 +1,229 @@
+{
+  "summary": "AKI next-event benchmark — patient 10039708 (46F) ground truth: Performance of Urinary Filtration, Multiple (Continuous Renal Replacement Therapy)",
+  "agentCount": 5,
+  "logs": [
+    "Round 1 / 5: generating question ...",
+    "Round 1: evaluating ...",
+    "Round 1: REJECTED — regenerating.",
+    "Round 2 / 5: generating question ...",
+    "Round 2: evaluating ...",
+    "Question PASSED all four criteria at round 2.",
+    "Generating scoring rubric ..."
+  ],
+  "result": {
+    "patient_id": "10039708",
+    "rounds_taken": 2,
+    "passed_evaluation": true,
+    "question": {
+      "stem": "A 46-year-old Female with a complex medical history presents to the emergency department with altered mental status, respiratory distress, and decreased urine output. Her past medical history is significant for alcohol dependence, alcoholic polyneuropathy, thiamine deficiency, hypothyroidism, hypertension, prior bariatric surgery, asthma, and tobacco use. She was previously discharged against medical advice two years prior. On the current admission she is found to have acute kidney failure with tubular necrosis, acute systolic congestive heart failure, non-ST elevation myocardial infarction, respiratory failure with hypoxia, pneumonitis due to aspiration of food and vomit, ventilator-associated pneumonia, encephalopathy, and anemia. She is admitted to the medical ICU and placed on mechanical ventilation. Based on the available laboratory data, what is the next most probable major procedural intervention for this patient?",
+      "reasoning_gap": "The key missing data are serum potassium and bicarbonate (to determine whether refractory hyperkalemia or metabolic acidosis meets the KDIGO 2012 Section 5.3 absolute thresholds), together with serial creatinine and BUN trajectory (to confirm KDIGO Stage 3 AKI severity), which are the laboratory values that gate the decision to initiate continuous renal replacement therapy rather than continuing supportive management.",
+      "lab_sets": {
+        "L_core": [
+          {
+            "lab_name": "Creatinine",
+            "clinical_rationale": "KDIGO 2012 Section 2.1.1 defines AKI Stage 3 as serum creatinine exceeding three times baseline or rising above 4.0 mg/dL; Stage 3 classification is the primary trigger for RRT initiation per KDIGO Section 5.3 (Nusshag et al., Int J Mol Sci 2017; PMID 28657585). Without the creatinine trajectory, AKI severity cannot be staged and the procedural threshold cannot be determined."
+          },
+          {
+            "lab_name": "BUN",
+            "clinical_rationale": "Rising BUN reflects progressive azotemia and uremic toxin accumulation; KDIGO 2012 Section 5.3 identifies uremic complications including encephalopathy as an urgent absolute indication for RRT. BUN trajectory, in conjunction with creatinine, determines whether uremic burden has crossed the threshold mandating intervention over continued supportive care (STARRT-AKI Investigators, NEJM 2020; PMID 32668114)."
+          },
+          {
+            "lab_name": "Potassium",
+            "clinical_rationale": "Refractory hyperkalemia is an absolute emergent indication for RRT per KDIGO 2012 Section 5.3. In oliguric AKI with tubular necrosis and absent distal potassium excretion, the serum potassium value is the critical gating lab for determining whether urgent CRRT initiation is required versus medical management with kayexalate, insulin-dextrose, or bicarbonate."
+          },
+          {
+            "lab_name": "Bicarbonate",
+            "clinical_rationale": "Refractory metabolic acidosis with low serum bicarbonate is an explicit absolute KDIGO 2012 Section 5.3 indication for RRT. In the context of AKI with tubular necrosis, lactic acidosis (elevated lactate present), and hemodynamic compromise, the bicarbonate level is essential to determine whether acid-base derangement meets the CRRT threshold or remains amenable to bicarbonate infusion."
+          },
+          {
+            "lab_name": "Urine Casts",
+            "clinical_rationale": "KDIGO 2012 Section 2.1.2 incorporates urinary sediment findings into AKI evaluation; granular (muddy-brown) casts on urinalysis confirm tubular injury etiology, supporting the ATN diagnosis underpinning the RRT decision and distinguishing ATN from prerenal azotemia, which would favor fluid resuscitation over dialysis."
+          }
+        ],
+        "L_optional": [
+          {
+            "lab_name": "Lactate",
+            "clinical_rationale": "Elevated lactate reflects hemodynamic compromise and tissue hypoperfusion; hemodynamic instability is the primary clinical reason to select CRRT over intermittent hemodialysis in critically ill patients (Nusshag et al., PMID 28657585), but lactate elevation itself is not a KDIGO-defined independent indication for initiating RRT."
+          },
+          {
+            "lab_name": "Sodium",
+            "clinical_rationale": "Hypernatremia complicates volume management in AKI and influences RRT dialysate composition and sodium correction targets, but serum sodium alone is not a KDIGO criterion for initiating RRT."
+          },
+          {
+            "lab_name": "Phosphate",
+            "clinical_rationale": "Hypophosphatemia is common in critically ill AKI patients on CRRT due to phosphate clearance; relevant to monitoring and supplementation during therapy but does not independently drive the decision to initiate RRT."
+          },
+          {
+            "lab_name": "Magnesium",
+            "clinical_rationale": "Hypomagnesemia frequently accompanies AKI and requires replacement during CRRT; relevant to parallel electrolyte management but does not independently indicate RRT initiation."
+          },
+          {
+            "lab_name": "Calcium, Total",
+            "clinical_rationale": "Hypocalcemia can accompany severe AKI; relevant to citrate anticoagulation management during CRRT and ionized calcium monitoring but not a primary RRT initiation criterion under KDIGO 2012."
+          },
+          {
+            "lab_name": "Albumin",
+            "clinical_rationale": "Hypoalbuminemia reflects critical illness severity and malnutrition; influences drug dosing and oncotic pressure assessment during fluid management in AKI but is not a KDIGO RRT criterion."
+          },
+          {
+            "lab_name": "Hemoglobin",
+            "clinical_rationale": "Anemia is a listed diagnosis; hemoglobin guides transfusion decisions in the ICU and affects oxygen delivery, running parallel to RRT management but not triggering its initiation."
+          },
+          {
+            "lab_name": "Hematocrit",
+            "clinical_rationale": "Supports anemia evaluation alongside hemoglobin; relevant to overall ICU management but not an independent RRT initiation criterion."
+          },
+          {
+            "lab_name": "WBC",
+            "clinical_rationale": "Leukocytosis in the setting of ventilator-associated pneumonia and aspiration pneumonitis informs antibiotic selection; sepsis-associated AKI is a relevant etiologic context but WBC itself is not a KDIGO RRT trigger."
+          },
+          {
+            "lab_name": "Troponin T",
+            "clinical_rationale": "Elevated troponin confirms myocardial injury in the context of NSTEMI and acute systolic heart failure; cardiorenal syndrome etiology informs clinical context for the AKI but troponin is not a KDIGO RRT initiation criterion."
+          },
+          {
+            "lab_name": "NTproBNP",
+            "clinical_rationale": "Elevated NTproBNP confirms volume overload and cardiac decompensation; refractory fluid overload is a KDIGO 2012 Section 5.3 RRT indication, making this contextually relevant to the overarching volume management picture but not independently sufficient to determine whether RRT criteria are met without the renal-specific labs."
+          },
+          {
+            "lab_name": "BNP",
+            "clinical_rationale": "Elevated BNP corroborates acute heart failure and volume overload; similar to NTproBNP, supports the clinical context of fluid overload as a potential contributing RRT trigger but does not replace the renal-specific thresholds that gate the KDIGO decision."
+          }
+        ],
+        "L_irrelevant": [
+          { "lab_name": "ALT", "why_irrelevant": "Liver transaminase reflecting hepatocellular injury; mildly elevated in this patient but does not contribute to AKI staging or RRT initiation criteria under KDIGO 2012." },
+          { "lab_name": "AST", "why_irrelevant": "Liver transaminase elevated here likely from cardiac and hepatic ischemia; not part of KDIGO AKI staging criteria and does not factor into the RRT decision." },
+          { "lab_name": "CK", "why_irrelevant": "Creatine kinase would be relevant if rhabdomyolysis were the primary etiology of AKI, but the confirmed diagnosis is tubular necrosis in the setting of cardiac failure and sepsis; CK does not alter the KDIGO-based RRT initiation decision in this patient." },
+          { "lab_name": "CK-MB", "why_irrelevant": "Within normal range in this patient and lacks specificity for the AKI-RRT decision; cardiac troponin is the preferred biomarker for myocardial injury assessment in NSTEMI." },
+          { "lab_name": "Platelet Count", "why_irrelevant": "Mild thrombocytopenia may inform anticoagulation strategy selection for CRRT (heparin versus citrate), but thrombocytopenia itself is not a KDIGO indication for initiating RRT." },
+          { "lab_name": "INR", "why_irrelevant": "Mildly elevated coagulation parameter relevant to procedural bleeding risk assessment, but not a criterion for RRT initiation under KDIGO 2012." },
+          { "lab_name": "PT", "why_irrelevant": "Prolonged prothrombin time may reflect early coagulopathy but does not constitute a KDIGO AKI staging criterion or RRT indication." },
+          { "lab_name": "Prothrombin Time", "why_irrelevant": "Overlaps with PT and INR as a coagulation measure; not relevant to the AKI-to-CRRT decision pathway." },
+          { "lab_name": "Glucose", "why_irrelevant": "Glycemic control is an ICU management priority but glucose level is not a KDIGO criterion for AKI staging or RRT initiation." },
+          { "lab_name": "Chloride", "why_irrelevant": "Hyperchloremia is a marker of hyperchloremic metabolic acidosis but the primary acid-base parameter driving the RRT decision per KDIGO Section 5.3 is bicarbonate (or arterial pH), not chloride directly." },
+          { "lab_name": "Anion Gap", "why_irrelevant": "Anion gap contextualizes metabolic acidosis type but is a derived value; the independent parameter used in KDIGO Section 5.3 is serum bicarbonate or pH, not anion gap itself." },
+          { "lab_name": "Neutrophils", "why_irrelevant": "Differential count parameter for evaluating infection severity; abnormal here in the context of ventilator-associated pneumonia but not part of KDIGO AKI staging or RRT criteria." },
+          { "lab_name": "Lymphocytes", "why_irrelevant": "Low lymphocyte count reflects immune suppression in critical illness; not relevant to the AKI-RRT decision pathway." },
+          { "lab_name": "Eosinophils", "why_irrelevant": "Eosinopenia in critical illness is a non-specific finding; eosinophilia would raise concern for allergic interstitial nephritis but the confirmed diagnosis here is tubular necrosis, making eosinophil count irrelevant to the RRT decision." },
+          { "lab_name": "Bands", "why_irrelevant": "Band neutrophils indicate left shift and acute bacterial infection; relevant to sepsis management but not to KDIGO AKI staging or CRRT initiation criteria." },
+          { "lab_name": "Uric Acid", "why_irrelevant": "Hyperuricemia can cause uric acid nephropathy but this patient's AKI etiology is tubular necrosis in the setting of cardiac failure and sepsis; uric acid does not factor into the RRT initiation decision here." }
+        ]
+      }
+    },
+    "rubric": {
+      "answer_rubric": {
+        "c1_exact_answer": "Performance of Urinary Filtration, Multiple (Continuous Renal Replacement Therapy)",
+        "c1_accepted_synonyms": [
+          "Continuous Renal Replacement Therapy",
+          "CRRT",
+          "Continuous venovenous hemofiltration",
+          "CVVH",
+          "Continuous venovenous hemodiafiltration",
+          "CVVHDF",
+          "Renal replacement therapy",
+          "Continuous dialysis",
+          "Continuous renal replacement",
+          "Urinary filtration multiple"
+        ],
+        "c1_scoring_guidance": "Full credit requires identifying CRRT or an equivalent continuous modality as the intervention. Intermittent hemodialysis (IHD) alone is incorrect in this context because the patient is hemodynamically unstable (NSTEMI, acute systolic heart failure, on mechanical ventilation), making CRRT the preferred modality per KDIGO guidelines. The procedure name 'Performance of Urinary Filtration, Multiple' is the ICD-10-PCS billing descriptor for CRRT. Partial credit may be given if the model identifies 'renal replacement therapy' generically without specifying continuous modality. No credit if the answer names a non-renal procedure.",
+        "c1_wrong_answers": [
+          "Intermittent hemodialysis (IHD)",
+          "Peritoneal dialysis",
+          "Plasmapheresis",
+          "Continuous venovenous hemodialysis without specifying continuous modality",
+          "Mechanical ventilation (already in place)",
+          "Coronary angiography / PCI for NSTEMI",
+          "Intra-aortic balloon pump",
+          "Therapeutic plasma exchange",
+          "Liver dialysis / MARS",
+          "Vasopressor initiation"
+        ],
+        "c2_required_labs_summary": "Creatinine (2.2 mg/dL) — 2x female ULN of 1.1, consistent with KDIGO Stage 2 AKI; primary quantitative trigger for RRT consideration.\nBUN (45 mg/dL) — >2x ULN of 20; uremic solute burden supports intrinsic AKI and risk of uremic encephalopathy.\nPotassium (abnormal flag, value masked) — hyperkalemia is an absolute emergency indication for RRT; abnormal flag alone confirms life-threatening electrolyte disturbance.\nBicarbonate (abnormal flag, value masked) — metabolic acidosis from AKI is a primary KDIGO indication for RRT; combined with lactate 3.4 confirms high anion gap acidosis.\nUrine Casts (6.0, present within range) — confirms acute tubular necrosis as mechanism; distinguishes intrinsic AKI from prerenal, confirming RRT need rather than fluid challenge alone.",
+        "c2_scoring_guidance": "Full credit requires citing at least Creatinine AND BUN AND at least one of Potassium or Bicarbonate as driving labs, with correct directional interpretation linked to AKI severity and RRT indication. Partial credit if only 2 core labs are cited with correct reasoning. No credit if only non-renal labs (troponin, BNP, hemoglobin) are cited as the primary decision drivers.",
+        "c2_insufficient_examples": [
+          "Citing only Lactate (3.4) as the reason without connecting to renal failure",
+          "Citing only Troponin T (abnormal) to justify cardiac intervention instead",
+          "Citing only Hemoglobin (9.8) to justify transfusion as the next intervention",
+          "Mentioning Creatinine is elevated but failing to connect magnitude to KDIGO stage or RRT threshold",
+          "Listing all abnormal labs without prioritizing renal-specific ones"
+        ],
+        "c3_causal_chain": "Step 1: Creatinine 2.2 mg/dL exceeds 2x the female ULN (1.1), and BUN 45 exceeds 2x ULN (20) — confirming KDIGO Stage 2 AKI. Step 2: Urine casts confirm acute tubular necrosis (intrinsic renal injury), ruling out purely prerenal AKI that would respond to fluids alone. Step 3: Flagged abnormal potassium and bicarbonate confirm uremic electrolyte and acid-base derangements — primary KDIGO indications for RRT. Step 4: Concurrent acute systolic CHF and NSTEMI produce cardiorenal syndrome with hemodynamic instability, further worsening renal perfusion. Step 5: Mechanical ventilation confirms critical illness severity; IHD-related hypotension episodes are not tolerable in this hemodynamically fragile patient. Step 6: Per KDIGO 2012 guidelines and standard ICU practice, hemodynamically unstable AKI with uremic indications on mechanical ventilation mandates CRRT (continuous modality) over IHD. Step 7: Conclusion — Performance of Urinary Filtration, Multiple (CRRT) is the next major procedural intervention.",
+        "c3_required_steps": [
+          "Recognize Creatinine (2.2) and BUN (45) as confirming KDIGO Stage 2-3 AKI severity",
+          "Identify urine casts as confirming acute tubular necrosis (intrinsic renal disease)",
+          "Recognize flagged abnormal potassium and bicarbonate as uremic electrolyte/acid-base indications for RRT",
+          "Connect acute systolic CHF and NSTEMI to hemodynamic instability precluding IHD",
+          "Apply the clinical rule: hemodynamically unstable AKI patient on mechanical ventilation → CRRT preferred over IHD",
+          "Conclude CRRT (Performance of Urinary Filtration, Multiple) is the next major procedural intervention"
+        ],
+        "c3_scoring_guidance": "Full credit requires completing at minimum steps 1, 3, 4, and 5. Partial credit if AKI and RRT are identified but the reasoning for continuous versus intermittent modality is absent. No credit if the causal chain terminates at a cardiac intervention without acknowledging the renal indication.",
+        "c3_broken_chain_examples": [
+          "Stops at 'the patient has AKI' without connecting to why CRRT specifically over IHD",
+          "Identifies hemodynamic instability but recommends vasopressors rather than connecting to modality selection",
+          "Cites NSTEMI as the primary driver and concludes with cardiac catheterization",
+          "Notes elevated BNP/NTproBNP and concludes diuresis alone is sufficient",
+          "Recognizes respiratory failure and concludes bronchoscopy is the next procedure"
+        ],
+        "c4_required_patient_facts": "46-year-old Female — sex establishes creatinine ULN of 1.1 (female), making 2.2 a 2x elevation consistent with KDIGO Stage 2.\nAcute kidney failure with tubular necrosis (diagnosis) — confirms intrinsic ATN requiring filtration support rather than fluid challenge.\nAcute systolic congestive heart failure (diagnosis) — establishes cardiorenal syndrome and hemodynamic instability mandating continuous RRT modality.\nNSTEMI (diagnosis) — second contributor to hemodynamic instability; myocardial injury worsens cardiac output and renal perfusion.\nMechanical ventilation (current intervention) — signals critical illness and hemodynamic fragility; IHD hypotension risk is unacceptable.\nEncephalopathy (diagnosis) — uremic encephalopathy is a classic KDIGO indication for urgent RRT.\nAlcohol dependence plus prior bariatric surgery — explains hypomagnesemia (1.2), hypocalcemia (6.4), and hypoalbuminemia (2.6), compounding metabolic instability that CRRT must address.",
+        "c4_scoring_guidance": "Full credit requires identifying at minimum: (1) AKI with ATN confirmation, (2) hemodynamic instability from CHF plus NSTEMI, and (3) mechanical ventilation status as the triad mandating CRRT. Partial credit if only 1-2 of these facts are cited. No credit if patient facts cited are exclusively historical (alcohol dependence alone, bariatric surgery alone) without connecting to acute indications.",
+        "c4_critical_errors": [
+          "Failing to note that patient is already on mechanical ventilation, which changes modality choice",
+          "Misidentifying sex-based creatinine reference range (using male ULN instead of female ULN)",
+          "Treating AKI as prerenal without acknowledging urine casts confirming ATN",
+          "Ignoring NSTEMI and CHF as contraindications to IHD",
+          "Stating patient has no uremic complications when potassium and bicarbonate are both flagged abnormal"
+        ]
+      },
+      "lab_scoring_rubric": {
+        "L_core_summary": "Creatinine (2.2 mg/dL) — L_core — KDIGO AKI staging anchor; 2x female ULN 1.1; primary quantitative trigger for RRT consideration.\nBUN (45 mg/dL) — L_core — uremic burden >2x ULN 20; confirms intrinsic AKI and risk of uremic complications including encephalopathy.\nPotassium (value masked, flagged abnormal) — L_core — hyperkalemia is an absolute emergency indication for RRT; abnormal flag is sufficient to confirm life-threatening electrolyte disturbance.\nBicarbonate (value masked, flagged abnormal) — L_core — metabolic acidosis is a primary KDIGO indication for RRT; combined with lactate 3.4 confirms high anion gap acidosis requiring clearance.\nUrine Casts (6.0, present) — L_core — hallmark of acute tubular necrosis; confirms intrinsic renal injury requiring support rather than prerenal correction.",
+        "L_optional_summary": "Lactate (3.4 mmol/L, abnormal) — L_optional — elevated lactate confirms tissue hypoperfusion and hemodynamic instability; supports CRRT over IHD but is not a direct renal indication.\nSodium (146 mEq/L, mildly elevated) — L_optional — mild hypernatremia consistent with free water deficit from oliguria; context for fluid management in CRRT.\nPhosphate (1.8 mg/dL, low) — L_optional — hypophosphatemia from malnutrition and bariatric surgery; CRRT will clear phosphate requiring replacement monitoring.\nMagnesium (1.2 mEq/L, low) — L_optional — hypomagnesemia from alcoholism and poor nutrition; CRRT requires electrolyte replacement monitoring.\nCalcium Total (6.4 mg/dL, critically low) — L_optional — severe hypocalcemia compounding metabolic instability; citrate anticoagulation during CRRT requires calcium replacement.\nAlbumin (2.6 g/dL, low) — L_optional — hypoalbuminemia reflects critical illness and malnutrition; affects corrected calcium calculation and drug binding.\nHemoglobin (9.8 g/dL, low) — L_optional — anemia consistent with diagnosis; reflects illness burden but not a driver of RRT decision.\nHematocrit (31.0%, low) — L_optional — confirms anemia; redundant with hemoglobin for decision purposes.\nWBC (13.7 K/uL, elevated) — L_optional — leukocytosis from VAP and aspiration pneumonitis; confirms infectious burden contributing to hemodynamic instability.\nTroponin T (value masked, abnormal) — L_optional — confirms NSTEMI and cardiorenal syndrome pathophysiology; cardiac intervention is secondary to stabilizing AKI in ICU context.\nNTproBNP (value masked, abnormal) — L_optional — confirms acute heart failure severity; CRRT with ultrafiltration addresses volume overload from CHF.\nBNP (value masked, abnormal) — L_optional — same as NTproBNP; redundant marker of CHF severity confirming cardiorenal syndrome.",
+        "L_irrelevant_summary": "ALT (70 U/L, mildly elevated) — L_irrelevant — mild transaminitis in alcoholic patient; does not change RRT decision.\nAST (139 U/L, elevated) — L_irrelevant — elevated from alcohol use and possible ischemic hepatitis; hepatic injury does not drive RRT selection.\nCK (value masked) — L_irrelevant — rhabdomyolysis marker but value masked and CK-MB normal; not a primary driver.\nCK-MB (1 U/L, normal) — L_irrelevant — normal CK-MB reduces massive myonecrosis likelihood; not a driver.\nPlatelet Count (121 K/uL, low) — L_irrelevant — mild thrombocytopenia affects CRRT anticoagulation strategy but not whether CRRT is indicated.\nINR (1.3, mildly elevated) — L_irrelevant — mild coagulopathy affects CRRT anticoagulation choice but not indication.\nPT (44.1 sec, elevated) — L_irrelevant — coagulopathy from liver disease; same context as INR.\nProthrombin Time (13.7 sec, mildly elevated) — L_irrelevant — same as PT/INR context; redundant coagulation marker.\nGlucose (value masked, abnormal) — L_irrelevant — hyperglycemia expected in critical illness; managed separately with insulin; not an RRT indication.\nChloride (120 mEq/L, elevated) — L_irrelevant — hyperchloremia may reflect saline resuscitation; contextual but not a primary RRT driver.\nAnion Gap (14, within normal range) — L_irrelevant — normal-range anion gap does not change AKI assessment.\nNeutrophils (17%, low) — L_irrelevant — differential abnormality from infection; does not drive RRT decision.\nLymphocytes (3%, low) — L_irrelevant — lymphopenia in critical illness; not relevant to RRT indication.\nEosinophils (0.9%, low) — L_irrelevant — minor differential abnormality; not clinically relevant to RRT decision.\nBands (1%, normal) — L_irrelevant — normal band count; not relevant.\nUric Acid (12 mg/dL, no reference range) — L_irrelevant — hyperuricemia may contribute to uric acid nephropathy but ATN is already established as the mechanism; does not change management.",
+        "R_core_formula": "R_core = (number of L_core labs correctly cited with correct directional interpretation) / 5",
+        "R_core_weight": 0.35,
+        "R_core_interpretation": "Each of the 5 core labs (Creatinine, BUN, Potassium, Bicarbonate, Urine Casts) contributes 0.2 each to R_core. A lab is correctly cited if the model names it AND interprets the direction correctly. For masked values (Potassium, Bicarbonate), citing the abnormal flag with correct clinical implication (e.g., likely hyperkalemia, likely metabolic acidosis) counts as full credit for that lab.",
+        "R_wrong_formula": "R_wrong = 1 - (number of L_irrelevant labs cited as PRIMARY drivers) / 17, clipped to [0, 1]",
+        "R_wrong_weight": 0.2,
+        "R_wrong_interpretation": "R_wrong penalizes models that anchor their procedure recommendation on irrelevant labs. Each L_irrelevant lab cited as a primary driver of the CRRT decision (rather than mentioned incidentally for context) reduces R_wrong. L_irrelevant labs mentioned only for clinical completeness without driving the final conclusion do NOT penalize this component.",
+        "R_under_formula": "R_under = exp(-β * max(0, (5 - L_core_cited) / 5)) where β=2",
+        "R_under_weight": 0.1,
+        "R_under_beta": 2,
+        "R_under_interpretation": "R_under penalizes under-reporting of core labs. All 5 core cited gives R_under=1.0. Zero core labs cited gives R_under=exp(-2)≈0.135. Each missing core lab exponentially reduces the score. Models that skip masked-value labs (Potassium, Bicarbonate) because the number is hidden are penalized — the abnormal flag is sufficient clinical information to satisfy the citation requirement.",
+        "R_over_formula": "R_over = exp(-α * max(0, (L_optional_cited + L_irrelevant_cited - 5) / 29)) where α=0.5",
+        "R_over_weight": 0.2,
+        "R_over_alpha": 0.5,
+        "R_over_interpretation": "R_over penalizes excessive lab citation beyond what is clinically necessary. Up to 5 optional or irrelevant labs cited is not penalized (threshold=5). Each lab beyond 5 reduces R_over exponentially with gentle slope (α=0.5), reflecting that over-inclusion is less harmful than under-inclusion in clinical reasoning tasks.",
+        "justification_weight": 0.15,
+        "justification_score_0": "The model provides no justification linking labs to the CRRT decision, OR the justification is factually incorrect (e.g., states CRRT is indicated because of troponin elevation, or states patient has normal renal function), OR the model recommends a completely different procedure with no acknowledgment of renal failure.",
+        "justification_score_0_5": "The model correctly identifies AKI and need for renal support but either: (a) fails to specify why CRRT rather than IHD, (b) cites only 1-2 core labs without connecting to KDIGO staging, (c) provides correct procedure but reasoning is generic rather than patient-specific, or (d) identifies AKI correctly but ignores the hemodynamic instability rationale for continuous over intermittent modality.",
+        "justification_score_1": "The model provides a complete patient-specific justification that: (1) cites at least 3 core labs with correct values or flags and directional interpretation, (2) connects lab values to KDIGO AKI staging or recognized RRT indications, (3) explains why hemodynamic instability (CHF + NSTEMI + mechanical ventilation) mandates continuous rather than intermittent modality, and (4) names CRRT or an accepted synonym as the conclusion.",
+        "justification_patient_examples": [
+          "'Creatinine 2.2 mg/dL exceeds 2x the female upper limit of normal (1.1 mg/dL), placing this patient at KDIGO Stage 2 AKI. Combined with BUN 45 mg/dL (>2x ULN of 20), flagged abnormal potassium indicating likely hyperkalemia, and flagged abnormal bicarbonate indicating metabolic acidosis, there are multiple KDIGO indications for renal replacement therapy. Given her concurrent acute systolic heart failure, NSTEMI, and dependence on mechanical ventilation she is hemodynamically unstable and cannot tolerate the osmotic shifts of IHD — therefore CRRT is the appropriate continuous modality.'",
+          "'The urine casts confirm acute tubular necrosis, and the creatinine of 2.2 mg/dL with BUN of 45 mg/dL represents significant uremic burden. The abnormal potassium and bicarbonate flags add electrolyte and acid-base indications for RRT. In the setting of NSTEMI and acute heart failure requiring mechanical ventilation, the hemodynamic stability required for IHD is absent, making CRRT the next procedural intervention.'",
+          "'This critically ill 46-year-old female has ATN-confirmed AKI (urine casts, Cr 2.2, BUN 45), uremic electrolyte derangements (K and bicarb both flagged abnormal), and cardiorenal syndrome from CHF plus NSTEMI. Lactate 3.4 mmol/L further confirms tissue hypoperfusion. Per KDIGO guidelines, hemodynamically unstable AKI on mechanical ventilation is managed with CRRT rather than IHD.'"
+        ],
+        "justification_generic_examples": [
+          "'The patient has AKI and needs dialysis because of elevated creatinine and BUN' — correct procedure but no modality reasoning, no KDIGO staging, score 0.5",
+          "'Multiple organ failure including renal failure; CRRT is standard of care in the ICU' — correct conclusion but not tied to this patient's specific lab values, score 0.5",
+          "'The abnormal labs indicate urinary filtration is needed' — vague, no patient-specific lab values, no KDIGO or hemodynamic reasoning, score 0.5"
+        ]
+      },
+      "final_reward_formula": {
+        "formula_string": "Total = 0.35*R_core + 0.20*R_wrong + 0.10*R_under + 0.20*R_over + 0.15*R_justification + answer_score",
+        "max_lab_score": 0.7,
+        "max_answer_score": 1,
+        "notes": "The lab sub-scores (w1 through w5) sum to a maximum of 1.00 (0.35+0.20+0.10+0.20+0.15=1.00) when all equal 1.0, but the lab component is capped at max_lab_score=0.70, meaning the lab total is scaled: lab_score = min(0.70, w1*R_core + w2*R_wrong + w3*R_under + w4*R_over + w5*R_justification). The answer_score is scored separately on a 0-1.0 scale: exact match or accepted synonym = 1.0, generic RRT without continuous modality specification = 0.5, wrong procedure = 0.0. Maximum possible total reward = 0.70 (lab) + 1.0 (answer) = 1.70. Epsilon=0.000001 serves as a floor preventing log-zero errors in any log-based penalty variants. Beta=2 governs exponential steepness of the under-reporting penalty; alpha=0.5 governs the gentler over-reporting penalty, reflecting that over-inclusion is less harmful than under-inclusion in clinical reasoning tasks."
+      }
+    },
+    "ground_truth": "Performance of Urinary Filtration, Multiple (Continuous Renal Replacement Therapy)",
+    "scoring_params": {
+      "weights": { "w1": 0.35, "w2": 0.2, "w3": 0.1, "w4": 0.2, "w5": 0.15 },
+      "penalty_params": { "beta": 2, "alpha": 0.5, "epsilon": 0.000001 }
+    },
+    "eval_summary": {
+      "criterion_a": "PASS",
+      "criterion_b": "PASS",
+      "criterion_c": "PASS",
+      "criterion_d": "PASS"
+    }
+  }
+}
