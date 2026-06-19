@@ -1,0 +1,191 @@
+{
+  "patient_id": "115973154",
+  "action_label": "anticoagulation_reversal",
+  "patient_context": {
+    "demographics": {
+      "age": 51,
+      "gender": "Male"
+    },
+    "admission_history": [
+      {
+        "admit_date": "2019-08-05",
+        "discharge_date": "2019-08-05",
+        "admission_type": "Inpatient",
+        "diagnoses": [],
+        "procedures_performed": [],
+        "medications": []
+      },
+      {
+        "admit_date": "2019-08-10",
+        "discharge_date": "2019-08-11",
+        "admission_type": "Inpatient",
+        "diagnoses": [
+          "C79.51",
+          "C25.9",
+          "R18.0",
+          "C7B.8",
+          "E31.21",
+          "R18.8"
+        ],
+        "procedures_performed": [],
+        "medications": []
+      },
+      {
+        "admit_date": "2019-08-11",
+        "discharge_date": "2019-08-11",
+        "admission_type": "Inpatient",
+        "diagnoses": [],
+        "procedures_performed": [],
+        "medications": []
+      },
+      {
+        "admit_date": "2019-08-11",
+        "discharge_date": "2019-08-11",
+        "admission_type": "Inpatient",
+        "diagnoses": [],
+        "procedures_performed": [],
+        "medications": []
+      },
+      {
+        "admit_date": "2019-08-12",
+        "discharge_date": "2019-08-12",
+        "admission_type": "Inpatient",
+        "diagnoses": [],
+        "procedures_performed": [],
+        "medications": []
+      }
+    ],
+    "current_admission": {
+      "admit_date": "2019-05-18",
+      "admission_type": "Inpatient",
+      "admission_location": "Emergency Department",
+      "diagnoses": [
+        "R14.0",
+        "R18.0",
+        "R60.0",
+        "C25.4",
+        "C79.51",
+        "D35.2",
+        "E11.43",
+        "E31.20"
+      ],
+      "medications": []
+    }
+  },
+  "lab_data": [
+    {
+      "date": "2019-05-18",
+      "label": "ALT",
+      "value": "27.0",
+      "flag": null,
+      "ref_lower": "7",
+      "ref_upper": "56"
+    },
+    {
+      "date": "2019-05-18",
+      "label": "Albumin",
+      "value": "2.9",
+      "flag": "low",
+      "ref_lower": "3.5",
+      "ref_upper": "5.0"
+    },
+    {
+      "date": "2019-05-18",
+      "label": "Anion Gap",
+      "value": "8.0",
+      "flag": null,
+      "ref_lower": "8",
+      "ref_upper": "16"
+    },
+    {
+      "date": "2019-05-18",
+      "label": "BUN",
+      "value": "16.0",
+      "flag": null,
+      "ref_lower": "7.0",
+      "ref_upper": "25.0"
+    },
+    {
+      "date": "2019-05-18",
+      "label": "Calcium",
+      "value": "9.3",
+      "flag": null,
+      "ref_lower": "8.5",
+      "ref_upper": "10.5"
+    },
+    {
+      "date": "2019-05-18",
+      "label": "Chloride",
+      "value": "99.0",
+      "flag": null,
+      "ref_lower": "98",
+      "ref_upper": "107"
+    },
+    {
+      "date": "2019-05-18",
+      "label": "Creatinine",
+      "value": "0.55",
+      "flag": null,
+      "ref_lower": "0.5",
+      "ref_upper": "1.2"
+    },
+    {
+      "date": "2019-05-18",
+      "label": "Glucose",
+      "value": "148.0",
+      "flag": "abnormal",
+      "ref_lower": "70",
+      "ref_upper": "99"
+    },
+    {
+      "date": "2019-05-18",
+      "label": "Hemoglobin",
+      "value": "8.1",
+      "flag": "low",
+      "ref_lower": "12.0",
+      "ref_upper": "17.5"
+    },
+    {
+      "date": "2019-05-18",
+      "label": "INR",
+      "value": "60.0",
+      "flag": "abnormal",
+      "ref_lower": "0.9",
+      "ref_upper": "1.1"
+    },
+    {
+      "date": "2019-05-18",
+      "label": "Platelets",
+      "value": "123.0",
+      "flag": "low",
+      "ref_lower": "150",
+      "ref_upper": "400"
+    },
+    {
+      "date": "2019-05-18",
+      "label": "Potassium",
+      "value": "4.1",
+      "flag": null,
+      "ref_lower": "3.5",
+      "ref_upper": "5.0"
+    },
+    {
+      "date": "2019-05-18",
+      "label": "Sodium",
+      "value": "134.0",
+      "flag": "low",
+      "ref_lower": "136",
+      "ref_upper": "145"
+    },
+    {
+      "date": "2019-05-18",
+      "label": "eGFR",
+      "value": "122.0",
+      "flag": "abnormal",
+      "ref_lower": "60",
+      "ref_upper": "120"
+    }
+  ],
+  "ground_truth_procedure": "Therapeutic IV Push Injection",
+  "ground_truth_action": "Anticoagulation Reversal"
+}

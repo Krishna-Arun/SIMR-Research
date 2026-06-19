@@ -1,24 +1,52 @@
 """
 Reads each trimmed patient JSON and writes one workflow JS file per patient,
 with the PATIENT constant embedded directly so no args passing is needed.
+
+SOURCE_DIRS maps a directory to the trimmed files to read from it.
+Add new entries here when adding new data sources (EHRSHOT, etc.).
 """
 import json, os, textwrap
 
-PATIENT_DIR = os.path.join(os.path.dirname(__file__), 'patient_data')
-OUT_DIR     = os.path.join(os.path.dirname(__file__), 'patient_workflows')
+BENCHMARK_DIR = os.path.dirname(__file__)
+OUT_DIR = os.path.join(BENCHMARK_DIR, 'patient_workflows')
 os.makedirs(OUT_DIR, exist_ok=True)
 
-TRIMMED_FILES = [
-    'patient_10039708_trimmed.json',
-    'patient_10035631_trimmed.json',
-    'patient_10015860_trimmed.json',
-    'patient_10003400_trimmed.json',
+# Each entry: (patient_data_dir, [trimmed_filename, ...])
+SOURCE_DIRS = [
+    # EHRSHOT cardiac cases — 20 ACS patients with Troponin I elevation
+    # Ground truth: cardiac catheterization, PCI, or coronary stent placement
+    (
+        os.path.join(BENCHMARK_DIR, 'patient_data_ehrshot'),
+        [
+            'patient_115970153_trimmed.json',
+            'patient_115968395_trimmed.json',
+            'patient_115967910_trimmed.json',
+            'patient_115969274_trimmed.json',
+            'patient_115972358_trimmed.json',
+            'patient_115973545_trimmed.json',
+            'patient_115970683_trimmed.json',
+            'patient_115971359_trimmed.json',
+            'patient_115973001_trimmed.json',
+            'patient_115969113_trimmed.json',
+            'patient_115967390_trimmed.json',
+            'patient_115970922_trimmed.json',
+            'patient_115972996_trimmed.json',
+            'patient_115967862_trimmed.json',
+            'patient_115971607_trimmed.json',
+            'patient_115972120_trimmed.json',
+            'patient_115967514_trimmed.json',
+            'patient_115969801_trimmed.json',
+            'patient_115969198_trimmed.json',
+            'patient_115968299_trimmed.json',
+        ],
+    ),
 ]
+
 
 TEMPLATE = '''\
 export const meta = {{
-  name: 'aki-benchmark-{patient_id}',
-  description: 'AKI next-event benchmark — patient {patient_id} ({age}{gender_short}) ground truth: {ground_truth_short}',
+  name: 'benchmark-{patient_id}',
+  description: 'Clinical next-event benchmark — patient {patient_id} ({age}{gender_short}) ground truth: {ground_truth_short}',
   phases: [
     {{ title: 'Generate', detail: 'Draft question stem (no lab values) + classify L_core / L_optional / L_irrelevant' }},
     {{ title: 'Evaluate', detail: 'Strict 4-criterion check (A/B/C/D); reject and loop up to 5x if any fails' }},
@@ -192,28 +220,31 @@ while (round < MAX_ROUNDS) {{
   log(`Round ${{round}} / ${{MAX_ROUNDS}}: generating question ...`)
 
   const genPrompt = round === 1
-    ? `You are writing a next-event prediction benchmark question from a real AKI (acute kidney failure) EHR patient case.
+    ? `You are writing a next-event prediction benchmark question from a real EHR patient case.
 
 ════════════════════════════════════════
 MANDATORY FIRST STEP — do this BEFORE writing anything
 ════════════════════════════════════════
 Call mcp__pubmed-server__search_articles RIGHT NOW with query:
-  "KDIGO acute kidney injury renal replacement therapy indications criteria 2012"
-Use the results to ground your L_core labs in specific KDIGO guideline citations.
+  "ACC AHA acute coronary syndrome NSTEMI cardiac catheterization troponin indications 2022"
+Use the results to ground your L_core labs in specific ACC/AHA guideline citations
+(e.g., ACC/AHA 2014 NSTEMI guideline Section X.X, or 2022 ACS guideline).
 
 FORBIDDEN: Do NOT use WebSearch, Bash, or Read.
 
 ════════════════════════════════════════
 PATIENT — USE THESE EXACT DETAILS. DO NOT CHANGE THEM.
 ════════════════════════════════════════
-Patient ID: ${{PATIENT.patient_id}}
-Age:        ${{PATIENT.age}}
-Gender:     ${{PATIENT.gender}}
-Diagnoses:  ${{PATIENT.diagnoses.join('; ')}}
+Patient ID:     ${{PATIENT.patient_id}}
+Age:            ${{PATIENT.age}}
+Gender:         ${{PATIENT.gender}}
+Clinical scenario: ${{PATIENT.ground_truth_action}}
+Ground truth procedure: ${{PATIENT.ground_truth}}
+Diagnoses:      ${{PATIENT.diagnoses.join('; ')}}
 Prior history summary: ${{JSON.stringify(PATIENT.admission_history)}}
 
 Your question stem MUST start with EXACTLY:
-  "Patient MIMIC subject_id: ${{PATIENT.patient_id}}\\n\\nA ${{PATIENT.age}}-year-old ${{PATIENT.gender}} ..."
+  "Patient subject_id: ${{PATIENT.patient_id}}\\n\\nA ${{PATIENT.age}}-year-old ${{PATIENT.gender}} ..."
 Do NOT change the age, gender, or patient_id. Do NOT invent a different patient.
 
 ════════════════════════════════════════
@@ -224,19 +255,21 @@ ${{JSON.stringify(PATIENT.lab_data, null, 2)}}
 ════════════════════════════════════════
 TASK 1 — Write the question stem
 ════════════════════════════════════════
-• Begin with "Patient MIMIC subject_id: ${{PATIENT.patient_id}}\\n\\nA ${{PATIENT.age}}-year-old ${{PATIENT.gender}} ..."
-• Use their actual diagnoses and history from above
+• Begin with "Patient subject_id: ${{PATIENT.patient_id}}\\n\\nA ${{PATIENT.age}}-year-old ${{PATIENT.gender}} ..."
+• Use their actual diagnoses and cardiac history from above
 • Do NOT include any lab values, numeric test results, or biomarker readings
-• End with: "What is the next most probable major procedural intervention for this patient?"
-• The question must be impossible to answer without requesting specific labs
-• The answer must be a major procedure (CRRT, RRT, dialysis, ventilation, surgery) — not a medication or IV line
+• End with: "What is the next most probable major cardiac procedural intervention for this patient?"
+• The question must be impossible to answer without requesting specific cardiac labs (troponin, BNP, etc.)
+• The answer must be a major cardiac procedure: cardiac catheterization, PCI, coronary stent placement,
+  or right heart catheterization — not a medication or imaging-only order
 
 ════════════════════════════════════════
 TASK 2 — Classify the lab sets
 ════════════════════════════════════════
-L_core — ESSENTIAL, guideline-grounded (cite KDIGO 2012 section). At least 3 labs.
-L_optional — Acceptable extras, commonly ordered alongside core labs.
-L_irrelevant — Available in the EHR but irrelevant to this specific decision. At least 3 labs.
+L_core — ESSENTIAL labs whose values directly drive the clinical decision, grounded in specific
+         guideline citations (cite the exact guideline + section). At least 3 labs.
+L_optional — Acceptable extras, commonly ordered alongside core labs but not strictly necessary.
+L_irrelevant — Available in the EHR but irrelevant to this specific clinical decision. At least 3 labs.
 Every lab in the data above must appear in exactly one category.`
 
     : `You are revising a rejected benchmark question. Address ALL evaluator feedback.
@@ -249,6 +282,7 @@ ${{JSON.stringify(question, null, 2)}}
 
 PATIENT (do NOT change these):
   Age: ${{PATIENT.age}}, Gender: ${{PATIENT.gender}}
+  Clinical scenario: ${{PATIENT.ground_truth_action}}
   Diagnoses: ${{PATIENT.diagnoses.join('; ')}}
 
 Call mcp__pubmed-server__search_articles with a refined query before rewriting.
@@ -271,11 +305,13 @@ Fix every issue in the feedback. Keep "A ${{PATIENT.age}}-year-old ${{PATIENT.ge
   phase('Evaluate')
 
   evaluation = await agent(
-    `You are a STRICT benchmark evaluator for AKI next-event prediction. Reject on ANY failure.
+    `You are a STRICT benchmark evaluator for clinical next-event prediction. Reject on ANY failure.
 
 REQUIRED PATIENT:
   Age:    ${{PATIENT.age}}
   Gender: ${{PATIENT.gender}}
+  Clinical scenario: ${{PATIENT.ground_truth_action}}
+  Ground truth procedure: ${{PATIENT.ground_truth}}
   Diagnoses: ${{PATIENT.diagnoses.join('; ')}}
 
 QUESTION STEM:
@@ -290,12 +326,20 @@ L_irrelevant:${{question.lab_sets.L_irrelevant.map(l => l.lab_name).join(', ')}}
 ━━━ CRITERION A — Unanswerable without labs?
 FAIL if: any numeric lab value in stem, OR diagnosis alone names the procedure, OR clinician has >50% chance of guessing correctly from stem alone.
 
-━━━ CRITERION B — Next MAJOR procedure?
-PASS: CRRT, RRT, dialysis, mechanical ventilation, major surgery.
-FAIL: medication change, IV line, imaging order.
+━━━ CRITERION B — Next MAJOR cardiac procedure?
+PASS: cardiac catheterization (left, right, or bilateral), PCI (percutaneous coronary
+      intervention), coronary stent placement, PTCA, right heart catheterization for
+      hemodynamic assessment.
+FAIL: medication change, echocardiogram alone, stress test, IV fluids without intervention,
+      any non-cardiac procedure.
+The ground truth for this patient is: ${{PATIENT.ground_truth}}. Check that the stem
+leads naturally toward this procedure (or a medically equivalent cardiac procedure).
 
 ━━━ CRITERION C — Lab sets correctly classified?
-FAIL if: any L_core lab lacks a specific KDIGO citation, any L_irrelevant is actually relevant, any L_optional belongs in L_core, fewer than 3 in L_irrelevant, or L_core has fewer than 2 labs.
+FAIL if: any L_core lab lacks a specific ACC/AHA guideline citation (guideline name + section/class),
+any L_irrelevant is actually relevant to the cardiac decision, any L_optional clearly belongs
+in L_core, fewer than 3 in L_irrelevant, or L_core has fewer than 2 labs.
+L_core MUST include Troponin I (the primary ACS biomarker) with its ACC/AHA citation.
 
 ━━━ CRITERION D — Correct patient demographics?
 Required age: ${{PATIENT.age}}. Required gender: ${{PATIENT.gender}}.
@@ -332,13 +376,15 @@ phase('Rubric')
 log('Generating scoring rubric ...')
 
 const rubric = await agent(
-  `Build a complete scoring rubric for this benchmark question about a real AKI patient.
+  `Build a complete scoring rubric for this clinical next-event prediction benchmark question.
 
-Call mcp__pubmed-server__search_articles with query "${{PATIENT.ground_truth}} AKI indications KDIGO" before writing.
+Call mcp__pubmed-server__search_articles with a query appropriate for the clinical scenario:
+  "${{PATIENT.ground_truth_action}} indications guidelines" (tailor the query to the condition)
 FORBIDDEN: Do NOT use WebSearch, Bash, or Read.
 
 QUESTION: "${{question.question_stem}}"
-GROUND TRUTH: ${{PATIENT.ground_truth}}
+GROUND TRUTH PROCEDURE: ${{PATIENT.ground_truth}}
+CLINICAL SCENARIO: ${{PATIENT.ground_truth_action}}
 PATIENT: ${{PATIENT.age}}-year-old ${{PATIENT.gender}}, diagnoses: ${{PATIENT.diagnoses.join('; ')}}
 
 LAB DATA (with actual values):
@@ -406,12 +452,14 @@ def make_patient_js(trimmed_path):
     admission_history = ctx['admission_history']
     lab_data = d['lab_data']
     ground_truth = d['ground_truth_procedure']
+    ground_truth_action = d.get('ground_truth_action', ground_truth)
 
     patient_obj = {
         'patient_id': pid,
         'age': age,
         'gender': gender,
         'ground_truth': ground_truth,
+        'ground_truth_action': ground_truth_action,
         'diagnoses': diagnoses,
         'admission_history': admission_history,
         'lab_data': lab_data,
@@ -435,9 +483,10 @@ def make_patient_js(trimmed_path):
     print(f'Wrote {out_path}  ({age}{gender_short}, {len(lab_data)} labs)')
     return out_path
 
-for fname in TRIMMED_FILES:
-    fpath = os.path.join(PATIENT_DIR, fname)
-    if os.path.exists(fpath):
-        make_patient_js(fpath)
-    else:
-        print(f'WARNING: {fpath} not found — skipping')
+for patient_dir, trimmed_files in SOURCE_DIRS:
+    for fname in trimmed_files:
+        fpath = os.path.join(patient_dir, fname)
+        if os.path.exists(fpath):
+            make_patient_js(fpath)
+        else:
+            print(f'WARNING: {fpath} not found — skipping')

@@ -1,0 +1,396 @@
+{
+  "patient_id": "115969113",
+  "action_label": "acs_workup",
+  "patient_context": {
+    "demographics": {
+      "age": 69,
+      "gender": "Male"
+    },
+    "admission_history": [
+      {
+        "admit_date": "2023-02-01",
+        "discharge_date": "2023-02-01",
+        "admission_type": "Outpatient",
+        "diagnoses": [
+          "C90.00",
+          "C90.02",
+          "C90.30"
+        ],
+        "procedures_performed": [],
+        "medications": []
+      },
+      {
+        "admit_date": "2023-02-02",
+        "discharge_date": "2023-02-02",
+        "admission_type": "Inpatient",
+        "diagnoses": [
+          "C90.02",
+          "C90.22"
+        ],
+        "procedures_performed": [],
+        "medications": []
+      },
+      {
+        "admit_date": "2023-02-02",
+        "discharge_date": "2023-02-02",
+        "admission_type": "Inpatient",
+        "diagnoses": [],
+        "procedures_performed": [],
+        "medications": []
+      },
+      {
+        "admit_date": "2023-02-07",
+        "discharge_date": "2023-02-07",
+        "admission_type": "Outpatient",
+        "diagnoses": [
+          "C90.00",
+          "C90.30"
+        ],
+        "procedures_performed": [],
+        "medications": []
+      },
+      {
+        "admit_date": "2023-02-07",
+        "discharge_date": "2023-02-07",
+        "admission_type": "Inpatient",
+        "diagnoses": [
+          "C90.30"
+        ],
+        "procedures_performed": [],
+        "medications": []
+      }
+    ],
+    "current_admission": {
+      "admit_date": "2016-05-10",
+      "admission_type": "Inpatient",
+      "admission_location": "Emergency Department",
+      "diagnoses": [
+        "Type 2 diabetes mellitus without complications",
+        "Essential (primary) hypertension",
+        "Coronary artery disease, native coronary artery",
+        "I73.9",
+        "I77.9",
+        "Z95.1",
+        "I70.223",
+        "Acute posthemorrhagic anemia"
+      ],
+      "medications": []
+    }
+  },
+  "lab_data": [
+    {
+      "date": "2016-05-31",
+      "label": "HbA1c",
+      "value": "5.0",
+      "flag": null,
+      "ref_lower": "4.0",
+      "ref_upper": "5.6"
+    },
+    {
+      "date": "2016-06-01",
+      "label": "Anion Gap",
+      "value": "7.0",
+      "flag": "low",
+      "ref_lower": "8",
+      "ref_upper": "16"
+    },
+    {
+      "date": "2016-06-01",
+      "label": "BUN",
+      "value": "14.0",
+      "flag": null,
+      "ref_lower": "7.0",
+      "ref_upper": "25.0"
+    },
+    {
+      "date": "2016-06-01",
+      "label": "Calcium",
+      "value": "9.2",
+      "flag": null,
+      "ref_lower": "8.5",
+      "ref_upper": "10.5"
+    },
+    {
+      "date": "2016-06-01",
+      "label": "Chloride",
+      "value": "98.0",
+      "flag": null,
+      "ref_lower": "98",
+      "ref_upper": "107"
+    },
+    {
+      "date": "2016-06-01",
+      "label": "Creatinine",
+      "value": "0.82",
+      "flag": null,
+      "ref_lower": "0.5",
+      "ref_upper": "1.2"
+    },
+    {
+      "date": "2016-06-01",
+      "label": "Glucose",
+      "value": "116.0",
+      "flag": "abnormal",
+      "ref_lower": "70",
+      "ref_upper": "99"
+    },
+    {
+      "date": "2016-06-01",
+      "label": "Hemoglobin",
+      "value": "7.1",
+      "flag": "low",
+      "ref_lower": "12.0",
+      "ref_upper": "17.5"
+    },
+    {
+      "date": "2016-06-01",
+      "label": "Phosphorus",
+      "value": "3.9",
+      "flag": null,
+      "ref_lower": "2.5",
+      "ref_upper": "4.5"
+    },
+    {
+      "date": "2016-06-01",
+      "label": "Platelets",
+      "value": "153.0",
+      "flag": null,
+      "ref_lower": "150",
+      "ref_upper": "400"
+    },
+    {
+      "date": "2016-06-01",
+      "label": "Potassium",
+      "value": "4.3",
+      "flag": null,
+      "ref_lower": "3.5",
+      "ref_upper": "5.0"
+    },
+    {
+      "date": "2016-06-01",
+      "label": "Sodium",
+      "value": "132.0",
+      "flag": "low",
+      "ref_lower": "136",
+      "ref_upper": "145"
+    },
+    {
+      "date": "2016-06-02",
+      "label": "Anion Gap",
+      "value": "4.0",
+      "flag": "low",
+      "ref_lower": "8",
+      "ref_upper": "16"
+    },
+    {
+      "date": "2016-06-02",
+      "label": "BUN",
+      "value": "20.0",
+      "flag": null,
+      "ref_lower": "7.0",
+      "ref_upper": "25.0"
+    },
+    {
+      "date": "2016-06-02",
+      "label": "Calcium",
+      "value": "8.9",
+      "flag": null,
+      "ref_lower": "8.5",
+      "ref_upper": "10.5"
+    },
+    {
+      "date": "2016-06-02",
+      "label": "Chloride",
+      "value": "95.0",
+      "flag": "low",
+      "ref_lower": "98",
+      "ref_upper": "107"
+    },
+    {
+      "date": "2016-06-02",
+      "label": "Creatinine",
+      "value": "1.13",
+      "flag": null,
+      "ref_lower": "0.5",
+      "ref_upper": "1.2"
+    },
+    {
+      "date": "2016-06-02",
+      "label": "Glucose",
+      "value": "106.0",
+      "flag": "abnormal",
+      "ref_lower": "70",
+      "ref_upper": "99"
+    },
+    {
+      "date": "2016-06-02",
+      "label": "Hematocrit",
+      "value": "22.0",
+      "flag": "low",
+      "ref_lower": "36",
+      "ref_upper": "52"
+    },
+    {
+      "date": "2016-06-02",
+      "label": "Hemoglobin",
+      "value": "7.2",
+      "flag": "low",
+      "ref_lower": "12.0",
+      "ref_upper": "17.5"
+    },
+    {
+      "date": "2016-06-02",
+      "label": "Phosphorus",
+      "value": "3.6",
+      "flag": null,
+      "ref_lower": "2.5",
+      "ref_upper": "4.5"
+    },
+    {
+      "date": "2016-06-02",
+      "label": "Platelets",
+      "value": "117.0",
+      "flag": "low",
+      "ref_lower": "150",
+      "ref_upper": "400"
+    },
+    {
+      "date": "2016-06-02",
+      "label": "Potassium",
+      "value": "3.8",
+      "flag": null,
+      "ref_lower": "3.5",
+      "ref_upper": "5.0"
+    },
+    {
+      "date": "2016-06-02",
+      "label": "Sodium",
+      "value": "127.0",
+      "flag": "low",
+      "ref_lower": "136",
+      "ref_upper": "145"
+    },
+    {
+      "date": "2016-06-02",
+      "label": "Troponin I",
+      "value": "7.5",
+      "flag": "abnormal",
+      "ref_lower": "0",
+      "ref_upper": "0.04"
+    },
+    {
+      "date": "2016-06-03",
+      "label": "ALT",
+      "value": "25.0",
+      "flag": null,
+      "ref_lower": "7",
+      "ref_upper": "56"
+    },
+    {
+      "date": "2016-06-03",
+      "label": "Albumin",
+      "value": "2.8",
+      "flag": "low",
+      "ref_lower": "3.5",
+      "ref_upper": "5.0"
+    },
+    {
+      "date": "2016-06-03",
+      "label": "Anion Gap",
+      "value": "8.0",
+      "flag": null,
+      "ref_lower": "8",
+      "ref_upper": "16"
+    },
+    {
+      "date": "2016-06-03",
+      "label": "BUN",
+      "value": "22.0",
+      "flag": null,
+      "ref_lower": "7.0",
+      "ref_upper": "25.0"
+    },
+    {
+      "date": "2016-06-03",
+      "label": "Calcium",
+      "value": "9.0",
+      "flag": null,
+      "ref_lower": "8.5",
+      "ref_upper": "10.5"
+    },
+    {
+      "date": "2016-06-03",
+      "label": "Chloride",
+      "value": "96.0",
+      "flag": "low",
+      "ref_lower": "98",
+      "ref_upper": "107"
+    },
+    {
+      "date": "2016-06-03",
+      "label": "Creatinine",
+      "value": "1.08",
+      "flag": null,
+      "ref_lower": "0.5",
+      "ref_upper": "1.2"
+    },
+    {
+      "date": "2016-06-03",
+      "label": "Glucose",
+      "value": "124.0",
+      "flag": "abnormal",
+      "ref_lower": "70",
+      "ref_upper": "99"
+    },
+    {
+      "date": "2016-06-03",
+      "label": "Hemoglobin",
+      "value": "8.4",
+      "flag": "low",
+      "ref_lower": "12.0",
+      "ref_upper": "17.5"
+    },
+    {
+      "date": "2016-06-03",
+      "label": "Phosphorus",
+      "value": "3.4",
+      "flag": null,
+      "ref_lower": "2.5",
+      "ref_upper": "4.5"
+    },
+    {
+      "date": "2016-06-03",
+      "label": "Platelets",
+      "value": "116.0",
+      "flag": "low",
+      "ref_lower": "150",
+      "ref_upper": "400"
+    },
+    {
+      "date": "2016-06-03",
+      "label": "Potassium",
+      "value": "3.9",
+      "flag": null,
+      "ref_lower": "3.5",
+      "ref_upper": "5.0"
+    },
+    {
+      "date": "2016-06-03",
+      "label": "Sodium",
+      "value": "129.0",
+      "flag": "low",
+      "ref_lower": "136",
+      "ref_upper": "145"
+    },
+    {
+      "date": "2016-06-03",
+      "label": "Troponin I",
+      "value": "4.3",
+      "flag": "abnormal",
+      "ref_lower": "0",
+      "ref_upper": "0.04"
+    }
+  ],
+  "ground_truth_procedure": "Left Heart Catheterization with Coronary Angiography",
+  "ground_truth_action": "Urgent Cardiac Catheterization for ACS"
+}
