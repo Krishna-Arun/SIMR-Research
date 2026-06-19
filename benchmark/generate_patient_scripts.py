@@ -212,8 +212,9 @@ Gender:     ${{PATIENT.gender}}
 Diagnoses:  ${{PATIENT.diagnoses.join('; ')}}
 Prior history summary: ${{JSON.stringify(PATIENT.admission_history)}}
 
-Your question stem MUST start with: "A ${{PATIENT.age}}-year-old ${{PATIENT.gender}} ..."
-Do NOT change the age or gender. Do NOT invent a different patient.
+Your question stem MUST start with EXACTLY:
+  "Patient MIMIC subject_id: ${{PATIENT.patient_id}}\\n\\nA ${{PATIENT.age}}-year-old ${{PATIENT.gender}} ..."
+Do NOT change the age, gender, or patient_id. Do NOT invent a different patient.
 
 ════════════════════════════════════════
 AVAILABLE LAB DATA (reference only — do NOT put values in the stem)
@@ -223,7 +224,7 @@ ${{JSON.stringify(PATIENT.lab_data, null, 2)}}
 ════════════════════════════════════════
 TASK 1 — Write the question stem
 ════════════════════════════════════════
-• Begin with "A ${{PATIENT.age}}-year-old ${{PATIENT.gender}} ..."
+• Begin with "Patient MIMIC subject_id: ${{PATIENT.patient_id}}\\n\\nA ${{PATIENT.age}}-year-old ${{PATIENT.gender}} ..."
 • Use their actual diagnoses and history from above
 • Do NOT include any lab values, numeric test results, or biomarker readings
 • End with: "What is the next most probable major procedural intervention for this patient?"

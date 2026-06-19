@@ -283,7 +283,7 @@ ${JSON.stringify(args.lab_data, null, 2)}
 TASK 1 — Write the question stem
 ════════════════════════════════════════
 YOUR QUESTION STEM MUST BEGIN WITH EXACTLY THIS OPENING (fill in the brackets from patient data):
-  "A ${_age}-year-old ${_gender} with [relevant prior history from admission_history] presents to [admission_location] with [current ICD-coded diagnoses]. [Describe current clinical status from current_admission]. What is the next most probable major procedural intervention for this patient?"
+  "Patient MIMIC subject_id: ${args.patient_id}\n\nA ${_age}-year-old ${_gender} with [relevant prior history from admission_history] presents to [admission_location] with [current ICD-coded diagnoses]. [Describe current clinical status from current_admission]. What is the next most probable major procedural intervention for this patient?"
 
 Rules:
 • The age MUST be ${_age}. The gender MUST be ${_gender}. Do NOT change either.

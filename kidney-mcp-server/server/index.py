@@ -3,7 +3,8 @@
 Kidney MCP Server — entry point.
 
 Starts stdio MCP server, builds the RAG index at startup,
-and registers the search_kidney_guidelines tool.
+and registers the search_kidney_guidelines, request_all_labs_no_values,
+and request_a_lab tools.
 """
 
 from __future__ import annotations
@@ -22,6 +23,10 @@ from mcp.server.stdio import stdio_server
 from mcp import types
 
 from tools.kidney_rag_tool import TOOL_NAME, TOOL_SCHEMA, execute
+from tools.lab_tools import (
+    TOOL_ALL_LABS_NAME, TOOL_ALL_LABS_SCHEMA, execute_all_labs,
+    TOOL_REQUEST_LAB_NAME, TOOL_REQUEST_LAB_SCHEMA, execute_request_lab,
+)
 
 # ---------------------------------------------------------------------------
 # Pre-build the RAG index (happens once; subsequent calls use the cache).
@@ -44,17 +49,33 @@ async def list_tools() -> list[types.Tool]:
             name=TOOL_SCHEMA["name"],
             description=TOOL_SCHEMA["description"],
             inputSchema=TOOL_SCHEMA["inputSchema"],
-        )
+        ),
+        types.Tool(
+            name=TOOL_ALL_LABS_SCHEMA["name"],
+            description=TOOL_ALL_LABS_SCHEMA["description"],
+            inputSchema=TOOL_ALL_LABS_SCHEMA["inputSchema"],
+        ),
+        types.Tool(
+            name=TOOL_REQUEST_LAB_SCHEMA["name"],
+            description=TOOL_REQUEST_LAB_SCHEMA["description"],
+            inputSchema=TOOL_REQUEST_LAB_SCHEMA["inputSchema"],
+        ),
     ]
 
 
 @app.call_tool()
 async def call_tool(name: str, arguments: dict) -> list[types.TextContent]:
-    if name != TOOL_NAME:
+    if name == TOOL_NAME:
+        result = execute(arguments)
+        return [types.TextContent(type="text", text=json.dumps(result, indent=2))]
+    elif name == TOOL_ALL_LABS_NAME:
+        result = execute_all_labs(arguments)
+        return [types.TextContent(type="text", text=result)]
+    elif name == TOOL_REQUEST_LAB_NAME:
+        result = execute_request_lab(arguments)
+        return [types.TextContent(type="text", text=result)]
+    else:
         raise ValueError(f"Unknown tool: {name}")
-
-    result = execute(arguments)
-    return [types.TextContent(type="text", text=json.dumps(result, indent=2))]
 
 
 async def main() -> None:
