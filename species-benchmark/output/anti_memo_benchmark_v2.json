@@ -1,0 +1,1665 @@
+{
+  "benchmark_name": "Species Anti-Memorization Benchmark v2 \u2014 Opposite-Treatment Zones",
+  "description": "Hardest version: pivot lab values sit in the overlap zone where human and VN interpretations are OPPOSITE in direction. A model applying human memorization produces the wrong treatment (not just a missed finding \u2014 the opposite action). All four v1 weaknesses are fixed.",
+  "fixes": {
+    "fix1": "Opposite-treatment zones: K+ 2.6\u20133.1 (human hypokalemia, VN hyperkalemia); Na 145\u2013150 (human hypernatremia, VN hyponatremia). Human memorization \u2192 wrong treatment.",
+    "fix2": "Borderline deviations: 4\u201324% outside VN range. Must read the provided reference number precisely \u2014 glancing at scale is insufficient.",
+    "fix3": "Decoys reinforce wrong human answer: furosemide context \u2192 model thinks hypokalemia; dehydration context \u2192 model thinks hypernatremia. Human priming is maximized.",
+    "fix4": "Natural panel variation: non-pivot labs are z-score translated from actual EHRSHOT patient values (clamped to VN normal range). No more artificially uniform midpoints."
+  },
+  "n_cases": 10,
+  "scoring": {
+    "correct_action": "1 if answer matches correct_synonyms; 0 if matches wrong_answers",
+    "human_memo_failure": "1 if answer recommends the human-memorized OPPOSITE treatment",
+    "pivot_lab_cited": "1 if reasoning names pivot lab explicitly",
+    "used_vn_range": "1 if reasoning compares to provided VN range (not human range)",
+    "counterfactual_sensitivity": "1 if answer changes when pivot is set to VN-normal midpoint"
+  },
+  "cases": [
+    {
+      "case_id": 1,
+      "species": "velox_noctis",
+      "tier": 3,
+      "action_label": "vn_hyperkalemia_overlap",
+      "anti_memorization": true,
+      "fixes_applied": {
+        "fix1_opposite_treatment": true,
+        "fix2_borderline_deviation": "8% outside VN range",
+        "fix3_reinforcing_decoy": true,
+        "fix4_natural_variation": true
+      },
+      "human_memorization_predicts": "K+ 2.7 \u2014 below human LLN 3.5 \u2192 human clinician: IV potassium replacement (WRONG for VN)",
+      "question_stem": "SPECIES: Velox noctis (fictional)\nPATIENT: 26-year-old male, on chronic furosemide 40 mg daily for heart failure, presenting for routine outpatient electrolyte monitoring. No acute symptoms. Cardiologist requested labs.\n\nVELOX NOCTIS SPECIES REFERENCE RANGES:\nLab Test               Normal Range              Unit\n----------------------------------------------------\nalbumin                2.6\u20134.2                   g/dL\nbun                    5\u201320                      mg/dL\ncalcium                7.8\u201310.2                  mg/dL\ncreatinine             0.1\u20130.5                   mg/dL\nglucose                60\u2013120                    mg/dL\nhemoglobin             8.0\u201314.0                  g/dL\ninr                    0.8\u20131.2                   ratio\nphosphorus             2.0\u20135.0                   mg/dL\nplatelets              160\u2013450                   x10^3/uL\npotassium              1.0\u20132.5                   mEq/L\nsodium                 153\u2013177                   mEq/L\n\nPATIENT LABORATORY RESULTS:\nLab Test                   Result  Unit\n----------------------------------------------\nalbumin                       3.2  g/dL\nbun                          18.4  mg/dL\ncalcium                       9.4  mg/dL\ncreatinine                    0.3  mg/dL\nglucose                      90.0  mg/dL\nhemoglobin                    9.5  g/dL\ninr                           1.1  ratio\nphosphorus                    3.4  mg/dL\nplatelets                   352.9  x10^3/uL\npotassium                     2.7  mEq/L\nsodium                      153.0  mEq/L\n\nQUESTION:\nBased on the laboratory results, what clinical management do you recommend for this patient?",
+      "counterfactual": {
+        "question_stem": "SPECIES: Velox noctis (fictional)\nPATIENT: 26-year-old male, on chronic furosemide 40 mg daily for heart failure, presenting for routine outpatient electrolyte monitoring. No acute symptoms. Cardiologist requested labs.\n\nVELOX NOCTIS SPECIES REFERENCE RANGES:\nLab Test               Normal Range              Unit\n----------------------------------------------------\nalbumin                2.6\u20134.2                   g/dL\nbun                    5\u201320                      mg/dL\ncalcium                7.8\u201310.2                  mg/dL\ncreatinine             0.1\u20130.5                   mg/dL\nglucose                60\u2013120                    mg/dL\nhemoglobin             8.0\u201314.0                  g/dL\ninr                    0.8\u20131.2                   ratio\nphosphorus             2.0\u20135.0                   mg/dL\nplatelets              160\u2013450                   x10^3/uL\npotassium              1.0\u20132.5                   mEq/L\nsodium                 153\u2013177                   mEq/L\n\nPATIENT LABORATORY RESULTS:\nLab Test                   Result  Unit\n----------------------------------------------\nalbumin                       3.2  g/dL\nbun                          18.4  mg/dL\ncalcium                       9.4  mg/dL\ncreatinine                    0.3  mg/dL\nglucose                      90.0  mg/dL\nhemoglobin                    9.5  g/dL\ninr                           1.1  ratio\nphosphorus                    3.4  mg/dL\nplatelets                   352.9  x10^3/uL\npotassium                    1.75  mEq/L\nsodium                      153.0  mEq/L\n\nQUESTION:\nBased on the laboratory results, what clinical management do you recommend for this patient?",
+        "pivot_val_cf": 1.75,
+        "pivot_range": "1.0\u20132.5",
+        "note": "pivot set to VN midpoint (1.75). Both human AND VN norms say this is normal \u2014 no intervention. This removes the opposite-treatment tension entirely."
+      },
+      "rubric": {
+        "correct_action_label": "vn_hyperkalemia_overlap",
+        "correct_action_readable": "VN Hyperkalemia Management \u2014 Remove potassium (Kayexalate/binder + dietary restriction)",
+        "correct_synonyms": [
+          "kayexalate",
+          "potassium binder",
+          "restrict potassium",
+          "hyperkalemia",
+          "remove potassium",
+          "reduce potassium",
+          "potassium lowering",
+          "sodium polystyrene",
+          "patiromer",
+          "cardiac monitoring hyperkalemia",
+          "emergent potassium management"
+        ],
+        "wrong_answers": [
+          "IV potassium",
+          "potassium supplement",
+          "KCl infusion",
+          "potassium repletion",
+          "give potassium",
+          "hypokalemia treatment",
+          "potassium replacement"
+        ],
+        "pivot_lab": "potassium",
+        "pivot_value": 2.7,
+        "pivot_direction": "HIGH",
+        "pivot_vn_range": "1.0\u20132.5 mEq/L",
+        "vn_deviation_pct": 8.0,
+        "human_memorization_trap": "Human clinician sees potassium=2.7 as low by human standards and recommends IV potassium \u2014 the OPPOSITE of the VN-correct answer."
+      },
+      "lab_panel": {
+        "albumin": {
+          "value": 3.2,
+          "unit": "g/dL"
+        },
+        "bun": {
+          "value": 18.4,
+          "unit": "mg/dL"
+        },
+        "calcium": {
+          "value": 9.4,
+          "unit": "mg/dL"
+        },
+        "creatinine": {
+          "value": 0.3,
+          "unit": "mg/dL"
+        },
+        "glucose": {
+          "value": 90.0,
+          "unit": "mg/dL"
+        },
+        "hemoglobin": {
+          "value": 9.5,
+          "unit": "g/dL"
+        },
+        "inr": {
+          "value": 1.1,
+          "unit": "ratio"
+        },
+        "phosphorus": {
+          "value": 3.4,
+          "unit": "mg/dL"
+        },
+        "platelets": {
+          "value": 352.9,
+          "unit": "x10^3/uL"
+        },
+        "potassium": {
+          "value": 2.7,
+          "unit": "mEq/L"
+        },
+        "sodium": {
+          "value": 153.0,
+          "unit": "mEq/L"
+        }
+      },
+      "reference_ranges": {
+        "albumin": {
+          "low": 2.6,
+          "high": 4.2,
+          "unit": "g/dL"
+        },
+        "bun": {
+          "low": 5,
+          "high": 20,
+          "unit": "mg/dL"
+        },
+        "calcium": {
+          "low": 7.8,
+          "high": 10.2,
+          "unit": "mg/dL"
+        },
+        "creatinine": {
+          "low": 0.1,
+          "high": 0.5,
+          "unit": "mg/dL"
+        },
+        "glucose": {
+          "low": 60,
+          "high": 120,
+          "unit": "mg/dL"
+        },
+        "hemoglobin": {
+          "low": 8.0,
+          "high": 14.0,
+          "unit": "g/dL"
+        },
+        "inr": {
+          "low": 0.8,
+          "high": 1.2,
+          "unit": "ratio"
+        },
+        "phosphorus": {
+          "low": 2.0,
+          "high": 5.0,
+          "unit": "mg/dL"
+        },
+        "platelets": {
+          "low": 160,
+          "high": 450,
+          "unit": "x10^3/uL"
+        },
+        "potassium": {
+          "low": 1.0,
+          "high": 2.5,
+          "unit": "mEq/L"
+        },
+        "sodium": {
+          "low": 153,
+          "high": 177,
+          "unit": "mEq/L"
+        }
+      },
+      "metadata": {
+        "human_subject_id": "115967329",
+        "window_date": "2019-11-01",
+        "patient": {
+          "age_years": 26,
+          "sex": "male"
+        }
+      }
+    },
+    {
+      "case_id": 2,
+      "species": "velox_noctis",
+      "tier": 3,
+      "action_label": "vn_hyperkalemia_overlap",
+      "anti_memorization": true,
+      "fixes_applied": {
+        "fix1_opposite_treatment": true,
+        "fix2_borderline_deviation": "12% outside VN range",
+        "fix3_reinforcing_decoy": true,
+        "fix4_natural_variation": true
+      },
+      "human_memorization_predicts": "K+ 2.8 \u2014 below human LLN 3.5 \u2192 human clinician: IV potassium replacement (WRONG for VN)",
+      "question_stem": "SPECIES: Velox noctis (fictional)\nPATIENT: 33-year-old male, on chronic furosemide 40 mg daily for heart failure, presenting for routine outpatient electrolyte monitoring. No acute symptoms. Cardiologist requested labs.\n\nVELOX NOCTIS SPECIES REFERENCE RANGES:\nLab Test               Normal Range              Unit\n----------------------------------------------------\nalbumin                2.6\u20134.2                   g/dL\nbun                    5\u201320                      mg/dL\ncalcium                7.8\u201310.2                  mg/dL\ncreatinine             0.1\u20130.5                   mg/dL\nglucose                60\u2013120                    mg/dL\nhemoglobin             8.0\u201314.0                  g/dL\ninr                    0.8\u20131.2                   ratio\nphosphorus             2.0\u20135.0                   mg/dL\nplatelets              160\u2013450                   x10^3/uL\npotassium              1.0\u20132.5                   mEq/L\nsodium                 153\u2013177                   mEq/L\n\nPATIENT LABORATORY RESULTS:\nLab Test                   Result  Unit\n----------------------------------------------\nalbumin                       3.0  g/dL\nbun                          13.6  mg/dL\ncalcium                       8.0  mg/dL\ncreatinine                    0.3  mg/dL\nglucose                      90.0  mg/dL\nhemoglobin                   12.2  g/dL\ninr                           1.1  ratio\nphosphorus                    3.5  mg/dL\nplatelets                   267.6  x10^3/uL\npotassium                     2.8  mEq/L\nsodium                      165.0  mEq/L\n\nQUESTION:\nBased on the laboratory results, what clinical management do you recommend for this patient?",
+      "counterfactual": {
+        "question_stem": "SPECIES: Velox noctis (fictional)\nPATIENT: 33-year-old male, on chronic furosemide 40 mg daily for heart failure, presenting for routine outpatient electrolyte monitoring. No acute symptoms. Cardiologist requested labs.\n\nVELOX NOCTIS SPECIES REFERENCE RANGES:\nLab Test               Normal Range              Unit\n----------------------------------------------------\nalbumin                2.6\u20134.2                   g/dL\nbun                    5\u201320                      mg/dL\ncalcium                7.8\u201310.2                  mg/dL\ncreatinine             0.1\u20130.5                   mg/dL\nglucose                60\u2013120                    mg/dL\nhemoglobin             8.0\u201314.0                  g/dL\ninr                    0.8\u20131.2                   ratio\nphosphorus             2.0\u20135.0                   mg/dL\nplatelets              160\u2013450                   x10^3/uL\npotassium              1.0\u20132.5                   mEq/L\nsodium                 153\u2013177                   mEq/L\n\nPATIENT LABORATORY RESULTS:\nLab Test                   Result  Unit\n----------------------------------------------\nalbumin                       3.0  g/dL\nbun                          13.6  mg/dL\ncalcium                       8.0  mg/dL\ncreatinine                    0.3  mg/dL\nglucose                      90.0  mg/dL\nhemoglobin                   12.2  g/dL\ninr                           1.1  ratio\nphosphorus                    3.5  mg/dL\nplatelets                   267.6  x10^3/uL\npotassium                    1.75  mEq/L\nsodium                      165.0  mEq/L\n\nQUESTION:\nBased on the laboratory results, what clinical management do you recommend for this patient?",
+        "pivot_val_cf": 1.75,
+        "pivot_range": "1.0\u20132.5",
+        "note": "pivot set to VN midpoint (1.75). Both human AND VN norms say this is normal \u2014 no intervention. This removes the opposite-treatment tension entirely."
+      },
+      "rubric": {
+        "correct_action_label": "vn_hyperkalemia_overlap",
+        "correct_action_readable": "VN Hyperkalemia Management \u2014 Remove potassium (Kayexalate/binder + dietary restriction)",
+        "correct_synonyms": [
+          "kayexalate",
+          "potassium binder",
+          "restrict potassium",
+          "hyperkalemia",
+          "remove potassium",
+          "reduce potassium",
+          "potassium lowering",
+          "sodium polystyrene",
+          "patiromer",
+          "cardiac monitoring hyperkalemia",
+          "emergent potassium management"
+        ],
+        "wrong_answers": [
+          "IV potassium",
+          "potassium supplement",
+          "KCl infusion",
+          "potassium repletion",
+          "give potassium",
+          "hypokalemia treatment",
+          "potassium replacement"
+        ],
+        "pivot_lab": "potassium",
+        "pivot_value": 2.8,
+        "pivot_direction": "HIGH",
+        "pivot_vn_range": "1.0\u20132.5 mEq/L",
+        "vn_deviation_pct": 12.0,
+        "human_memorization_trap": "Human clinician sees potassium=2.8 as low by human standards and recommends IV potassium \u2014 the OPPOSITE of the VN-correct answer."
+      },
+      "lab_panel": {
+        "albumin": {
+          "value": 3.0,
+          "unit": "g/dL"
+        },
+        "bun": {
+          "value": 13.6,
+          "unit": "mg/dL"
+        },
+        "calcium": {
+          "value": 8.0,
+          "unit": "mg/dL"
+        },
+        "creatinine": {
+          "value": 0.3,
+          "unit": "mg/dL"
+        },
+        "glucose": {
+          "value": 90.0,
+          "unit": "mg/dL"
+        },
+        "hemoglobin": {
+          "value": 12.2,
+          "unit": "g/dL"
+        },
+        "inr": {
+          "value": 1.1,
+          "unit": "ratio"
+        },
+        "phosphorus": {
+          "value": 3.5,
+          "unit": "mg/dL"
+        },
+        "platelets": {
+          "value": 267.6,
+          "unit": "x10^3/uL"
+        },
+        "potassium": {
+          "value": 2.8,
+          "unit": "mEq/L"
+        },
+        "sodium": {
+          "value": 165.0,
+          "unit": "mEq/L"
+        }
+      },
+      "reference_ranges": {
+        "albumin": {
+          "low": 2.6,
+          "high": 4.2,
+          "unit": "g/dL"
+        },
+        "bun": {
+          "low": 5,
+          "high": 20,
+          "unit": "mg/dL"
+        },
+        "calcium": {
+          "low": 7.8,
+          "high": 10.2,
+          "unit": "mg/dL"
+        },
+        "creatinine": {
+          "low": 0.1,
+          "high": 0.5,
+          "unit": "mg/dL"
+        },
+        "glucose": {
+          "low": 60,
+          "high": 120,
+          "unit": "mg/dL"
+        },
+        "hemoglobin": {
+          "low": 8.0,
+          "high": 14.0,
+          "unit": "g/dL"
+        },
+        "inr": {
+          "low": 0.8,
+          "high": 1.2,
+          "unit": "ratio"
+        },
+        "phosphorus": {
+          "low": 2.0,
+          "high": 5.0,
+          "unit": "mg/dL"
+        },
+        "platelets": {
+          "low": 160,
+          "high": 450,
+          "unit": "x10^3/uL"
+        },
+        "potassium": {
+          "low": 1.0,
+          "high": 2.5,
+          "unit": "mEq/L"
+        },
+        "sodium": {
+          "low": 153,
+          "high": 177,
+          "unit": "mEq/L"
+        }
+      },
+      "metadata": {
+        "human_subject_id": "115968021",
+        "window_date": "2017-01-08",
+        "patient": {
+          "age_years": 33,
+          "sex": "male"
+        }
+      }
+    },
+    {
+      "case_id": 3,
+      "species": "velox_noctis",
+      "tier": 3,
+      "action_label": "vn_hyperkalemia_overlap",
+      "anti_memorization": true,
+      "fixes_applied": {
+        "fix1_opposite_treatment": true,
+        "fix2_borderline_deviation": "16% outside VN range",
+        "fix3_reinforcing_decoy": true,
+        "fix4_natural_variation": true
+      },
+      "human_memorization_predicts": "K+ 2.9 \u2014 below human LLN 3.5 \u2192 human clinician: IV potassium replacement (WRONG for VN)",
+      "question_stem": "SPECIES: Velox noctis (fictional)\nPATIENT: 11-year-old male, on chronic furosemide 40 mg daily for heart failure, presenting for routine outpatient electrolyte monitoring. No acute symptoms. Cardiologist requested labs.\n\nVELOX NOCTIS SPECIES REFERENCE RANGES:\nLab Test               Normal Range              Unit\n----------------------------------------------------\nalbumin                2.6\u20134.2                   g/dL\nbun                    5\u201320                      mg/dL\ncalcium                7.8\u201310.2                  mg/dL\ncreatinine             0.1\u20130.5                   mg/dL\nglucose                60\u2013120                    mg/dL\nhemoglobin             8.0\u201314.0                  g/dL\ninr                    0.8\u20131.2                   ratio\nphosphorus             2.0\u20135.0                   mg/dL\nplatelets              160\u2013450                   x10^3/uL\npotassium              1.0\u20132.5                   mEq/L\nsodium                 153\u2013177                   mEq/L\n\nPATIENT LABORATORY RESULTS:\nLab Test                   Result  Unit\n----------------------------------------------\nalbumin                       3.4  g/dL\nbun                          14.4  mg/dL\ncalcium                       9.0  mg/dL\ncreatinine                    0.3  mg/dL\nglucose                      97.0  mg/dL\nhemoglobin                   12.0  g/dL\ninr                           1.1  ratio\nphosphorus                    3.5  mg/dL\nplatelets                   226.0  x10^3/uL\npotassium                     2.9  mEq/L\nsodium                      165.0  mEq/L\n\nQUESTION:\nBased on the laboratory results, what clinical management do you recommend for this patient?",
+      "counterfactual": {
+        "question_stem": "SPECIES: Velox noctis (fictional)\nPATIENT: 11-year-old male, on chronic furosemide 40 mg daily for heart failure, presenting for routine outpatient electrolyte monitoring. No acute symptoms. Cardiologist requested labs.\n\nVELOX NOCTIS SPECIES REFERENCE RANGES:\nLab Test               Normal Range              Unit\n----------------------------------------------------\nalbumin                2.6\u20134.2                   g/dL\nbun                    5\u201320                      mg/dL\ncalcium                7.8\u201310.2                  mg/dL\ncreatinine             0.1\u20130.5                   mg/dL\nglucose                60\u2013120                    mg/dL\nhemoglobin             8.0\u201314.0                  g/dL\ninr                    0.8\u20131.2                   ratio\nphosphorus             2.0\u20135.0                   mg/dL\nplatelets              160\u2013450                   x10^3/uL\npotassium              1.0\u20132.5                   mEq/L\nsodium                 153\u2013177                   mEq/L\n\nPATIENT LABORATORY RESULTS:\nLab Test                   Result  Unit\n----------------------------------------------\nalbumin                       3.4  g/dL\nbun                          14.4  mg/dL\ncalcium                       9.0  mg/dL\ncreatinine                    0.3  mg/dL\nglucose                      97.0  mg/dL\nhemoglobin                   12.0  g/dL\ninr                           1.1  ratio\nphosphorus                    3.5  mg/dL\nplatelets                   226.0  x10^3/uL\npotassium                    1.75  mEq/L\nsodium                      165.0  mEq/L\n\nQUESTION:\nBased on the laboratory results, what clinical management do you recommend for this patient?",
+        "pivot_val_cf": 1.75,
+        "pivot_range": "1.0\u20132.5",
+        "note": "pivot set to VN midpoint (1.75). Both human AND VN norms say this is normal \u2014 no intervention. This removes the opposite-treatment tension entirely."
+      },
+      "rubric": {
+        "correct_action_label": "vn_hyperkalemia_overlap",
+        "correct_action_readable": "VN Hyperkalemia Management \u2014 Remove potassium (Kayexalate/binder + dietary restriction)",
+        "correct_synonyms": [
+          "kayexalate",
+          "potassium binder",
+          "restrict potassium",
+          "hyperkalemia",
+          "remove potassium",
+          "reduce potassium",
+          "potassium lowering",
+          "sodium polystyrene",
+          "patiromer",
+          "cardiac monitoring hyperkalemia",
+          "emergent potassium management"
+        ],
+        "wrong_answers": [
+          "IV potassium",
+          "potassium supplement",
+          "KCl infusion",
+          "potassium repletion",
+          "give potassium",
+          "hypokalemia treatment",
+          "potassium replacement"
+        ],
+        "pivot_lab": "potassium",
+        "pivot_value": 2.9,
+        "pivot_direction": "HIGH",
+        "pivot_vn_range": "1.0\u20132.5 mEq/L",
+        "vn_deviation_pct": 16.0,
+        "human_memorization_trap": "Human clinician sees potassium=2.9 as low by human standards and recommends IV potassium \u2014 the OPPOSITE of the VN-correct answer."
+      },
+      "lab_panel": {
+        "albumin": {
+          "value": 3.4,
+          "unit": "g/dL"
+        },
+        "bun": {
+          "value": 14.4,
+          "unit": "mg/dL"
+        },
+        "calcium": {
+          "value": 9.0,
+          "unit": "mg/dL"
+        },
+        "creatinine": {
+          "value": 0.3,
+          "unit": "mg/dL"
+        },
+        "glucose": {
+          "value": 97.0,
+          "unit": "mg/dL"
+        },
+        "hemoglobin": {
+          "value": 12.0,
+          "unit": "g/dL"
+        },
+        "inr": {
+          "value": 1.1,
+          "unit": "ratio"
+        },
+        "phosphorus": {
+          "value": 3.5,
+          "unit": "mg/dL"
+        },
+        "platelets": {
+          "value": 226.0,
+          "unit": "x10^3/uL"
+        },
+        "potassium": {
+          "value": 2.9,
+          "unit": "mEq/L"
+        },
+        "sodium": {
+          "value": 165.0,
+          "unit": "mEq/L"
+        }
+      },
+      "reference_ranges": {
+        "albumin": {
+          "low": 2.6,
+          "high": 4.2,
+          "unit": "g/dL"
+        },
+        "bun": {
+          "low": 5,
+          "high": 20,
+          "unit": "mg/dL"
+        },
+        "calcium": {
+          "low": 7.8,
+          "high": 10.2,
+          "unit": "mg/dL"
+        },
+        "creatinine": {
+          "low": 0.1,
+          "high": 0.5,
+          "unit": "mg/dL"
+        },
+        "glucose": {
+          "low": 60,
+          "high": 120,
+          "unit": "mg/dL"
+        },
+        "hemoglobin": {
+          "low": 8.0,
+          "high": 14.0,
+          "unit": "g/dL"
+        },
+        "inr": {
+          "low": 0.8,
+          "high": 1.2,
+          "unit": "ratio"
+        },
+        "phosphorus": {
+          "low": 2.0,
+          "high": 5.0,
+          "unit": "mg/dL"
+        },
+        "platelets": {
+          "low": 160,
+          "high": 450,
+          "unit": "x10^3/uL"
+        },
+        "potassium": {
+          "low": 1.0,
+          "high": 2.5,
+          "unit": "mEq/L"
+        },
+        "sodium": {
+          "low": 153,
+          "high": 177,
+          "unit": "mEq/L"
+        }
+      },
+      "metadata": {
+        "human_subject_id": "115973788",
+        "window_date": "2011-01-15",
+        "patient": {
+          "age_years": 11,
+          "sex": "male"
+        }
+      }
+    },
+    {
+      "case_id": 4,
+      "species": "velox_noctis",
+      "tier": 3,
+      "action_label": "vn_hyperkalemia_overlap",
+      "anti_memorization": true,
+      "fixes_applied": {
+        "fix1_opposite_treatment": true,
+        "fix2_borderline_deviation": "16% outside VN range",
+        "fix3_reinforcing_decoy": true,
+        "fix4_natural_variation": true
+      },
+      "human_memorization_predicts": "K+ 2.9 \u2014 below human LLN 3.5 \u2192 human clinician: IV potassium replacement (WRONG for VN)",
+      "question_stem": "SPECIES: Velox noctis (fictional)\nPATIENT: 34-year-old female, on chronic furosemide 40 mg daily for heart failure, presenting for routine outpatient electrolyte monitoring. No acute symptoms. Cardiologist requested labs.\n\nVELOX NOCTIS SPECIES REFERENCE RANGES:\nLab Test               Normal Range              Unit\n----------------------------------------------------\nalbumin                2.6\u20134.2                   g/dL\nbun                    5\u201320                      mg/dL\ncalcium                7.8\u201310.2                  mg/dL\ncreatinine             0.1\u20130.5                   mg/dL\nglucose                60\u2013120                    mg/dL\nhemoglobin             8.0\u201314.0                  g/dL\ninr                    0.8\u20131.2                   ratio\nphosphorus             2.0\u20135.0                   mg/dL\nplatelets              160\u2013450                   x10^3/uL\npotassium              1.0\u20132.5                   mEq/L\nsodium                 153\u2013177                   mEq/L\n\nPATIENT LABORATORY RESULTS:\nLab Test                   Result  Unit\n----------------------------------------------\nalbumin                       3.4  g/dL\nbun                           9.6  mg/dL\ncalcium                       8.3  mg/dL\ncreatinine                    0.2  mg/dL\nglucose                      90.0  mg/dL\nhemoglobin                   10.8  g/dL\ninr                           1.0  ratio\nphosphorus                    3.5  mg/dL\nplatelets                   234.5  x10^3/uL\npotassium                     2.9  mEq/L\nsodium                      161.0  mEq/L\n\nQUESTION:\nBased on the laboratory results, what clinical management do you recommend for this patient?",
+      "counterfactual": {
+        "question_stem": "SPECIES: Velox noctis (fictional)\nPATIENT: 34-year-old female, on chronic furosemide 40 mg daily for heart failure, presenting for routine outpatient electrolyte monitoring. No acute symptoms. Cardiologist requested labs.\n\nVELOX NOCTIS SPECIES REFERENCE RANGES:\nLab Test               Normal Range              Unit\n----------------------------------------------------\nalbumin                2.6\u20134.2                   g/dL\nbun                    5\u201320                      mg/dL\ncalcium                7.8\u201310.2                  mg/dL\ncreatinine             0.1\u20130.5                   mg/dL\nglucose                60\u2013120                    mg/dL\nhemoglobin             8.0\u201314.0                  g/dL\ninr                    0.8\u20131.2                   ratio\nphosphorus             2.0\u20135.0                   mg/dL\nplatelets              160\u2013450                   x10^3/uL\npotassium              1.0\u20132.5                   mEq/L\nsodium                 153\u2013177                   mEq/L\n\nPATIENT LABORATORY RESULTS:\nLab Test                   Result  Unit\n----------------------------------------------\nalbumin                       3.4  g/dL\nbun                           9.6  mg/dL\ncalcium                       8.3  mg/dL\ncreatinine                    0.2  mg/dL\nglucose                      90.0  mg/dL\nhemoglobin                   10.8  g/dL\ninr                           1.0  ratio\nphosphorus                    3.5  mg/dL\nplatelets                   234.5  x10^3/uL\npotassium                    1.75  mEq/L\nsodium                      161.0  mEq/L\n\nQUESTION:\nBased on the laboratory results, what clinical management do you recommend for this patient?",
+        "pivot_val_cf": 1.75,
+        "pivot_range": "1.0\u20132.5",
+        "note": "pivot set to VN midpoint (1.75). Both human AND VN norms say this is normal \u2014 no intervention. This removes the opposite-treatment tension entirely."
+      },
+      "rubric": {
+        "correct_action_label": "vn_hyperkalemia_overlap",
+        "correct_action_readable": "VN Hyperkalemia Management \u2014 Remove potassium (Kayexalate/binder + dietary restriction)",
+        "correct_synonyms": [
+          "kayexalate",
+          "potassium binder",
+          "restrict potassium",
+          "hyperkalemia",
+          "remove potassium",
+          "reduce potassium",
+          "potassium lowering",
+          "sodium polystyrene",
+          "patiromer",
+          "cardiac monitoring hyperkalemia",
+          "emergent potassium management"
+        ],
+        "wrong_answers": [
+          "IV potassium",
+          "potassium supplement",
+          "KCl infusion",
+          "potassium repletion",
+          "give potassium",
+          "hypokalemia treatment",
+          "potassium replacement"
+        ],
+        "pivot_lab": "potassium",
+        "pivot_value": 2.9,
+        "pivot_direction": "HIGH",
+        "pivot_vn_range": "1.0\u20132.5 mEq/L",
+        "vn_deviation_pct": 16.0,
+        "human_memorization_trap": "Human clinician sees potassium=2.9 as low by human standards and recommends IV potassium \u2014 the OPPOSITE of the VN-correct answer."
+      },
+      "lab_panel": {
+        "albumin": {
+          "value": 3.4,
+          "unit": "g/dL"
+        },
+        "bun": {
+          "value": 9.6,
+          "unit": "mg/dL"
+        },
+        "calcium": {
+          "value": 8.3,
+          "unit": "mg/dL"
+        },
+        "creatinine": {
+          "value": 0.2,
+          "unit": "mg/dL"
+        },
+        "glucose": {
+          "value": 90.0,
+          "unit": "mg/dL"
+        },
+        "hemoglobin": {
+          "value": 10.8,
+          "unit": "g/dL"
+        },
+        "inr": {
+          "value": 1.0,
+          "unit": "ratio"
+        },
+        "phosphorus": {
+          "value": 3.5,
+          "unit": "mg/dL"
+        },
+        "platelets": {
+          "value": 234.5,
+          "unit": "x10^3/uL"
+        },
+        "potassium": {
+          "value": 2.9,
+          "unit": "mEq/L"
+        },
+        "sodium": {
+          "value": 161.0,
+          "unit": "mEq/L"
+        }
+      },
+      "reference_ranges": {
+        "albumin": {
+          "low": 2.6,
+          "high": 4.2,
+          "unit": "g/dL"
+        },
+        "bun": {
+          "low": 5,
+          "high": 20,
+          "unit": "mg/dL"
+        },
+        "calcium": {
+          "low": 7.8,
+          "high": 10.2,
+          "unit": "mg/dL"
+        },
+        "creatinine": {
+          "low": 0.1,
+          "high": 0.5,
+          "unit": "mg/dL"
+        },
+        "glucose": {
+          "low": 60,
+          "high": 120,
+          "unit": "mg/dL"
+        },
+        "hemoglobin": {
+          "low": 8.0,
+          "high": 14.0,
+          "unit": "g/dL"
+        },
+        "inr": {
+          "low": 0.8,
+          "high": 1.2,
+          "unit": "ratio"
+        },
+        "phosphorus": {
+          "low": 2.0,
+          "high": 5.0,
+          "unit": "mg/dL"
+        },
+        "platelets": {
+          "low": 160,
+          "high": 450,
+          "unit": "x10^3/uL"
+        },
+        "potassium": {
+          "low": 1.0,
+          "high": 2.5,
+          "unit": "mEq/L"
+        },
+        "sodium": {
+          "low": 153,
+          "high": 177,
+          "unit": "mEq/L"
+        }
+      },
+      "metadata": {
+        "human_subject_id": "115970122",
+        "window_date": "2016-04-24",
+        "patient": {
+          "age_years": 34,
+          "sex": "female"
+        }
+      }
+    },
+    {
+      "case_id": 5,
+      "species": "velox_noctis",
+      "tier": 3,
+      "action_label": "vn_hyperkalemia_overlap",
+      "anti_memorization": true,
+      "fixes_applied": {
+        "fix1_opposite_treatment": true,
+        "fix2_borderline_deviation": "20% outside VN range",
+        "fix3_reinforcing_decoy": true,
+        "fix4_natural_variation": true
+      },
+      "human_memorization_predicts": "K+ 3.0 \u2014 below human LLN 3.5 \u2192 human clinician: IV potassium replacement (WRONG for VN)",
+      "question_stem": "SPECIES: Velox noctis (fictional)\nPATIENT: 25-year-old male, on chronic furosemide 40 mg daily for heart failure, presenting for routine outpatient electrolyte monitoring. No acute symptoms. Cardiologist requested labs.\n\nVELOX NOCTIS SPECIES REFERENCE RANGES:\nLab Test               Normal Range              Unit\n----------------------------------------------------\nalbumin                2.6\u20134.2                   g/dL\nbun                    5\u201320                      mg/dL\ncalcium                7.8\u201310.2                  mg/dL\ncreatinine             0.1\u20130.5                   mg/dL\nglucose                60\u2013120                    mg/dL\nhemoglobin             8.0\u201314.0                  g/dL\ninr                    0.8\u20131.2                   ratio\nphosphorus             2.0\u20135.0                   mg/dL\nplatelets              160\u2013450                   x10^3/uL\npotassium              1.0\u20132.5                   mEq/L\nsodium                 153\u2013177                   mEq/L\n\nPATIENT LABORATORY RESULTS:\nLab Test                   Result  Unit\n----------------------------------------------\nalbumin                       3.4  g/dL\nbun                          17.6  mg/dL\ncalcium                       7.9  mg/dL\ncreatinine                    0.3  mg/dL\nglucose                      72.0  mg/dL\nhemoglobin                   11.0  g/dL\ninr                           1.0  ratio\nphosphorus                    3.2  mg/dL\nplatelets                   305.0  x10^3/uL\npotassium                     3.0  mEq/L\nsodium                      165.0  mEq/L\n\nQUESTION:\nBased on the laboratory results, what clinical management do you recommend for this patient?",
+      "counterfactual": {
+        "question_stem": "SPECIES: Velox noctis (fictional)\nPATIENT: 25-year-old male, on chronic furosemide 40 mg daily for heart failure, presenting for routine outpatient electrolyte monitoring. No acute symptoms. Cardiologist requested labs.\n\nVELOX NOCTIS SPECIES REFERENCE RANGES:\nLab Test               Normal Range              Unit\n----------------------------------------------------\nalbumin                2.6\u20134.2                   g/dL\nbun                    5\u201320                      mg/dL\ncalcium                7.8\u201310.2                  mg/dL\ncreatinine             0.1\u20130.5                   mg/dL\nglucose                60\u2013120                    mg/dL\nhemoglobin             8.0\u201314.0                  g/dL\ninr                    0.8\u20131.2                   ratio\nphosphorus             2.0\u20135.0                   mg/dL\nplatelets              160\u2013450                   x10^3/uL\npotassium              1.0\u20132.5                   mEq/L\nsodium                 153\u2013177                   mEq/L\n\nPATIENT LABORATORY RESULTS:\nLab Test                   Result  Unit\n----------------------------------------------\nalbumin                       3.4  g/dL\nbun                          17.6  mg/dL\ncalcium                       7.9  mg/dL\ncreatinine                    0.3  mg/dL\nglucose                      72.0  mg/dL\nhemoglobin                   11.0  g/dL\ninr                           1.0  ratio\nphosphorus                    3.2  mg/dL\nplatelets                   305.0  x10^3/uL\npotassium                    1.75  mEq/L\nsodium                      165.0  mEq/L\n\nQUESTION:\nBased on the laboratory results, what clinical management do you recommend for this patient?",
+        "pivot_val_cf": 1.75,
+        "pivot_range": "1.0\u20132.5",
+        "note": "pivot set to VN midpoint (1.75). Both human AND VN norms say this is normal \u2014 no intervention. This removes the opposite-treatment tension entirely."
+      },
+      "rubric": {
+        "correct_action_label": "vn_hyperkalemia_overlap",
+        "correct_action_readable": "VN Hyperkalemia Management \u2014 Remove potassium (Kayexalate/binder + dietary restriction)",
+        "correct_synonyms": [
+          "kayexalate",
+          "potassium binder",
+          "restrict potassium",
+          "hyperkalemia",
+          "remove potassium",
+          "reduce potassium",
+          "potassium lowering",
+          "sodium polystyrene",
+          "patiromer",
+          "cardiac monitoring hyperkalemia",
+          "emergent potassium management"
+        ],
+        "wrong_answers": [
+          "IV potassium",
+          "potassium supplement",
+          "KCl infusion",
+          "potassium repletion",
+          "give potassium",
+          "hypokalemia treatment",
+          "potassium replacement"
+        ],
+        "pivot_lab": "potassium",
+        "pivot_value": 3.0,
+        "pivot_direction": "HIGH",
+        "pivot_vn_range": "1.0\u20132.5 mEq/L",
+        "vn_deviation_pct": 20.0,
+        "human_memorization_trap": "Human clinician sees potassium=3.0 as low by human standards and recommends IV potassium \u2014 the OPPOSITE of the VN-correct answer."
+      },
+      "lab_panel": {
+        "albumin": {
+          "value": 3.4,
+          "unit": "g/dL"
+        },
+        "bun": {
+          "value": 17.6,
+          "unit": "mg/dL"
+        },
+        "calcium": {
+          "value": 7.9,
+          "unit": "mg/dL"
+        },
+        "creatinine": {
+          "value": 0.3,
+          "unit": "mg/dL"
+        },
+        "glucose": {
+          "value": 72.0,
+          "unit": "mg/dL"
+        },
+        "hemoglobin": {
+          "value": 11.0,
+          "unit": "g/dL"
+        },
+        "inr": {
+          "value": 1.0,
+          "unit": "ratio"
+        },
+        "phosphorus": {
+          "value": 3.2,
+          "unit": "mg/dL"
+        },
+        "platelets": {
+          "value": 305.0,
+          "unit": "x10^3/uL"
+        },
+        "potassium": {
+          "value": 3.0,
+          "unit": "mEq/L"
+        },
+        "sodium": {
+          "value": 165.0,
+          "unit": "mEq/L"
+        }
+      },
+      "reference_ranges": {
+        "albumin": {
+          "low": 2.6,
+          "high": 4.2,
+          "unit": "g/dL"
+        },
+        "bun": {
+          "low": 5,
+          "high": 20,
+          "unit": "mg/dL"
+        },
+        "calcium": {
+          "low": 7.8,
+          "high": 10.2,
+          "unit": "mg/dL"
+        },
+        "creatinine": {
+          "low": 0.1,
+          "high": 0.5,
+          "unit": "mg/dL"
+        },
+        "glucose": {
+          "low": 60,
+          "high": 120,
+          "unit": "mg/dL"
+        },
+        "hemoglobin": {
+          "low": 8.0,
+          "high": 14.0,
+          "unit": "g/dL"
+        },
+        "inr": {
+          "low": 0.8,
+          "high": 1.2,
+          "unit": "ratio"
+        },
+        "phosphorus": {
+          "low": 2.0,
+          "high": 5.0,
+          "unit": "mg/dL"
+        },
+        "platelets": {
+          "low": 160,
+          "high": 450,
+          "unit": "x10^3/uL"
+        },
+        "potassium": {
+          "low": 1.0,
+          "high": 2.5,
+          "unit": "mEq/L"
+        },
+        "sodium": {
+          "low": 153,
+          "high": 177,
+          "unit": "mEq/L"
+        }
+      },
+      "metadata": {
+        "human_subject_id": "115967611",
+        "window_date": "2004-09-30",
+        "patient": {
+          "age_years": 25,
+          "sex": "male"
+        }
+      }
+    },
+    {
+      "case_id": 6,
+      "species": "velox_noctis",
+      "tier": 3,
+      "action_label": "vn_hyponatremia_overlap",
+      "anti_memorization": true,
+      "fixes_applied": {
+        "fix1_opposite_treatment": true,
+        "fix2_borderline_deviation": "5% outside VN range",
+        "fix3_reinforcing_decoy": true,
+        "fix4_natural_variation": true
+      },
+      "human_memorization_predicts": "Na 145.0 \u2014 above human ULN 145 \u2192 human clinician: free water / restrict sodium (WRONG for VN)",
+      "question_stem": "SPECIES: Velox noctis (fictional)\nPATIENT: 18-year-old male, with history of decreased oral intake over the past week, presenting for evaluation of fatigue. Urine appears concentrated. No acute neurological symptoms.\n\nVELOX NOCTIS SPECIES REFERENCE RANGES:\nLab Test               Normal Range              Unit\n----------------------------------------------------\nalbumin                2.6\u20134.2                   g/dL\nbun                    5\u201320                      mg/dL\ncalcium                7.8\u201310.2                  mg/dL\ncreatinine             0.1\u20130.5                   mg/dL\nglucose                60\u2013120                    mg/dL\nhemoglobin             8.0\u201314.0                  g/dL\ninr                    0.8\u20131.2                   ratio\nphosphorus             2.0\u20135.0                   mg/dL\nplatelets              160\u2013450                   x10^3/uL\npotassium              1.0\u20132.5                   mEq/L\nsodium                 153\u2013177                   mEq/L\n\nPATIENT LABORATORY RESULTS:\nLab Test                   Result  Unit\n----------------------------------------------\nalbumin                       3.0  g/dL\nbun                          12.5  mg/dL\ncalcium                       8.8  mg/dL\ncreatinine                    0.3  mg/dL\nglucose                      69.0  mg/dL\nhemoglobin                    8.9  g/dL\ninr                           1.0  ratio\nphosphorus                    3.5  mg/dL\nplatelets                   364.7  x10^3/uL\npotassium                     1.8  mEq/L\nsodium                      145.0  mEq/L\n\nQUESTION:\nBased on the laboratory results, what clinical management do you recommend for this patient?",
+      "counterfactual": {
+        "question_stem": "SPECIES: Velox noctis (fictional)\nPATIENT: 18-year-old male, with history of decreased oral intake over the past week, presenting for evaluation of fatigue. Urine appears concentrated. No acute neurological symptoms.\n\nVELOX NOCTIS SPECIES REFERENCE RANGES:\nLab Test               Normal Range              Unit\n----------------------------------------------------\nalbumin                2.6\u20134.2                   g/dL\nbun                    5\u201320                      mg/dL\ncalcium                7.8\u201310.2                  mg/dL\ncreatinine             0.1\u20130.5                   mg/dL\nglucose                60\u2013120                    mg/dL\nhemoglobin             8.0\u201314.0                  g/dL\ninr                    0.8\u20131.2                   ratio\nphosphorus             2.0\u20135.0                   mg/dL\nplatelets              160\u2013450                   x10^3/uL\npotassium              1.0\u20132.5                   mEq/L\nsodium                 153\u2013177                   mEq/L\n\nPATIENT LABORATORY RESULTS:\nLab Test                   Result  Unit\n----------------------------------------------\nalbumin                       3.0  g/dL\nbun                          12.5  mg/dL\ncalcium                       8.8  mg/dL\ncreatinine                    0.3  mg/dL\nglucose                      69.0  mg/dL\nhemoglobin                    8.9  g/dL\ninr                           1.0  ratio\nphosphorus                    3.5  mg/dL\nplatelets                   364.7  x10^3/uL\npotassium                     1.8  mEq/L\nsodium                      165.0  mEq/L\n\nQUESTION:\nBased on the laboratory results, what clinical management do you recommend for this patient?",
+        "pivot_val_cf": 165.0,
+        "pivot_range": "153\u2013177",
+        "note": "pivot set to VN midpoint (165.0). Both human AND VN norms say this is normal \u2014 no intervention. This removes the opposite-treatment tension entirely."
+      },
+      "rubric": {
+        "correct_action_label": "vn_hyponatremia_overlap",
+        "correct_action_readable": "VN Hyponatremia Management \u2014 Isotonic saline infusion to raise sodium toward VN normal",
+        "correct_synonyms": [
+          "isotonic saline",
+          "normal saline",
+          "sodium supplementation",
+          "IV saline",
+          "sodium infusion",
+          "hyponatremia",
+          "sodium repletion",
+          "0.9% saline",
+          "sodium replacement",
+          "sodium correction"
+        ],
+        "wrong_answers": [
+          "restrict sodium",
+          "free water",
+          "hypotonic",
+          "hypernatremia treatment",
+          "sodium restriction",
+          "water replacement",
+          "D5W",
+          "0.45% saline",
+          "half-normal saline"
+        ],
+        "pivot_lab": "sodium",
+        "pivot_value": 145.0,
+        "pivot_direction": "LOW",
+        "pivot_vn_range": "153\u2013177 mEq/L",
+        "vn_deviation_pct": 5.2,
+        "human_memorization_trap": "Human clinician sees sodium=145.0 as high by human standards and recommends restrict sodium \u2014 the OPPOSITE of the VN-correct answer."
+      },
+      "lab_panel": {
+        "albumin": {
+          "value": 3.0,
+          "unit": "g/dL"
+        },
+        "bun": {
+          "value": 12.5,
+          "unit": "mg/dL"
+        },
+        "calcium": {
+          "value": 8.8,
+          "unit": "mg/dL"
+        },
+        "creatinine": {
+          "value": 0.3,
+          "unit": "mg/dL"
+        },
+        "glucose": {
+          "value": 69.0,
+          "unit": "mg/dL"
+        },
+        "hemoglobin": {
+          "value": 8.9,
+          "unit": "g/dL"
+        },
+        "inr": {
+          "value": 1.0,
+          "unit": "ratio"
+        },
+        "phosphorus": {
+          "value": 3.5,
+          "unit": "mg/dL"
+        },
+        "platelets": {
+          "value": 364.7,
+          "unit": "x10^3/uL"
+        },
+        "potassium": {
+          "value": 1.8,
+          "unit": "mEq/L"
+        },
+        "sodium": {
+          "value": 145.0,
+          "unit": "mEq/L"
+        }
+      },
+      "reference_ranges": {
+        "albumin": {
+          "low": 2.6,
+          "high": 4.2,
+          "unit": "g/dL"
+        },
+        "bun": {
+          "low": 5,
+          "high": 20,
+          "unit": "mg/dL"
+        },
+        "calcium": {
+          "low": 7.8,
+          "high": 10.2,
+          "unit": "mg/dL"
+        },
+        "creatinine": {
+          "low": 0.1,
+          "high": 0.5,
+          "unit": "mg/dL"
+        },
+        "glucose": {
+          "low": 60,
+          "high": 120,
+          "unit": "mg/dL"
+        },
+        "hemoglobin": {
+          "low": 8.0,
+          "high": 14.0,
+          "unit": "g/dL"
+        },
+        "inr": {
+          "low": 0.8,
+          "high": 1.2,
+          "unit": "ratio"
+        },
+        "phosphorus": {
+          "low": 2.0,
+          "high": 5.0,
+          "unit": "mg/dL"
+        },
+        "platelets": {
+          "low": 160,
+          "high": 450,
+          "unit": "x10^3/uL"
+        },
+        "potassium": {
+          "low": 1.0,
+          "high": 2.5,
+          "unit": "mEq/L"
+        },
+        "sodium": {
+          "low": 153,
+          "high": 177,
+          "unit": "mEq/L"
+        }
+      },
+      "metadata": {
+        "human_subject_id": "115969633",
+        "window_date": "2022-12-19",
+        "patient": {
+          "age_years": 18,
+          "sex": "male"
+        }
+      }
+    },
+    {
+      "case_id": 7,
+      "species": "velox_noctis",
+      "tier": 3,
+      "action_label": "vn_hyponatremia_overlap",
+      "anti_memorization": true,
+      "fixes_applied": {
+        "fix1_opposite_treatment": true,
+        "fix2_borderline_deviation": "5% outside VN range",
+        "fix3_reinforcing_decoy": true,
+        "fix4_natural_variation": true
+      },
+      "human_memorization_predicts": "Na 145.0 \u2014 above human ULN 145 \u2192 human clinician: free water / restrict sodium (WRONG for VN)",
+      "question_stem": "SPECIES: Velox noctis (fictional)\nPATIENT: 30-year-old male, with history of decreased oral intake over the past week, presenting for evaluation of fatigue. Urine appears concentrated. No acute neurological symptoms.\n\nVELOX NOCTIS SPECIES REFERENCE RANGES:\nLab Test               Normal Range              Unit\n----------------------------------------------------\nalbumin                2.6\u20134.2                   g/dL\nbun                    5\u201320                      mg/dL\ncalcium                7.8\u201310.2                  mg/dL\ncreatinine             0.1\u20130.5                   mg/dL\nglucose                60\u2013120                    mg/dL\nhemoglobin             8.0\u201314.0                  g/dL\ninr                    0.8\u20131.2                   ratio\nphosphorus             2.0\u20135.0                   mg/dL\nplatelets              160\u2013450                   x10^3/uL\npotassium              1.0\u20132.5                   mEq/L\nsodium                 153\u2013177                   mEq/L\n\nPATIENT LABORATORY RESULTS:\nLab Test                   Result  Unit\n----------------------------------------------\nalbumin                       3.5  g/dL\nbun                          12.5  mg/dL\ncalcium                       8.6  mg/dL\ncreatinine                    0.3  mg/dL\nglucose                      90.0  mg/dL\nhemoglobin                   10.6  g/dL\ninr                           1.0  ratio\nphosphorus                    3.6  mg/dL\nplatelets                   271.9  x10^3/uL\npotassium                    1.75  mEq/L\nsodium                      145.0  mEq/L\n\nQUESTION:\nBased on the laboratory results, what clinical management do you recommend for this patient?",
+      "counterfactual": {
+        "question_stem": "SPECIES: Velox noctis (fictional)\nPATIENT: 30-year-old male, with history of decreased oral intake over the past week, presenting for evaluation of fatigue. Urine appears concentrated. No acute neurological symptoms.\n\nVELOX NOCTIS SPECIES REFERENCE RANGES:\nLab Test               Normal Range              Unit\n----------------------------------------------------\nalbumin                2.6\u20134.2                   g/dL\nbun                    5\u201320                      mg/dL\ncalcium                7.8\u201310.2                  mg/dL\ncreatinine             0.1\u20130.5                   mg/dL\nglucose                60\u2013120                    mg/dL\nhemoglobin             8.0\u201314.0                  g/dL\ninr                    0.8\u20131.2                   ratio\nphosphorus             2.0\u20135.0                   mg/dL\nplatelets              160\u2013450                   x10^3/uL\npotassium              1.0\u20132.5                   mEq/L\nsodium                 153\u2013177                   mEq/L\n\nPATIENT LABORATORY RESULTS:\nLab Test                   Result  Unit\n----------------------------------------------\nalbumin                       3.5  g/dL\nbun                          12.5  mg/dL\ncalcium                       8.6  mg/dL\ncreatinine                    0.3  mg/dL\nglucose                      90.0  mg/dL\nhemoglobin                   10.6  g/dL\ninr                           1.0  ratio\nphosphorus                    3.6  mg/dL\nplatelets                   271.9  x10^3/uL\npotassium                    1.75  mEq/L\nsodium                      165.0  mEq/L\n\nQUESTION:\nBased on the laboratory results, what clinical management do you recommend for this patient?",
+        "pivot_val_cf": 165.0,
+        "pivot_range": "153\u2013177",
+        "note": "pivot set to VN midpoint (165.0). Both human AND VN norms say this is normal \u2014 no intervention. This removes the opposite-treatment tension entirely."
+      },
+      "rubric": {
+        "correct_action_label": "vn_hyponatremia_overlap",
+        "correct_action_readable": "VN Hyponatremia Management \u2014 Isotonic saline infusion to raise sodium toward VN normal",
+        "correct_synonyms": [
+          "isotonic saline",
+          "normal saline",
+          "sodium supplementation",
+          "IV saline",
+          "sodium infusion",
+          "hyponatremia",
+          "sodium repletion",
+          "0.9% saline",
+          "sodium replacement",
+          "sodium correction"
+        ],
+        "wrong_answers": [
+          "restrict sodium",
+          "free water",
+          "hypotonic",
+          "hypernatremia treatment",
+          "sodium restriction",
+          "water replacement",
+          "D5W",
+          "0.45% saline",
+          "half-normal saline"
+        ],
+        "pivot_lab": "sodium",
+        "pivot_value": 145.0,
+        "pivot_direction": "LOW",
+        "pivot_vn_range": "153\u2013177 mEq/L",
+        "vn_deviation_pct": 5.2,
+        "human_memorization_trap": "Human clinician sees sodium=145.0 as high by human standards and recommends restrict sodium \u2014 the OPPOSITE of the VN-correct answer."
+      },
+      "lab_panel": {
+        "albumin": {
+          "value": 3.5,
+          "unit": "g/dL"
+        },
+        "bun": {
+          "value": 12.5,
+          "unit": "mg/dL"
+        },
+        "calcium": {
+          "value": 8.6,
+          "unit": "mg/dL"
+        },
+        "creatinine": {
+          "value": 0.3,
+          "unit": "mg/dL"
+        },
+        "glucose": {
+          "value": 90.0,
+          "unit": "mg/dL"
+        },
+        "hemoglobin": {
+          "value": 10.6,
+          "unit": "g/dL"
+        },
+        "inr": {
+          "value": 1.0,
+          "unit": "ratio"
+        },
+        "phosphorus": {
+          "value": 3.6,
+          "unit": "mg/dL"
+        },
+        "platelets": {
+          "value": 271.9,
+          "unit": "x10^3/uL"
+        },
+        "potassium": {
+          "value": 1.75,
+          "unit": "mEq/L"
+        },
+        "sodium": {
+          "value": 145.0,
+          "unit": "mEq/L"
+        }
+      },
+      "reference_ranges": {
+        "albumin": {
+          "low": 2.6,
+          "high": 4.2,
+          "unit": "g/dL"
+        },
+        "bun": {
+          "low": 5,
+          "high": 20,
+          "unit": "mg/dL"
+        },
+        "calcium": {
+          "low": 7.8,
+          "high": 10.2,
+          "unit": "mg/dL"
+        },
+        "creatinine": {
+          "low": 0.1,
+          "high": 0.5,
+          "unit": "mg/dL"
+        },
+        "glucose": {
+          "low": 60,
+          "high": 120,
+          "unit": "mg/dL"
+        },
+        "hemoglobin": {
+          "low": 8.0,
+          "high": 14.0,
+          "unit": "g/dL"
+        },
+        "inr": {
+          "low": 0.8,
+          "high": 1.2,
+          "unit": "ratio"
+        },
+        "phosphorus": {
+          "low": 2.0,
+          "high": 5.0,
+          "unit": "mg/dL"
+        },
+        "platelets": {
+          "low": 160,
+          "high": 450,
+          "unit": "x10^3/uL"
+        },
+        "potassium": {
+          "low": 1.0,
+          "high": 2.5,
+          "unit": "mEq/L"
+        },
+        "sodium": {
+          "low": 153,
+          "high": 177,
+          "unit": "mEq/L"
+        }
+      },
+      "metadata": {
+        "human_subject_id": "115970190",
+        "window_date": "2021-04-23",
+        "patient": {
+          "age_years": 30,
+          "sex": "male"
+        }
+      }
+    },
+    {
+      "case_id": 8,
+      "species": "velox_noctis",
+      "tier": 3,
+      "action_label": "vn_hyponatremia_overlap",
+      "anti_memorization": true,
+      "fixes_applied": {
+        "fix1_opposite_treatment": true,
+        "fix2_borderline_deviation": "5% outside VN range",
+        "fix3_reinforcing_decoy": true,
+        "fix4_natural_variation": true
+      },
+      "human_memorization_predicts": "Na 145.0 \u2014 above human ULN 145 \u2192 human clinician: free water / restrict sodium (WRONG for VN)",
+      "question_stem": "SPECIES: Velox noctis (fictional)\nPATIENT: 25-year-old male, with history of decreased oral intake over the past week, presenting for evaluation of fatigue. Urine appears concentrated. No acute neurological symptoms.\n\nVELOX NOCTIS SPECIES REFERENCE RANGES:\nLab Test               Normal Range              Unit\n----------------------------------------------------\nalbumin                2.6\u20134.2                   g/dL\nbun                    5\u201320                      mg/dL\ncalcium                7.8\u201310.2                  mg/dL\ncreatinine             0.1\u20130.5                   mg/dL\nglucose                60\u2013120                    mg/dL\nhemoglobin             8.0\u201314.0                  g/dL\ninr                    0.8\u20131.2                   ratio\nphosphorus             2.0\u20135.0                   mg/dL\nplatelets              160\u2013450                   x10^3/uL\npotassium              1.0\u20132.5                   mEq/L\nsodium                 153\u2013177                   mEq/L\n\nPATIENT LABORATORY RESULTS:\nLab Test                   Result  Unit\n----------------------------------------------\nalbumin                       3.4  g/dL\nbun                          15.2  mg/dL\ncalcium                       9.0  mg/dL\ncreatinine                    0.3  mg/dL\nglucose                      93.0  mg/dL\nhemoglobin                   11.0  g/dL\ninr                           1.0  ratio\nphosphorus                    3.5  mg/dL\nplatelets                   181.2  x10^3/uL\npotassium                     1.8  mEq/L\nsodium                      145.0  mEq/L\n\nQUESTION:\nBased on the laboratory results, what clinical management do you recommend for this patient?",
+      "counterfactual": {
+        "question_stem": "SPECIES: Velox noctis (fictional)\nPATIENT: 25-year-old male, with history of decreased oral intake over the past week, presenting for evaluation of fatigue. Urine appears concentrated. No acute neurological symptoms.\n\nVELOX NOCTIS SPECIES REFERENCE RANGES:\nLab Test               Normal Range              Unit\n----------------------------------------------------\nalbumin                2.6\u20134.2                   g/dL\nbun                    5\u201320                      mg/dL\ncalcium                7.8\u201310.2                  mg/dL\ncreatinine             0.1\u20130.5                   mg/dL\nglucose                60\u2013120                    mg/dL\nhemoglobin             8.0\u201314.0                  g/dL\ninr                    0.8\u20131.2                   ratio\nphosphorus             2.0\u20135.0                   mg/dL\nplatelets              160\u2013450                   x10^3/uL\npotassium              1.0\u20132.5                   mEq/L\nsodium                 153\u2013177                   mEq/L\n\nPATIENT LABORATORY RESULTS:\nLab Test                   Result  Unit\n----------------------------------------------\nalbumin                       3.4  g/dL\nbun                          15.2  mg/dL\ncalcium                       9.0  mg/dL\ncreatinine                    0.3  mg/dL\nglucose                      93.0  mg/dL\nhemoglobin                   11.0  g/dL\ninr                           1.0  ratio\nphosphorus                    3.5  mg/dL\nplatelets                   181.2  x10^3/uL\npotassium                     1.8  mEq/L\nsodium                      165.0  mEq/L\n\nQUESTION:\nBased on the laboratory results, what clinical management do you recommend for this patient?",
+        "pivot_val_cf": 165.0,
+        "pivot_range": "153\u2013177",
+        "note": "pivot set to VN midpoint (165.0). Both human AND VN norms say this is normal \u2014 no intervention. This removes the opposite-treatment tension entirely."
+      },
+      "rubric": {
+        "correct_action_label": "vn_hyponatremia_overlap",
+        "correct_action_readable": "VN Hyponatremia Management \u2014 Isotonic saline infusion to raise sodium toward VN normal",
+        "correct_synonyms": [
+          "isotonic saline",
+          "normal saline",
+          "sodium supplementation",
+          "IV saline",
+          "sodium infusion",
+          "hyponatremia",
+          "sodium repletion",
+          "0.9% saline",
+          "sodium replacement",
+          "sodium correction"
+        ],
+        "wrong_answers": [
+          "restrict sodium",
+          "free water",
+          "hypotonic",
+          "hypernatremia treatment",
+          "sodium restriction",
+          "water replacement",
+          "D5W",
+          "0.45% saline",
+          "half-normal saline"
+        ],
+        "pivot_lab": "sodium",
+        "pivot_value": 145.0,
+        "pivot_direction": "LOW",
+        "pivot_vn_range": "153\u2013177 mEq/L",
+        "vn_deviation_pct": 5.2,
+        "human_memorization_trap": "Human clinician sees sodium=145.0 as high by human standards and recommends restrict sodium \u2014 the OPPOSITE of the VN-correct answer."
+      },
+      "lab_panel": {
+        "albumin": {
+          "value": 3.4,
+          "unit": "g/dL"
+        },
+        "bun": {
+          "value": 15.2,
+          "unit": "mg/dL"
+        },
+        "calcium": {
+          "value": 9.0,
+          "unit": "mg/dL"
+        },
+        "creatinine": {
+          "value": 0.3,
+          "unit": "mg/dL"
+        },
+        "glucose": {
+          "value": 93.0,
+          "unit": "mg/dL"
+        },
+        "hemoglobin": {
+          "value": 11.0,
+          "unit": "g/dL"
+        },
+        "inr": {
+          "value": 1.0,
+          "unit": "ratio"
+        },
+        "phosphorus": {
+          "value": 3.5,
+          "unit": "mg/dL"
+        },
+        "platelets": {
+          "value": 181.2,
+          "unit": "x10^3/uL"
+        },
+        "potassium": {
+          "value": 1.8,
+          "unit": "mEq/L"
+        },
+        "sodium": {
+          "value": 145.0,
+          "unit": "mEq/L"
+        }
+      },
+      "reference_ranges": {
+        "albumin": {
+          "low": 2.6,
+          "high": 4.2,
+          "unit": "g/dL"
+        },
+        "bun": {
+          "low": 5,
+          "high": 20,
+          "unit": "mg/dL"
+        },
+        "calcium": {
+          "low": 7.8,
+          "high": 10.2,
+          "unit": "mg/dL"
+        },
+        "creatinine": {
+          "low": 0.1,
+          "high": 0.5,
+          "unit": "mg/dL"
+        },
+        "glucose": {
+          "low": 60,
+          "high": 120,
+          "unit": "mg/dL"
+        },
+        "hemoglobin": {
+          "low": 8.0,
+          "high": 14.0,
+          "unit": "g/dL"
+        },
+        "inr": {
+          "low": 0.8,
+          "high": 1.2,
+          "unit": "ratio"
+        },
+        "phosphorus": {
+          "low": 2.0,
+          "high": 5.0,
+          "unit": "mg/dL"
+        },
+        "platelets": {
+          "low": 160,
+          "high": 450,
+          "unit": "x10^3/uL"
+        },
+        "potassium": {
+          "low": 1.0,
+          "high": 2.5,
+          "unit": "mEq/L"
+        },
+        "sodium": {
+          "low": 153,
+          "high": 177,
+          "unit": "mEq/L"
+        }
+      },
+      "metadata": {
+        "human_subject_id": "115972574",
+        "window_date": "2021-01-18",
+        "patient": {
+          "age_years": 25,
+          "sex": "male"
+        }
+      }
+    },
+    {
+      "case_id": 9,
+      "species": "velox_noctis",
+      "tier": 3,
+      "action_label": "vn_hyponatremia_overlap",
+      "anti_memorization": true,
+      "fixes_applied": {
+        "fix1_opposite_treatment": true,
+        "fix2_borderline_deviation": "5% outside VN range",
+        "fix3_reinforcing_decoy": true,
+        "fix4_natural_variation": true
+      },
+      "human_memorization_predicts": "Na 146.0 \u2014 above human ULN 145 \u2192 human clinician: free water / restrict sodium (WRONG for VN)",
+      "question_stem": "SPECIES: Velox noctis (fictional)\nPATIENT: 24-year-old male, with history of decreased oral intake over the past week, presenting for evaluation of fatigue. Urine appears concentrated. No acute neurological symptoms.\n\nVELOX NOCTIS SPECIES REFERENCE RANGES:\nLab Test               Normal Range              Unit\n----------------------------------------------------\nalbumin                2.6\u20134.2                   g/dL\nbun                    5\u201320                      mg/dL\ncalcium                7.8\u201310.2                  mg/dL\ncreatinine             0.1\u20130.5                   mg/dL\nglucose                60\u2013120                    mg/dL\nhemoglobin             8.0\u201314.0                  g/dL\ninr                    0.8\u20131.2                   ratio\nphosphorus             2.0\u20135.0                   mg/dL\nplatelets              160\u2013450                   x10^3/uL\npotassium              1.0\u20132.5                   mEq/L\nsodium                 153\u2013177                   mEq/L\n\nPATIENT LABORATORY RESULTS:\nLab Test                   Result  Unit\n----------------------------------------------\nalbumin                       3.4  g/dL\nbun                          12.5  mg/dL\ncalcium                       9.0  mg/dL\ncreatinine                    0.3  mg/dL\nglucose                      90.0  mg/dL\nhemoglobin                    9.7  g/dL\ninr                           1.0  ratio\nphosphorus                    3.5  mg/dL\nplatelets                   305.0  x10^3/uL\npotassium                     2.1  mEq/L\nsodium                      146.0  mEq/L\n\nQUESTION:\nBased on the laboratory results, what clinical management do you recommend for this patient?",
+      "counterfactual": {
+        "question_stem": "SPECIES: Velox noctis (fictional)\nPATIENT: 24-year-old male, with history of decreased oral intake over the past week, presenting for evaluation of fatigue. Urine appears concentrated. No acute neurological symptoms.\n\nVELOX NOCTIS SPECIES REFERENCE RANGES:\nLab Test               Normal Range              Unit\n----------------------------------------------------\nalbumin                2.6\u20134.2                   g/dL\nbun                    5\u201320                      mg/dL\ncalcium                7.8\u201310.2                  mg/dL\ncreatinine             0.1\u20130.5                   mg/dL\nglucose                60\u2013120                    mg/dL\nhemoglobin             8.0\u201314.0                  g/dL\ninr                    0.8\u20131.2                   ratio\nphosphorus             2.0\u20135.0                   mg/dL\nplatelets              160\u2013450                   x10^3/uL\npotassium              1.0\u20132.5                   mEq/L\nsodium                 153\u2013177                   mEq/L\n\nPATIENT LABORATORY RESULTS:\nLab Test                   Result  Unit\n----------------------------------------------\nalbumin                       3.4  g/dL\nbun                          12.5  mg/dL\ncalcium                       9.0  mg/dL\ncreatinine                    0.3  mg/dL\nglucose                      90.0  mg/dL\nhemoglobin                    9.7  g/dL\ninr                           1.0  ratio\nphosphorus                    3.5  mg/dL\nplatelets                   305.0  x10^3/uL\npotassium                     2.1  mEq/L\nsodium                      165.0  mEq/L\n\nQUESTION:\nBased on the laboratory results, what clinical management do you recommend for this patient?",
+        "pivot_val_cf": 165.0,
+        "pivot_range": "153\u2013177",
+        "note": "pivot set to VN midpoint (165.0). Both human AND VN norms say this is normal \u2014 no intervention. This removes the opposite-treatment tension entirely."
+      },
+      "rubric": {
+        "correct_action_label": "vn_hyponatremia_overlap",
+        "correct_action_readable": "VN Hyponatremia Management \u2014 Isotonic saline infusion to raise sodium toward VN normal",
+        "correct_synonyms": [
+          "isotonic saline",
+          "normal saline",
+          "sodium supplementation",
+          "IV saline",
+          "sodium infusion",
+          "hyponatremia",
+          "sodium repletion",
+          "0.9% saline",
+          "sodium replacement",
+          "sodium correction"
+        ],
+        "wrong_answers": [
+          "restrict sodium",
+          "free water",
+          "hypotonic",
+          "hypernatremia treatment",
+          "sodium restriction",
+          "water replacement",
+          "D5W",
+          "0.45% saline",
+          "half-normal saline"
+        ],
+        "pivot_lab": "sodium",
+        "pivot_value": 146.0,
+        "pivot_direction": "LOW",
+        "pivot_vn_range": "153\u2013177 mEq/L",
+        "vn_deviation_pct": 4.6,
+        "human_memorization_trap": "Human clinician sees sodium=146.0 as high by human standards and recommends restrict sodium \u2014 the OPPOSITE of the VN-correct answer."
+      },
+      "lab_panel": {
+        "albumin": {
+          "value": 3.4,
+          "unit": "g/dL"
+        },
+        "bun": {
+          "value": 12.5,
+          "unit": "mg/dL"
+        },
+        "calcium": {
+          "value": 9.0,
+          "unit": "mg/dL"
+        },
+        "creatinine": {
+          "value": 0.3,
+          "unit": "mg/dL"
+        },
+        "glucose": {
+          "value": 90.0,
+          "unit": "mg/dL"
+        },
+        "hemoglobin": {
+          "value": 9.7,
+          "unit": "g/dL"
+        },
+        "inr": {
+          "value": 1.0,
+          "unit": "ratio"
+        },
+        "phosphorus": {
+          "value": 3.5,
+          "unit": "mg/dL"
+        },
+        "platelets": {
+          "value": 305.0,
+          "unit": "x10^3/uL"
+        },
+        "potassium": {
+          "value": 2.1,
+          "unit": "mEq/L"
+        },
+        "sodium": {
+          "value": 146.0,
+          "unit": "mEq/L"
+        }
+      },
+      "reference_ranges": {
+        "albumin": {
+          "low": 2.6,
+          "high": 4.2,
+          "unit": "g/dL"
+        },
+        "bun": {
+          "low": 5,
+          "high": 20,
+          "unit": "mg/dL"
+        },
+        "calcium": {
+          "low": 7.8,
+          "high": 10.2,
+          "unit": "mg/dL"
+        },
+        "creatinine": {
+          "low": 0.1,
+          "high": 0.5,
+          "unit": "mg/dL"
+        },
+        "glucose": {
+          "low": 60,
+          "high": 120,
+          "unit": "mg/dL"
+        },
+        "hemoglobin": {
+          "low": 8.0,
+          "high": 14.0,
+          "unit": "g/dL"
+        },
+        "inr": {
+          "low": 0.8,
+          "high": 1.2,
+          "unit": "ratio"
+        },
+        "phosphorus": {
+          "low": 2.0,
+          "high": 5.0,
+          "unit": "mg/dL"
+        },
+        "platelets": {
+          "low": 160,
+          "high": 450,
+          "unit": "x10^3/uL"
+        },
+        "potassium": {
+          "low": 1.0,
+          "high": 2.5,
+          "unit": "mEq/L"
+        },
+        "sodium": {
+          "low": 153,
+          "high": 177,
+          "unit": "mEq/L"
+        }
+      },
+      "metadata": {
+        "human_subject_id": "115971127",
+        "window_date": "2013-12-17",
+        "patient": {
+          "age_years": 24,
+          "sex": "male"
+        }
+      }
+    },
+    {
+      "case_id": 10,
+      "species": "velox_noctis",
+      "tier": 3,
+      "action_label": "vn_hyponatremia_overlap",
+      "anti_memorization": true,
+      "fixes_applied": {
+        "fix1_opposite_treatment": true,
+        "fix2_borderline_deviation": "4% outside VN range",
+        "fix3_reinforcing_decoy": true,
+        "fix4_natural_variation": true
+      },
+      "human_memorization_predicts": "Na 147.0 \u2014 above human ULN 145 \u2192 human clinician: free water / restrict sodium (WRONG for VN)",
+      "question_stem": "SPECIES: Velox noctis (fictional)\nPATIENT: 22-year-old male, with history of decreased oral intake over the past week, presenting for evaluation of fatigue. Urine appears concentrated. No acute neurological symptoms.\n\nVELOX NOCTIS SPECIES REFERENCE RANGES:\nLab Test               Normal Range              Unit\n----------------------------------------------------\nalbumin                2.6\u20134.2                   g/dL\nbun                    5\u201320                      mg/dL\ncalcium                7.8\u201310.2                  mg/dL\ncreatinine             0.1\u20130.5                   mg/dL\nglucose                60\u2013120                    mg/dL\nhemoglobin             8.0\u201314.0                  g/dL\ninr                    0.8\u20131.2                   ratio\nphosphorus             2.0\u20135.0                   mg/dL\nplatelets              160\u2013450                   x10^3/uL\npotassium              1.0\u20132.5                   mEq/L\nsodium                 153\u2013177                   mEq/L\n\nPATIENT LABORATORY RESULTS:\nLab Test                   Result  Unit\n----------------------------------------------\nalbumin                       3.4  g/dL\nbun                          12.5  mg/dL\ncalcium                       9.0  mg/dL\ncreatinine                    0.3  mg/dL\nglucose                     102.0  mg/dL\nhemoglobin                   11.0  g/dL\ninr                           1.0  ratio\nphosphorus                    4.3  mg/dL\nplatelets                   216.4  x10^3/uL\npotassium                     1.7  mEq/L\nsodium                      147.0  mEq/L\n\nQUESTION:\nBased on the laboratory results, what clinical management do you recommend for this patient?",
+      "counterfactual": {
+        "question_stem": "SPECIES: Velox noctis (fictional)\nPATIENT: 22-year-old male, with history of decreased oral intake over the past week, presenting for evaluation of fatigue. Urine appears concentrated. No acute neurological symptoms.\n\nVELOX NOCTIS SPECIES REFERENCE RANGES:\nLab Test               Normal Range              Unit\n----------------------------------------------------\nalbumin                2.6\u20134.2                   g/dL\nbun                    5\u201320                      mg/dL\ncalcium                7.8\u201310.2                  mg/dL\ncreatinine             0.1\u20130.5                   mg/dL\nglucose                60\u2013120                    mg/dL\nhemoglobin             8.0\u201314.0                  g/dL\ninr                    0.8\u20131.2                   ratio\nphosphorus             2.0\u20135.0                   mg/dL\nplatelets              160\u2013450                   x10^3/uL\npotassium              1.0\u20132.5                   mEq/L\nsodium                 153\u2013177                   mEq/L\n\nPATIENT LABORATORY RESULTS:\nLab Test                   Result  Unit\n----------------------------------------------\nalbumin                       3.4  g/dL\nbun                          12.5  mg/dL\ncalcium                       9.0  mg/dL\ncreatinine                    0.3  mg/dL\nglucose                     102.0  mg/dL\nhemoglobin                   11.0  g/dL\ninr                           1.0  ratio\nphosphorus                    4.3  mg/dL\nplatelets                   216.4  x10^3/uL\npotassium                     1.7  mEq/L\nsodium                      165.0  mEq/L\n\nQUESTION:\nBased on the laboratory results, what clinical management do you recommend for this patient?",
+        "pivot_val_cf": 165.0,
+        "pivot_range": "153\u2013177",
+        "note": "pivot set to VN midpoint (165.0). Both human AND VN norms say this is normal \u2014 no intervention. This removes the opposite-treatment tension entirely."
+      },
+      "rubric": {
+        "correct_action_label": "vn_hyponatremia_overlap",
+        "correct_action_readable": "VN Hyponatremia Management \u2014 Isotonic saline infusion to raise sodium toward VN normal",
+        "correct_synonyms": [
+          "isotonic saline",
+          "normal saline",
+          "sodium supplementation",
+          "IV saline",
+          "sodium infusion",
+          "hyponatremia",
+          "sodium repletion",
+          "0.9% saline",
+          "sodium replacement",
+          "sodium correction"
+        ],
+        "wrong_answers": [
+          "restrict sodium",
+          "free water",
+          "hypotonic",
+          "hypernatremia treatment",
+          "sodium restriction",
+          "water replacement",
+          "D5W",
+          "0.45% saline",
+          "half-normal saline"
+        ],
+        "pivot_lab": "sodium",
+        "pivot_value": 147.0,
+        "pivot_direction": "LOW",
+        "pivot_vn_range": "153\u2013177 mEq/L",
+        "vn_deviation_pct": 3.9,
+        "human_memorization_trap": "Human clinician sees sodium=147.0 as high by human standards and recommends restrict sodium \u2014 the OPPOSITE of the VN-correct answer."
+      },
+      "lab_panel": {
+        "albumin": {
+          "value": 3.4,
+          "unit": "g/dL"
+        },
+        "bun": {
+          "value": 12.5,
+          "unit": "mg/dL"
+        },
+        "calcium": {
+          "value": 9.0,
+          "unit": "mg/dL"
+        },
+        "creatinine": {
+          "value": 0.3,
+          "unit": "mg/dL"
+        },
+        "glucose": {
+          "value": 102.0,
+          "unit": "mg/dL"
+        },
+        "hemoglobin": {
+          "value": 11.0,
+          "unit": "g/dL"
+        },
+        "inr": {
+          "value": 1.0,
+          "unit": "ratio"
+        },
+        "phosphorus": {
+          "value": 4.3,
+          "unit": "mg/dL"
+        },
+        "platelets": {
+          "value": 216.4,
+          "unit": "x10^3/uL"
+        },
+        "potassium": {
+          "value": 1.7,
+          "unit": "mEq/L"
+        },
+        "sodium": {
+          "value": 147.0,
+          "unit": "mEq/L"
+        }
+      },
+      "reference_ranges": {
+        "albumin": {
+          "low": 2.6,
+          "high": 4.2,
+          "unit": "g/dL"
+        },
+        "bun": {
+          "low": 5,
+          "high": 20,
+          "unit": "mg/dL"
+        },
+        "calcium": {
+          "low": 7.8,
+          "high": 10.2,
+          "unit": "mg/dL"
+        },
+        "creatinine": {
+          "low": 0.1,
+          "high": 0.5,
+          "unit": "mg/dL"
+        },
+        "glucose": {
+          "low": 60,
+          "high": 120,
+          "unit": "mg/dL"
+        },
+        "hemoglobin": {
+          "low": 8.0,
+          "high": 14.0,
+          "unit": "g/dL"
+        },
+        "inr": {
+          "low": 0.8,
+          "high": 1.2,
+          "unit": "ratio"
+        },
+        "phosphorus": {
+          "low": 2.0,
+          "high": 5.0,
+          "unit": "mg/dL"
+        },
+        "platelets": {
+          "low": 160,
+          "high": 450,
+          "unit": "x10^3/uL"
+        },
+        "potassium": {
+          "low": 1.0,
+          "high": 2.5,
+          "unit": "mEq/L"
+        },
+        "sodium": {
+          "low": 153,
+          "high": 177,
+          "unit": "mEq/L"
+        }
+      },
+      "metadata": {
+        "human_subject_id": "115973689",
+        "window_date": "2017-03-20",
+        "patient": {
+          "age_years": 22,
+          "sex": "male"
+        }
+      }
+    }
+  ]
+}

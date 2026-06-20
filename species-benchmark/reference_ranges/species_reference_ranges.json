@@ -1,0 +1,693 @@
+{
+  "_description": "Species-specific lab reference ranges for the cross-species translation benchmark. Human values are the baseline. Animal values sourced from peer-reviewed veterinary references (Merck Veterinary Manual, ASVCP guidelines). Fictional species (Velox noctis) values are constructed to be biologically plausible but absent from any training data.",
+  "_translation_note": "To translate a human value: z = (human_val - human_mean) / human_sd; animal_val = animal_mean + z * animal_sd. This preserves clinical significance (deviation from normal) across species.",
+  "species": {
+    "human": {
+      "common_name": "Human",
+      "latin_name": "Homo sapiens",
+      "avg_weight_kg": 70,
+      "resting_hr_bpm": [
+        60,
+        100
+      ],
+      "labs": {
+        "creatinine": {
+          "unit": "mg/dL",
+          "mean": 0.9,
+          "sd": 0.3,
+          "low": 0.6,
+          "high": 1.2,
+          "critical_high": 4.0
+        },
+        "bun": {
+          "unit": "mg/dL",
+          "mean": 15,
+          "sd": 5,
+          "low": 7,
+          "high": 20,
+          "critical_high": 100
+        },
+        "potassium": {
+          "unit": "mEq/L",
+          "mean": 4.2,
+          "sd": 0.4,
+          "low": 3.5,
+          "high": 5.0,
+          "critical_low": 2.5,
+          "critical_high": 6.5
+        },
+        "sodium": {
+          "unit": "mEq/L",
+          "mean": 140,
+          "sd": 3,
+          "low": 136,
+          "high": 145,
+          "critical_low": 120,
+          "critical_high": 160
+        },
+        "bicarbonate": {
+          "unit": "mEq/L",
+          "mean": 25,
+          "sd": 3,
+          "low": 22,
+          "high": 29,
+          "critical_low": 10
+        },
+        "hemoglobin": {
+          "unit": "g/dL",
+          "mean": 13.5,
+          "sd": 1.5,
+          "low": 12.0,
+          "high": 17.5,
+          "critical_low": 7.0
+        },
+        "glucose": {
+          "unit": "mg/dL",
+          "mean": 90,
+          "sd": 15,
+          "low": 70,
+          "high": 100,
+          "critical_low": 40,
+          "critical_high": 400
+        },
+        "ldl_cholesterol": {
+          "unit": "mg/dL",
+          "mean": 100,
+          "sd": 30,
+          "low": 0,
+          "high": 100,
+          "target_high_risk": 70
+        },
+        "hdl_cholesterol": {
+          "unit": "mg/dL",
+          "mean": 55,
+          "sd": 15,
+          "low": 40,
+          "high": 200,
+          "critical_low": 25
+        },
+        "hba1c": {
+          "unit": "%",
+          "mean": 5.4,
+          "sd": 0.5,
+          "low": 4.0,
+          "high": 5.6,
+          "diabetes_threshold": 6.5
+        },
+        "bnp": {
+          "unit": "pg/mL",
+          "mean": 30,
+          "sd": 20,
+          "low": 0,
+          "high": 100,
+          "hf_threshold": 400
+        },
+        "troponin_i": {
+          "unit": "ng/mL",
+          "mean": 0.01,
+          "sd": 0.01,
+          "low": 0,
+          "high": 0.04,
+          "critical_high": 1.0
+        },
+        "inr": {
+          "unit": "ratio",
+          "mean": 1.0,
+          "sd": 0.1,
+          "low": 0.8,
+          "high": 1.2,
+          "therapeutic_range": [
+            2.0,
+            3.0
+          ]
+        },
+        "egfr": {
+          "unit": "mL/min/1.73m2",
+          "mean": 90,
+          "sd": 15,
+          "low": 60,
+          "high": 120,
+          "ckd3_threshold": 60,
+          "ckd4_threshold": 30
+        },
+        "ast": {
+          "unit": "U/L",
+          "mean": 25,
+          "sd": 10,
+          "low": 10,
+          "high": 40,
+          "critical_high": 1000
+        },
+        "alt": {
+          "unit": "U/L",
+          "mean": 25,
+          "sd": 12,
+          "low": 7,
+          "high": 40,
+          "critical_high": 1000
+        },
+        "wbc": {
+          "unit": "x10^3/uL",
+          "mean": 7.5,
+          "sd": 2.5,
+          "low": 4.5,
+          "high": 11.0,
+          "critical_low": 2.0,
+          "critical_high": 30
+        },
+        "platelets": {
+          "unit": "x10^3/uL",
+          "mean": 250,
+          "sd": 75,
+          "low": 150,
+          "high": 400,
+          "critical_low": 50
+        },
+        "albumin": {
+          "unit": "g/dL",
+          "mean": 4.0,
+          "sd": 0.4,
+          "low": 3.5,
+          "high": 5.0,
+          "critical_low": 2.0
+        },
+        "phosphorus": {
+          "unit": "mg/dL",
+          "mean": 3.5,
+          "sd": 0.6,
+          "low": 2.5,
+          "high": 4.5
+        },
+        "calcium": {
+          "unit": "mg/dL",
+          "mean": 9.5,
+          "sd": 0.5,
+          "low": 8.5,
+          "high": 10.5,
+          "critical_low": 7.0,
+          "critical_high": 13.0
+        },
+        "magnesium": {
+          "unit": "mEq/L",
+          "mean": 2.0,
+          "sd": 0.3,
+          "low": 1.5,
+          "high": 2.5,
+          "critical_low": 1.0
+        },
+        "lactate": {
+          "unit": "mmol/L",
+          "mean": 1.0,
+          "sd": 0.5,
+          "low": 0.5,
+          "high": 2.0,
+          "sepsis_threshold": 4.0
+        }
+      }
+    },
+    "dog": {
+      "common_name": "Domestic Dog",
+      "latin_name": "Canis lupus familiaris",
+      "source": "Merck Veterinary Manual; ASVCP Reference Intervals 2019",
+      "avg_weight_kg": 25,
+      "resting_hr_bpm": [
+        60,
+        140
+      ],
+      "clinical_notes": "Reference ranges vary by breed and size. Values below are for medium-sized adult dogs. Creatinine is lower in small breeds.",
+      "labs": {
+        "creatinine": {
+          "unit": "mg/dL",
+          "mean": 0.9,
+          "sd": 0.3,
+          "low": 0.5,
+          "high": 1.5,
+          "critical_high": 5.0
+        },
+        "bun": {
+          "unit": "mg/dL",
+          "mean": 17,
+          "sd": 6,
+          "low": 7,
+          "high": 27,
+          "critical_high": 120
+        },
+        "potassium": {
+          "unit": "mEq/L",
+          "mean": 4.4,
+          "sd": 0.5,
+          "low": 3.6,
+          "high": 5.5,
+          "critical_low": 2.5,
+          "critical_high": 7.0
+        },
+        "sodium": {
+          "unit": "mEq/L",
+          "mean": 146,
+          "sd": 3,
+          "low": 140,
+          "high": 151,
+          "critical_low": 125,
+          "critical_high": 165
+        },
+        "bicarbonate": {
+          "unit": "mEq/L",
+          "mean": 21,
+          "sd": 3,
+          "low": 17,
+          "high": 25,
+          "critical_low": 10
+        },
+        "hemoglobin": {
+          "unit": "g/dL",
+          "mean": 14.5,
+          "sd": 2.0,
+          "low": 12.0,
+          "high": 18.0,
+          "critical_low": 7.0
+        },
+        "glucose": {
+          "unit": "mg/dL",
+          "mean": 100,
+          "sd": 20,
+          "low": 70,
+          "high": 138,
+          "critical_low": 45,
+          "critical_high": 500
+        },
+        "cholesterol": {
+          "unit": "mg/dL",
+          "mean": 175,
+          "sd": 45,
+          "low": 110,
+          "high": 320,
+          "note": "Dogs do not separate LDL/HDL in standard panels; total cholesterol used"
+        },
+        "alt": {
+          "unit": "U/L",
+          "mean": 35,
+          "sd": 20,
+          "low": 10,
+          "high": 100,
+          "critical_high": 1000
+        },
+        "ast": {
+          "unit": "U/L",
+          "mean": 30,
+          "sd": 15,
+          "low": 10,
+          "high": 88,
+          "critical_high": 1000
+        },
+        "albumin": {
+          "unit": "g/dL",
+          "mean": 3.2,
+          "sd": 0.4,
+          "low": 2.6,
+          "high": 4.0,
+          "critical_low": 1.5
+        },
+        "calcium": {
+          "unit": "mg/dL",
+          "mean": 9.9,
+          "sd": 0.6,
+          "low": 8.9,
+          "high": 11.4,
+          "critical_low": 6.5,
+          "critical_high": 14.0
+        },
+        "phosphorus": {
+          "unit": "mg/dL",
+          "mean": 4.2,
+          "sd": 1.0,
+          "low": 2.5,
+          "high": 6.0
+        },
+        "wbc": {
+          "unit": "x10^3/uL",
+          "mean": 10.5,
+          "sd": 3.5,
+          "low": 5.5,
+          "high": 16.9,
+          "critical_low": 3.0,
+          "critical_high": 30
+        },
+        "platelets": {
+          "unit": "x10^3/uL",
+          "mean": 275,
+          "sd": 75,
+          "low": 175,
+          "high": 500,
+          "critical_low": 50
+        },
+        "troponin_i": {
+          "unit": "ng/mL",
+          "mean": 0.05,
+          "sd": 0.05,
+          "low": 0,
+          "high": 0.2,
+          "critical_high": 0.9,
+          "note": "Species-specific assay; human troponin assays may cross-react"
+        },
+        "bnp": {
+          "unit": "pmol/L",
+          "mean": 5,
+          "sd": 4,
+          "low": 0,
+          "high": 17,
+          "hf_threshold": 45,
+          "note": "NT-proBNP in dogs; unit differs from human BNP"
+        },
+        "lactate": {
+          "unit": "mmol/L",
+          "mean": 1.2,
+          "sd": 0.6,
+          "low": 0.3,
+          "high": 2.5,
+          "sepsis_threshold": 4.0
+        },
+        "inr": {
+          "unit": "ratio",
+          "mean": 1.0,
+          "sd": 0.1,
+          "low": 0.8,
+          "high": 1.2,
+          "note": "PT/INR comparable to humans for coagulopathy screening"
+        }
+      },
+      "medication_equivalents": {
+        "enalapril": "enalapril (0.5 mg/kg BID)",
+        "furosemide": "furosemide (2-4 mg/kg BID)",
+        "spironolactone": "spironolactone (2 mg/kg SID)",
+        "atorvastatin": "NOT USED (dogs do not develop atherosclerosis; use dietary management)",
+        "metoprolol": "atenolol (0.25-1 mg/kg BID)",
+        "lisinopril": "lisinopril (0.25-0.5 mg/kg SID)"
+      }
+    },
+    "horse": {
+      "common_name": "Horse",
+      "latin_name": "Equus caballus",
+      "source": "Merck Veterinary Manual; Equine Clinical Pathology (Barton, 2011)",
+      "avg_weight_kg": 500,
+      "resting_hr_bpm": [
+        28,
+        44
+      ],
+      "clinical_notes": "Large body mass means total drug doses are very different. Horses rarely develop cardiac disease comparable to humans. Cases should focus on renal and metabolic domains.",
+      "labs": {
+        "creatinine": {
+          "unit": "mg/dL",
+          "mean": 1.5,
+          "sd": 0.4,
+          "low": 1.2,
+          "high": 1.9,
+          "critical_high": 5.0
+        },
+        "bun": {
+          "unit": "mg/dL",
+          "mean": 18,
+          "sd": 6,
+          "low": 10,
+          "high": 24,
+          "critical_high": 100
+        },
+        "potassium": {
+          "unit": "mEq/L",
+          "mean": 4.0,
+          "sd": 0.5,
+          "low": 2.5,
+          "high": 5.0,
+          "critical_low": 2.0,
+          "critical_high": 6.5
+        },
+        "sodium": {
+          "unit": "mEq/L",
+          "mean": 138,
+          "sd": 4,
+          "low": 132,
+          "high": 146,
+          "critical_low": 118,
+          "critical_high": 160
+        },
+        "bicarbonate": {
+          "unit": "mEq/L",
+          "mean": 28,
+          "sd": 4,
+          "low": 24,
+          "high": 32,
+          "critical_low": 16
+        },
+        "hemoglobin": {
+          "unit": "g/dL",
+          "mean": 12.5,
+          "sd": 1.5,
+          "low": 11.0,
+          "high": 17.0,
+          "critical_low": 7.0
+        },
+        "glucose": {
+          "unit": "mg/dL",
+          "mean": 90,
+          "sd": 20,
+          "low": 75,
+          "high": 115,
+          "critical_low": 40,
+          "critical_high": 300
+        },
+        "albumin": {
+          "unit": "g/dL",
+          "mean": 3.2,
+          "sd": 0.4,
+          "low": 2.6,
+          "high": 3.8,
+          "critical_low": 1.5
+        },
+        "ast": {
+          "unit": "U/L",
+          "mean": 300,
+          "sd": 75,
+          "low": 190,
+          "high": 440,
+          "critical_high": 2000
+        },
+        "calcium": {
+          "unit": "mg/dL",
+          "mean": 11.4,
+          "sd": 0.6,
+          "low": 10.4,
+          "high": 13.2,
+          "critical_low": 8.0
+        },
+        "phosphorus": {
+          "unit": "mg/dL",
+          "mean": 3.0,
+          "sd": 0.7,
+          "low": 1.9,
+          "high": 5.0
+        },
+        "lactate": {
+          "unit": "mmol/L",
+          "mean": 0.8,
+          "sd": 0.4,
+          "low": 0.1,
+          "high": 1.8,
+          "critical_high": 4.0
+        },
+        "wbc": {
+          "unit": "x10^3/uL",
+          "mean": 8.5,
+          "sd": 2.5,
+          "low": 5.5,
+          "high": 12.5,
+          "critical_low": 2.0,
+          "critical_high": 25
+        }
+      }
+    },
+    "velox_noctis": {
+      "common_name": "Velox noctis (fictional)",
+      "latin_name": "Velox noctis",
+      "source": "IN-CONTEXT ONLY \u2014 no training data exists. All reference ranges are provided in the lab table.",
+      "avg_weight_kg": 12,
+      "resting_hr_bpm": [
+        95,
+        145
+      ],
+      "clinical_notes": "Fictional small mammal. Physiological directions are the same as other mammals (high K+ = cardiac risk, high BUN/creatinine = renal failure, low Hgb = anemia). Reference ranges differ significantly from human in scale \u2014 read the provided ranges, do not apply human threshold values.",
+      "labs": {
+        "creatinine": {
+          "unit": "mg/dL",
+          "mean": 0.3,
+          "sd": 0.1,
+          "low": 0.1,
+          "high": 0.5,
+          "critical_high": 1.5
+        },
+        "bun": {
+          "unit": "mg/dL",
+          "mean": 12,
+          "sd": 4,
+          "low": 5,
+          "high": 20,
+          "critical_high": 80
+        },
+        "potassium": {
+          "unit": "mEq/L",
+          "mean": 1.8,
+          "sd": 0.4,
+          "low": 1.0,
+          "high": 2.5,
+          "critical_low": 0.6,
+          "critical_high": 4.0
+        },
+        "sodium": {
+          "unit": "mEq/L",
+          "mean": 165,
+          "sd": 6,
+          "low": 153,
+          "high": 177,
+          "critical_low": 130,
+          "critical_high": 195
+        },
+        "bicarbonate": {
+          "unit": "mEq/L",
+          "mean": 24,
+          "sd": 3,
+          "low": 18,
+          "high": 30,
+          "critical_low": 10
+        },
+        "hemoglobin": {
+          "unit": "g/dL",
+          "mean": 11.0,
+          "sd": 1.5,
+          "low": 8.0,
+          "high": 14.0,
+          "critical_low": 5.0
+        },
+        "glucose": {
+          "unit": "mg/dL",
+          "mean": 90,
+          "sd": 15,
+          "low": 60,
+          "high": 120,
+          "critical_low": 35,
+          "critical_high": 380
+        },
+        "alt": {
+          "unit": "U/L",
+          "mean": 28,
+          "sd": 10,
+          "low": 12,
+          "high": 52,
+          "critical_high": 800
+        },
+        "albumin": {
+          "unit": "g/dL",
+          "mean": 3.4,
+          "sd": 0.4,
+          "low": 2.6,
+          "high": 4.2,
+          "critical_low": 1.5
+        },
+        "calcium": {
+          "unit": "mg/dL",
+          "mean": 9.0,
+          "sd": 0.6,
+          "low": 7.8,
+          "high": 10.2,
+          "critical_low": 6.0,
+          "critical_high": 13.0
+        },
+        "phosphorus": {
+          "unit": "mg/dL",
+          "mean": 3.5,
+          "sd": 0.8,
+          "low": 2.0,
+          "high": 5.0
+        },
+        "wbc": {
+          "unit": "x10^3/uL",
+          "mean": 9.0,
+          "sd": 3.0,
+          "low": 4.5,
+          "high": 14.0,
+          "critical_low": 2.5,
+          "critical_high": 28
+        },
+        "platelets": {
+          "unit": "x10^3/uL",
+          "mean": 290,
+          "sd": 80,
+          "low": 160,
+          "high": 450,
+          "critical_low": 50
+        },
+        "troponin_vn": {
+          "unit": "ng/mL",
+          "mean": 0.005,
+          "sd": 0.003,
+          "low": 0,
+          "high": 0.015,
+          "critical_high": 0.12
+        },
+        "lactate": {
+          "unit": "mmol/L",
+          "mean": 1.0,
+          "sd": 0.5,
+          "low": 0.3,
+          "high": 2.0,
+          "critical_high": 4.0
+        },
+        "inr": {
+          "unit": "ratio",
+          "mean": 1.0,
+          "sd": 0.1,
+          "low": 0.8,
+          "high": 1.2,
+          "critical_high": 4.0
+        }
+      },
+      "medication_equivalents": {
+        "enalapril": "Valdostrel (ACE inhibitor, 0.3 mg/kg BID)",
+        "furosemide": "Noctifuse (loop diuretic, 1.5 mg/kg BID)",
+        "spironolactone": "Aldorex-VN (aldosterone antagonist, 1 mg/kg SID)",
+        "metoprolol": "Noctolol (beta-blocker, 0.5 mg/kg BID)",
+        "amlodipine": "Calpax-VN (calcium channel blocker, 0.1 mg/kg SID)",
+        "atorvastatin": "Lipidex-VN (HMG-CoA reductase inhibitor, 0.2 mg/kg SID)"
+      }
+    }
+  },
+  "clinical_thresholds": {
+    "_note": "These pathophysiological thresholds are expressed as z-scores from species normal and thus apply across all species. Use species-specific reference ranges to convert to actual values.",
+    "emergent_hyperkalemia": {
+      "z_threshold": 2.5,
+      "action": "emergent potassium-lowering treatment (renal replacement or potassium binders)"
+    },
+    "transfusion_trigger": {
+      "z_threshold": -4.0,
+      "lab": "hemoglobin",
+      "action": "packed red cell transfusion"
+    },
+    "ckd_stage3_equivalent": {
+      "z_threshold": 2.5,
+      "lab": "creatinine",
+      "action": "nephroprotective medication adjustment"
+    },
+    "heart_failure_decompensation": {
+      "z_threshold": 3.0,
+      "lab": "cardiomarker",
+      "action": "diuretic intensification"
+    },
+    "hypoglycemia_critical": {
+      "z_threshold": -3.0,
+      "lab": "glucose",
+      "action": "dextrose supplementation"
+    },
+    "severe_hypoalbuminemia": {
+      "z_threshold": -3.0,
+      "lab": "albumin",
+      "action": "albumin infusion or nutritional support"
+    }
+  }
+}
