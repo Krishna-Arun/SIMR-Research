@@ -1,0 +1,1428 @@
+{
+  "name": "causal_intervention_matched_pairs_v1",
+  "n_pairs": 30,
+  "balance_check": {
+    "n_good_balance": 30,
+    "threshold": 0.1
+  },
+  "intervention_pairs": {
+    "('observation', 'pci')": 5,
+    "('pci', 'vasopressor_norepi')": 5,
+    "('antibiotic_betalactam', 'pci')": 5,
+    "('observation', 'vasopressor_norepi')": 5,
+    "('antibiotic_betalactam', 'observation')": 5,
+    "('antibiotic_betalactam', 'vasopressor_norepi')": 5
+  },
+  "pairs": [
+    {
+      "pair_id": "pair_000001",
+      "episode_a_id": "episode_0005",
+      "episode_b_id": "episode_0002",
+      "intervention_a": "pci",
+      "intervention_b": "observation",
+      "severity_match": {
+        "bin": "mild",
+        "episode_a_score": 0,
+        "episode_b_score": 0,
+        "smd": 0.0
+      },
+      "match_quality": {
+        "score": 0.0,
+        "comorbidity_distance": 0
+      },
+      "episode_a": {
+        "patient_id": "115967128",
+        "intervention": {
+          "type": "pci",
+          "code": "cardiac_pci",
+          "datetime": "2026-06-23T23:05:27.331964"
+        },
+        "demographics": {
+          "age": 69,
+          "gender": "Female"
+        }
+      },
+      "episode_b": {
+        "patient_id": "115967114",
+        "intervention": {
+          "type": "observation",
+          "code": "cardiac_observation",
+          "datetime": "2026-06-23T23:05:27.331154"
+        },
+        "demographics": {
+          "age": 42,
+          "gender": "Female"
+        }
+      },
+      "y_a_labs": [
+        "Troponin I"
+      ],
+      "y_b_labs": [
+        "Troponin I"
+      ]
+    },
+    {
+      "pair_id": "pair_000002",
+      "episode_a_id": "episode_0013",
+      "episode_b_id": "episode_0006",
+      "intervention_a": "pci",
+      "intervention_b": "observation",
+      "severity_match": {
+        "bin": "mild",
+        "episode_a_score": 0,
+        "episode_b_score": 0,
+        "smd": 0.0
+      },
+      "match_quality": {
+        "score": 0.0,
+        "comorbidity_distance": 0
+      },
+      "episode_a": {
+        "patient_id": "115967163",
+        "intervention": {
+          "type": "pci",
+          "code": "cardiac_pci",
+          "datetime": "2026-06-23T23:05:27.333916"
+        },
+        "demographics": {
+          "age": 59,
+          "gender": "Male"
+        }
+      },
+      "episode_b": {
+        "patient_id": "115967129",
+        "intervention": {
+          "type": "observation",
+          "code": "cardiac_observation",
+          "datetime": "2026-06-23T23:05:27.332221"
+        },
+        "demographics": {
+          "age": 69,
+          "gender": "Female"
+        }
+      },
+      "y_a_labs": [
+        "Troponin I"
+      ],
+      "y_b_labs": [
+        "Troponin I"
+      ]
+    },
+    {
+      "pair_id": "pair_000003",
+      "episode_a_id": "episode_0009",
+      "episode_b_id": "episode_0010",
+      "intervention_a": "pci",
+      "intervention_b": "observation",
+      "severity_match": {
+        "bin": "mild",
+        "episode_a_score": 0,
+        "episode_b_score": 0,
+        "smd": 0.0
+      },
+      "match_quality": {
+        "score": 10.0,
+        "comorbidity_distance": 1
+      },
+      "episode_a": {
+        "patient_id": "115967140",
+        "intervention": {
+          "type": "pci",
+          "code": "cardiac_pci",
+          "datetime": "2026-06-23T23:05:27.332968"
+        },
+        "demographics": {
+          "age": 78,
+          "gender": "Male"
+        }
+      },
+      "episode_b": {
+        "patient_id": "115967142",
+        "intervention": {
+          "type": "observation",
+          "code": "cardiac_observation",
+          "datetime": "2026-06-23T23:05:27.333201"
+        },
+        "demographics": {
+          "age": 55,
+          "gender": "Male"
+        }
+      },
+      "y_a_labs": [
+        "Troponin I"
+      ],
+      "y_b_labs": [
+        "Troponin I"
+      ]
+    },
+    {
+      "pair_id": "pair_000004",
+      "episode_a_id": "episode_0017",
+      "episode_b_id": "episode_0014",
+      "intervention_a": "pci",
+      "intervention_b": "observation",
+      "severity_match": {
+        "bin": "mild",
+        "episode_a_score": 0,
+        "episode_b_score": 0,
+        "smd": 0.0
+      },
+      "match_quality": {
+        "score": 10.0,
+        "comorbidity_distance": 1
+      },
+      "episode_a": {
+        "patient_id": "115967189",
+        "intervention": {
+          "type": "pci",
+          "code": "cardiac_pci",
+          "datetime": "2026-06-23T23:05:27.334870"
+        },
+        "demographics": {
+          "age": 80,
+          "gender": "Male"
+        }
+      },
+      "episode_b": {
+        "patient_id": "115967164",
+        "intervention": {
+          "type": "observation",
+          "code": "cardiac_observation",
+          "datetime": "2026-06-23T23:05:27.334144"
+        },
+        "demographics": {
+          "age": 61,
+          "gender": "Male"
+        }
+      },
+      "y_a_labs": [
+        "Troponin I"
+      ],
+      "y_b_labs": [
+        "Troponin I"
+      ]
+    },
+    {
+      "pair_id": "pair_000005",
+      "episode_a_id": "episode_0001",
+      "episode_b_id": "episode_0018",
+      "intervention_a": "pci",
+      "intervention_b": "observation",
+      "severity_match": {
+        "bin": "mild",
+        "episode_a_score": 0,
+        "episode_b_score": 0,
+        "smd": 0.0
+      },
+      "match_quality": {
+        "score": 30.0,
+        "comorbidity_distance": 3
+      },
+      "episode_a": {
+        "patient_id": "115967110",
+        "intervention": {
+          "type": "pci",
+          "code": "cardiac_pci",
+          "datetime": "2026-06-23T23:05:27.330776"
+        },
+        "demographics": {
+          "age": 60,
+          "gender": "Male"
+        }
+      },
+      "episode_b": {
+        "patient_id": "115967190",
+        "intervention": {
+          "type": "observation",
+          "code": "cardiac_observation",
+          "datetime": "2026-06-23T23:05:27.335104"
+        },
+        "demographics": {
+          "age": 55,
+          "gender": "Male"
+        }
+      },
+      "y_a_labs": [
+        "Troponin I"
+      ],
+      "y_b_labs": [
+        "Troponin I"
+      ]
+    },
+    {
+      "pair_id": "pair_000006",
+      "episode_a_id": "episode_0005",
+      "episode_b_id": "episode_0003",
+      "intervention_a": "pci",
+      "intervention_b": "vasopressor_norepi",
+      "severity_match": {
+        "bin": "mild",
+        "episode_a_score": 0,
+        "episode_b_score": 0,
+        "smd": 0.0
+      },
+      "match_quality": {
+        "score": 0.0,
+        "comorbidity_distance": 0
+      },
+      "episode_a": {
+        "patient_id": "115967128",
+        "intervention": {
+          "type": "pci",
+          "code": "cardiac_pci",
+          "datetime": "2026-06-23T23:05:27.331964"
+        },
+        "demographics": {
+          "age": 69,
+          "gender": "Female"
+        }
+      },
+      "episode_b": {
+        "patient_id": "115967119",
+        "intervention": {
+          "type": "vasopressor_norepi",
+          "code": "cardiac_vasopressor_norepi",
+          "datetime": "2026-06-23T23:05:27.331430"
+        },
+        "demographics": {
+          "age": 77,
+          "gender": "Female"
+        }
+      },
+      "y_a_labs": [
+        "Troponin I"
+      ],
+      "y_b_labs": [
+        "Troponin I"
+      ]
+    },
+    {
+      "pair_id": "pair_000007",
+      "episode_a_id": "episode_0013",
+      "episode_b_id": "episode_0007",
+      "intervention_a": "pci",
+      "intervention_b": "vasopressor_norepi",
+      "severity_match": {
+        "bin": "mild",
+        "episode_a_score": 0,
+        "episode_b_score": 0,
+        "smd": 0.0
+      },
+      "match_quality": {
+        "score": 0.0,
+        "comorbidity_distance": 0
+      },
+      "episode_a": {
+        "patient_id": "115967163",
+        "intervention": {
+          "type": "pci",
+          "code": "cardiac_pci",
+          "datetime": "2026-06-23T23:05:27.333916"
+        },
+        "demographics": {
+          "age": 59,
+          "gender": "Male"
+        }
+      },
+      "episode_b": {
+        "patient_id": "115967133",
+        "intervention": {
+          "type": "vasopressor_norepi",
+          "code": "cardiac_vasopressor_norepi",
+          "datetime": "2026-06-23T23:05:27.332476"
+        },
+        "demographics": {
+          "age": 75,
+          "gender": "Male"
+        }
+      },
+      "y_a_labs": [
+        "Troponin I"
+      ],
+      "y_b_labs": [
+        "Troponin I"
+      ]
+    },
+    {
+      "pair_id": "pair_000008",
+      "episode_a_id": "episode_0009",
+      "episode_b_id": "episode_0015",
+      "intervention_a": "pci",
+      "intervention_b": "vasopressor_norepi",
+      "severity_match": {
+        "bin": "mild",
+        "episode_a_score": 0,
+        "episode_b_score": 0,
+        "smd": 0.0
+      },
+      "match_quality": {
+        "score": 10.0,
+        "comorbidity_distance": 1
+      },
+      "episode_a": {
+        "patient_id": "115967140",
+        "intervention": {
+          "type": "pci",
+          "code": "cardiac_pci",
+          "datetime": "2026-06-23T23:05:27.332968"
+        },
+        "demographics": {
+          "age": 78,
+          "gender": "Male"
+        }
+      },
+      "episode_b": {
+        "patient_id": "115967167",
+        "intervention": {
+          "type": "vasopressor_norepi",
+          "code": "cardiac_vasopressor_norepi",
+          "datetime": "2026-06-23T23:05:27.334395"
+        },
+        "demographics": {
+          "age": 77,
+          "gender": "Male"
+        }
+      },
+      "y_a_labs": [
+        "Troponin I"
+      ],
+      "y_b_labs": [
+        "Troponin I"
+      ]
+    },
+    {
+      "pair_id": "pair_000009",
+      "episode_a_id": "episode_0017",
+      "episode_b_id": "episode_0019",
+      "intervention_a": "pci",
+      "intervention_b": "vasopressor_norepi",
+      "severity_match": {
+        "bin": "mild",
+        "episode_a_score": 0,
+        "episode_b_score": 0,
+        "smd": 0.0
+      },
+      "match_quality": {
+        "score": 10.0,
+        "comorbidity_distance": 1
+      },
+      "episode_a": {
+        "patient_id": "115967189",
+        "intervention": {
+          "type": "pci",
+          "code": "cardiac_pci",
+          "datetime": "2026-06-23T23:05:27.334870"
+        },
+        "demographics": {
+          "age": 80,
+          "gender": "Male"
+        }
+      },
+      "episode_b": {
+        "patient_id": "115967192",
+        "intervention": {
+          "type": "vasopressor_norepi",
+          "code": "cardiac_vasopressor_norepi",
+          "datetime": "2026-06-23T23:05:27.335335"
+        },
+        "demographics": {
+          "age": 48,
+          "gender": "Male"
+        }
+      },
+      "y_a_labs": [
+        "Troponin I"
+      ],
+      "y_b_labs": [
+        "Troponin I"
+      ]
+    },
+    {
+      "pair_id": "pair_000010",
+      "episode_a_id": "episode_0001",
+      "episode_b_id": "episode_0011",
+      "intervention_a": "pci",
+      "intervention_b": "vasopressor_norepi",
+      "severity_match": {
+        "bin": "mild",
+        "episode_a_score": 0,
+        "episode_b_score": 0,
+        "smd": 0.0
+      },
+      "match_quality": {
+        "score": 20.0,
+        "comorbidity_distance": 2
+      },
+      "episode_a": {
+        "patient_id": "115967110",
+        "intervention": {
+          "type": "pci",
+          "code": "cardiac_pci",
+          "datetime": "2026-06-23T23:05:27.330776"
+        },
+        "demographics": {
+          "age": 60,
+          "gender": "Male"
+        }
+      },
+      "episode_b": {
+        "patient_id": "115967149",
+        "intervention": {
+          "type": "vasopressor_norepi",
+          "code": "cardiac_vasopressor_norepi",
+          "datetime": "2026-06-23T23:05:27.333430"
+        },
+        "demographics": {
+          "age": 62,
+          "gender": "Female"
+        }
+      },
+      "y_a_labs": [
+        "Troponin I"
+      ],
+      "y_b_labs": [
+        "Troponin I"
+      ]
+    },
+    {
+      "pair_id": "pair_000011",
+      "episode_a_id": "episode_0005",
+      "episode_b_id": "episode_0016",
+      "intervention_a": "pci",
+      "intervention_b": "antibiotic_betalactam",
+      "severity_match": {
+        "bin": "mild",
+        "episode_a_score": 0,
+        "episode_b_score": 0,
+        "smd": 0.0
+      },
+      "match_quality": {
+        "score": 0.0,
+        "comorbidity_distance": 0
+      },
+      "episode_a": {
+        "patient_id": "115967128",
+        "intervention": {
+          "type": "pci",
+          "code": "cardiac_pci",
+          "datetime": "2026-06-23T23:05:27.331964"
+        },
+        "demographics": {
+          "age": 69,
+          "gender": "Female"
+        }
+      },
+      "episode_b": {
+        "patient_id": "115967180",
+        "intervention": {
+          "type": "antibiotic_betalactam",
+          "code": "cardiac_antibiotic_betalactam",
+          "datetime": "2026-06-23T23:05:27.334625"
+        },
+        "demographics": {
+          "age": 62,
+          "gender": "Female"
+        }
+      },
+      "y_a_labs": [
+        "Troponin I"
+      ],
+      "y_b_labs": [
+        "Troponin I"
+      ]
+    },
+    {
+      "pair_id": "pair_000012",
+      "episode_a_id": "episode_0013",
+      "episode_b_id": "episode_0020",
+      "intervention_a": "pci",
+      "intervention_b": "antibiotic_betalactam",
+      "severity_match": {
+        "bin": "mild",
+        "episode_a_score": 0,
+        "episode_b_score": 0,
+        "smd": 0.0
+      },
+      "match_quality": {
+        "score": 0.0,
+        "comorbidity_distance": 0
+      },
+      "episode_a": {
+        "patient_id": "115967163",
+        "intervention": {
+          "type": "pci",
+          "code": "cardiac_pci",
+          "datetime": "2026-06-23T23:05:27.333916"
+        },
+        "demographics": {
+          "age": 59,
+          "gender": "Male"
+        }
+      },
+      "episode_b": {
+        "patient_id": "115967227",
+        "intervention": {
+          "type": "antibiotic_betalactam",
+          "code": "cardiac_antibiotic_betalactam",
+          "datetime": "2026-06-23T23:05:27.335563"
+        },
+        "demographics": {
+          "age": 59,
+          "gender": "Male"
+        }
+      },
+      "y_a_labs": [
+        "Troponin I"
+      ],
+      "y_b_labs": [
+        "Troponin I"
+      ]
+    },
+    {
+      "pair_id": "pair_000013",
+      "episode_a_id": "episode_0017",
+      "episode_b_id": "episode_0004",
+      "intervention_a": "pci",
+      "intervention_b": "antibiotic_betalactam",
+      "severity_match": {
+        "bin": "mild",
+        "episode_a_score": 0,
+        "episode_b_score": 0,
+        "smd": 0.0
+      },
+      "match_quality": {
+        "score": 0.0,
+        "comorbidity_distance": 0
+      },
+      "episode_a": {
+        "patient_id": "115967189",
+        "intervention": {
+          "type": "pci",
+          "code": "cardiac_pci",
+          "datetime": "2026-06-23T23:05:27.334870"
+        },
+        "demographics": {
+          "age": 80,
+          "gender": "Male"
+        }
+      },
+      "episode_b": {
+        "patient_id": "115967125",
+        "intervention": {
+          "type": "antibiotic_betalactam",
+          "code": "cardiac_antibiotic_betalactam",
+          "datetime": "2026-06-23T23:05:27.331697"
+        },
+        "demographics": {
+          "age": 65,
+          "gender": "Female"
+        }
+      },
+      "y_a_labs": [
+        "Troponin I"
+      ],
+      "y_b_labs": [
+        "Troponin I"
+      ]
+    },
+    {
+      "pair_id": "pair_000014",
+      "episode_a_id": "episode_0009",
+      "episode_b_id": "episode_0012",
+      "intervention_a": "pci",
+      "intervention_b": "antibiotic_betalactam",
+      "severity_match": {
+        "bin": "mild",
+        "episode_a_score": 0,
+        "episode_b_score": 0,
+        "smd": 0.0
+      },
+      "match_quality": {
+        "score": 20.0,
+        "comorbidity_distance": 2
+      },
+      "episode_a": {
+        "patient_id": "115967140",
+        "intervention": {
+          "type": "pci",
+          "code": "cardiac_pci",
+          "datetime": "2026-06-23T23:05:27.332968"
+        },
+        "demographics": {
+          "age": 78,
+          "gender": "Male"
+        }
+      },
+      "episode_b": {
+        "patient_id": "115967161",
+        "intervention": {
+          "type": "antibiotic_betalactam",
+          "code": "cardiac_antibiotic_betalactam",
+          "datetime": "2026-06-23T23:05:27.333690"
+        },
+        "demographics": {
+          "age": 67,
+          "gender": "Male"
+        }
+      },
+      "y_a_labs": [
+        "Troponin I"
+      ],
+      "y_b_labs": [
+        "Troponin I"
+      ]
+    },
+    {
+      "pair_id": "pair_000015",
+      "episode_a_id": "episode_0001",
+      "episode_b_id": "episode_0008",
+      "intervention_a": "pci",
+      "intervention_b": "antibiotic_betalactam",
+      "severity_match": {
+        "bin": "mild",
+        "episode_a_score": 0,
+        "episode_b_score": 0,
+        "smd": 0.0
+      },
+      "match_quality": {
+        "score": 50.0,
+        "comorbidity_distance": 5
+      },
+      "episode_a": {
+        "patient_id": "115967110",
+        "intervention": {
+          "type": "pci",
+          "code": "cardiac_pci",
+          "datetime": "2026-06-23T23:05:27.330776"
+        },
+        "demographics": {
+          "age": 60,
+          "gender": "Male"
+        }
+      },
+      "episode_b": {
+        "patient_id": "115967134",
+        "intervention": {
+          "type": "antibiotic_betalactam",
+          "code": "cardiac_antibiotic_betalactam",
+          "datetime": "2026-06-23T23:05:27.332712"
+        },
+        "demographics": {
+          "age": 70,
+          "gender": "Male"
+        }
+      },
+      "y_a_labs": [
+        "Troponin I"
+      ],
+      "y_b_labs": [
+        "Troponin I"
+      ]
+    },
+    {
+      "pair_id": "pair_000016",
+      "episode_a_id": "episode_0002",
+      "episode_b_id": "episode_0003",
+      "intervention_a": "observation",
+      "intervention_b": "vasopressor_norepi",
+      "severity_match": {
+        "bin": "mild",
+        "episode_a_score": 0,
+        "episode_b_score": 0,
+        "smd": 0.0
+      },
+      "match_quality": {
+        "score": 0.0,
+        "comorbidity_distance": 0
+      },
+      "episode_a": {
+        "patient_id": "115967114",
+        "intervention": {
+          "type": "observation",
+          "code": "cardiac_observation",
+          "datetime": "2026-06-23T23:05:27.331154"
+        },
+        "demographics": {
+          "age": 42,
+          "gender": "Female"
+        }
+      },
+      "episode_b": {
+        "patient_id": "115967119",
+        "intervention": {
+          "type": "vasopressor_norepi",
+          "code": "cardiac_vasopressor_norepi",
+          "datetime": "2026-06-23T23:05:27.331430"
+        },
+        "demographics": {
+          "age": 77,
+          "gender": "Female"
+        }
+      },
+      "y_a_labs": [
+        "Troponin I"
+      ],
+      "y_b_labs": [
+        "Troponin I"
+      ]
+    },
+    {
+      "pair_id": "pair_000017",
+      "episode_a_id": "episode_0006",
+      "episode_b_id": "episode_0007",
+      "intervention_a": "observation",
+      "intervention_b": "vasopressor_norepi",
+      "severity_match": {
+        "bin": "mild",
+        "episode_a_score": 0,
+        "episode_b_score": 0,
+        "smd": 0.0
+      },
+      "match_quality": {
+        "score": 0.0,
+        "comorbidity_distance": 0
+      },
+      "episode_a": {
+        "patient_id": "115967129",
+        "intervention": {
+          "type": "observation",
+          "code": "cardiac_observation",
+          "datetime": "2026-06-23T23:05:27.332221"
+        },
+        "demographics": {
+          "age": 69,
+          "gender": "Female"
+        }
+      },
+      "episode_b": {
+        "patient_id": "115967133",
+        "intervention": {
+          "type": "vasopressor_norepi",
+          "code": "cardiac_vasopressor_norepi",
+          "datetime": "2026-06-23T23:05:27.332476"
+        },
+        "demographics": {
+          "age": 75,
+          "gender": "Male"
+        }
+      },
+      "y_a_labs": [
+        "Troponin I"
+      ],
+      "y_b_labs": [
+        "Troponin I"
+      ]
+    },
+    {
+      "pair_id": "pair_000018",
+      "episode_a_id": "episode_0010",
+      "episode_b_id": "episode_0019",
+      "intervention_a": "observation",
+      "intervention_b": "vasopressor_norepi",
+      "severity_match": {
+        "bin": "mild",
+        "episode_a_score": 0,
+        "episode_b_score": 0,
+        "smd": 0.0
+      },
+      "match_quality": {
+        "score": 0.0,
+        "comorbidity_distance": 0
+      },
+      "episode_a": {
+        "patient_id": "115967142",
+        "intervention": {
+          "type": "observation",
+          "code": "cardiac_observation",
+          "datetime": "2026-06-23T23:05:27.333201"
+        },
+        "demographics": {
+          "age": 55,
+          "gender": "Male"
+        }
+      },
+      "episode_b": {
+        "patient_id": "115967192",
+        "intervention": {
+          "type": "vasopressor_norepi",
+          "code": "cardiac_vasopressor_norepi",
+          "datetime": "2026-06-23T23:05:27.335335"
+        },
+        "demographics": {
+          "age": 48,
+          "gender": "Male"
+        }
+      },
+      "y_a_labs": [
+        "Troponin I"
+      ],
+      "y_b_labs": [
+        "Troponin I"
+      ]
+    },
+    {
+      "pair_id": "pair_000019",
+      "episode_a_id": "episode_0014",
+      "episode_b_id": "episode_0015",
+      "intervention_a": "observation",
+      "intervention_b": "vasopressor_norepi",
+      "severity_match": {
+        "bin": "mild",
+        "episode_a_score": 0,
+        "episode_b_score": 0,
+        "smd": 0.0
+      },
+      "match_quality": {
+        "score": 20.0,
+        "comorbidity_distance": 2
+      },
+      "episode_a": {
+        "patient_id": "115967164",
+        "intervention": {
+          "type": "observation",
+          "code": "cardiac_observation",
+          "datetime": "2026-06-23T23:05:27.334144"
+        },
+        "demographics": {
+          "age": 61,
+          "gender": "Male"
+        }
+      },
+      "episode_b": {
+        "patient_id": "115967167",
+        "intervention": {
+          "type": "vasopressor_norepi",
+          "code": "cardiac_vasopressor_norepi",
+          "datetime": "2026-06-23T23:05:27.334395"
+        },
+        "demographics": {
+          "age": 77,
+          "gender": "Male"
+        }
+      },
+      "y_a_labs": [
+        "Troponin I"
+      ],
+      "y_b_labs": [
+        "Troponin I"
+      ]
+    },
+    {
+      "pair_id": "pair_000020",
+      "episode_a_id": "episode_0018",
+      "episode_b_id": "episode_0011",
+      "intervention_a": "observation",
+      "intervention_b": "vasopressor_norepi",
+      "severity_match": {
+        "bin": "mild",
+        "episode_a_score": 0,
+        "episode_b_score": 0,
+        "smd": 0.0
+      },
+      "match_quality": {
+        "score": 30.0,
+        "comorbidity_distance": 3
+      },
+      "episode_a": {
+        "patient_id": "115967190",
+        "intervention": {
+          "type": "observation",
+          "code": "cardiac_observation",
+          "datetime": "2026-06-23T23:05:27.335104"
+        },
+        "demographics": {
+          "age": 55,
+          "gender": "Male"
+        }
+      },
+      "episode_b": {
+        "patient_id": "115967149",
+        "intervention": {
+          "type": "vasopressor_norepi",
+          "code": "cardiac_vasopressor_norepi",
+          "datetime": "2026-06-23T23:05:27.333430"
+        },
+        "demographics": {
+          "age": 62,
+          "gender": "Female"
+        }
+      },
+      "y_a_labs": [
+        "Troponin I"
+      ],
+      "y_b_labs": [
+        "Troponin I"
+      ]
+    },
+    {
+      "pair_id": "pair_000021",
+      "episode_a_id": "episode_0002",
+      "episode_b_id": "episode_0016",
+      "intervention_a": "observation",
+      "intervention_b": "antibiotic_betalactam",
+      "severity_match": {
+        "bin": "mild",
+        "episode_a_score": 0,
+        "episode_b_score": 0,
+        "smd": 0.0
+      },
+      "match_quality": {
+        "score": 0.0,
+        "comorbidity_distance": 0
+      },
+      "episode_a": {
+        "patient_id": "115967114",
+        "intervention": {
+          "type": "observation",
+          "code": "cardiac_observation",
+          "datetime": "2026-06-23T23:05:27.331154"
+        },
+        "demographics": {
+          "age": 42,
+          "gender": "Female"
+        }
+      },
+      "episode_b": {
+        "patient_id": "115967180",
+        "intervention": {
+          "type": "antibiotic_betalactam",
+          "code": "cardiac_antibiotic_betalactam",
+          "datetime": "2026-06-23T23:05:27.334625"
+        },
+        "demographics": {
+          "age": 62,
+          "gender": "Female"
+        }
+      },
+      "y_a_labs": [
+        "Troponin I"
+      ],
+      "y_b_labs": [
+        "Troponin I"
+      ]
+    },
+    {
+      "pair_id": "pair_000022",
+      "episode_a_id": "episode_0006",
+      "episode_b_id": "episode_0020",
+      "intervention_a": "observation",
+      "intervention_b": "antibiotic_betalactam",
+      "severity_match": {
+        "bin": "mild",
+        "episode_a_score": 0,
+        "episode_b_score": 0,
+        "smd": 0.0
+      },
+      "match_quality": {
+        "score": 0.0,
+        "comorbidity_distance": 0
+      },
+      "episode_a": {
+        "patient_id": "115967129",
+        "intervention": {
+          "type": "observation",
+          "code": "cardiac_observation",
+          "datetime": "2026-06-23T23:05:27.332221"
+        },
+        "demographics": {
+          "age": 69,
+          "gender": "Female"
+        }
+      },
+      "episode_b": {
+        "patient_id": "115967227",
+        "intervention": {
+          "type": "antibiotic_betalactam",
+          "code": "cardiac_antibiotic_betalactam",
+          "datetime": "2026-06-23T23:05:27.335563"
+        },
+        "demographics": {
+          "age": 59,
+          "gender": "Male"
+        }
+      },
+      "y_a_labs": [
+        "Troponin I"
+      ],
+      "y_b_labs": [
+        "Troponin I"
+      ]
+    },
+    {
+      "pair_id": "pair_000023",
+      "episode_a_id": "episode_0010",
+      "episode_b_id": "episode_0004",
+      "intervention_a": "observation",
+      "intervention_b": "antibiotic_betalactam",
+      "severity_match": {
+        "bin": "mild",
+        "episode_a_score": 0,
+        "episode_b_score": 0,
+        "smd": 0.0
+      },
+      "match_quality": {
+        "score": 10.0,
+        "comorbidity_distance": 1
+      },
+      "episode_a": {
+        "patient_id": "115967142",
+        "intervention": {
+          "type": "observation",
+          "code": "cardiac_observation",
+          "datetime": "2026-06-23T23:05:27.333201"
+        },
+        "demographics": {
+          "age": 55,
+          "gender": "Male"
+        }
+      },
+      "episode_b": {
+        "patient_id": "115967125",
+        "intervention": {
+          "type": "antibiotic_betalactam",
+          "code": "cardiac_antibiotic_betalactam",
+          "datetime": "2026-06-23T23:05:27.331697"
+        },
+        "demographics": {
+          "age": 65,
+          "gender": "Female"
+        }
+      },
+      "y_a_labs": [
+        "Troponin I"
+      ],
+      "y_b_labs": [
+        "Troponin I"
+      ]
+    },
+    {
+      "pair_id": "pair_000024",
+      "episode_a_id": "episode_0014",
+      "episode_b_id": "episode_0012",
+      "intervention_a": "observation",
+      "intervention_b": "antibiotic_betalactam",
+      "severity_match": {
+        "bin": "mild",
+        "episode_a_score": 0,
+        "episode_b_score": 0,
+        "smd": 0.0
+      },
+      "match_quality": {
+        "score": 10.0,
+        "comorbidity_distance": 1
+      },
+      "episode_a": {
+        "patient_id": "115967164",
+        "intervention": {
+          "type": "observation",
+          "code": "cardiac_observation",
+          "datetime": "2026-06-23T23:05:27.334144"
+        },
+        "demographics": {
+          "age": 61,
+          "gender": "Male"
+        }
+      },
+      "episode_b": {
+        "patient_id": "115967161",
+        "intervention": {
+          "type": "antibiotic_betalactam",
+          "code": "cardiac_antibiotic_betalactam",
+          "datetime": "2026-06-23T23:05:27.333690"
+        },
+        "demographics": {
+          "age": 67,
+          "gender": "Male"
+        }
+      },
+      "y_a_labs": [
+        "Troponin I"
+      ],
+      "y_b_labs": [
+        "Troponin I"
+      ]
+    },
+    {
+      "pair_id": "pair_000025",
+      "episode_a_id": "episode_0018",
+      "episode_b_id": "episode_0008",
+      "intervention_a": "observation",
+      "intervention_b": "antibiotic_betalactam",
+      "severity_match": {
+        "bin": "mild",
+        "episode_a_score": 0,
+        "episode_b_score": 0,
+        "smd": 0.0
+      },
+      "match_quality": {
+        "score": 40.0,
+        "comorbidity_distance": 4
+      },
+      "episode_a": {
+        "patient_id": "115967190",
+        "intervention": {
+          "type": "observation",
+          "code": "cardiac_observation",
+          "datetime": "2026-06-23T23:05:27.335104"
+        },
+        "demographics": {
+          "age": 55,
+          "gender": "Male"
+        }
+      },
+      "episode_b": {
+        "patient_id": "115967134",
+        "intervention": {
+          "type": "antibiotic_betalactam",
+          "code": "cardiac_antibiotic_betalactam",
+          "datetime": "2026-06-23T23:05:27.332712"
+        },
+        "demographics": {
+          "age": 70,
+          "gender": "Male"
+        }
+      },
+      "y_a_labs": [
+        "Troponin I"
+      ],
+      "y_b_labs": [
+        "Troponin I"
+      ]
+    },
+    {
+      "pair_id": "pair_000026",
+      "episode_a_id": "episode_0003",
+      "episode_b_id": "episode_0016",
+      "intervention_a": "vasopressor_norepi",
+      "intervention_b": "antibiotic_betalactam",
+      "severity_match": {
+        "bin": "mild",
+        "episode_a_score": 0,
+        "episode_b_score": 0,
+        "smd": 0.0
+      },
+      "match_quality": {
+        "score": 0.0,
+        "comorbidity_distance": 0
+      },
+      "episode_a": {
+        "patient_id": "115967119",
+        "intervention": {
+          "type": "vasopressor_norepi",
+          "code": "cardiac_vasopressor_norepi",
+          "datetime": "2026-06-23T23:05:27.331430"
+        },
+        "demographics": {
+          "age": 77,
+          "gender": "Female"
+        }
+      },
+      "episode_b": {
+        "patient_id": "115967180",
+        "intervention": {
+          "type": "antibiotic_betalactam",
+          "code": "cardiac_antibiotic_betalactam",
+          "datetime": "2026-06-23T23:05:27.334625"
+        },
+        "demographics": {
+          "age": 62,
+          "gender": "Female"
+        }
+      },
+      "y_a_labs": [
+        "Troponin I"
+      ],
+      "y_b_labs": [
+        "Troponin I"
+      ]
+    },
+    {
+      "pair_id": "pair_000027",
+      "episode_a_id": "episode_0007",
+      "episode_b_id": "episode_0020",
+      "intervention_a": "vasopressor_norepi",
+      "intervention_b": "antibiotic_betalactam",
+      "severity_match": {
+        "bin": "mild",
+        "episode_a_score": 0,
+        "episode_b_score": 0,
+        "smd": 0.0
+      },
+      "match_quality": {
+        "score": 0.0,
+        "comorbidity_distance": 0
+      },
+      "episode_a": {
+        "patient_id": "115967133",
+        "intervention": {
+          "type": "vasopressor_norepi",
+          "code": "cardiac_vasopressor_norepi",
+          "datetime": "2026-06-23T23:05:27.332476"
+        },
+        "demographics": {
+          "age": 75,
+          "gender": "Male"
+        }
+      },
+      "episode_b": {
+        "patient_id": "115967227",
+        "intervention": {
+          "type": "antibiotic_betalactam",
+          "code": "cardiac_antibiotic_betalactam",
+          "datetime": "2026-06-23T23:05:27.335563"
+        },
+        "demographics": {
+          "age": 59,
+          "gender": "Male"
+        }
+      },
+      "y_a_labs": [
+        "Troponin I"
+      ],
+      "y_b_labs": [
+        "Troponin I"
+      ]
+    },
+    {
+      "pair_id": "pair_000028",
+      "episode_a_id": "episode_0019",
+      "episode_b_id": "episode_0004",
+      "intervention_a": "vasopressor_norepi",
+      "intervention_b": "antibiotic_betalactam",
+      "severity_match": {
+        "bin": "mild",
+        "episode_a_score": 0,
+        "episode_b_score": 0,
+        "smd": 0.0
+      },
+      "match_quality": {
+        "score": 10.0,
+        "comorbidity_distance": 1
+      },
+      "episode_a": {
+        "patient_id": "115967192",
+        "intervention": {
+          "type": "vasopressor_norepi",
+          "code": "cardiac_vasopressor_norepi",
+          "datetime": "2026-06-23T23:05:27.335335"
+        },
+        "demographics": {
+          "age": 48,
+          "gender": "Male"
+        }
+      },
+      "episode_b": {
+        "patient_id": "115967125",
+        "intervention": {
+          "type": "antibiotic_betalactam",
+          "code": "cardiac_antibiotic_betalactam",
+          "datetime": "2026-06-23T23:05:27.331697"
+        },
+        "demographics": {
+          "age": 65,
+          "gender": "Female"
+        }
+      },
+      "y_a_labs": [
+        "Troponin I"
+      ],
+      "y_b_labs": [
+        "Troponin I"
+      ]
+    },
+    {
+      "pair_id": "pair_000029",
+      "episode_a_id": "episode_0015",
+      "episode_b_id": "episode_0008",
+      "intervention_a": "vasopressor_norepi",
+      "intervention_b": "antibiotic_betalactam",
+      "severity_match": {
+        "bin": "mild",
+        "episode_a_score": 0,
+        "episode_b_score": 0,
+        "smd": 0.0
+      },
+      "match_quality": {
+        "score": 20.0,
+        "comorbidity_distance": 2
+      },
+      "episode_a": {
+        "patient_id": "115967167",
+        "intervention": {
+          "type": "vasopressor_norepi",
+          "code": "cardiac_vasopressor_norepi",
+          "datetime": "2026-06-23T23:05:27.334395"
+        },
+        "demographics": {
+          "age": 77,
+          "gender": "Male"
+        }
+      },
+      "episode_b": {
+        "patient_id": "115967134",
+        "intervention": {
+          "type": "antibiotic_betalactam",
+          "code": "cardiac_antibiotic_betalactam",
+          "datetime": "2026-06-23T23:05:27.332712"
+        },
+        "demographics": {
+          "age": 70,
+          "gender": "Male"
+        }
+      },
+      "y_a_labs": [
+        "Troponin I"
+      ],
+      "y_b_labs": [
+        "Troponin I"
+      ]
+    },
+    {
+      "pair_id": "pair_000030",
+      "episode_a_id": "episode_0011",
+      "episode_b_id": "episode_0012",
+      "intervention_a": "vasopressor_norepi",
+      "intervention_b": "antibiotic_betalactam",
+      "severity_match": {
+        "bin": "mild",
+        "episode_a_score": 0,
+        "episode_b_score": 0,
+        "smd": 0.0
+      },
+      "match_quality": {
+        "score": 40.0,
+        "comorbidity_distance": 4
+      },
+      "episode_a": {
+        "patient_id": "115967149",
+        "intervention": {
+          "type": "vasopressor_norepi",
+          "code": "cardiac_vasopressor_norepi",
+          "datetime": "2026-06-23T23:05:27.333430"
+        },
+        "demographics": {
+          "age": 62,
+          "gender": "Female"
+        }
+      },
+      "episode_b": {
+        "patient_id": "115967161",
+        "intervention": {
+          "type": "antibiotic_betalactam",
+          "code": "cardiac_antibiotic_betalactam",
+          "datetime": "2026-06-23T23:05:27.333690"
+        },
+        "demographics": {
+          "age": 67,
+          "gender": "Male"
+        }
+      },
+      "y_a_labs": [
+        "Troponin I"
+      ],
+      "y_b_labs": [
+        "Troponin I"
+      ]
+    }
+  ]
+}

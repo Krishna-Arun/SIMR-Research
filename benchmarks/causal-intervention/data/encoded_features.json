@@ -1,0 +1,641 @@
+{
+  "name": "causal_intervention_encoded_features_v1",
+  "n_episodes": 20,
+  "severity_distribution": {
+    "mild": 20
+  },
+  "comorbidity_prevalence": {
+    "diabetes": 0.0,
+    "hypertension": 0.05,
+    "ckd": 0.05,
+    "cad": 0.1,
+    "heart_failure": 0.05,
+    "copd": 0.05,
+    "asthma": 0.0,
+    "cancer": 0.2,
+    "afib": 0.1,
+    "prior_mi": 0.2
+  },
+  "features": [
+    {
+      "episode_id": "episode_0001",
+      "patient_id": "115967110",
+      "intervention": {
+        "type": "pci",
+        "code": "cardiac_pci",
+        "datetime": "2026-06-23T23:05:27.330776"
+      },
+      "severity": {
+        "sofa_score": 0,
+        "severity_bin": "mild"
+      },
+      "comorbidities": {
+        "diabetes": 0,
+        "hypertension": 0,
+        "ckd": 0,
+        "cad": 1,
+        "heart_failure": 0,
+        "copd": 0,
+        "asthma": 0,
+        "cancer": 1,
+        "afib": 0,
+        "prior_mi": 1
+      },
+      "pre_trend": {},
+      "normalized_labs": {},
+      "metadata": {
+        "n_pre_measurements": 0,
+        "n_trajectory_labs": 1
+      }
+    },
+    {
+      "episode_id": "episode_0002",
+      "patient_id": "115967114",
+      "intervention": {
+        "type": "observation",
+        "code": "cardiac_observation",
+        "datetime": "2026-06-23T23:05:27.331154"
+      },
+      "severity": {
+        "sofa_score": 0,
+        "severity_bin": "mild"
+      },
+      "comorbidities": {
+        "diabetes": 0,
+        "hypertension": 0,
+        "ckd": 0,
+        "cad": 0,
+        "heart_failure": 0,
+        "copd": 0,
+        "asthma": 0,
+        "cancer": 0,
+        "afib": 0,
+        "prior_mi": 0
+      },
+      "pre_trend": {},
+      "normalized_labs": {},
+      "metadata": {
+        "n_pre_measurements": 0,
+        "n_trajectory_labs": 1
+      }
+    },
+    {
+      "episode_id": "episode_0003",
+      "patient_id": "115967119",
+      "intervention": {
+        "type": "vasopressor_norepi",
+        "code": "cardiac_vasopressor_norepi",
+        "datetime": "2026-06-23T23:05:27.331430"
+      },
+      "severity": {
+        "sofa_score": 0,
+        "severity_bin": "mild"
+      },
+      "comorbidities": {
+        "diabetes": 0,
+        "hypertension": 0,
+        "ckd": 0,
+        "cad": 0,
+        "heart_failure": 0,
+        "copd": 0,
+        "asthma": 0,
+        "cancer": 0,
+        "afib": 0,
+        "prior_mi": 0
+      },
+      "pre_trend": {},
+      "normalized_labs": {},
+      "metadata": {
+        "n_pre_measurements": 0,
+        "n_trajectory_labs": 1
+      }
+    },
+    {
+      "episode_id": "episode_0004",
+      "patient_id": "115967125",
+      "intervention": {
+        "type": "antibiotic_betalactam",
+        "code": "cardiac_antibiotic_betalactam",
+        "datetime": "2026-06-23T23:05:27.331697"
+      },
+      "severity": {
+        "sofa_score": 0,
+        "severity_bin": "mild"
+      },
+      "comorbidities": {
+        "diabetes": 0,
+        "hypertension": 0,
+        "ckd": 0,
+        "cad": 0,
+        "heart_failure": 0,
+        "copd": 0,
+        "asthma": 0,
+        "cancer": 1,
+        "afib": 0,
+        "prior_mi": 0
+      },
+      "pre_trend": {},
+      "normalized_labs": {},
+      "metadata": {
+        "n_pre_measurements": 0,
+        "n_trajectory_labs": 1
+      }
+    },
+    {
+      "episode_id": "episode_0005",
+      "patient_id": "115967128",
+      "intervention": {
+        "type": "pci",
+        "code": "cardiac_pci",
+        "datetime": "2026-06-23T23:05:27.331964"
+      },
+      "severity": {
+        "sofa_score": 0,
+        "severity_bin": "mild"
+      },
+      "comorbidities": {
+        "diabetes": 0,
+        "hypertension": 0,
+        "ckd": 0,
+        "cad": 0,
+        "heart_failure": 0,
+        "copd": 0,
+        "asthma": 0,
+        "cancer": 0,
+        "afib": 0,
+        "prior_mi": 0
+      },
+      "pre_trend": {},
+      "normalized_labs": {},
+      "metadata": {
+        "n_pre_measurements": 0,
+        "n_trajectory_labs": 1
+      }
+    },
+    {
+      "episode_id": "episode_0006",
+      "patient_id": "115967129",
+      "intervention": {
+        "type": "observation",
+        "code": "cardiac_observation",
+        "datetime": "2026-06-23T23:05:27.332221"
+      },
+      "severity": {
+        "sofa_score": 0,
+        "severity_bin": "mild"
+      },
+      "comorbidities": {
+        "diabetes": 0,
+        "hypertension": 0,
+        "ckd": 0,
+        "cad": 0,
+        "heart_failure": 0,
+        "copd": 0,
+        "asthma": 0,
+        "cancer": 0,
+        "afib": 0,
+        "prior_mi": 0
+      },
+      "pre_trend": {},
+      "normalized_labs": {},
+      "metadata": {
+        "n_pre_measurements": 0,
+        "n_trajectory_labs": 1
+      }
+    },
+    {
+      "episode_id": "episode_0007",
+      "patient_id": "115967133",
+      "intervention": {
+        "type": "vasopressor_norepi",
+        "code": "cardiac_vasopressor_norepi",
+        "datetime": "2026-06-23T23:05:27.332476"
+      },
+      "severity": {
+        "sofa_score": 0,
+        "severity_bin": "mild"
+      },
+      "comorbidities": {
+        "diabetes": 0,
+        "hypertension": 0,
+        "ckd": 0,
+        "cad": 0,
+        "heart_failure": 0,
+        "copd": 0,
+        "asthma": 0,
+        "cancer": 0,
+        "afib": 0,
+        "prior_mi": 0
+      },
+      "pre_trend": {},
+      "normalized_labs": {},
+      "metadata": {
+        "n_pre_measurements": 0,
+        "n_trajectory_labs": 1
+      }
+    },
+    {
+      "episode_id": "episode_0008",
+      "patient_id": "115967134",
+      "intervention": {
+        "type": "antibiotic_betalactam",
+        "code": "cardiac_antibiotic_betalactam",
+        "datetime": "2026-06-23T23:05:27.332712"
+      },
+      "severity": {
+        "sofa_score": 0,
+        "severity_bin": "mild"
+      },
+      "comorbidities": {
+        "diabetes": 0,
+        "hypertension": 0,
+        "ckd": 1,
+        "cad": 0,
+        "heart_failure": 1,
+        "copd": 0,
+        "asthma": 0,
+        "cancer": 0,
+        "afib": 1,
+        "prior_mi": 1
+      },
+      "pre_trend": {},
+      "normalized_labs": {},
+      "metadata": {
+        "n_pre_measurements": 0,
+        "n_trajectory_labs": 1
+      }
+    },
+    {
+      "episode_id": "episode_0009",
+      "patient_id": "115967140",
+      "intervention": {
+        "type": "pci",
+        "code": "cardiac_pci",
+        "datetime": "2026-06-23T23:05:27.332968"
+      },
+      "severity": {
+        "sofa_score": 0,
+        "severity_bin": "mild"
+      },
+      "comorbidities": {
+        "diabetes": 0,
+        "hypertension": 0,
+        "ckd": 0,
+        "cad": 0,
+        "heart_failure": 0,
+        "copd": 0,
+        "asthma": 0,
+        "cancer": 0,
+        "afib": 0,
+        "prior_mi": 1
+      },
+      "pre_trend": {},
+      "normalized_labs": {},
+      "metadata": {
+        "n_pre_measurements": 0,
+        "n_trajectory_labs": 1
+      }
+    },
+    {
+      "episode_id": "episode_0010",
+      "patient_id": "115967142",
+      "intervention": {
+        "type": "observation",
+        "code": "cardiac_observation",
+        "datetime": "2026-06-23T23:05:27.333201"
+      },
+      "severity": {
+        "sofa_score": 0,
+        "severity_bin": "mild"
+      },
+      "comorbidities": {
+        "diabetes": 0,
+        "hypertension": 0,
+        "ckd": 0,
+        "cad": 0,
+        "heart_failure": 0,
+        "copd": 0,
+        "asthma": 0,
+        "cancer": 0,
+        "afib": 0,
+        "prior_mi": 0
+      },
+      "pre_trend": {},
+      "normalized_labs": {},
+      "metadata": {
+        "n_pre_measurements": 0,
+        "n_trajectory_labs": 1
+      }
+    },
+    {
+      "episode_id": "episode_0011",
+      "patient_id": "115967149",
+      "intervention": {
+        "type": "vasopressor_norepi",
+        "code": "cardiac_vasopressor_norepi",
+        "datetime": "2026-06-23T23:05:27.333430"
+      },
+      "severity": {
+        "sofa_score": 0,
+        "severity_bin": "mild"
+      },
+      "comorbidities": {
+        "diabetes": 0,
+        "hypertension": 0,
+        "ckd": 0,
+        "cad": 1,
+        "heart_failure": 0,
+        "copd": 1,
+        "asthma": 0,
+        "cancer": 1,
+        "afib": 0,
+        "prior_mi": 0
+      },
+      "pre_trend": {},
+      "normalized_labs": {},
+      "metadata": {
+        "n_pre_measurements": 0,
+        "n_trajectory_labs": 1
+      }
+    },
+    {
+      "episode_id": "episode_0012",
+      "patient_id": "115967161",
+      "intervention": {
+        "type": "antibiotic_betalactam",
+        "code": "cardiac_antibiotic_betalactam",
+        "datetime": "2026-06-23T23:05:27.333690"
+      },
+      "severity": {
+        "sofa_score": 0,
+        "severity_bin": "mild"
+      },
+      "comorbidities": {
+        "diabetes": 0,
+        "hypertension": 1,
+        "ckd": 0,
+        "cad": 0,
+        "heart_failure": 0,
+        "copd": 0,
+        "asthma": 0,
+        "cancer": 0,
+        "afib": 0,
+        "prior_mi": 0
+      },
+      "pre_trend": {},
+      "normalized_labs": {},
+      "metadata": {
+        "n_pre_measurements": 0,
+        "n_trajectory_labs": 1
+      }
+    },
+    {
+      "episode_id": "episode_0013",
+      "patient_id": "115967163",
+      "intervention": {
+        "type": "pci",
+        "code": "cardiac_pci",
+        "datetime": "2026-06-23T23:05:27.333916"
+      },
+      "severity": {
+        "sofa_score": 0,
+        "severity_bin": "mild"
+      },
+      "comorbidities": {
+        "diabetes": 0,
+        "hypertension": 0,
+        "ckd": 0,
+        "cad": 0,
+        "heart_failure": 0,
+        "copd": 0,
+        "asthma": 0,
+        "cancer": 0,
+        "afib": 0,
+        "prior_mi": 0
+      },
+      "pre_trend": {},
+      "normalized_labs": {},
+      "metadata": {
+        "n_pre_measurements": 0,
+        "n_trajectory_labs": 1
+      }
+    },
+    {
+      "episode_id": "episode_0014",
+      "patient_id": "115967164",
+      "intervention": {
+        "type": "observation",
+        "code": "cardiac_observation",
+        "datetime": "2026-06-23T23:05:27.334144"
+      },
+      "severity": {
+        "sofa_score": 0,
+        "severity_bin": "mild"
+      },
+      "comorbidities": {
+        "diabetes": 0,
+        "hypertension": 0,
+        "ckd": 0,
+        "cad": 0,
+        "heart_failure": 0,
+        "copd": 0,
+        "asthma": 0,
+        "cancer": 0,
+        "afib": 0,
+        "prior_mi": 0
+      },
+      "pre_trend": {},
+      "normalized_labs": {},
+      "metadata": {
+        "n_pre_measurements": 0,
+        "n_trajectory_labs": 1
+      }
+    },
+    {
+      "episode_id": "episode_0015",
+      "patient_id": "115967167",
+      "intervention": {
+        "type": "vasopressor_norepi",
+        "code": "cardiac_vasopressor_norepi",
+        "datetime": "2026-06-23T23:05:27.334395"
+      },
+      "severity": {
+        "sofa_score": 0,
+        "severity_bin": "mild"
+      },
+      "comorbidities": {
+        "diabetes": 0,
+        "hypertension": 0,
+        "ckd": 0,
+        "cad": 0,
+        "heart_failure": 0,
+        "copd": 0,
+        "asthma": 0,
+        "cancer": 0,
+        "afib": 1,
+        "prior_mi": 1
+      },
+      "pre_trend": {},
+      "normalized_labs": {},
+      "metadata": {
+        "n_pre_measurements": 0,
+        "n_trajectory_labs": 1
+      }
+    },
+    {
+      "episode_id": "episode_0016",
+      "patient_id": "115967180",
+      "intervention": {
+        "type": "antibiotic_betalactam",
+        "code": "cardiac_antibiotic_betalactam",
+        "datetime": "2026-06-23T23:05:27.334625"
+      },
+      "severity": {
+        "sofa_score": 0,
+        "severity_bin": "mild"
+      },
+      "comorbidities": {
+        "diabetes": 0,
+        "hypertension": 0,
+        "ckd": 0,
+        "cad": 0,
+        "heart_failure": 0,
+        "copd": 0,
+        "asthma": 0,
+        "cancer": 0,
+        "afib": 0,
+        "prior_mi": 0
+      },
+      "pre_trend": {},
+      "normalized_labs": {},
+      "metadata": {
+        "n_pre_measurements": 0,
+        "n_trajectory_labs": 1
+      }
+    },
+    {
+      "episode_id": "episode_0017",
+      "patient_id": "115967189",
+      "intervention": {
+        "type": "pci",
+        "code": "cardiac_pci",
+        "datetime": "2026-06-23T23:05:27.334870"
+      },
+      "severity": {
+        "sofa_score": 0,
+        "severity_bin": "mild"
+      },
+      "comorbidities": {
+        "diabetes": 0,
+        "hypertension": 0,
+        "ckd": 0,
+        "cad": 0,
+        "heart_failure": 0,
+        "copd": 0,
+        "asthma": 0,
+        "cancer": 1,
+        "afib": 0,
+        "prior_mi": 0
+      },
+      "pre_trend": {},
+      "normalized_labs": {},
+      "metadata": {
+        "n_pre_measurements": 0,
+        "n_trajectory_labs": 1
+      }
+    },
+    {
+      "episode_id": "episode_0018",
+      "patient_id": "115967190",
+      "intervention": {
+        "type": "observation",
+        "code": "cardiac_observation",
+        "datetime": "2026-06-23T23:05:27.335104"
+      },
+      "severity": {
+        "sofa_score": 0,
+        "severity_bin": "mild"
+      },
+      "comorbidities": {
+        "diabetes": 0,
+        "hypertension": 0,
+        "ckd": 0,
+        "cad": 0,
+        "heart_failure": 0,
+        "copd": 0,
+        "asthma": 0,
+        "cancer": 0,
+        "afib": 0,
+        "prior_mi": 0
+      },
+      "pre_trend": {},
+      "normalized_labs": {},
+      "metadata": {
+        "n_pre_measurements": 0,
+        "n_trajectory_labs": 1
+      }
+    },
+    {
+      "episode_id": "episode_0019",
+      "patient_id": "115967192",
+      "intervention": {
+        "type": "vasopressor_norepi",
+        "code": "cardiac_vasopressor_norepi",
+        "datetime": "2026-06-23T23:05:27.335335"
+      },
+      "severity": {
+        "sofa_score": 0,
+        "severity_bin": "mild"
+      },
+      "comorbidities": {
+        "diabetes": 0,
+        "hypertension": 0,
+        "ckd": 0,
+        "cad": 0,
+        "heart_failure": 0,
+        "copd": 0,
+        "asthma": 0,
+        "cancer": 0,
+        "afib": 0,
+        "prior_mi": 0
+      },
+      "pre_trend": {},
+      "normalized_labs": {},
+      "metadata": {
+        "n_pre_measurements": 0,
+        "n_trajectory_labs": 1
+      }
+    },
+    {
+      "episode_id": "episode_0020",
+      "patient_id": "115967227",
+      "intervention": {
+        "type": "antibiotic_betalactam",
+        "code": "cardiac_antibiotic_betalactam",
+        "datetime": "2026-06-23T23:05:27.335563"
+      },
+      "severity": {
+        "sofa_score": 0,
+        "severity_bin": "mild"
+      },
+      "comorbidities": {
+        "diabetes": 0,
+        "hypertension": 0,
+        "ckd": 0,
+        "cad": 0,
+        "heart_failure": 0,
+        "copd": 0,
+        "asthma": 0,
+        "cancer": 0,
+        "afib": 0,
+        "prior_mi": 0
+      },
+      "pre_trend": {},
+      "normalized_labs": {},
+      "metadata": {
+        "n_pre_measurements": 0,
+        "n_trajectory_labs": 1
+      }
+    }
+  ]
+}
