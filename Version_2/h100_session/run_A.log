@@ -1,0 +1,481 @@
+[1] starting PubMed MCP server ...
+    tools: ['search_articles', 'advanced_search', 'search_by_author', 'search_by_journal', 'search_by_mesh_terms', 'get_trending_articles'] ...
+[2] connecting model backends ...
+  optimizer endpoint healthy: http://localhost:8000/v1 (openai/gpt-oss-20b)
+  evaluator endpoint healthy: http://localhost:8000/v1 (openai/gpt-oss-20b)
+[3] building cohort store + agents ...
+[4] generating up to 100 questions (resume from 0) ...
+    draft#1 3s valid=True leak=[]
+    draft#1 3s valid=True leak=[]
+    draft#1 4s valid=True leak=[]
+    draft#1 5s valid=True leak=[]
+    draft#1 5s valid=True leak=[]
+  ACCEPT qa_00000 hadm=23178609 type=diagnosis iters=1 [1D/0I] [1/100]
+  ACCEPT qa_00001 hadm=29045054 type=diagnosis iters=1 [2D/0I] [2/100]
+    draft#1 3s valid=True leak=[]
+    draft#1 10s valid=True leak=['lactate']
+  ACCEPT qa_00002 hadm=21554540 type=diagnosis iters=1 [3D/0I] [3/100]
+  ACCEPT qa_00003 hadm=29774630 type=diagnosis iters=1 [4D/0I] [4/100]
+    draft#2 13s valid=True leak=['hemoglobin', 'lactate']
+  ACCEPT qa_00004 hadm=27443016 type=diagnosis iters=1 [5D/0I] [5/100]
+    draft#1 21s valid=True leak=[]
+  ACCEPT qa_00005 hadm=24330256 type=intervention iters=1 [5D/1I] [6/100]
+  ACCEPT qa_00006 hadm=28492377 type=intervention iters=1 [5D/2I] [7/100]
+    draft#1 13s valid=True leak=[]
+    draft#1 26s valid=False leak=[]
+  ACCEPT qa_00007 hadm=29077547 type=intervention iters=1 [5D/3I] [8/100]
+    draft#1 13s valid=True leak=['lactate']
+    draft#1 7s valid=True leak=['lactate', 'myocardial infarction', 'sepsis']
+    draft#2 16s valid=True leak=['lactate']
+    draft#3 37s valid=True leak=['lactate']
+  reject hadm=28037379 type=diagnosis FAILS={}
+    feedback: 
+    draft#2 38s valid=True leak=[]
+    draft#1 30s valid=True leak=['myocardial infarction']
+  ACCEPT qa_00008 hadm=22053733 type=diagnosis iters=2 [6D/3I] [9/100]
+    draft#1 40s valid=False leak=[]
+    draft#3 29s valid=True leak=['lactate', 'troponin']
+  reject hadm=25585839 type=intervention FAILS={}
+    feedback: 
+    draft#1 2s valid=True leak=[]
+    draft#1 12s valid=True leak=['inr']
+    draft#2 15s valid=True leak=['inr']
+    draft#2 47s valid=True leak=['acute kidney injury']
+    draft#1 10s valid=True leak=[]
+    draft#1 29s valid=True leak=[]
+  ACCEPT qa_00009 hadm=27125531 type=intervention iters=1 [6D/4I] [10/100]
+    draft#1 24s valid=True leak=[]
+    draft#3 17s valid=True leak=['inr', 'platelet', 'platelet count']
+  reject hadm=24393389 type=intervention FAILS={}
+    feedback: 
+    draft#2 45s valid=True leak=['myocardial infarction']
+    draft#1 9s valid=True leak=['acute kidney injury']
+  ACCEPT qa_00010 hadm=23617930 type=intervention iters=1 [6D/5I] [11/100]
+  ACCEPT qa_00011 hadm=20167211 type=intervention iters=1 [6D/6I] [12/100]
+    draft#1 2s valid=True leak=['platelet']
+    draft#2 45s valid=True leak=['lactate', 'myocardial infarction']
+    draft#3 48s valid=True leak=['lactate', 'sepsis']
+  reject hadm=21663085 type=intervention FAILS={}
+    feedback: 
+  ACCEPT qa_00012 hadm=23595843 type=intervention iters=1 [6D/7I] [13/100]
+    draft#1 21s valid=True leak=['acute kidney injury', 'myocardial infarction']
+    draft#3 71s valid=False leak=[]
+  reject hadm=23462530 type=intervention FAILS={}
+    feedback: 
+    draft#2 14s valid=True leak=[]
+  ACCEPT qa_00013 hadm=24055314 type=intervention iters=2 [6D/8I] [14/100]
+    draft#2 33s valid=True leak=['acute kidney injury', 'myocardial infarction']
+    draft#3 76s valid=True leak=['lactate', 'myocardial infarction']
+  reject hadm=25883353 type=intervention FAILS={}
+    feedback: 
+    draft#1 12s valid=True leak=['bicarbonate']
+    draft#1 17s valid=True leak=[]
+    draft#1 19s valid=True leak=['myocardial infarction']
+    draft#2 15s valid=True leak=[]
+    draft#1 11s valid=True leak=[]
+  ACCEPT qa_00014 hadm=22320083 type=diagnosis iters=1 [7D/8I] [15/100]
+    draft#2 41s valid=True leak=['albumin']
+    draft#3 42s valid=True leak=['acute kidney injury', 'myocardial infarction']
+  reject hadm=22240072 type=intervention FAILS={}
+    feedback: 
+  ACCEPT qa_00015 hadm=21700337 type=diagnosis iters=2 [8D/8I] [16/100]
+    draft#1 34s valid=True leak=['lactate', 'myocardial infarction']
+    draft#1 4s valid=True leak=['myocardial infarction']
+  ACCEPT qa_00016 hadm=23990362 type=diagnosis iters=1 [9D/8I] [17/100]
+    draft#1 4s valid=True leak=['anion gap']
+    draft#2 38s valid=True leak=['myocardial infarction']
+    draft#1 16s valid=True leak=[]
+    draft#2 8s valid=True leak=['inr', 'myocardial infarction']
+    draft#3 40s valid=True leak=['myocardial infarction']
+  reject hadm=23763603 type=diagnosis FAILS={}
+    feedback: 
+    draft#2 36s valid=True leak=[]
+  ACCEPT qa_00017 hadm=28749633 type=diagnosis iters=1 [10D/8I] [18/100]
+    draft#3 14s valid=True leak=['myocardial infarction', 'white blood']
+  reject hadm=29699433 type=diagnosis FAILS={}
+    feedback: 
+    draft#1 5s valid=True leak=['anion gap', 'bicarbonate', 'creatine kinase', 'creatinine', 'inr', 'inr and ptt', 'myocardial infarction', 'platelet', 'ptt', 'troponin']
+    draft#1 11s valid=True leak=['myocardial infarction']
+  ACCEPT qa_00018 hadm=21042497 type=diagnosis iters=2 [11D/8I] [19/100]
+    draft#3 58s valid=True leak=['acute kidney injury']
+  reject hadm=21039266 type=intervention FAILS={}
+    feedback: 
+    draft#2 8s valid=True leak=['myocardial infarction']
+    draft#1 3s valid=True leak=['hemoglobin', 'lactate']
+    draft#1 22s valid=True leak=['inr', 'potassium']
+    draft#2 20s valid=True leak=['anion gap']
+    draft#3 11s valid=True leak=['myocardial infarction', 'partial thromboplastin time', 'potassium']
+  reject hadm=20776014 type=intervention FAILS={}
+    feedback: 
+    draft#3 24s valid=True leak=['inr']
+  reject hadm=27354814 type=diagnosis FAILS={}
+    feedback: 
+    draft#1 10s valid=True leak=[]
+    draft#1 14s valid=True leak=['myocardial infarction']
+    draft#2 26s valid=True leak=['myocardial infarction']
+  ACCEPT qa_00019 hadm=23603937 type=intervention iters=1 [11D/9I] [20/100]
+    draft#1 22s valid=True leak=['myocardial infarction']
+  worker error: Error code: 500 - {'error': {'message': 'unexpected tokens remaining in message header: Some("to=functions.search_articles")', 'type': 'InternalServerError', 'param': None, 'code': 500}}
+    draft#2 26s valid=True leak=['myocardial infarction']
+    draft#2 24s valid=True leak=['hematocrit', 'hemoglobin']
+    draft#1 21s valid=True leak=[]
+    draft#1 3s valid=True leak=[]
+    draft#2 45s valid=True leak=[]
+    draft#3 39s valid=True leak=['myocardial infarction']
+  reject hadm=24823319 type=intervention FAILS={}
+    feedback: 
+    draft#3 27s valid=True leak=['lactate']
+  reject hadm=20750005 type=intervention FAILS={}
+    feedback: 
+    draft#2 31s valid=True leak=['myocardial infarction']
+    draft#1 3s valid=True leak=['platelet']
+  ACCEPT qa_00020 hadm=28014567 type=diagnosis iters=2 [12D/9I] [21/100]
+    draft#1 3s valid=True leak=[]
+  ACCEPT qa_00021 hadm=26931684 type=intervention iters=1 [12D/10I] [22/100]
+  ACCEPT qa_00022 hadm=27328833 type=intervention iters=1 [12D/11I] [23/100]
+    draft#2 5s valid=True leak=[]
+    draft#1 18s valid=True leak=['anion gap', 'chloride']
+  ACCEPT qa_00023 hadm=20924241 type=intervention iters=1 [12D/12I] [24/100]
+    draft#1 3s valid=True leak=[]
+  ACCEPT qa_00024 hadm=22570011 type=intervention iters=2 [12D/13I] [25/100]
+    draft#1 3s valid=True leak=[]
+  ACCEPT qa_00025 hadm=26245725 type=intervention iters=1 [12D/14I] [26/100]
+  ACCEPT qa_00026 hadm=25390141 type=intervention iters=1 [12D/15I] [27/100]
+    draft#1 3s valid=True leak=['hematocrit', 'hemoglobin', 'lactate']
+    draft#1 12s valid=True leak=[]
+    draft#1 11s valid=True leak=[]
+  ACCEPT qa_00027 hadm=22024129 type=diagnosis iters=1 [13D/15I] [28/100]
+    draft#3 56s valid=True leak=['myocardial infarction']
+  reject hadm=23749463 type=intervention FAILS={}
+    feedback: 
+  ACCEPT qa_00028 hadm=23537818 type=diagnosis iters=1 [14D/15I] [29/100]
+    draft#1 3s valid=True leak=[]
+    draft#2 16s valid=True leak=[]
+    draft#3 62s valid=True leak=['myocardial infarction']
+  reject hadm=28256078 type=intervention FAILS={}
+    feedback: 
+    draft#1 29s valid=True leak=[]
+    draft#1 2s valid=True leak=[]
+  ACCEPT qa_00029 hadm=28471881 type=diagnosis iters=1 [15D/15I] [30/100]
+    draft#1 2s valid=True leak=[]
+  ACCEPT qa_00030 hadm=29870874 type=diagnosis iters=1 [16D/15I] [31/100]
+    draft#1 37s valid=False leak=[]
+  ACCEPT qa_00031 hadm=27439138 type=intervention iters=1 [16D/16I] [32/100]
+    draft#1 3s valid=True leak=[]
+  ACCEPT qa_00032 hadm=29645851 type=diagnosis iters=2 [17D/16I] [33/100]
+    draft#2 40s valid=True leak=[]
+  ACCEPT qa_00033 hadm=29621038 type=diagnosis iters=1 [18D/16I] [34/100]
+  ACCEPT qa_00034 hadm=26179943 type=intervention iters=2 [18D/17I] [35/100]
+    draft#2 60s valid=False leak=[]
+    draft#1 3s valid=True leak=[]
+    draft#3 63s valid=True leak=['lactate']
+  reject hadm=22037311 type=intervention FAILS={}
+    feedback: 
+  ACCEPT qa_00035 hadm=27633494 type=intervention iters=1 [18D/18I] [36/100]
+    draft#1 10s valid=True leak=[]
+    draft#1 14s valid=True leak=[]
+  ACCEPT qa_00036 hadm=25307585 type=intervention iters=1 [18D/19I] [37/100]
+    draft#1 29s valid=True leak=[]
+  ACCEPT qa_00037 hadm=28042822 type=intervention iters=1 [18D/20I] [38/100]
+    draft#1 5s valid=True leak=[]
+    draft#1 33s valid=True leak=['albumin', 'myocardial infarction']
+  ACCEPT qa_00038 hadm=21750660 type=diagnosis iters=1 [19D/20I] [39/100]
+    draft#1 3s valid=True leak=[]
+    draft#1 2s valid=True leak=[]
+  ACCEPT qa_00039 hadm=25170750 type=intervention iters=1 [19D/21I] [40/100]
+  ACCEPT qa_00040 hadm=29222619 type=diagnosis iters=1 [20D/21I] [41/100]
+  ACCEPT qa_00041 hadm=20222678 type=diagnosis iters=1 [21D/21I] [42/100]
+    draft#1 9s valid=True leak=['troponin']
+    draft#1 2s valid=True leak=['phosphate']
+  ACCEPT qa_00042 hadm=23945224 type=diagnosis iters=1 [22D/21I] [43/100]
+    draft#2 4s valid=True leak=[]
+    draft#1 3s valid=True leak=['acute kidney injury']
+  ACCEPT qa_00043 hadm=29028675 type=intervention iters=2 [22D/22I] [44/100]
+    draft#2 6s valid=True leak=['acute kidney injury']
+    draft#1 11s valid=True leak=['lactate']
+    draft#1 23s valid=True leak=[]
+    draft#2 19s valid=True leak=[]
+    draft#3 9s valid=True leak=['acute kidney injury']
+  reject hadm=22076879 type=intervention FAILS={}
+    feedback: 
+  ACCEPT qa_00044 hadm=28435746 type=intervention iters=1 [22D/23I] [45/100]
+  ACCEPT qa_00045 hadm=22159839 type=diagnosis iters=2 [23D/23I] [46/100]
+    draft#2 64s valid=True leak=['albumin', 'inr', 'lactate', 'myocardial infarction', 'partial thromboplastin time']
+    draft#1 20s valid=True leak=['lactate', 'myocardial infarction']
+    draft#1 30s valid=True leak=[]
+    draft#1 13s valid=True leak=['myocardial infarction']
+    draft#3 68s valid=True leak=['myocardial infarction']
+  reject hadm=25502750 type=diagnosis FAILS={}
+    feedback: 
+    draft#1 2s valid=True leak=[]
+    draft#1 50s valid=False leak=[]
+  ACCEPT qa_00046 hadm=21282654 type=diagnosis iters=1 [24D/23I] [47/100]
+  ACCEPT qa_00047 hadm=24040691 type=diagnosis iters=1 [25D/23I] [48/100]
+    draft#2 26s valid=True leak=['myocardial infarction']
+    draft#2 42s valid=True leak=['inr', 'lactate']
+    draft#1 3s valid=True leak=[]
+    draft#1 32s valid=True leak=[]
+    draft#1 23s valid=True leak=[]
+    draft#3 46s valid=True leak=['anion gap', 'lactate']
+  reject hadm=20715137 type=diagnosis FAILS={}
+    feedback: 
+    draft#2 39s valid=True leak=['inr', 'lactate', 'myocardial infarction']
+  ACCEPT qa_00048 hadm=23388273 type=intervention iters=1 [25D/24I] [49/100]
+    draft#3 33s valid=True leak=['myocardial infarction']
+  reject hadm=22361615 type=diagnosis FAILS={}
+    feedback: 
+    draft#1 4s valid=True leak=[]
+    draft#1 3s valid=True leak=['troponin']
+    draft#2 5s valid=True leak=['troponin']
+  ACCEPT qa_00049 hadm=27585258 type=intervention iters=1 [25D/25I] [50/100]
+    draft#1 17s valid=True leak=['creatinine']
+    draft#3 8s valid=True leak=['troponin']
+  reject hadm=29510390 type=intervention FAILS={}
+    feedback: 
+    draft#1 3s valid=True leak=[]
+    draft#2 74s valid=True leak=['myocardial infarction', 'sepsis']
+  ACCEPT qa_00050 hadm=23222671 type=diagnosis iters=1 [26D/25I] [51/100]
+  ACCEPT qa_00051 hadm=21810974 type=intervention iters=1 [26D/26I] [52/100]
+  ACCEPT qa_00052 hadm=27977003 type=intervention iters=1 [26D/27I] [53/100]
+    draft#1 8s valid=True leak=['creatinine']
+    draft#1 4s valid=True leak=[]
+    draft#1 27s valid=True leak=['lactate']
+    draft#3 70s valid=True leak=['lactate', 'myocardial infarction']
+  reject hadm=27465888 type=intervention FAILS={}
+    feedback: 
+    draft#2 13s valid=True leak=['anion gap', 'bicarbonate']
+    draft#1 19s valid=True leak=['acute kidney injury', 'lactate']
+    draft#1 28s valid=True leak=['lactate']
+    draft#2 49s valid=True leak=['inr', 'lactate']
+    draft#2 31s valid=True leak=['inr', 'lactate']
+    draft#3 103s valid=True leak=['sepsis']
+  reject hadm=23652501 type=intervention FAILS={}
+    feedback: 
+  ACCEPT qa_00053 hadm=20305227 type=diagnosis iters=1 [27D/27I] [54/100]
+    draft#3 24s valid=True leak=[]
+    draft#3 34s valid=True leak=['hemoglobin']
+  reject hadm=27253528 type=intervention FAILS={}
+    feedback: 
+    draft#1 3s valid=True leak=[]
+    draft#3 57s valid=True leak=['creatinine', 'lactate']
+  reject hadm=29435817 type=intervention FAILS={}
+    feedback: 
+  ACCEPT qa_00054 hadm=28805214 type=diagnosis iters=1 [28D/27I] [55/100]
+    draft#1 18s valid=True leak=['lactate']
+    draft#2 37s valid=True leak=[]
+    draft#2 51s valid=True leak=['lactate']
+  ACCEPT qa_00055 hadm=27991839 type=intervention iters=3 [28D/28I] [56/100]
+    draft#1 10s valid=True leak=['lactate']
+    draft#1 3s valid=True leak=[]
+    draft#1 20s valid=True leak=['creatinine', 'lactate']
+    draft#2 22s valid=True leak=['lactate']
+  ACCEPT qa_00056 hadm=26286719 type=intervention iters=2 [28D/29I] [57/100]
+  ACCEPT qa_00057 hadm=20330984 type=diagnosis iters=1 [29D/29I] [58/100]
+    draft#1 3s valid=True leak=['troponin']
+    draft#2 38s valid=True leak=[]
+    draft#1 28s valid=True leak=['myocardial infarction', 'white blood', 'white blood cell count']
+    draft#1 24s valid=True leak=['myocardial infarction']
+    draft#2 7s valid=True leak=['troponin']
+    draft#3 71s valid=True leak=[]
+    draft#2 32s valid=True leak=['inr', 'myocardial infarction']
+    draft#2 29s valid=True leak=[]
+    draft#1 9s valid=True leak=['myocardial infarction']
+  ACCEPT qa_00058 hadm=22430638 type=intervention iters=3 [29D/30I] [59/100]
+    draft#2 32s valid=True leak=['myocardial infarction']
+    draft#1 2s valid=True leak=[]
+    draft#3 33s valid=True leak=[]
+  ACCEPT qa_00059 hadm=20767733 type=diagnosis iters=2 [30D/30I] [60/100]
+  ACCEPT qa_00060 hadm=22118153 type=intervention iters=3 [30D/31I] [61/100]
+    draft#3 26s valid=True leak=[]
+  ACCEPT qa_00061 hadm=29653424 type=diagnosis iters=2 [31D/31I] [62/100]
+  ACCEPT qa_00062 hadm=28144630 type=diagnosis iters=1 [32D/31I] [63/100]
+    draft#3 53s valid=True leak=[]
+    draft#3 54s valid=True leak=['myocardial infarction']
+  reject hadm=22802263 type=intervention FAILS={}
+    feedback: 
+  ACCEPT qa_00063 hadm=26699362 type=diagnosis iters=3 [33D/31I] [64/100]
+    draft#1 2s valid=True leak=[]
+  ACCEPT qa_00064 hadm=20138568 type=intervention iters=1 [33D/32I] [65/100]
+    draft#1 20s valid=True leak=['anion gap', 'bicarbonate', 'lactate', 'myocardial infarction']
+  ACCEPT qa_00065 hadm=27137163 type=intervention iters=3 [33D/33I] [66/100]
+    draft#1 4s valid=True leak=[]
+    draft#2 42s valid=True leak=['inr', 'lactate', 'myocardial infarction', 'ptt', 'troponin', 'troponin t']
+    draft#1 23s valid=True leak=[]
+    draft#1 19s valid=True leak=[]
+    draft#3 45s valid=True leak=['inr', 'ionized calcium', 'lactate', 'platelet', 'platelet count', 'troponin']
+  reject hadm=26161186 type=intervention FAILS={}
+    feedback: 
+  ACCEPT qa_00066 hadm=22181438 type=intervention iters=1 [33D/34I] [67/100]
+    draft#1 3s valid=True leak=['inr', 'lactate']
+  ACCEPT qa_00067 hadm=25726736 type=intervention iters=1 [33D/35I] [68/100]
+    draft#1 28s valid=True leak=['acute kidney injury', 'lactate', 'myocardial infarction', 'sepsis']
+  ACCEPT qa_00068 hadm=25846964 type=diagnosis iters=1 [34D/35I] [69/100]
+    draft#1 2s valid=True leak=[]
+    draft#1 2s valid=True leak=['potassium']
+    draft#2 4s valid=True leak=[]
+  ACCEPT qa_00069 hadm=26042560 type=diagnosis iters=1 [35D/35I] [70/100]
+  ACCEPT qa_00070 hadm=27656568 type=diagnosis iters=2 [36D/35I] [71/100]
+    draft#1 31s valid=True leak=[]
+    draft#2 39s valid=True leak=['myocardial infarction', 'sepsis']
+    draft#1 26s valid=True leak=['lactate']
+    draft#2 22s valid=True leak=[]
+    draft#2 52s valid=True leak=['myocardial infarction']
+    draft#3 55s valid=True leak=['bicarbonate', 'lactate']
+  reject hadm=22280084 type=diagnosis FAILS={}
+    feedback: 
+    draft#1 2s valid=True leak=['hemoglobin']
+  dup fingerprint hadm=29047407; discard
+    draft#2 4s valid=True leak=['lactate']
+  ACCEPT qa_00071 hadm=29315354 type=intervention iters=1 [36D/36I] [72/100]
+    draft#1 4s valid=True leak=[]
+    draft#1 23s valid=True leak=[]
+    draft#1 3s valid=True leak=[]
+    draft#1 35s valid=True leak=['lactate', 'troponin']
+  ACCEPT qa_00072 hadm=23372670 type=intervention iters=1 [36D/37I] [73/100]
+  ACCEPT qa_00073 hadm=29819482 type=diagnosis iters=1 [37D/37I] [74/100]
+    draft#1 30s valid=True leak=['myocardial infarction']
+    draft#1 3s valid=True leak=[]
+  ACCEPT qa_00074 hadm=27197600 type=intervention iters=1 [37D/38I] [75/100]
+    draft#2 47s valid=True leak=['creatinine', 'lactate']
+    draft#2 55s valid=True leak=[]
+    draft#3 76s valid=True leak=['lactate', 'myocardial infarction', 'sepsis', 'troponin']
+  reject hadm=27838789 type=diagnosis FAILS={}
+    feedback: 
+    draft#1 2s valid=True leak=[]
+    draft#3 31s valid=True leak=[]
+    draft#2 43s valid=True leak=['myocardial infarction']
+  ACCEPT qa_00075 hadm=27472732 type=diagnosis iters=1 [38D/38I] [76/100]
+    draft#1 13s valid=True leak=['lactate', 'myocardial infarction', 'platelet', 'platelet count']
+  ACCEPT qa_00076 hadm=22658184 type=diagnosis iters=1 [39D/38I] [77/100]
+    draft#3 46s valid=True leak=['myocardial infarction']
+  reject hadm=27551034 type=intervention FAILS={}
+    feedback: 
+    draft#1 20s valid=True leak=[]
+    draft#1 3s valid=True leak=[]
+  ACCEPT qa_00077 hadm=24087159 type=diagnosis iters=2 [40D/38I] [78/100]
+  dup fingerprint hadm=20238028; discard
+  ACCEPT qa_00078 hadm=24974121 type=intervention iters=3 [40D/39I] [79/100]
+    draft#1 20s valid=True leak=[]
+    draft#2 34s valid=True leak=['lactate', 'myocardial infarction']
+  ACCEPT qa_00079 hadm=21764330 type=intervention iters=1 [40D/40I] [80/100]
+    draft#1 12s valid=True leak=[]
+  ACCEPT qa_00080 hadm=22772743 type=diagnosis iters=1 [41D/40I] [81/100]
+    draft#1 3s valid=True leak=['hemoglobin', 'platelet', 'platelet count']
+    draft#3 90s valid=True leak=['creatinine', 'lactate']
+  reject hadm=23794244 type=diagnosis FAILS={}
+    feedback: 
+    draft#1 32s valid=True leak=['acute kidney injury']
+    draft#2 5s valid=True leak=[]
+  ACCEPT qa_00081 hadm=24825643 type=intervention iters=1 [41D/41I] [82/100]
+  ACCEPT qa_00082 hadm=28963695 type=intervention iters=2 [41D/42I] [83/100]
+    draft#1 4s valid=True leak=[]
+    draft#1 20s valid=True leak=['acute kidney injury', 'myocardial infarction']
+    draft#3 54s valid=True leak=['lactate', 'myocardial infarction']
+  reject hadm=28158383 type=diagnosis FAILS={}
+    feedback: 
+    draft#1 37s valid=False leak=[]
+    draft#2 43s valid=True leak=['acute kidney injury']
+    draft#1 3s valid=True leak=['acute kidney injury', 'hematocrit', 'hemoglobin']
+    draft#2 39s valid=True leak=['lactate']
+    draft#3 41s valid=True leak=['inr']
+  reject hadm=23402777 type=intervention FAILS={}
+    feedback: 
+    draft#1 28s valid=True leak=[]
+    draft#3 52s valid=False leak=[]
+  reject hadm=20729708 type=intervention FAILS={}
+    feedback: 
+    draft#1 20s valid=True leak=[]
+  ACCEPT qa_00083 hadm=25205869 type=intervention iters=1 [41D/43I] [84/100]
+    draft#1 10s valid=True leak=['myocardial infarction']
+  ACCEPT qa_00084 hadm=28343560 type=intervention iters=1 [41D/44I] [85/100]
+    draft#2 42s valid=True leak=['acute kidney injury', 'myocardial infarction']
+    draft#1 2s valid=True leak=[]
+    draft#2 13s valid=True leak=['myocardial infarction', 'troponin', 'troponin t']
+    draft#2 22s valid=True leak=['creatinine', 'hematocrit', 'hemoglobin', 'sodium']
+  ACCEPT qa_00085 hadm=26662210 type=diagnosis iters=1 [42D/44I] [86/100]
+    draft#1 30s valid=True leak=['creatinine', 'myocardial infarction']
+    draft#1 20s valid=True leak=[]
+  ACCEPT qa_00086 hadm=25386799 type=diagnosis iters=1 [43D/44I] [87/100]
+    draft#1 5s valid=True leak=[]
+  ACCEPT qa_00087 hadm=20978585 type=diagnosis iters=1 [44D/44I] [88/100]
+    draft#3 37s valid=True leak=['acute kidney injury', 'sodium']
+  reject hadm=24256405 type=diagnosis FAILS={}
+    feedback: 
+  ACCEPT qa_00088 hadm=28234454 type=diagnosis iters=1 [45D/44I] [89/100]
+    draft#3 34s valid=True leak=['ck‑mb isoenzyme', 'creatinine', 'myocardial infarction', 'troponin', 'troponin t']
+  reject hadm=25399769 type=diagnosis FAILS={}
+    feedback: 
+    draft#1 33s valid=False leak=[]
+    draft#1 22s valid=True leak=['myocardial infarction']
+    draft#1 13s valid=True leak=['bilirubin', 'lactate']
+    draft#1 13s valid=True leak=['acute kidney injury', 'bicarbonate']
+    draft#2 15s valid=True leak=['albumin']
+    draft#1 13s valid=True leak=[]
+    draft#2 61s valid=True leak=['creatinine', 'myocardial infarction']
+    draft#2 34s valid=True leak=['acute kidney injury', 'myocardial infarction']
+  ACCEPT qa_00089 hadm=22640483 type=intervention iters=1 [45D/45I] [90/100]
+    draft#3 83s valid=True leak=['myocardial infarction', 'platelet', 'platelet count']
+  reject hadm=26223510 type=intervention FAILS={}
+    feedback: 
+    draft#2 22s valid=True leak=['stemi']
+    draft#1 2s valid=True leak=[]
+    draft#3 38s valid=True leak=['myocardial infarction']
+  reject hadm=27203802 type=diagnosis FAILS={}
+    feedback: 
+    draft#2 50s valid=True leak=[]
+  dup fingerprint hadm=20453543; discard
+    draft#1 24s valid=True leak=[]
+    draft#1 2s valid=True leak=['lactate']
+  ACCEPT qa_00090 hadm=27371146 type=diagnosis iters=2 [46D/45I] [91/100]
+    draft#2 5s valid=True leak=['lactate']
+  ACCEPT qa_00091 hadm=23943712 type=intervention iters=1 [46D/46I] [92/100]
+    draft#3 8s valid=True leak=['lactate']
+  reject hadm=27765911 type=diagnosis FAILS={}
+    feedback: 
+    draft#1 4s valid=True leak=[]
+    draft#1 3s valid=True leak=['ketone']
+    draft#2 5s valid=True leak=['glucose', 'white blood']
+    draft#1 5s valid=True leak=['albumin', 'creatinine']
+    draft#3 9s valid=True leak=['ketone']
+  reject hadm=24095954 type=intervention FAILS={}
+    feedback: 
+    draft#3 43s valid=True leak=['inr', 'lactate']
+  reject hadm=25329291 type=diagnosis FAILS={}
+    feedback: 
+    draft#1 2s valid=True leak=[]
+    draft#1 21s valid=True leak=[]
+  ACCEPT qa_00092 hadm=29807577 type=intervention iters=1 [46D/47I] [93/100]
+  ACCEPT qa_00093 hadm=20539184 type=intervention iters=1 [46D/48I] [94/100]
+    draft#3 49s valid=True leak=[]
+    draft#1 3s valid=True leak=['acute kidney injury']
+  ACCEPT qa_00094 hadm=29117503 type=diagnosis iters=3 [47D/48I] [95/100]
+    draft#3 98s valid=False leak=[]
+  reject hadm=24618472 type=diagnosis FAILS={}
+    feedback: 
+    draft#2 6s valid=True leak=[]
+    draft#1 3s valid=True leak=[]
+  ACCEPT qa_00095 hadm=28440936 type=diagnosis iters=2 [48D/48I] [96/100]
+  ACCEPT qa_00096 hadm=25925344 type=intervention iters=1 [48D/49I] [97/100]
+    draft#1 39s valid=True leak=[]
+    draft#1 12s valid=True leak=[]
+  ACCEPT qa_00097 hadm=27689162 type=diagnosis iters=1 [49D/49I] [98/100]
+  ACCEPT qa_00098 hadm=26151289 type=intervention iters=1 [49D/50I] [99/100]
+    draft#2 43s valid=True leak=['albumin']
+  ACCEPT qa_00099 hadm=22383715 type=diagnosis iters=1 [50D/50I] [100/100]
+    draft#1 27s valid=True leak=[]
+    draft#3 53s valid=True leak=[]
+    draft#1 47s valid=True leak=[]
+    draft#1 34s valid=True leak=['hematocrit', 'hemoglobin']
+    draft#1 32s valid=True leak=['acute kidney injury', 'myocardial infarction']
+    draft#1 21s valid=True leak=['inr', 'lactate']
+    draft#2 36s valid=True leak=['potassium']
+    draft#1 21s valid=True leak=['myocardial infarction', 'sepsis']
+    draft#2 23s valid=True leak=['hemoglobin', 'lactate']
+    draft#3 40s valid=True leak=[]
+    draft#2 39s valid=True leak=['acute kidney injury', 'myocardial infarction']
+    draft#3 28s valid=True leak=[]
+    draft#2 27s valid=True leak=[]
+    draft#3 43s valid=True leak=['acute kidney injury', 'myocardial infarction']
+  reject hadm=21240074 type=diagnosis FAILS={}
+    feedback: 
+DONE: 100 questions  {'diagnosis': 50, 'intervention': 50}

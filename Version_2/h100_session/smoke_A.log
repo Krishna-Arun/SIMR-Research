@@ -1,0 +1,61 @@
+[1] starting PubMed MCP server ...
+    tools: ['search_articles', 'advanced_search', 'search_by_author', 'search_by_journal', 'search_by_mesh_terms', 'get_trending_articles'] ...
+[2] connecting model backends ...
+  optimizer endpoint healthy: http://localhost:8000/v1 (openai/gpt-oss-20b)
+  evaluator endpoint healthy: http://localhost:8000/v1 (openai/gpt-oss-20b)
+[3] building cohort store + agents ...
+[4] generating up to 10 questions (resume from 0) ...
+    draft#1 3s valid=True leak=[]
+  ACCEPT qa_00000 hadm=23178609 type=diagnosis iters=1 [1D/0I] [1/10]
+    draft#1 5s valid=True leak=['phosphate']
+    draft#1 5s valid=True leak=[]
+    draft#1 6s valid=True leak=[]
+  ACCEPT qa_00001 hadm=29774630 type=diagnosis iters=1 [2D/0I] [2/10]
+    draft#1 15s valid=True leak=['magnesium']
+    draft#1 15s valid=True leak=['acute kidney injury']
+    draft#1 20s valid=False leak=[]
+  ACCEPT qa_00002 hadm=28037379 type=diagnosis iters=1 [3D/0I] [3/10]
+    draft#2 35s valid=True leak=[]
+    draft#1 38s valid=False leak=[]
+  ACCEPT qa_00003 hadm=22053733 type=diagnosis iters=2 [4D/0I] [4/10]
+    draft#1 21s valid=True leak=['myocardial infarction']
+    draft#2 47s valid=True leak=[]
+    draft#1 47s valid=True leak=[]
+    draft#1 11s valid=True leak=[]
+  ACCEPT qa_00004 hadm=27443016 type=diagnosis iters=1 [5D/0I] [5/10]
+    draft#2 52s valid=True leak=['hemoglobin']
+  ACCEPT qa_00005 hadm=29045054 type=diagnosis iters=2 [6D/0I] [6/10]
+    draft#2 52s valid=True leak=['acute kidney injury']
+    draft#3 56s valid=True leak=[]
+    draft#1 47s valid=True leak=['creatinine', 'troponin', 'troponin t']
+    draft#2 59s valid=True leak=[]
+  ACCEPT qa_00006 hadm=21554540 type=diagnosis iters=3 [7D/0I] [7/10]
+  ACCEPT qa_00007 hadm=29077547 type=intervention iters=1 [7D/1I] [8/10]
+    draft#2 50s valid=True leak=['platelet']
+  ACCEPT qa_00008 hadm=28492377 type=intervention iters=2 [7D/2I] [9/10]
+    draft#1 3s valid=True leak=[]
+    draft#1 2s valid=True leak=['inr']
+  ACCEPT qa_00009 hadm=23595843 type=intervention iters=1 [7D/3I] [10/10]
+    draft#2 4s valid=True leak=[]
+    draft#1 11s valid=True leak=['lactate', 'myocardial infarction', 'sepsis']
+    draft#3 67s valid=True leak=['acute kidney injury']
+  reject hadm=23462530 type=intervention FAILS={}
+    feedback: 
+    draft#3 62s valid=True leak=['lactate']
+  reject hadm=24330256 type=intervention FAILS={}
+    feedback: 
+    draft#1 23s valid=True leak=[]
+    draft#2 54s valid=True leak=['lactate', 'myocardial infarction']
+    draft#1 23s valid=False leak=[]
+    draft#2 23s valid=True leak=['myocardial infarction', 'sepsis']
+    draft#3 62s valid=True leak=['myocardial infarction']
+  reject hadm=25883353 type=intervention FAILS={}
+    feedback: 
+    draft#2 31s valid=True leak=['stemi']
+    draft#3 27s valid=True leak=['lactate', 'myocardial infarction', 'platelet', 'platelet count', 'sepsis']
+  reject hadm=21663085 type=intervention FAILS={}
+    feedback: 
+    draft#3 37s valid=False leak=[]
+  reject hadm=20167211 type=intervention FAILS={}
+    feedback: 
+DONE: 10 questions  {'diagnosis': 7, 'intervention': 3}

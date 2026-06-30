@@ -1,0 +1,19 @@
+   dropped 1 constant covariates: ['lab_White Blood Cells']
+covariates for 10,000 eligible procedures, 25 covariates
+top procedures eligible for pairing (5):
+proc_label
+Extubation                  6191
+Invasive Ventilation        1568
+Dialysis - CRRT              911
+Intubation                   636
+Non-invasive Ventilation     380
+  PAIR Extubation(respiratory) vs Dialysis - CRRT(renal): n=920 AUC_pre=0.926 AUC_post=0.585 maxSMD=0.098
+  PAIR Dialysis - CRRT(renal) vs Intubation(respiratory): n=599 AUC_pre=0.787 AUC_post=0.537 maxSMD=0.077
+  PAIR Dialysis - CRRT(renal) vs Non-invasive Ventilati(respiratory): n=325 AUC_pre=0.872 AUC_post=0.538 maxSMD=0.086
+
+matched pairs: 1,844  ->  matched_pairs.parquet
+procedure-pair coverage:
+procA            procB                   
+Extubation       Dialysis - CRRT             920
+Dialysis - CRRT  Intubation                  599
+                 Non-invasive Ventilation    325

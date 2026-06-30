@@ -1,0 +1,2634 @@
+{
+  "summary": {
+    "benchmark": "B",
+    "model": "Qwen/Qwen3-32B",
+    "pubmed": false,
+    "n": 100,
+    "mean_direction_score": 0.49588690476190483,
+    "ece": 0.3591176470588239
+  },
+  "results": [
+    {
+      "qid": "qb_00000",
+      "preds": {
+        "Creatinine": [
+          "Falling",
+          0.9
+        ],
+        "Potassium": [
+          "Stable",
+          0.7
+        ]
+      },
+      "per_lab": {
+        "Creatinine": 1.0,
+        "Potassium": 1.0
+      },
+      "mean": 1.0,
+      "n": 2
+    },
+    {
+      "qid": "qb_00001",
+      "preds": {
+        "Creatinine": [
+          "Stable",
+          0.9
+        ],
+        "Potassium": [
+          "Rising",
+          0.7
+        ]
+      },
+      "per_lab": {
+        "Creatinine": 1.0,
+        "Potassium": 0.0
+      },
+      "mean": 0.5,
+      "n": 2
+    },
+    {
+      "qid": "qb_00002",
+      "preds": {
+        "Potassium": [
+          "Stable",
+          0.8
+        ],
+        "Sodium": [
+          "Stable",
+          0.8
+        ],
+        "Platelet Count": [
+          "Rising",
+          0.6
+        ]
+      },
+      "per_lab": {
+        "Potassium": 1.0,
+        "Sodium": 1.0,
+        "Platelet Count": 0.0
+      },
+      "mean": 0.6666666666666666,
+      "n": 3
+    },
+    {
+      "qid": "qb_00003",
+      "preds": {
+        "Platelet Count": [
+          "Stable",
+          0.9
+        ]
+      },
+      "per_lab": {
+        "Platelet Count": 0.5
+      },
+      "mean": 0.5,
+      "n": 1
+    },
+    {
+      "qid": "qb_00004",
+      "preds": {
+        "Creatinine": [
+          "Rising",
+          0.7
+        ],
+        "Potassium": [
+          "Rising",
+          0.8
+        ]
+      },
+      "per_lab": {
+        "Creatinine": 1.0,
+        "Potassium": 0.0
+      },
+      "mean": 0.5,
+      "n": 2
+    },
+    {
+      "qid": "qb_00005",
+      "preds": {
+        "Creatinine": [
+          "Stable",
+          0.85
+        ],
+        "Platelet Count": [
+          "Rising",
+          0.65
+        ]
+      },
+      "per_lab": {
+        "Creatinine": 1.0,
+        "Platelet Count": 0.0
+      },
+      "mean": 0.5,
+      "n": 2
+    },
+    {
+      "qid": "qb_00006",
+      "preds": {
+        "Creatinine": [
+          "Stable",
+          0.65
+        ],
+        "Potassium": [
+          "Rising",
+          0.7
+        ]
+      },
+      "per_lab": {
+        "Creatinine": 1.0,
+        "Potassium": 0.0
+      },
+      "mean": 0.5,
+      "n": 2
+    },
+    {
+      "qid": "qb_00007",
+      "preds": {
+        "Creatinine": [
+          "Stable",
+          0.9
+        ],
+        "Potassium": [
+          "Falling",
+          0.75
+        ],
+        "Bicarbonate": [
+          "Falling",
+          0.7
+        ],
+        "Urea Nitrogen": [
+          "Stable",
+          0.9
+        ]
+      },
+      "per_lab": {
+        "Creatinine": 0.5,
+        "Potassium": 0.0,
+        "Bicarbonate": 1.0,
+        "Urea Nitrogen": 0.5
+      },
+      "mean": 0.5,
+      "n": 4
+    },
+    {
+      "qid": "qb_00008",
+      "preds": {
+        "Creatinine": [
+          "Stable",
+          0.7
+        ],
+        "Potassium": [
+          "Falling",
+          0.75
+        ],
+        "Platelet Count": [
+          "Stable",
+          0.6
+        ],
+        "Urea Nitrogen": [
+          "Stable",
+          0.65
+        ]
+      },
+      "per_lab": {
+        "Creatinine": 1.0,
+        "Potassium": 0.0,
+        "Platelet Count": 0.5,
+        "Urea Nitrogen": 0.5
+      },
+      "mean": 0.5,
+      "n": 4
+    },
+    {
+      "qid": "qb_00009",
+      "preds": {
+        "Bicarbonate": [
+          "Stable",
+          0.9
+        ],
+        "Creatinine": [
+          "Stable",
+          0.7
+        ],
+        "Platelet Count": [
+          "Falling",
+          0.6
+        ],
+        "Potassium": [
+          "Stable",
+          0.9
+        ],
+        "Sodium": [
+          "Rising",
+          0.9
+        ],
+        "Urea Nitrogen": [
+          "Falling",
+          0.95
+        ]
+      },
+      "per_lab": {
+        "Bicarbonate": 0.5,
+        "Creatinine": 0.5,
+        "Platelet Count": 1.0,
+        "Potassium": 1.0,
+        "Sodium": 0.0,
+        "Urea Nitrogen": 0.0
+      },
+      "mean": 0.5,
+      "n": 6
+    },
+    {
+      "qid": "qb_00010",
+      "preds": {
+        "Creatinine": [
+          "Falling",
+          0.7
+        ],
+        "Urea Nitrogen": [
+          "Falling",
+          0.6
+        ]
+      },
+      "per_lab": {
+        "Creatinine": 1.0,
+        "Urea Nitrogen": 0.0
+      },
+      "mean": 0.5,
+      "n": 2
+    },
+    {
+      "qid": "qb_00011",
+      "preds": {
+        "Creatinine": [
+          "Stable",
+          0.9
+        ],
+        "Potassium": [
+          "Stable",
+          0.85
+        ],
+        "Sodium": [
+          "Stable",
+          0.88
+        ],
+        "Urea Nitrogen": [
+          "Falling",
+          0.75
+        ],
+        "Hemoglobin": [
+          "Stable",
+          0.8
+        ],
+        "Platelet Count": [
+          "Stable",
+          0.82
+        ]
+      },
+      "per_lab": {
+        "Creatinine": 1.0,
+        "Potassium": 1.0,
+        "Sodium": 0.5,
+        "Urea Nitrogen": 0.0,
+        "Hemoglobin": 0.5,
+        "Platelet Count": 0.5
+      },
+      "mean": 0.5833333333333334,
+      "n": 6
+    },
+    {
+      "qid": "qb_00012",
+      "preds": {
+        "Creatinine": [
+          "Rising",
+          0.7
+        ],
+        "Urea Nitrogen": [
+          "Rising",
+          0.7
+        ]
+      },
+      "per_lab": {
+        "Creatinine": 0.0,
+        "Urea Nitrogen": 0.0
+      },
+      "mean": 0.0,
+      "n": 2
+    },
+    {
+      "qid": "qb_00013",
+      "preds": {
+        "Creatinine": [
+          "Falling",
+          0.7
+        ],
+        "Potassium": [
+          "Falling",
+          0.8
+        ],
+        "Urea Nitrogen": [
+          "Falling",
+          0.9
+        ],
+        "Platelet Count": [
+          "Falling",
+          0.7
+        ]
+      },
+      "per_lab": {
+        "Creatinine": 0.0,
+        "Potassium": 0.0,
+        "Urea Nitrogen": 0.0,
+        "Platelet Count": 1.0
+      },
+      "mean": 0.25,
+      "n": 4
+    },
+    {
+      "qid": "qb_00014",
+      "preds": {
+        "Creatinine": [
+          "Stable",
+          0.65
+        ],
+        "Potassium": [
+          "Falling",
+          0.7
+        ]
+      },
+      "per_lab": {
+        "Creatinine": 1.0,
+        "Potassium": 0.0
+      },
+      "mean": 0.5,
+      "n": 2
+    },
+    {
+      "qid": "qb_00015",
+      "preds": {
+        "Bicarbonate": [
+          "Rising",
+          0.9
+        ],
+        "Creatinine": [
+          "Falling",
+          0.95
+        ],
+        "Lactate": [
+          "Stable",
+          0.7
+        ],
+        "Platelet Count": [
+          "Falling",
+          0.75
+        ],
+        "Potassium": [
+          "Falling",
+          0.95
+        ],
+        "Sodium": [
+          "Stable",
+          0.8
+        ],
+        "Urea Nitrogen": [
+          "Falling",
+          0.95
+        ]
+      },
+      "per_lab": {
+        "Bicarbonate": 0.0,
+        "Creatinine": 1.0,
+        "Lactate": 0.5,
+        "Platelet Count": 1.0,
+        "Potassium": 0.0,
+        "Sodium": 1.0,
+        "Urea Nitrogen": 1.0
+      },
+      "mean": 0.6428571428571429,
+      "n": 7
+    },
+    {
+      "qid": "qb_00016",
+      "preds": {
+        "Creatinine": [
+          "Stable",
+          0.8
+        ],
+        "Potassium": [
+          "Stable",
+          0.7
+        ],
+        "Sodium": [
+          "Stable",
+          0.75
+        ],
+        "Urea Nitrogen": [
+          "Falling",
+          0.65
+        ]
+      },
+      "per_lab": {
+        "Creatinine": 1.0,
+        "Potassium": 1.0,
+        "Sodium": 1.0,
+        "Urea Nitrogen": 0.0
+      },
+      "mean": 0.75,
+      "n": 4
+    },
+    {
+      "qid": "qb_00017",
+      "preds": {
+        "Creatinine": [
+          "Stable",
+          0.7
+        ],
+        "Potassium": [
+          "Stable",
+          0.8
+        ],
+        "Platelet Count": [
+          "Rising",
+          0.6
+        ],
+        "Sodium": [
+          "Stable",
+          0.9
+        ],
+        "Urea Nitrogen": [
+          "Stable",
+          0.7
+        ]
+      },
+      "per_lab": {
+        "Creatinine": 1.0,
+        "Potassium": 1.0,
+        "Platelet Count": 1.0,
+        "Sodium": 0.5,
+        "Urea Nitrogen": 0.5
+      },
+      "mean": 0.8,
+      "n": 5
+    },
+    {
+      "qid": "qb_00018",
+      "preds": {
+        "Platelet Count": [
+          "Falling",
+          0.7
+        ]
+      },
+      "per_lab": {
+        "Platelet Count": 0.0
+      },
+      "mean": 0.0,
+      "n": 1
+    },
+    {
+      "qid": "qb_00019",
+      "preds": {
+        "Lactate": [
+          "Falling",
+          0.7
+        ],
+        "Platelet Count": [
+          "Stable",
+          0.8
+        ]
+      },
+      "per_lab": {
+        "Lactate": 1.0,
+        "Platelet Count": 1.0
+      },
+      "mean": 1.0,
+      "n": 2
+    },
+    {
+      "qid": "qb_00020",
+      "preds": {
+        "Creatinine": [
+          "Stable",
+          0.7
+        ],
+        "Urea Nitrogen": [
+          "Falling",
+          0.85
+        ]
+      },
+      "per_lab": {
+        "Creatinine": 1.0,
+        "Urea Nitrogen": 1.0
+      },
+      "mean": 1.0,
+      "n": 2
+    },
+    {
+      "qid": "qb_00021",
+      "preds": {
+        "Creatinine": [
+          "Stable",
+          0.6
+        ],
+        "Potassium": [
+          "Falling",
+          0.7
+        ],
+        "Urea Nitrogen": [
+          "Rising",
+          0.65
+        ]
+      },
+      "per_lab": {
+        "Creatinine": 1.0,
+        "Potassium": 0.0,
+        "Urea Nitrogen": 1.0
+      },
+      "mean": 0.6666666666666666,
+      "n": 3
+    },
+    {
+      "qid": "qb_00022",
+      "preds": {
+        "Lactate": [
+          "Falling",
+          0.7
+        ]
+      },
+      "per_lab": {
+        "Lactate": 0.0
+      },
+      "mean": 0.0,
+      "n": 1
+    },
+    {
+      "qid": "qb_00023",
+      "preds": {
+        "Creatinine": [
+          "Rising",
+          0.7
+        ],
+        "Potassium": [
+          "Stable",
+          0.8
+        ]
+      },
+      "per_lab": {
+        "Creatinine": 1.0,
+        "Potassium": 1.0
+      },
+      "mean": 1.0,
+      "n": 2
+    },
+    {
+      "qid": "qb_00024",
+      "preds": {},
+      "per_lab": {
+        "Creatinine": 0.0,
+        "Urea Nitrogen": 0.0,
+        "Bicarbonate": 0.0,
+        "Platelet Count": 0.0,
+        "Potassium": 0.0,
+        "Sodium": 0.0
+      },
+      "mean": 0.0,
+      "n": 6
+    },
+    {
+      "qid": "qb_00025",
+      "preds": {
+        "Creatinine": [
+          "Stable",
+          0.7
+        ],
+        "Potassium": [
+          "Falling",
+          0.65
+        ]
+      },
+      "per_lab": {
+        "Creatinine": 1.0,
+        "Potassium": 0.0
+      },
+      "mean": 0.5,
+      "n": 2
+    },
+    {
+      "qid": "qb_00026",
+      "preds": {
+        "Creatinine": [
+          "Stable",
+          0.85
+        ],
+        "Platelet Count": [
+          "Stable",
+          0.75
+        ]
+      },
+      "per_lab": {
+        "Creatinine": 0.5,
+        "Platelet Count": 0.5
+      },
+      "mean": 0.5,
+      "n": 2
+    },
+    {
+      "qid": "qb_00027",
+      "preds": {
+        "Creatinine": [
+          "Falling",
+          0.9
+        ],
+        "Potassium": [
+          "Falling",
+          0.8
+        ]
+      },
+      "per_lab": {
+        "Creatinine": 0.0,
+        "Potassium": 0.0
+      },
+      "mean": 0.0,
+      "n": 2
+    },
+    {
+      "qid": "qb_00028",
+      "preds": {
+        "Bicarbonate": [
+          "Rising",
+          0.7
+        ],
+        "Creatinine": [
+          "Stable",
+          0.9
+        ],
+        "Hemoglobin": [
+          "Stable",
+          0.9
+        ],
+        "Lactate": [
+          "Stable",
+          0.6
+        ],
+        "Platelet Count": [
+          "Stable",
+          0.9
+        ],
+        "Potassium": [
+          "Stable",
+          0.8
+        ],
+        "Sodium": [
+          "Stable",
+          0.9
+        ],
+        "Urea Nitrogen": [
+          "Falling",
+          0.7
+        ]
+      },
+      "per_lab": {
+        "Bicarbonate": 0.0,
+        "Creatinine": 1.0,
+        "Hemoglobin": 0.5,
+        "Lactate": 1.0,
+        "Platelet Count": 0.5,
+        "Potassium": 1.0,
+        "Sodium": 0.5,
+        "Urea Nitrogen": 0.0
+      },
+      "mean": 0.5625,
+      "n": 8
+    },
+    {
+      "qid": "qb_00029",
+      "preds": {},
+      "per_lab": {
+        "Bicarbonate": 0.0,
+        "Creatinine": 0.0,
+        "Lactate": 0.0,
+        "Platelet Count": 0.0,
+        "Potassium": 0.0,
+        "Sodium": 0.0,
+        "Urea Nitrogen": 0.0
+      },
+      "mean": 0.0,
+      "n": 7
+    },
+    {
+      "qid": "qb_00030",
+      "preds": {},
+      "per_lab": {
+        "Creatinine": 0.0,
+        "Potassium": 0.0,
+        "Platelet Count": 0.0,
+        "Urea Nitrogen": 0.0,
+        "Bicarbonate": 0.0
+      },
+      "mean": 0.0,
+      "n": 5
+    },
+    {
+      "qid": "qb_00031",
+      "preds": {
+        "Creatinine": [
+          "Stable",
+          0.3
+        ],
+        "Sodium": [
+          "Rising",
+          0.6
+        ],
+        "Urea Nitrogen": [
+          "Falling",
+          0.7
+        ],
+        "Bicarbonate": [
+          "Rising",
+          0.8
+        ],
+        "Lactate": [
+          "Falling",
+          0.7
+        ],
+        "Platelet Count": [
+          "Stable",
+          0.9
+        ],
+        "Potassium": [
+          "Stable",
+          0.8
+        ]
+      },
+      "per_lab": {
+        "Creatinine": 0.5,
+        "Sodium": 0.0,
+        "Urea Nitrogen": 0.0,
+        "Bicarbonate": 0.0,
+        "Lactate": 0.0,
+        "Platelet Count": 0.5,
+        "Potassium": 1.0
+      },
+      "mean": 0.2857142857142857,
+      "n": 7
+    },
+    {
+      "qid": "qb_00032",
+      "preds": {
+        "Creatinine": [
+          "Stable",
+          0.6
+        ],
+        "Potassium": [
+          "Falling",
+          0.6
+        ],
+        "Bicarbonate": [
+          "Falling",
+          0.7
+        ],
+        "Hemoglobin": [
+          "Stable",
+          0.8
+        ],
+        "Lactate": [
+          "Falling",
+          0.8
+        ],
+        "Platelet Count": [
+          "Stable",
+          0.6
+        ],
+        "Sodium": [
+          "Stable",
+          0.7
+        ],
+        "Urea Nitrogen": [
+          "Falling",
+          0.6
+        ]
+      },
+      "per_lab": {
+        "Creatinine": 1.0,
+        "Potassium": 0.0,
+        "Bicarbonate": 0.0,
+        "Hemoglobin": 0.5,
+        "Lactate": 0.0,
+        "Platelet Count": 0.5,
+        "Sodium": 1.0,
+        "Urea Nitrogen": 1.0
+      },
+      "mean": 0.5,
+      "n": 8
+    },
+    {
+      "qid": "qb_00033",
+      "preds": {
+        "Bicarbonate": [
+          "Rising",
+          0.9
+        ],
+        "Creatinine": [
+          "Falling",
+          0.95
+        ],
+        "Hemoglobin": [
+          "Rising",
+          0.7
+        ],
+        "Lactate": [
+          "Stable",
+          0.9
+        ],
+        "Platelet Count": [
+          "Falling",
+          0.85
+        ],
+        "Potassium": [
+          "Falling",
+          0.9
+        ],
+        "Sodium": [
+          "Stable",
+          0.8
+        ],
+        "Urea Nitrogen": [
+          "Falling",
+          0.95
+        ]
+      },
+      "per_lab": {
+        "Bicarbonate": 0.0,
+        "Creatinine": 1.0,
+        "Hemoglobin": 1.0,
+        "Lactate": 1.0,
+        "Platelet Count": 1.0,
+        "Potassium": 0.0,
+        "Sodium": 0.5,
+        "Urea Nitrogen": 1.0
+      },
+      "mean": 0.6875,
+      "n": 8
+    },
+    {
+      "qid": "qb_00034",
+      "preds": {
+        "Creatinine": [
+          "Stable",
+          0.7
+        ],
+        "Platelet Count": [
+          "Stable",
+          0.65
+        ],
+        "Urea Nitrogen": [
+          "Stable",
+          0.7
+        ]
+      },
+      "per_lab": {
+        "Creatinine": 1.0,
+        "Platelet Count": 0.5,
+        "Urea Nitrogen": 0.5
+      },
+      "mean": 0.6666666666666666,
+      "n": 3
+    },
+    {
+      "qid": "qb_00035",
+      "preds": {
+        "Lactate": [
+          "Rising",
+          0.7
+        ],
+        "Potassium": [
+          "Falling",
+          0.8
+        ]
+      },
+      "per_lab": {
+        "Lactate": 0.0,
+        "Potassium": 0.0
+      },
+      "mean": 0.0,
+      "n": 2
+    },
+    {
+      "qid": "qb_00036",
+      "preds": {
+        "Creatinine": [
+          "Falling",
+          0.9
+        ],
+        "Urea Nitrogen": [
+          "Falling",
+          0.9
+        ]
+      },
+      "per_lab": {
+        "Creatinine": 1.0,
+        "Urea Nitrogen": 1.0
+      },
+      "mean": 1.0,
+      "n": 2
+    },
+    {
+      "qid": "qb_00037",
+      "preds": {
+        "Platelet Count": [
+          "Stable",
+          0.8
+        ],
+        "Potassium": [
+          "Falling",
+          0.7
+        ]
+      },
+      "per_lab": {
+        "Platelet Count": 0.5,
+        "Potassium": 0.0
+      },
+      "mean": 0.25,
+      "n": 2
+    },
+    {
+      "qid": "qb_00038",
+      "preds": {
+        "Creatinine": [
+          "Falling",
+          0.9
+        ],
+        "Urea Nitrogen": [
+          "Falling",
+          0.95
+        ]
+      },
+      "per_lab": {
+        "Creatinine": 0.0,
+        "Urea Nitrogen": 1.0
+      },
+      "mean": 0.5,
+      "n": 2
+    },
+    {
+      "qid": "qb_00039",
+      "preds": {
+        "Potassium": [
+          "Stable",
+          0.7
+        ],
+        "Lactate": [
+          "Falling",
+          0.9
+        ],
+        "Platelet Count": [
+          "Stable",
+          0.8
+        ],
+        "Sodium": [
+          "Stable",
+          0.9
+        ]
+      },
+      "per_lab": {
+        "Potassium": 1.0,
+        "Lactate": 0.0,
+        "Platelet Count": 0.5,
+        "Sodium": 1.0
+      },
+      "mean": 0.625,
+      "n": 4
+    },
+    {
+      "qid": "qb_00040",
+      "preds": {
+        "Creatinine": [
+          "Stable",
+          0.6
+        ],
+        "Potassium": [
+          "Falling",
+          0.7
+        ],
+        "Urea Nitrogen": [
+          "Falling",
+          0.7
+        ]
+      },
+      "per_lab": {
+        "Creatinine": 0.5,
+        "Potassium": 0.0,
+        "Urea Nitrogen": 0.0
+      },
+      "mean": 0.16666666666666666,
+      "n": 3
+    },
+    {
+      "qid": "qb_00041",
+      "preds": {
+        "Creatinine": [
+          "Stable",
+          0.7
+        ],
+        "Potassium": [
+          "Stable",
+          0.6
+        ]
+      },
+      "per_lab": {
+        "Creatinine": 0.5,
+        "Potassium": 1.0
+      },
+      "mean": 0.75,
+      "n": 2
+    },
+    {
+      "qid": "qb_00042",
+      "preds": {
+        "Bicarbonate": [
+          "Stable",
+          0.6
+        ],
+        "Creatinine": [
+          "Stable",
+          0.8
+        ],
+        "Lactate": [
+          "Falling",
+          0.7
+        ],
+        "Platelet Count": [
+          "Stable",
+          0.9
+        ],
+        "Potassium": [
+          "Falling",
+          0.7
+        ],
+        "Sodium": [
+          "Stable",
+          0.8
+        ],
+        "Urea Nitrogen": [
+          "Falling",
+          0.7
+        ]
+      },
+      "per_lab": {
+        "Bicarbonate": 1.0,
+        "Creatinine": 1.0,
+        "Lactate": 0.0,
+        "Platelet Count": 1.0,
+        "Potassium": 0.0,
+        "Sodium": 1.0,
+        "Urea Nitrogen": 0.0
+      },
+      "mean": 0.5714285714285714,
+      "n": 7
+    },
+    {
+      "qid": "qb_00043",
+      "preds": {
+        "Hemoglobin": [
+          "Stable",
+          0.7
+        ],
+        "Lactate": [
+          "Falling",
+          0.6
+        ]
+      },
+      "per_lab": {
+        "Hemoglobin": 0.5,
+        "Lactate": 0.0
+      },
+      "mean": 0.25,
+      "n": 2
+    },
+    {
+      "qid": "qb_00044",
+      "preds": {
+        "Creatinine": [
+          "Stable",
+          0.6
+        ],
+        "Bicarbonate": [
+          "Stable",
+          0.5
+        ],
+        "Platelet Count": [
+          "Stable",
+          0.5
+        ],
+        "Potassium": [
+          "Stable",
+          0.8
+        ],
+        "Sodium": [
+          "Stable",
+          0.7
+        ],
+        "Urea Nitrogen": [
+          "Stable",
+          0.6
+        ]
+      },
+      "per_lab": {
+        "Creatinine": 0.5,
+        "Bicarbonate": 0.5,
+        "Platelet Count": 0.5,
+        "Potassium": 1.0,
+        "Sodium": 1.0,
+        "Urea Nitrogen": 0.5
+      },
+      "mean": 0.6666666666666666,
+      "n": 6
+    },
+    {
+      "qid": "qb_00045",
+      "preds": {
+        "Creatinine": [
+          "Stable",
+          0.7
+        ],
+        "Platelet Count": [
+          "Stable",
+          0.85
+        ],
+        "Urea Nitrogen": [
+          "Stable",
+          0.6
+        ]
+      },
+      "per_lab": {
+        "Creatinine": 1.0,
+        "Platelet Count": 0.5,
+        "Urea Nitrogen": 0.5
+      },
+      "mean": 0.6666666666666666,
+      "n": 3
+    },
+    {
+      "qid": "qb_00046",
+      "preds": {
+        "Creatinine": [
+          "Stable",
+          0.7
+        ],
+        "Hemoglobin": [
+          "Stable",
+          0.6
+        ],
+        "Urea Nitrogen": [
+          "Rising",
+          0.7
+        ]
+      },
+      "per_lab": {
+        "Creatinine": 0.5,
+        "Hemoglobin": 0.5,
+        "Urea Nitrogen": 0.0
+      },
+      "mean": 0.3333333333333333,
+      "n": 3
+    },
+    {
+      "qid": "qb_00047",
+      "preds": {
+        "Creatinine": [
+          "Stable",
+          0.8
+        ],
+        "Potassium": [
+          "Falling",
+          0.7
+        ],
+        "Bicarbonate": [
+          "Rising",
+          0.7
+        ],
+        "Hemoglobin": [
+          "Stable",
+          0.9
+        ],
+        "Lactate": [
+          "Stable",
+          0.6
+        ],
+        "Platelet Count": [
+          "Stable",
+          0.9
+        ],
+        "Sodium": [
+          "Stable",
+          0.8
+        ],
+        "Urea Nitrogen": [
+          "Falling",
+          0.6
+        ]
+      },
+      "per_lab": {
+        "Creatinine": 0.5,
+        "Potassium": 0.0,
+        "Bicarbonate": 0.0,
+        "Hemoglobin": 0.5,
+        "Lactate": 1.0,
+        "Platelet Count": 1.0,
+        "Sodium": 0.5,
+        "Urea Nitrogen": 0.0
+      },
+      "mean": 0.4375,
+      "n": 8
+    },
+    {
+      "qid": "qb_00048",
+      "preds": {
+        "Creatinine": [
+          "Stable",
+          0.8
+        ],
+        "Potassium": [
+          "Falling",
+          0.6
+        ],
+        "Bicarbonate": [
+          "Rising",
+          0.6
+        ],
+        "Lactate": [
+          "Rising",
+          0.7
+        ],
+        "Platelet Count": [
+          "Stable",
+          0.9
+        ],
+        "Sodium": [
+          "Stable",
+          0.8
+        ],
+        "Urea Nitrogen": [
+          "Stable",
+          0.8
+        ]
+      },
+      "per_lab": {
+        "Creatinine": 0.5,
+        "Potassium": 0.0,
+        "Bicarbonate": 0.0,
+        "Lactate": 0.0,
+        "Platelet Count": 1.0,
+        "Sodium": 1.0,
+        "Urea Nitrogen": 0.5
+      },
+      "mean": 0.42857142857142855,
+      "n": 7
+    },
+    {
+      "qid": "qb_00049",
+      "preds": {
+        "Creatinine": [
+          "Stable",
+          0.9
+        ],
+        "Potassium": [
+          "Rising",
+          0.85
+        ],
+        "Sodium": [
+          "Stable",
+          0.7
+        ],
+        "Urea Nitrogen": [
+          "Falling",
+          0.8
+        ]
+      },
+      "per_lab": {
+        "Creatinine": 1.0,
+        "Potassium": 0.0,
+        "Sodium": 0.5,
+        "Urea Nitrogen": 0.0
+      },
+      "mean": 0.375,
+      "n": 4
+    },
+    {
+      "qid": "qb_00050",
+      "preds": {
+        "Creatinine": [
+          "Stable",
+          0.6
+        ],
+        "Sodium": [
+          "Rising",
+          0.7
+        ]
+      },
+      "per_lab": {
+        "Creatinine": 1.0,
+        "Sodium": 0.0
+      },
+      "mean": 0.5,
+      "n": 2
+    },
+    {
+      "qid": "qb_00051",
+      "preds": {
+        "Creatinine": [
+          "Rising",
+          0.6
+        ],
+        "Potassium": [
+          "Rising",
+          0.7
+        ],
+        "Sodium": [
+          "Stable",
+          0.4
+        ],
+        "Urea Nitrogen": [
+          "Stable",
+          0.3
+        ],
+        "Platelet Count": [
+          "Stable",
+          0.3
+        ]
+      },
+      "per_lab": {
+        "Creatinine": 0.0,
+        "Potassium": 0.0,
+        "Sodium": 0.5,
+        "Urea Nitrogen": 0.5,
+        "Platelet Count": 0.5
+      },
+      "mean": 0.3,
+      "n": 5
+    },
+    {
+      "qid": "qb_00052",
+      "preds": {
+        "Creatinine": [
+          "Stable",
+          0.7
+        ],
+        "Potassium": [
+          "Falling",
+          0.65
+        ],
+        "Bicarbonate": [
+          "Falling",
+          0.6
+        ],
+        "Urea Nitrogen": [
+          "Rising",
+          0.7
+        ]
+      },
+      "per_lab": {
+        "Creatinine": 1.0,
+        "Potassium": 0.0,
+        "Bicarbonate": 0.0,
+        "Urea Nitrogen": 1.0
+      },
+      "mean": 0.5,
+      "n": 4
+    },
+    {
+      "qid": "qb_00053",
+      "preds": {
+        "Creatinine": [
+          "Stable",
+          0.7
+        ],
+        "Lactate": [
+          "Falling",
+          0.85
+        ],
+        "Platelet Count": [
+          "Stable",
+          0.9
+        ],
+        "Urea Nitrogen": [
+          "Stable",
+          0.75
+        ]
+      },
+      "per_lab": {
+        "Creatinine": 0.5,
+        "Lactate": 1.0,
+        "Platelet Count": 0.5,
+        "Urea Nitrogen": 1.0
+      },
+      "mean": 0.75,
+      "n": 4
+    },
+    {
+      "qid": "qb_00054",
+      "preds": {
+        "Creatinine": [
+          "Falling",
+          0.8
+        ],
+        "Potassium": [
+          "Falling",
+          0.7
+        ]
+      },
+      "per_lab": {
+        "Creatinine": 1.0,
+        "Potassium": 0.0
+      },
+      "mean": 0.5,
+      "n": 2
+    },
+    {
+      "qid": "qb_00055",
+      "preds": {
+        "Lactate": [
+          "Stable",
+          0.7
+        ],
+        "Platelet Count": [
+          "Stable",
+          0.6
+        ],
+        "Potassium": [
+          "Stable",
+          0.7
+        ],
+        "Sodium": [
+          "Stable",
+          0.7
+        ]
+      },
+      "per_lab": {
+        "Lactate": 0.5,
+        "Platelet Count": 1.0,
+        "Potassium": 0.5,
+        "Sodium": 1.0
+      },
+      "mean": 0.75,
+      "n": 4
+    },
+    {
+      "qid": "qb_00056",
+      "preds": {
+        "Creatinine": [
+          "Rising",
+          0.7
+        ],
+        "Potassium": [
+          "Rising",
+          0.8
+        ]
+      },
+      "per_lab": {
+        "Creatinine": 1.0,
+        "Potassium": 0.0
+      },
+      "mean": 0.5,
+      "n": 2
+    },
+    {
+      "qid": "qb_00057",
+      "preds": {
+        "Bicarbonate": [
+          "Stable",
+          0.8
+        ],
+        "Creatinine": [
+          "Stable",
+          0.9
+        ],
+        "Hemoglobin": [
+          "Stable",
+          0.75
+        ],
+        "Lactate": [
+          "Stable",
+          0.85
+        ],
+        "Platelet Count": [
+          "Stable",
+          0.9
+        ],
+        "Potassium": [
+          "Stable",
+          0.85
+        ],
+        "Urea Nitrogen": [
+          "Falling",
+          0.7
+        ]
+      },
+      "per_lab": {
+        "Bicarbonate": 0.5,
+        "Creatinine": 1.0,
+        "Hemoglobin": 0.5,
+        "Lactate": 1.0,
+        "Platelet Count": 1.0,
+        "Potassium": 1.0,
+        "Urea Nitrogen": 0.0
+      },
+      "mean": 0.7142857142857143,
+      "n": 7
+    },
+    {
+      "qid": "qb_00058",
+      "preds": {
+        "Creatinine": [
+          "Stable",
+          0.6
+        ],
+        "Potassium": [
+          "Falling",
+          0.8
+        ],
+        "Platelet Count": [
+          "Falling",
+          0.7
+        ],
+        "Urea Nitrogen": [
+          "Falling",
+          0.7
+        ]
+      },
+      "per_lab": {
+        "Creatinine": 0.5,
+        "Potassium": 0.0,
+        "Platelet Count": 0.0,
+        "Urea Nitrogen": 0.0
+      },
+      "mean": 0.125,
+      "n": 4
+    },
+    {
+      "qid": "qb_00059",
+      "preds": {
+        "Bicarbonate": [
+          "Stable",
+          0.7
+        ],
+        "Creatinine": [
+          "Stable",
+          0.8
+        ],
+        "Potassium": [
+          "Stable",
+          0.75
+        ],
+        "Sodium": [
+          "Stable",
+          0.65
+        ],
+        "Urea Nitrogen": [
+          "Falling",
+          0.9
+        ]
+      },
+      "per_lab": {
+        "Bicarbonate": 0.5,
+        "Creatinine": 1.0,
+        "Potassium": 1.0,
+        "Sodium": 1.0,
+        "Urea Nitrogen": 0.0
+      },
+      "mean": 0.7,
+      "n": 5
+    },
+    {
+      "qid": "qb_00060",
+      "preds": {
+        "Creatinine": [
+          "Stable",
+          0.7
+        ],
+        "Potassium": [
+          "Stable",
+          0.6
+        ]
+      },
+      "per_lab": {
+        "Creatinine": 1.0,
+        "Potassium": 1.0
+      },
+      "mean": 1.0,
+      "n": 2
+    },
+    {
+      "qid": "qb_00061",
+      "preds": {
+        "Creatinine": [
+          "Falling",
+          0.8
+        ],
+        "Potassium": [
+          "Stable",
+          0.7
+        ],
+        "Bicarbonate": [
+          "Rising",
+          0.9
+        ],
+        "Lactate": [
+          "Falling",
+          0.6
+        ]
+      },
+      "per_lab": {
+        "Creatinine": 0.0,
+        "Potassium": 0.5,
+        "Bicarbonate": 0.0,
+        "Lactate": 0.0
+      },
+      "mean": 0.125,
+      "n": 4
+    },
+    {
+      "qid": "qb_00062",
+      "preds": {
+        "Creatinine": [
+          "Stable",
+          0.65
+        ],
+        "Platelet Count": [
+          "Falling",
+          0.7
+        ]
+      },
+      "per_lab": {
+        "Creatinine": 0.5,
+        "Platelet Count": 1.0
+      },
+      "mean": 0.75,
+      "n": 2
+    },
+    {
+      "qid": "qb_00063",
+      "preds": {
+        "Creatinine": [
+          "Falling",
+          0.7
+        ],
+        "Potassium": [
+          "Falling",
+          0.65
+        ],
+        "Sodium": [
+          "Rising",
+          0.85
+        ],
+        "Urea Nitrogen": [
+          "Falling",
+          0.9
+        ],
+        "Bicarbonate": [
+          "Rising",
+          0.7
+        ],
+        "Platelet Count": [
+          "Rising",
+          0.5
+        ]
+      },
+      "per_lab": {
+        "Creatinine": 1.0,
+        "Potassium": 0.0,
+        "Sodium": 1.0,
+        "Urea Nitrogen": 1.0,
+        "Bicarbonate": 0.0,
+        "Platelet Count": 0.0
+      },
+      "mean": 0.5,
+      "n": 6
+    },
+    {
+      "qid": "qb_00064",
+      "preds": {
+        "Creatinine": [
+          "Stable",
+          0.6
+        ],
+        "Potassium": [
+          "Stable",
+          0.7
+        ],
+        "Sodium": [
+          "Stable",
+          0.8
+        ],
+        "Platelet Count": [
+          "Stable",
+          0.9
+        ]
+      },
+      "per_lab": {
+        "Creatinine": 1.0,
+        "Potassium": 1.0,
+        "Sodium": 0.5,
+        "Platelet Count": 0.5
+      },
+      "mean": 0.75,
+      "n": 4
+    },
+    {
+      "qid": "qb_00065",
+      "preds": {
+        "Lactate": [
+          "Falling",
+          0.8
+        ]
+      },
+      "per_lab": {
+        "Lactate": 1.0
+      },
+      "mean": 1.0,
+      "n": 1
+    },
+    {
+      "qid": "qb_00066",
+      "preds": {
+        "Sodium": [
+          "Stable",
+          0.7
+        ],
+        "Urea Nitrogen": [
+          "Stable",
+          0.7
+        ]
+      },
+      "per_lab": {
+        "Sodium": 0.5,
+        "Urea Nitrogen": 0.5
+      },
+      "mean": 0.5,
+      "n": 2
+    },
+    {
+      "qid": "qb_00067",
+      "preds": {
+        "Creatinine": [
+          "Stable",
+          0.6
+        ],
+        "Hemoglobin": [
+          "Stable",
+          0.5
+        ],
+        "Platelet Count": [
+          "Stable",
+          0.5
+        ],
+        "Potassium": [
+          "Falling",
+          0.7
+        ],
+        "Urea Nitrogen": [
+          "Stable",
+          0.6
+        ]
+      },
+      "per_lab": {
+        "Creatinine": 0.5,
+        "Hemoglobin": 0.5,
+        "Platelet Count": 0.5,
+        "Potassium": 0.0,
+        "Urea Nitrogen": 0.5
+      },
+      "mean": 0.4,
+      "n": 5
+    },
+    {
+      "qid": "qb_00068",
+      "preds": {
+        "Creatinine": [
+          "Stable",
+          0.8
+        ],
+        "Potassium": [
+          "Rising",
+          0.7
+        ],
+        "Platelet Count": [
+          "Stable",
+          0.7
+        ],
+        "Urea Nitrogen": [
+          "Stable",
+          0.8
+        ]
+      },
+      "per_lab": {
+        "Creatinine": 1.0,
+        "Potassium": 0.0,
+        "Platelet Count": 0.5,
+        "Urea Nitrogen": 0.5
+      },
+      "mean": 0.5,
+      "n": 4
+    },
+    {
+      "qid": "qb_00069",
+      "preds": {
+        "Creatinine": [
+          "Stable",
+          0.9
+        ],
+        "Potassium": [
+          "Stable",
+          0.85
+        ],
+        "Hemoglobin": [
+          "Stable",
+          0.8
+        ],
+        "Platelet Count": [
+          "Stable",
+          0.75
+        ],
+        "Urea Nitrogen": [
+          "Stable",
+          0.85
+        ],
+        "Bicarbonate": [
+          "Stable",
+          0.9
+        ]
+      },
+      "per_lab": {
+        "Creatinine": 0.5,
+        "Potassium": 1.0,
+        "Hemoglobin": 0.5,
+        "Platelet Count": 0.5,
+        "Urea Nitrogen": 0.5,
+        "Bicarbonate": 1.0
+      },
+      "mean": 0.6666666666666666,
+      "n": 6
+    },
+    {
+      "qid": "qb_00070",
+      "preds": {
+        "Creatinine": [
+          "Stable",
+          0.6
+        ],
+        "Potassium": [
+          "Falling",
+          0.7
+        ],
+        "Bicarbonate": [
+          "Rising",
+          0.7
+        ],
+        "Platelet Count": [
+          "Stable",
+          0.9
+        ],
+        "Sodium": [
+          "Stable",
+          0.9
+        ],
+        "Urea Nitrogen": [
+          "Falling",
+          0.7
+        ]
+      },
+      "per_lab": {
+        "Creatinine": 0.5,
+        "Potassium": 0.0,
+        "Bicarbonate": 0.0,
+        "Platelet Count": 1.0,
+        "Sodium": 1.0,
+        "Urea Nitrogen": 0.0
+      },
+      "mean": 0.4166666666666667,
+      "n": 6
+    },
+    {
+      "qid": "qb_00071",
+      "preds": {
+        "Creatinine": [
+          "Stable",
+          0.7
+        ],
+        "Potassium": [
+          "Stable",
+          0.65
+        ]
+      },
+      "per_lab": {
+        "Creatinine": 1.0,
+        "Potassium": 1.0
+      },
+      "mean": 1.0,
+      "n": 2
+    },
+    {
+      "qid": "qb_00072",
+      "preds": {
+        "Creatinine": [
+          "Stable",
+          0.7
+        ],
+        "Bicarbonate": [
+          "Falling",
+          0.6
+        ]
+      },
+      "per_lab": {
+        "Creatinine": 0.5,
+        "Bicarbonate": 1.0
+      },
+      "mean": 0.75,
+      "n": 2
+    },
+    {
+      "qid": "qb_00073",
+      "preds": {
+        "Creatinine": [
+          "Stable",
+          0.6
+        ],
+        "Potassium": [
+          "Falling",
+          0.7
+        ],
+        "Bicarbonate": [
+          "Falling",
+          0.8
+        ],
+        "Sodium": [
+          "Stable",
+          0.6
+        ],
+        "Urea Nitrogen": [
+          "Falling",
+          0.9
+        ]
+      },
+      "per_lab": {
+        "Creatinine": 0.5,
+        "Potassium": 0.0,
+        "Bicarbonate": 0.0,
+        "Sodium": 1.0,
+        "Urea Nitrogen": 0.0
+      },
+      "mean": 0.3,
+      "n": 5
+    },
+    {
+      "qid": "qb_00074",
+      "preds": {
+        "Creatinine": [
+          "Stable",
+          0.9
+        ],
+        "Potassium": [
+          "Falling",
+          0.75
+        ],
+        "Platelet Count": [
+          "Stable",
+          0.6
+        ]
+      },
+      "per_lab": {
+        "Creatinine": 1.0,
+        "Potassium": 0.0,
+        "Platelet Count": 0.5
+      },
+      "mean": 0.5,
+      "n": 3
+    },
+    {
+      "qid": "qb_00075",
+      "preds": {
+        "Creatinine": [
+          "Falling",
+          0.9
+        ],
+        "Potassium": [
+          "Stable",
+          0.7
+        ],
+        "Bicarbonate": [
+          "Stable",
+          0.8
+        ],
+        "Urea Nitrogen": [
+          "Falling",
+          0.9
+        ]
+      },
+      "per_lab": {
+        "Creatinine": 1.0,
+        "Potassium": 1.0,
+        "Bicarbonate": 0.5,
+        "Urea Nitrogen": 1.0
+      },
+      "mean": 0.875,
+      "n": 4
+    },
+    {
+      "qid": "qb_00076",
+      "preds": {
+        "Creatinine": [
+          "Stable",
+          0.6
+        ],
+        "Potassium": [
+          "Stable",
+          0.7
+        ],
+        "Sodium": [
+          "Stable",
+          0.7
+        ],
+        "Platelet Count": [
+          "Stable",
+          0.9
+        ],
+        "Lactate": [
+          "Falling",
+          0.9
+        ]
+      },
+      "per_lab": {
+        "Creatinine": 1.0,
+        "Potassium": 1.0,
+        "Sodium": 0.5,
+        "Platelet Count": 0.5,
+        "Lactate": 0.0
+      },
+      "mean": 0.6,
+      "n": 5
+    },
+    {
+      "qid": "qb_00077",
+      "preds": {
+        "Creatinine": [
+          "Stable",
+          0.7
+        ],
+        "Potassium": [
+          "Falling",
+          0.8
+        ],
+        "Platelet Count": [
+          "Rising",
+          0.6
+        ],
+        "Sodium": [
+          "Stable",
+          0.7
+        ]
+      },
+      "per_lab": {
+        "Creatinine": 1.0,
+        "Potassium": 0.0,
+        "Platelet Count": 1.0,
+        "Sodium": 0.5
+      },
+      "mean": 0.625,
+      "n": 4
+    },
+    {
+      "qid": "qb_00078",
+      "preds": {
+        "Bicarbonate": [
+          "Rising",
+          0.7
+        ],
+        "Creatinine": [
+          "Stable",
+          0.9
+        ],
+        "Urea Nitrogen": [
+          "Stable",
+          0.8
+        ]
+      },
+      "per_lab": {
+        "Bicarbonate": 0.0,
+        "Creatinine": 1.0,
+        "Urea Nitrogen": 0.5
+      },
+      "mean": 0.5,
+      "n": 3
+    },
+    {
+      "qid": "qb_00079",
+      "preds": {
+        "Potassium": [
+          "Rising",
+          0.7
+        ],
+        "Sodium": [
+          "Stable",
+          0.9
+        ]
+      },
+      "per_lab": {
+        "Potassium": 0.0,
+        "Sodium": 1.0
+      },
+      "mean": 0.5,
+      "n": 2
+    },
+    {
+      "qid": "qb_00080",
+      "preds": {},
+      "per_lab": {
+        "Creatinine": 0.0,
+        "Potassium": 0.0
+      },
+      "mean": 0.0,
+      "n": 2
+    },
+    {
+      "qid": "qb_00081",
+      "preds": {
+        "Creatinine": [
+          "Stable",
+          0.8
+        ],
+        "Potassium": [
+          "Rising",
+          0.7
+        ],
+        "Sodium": [
+          "Rising",
+          0.7
+        ]
+      },
+      "per_lab": {
+        "Creatinine": 1.0,
+        "Potassium": 0.0,
+        "Sodium": 0.0
+      },
+      "mean": 0.3333333333333333,
+      "n": 3
+    },
+    {
+      "qid": "qb_00082",
+      "preds": {
+        "Creatinine": [
+          "Stable",
+          0.7
+        ],
+        "Potassium": [
+          "Rising",
+          0.65
+        ],
+        "Bicarbonate": [
+          "Rising",
+          0.8
+        ],
+        "Sodium": [
+          "Stable",
+          0.75
+        ],
+        "Platelet Count": [
+          "Stable",
+          0.6
+        ]
+      },
+      "per_lab": {
+        "Creatinine": 0.5,
+        "Potassium": 0.0,
+        "Bicarbonate": 0.0,
+        "Sodium": 0.5,
+        "Platelet Count": 0.5
+      },
+      "mean": 0.3,
+      "n": 5
+    },
+    {
+      "qid": "qb_00083",
+      "preds": {
+        "Bicarbonate": [
+          "Rising",
+          0.75
+        ],
+        "Creatinine": [
+          "Stable",
+          0.9
+        ],
+        "Platelet Count": [
+          "Stable",
+          0.8
+        ],
+        "Urea Nitrogen": [
+          "Stable",
+          0.9
+        ]
+      },
+      "per_lab": {
+        "Bicarbonate": 0.0,
+        "Creatinine": 1.0,
+        "Platelet Count": 1.0,
+        "Urea Nitrogen": 1.0
+      },
+      "mean": 0.75,
+      "n": 4
+    },
+    {
+      "qid": "qb_00084",
+      "preds": {
+        "Creatinine": [
+          "Stable",
+          0.6
+        ],
+        "Urea Nitrogen": [
+          "Stable",
+          0.7
+        ]
+      },
+      "per_lab": {
+        "Creatinine": 0.5,
+        "Urea Nitrogen": 0.5
+      },
+      "mean": 0.5,
+      "n": 2
+    },
+    {
+      "qid": "qb_00085",
+      "preds": {
+        "Creatinine": [
+          "Falling",
+          0.9
+        ],
+        "Potassium": [
+          "Falling",
+          0.9
+        ],
+        "Bicarbonate": [
+          "Rising",
+          0.9
+        ],
+        "Lactate": [
+          "Falling",
+          0.7
+        ],
+        "Sodium": [
+          "Rising",
+          0.85
+        ],
+        "Urea Nitrogen": [
+          "Falling",
+          0.95
+        ]
+      },
+      "per_lab": {
+        "Creatinine": 1.0,
+        "Potassium": 0.0,
+        "Bicarbonate": 1.0,
+        "Lactate": 0.0,
+        "Sodium": 0.0,
+        "Urea Nitrogen": 0.0
+      },
+      "mean": 0.3333333333333333,
+      "n": 6
+    },
+    {
+      "qid": "qb_00086",
+      "preds": {
+        "Creatinine": [
+          "Stable",
+          0.6
+        ],
+        "Potassium": [
+          "Stable",
+          0.6
+        ],
+        "Urea Nitrogen": [
+          "Stable",
+          0.5
+        ]
+      },
+      "per_lab": {
+        "Creatinine": 1.0,
+        "Potassium": 1.0,
+        "Urea Nitrogen": 0.5
+      },
+      "mean": 0.8333333333333334,
+      "n": 3
+    },
+    {
+      "qid": "qb_00087",
+      "preds": {
+        "Creatinine": [
+          "Stable",
+          0.7
+        ],
+        "Potassium": [
+          "Falling",
+          0.65
+        ],
+        "Urea Nitrogen": [
+          "Stable",
+          0.7
+        ]
+      },
+      "per_lab": {
+        "Creatinine": 0.5,
+        "Potassium": 0.0,
+        "Urea Nitrogen": 0.5
+      },
+      "mean": 0.3333333333333333,
+      "n": 3
+    },
+    {
+      "qid": "qb_00088",
+      "preds": {},
+      "per_lab": {
+        "Creatinine": 0.0,
+        "Potassium": 0.0,
+        "Platelet Count": 0.0
+      },
+      "mean": 0.0,
+      "n": 3
+    },
+    {
+      "qid": "qb_00089",
+      "preds": {
+        "Creatinine": [
+          "Falling",
+          0.9
+        ],
+        "Potassium": [
+          "Stable",
+          0.8
+        ],
+        "Urea Nitrogen": [
+          "Falling",
+          0.95
+        ]
+      },
+      "per_lab": {
+        "Creatinine": 0.0,
+        "Potassium": 1.0,
+        "Urea Nitrogen": 0.0
+      },
+      "mean": 0.3333333333333333,
+      "n": 3
+    },
+    {
+      "qid": "qb_00090",
+      "preds": {
+        "Creatinine": [
+          "Stable",
+          0.7
+        ],
+        "Potassium": [
+          "Rising",
+          0.9
+        ],
+        "Sodium": [
+          "Stable",
+          0.6
+        ],
+        "Urea Nitrogen": [
+          "Falling",
+          0.85
+        ],
+        "Bicarbonate": [
+          "Stable",
+          0.65
+        ],
+        "Platelet Count": [
+          "Stable",
+          0.8
+        ]
+      },
+      "per_lab": {
+        "Creatinine": 0.5,
+        "Potassium": 0.0,
+        "Sodium": 0.5,
+        "Urea Nitrogen": 0.0,
+        "Bicarbonate": 1.0,
+        "Platelet Count": 1.0
+      },
+      "mean": 0.5,
+      "n": 6
+    },
+    {
+      "qid": "qb_00091",
+      "preds": {
+        "Bicarbonate": [
+          "Rising",
+          0.9
+        ],
+        "Creatinine": [
+          "Falling",
+          0.95
+        ],
+        "Potassium": [
+          "Stable",
+          0.7
+        ]
+      },
+      "per_lab": {
+        "Bicarbonate": 0.0,
+        "Creatinine": 0.0,
+        "Potassium": 1.0
+      },
+      "mean": 0.3333333333333333,
+      "n": 3
+    },
+    {
+      "qid": "qb_00092",
+      "preds": {
+        "Creatinine": [
+          "Stable",
+          0.6
+        ],
+        "Lactate": [
+          "Falling",
+          0.7
+        ],
+        "Platelet Count": [
+          "Stable",
+          0.5
+        ],
+        "Potassium": [
+          "Stable",
+          0.6
+        ],
+        "Urea Nitrogen": [
+          "Stable",
+          0.5
+        ]
+      },
+      "per_lab": {
+        "Creatinine": 0.5,
+        "Lactate": 0.0,
+        "Platelet Count": 0.5,
+        "Potassium": 1.0,
+        "Urea Nitrogen": 0.5
+      },
+      "mean": 0.5,
+      "n": 5
+    },
+    {
+      "qid": "qb_00093",
+      "preds": {},
+      "per_lab": {
+        "Creatinine": 0.0,
+        "Potassium": 0.0,
+        "Urea Nitrogen": 0.0,
+        "Bicarbonate": 0.0,
+        "Platelet Count": 0.0
+      },
+      "mean": 0.0,
+      "n": 5
+    },
+    {
+      "qid": "qb_00094",
+      "preds": {
+        "Creatinine": [
+          "Stable",
+          0.6
+        ],
+        "Potassium": [
+          "Stable",
+          0.5
+        ],
+        "Lactate": [
+          "Rising",
+          0.8
+        ],
+        "Urea Nitrogen": [
+          "Stable",
+          0.7
+        ]
+      },
+      "per_lab": {
+        "Creatinine": 0.5,
+        "Potassium": 0.5,
+        "Lactate": 1.0,
+        "Urea Nitrogen": 0.5
+      },
+      "mean": 0.625,
+      "n": 4
+    },
+    {
+      "qid": "qb_00095",
+      "preds": {
+        "Creatinine": [
+          "Falling",
+          0.9
+        ],
+        "Platelet Count": [
+          "Falling",
+          0.8
+        ]
+      },
+      "per_lab": {
+        "Creatinine": 0.0,
+        "Platelet Count": 0.0
+      },
+      "mean": 0.0,
+      "n": 2
+    },
+    {
+      "qid": "qb_00096",
+      "preds": {
+        "Hemoglobin": [
+          "Stable",
+          0.8
+        ],
+        "Lactate": [
+          "Falling",
+          0.95
+        ],
+        "Platelet Count": [
+          "Falling",
+          0.7
+        ]
+      },
+      "per_lab": {
+        "Hemoglobin": 0.5,
+        "Lactate": 1.0,
+        "Platelet Count": 1.0
+      },
+      "mean": 0.8333333333333334,
+      "n": 3
+    },
+    {
+      "qid": "qb_00097",
+      "preds": {
+        "Creatinine": [
+          "Rising",
+          0.65
+        ],
+        "Urea Nitrogen": [
+          "Rising",
+          0.6
+        ]
+      },
+      "per_lab": {
+        "Creatinine": 1.0,
+        "Urea Nitrogen": 1.0
+      },
+      "mean": 1.0,
+      "n": 2
+    },
+    {
+      "qid": "qb_00098",
+      "preds": {
+        "Bicarbonate": [
+          "Falling",
+          0.85
+        ],
+        "Creatinine": [
+          "Falling",
+          0.6
+        ]
+      },
+      "per_lab": {
+        "Bicarbonate": 0.0,
+        "Creatinine": 0.0
+      },
+      "mean": 0.0,
+      "n": 2
+    },
+    {
+      "qid": "qb_00099",
+      "preds": {
+        "Creatinine": [
+          "Stable",
+          0.9
+        ],
+        "Potassium": [
+          "Rising",
+          0.7
+        ],
+        "Platelet Count": [
+          "Rising",
+          0.65
+        ],
+        "Sodium": [
+          "Stable",
+          0.9
+        ],
+        "Urea Nitrogen": [
+          "Stable",
+          0.6
+        ]
+      },
+      "per_lab": {
+        "Creatinine": 1.0,
+        "Potassium": 0.0,
+        "Platelet Count": 0.0,
+        "Sodium": 0.5,
+        "Urea Nitrogen": 0.5
+      },
+      "mean": 0.4,
+      "n": 5
+    }
+  ]
+}

@@ -1,0 +1,12 @@
+[02:07:59] Llama re-run (manual guided mode) on sh04-01n11.int
+[02:08:12] serving Llama-3.1-8B (enforce-eager)
+[02:08:52] llama healthy
+[02:08:52] dry-run (2 q on C) to validate manual tool-calling…
+wrote /scratch/users/karun09/Version_2/Eval/_llama_dry.json
+[02:08:57] dry-run produced 2/2 valid choices
+[02:08:57] FULL collect A/B/C x{w,wo}PubMed (manual mode, workers 4)
+[02:22:49] swap to gpt-oss; judge Llama A files
+judged /scratch/users/karun09/Version_2/Eval/results_A_Meta-Llama-3.1-8B-Instruct_nopubmed.json
+judged /scratch/users/karun09/Version_2/Eval/results_A_Meta-Llama-3.1-8B-Instruct_pubmed.json
+wrote /scratch/users/karun09/Version_2/Eval/deck.html | 12 result files across 2 models | models: ['Qwen3-32B', 'Llama-3.1-8B']
+[02:26:53] FIX_DONE

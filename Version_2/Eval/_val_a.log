@@ -1,0 +1,26 @@
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/scratch/users/karun09/Version_2/Eval/eval/run_eval_a.py", line 145, in <module>
+    main()
+  File "/scratch/users/karun09/Version_2/Eval/eval/run_eval_a.py", line 132, in main
+    sc = scorer.judge_a(judge, rec["question_text"], rec, resp["requested"], resp["answer"])
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/scratch/users/karun09/Version_2/Eval/eval/scorer.py", line 52, in judge_a
+    out = judge_llm.chat([{"role": "system", "content": JUDGE_A_SYS},
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/scratch/users/karun09/Version_2/Eval/eval/llm.py", line 41, in chat
+    m = self.client.chat.completions.create(**kw).choices[0].message
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/scratch/users/karun09/miniforge3/envs/simr/lib/python3.11/site-packages/openai/_utils/_utils.py", line 298, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/scratch/users/karun09/miniforge3/envs/simr/lib/python3.11/site-packages/openai/resources/chat/completions/completions.py", line 1251, in create
+    return self._post(
+           ^^^^^^^^^^^
+  File "/scratch/users/karun09/miniforge3/envs/simr/lib/python3.11/site-packages/openai/_base_client.py", line 1332, in post
+    return cast(ResponseT, self.request(cast_to, opts, stream=stream, stream_cls=stream_cls))
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/scratch/users/karun09/miniforge3/envs/simr/lib/python3.11/site-packages/openai/_base_client.py", line 1105, in request
+    raise self._make_status_error_from_response(err.response) from None
+openai.InternalServerError: Error code: 500 - {'error': {'message': 'llama-server process has terminated: CUDA error: CUDA-capable device(s) is/are busy or unavailable\nCUDA error: CUDA error: CUDA-capable device(s) is/are busy or unavailable\nCUDA error', 'type': 'api_error', 'param': None, 'code': None}}

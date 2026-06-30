@@ -1,0 +1,29 @@
+{
+  "pipeline_version": "qgen-0.1.0",
+  "n_questions": 100,
+  "type_counts": {
+    "diagnosis": 50,
+    "intervention": 50
+  },
+  "seed": 20260627,
+  "data_source": "full",
+  "models": {
+    "optimizer": "openai/gpt-oss-20b",
+    "evaluator": "openai/gpt-oss-20b"
+  },
+  "time_zero": {
+    "policy": "icu_intime_plus",
+    "offset_hours": 24
+  },
+  "cohort": {
+    "diagnosis_filter": "cardiovascular_primary",
+    "require_icu": true,
+    "require_micro_events": 1,
+    "min_distinct_labs": 20,
+    "min_lab_measurements": 50,
+    "chunksize": 2000000,
+    "materialize_slices": true,
+    "pool_size": 5000
+  },
+  "attempts": 154
+}

@@ -1,0 +1,123 @@
+[1/5] microbiology admissions ...
+      201,096 admissions with >= 1 micro event(s)
+[2/5] ICU admissions ...
+      85,242 admissions with an ICU stay
+[3/5] candidate = micro ∩ ICU ...
+      67,377 candidate admissions
+[4/5] labevents density (one chunked pass) ...
+  labevents chunk 0 processed (67377 candidates tracked)
+  labevents chunk 1 processed (67377 candidates tracked)
+  labevents chunk 2 processed (67377 candidates tracked)
+  labevents chunk 3 processed (67377 candidates tracked)
+  labevents chunk 4 processed (67377 candidates tracked)
+  labevents chunk 5 processed (67377 candidates tracked)
+  labevents chunk 6 processed (67377 candidates tracked)
+  labevents chunk 7 processed (67377 candidates tracked)
+  labevents chunk 8 processed (67377 candidates tracked)
+  labevents chunk 9 processed (67377 candidates tracked)
+  labevents chunk 10 processed (67377 candidates tracked)
+  labevents chunk 11 processed (67377 candidates tracked)
+  labevents chunk 12 processed (67377 candidates tracked)
+  labevents chunk 13 processed (67377 candidates tracked)
+  labevents chunk 14 processed (67377 candidates tracked)
+  labevents chunk 15 processed (67377 candidates tracked)
+  labevents chunk 16 processed (67377 candidates tracked)
+  labevents chunk 17 processed (67377 candidates tracked)
+  labevents chunk 18 processed (67377 candidates tracked)
+  labevents chunk 19 processed (67377 candidates tracked)
+  labevents chunk 20 processed (67377 candidates tracked)
+  labevents chunk 21 processed (67377 candidates tracked)
+  labevents chunk 22 processed (67377 candidates tracked)
+  labevents chunk 23 processed (67377 candidates tracked)
+  labevents chunk 24 processed (67377 candidates tracked)
+  labevents chunk 25 processed (67377 candidates tracked)
+  labevents chunk 26 processed (67377 candidates tracked)
+  labevents chunk 27 processed (67377 candidates tracked)
+  labevents chunk 28 processed (67377 candidates tracked)
+  labevents chunk 29 processed (67377 candidates tracked)
+  labevents chunk 30 processed (67377 candidates tracked)
+  labevents chunk 31 processed (67377 candidates tracked)
+  labevents chunk 32 processed (67377 candidates tracked)
+  labevents chunk 33 processed (67377 candidates tracked)
+  labevents chunk 34 processed (67377 candidates tracked)
+  labevents chunk 35 processed (67377 candidates tracked)
+  labevents chunk 36 processed (67377 candidates tracked)
+  labevents chunk 37 processed (67377 candidates tracked)
+  labevents chunk 38 processed (67377 candidates tracked)
+  labevents chunk 39 processed (67377 candidates tracked)
+  labevents chunk 40 processed (67377 candidates tracked)
+  labevents chunk 41 processed (67377 candidates tracked)
+  labevents chunk 42 processed (67377 candidates tracked)
+  labevents chunk 43 processed (67377 candidates tracked)
+  labevents chunk 44 processed (67377 candidates tracked)
+  labevents chunk 45 processed (67377 candidates tracked)
+  labevents chunk 46 processed (67377 candidates tracked)
+  labevents chunk 47 processed (67377 candidates tracked)
+  labevents chunk 48 processed (67377 candidates tracked)
+  labevents chunk 49 processed (67377 candidates tracked)
+  labevents chunk 50 processed (67377 candidates tracked)
+  labevents chunk 51 processed (67377 candidates tracked)
+  labevents chunk 52 processed (67377 candidates tracked)
+  labevents chunk 53 processed (67377 candidates tracked)
+  labevents chunk 54 processed (67377 candidates tracked)
+  labevents chunk 55 processed (67377 candidates tracked)
+  labevents chunk 56 processed (67377 candidates tracked)
+  labevents chunk 57 processed (67377 candidates tracked)
+  labevents chunk 58 processed (67377 candidates tracked)
+  labevents chunk 59 processed (67377 candidates tracked)
+  labevents chunk 60 processed (67377 candidates tracked)
+  labevents chunk 61 processed (67377 candidates tracked)
+  labevents chunk 62 processed (67377 candidates tracked)
+  labevents chunk 63 processed (67377 candidates tracked)
+  labevents chunk 64 processed (67377 candidates tracked)
+  labevents chunk 65 processed (67377 candidates tracked)
+  labevents chunk 66 processed (67377 candidates tracked)
+  labevents chunk 67 processed (67377 candidates tracked)
+  labevents chunk 68 processed (67377 candidates tracked)
+  labevents chunk 69 processed (67377 candidates tracked)
+  labevents chunk 70 processed (67377 candidates tracked)
+  labevents chunk 71 processed (67377 candidates tracked)
+  labevents chunk 72 processed (67377 candidates tracked)
+  labevents chunk 73 processed (67377 candidates tracked)
+  labevents chunk 74 processed (67377 candidates tracked)
+  labevents chunk 75 processed (67377 candidates tracked)
+  labevents chunk 76 processed (67377 candidates tracked)
+  labevents chunk 77 processed (67377 candidates tracked)
+  labevents chunk 78 processed (67377 candidates tracked)
+  labevents chunk 79 processed (67377 candidates tracked)
+[5/5] apply thresholds + join ...
+
+Eligible admissions: 64,845  ->  /scratch/users/karun09/Version_2/Question_Generation/outputs/eligible_index.parquet
+        n_labs  n_distinct_itemids  n_abnormal  n_micro  icu_los_days
+count  64845.0             64845.0     64845.0  64845.0       64845.0
+mean     496.0                76.1       216.8     12.9           4.7
+std      645.7                31.5       321.2     21.1           6.9
+min       50.0                20.0         0.0      1.0           0.0
+25%      172.0                53.0        61.0      2.0           1.3
+50%      300.0                73.0       116.0      5.0           2.4
+75%      564.0                94.0       241.0     15.0           5.0
+max    19769.0               276.0      9675.0    514.0         226.5
+collecting eligible lab rows (second chunked pass) ...
+  labevents chunk 0
+  labevents chunk 1
+  labevents chunk 2
+  labevents chunk 3
+  labevents chunk 4
+  labevents chunk 5
+  labevents chunk 6
+  labevents chunk 7
+  labevents chunk 8
+  labevents chunk 9
+  labevents chunk 10
+  labevents chunk 11
+  labevents chunk 12
+  labevents chunk 13
+  labevents chunk 14
+  labevents chunk 15
+  labevents chunk 16
+  labevents chunk 17
+  labevents chunk 18
+  labevents chunk 19
+  labevents chunk 20
+  labevents chunk 21
+  labevents chunk 22

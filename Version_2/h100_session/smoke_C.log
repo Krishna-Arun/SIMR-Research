@@ -1,0 +1,35 @@
+[1] starting PubMed MCP server ...
+    tools: ['search_articles', 'advanced_search', 'search_by_author', 'search_by_journal', 'search_by_mesh_terms', 'get_trending_articles'] ...
+[2] connecting model backends ...
+  optimizer endpoint healthy: http://localhost:8000/v1 (openai/gpt-oss-20b)
+  evaluator endpoint healthy: http://localhost:8000/v1 (openai/gpt-oss-20b)
+[3] building cohort store + agents ...
+[4] generating up to 10 questions (resume from 0) ...
+    draft 22s valid=True
+  ACCEPT qc_00000 c001477 Dialysis - CRRT vs Intubation owner=B iters=1 [1/10]
+    draft 27s valid=True
+  ACCEPT qc_00001 c001560 Dialysis - CRRT vs Non-invasive Venti owner=A iters=1 [2/10]
+    draft 30s valid=True
+  ACCEPT qc_00002 c000360 Extubation vs Dialysis - CRRT owner=B iters=1 [3/10]
+    draft 30s valid=True
+  ACCEPT qc_00003 c000383 Extubation vs Dialysis - CRRT owner=A iters=1 [4/10]
+    draft 32s valid=True
+  ACCEPT qc_00004 c000589 Extubation vs Dialysis - CRRT owner=A iters=1 [5/10]
+    draft 32s valid=True
+  ACCEPT qc_00005 c000361 Extubation vs Dialysis - CRRT owner=A iters=1 [6/10]
+    draft 36s valid=True
+  ACCEPT qc_00006 c000724 Extubation vs Dialysis - CRRT owner=B iters=1 [7/10]
+    draft 38s valid=True
+  ACCEPT qc_00007 c001191 Dialysis - CRRT vs Intubation owner=B iters=1 [8/10]
+    draft 20s valid=True
+  ACCEPT qc_00008 c000479 Extubation vs Dialysis - CRRT owner=B iters=1 [9/10]
+    draft 21s valid=True
+  ACCEPT qc_00009 c001665 Dialysis - CRRT vs Non-invasive Venti owner=A iters=1 [10/10]
+    draft 21s valid=True
+    draft 11s valid=True
+    draft 19s valid=True
+    draft 18s valid=True
+    draft 29s valid=True
+    draft 27s valid=True
+    draft 28s valid=True
+DONE: 10 questions  {'identification': 10}

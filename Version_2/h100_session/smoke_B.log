@@ -1,0 +1,49 @@
+[1] starting PubMed MCP server ...
+    tools: ['search_articles', 'advanced_search', 'search_by_author', 'search_by_journal', 'search_by_mesh_terms', 'get_trending_articles'] ...
+[2] connecting model backends ...
+  optimizer endpoint healthy: http://localhost:8000/v1 (openai/gpt-oss-20b)
+  evaluator endpoint healthy: http://localhost:8000/v1 (openai/gpt-oss-20b)
+[3] building cohort store + agents ...
+[4] generating up to 10 questions (resume from 0) ...
+    draft#1 5s valid=True leak=[]
+  ACCEPT qb_00000 p007987 proc=Dialysis - CRRT labs=2 iters=1 [1/10]
+    draft#1 16s valid=True leak=[]
+  ACCEPT qb_00001 p001968 proc=Extubation labs=0 iters=1 [2/10]
+    draft#1 25s valid=True leak=[]
+  dup fingerprint p002093; discard
+    draft#1 29s valid=True leak=[]
+  ACCEPT qb_00002 p008462 proc=Intubation labs=2 iters=1 [3/10]
+    draft#1 31s valid=False leak=[]
+    draft#1 21s valid=True leak=[]
+  dup fingerprint p009047; discard
+    draft#1 40s valid=True leak=[]
+  dup fingerprint p003219; discard
+    draft#1 44s valid=True leak=[]
+  ACCEPT qb_00003 p006422 proc=Extubation labs=2 iters=1 [4/10]
+    draft#1 49s valid=True leak=[]
+  dup fingerprint p001973; discard
+    draft#1 22s valid=True leak=[]
+  dup fingerprint p009760; discard
+    draft#1 53s valid=True leak=[]
+  ACCEPT qb_00004 p003922 proc=Invasive Ventilation labs=2 iters=1 [5/10]
+    draft#1 29s valid=True leak=[]
+  dup fingerprint p004641; discard
+    draft#1 11s valid=True leak=[]
+  ACCEPT qb_00005 p001433 proc=Invasive Ventilation labs=2 iters=1 [6/10]
+    draft#2 58s valid=True leak=[]
+  dup fingerprint p002607; discard
+    draft#1 12s valid=True leak=[]
+  dup fingerprint p005756; discard
+    draft#1 29s valid=True leak=[]
+  dup fingerprint p001260; discard
+    draft#1 31s valid=True leak=[]
+  dup fingerprint p003470; discard
+    draft#1 31s valid=True leak=[]
+  ACCEPT qb_00006 p004254 proc=Extubation labs=3 iters=1 [7/10]
+    draft#1 29s valid=True leak=[]
+  dup fingerprint p009078; discard
+    draft#1 28s valid=True leak=[]
+  ACCEPT qb_00007 p000182 proc=Intubation labs=4 iters=1 [8/10]
+    draft#1 59s valid=True leak=[]
+  dup fingerprint p003333; discard
+    draft#1 56s valid=False leak=[]

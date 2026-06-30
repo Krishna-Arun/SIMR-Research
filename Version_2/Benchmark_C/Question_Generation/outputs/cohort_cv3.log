@@ -1,0 +1,29 @@
+   dropped 1 constant covariates: ['lab_White Blood Cells']
+covariates for 10,000 eligible procedures, 25 covariates
+top procedures eligible for pairing (5):
+proc_label
+Extubation                  5774
+Invasive Ventilation        1681
+Dialysis - CRRT             1078
+Intubation                   700
+Non-invasive Ventilation     394
+  PAIR Extubation vs Invasive Ventilation: n=2491 AUC=0.763 maxSMD=0.098
+  PAIR Extubation vs Dialysis - CRRT: n=1031 AUC=0.923 maxSMD=0.099
+  PAIR Extubation vs Intubation: n=1181 AUC=0.801 maxSMD=0.122
+  PAIR Invasive Ventilation vs Intubation: n=1165 AUC=0.661 maxSMD=0.097
+  PAIR Invasive Ventilation vs Non-invasive Ventilation: n=642 AUC=0.78 maxSMD=0.106
+  PAIR Dialysis - CRRT vs Intubation: n=672 AUC=0.798 maxSMD=0.078
+  PAIR Dialysis - CRRT vs Non-invasive Ventilation: n=364 AUC=0.867 maxSMD=0.088
+  PAIR Intubation vs Non-invasive Ventilation: n=510 AUC=0.674 maxSMD=0.072
+
+matched pairs: 8,056  ->  matched_pairs.parquet
+procedure-pair coverage:
+procA                 procB                   
+Extubation            Invasive Ventilation        2491
+                      Intubation                  1181
+Invasive Ventilation  Intubation                  1165
+Extubation            Dialysis - CRRT             1031
+Dialysis - CRRT       Intubation                   672
+Invasive Ventilation  Non-invasive Ventilation     642
+Intubation            Non-invasive Ventilation     510
+Dialysis - CRRT       Non-invasive Ventilation     364

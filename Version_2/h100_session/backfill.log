@@ -1,0 +1,24 @@
+loading patients ages ...
+A pool: 5000 -> 4780 (age<89)
+B pool: 5000 -> 4922 (age<89)
+C pairs: 1844 -> 1771 (age<89 both)
+union hadms needing micro+meds: 7635
+scanning microbiologyevents ...
+  wrote micro.parquet: 38341 rows
+  wrote micro.parquet: 24134 rows
+scanning prescriptions (chunked) ...
+  prescriptions chunk 0
+  prescriptions chunk 1
+  prescriptions chunk 2
+  prescriptions chunk 3
+  prescriptions chunk 4
+  prescriptions chunk 5
+  prescriptions chunk 6
+  prescriptions chunk 7
+  prescriptions chunk 8
+  prescriptions chunk 9
+  prescriptions chunk 10
+  wrote eligible_meds.parquet: 566284 rows
+  wrote meds.parquet: 573469 rows
+  wrote meds.parquet: 279645 rows
+BACKFILL_DONE

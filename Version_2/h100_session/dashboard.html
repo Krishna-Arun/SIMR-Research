@@ -1,0 +1,50 @@
+<!doctype html><html><head><meta charset="utf-8">
+<meta http-equiv="refresh" content="4">
+<title>Benchmark generation — live</title>
+<style>
+ body{background:#0b1020;color:#e2e8f0;font:14px/1.5 -apple-system,Segoe UI,Roboto,sans-serif;margin:0;padding:24px}
+ h1{font-size:20px;margin:0 0 4px} .sub{color:#94a3b8;margin-bottom:18px}
+ .row{display:flex;gap:16px;flex-wrap:wrap}
+ .card{background:#111827;border:1px solid #1f2937;border-radius:12px;padding:16px;flex:1;min-width:300px}
+ .hd{display:flex;justify-content:space-between;align-items:center}
+ .b{font-weight:700;font-size:16px} .st{font-size:11px;font-weight:700;padding:3px 8px;border-radius:999px;color:#06210f}
+ .desc{color:#94a3b8;font-size:12px;margin:2px 0 10px}
+ .bar{height:10px;background:#1f2937;border-radius:999px;overflow:hidden} .fill{height:100%;transition:width .4s}
+ .num{margin:8px 0;font-size:15px;font-weight:600}
+ .feed{margin-top:8px;background:#0b1020;border-radius:8px;padding:8px;max-height:160px;overflow:auto}
+ .ln{font-family:ui-monospace,Menlo,monospace;font-size:11px;color:#a7f3d0;white-space:nowrap}
+ .dim{color:#475569}
+ .meta{margin-top:18px;color:#94a3b8;font-size:12px;display:flex;gap:24px;flex-wrap:wrap}
+ .pill{background:#111827;border:1px solid #1f2937;border-radius:8px;padding:6px 12px}
+</style></head><body>
+ <h1>Benchmark Question Generation — live</h1>
+ <div class="sub">gpt-oss-20b · single-shot + leak guard · target 100/benchmark · 23:53:34</div>
+ <div class="row">
+        <div class="card">
+          <div class="hd"><span class="b">Benchmark A</span><span class="st" style="background:#22c55e">DONE</span></div>
+          <div class="desc">Lab-request + causal Dx/Rx</div>
+          <div class="bar"><div class="fill" style="width:100%;background:#22c55e"></div></div>
+          <div class="num">100 / 100</div>
+          <div class="feed"><div class='ln'>ACCEPT qa_00094 hadm=29117503 type=diagnosis iters=3 [47D/48I] [95/100]</div><div class='ln'>ACCEPT qa_00095 hadm=28440936 type=diagnosis iters=2 [48D/48I] [96/100]</div><div class='ln'>ACCEPT qa_00096 hadm=25925344 type=intervention iters=1 [48D/49I] [97/100]</div><div class='ln'>ACCEPT qa_00097 hadm=27689162 type=diagnosis iters=1 [49D/49I] [98/100]</div><div class='ln'>ACCEPT qa_00098 hadm=26151289 type=intervention iters=1 [49D/50I] [99/100]</div><div class='ln'>ACCEPT qa_00099 hadm=22383715 type=diagnosis iters=1 [50D/50I] [100/100]</div></div>
+        </div>
+        <div class="card">
+          <div class="hd"><span class="b">Benchmark B</span><span class="st" style="background:#22c55e">DONE</span></div>
+          <div class="desc">Post-procedure trajectory</div>
+          <div class="bar"><div class="fill" style="width:100%;background:#22c55e"></div></div>
+          <div class="num">100 / 100</div>
+          <div class="feed"><div class='ln'>ACCEPT qb_00094 p008009 proc=Unplanned Extubation (patient-initiated) labs=4 iters=1 [95/100]</div><div class='ln'>ACCEPT qb_00095 p003193 proc=Dialysis - CRRT labs=2 iters=1 [96/100]</div><div class='ln'>ACCEPT qb_00096 p009036 proc=Dialysis - CRRT labs=3 iters=1 [97/100]</div><div class='ln'>ACCEPT qb_00097 p008406 proc=Intubation labs=2 iters=1 [98/100]</div><div class='ln'>ACCEPT qb_00098 p002003 proc=Extubation labs=2 iters=1 [99/100]</div><div class='ln'>ACCEPT qb_00099 p003372 proc=CRRT Filter Change labs=5 iters=1 [100/100]</div></div>
+        </div>
+        <div class="card">
+          <div class="hd"><span class="b">Benchmark C</span><span class="st" style="background:#22c55e">DONE</span></div>
+          <div class="desc">Counterfactual identification</div>
+          <div class="bar"><div class="fill" style="width:100%;background:#22c55e"></div></div>
+          <div class="num">100 / 100</div>
+          <div class="feed"><div class='ln'>ACCEPT qc_00094 c000621 Extubation vs Dialysis - CRRT owner=A iters=1 [95/100]</div><div class='ln'>ACCEPT qc_00095 c000432 Extubation vs Dialysis - CRRT owner=A iters=1 [96/100]</div><div class='ln'>ACCEPT qc_00096 c000311 Extubation vs Dialysis - CRRT owner=B iters=1 [97/100]</div><div class='ln'>ACCEPT qc_00097 c001748 Dialysis - CRRT vs Non-invasive Venti owner=B iters=1 [98/100]</div><div class='ln'>ACCEPT qc_00098 c001119 Dialysis - CRRT vs Intubation owner=A iters=1 [99/100]</div><div class='ln'>ACCEPT qc_00099 c001042 Dialysis - CRRT vs Intubation owner=A iters=1 [100/100]</div></div>
+        </div></div>
+ <div class="meta">
+   <span class="pill">Total: <b>300/300</b></span>
+   <span class="pill">Server: <b style="color:#22c55e">UP</b></span>
+   <span class="pill">GPU: 100 %, 78313 MiB, 81559 MiB</span>
+   <span class="pill">auto-refresh 4s</span>
+ </div>
+</body></html>

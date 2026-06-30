@@ -1,0 +1,23 @@
+[00:26:06] Qwen3-32B FP8 finish on sh04-01n11.int (NVIDIA L40S)
+[00:26:06] clearing any stale vllm
+[00:26:19] serving Qwen3-32B fp8 (max_len 12288, util 0.92)
+[00:28:39] qwen healthy
+[00:28:39] collecting C/pubmed (the step the timeout killed)
+wrote /scratch/users/karun09/Version_2/Eval/results_C_Qwen3-32B_pubmed.json
+[01:10:46] swap to gpt-oss to judge Qwen Benchmark-A files
+judged /scratch/users/karun09/Version_2/Eval/results_A_Qwen3-32B_nopubmed.json
+judged /scratch/users/karun09/Version_2/Eval/results_A_Qwen3-32B_pubmed.json
+
+BENCH MODEL           METRIC               no-PubMed    PubMed        Δ
+-----------------------------------------------------------------------
+A     Qwen/Qwen3-32B  mean_answer              0.440     0.460   +0.020
+A     Qwen/Qwen3-32B  mean_lab_request         0.450     0.470   +0.020
+B     Qwen/Qwen3-32B  mean_direction_score     0.496     0.509   +0.013
+B     Qwen/Qwen3-32B  ece                      0.359     0.398   +0.039
+C     Qwen/Qwen3-32B  accuracy                 0.620     0.600   -0.020
+C     Qwen/Qwen3-32B  ece                      0.256     0.266   +0.010
+
+Note: for ECE lower is better; the headline reasoning metric is mean_answer (A) / mean_direction_score (B) / accuracy (C). Δ = PubMed − no-PubMed.
+
+wrote /scratch/users/karun09/Version_2/Eval/summary.json
+[01:15:56] QWEN_DONE

@@ -1,0 +1,85 @@
+# Benchmark A — Question-Generation System config
+# Evaluator-Optimizer generation of 500 clinical questions anchored to real MIMIC-IV ICU patients.
+# NOT a clinical tool. All work stays on $SCRATCH; PHI never leaves the node (only de-identified
+# clinical concepts go to PubMed). See plan: ~/.claude/plans/dynamic-rolling-journal.md
+
+project: Benchmark_A_QuestionGen
+pipeline_version: qgen-0.1.0
+seed: 20260627
+
+data:
+  source: full                       # full | demo
+  full_root: /scratch/users/karun09/physionet.org/files/mimiciv/3.1
+  demo_root: /scratch/users/karun09/Version_1/SIMR-Research/mimic-iv-clinical-database-demo-2.2
+  out_dir: /scratch/users/karun09/Version_2/Benchmark_A/Question_Generation/outputs
+
+# ── cohort: ICU admissions with dense labs AND >=1 microbiology event ─────────
+cohort:
+  diagnosis_filter: cardiovascular_primary  # restrict to admissions whose PRIMARY dx is cardiac/vascular (excl cerebrovascular)
+  require_icu: true
+  require_micro_events: 1            # minimum microbiology events in the admission
+  min_distinct_labs: 20             # >= this many distinct lab itemids (pre-anchor)
+  min_lab_measurements: 50          # >= this many total lab rows
+  chunksize: 2000000                # labevents chunked read size (single sequential pass)
+  materialize_slices: true          # write consolidated lab/micro parquet slices for fast context reads
+  pool_size: 5000                   # pre-sample this many eligible admissions to materialize (memory-safe;
+                                    # 10x the 500 target gives headroom for evaluator rejections)
+
+# ── time-zero: input is everything BEFORE this anchor ────────────────────────
+time_zero:
+  policy: icu_intime_plus            # icu_intime_plus | first_micro
+  offset_hours: 24                   # for icu_intime_plus: anchor = ICU intime + offset
+
+# ── generation budgets ───────────────────────────────────────────────────────
+generation:
+  concurrency: 8                     # questions in flight (thread pool)
+  target_n: 500
+  diagnosis_frac: 0.5                # ~50/50 diagnosis / intervention
+  max_iterations: 3                  # evaluator-optimizer refinement cap
+  max_tool_calls_per_agent: 6        # PubMed tool-call budget per agent invocation
+  agent_wall_clock_s: 300
+
+# ── model registry (sizes TBD — finalize with user; local vLLM only) ─────────
+# Each role targets a local vLLM OpenAI-compatible endpoint. tool_calling: react | native
+models:
+  optimizer:                         # drafts/refines the question + answer key
+    model_id: openai/gpt-oss-20b   # neutral-family generator (distinct from any model under test)
+    cuda_device: cuda:0
+    backend: vllm
+    load_4bit: false
+    max_memory_per_gpu: 22GiB        # (HF-backend only; ignored by vllm)
+    endpoint: http://localhost:8000/v1
+    port: 8000
+    tensor_parallel_size: 1          # single H100; both 14B models share it
+    quantization: null               # e.g. awq
+    max_model_len: 16384
+    max_tokens: 6000                 # output cap (reasoning + final)
+    gpu_memory_utilization: 0.45     # two servers on one 80GB H100 -> ~0.45 each
+    tool_calling: native
+    reasoning_effort: low
+    temperature: 0.2
+  evaluator:                         # 4-dim critique
+    model_id: openai/gpt-oss-20b   # single-model: same server as optimizer (:8000)
+    cuda_device: cuda:0
+    backend: vllm
+    load_4bit: false
+    max_memory_per_gpu: 22GiB        # (HF-backend only; ignored by vllm)
+    endpoint: http://localhost:8000/v1
+    port: 8000
+    tensor_parallel_size: 1
+    quantization: null
+    max_model_len: 16384
+    max_tokens: 8000                 # R1 reasoning headroom so verdict JSON never truncates
+    gpu_memory_utilization: 0.45
+    tool_calling: native
+    reasoning_effort: low
+    temperature: 0.0
+
+# ── PubMed MCP server (agentic tool-calling target) ──────────────────────────
+pubmed_mcp:
+  server_dir: /scratch/users/karun09/Version_2/PubMed-MCP-Server
+  node_bin: /share/software/user/open/nodejs/25.3.0/bin/node
+  entry: build/index.js
+  call_timeout_s: 30
+  max_consecutive_failures: 3        # circuit breaker -> reason from chart only
+  # NCBI_API_KEY / NCBI_EMAIL are read from the environment if set (raises rate limit 3->10 rps)

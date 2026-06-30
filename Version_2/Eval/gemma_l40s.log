@@ -1,0 +1,45 @@
+[01:33:09] gemma FP8 on sh04-01n11.int (NVIDIA L40S)
+[01:33:09] building v23 sandbox from cache…
+[01:36:17] sandbox built
+[01:36:17] serving gemma-3-27b-it fp8 (max_len 8192, util 0.92)
+[02:01:31] FATAL gemma serve failed:
+(APIServer pid=29156)            ^^^^^^^^^^^^^^^^
+(APIServer pid=29156)   File "/usr/lib/python3.12/asyncio/runners.py", line 118, in run
+(APIServer pid=29156)     return self._loop.run_until_complete(task)
+(APIServer pid=29156)            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+(APIServer pid=29156)   File "uvloop/loop.pyx", line 1518, in uvloop.loop.Loop.run_until_complete
+(APIServer pid=29156)   File "/usr/local/lib/python3.12/dist-packages/uvloop/__init__.py", line 48, in wrapper
+(APIServer pid=29156)     return await main
+(APIServer pid=29156)            ^^^^^^^^^^
+(APIServer pid=29156)   File "/usr/local/lib/python3.12/dist-packages/vllm/entrypoints/openai/api_server.py", line 665, in run_server
+(APIServer pid=29156)     await run_server_worker(listen_address, sock, args, **uvicorn_kwargs)
+(APIServer pid=29156)   File "/usr/local/lib/python3.12/dist-packages/vllm/entrypoints/openai/api_server.py", line 679, in run_server_worker
+(APIServer pid=29156)     async with build_async_engine_client(
+(APIServer pid=29156)   File "/usr/lib/python3.12/contextlib.py", line 210, in __aenter__
+(APIServer pid=29156)     return await anext(self.gen)
+(APIServer pid=29156)            ^^^^^^^^^^^^^^^^^^^^^
+(APIServer pid=29156)   File "/usr/local/lib/python3.12/dist-packages/vllm/entrypoints/openai/api_server.py", line 99, in build_async_engine_client
+(APIServer pid=29156)     async with build_async_engine_client_from_engine_args(
+(APIServer pid=29156)   File "/usr/lib/python3.12/contextlib.py", line 210, in __aenter__
+(APIServer pid=29156)     return await anext(self.gen)
+(APIServer pid=29156)            ^^^^^^^^^^^^^^^^^^^^^
+(APIServer pid=29156)   File "/usr/local/lib/python3.12/dist-packages/vllm/entrypoints/openai/api_server.py", line 123, in build_async_engine_client_from_engine_args
+(APIServer pid=29156)     vllm_config = engine_args.create_engine_config(usage_context=usage_context)
+(APIServer pid=29156)                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+(APIServer pid=29156)   File "/usr/local/lib/python3.12/dist-packages/vllm/engine/arg_utils.py", line 1735, in create_engine_config
+(APIServer pid=29156)     model_config = self.create_model_config()
+(APIServer pid=29156)                    ^^^^^^^^^^^^^^^^^^^^^^^^^^
+(APIServer pid=29156)   File "/usr/local/lib/python3.12/dist-packages/vllm/engine/arg_utils.py", line 1565, in create_model_config
+(APIServer pid=29156)     return ModelConfig(
+(APIServer pid=29156)            ^^^^^^^^^^^^
+(APIServer pid=29156)   File "/usr/local/lib/python3.12/dist-packages/pydantic/_internal/_dataclasses.py", line 121, in __init__
+(APIServer pid=29156)     s.__pydantic_validator__.validate_python(ArgsKwargs(args, kwargs), self_instance=s)
+(APIServer pid=29156) pydantic_core._pydantic_core.ValidationError: 1 validation error for ModelConfig
+(APIServer pid=29156)   Value error, Invalid repository ID or local directory specified: '/scratch/users/karun09/.huggingface/hub/models--google--gemma-3-27b-it/snapshots/005ad3404e59d6023443cb575daa05336842228a'.
+(APIServer pid=29156) Please verify the following requirements:
+(APIServer pid=29156) 1. Provide a valid Hugging Face repository ID.
+(APIServer pid=29156) 2. Specify a local directory that contains a recognized configuration file.
+(APIServer pid=29156)    - For Hugging Face models: ensure the presence of a 'config.json'.
+(APIServer pid=29156)    - For Mistral models: ensure the presence of a 'params.json'.
+(APIServer pid=29156)  [type=value_error, input_value=ArgsKwargs((), {'model': ...nderer_num_workers': 1}), input_type=ArgsKwargs]
+(APIServer pid=29156)     For further information visit https://errors.pydantic.dev/2.13/v/value_error

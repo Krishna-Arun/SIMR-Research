@@ -1,0 +1,28 @@
+Collecting vllm
+  Downloading vllm-0.23.0.tar.gz (36.6 MB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 36.6/36.6 MB 40.2 MB/s  0:00:00
+  Installing build dependencies: started
+  Installing build dependencies: finished with status 'error'
+  error: subprocess-exited-with-error
+  
+  × installing build dependencies for vllm did not run successfully.
+  │ exit code: 1
+  ╰─> [14 lines of output]
+      Collecting cmake>=3.26.1
+        Downloading cmake-4.3.4-py3-none-manylinux2014_x86_64.manylinux_2_17_x86_64.whl.metadata (6.5 kB)
+      Collecting ninja
+        Downloading ninja-1.13.0-py3-none-manylinux2014_x86_64.manylinux_2_17_x86_64.whl.metadata (5.1 kB)
+      Collecting packaging>=24.2
+        Downloading packaging-26.2-py3-none-any.whl.metadata (3.5 kB)
+      Collecting setuptools<81.0.0,>=77.0.3
+        Downloading setuptools-80.10.2-py3-none-any.whl.metadata (6.6 kB)
+      Collecting setuptools-scm>=8.0
+        Downloading setuptools_scm-10.2.0-py3-none-any.whl.metadata (6.6 kB)
+      Collecting setuptools-rust>=1.9.0
+        Downloading setuptools_rust-1.13.0-py3-none-any.whl.metadata (9.6 kB)
+      ERROR: Could not find a version that satisfies the requirement torch==2.11.0 (from versions: 1.13.0, 1.13.1, 2.0.0, 2.0.1, 2.1.0, 2.1.1, 2.1.2, 2.2.0, 2.2.1, 2.2.2, 2.3.0, 2.3.1, 2.4.0, 2.4.1, 2.5.0, 2.5.1, 2.6.0)
+      ERROR: No matching distribution found for torch==2.11.0
+      [end of output]
+  
+  note: This error originates from a subprocess, and is likely not a problem with pip.
+ERROR: Failed to build 'vllm' when installing build dependencies for vllm
