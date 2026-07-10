@@ -1,0 +1,182 @@
+[
+  {
+    "case_id": "smoke_001",
+    "phase": "short_term_post",
+    "reversal_type": "troponin_reversal",
+    "hadm_id": 12345,
+    "subject_id": 67890,
+    "demographics": {
+      "age": 65,
+      "gender": "M",
+      "bmi": 28.5
+    },
+    "comorbidities": ["CKD Stage 2", "Hypertension", "Prior MI"],
+    "procedure": {
+      "name": "PTCA + Drug-Eluting Stent on LAD",
+      "time": "2023-01-16T10:00:00Z",
+      "contrast_volume": 180
+    },
+    "visible_state": {
+      "timestamp": "2023-01-16T18:00:00Z",
+      "labs": {
+        "Troponin": 0.48,
+        "CK": 520,
+        "Creatinine": 1.18
+      },
+      "visible_trends": {
+        "Troponin": "rising",
+        "CK": "rising",
+        "Creatinine": "stable"
+      }
+    },
+    "ground_truth": {
+      "timestamp_target": "2023-01-17T10:00:00Z",
+      "labs": {
+        "Troponin": 0.42,
+        "CK": 480,
+        "Creatinine": 1.22
+      },
+      "directions": {
+        "Troponin": "falling",
+        "CK": "falling",
+        "Creatinine": "rising"
+      },
+      "reversals": {
+        "Troponin": true,
+        "CK": true,
+        "Creatinine": false
+      }
+    },
+    "patient_context": {
+      "has_ckd": true,
+      "has_prior_mi": true,
+      "has_diabetes": false,
+      "baseline_creatinine": 1.1,
+      "critical_info": "CKD + high contrast volume = elevated CIN risk. Prior MI affects troponin kinetics."
+    },
+    "case_question": "This is a 65-year-old male with CKD Stage 2 and prior MI. He presented with acute MI on 2023-01-14. At 2023-01-16 10:00, he underwent PTCA + drug-eluting stent on LAD with 180mL contrast.\n\nPre-intervention labs showed troponin rising (0.45 → 0.48) and CK rising (490 → 520).\n\nAt 2023-01-16 18:00 (8 hours post-procedure), his latest labs were: Troponin 0.48, CK 520, Creatinine 1.18.\n\nGiven this patient's baseline kidney function (eGFR 60, CKD Stage 2), prior MI, and the high contrast volume used, predict what will happen at 2023-01-17 10:00 (24 hours post-procedure):\n\n1. Will Troponin rise, fall, or stay stable?\n2. Will CK rise, fall, or stay stable?\n3. Will Creatinine rise, fall, or stay stable?\n\nFor EACH lab, explain the mechanism using this patient's specific factors (CKD, prior MI, contrast exposure, post-op stress).",
+    "expected_prediction_schema": {
+      "troponin_direction": "falling",
+      "troponin_reasoning": "PTCA restores LAD perfusion, enabling washout. Patient has CKD so clearance slower than normal. Prior MI means some scarred tissue, but 24h is enough for washout.",
+      "ck_direction": "falling",
+      "ck_reasoning": "CK peaks at 24-36h post-op, so at 24h we're seeing peak resolve slightly. Post-op inflammation begins resolution.",
+      "creatinine_direction": "rising",
+      "creatinine_reasoning": "High contrast volume (180mL) + CKD baseline (eGFR 60) = significant CIN risk. Contrast-induced nephropathy emerges at 24-48h.",
+      "overall_reasoning": "Multi-phase reversal case: forward procedure (troponin/CK reversals) but complication emerging (creatinine rising)."
+    }
+  },
+  {
+    "case_id": "smoke_002",
+    "phase": "pre_procedure",
+    "reversal_type": "natural_non_reversal",
+    "hadm_id": 23456,
+    "subject_id": 78901,
+    "demographics": {
+      "age": 58,
+      "gender": "F",
+      "bmi": 26.0
+    },
+    "comorbidities": ["Hypertension"],
+    "procedure": {
+      "name": "PTCA on RCA",
+      "time": "2023-01-16T14:00:00Z",
+      "contrast_volume": 150
+    },
+    "visible_state": {
+      "timestamp": "2023-01-15T18:00:00Z",
+      "labs": {
+        "Troponin": 0.35,
+        "CK": 400,
+        "Creatinine": 0.95
+      },
+      "visible_trends": {
+        "Troponin": "rising",
+        "CK": "rising",
+        "Creatinine": "stable"
+      }
+    },
+    "ground_truth": {
+      "timestamp_target": "2023-01-16T08:00:00Z",
+      "labs": {
+        "Troponin": 0.38,
+        "CK": 420,
+        "Creatinine": 0.96
+      },
+      "directions": {
+        "Troponin": "rising",
+        "CK": "rising",
+        "Creatinine": "stable"
+      },
+      "reversals": {
+        "Troponin": false,
+        "CK": false,
+        "Creatinine": false
+      }
+    },
+    "patient_context": {
+      "has_ckd": false,
+      "has_prior_mi": false,
+      "has_diabetes": false,
+      "baseline_creatinine": 0.9,
+      "critical_info": "Pre-procedure phase. No reversals expected yet. MI still developing naturally."
+    },
+    "case_question": "This is a 58-year-old female with only hypertension, normal kidney function. She presented with acute MI on 2023-01-14. At 2023-01-15 18:00, her labs show troponin rising (0.28 → 0.35) and CK rising (350 → 400).\n\nShe is scheduled for PTCA on RCA tomorrow (2023-01-16 14:00). This is the PRE-PROCEDURE phase—no intervention has happened yet.\n\nPredict what will happen by 2023-01-16 08:00 (6 hours before the procedure, ~18 hours from now):\n\n1. Will Troponin rise, fall, or stay stable?\n2. Will CK rise, fall, or stay stable?\n3. Will Creatinine rise, fall, or stay stable?\n\nNote: This prediction should reflect NATURAL MI progression, not intervention effects."
+  },
+  {
+    "case_id": "smoke_003",
+    "phase": "medium_term_post",
+    "reversal_type": "creatinine_delayed_reversal",
+    "hadm_id": 34567,
+    "subject_id": 89012,
+    "demographics": {
+      "age": 72,
+      "gender": "M",
+      "bmi": 30.0
+    },
+    "comorbidities": ["CKD Stage 3a", "Diabetes Type 2", "Prior MI"],
+    "procedure": {
+      "name": "CABG",
+      "time": "2023-01-15T09:00:00Z",
+      "contrast_volume": 0
+    },
+    "visible_state": {
+      "timestamp": "2023-01-16T20:00:00Z",
+      "labs": {
+        "Troponin": 0.22,
+        "CK": 650,
+        "Creatinine": 1.45
+      },
+      "visible_trends": {
+        "Troponin": "falling",
+        "CK": "rising",
+        "Creatinine": "stable"
+      }
+    },
+    "ground_truth": {
+      "timestamp_target": "2023-01-17T20:00:00Z",
+      "labs": {
+        "Troponin": 0.18,
+        "CK": 580,
+        "Creatinine": 1.52
+      },
+      "directions": {
+        "Troponin": "falling",
+        "CK": "falling",
+        "Creatinine": "rising"
+      },
+      "reversals": {
+        "Troponin": false,
+        "CK": true,
+        "Creatinine": false
+      }
+    },
+    "patient_context": {
+      "has_ckd": true,
+      "has_prior_mi": true,
+      "has_diabetes": true,
+      "baseline_creatinine": 1.3,
+      "critical_info": "CABG patient. Post-op surgical inflammation peaks 24-48h. Diabetes delays recovery."
+    },
+    "case_question": "This is a 72-year-old male with CKD Stage 3a, diabetes, and prior MI. He underwent CABG yesterday (2023-01-15 09:00). At 2023-01-16 20:00 (35 hours post-op), his labs show: Troponin 0.22 (falling), CK 650 (rising), Creatinine 1.45 (stable).\n\nPredict at 2023-01-17 20:00 (59 hours post-op):\n\n1. Will Troponin rise, fall, or stay stable?\n2. Will CK rise, fall, or stay stable?\n3. Will Creatinine rise, fall, or stay stable?\n\nContext: Post-op inflammation peaks at 36-48h in healthy patients, but this patient has diabetes (delayed resolution) and CKD (impaired compensation)."
+  }
+]

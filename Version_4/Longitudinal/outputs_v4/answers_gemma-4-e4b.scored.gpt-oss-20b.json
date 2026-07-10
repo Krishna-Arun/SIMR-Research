@@ -1,0 +1,3409 @@
+{
+  "summary": {
+    "n": 98,
+    "judge": "gpt-oss-20b",
+    "judge_runs": 1,
+    "mean_total": 0.3036,
+    "a_answer_full_credit_rate": 0.0,
+    "b_all_correct_rate": 0.173,
+    "d_correct_rate": 0.51,
+    "fully_solved_rate": 0.0,
+    "mean_brier_d": 0.3107
+  },
+  "results": [
+    {
+      "per_step": {
+        "a": {
+          "answer": 0.0,
+          "answer_rationale": "The answer proposes antibiotics instead of the required invasive ventilation and provides a generic causal chain without citing any patient-specific lab values.",
+          "request_quality_mean": 0.5,
+          "n_requests": 3,
+          "golden_recall": 0.0,
+          "full_credit": false
+        },
+        "b": {
+          "direction_acc": 1.0,
+          "n_scored": 2,
+          "all_correct": true,
+          "justification": 0.5,
+          "full_credit": false
+        },
+        "d": {
+          "correct": 1.0,
+          "brier": 0.062,
+          "rationale": 1.0,
+          "full_credit": true
+        }
+      },
+      "total": 0.6667,
+      "fully_solved": false,
+      "total_mean_over_judges": 0.6667,
+      "judge_totals": [
+        0.6667
+      ],
+      "question_id": "L4-20251229-30348068",
+      "arm": "ventilation"
+    },
+    {
+      "per_step": {
+        "a": {
+          "answer": 0.0,
+          "answer_rationale": "The answer proposes antibiotics instead of the required transfusion and lacks a patient\u2011specific causal chain involving the relevant lab (Troponin T).",
+          "request_quality_mean": 0.5,
+          "n_requests": 6,
+          "golden_recall": 0.0,
+          "full_credit": false
+        },
+        "b": {
+          "direction_acc": 0.333,
+          "n_scored": 3,
+          "all_correct": false,
+          "justification": 0.5,
+          "full_credit": false
+        },
+        "d": {
+          "correct": 1.0,
+          "brier": 0.062,
+          "rationale": 1.0,
+          "full_credit": true
+        }
+      },
+      "total": 0.4443,
+      "fully_solved": false,
+      "total_mean_over_judges": 0.4443,
+      "judge_totals": [
+        0.4443
+      ],
+      "question_id": "L4-20334314-32893819",
+      "arm": "transfusion"
+    },
+    {
+      "per_step": {
+        "a": {
+          "answer": 0.0,
+          "answer_rationale": "The candidate chose fluid resuscitation, which is not the correct next major intervention for this patient (dialysis catheter is required).",
+          "request_quality_mean": 0.5,
+          "n_requests": 1,
+          "golden_recall": 0.0,
+          "full_credit": false
+        },
+        "b": {
+          "direction_acc": 0.0,
+          "n_scored": 0,
+          "all_correct": false,
+          "justification": 0.5,
+          "full_credit": false
+        },
+        "d": {
+          "correct": 1.0,
+          "brier": 0.062,
+          "rationale": 0.5,
+          "full_credit": false
+        }
+      },
+      "total": 0.3333,
+      "fully_solved": false,
+      "total_mean_over_judges": 0.3333,
+      "judge_totals": [
+        0.3333
+      ],
+      "question_id": "L4-20385529-33618985",
+      "arm": "dialysis"
+    },
+    {
+      "per_step": {
+        "a": {
+          "answer": 0.0,
+          "answer_rationale": "The candidate recommends broad\u2011spectrum antibiotics, which is incorrect for the required invasive ventilation; the causal chain does not justify the chosen intervention.",
+          "request_quality_mean": 0.5,
+          "n_requests": 4,
+          "golden_recall": 0.0,
+          "full_credit": false
+        },
+        "b": {
+          "direction_acc": 0.5,
+          "n_scored": 2,
+          "all_correct": false,
+          "justification": 0.5,
+          "full_credit": false
+        },
+        "d": {
+          "correct": 0.0,
+          "brier": 0.562,
+          "rationale": 0.5,
+          "full_credit": false
+        }
+      },
+      "total": 0.1667,
+      "fully_solved": false,
+      "total_mean_over_judges": 0.1667,
+      "judge_totals": [
+        0.1667
+      ],
+      "question_id": "L4-20492519-30108775",
+      "arm": "ventilation"
+    },
+    {
+      "per_step": {
+        "a": {
+          "answer": 0.0,
+          "answer_rationale": "The answer incorrectly recommends respiratory support rather than the required dialysis intervention.",
+          "request_quality_mean": 0.5,
+          "n_requests": 4,
+          "golden_recall": 0.0,
+          "full_credit": false
+        },
+        "b": {
+          "direction_acc": 0.0,
+          "n_scored": 0,
+          "all_correct": false,
+          "justification": 0.5,
+          "full_credit": false
+        },
+        "d": {
+          "correct": 1.0,
+          "brier": 0.062,
+          "rationale": 1.0,
+          "full_credit": true
+        }
+      },
+      "total": 0.3333,
+      "fully_solved": false,
+      "total_mean_over_judges": 0.3333,
+      "judge_totals": [
+        0.3333
+      ],
+      "question_id": "L4-20603580-37687846",
+      "arm": "dialysis"
+    },
+    {
+      "per_step": {
+        "a": {
+          "answer": 0.0,
+          "answer_rationale": "The candidate chose antibiotics instead of the required non\u2011invasive ventilation and provided a generic causal chain without any specific lab values.",
+          "request_quality_mean": 0.5,
+          "n_requests": 1,
+          "golden_recall": 0.0,
+          "full_credit": false
+        },
+        "b": {
+          "direction_acc": 1.0,
+          "n_scored": 2,
+          "all_correct": true,
+          "justification": 0.5,
+          "full_credit": false
+        },
+        "d": {
+          "correct": 1.0,
+          "brier": 0.122,
+          "rationale": 1.0,
+          "full_credit": true
+        }
+      },
+      "total": 0.6667,
+      "fully_solved": false,
+      "total_mean_over_judges": 0.6667,
+      "judge_totals": [
+        0.6667
+      ],
+      "question_id": "L4-20628338-35792132",
+      "arm": "ventilation"
+    },
+    {
+      "per_step": {
+        "a": {
+          "answer": 0.0,
+          "answer_rationale": "The candidate chose an unrelated intervention (antibiotics) and provided a generic causal chain without citing the required renal lab values.",
+          "request_quality_mean": 0.5,
+          "n_requests": 1,
+          "golden_recall": 0.0,
+          "full_credit": false
+        },
+        "b": {
+          "direction_acc": 0.5,
+          "n_scored": 2,
+          "all_correct": false,
+          "justification": 0.0,
+          "full_credit": false
+        },
+        "c": {
+          "identification": 1.0,
+          "mechanism": 0.0,
+          "full_credit": false
+        },
+        "d": {
+          "correct": 0.0,
+          "brier": 0.562,
+          "rationale": 0.5,
+          "full_credit": false
+        }
+      },
+      "total": 0.375,
+      "fully_solved": false,
+      "total_mean_over_judges": 0.375,
+      "judge_totals": [
+        0.375
+      ],
+      "question_id": "L4-20637159-36516433",
+      "arm": "dialysis"
+    },
+    {
+      "per_step": {
+        "a": {
+          "answer": 0.0,
+          "answer_rationale": "The candidate chose antibiotics instead of the required packed RBC transfusion and provided no patient\u2011specific lab values in its causal chain.",
+          "request_quality_mean": 0.25,
+          "n_requests": 2,
+          "golden_recall": 0.0,
+          "full_credit": false
+        },
+        "b": {
+          "direction_acc": 1.0,
+          "n_scored": 3,
+          "all_correct": true,
+          "justification": 0.5,
+          "full_credit": false
+        },
+        "c": {
+          "identification": 0.0,
+          "mechanism": 0.0,
+          "full_credit": false
+        },
+        "d": {
+          "correct": 0.0,
+          "brier": 0.562,
+          "rationale": 0.5,
+          "full_credit": false
+        }
+      },
+      "total": 0.25,
+      "fully_solved": false,
+      "total_mean_over_judges": 0.25,
+      "judge_totals": [
+        0.25
+      ],
+      "question_id": "L4-20866663-30419585",
+      "arm": "transfusion"
+    },
+    {
+      "per_step": {
+        "a": {
+          "answer": 0.0,
+          "answer_rationale": "The answer proposes antibiotics instead of invasive ventilation and provides no actual lab values or patient\u2011specific causal reasoning.",
+          "request_quality_mean": 0.5,
+          "n_requests": 3,
+          "golden_recall": 0.0,
+          "full_credit": false
+        },
+        "b": {
+          "direction_acc": 0.0,
+          "n_scored": 2,
+          "all_correct": false,
+          "justification": 0.5,
+          "full_credit": false
+        },
+        "d": {
+          "correct": 0.0,
+          "brier": 0.562,
+          "rationale": 0.5,
+          "full_credit": false
+        }
+      },
+      "total": 0.0,
+      "fully_solved": false,
+      "total_mean_over_judges": 0.0,
+      "judge_totals": [
+        0.0
+      ],
+      "question_id": "L4-20917598-30221813",
+      "arm": "ventilation"
+    },
+    {
+      "per_step": {
+        "a": {
+          "answer": 0.0,
+          "answer_rationale": "The response incorrectly recommends broad\u2011spectrum antibiotics rather than the required non\u2011invasive ventilation and provides no actual patient lab values for causal reasoning.",
+          "request_quality_mean": 0.5,
+          "n_requests": 1,
+          "golden_recall": 0.0,
+          "full_credit": false
+        },
+        "b": {
+          "direction_acc": 0.0,
+          "n_scored": 0,
+          "all_correct": false,
+          "justification": 0.5,
+          "full_credit": false
+        },
+        "d": {
+          "correct": 1.0,
+          "brier": 0.122,
+          "rationale": 0.5,
+          "full_credit": false
+        }
+      },
+      "total": 0.3333,
+      "fully_solved": false,
+      "total_mean_over_judges": 0.3333,
+      "judge_totals": [
+        0.3333
+      ],
+      "question_id": "L4-21025250-32383273",
+      "arm": "ventilation"
+    },
+    {
+      "per_step": {
+        "a": {
+          "answer": 0.0,
+          "answer_rationale": "The candidate incorrectly recommends fluid resuscitation instead of the required non\u2011invasive ventilation, making the answer irrelevant to the patient\u2019s true needs.",
+          "request_quality_mean": 0.5,
+          "n_requests": 5,
+          "golden_recall": 0.0,
+          "full_credit": false
+        },
+        "b": {
+          "direction_acc": 0.0,
+          "n_scored": 0,
+          "all_correct": false,
+          "justification": 0.5,
+          "full_credit": false
+        },
+        "d": {
+          "correct": 1.0,
+          "brier": 0.062,
+          "rationale": 1.0,
+          "full_credit": true
+        }
+      },
+      "total": 0.3333,
+      "fully_solved": false,
+      "total_mean_over_judges": 0.3333,
+      "judge_totals": [
+        0.3333
+      ],
+      "question_id": "L4-21030045-33118130",
+      "arm": "ventilation"
+    },
+    {
+      "per_step": {
+        "a": {
+          "answer": 0.0,
+          "answer_rationale": "The proposed intervention (broad\u2011spectrum antibiotics) is incorrect for the patient\u2019s presentation and does not provide a valid patient\u2011specific causal chain leading to that choice.",
+          "request_quality_mean": 0.25,
+          "n_requests": 7,
+          "golden_recall": 0.0,
+          "full_credit": false
+        },
+        "b": {
+          "direction_acc": 0.0,
+          "n_scored": 0,
+          "all_correct": false,
+          "justification": 0.5,
+          "full_credit": false
+        },
+        "d": {
+          "correct": 1.0,
+          "brier": 0.062,
+          "rationale": 1.0,
+          "full_credit": true
+        }
+      },
+      "total": 0.3333,
+      "fully_solved": false,
+      "total_mean_over_judges": 0.3333,
+      "judge_totals": [
+        0.3333
+      ],
+      "question_id": "L4-21060845-32288816",
+      "arm": "dialysis"
+    },
+    {
+      "per_step": {
+        "a": {
+          "answer": 0.0,
+          "answer_rationale": "The candidate recommends antibiotics instead of dialysis, citing non\u2011specific lactate values that are normal; no patient\u2011specific lab evidence supports the chosen intervention.",
+          "request_quality_mean": 0.5,
+          "n_requests": 6,
+          "golden_recall": 0.0,
+          "full_credit": false
+        },
+        "b": {
+          "direction_acc": 0.25,
+          "n_scored": 4,
+          "all_correct": false,
+          "justification": 0.5,
+          "full_credit": false
+        },
+        "c": {
+          "identification": 1.0,
+          "mechanism": 0.0,
+          "full_credit": false
+        },
+        "d": {
+          "correct": 1.0,
+          "brier": 0.062,
+          "rationale": 0.5,
+          "full_credit": false
+        }
+      },
+      "total": 0.5625,
+      "fully_solved": false,
+      "total_mean_over_judges": 0.5625,
+      "judge_totals": [
+        0.5625
+      ],
+      "question_id": "L4-21170772-39140311",
+      "arm": "dialysis"
+    },
+    {
+      "per_step": {
+        "a": {
+          "answer": 0.0,
+          "answer_rationale": "The answer incorrectly selects broad\u2011spectrum antibiotics rather than the required invasive ventilation and provides no patient\u2011specific quantitative data to support a causal chain.",
+          "request_quality_mean": 0.5,
+          "n_requests": 5,
+          "golden_recall": 0.333,
+          "full_credit": false
+        },
+        "b": {
+          "direction_acc": 0.0,
+          "n_scored": 1,
+          "all_correct": false,
+          "justification": 0.5,
+          "full_credit": false
+        },
+        "d": {
+          "correct": 0.0,
+          "brier": 0.562,
+          "rationale": 1.0,
+          "full_credit": false
+        }
+      },
+      "total": 0.0,
+      "fully_solved": false,
+      "total_mean_over_judges": 0.0,
+      "judge_totals": [
+        0.0
+      ],
+      "question_id": "L4-21215960-30518775",
+      "arm": "ventilation"
+    },
+    {
+      "per_step": {
+        "a": {
+          "answer": 0.0,
+          "answer_rationale": "The candidate selects an incorrect intervention (antibiotics) and provides only a generic causal chain without any patient\u2011specific lab evidence.",
+          "request_quality_mean": 0.5,
+          "n_requests": 1,
+          "golden_recall": 0.0,
+          "full_credit": false
+        },
+        "b": {
+          "direction_acc": 0.0,
+          "n_scored": 0,
+          "all_correct": false,
+          "justification": 0.5,
+          "full_credit": false
+        },
+        "d": {
+          "correct": 0.0,
+          "brier": 0.423,
+          "rationale": 0.5,
+          "full_credit": false
+        }
+      },
+      "total": 0.0,
+      "fully_solved": false,
+      "total_mean_over_judges": 0.0,
+      "judge_totals": [
+        0.0
+      ],
+      "question_id": "L4-21234518-30532623",
+      "arm": "transfusion"
+    },
+    {
+      "per_step": {
+        "a": {
+          "answer": 0.0,
+          "answer_rationale": "The candidate chose antibiotics instead of dialysis and cited lactate levels rather than the required urea nitrogen or creatinine values.",
+          "request_quality_mean": 0.5,
+          "n_requests": 5,
+          "golden_recall": 0.0,
+          "full_credit": false
+        },
+        "b": {
+          "direction_acc": 0.0,
+          "n_scored": 1,
+          "all_correct": false,
+          "justification": 1.0,
+          "full_credit": false
+        },
+        "c": {
+          "identification": 0.0,
+          "mechanism": 0.0,
+          "full_credit": false
+        },
+        "d": {
+          "correct": 1.0,
+          "brier": 0.062,
+          "rationale": 1.0,
+          "full_credit": true
+        }
+      },
+      "total": 0.25,
+      "fully_solved": false,
+      "total_mean_over_judges": 0.25,
+      "judge_totals": [
+        0.25
+      ],
+      "question_id": "L4-21269586-35960952",
+      "arm": "dialysis"
+    },
+    {
+      "per_step": {
+        "a": {
+          "answer": 0.0,
+          "answer_rationale": "The candidate recommends antibiotics instead of the required transfusion and provides a generic causal chain without citing relevant hematologic labs.",
+          "request_quality_mean": 0.5,
+          "n_requests": 3,
+          "golden_recall": 0.0,
+          "full_credit": false
+        },
+        "b": {
+          "direction_acc": 0.75,
+          "n_scored": 4,
+          "all_correct": false,
+          "justification": 0.5,
+          "full_credit": false
+        },
+        "c": {
+          "identification": 0.0,
+          "mechanism": 0.0,
+          "full_credit": false
+        },
+        "d": {
+          "correct": 0.0,
+          "brier": 0.562,
+          "rationale": 1.0,
+          "full_credit": false
+        }
+      },
+      "total": 0.1875,
+      "fully_solved": false,
+      "total_mean_over_judges": 0.1875,
+      "judge_totals": [
+        0.1875
+      ],
+      "question_id": "L4-21271073-31511556",
+      "arm": "transfusion"
+    },
+    {
+      "per_step": {
+        "a": {
+          "answer": 0.0,
+          "answer_rationale": "The proposed intervention (broad\u2011spectrum antibiotics) is not the most likely next major intervention for this patient and the causal chain does not reference the key lab value (urea nitrogen) that indicates renal failure requiring dialysis.",
+          "request_quality_mean": 0.25,
+          "n_requests": 5,
+          "golden_recall": 0.0,
+          "full_credit": false
+        },
+        "b": {
+          "direction_acc": 0.0,
+          "n_scored": 2,
+          "all_correct": false,
+          "justification": 0.5,
+          "full_credit": false
+        },
+        "c": {
+          "identification": 0.0,
+          "mechanism": 0.0,
+          "full_credit": false
+        },
+        "d": {
+          "correct": 0.0,
+          "brier": 0.562,
+          "rationale": 1.0,
+          "full_credit": false
+        }
+      },
+      "total": 0.0,
+      "fully_solved": false,
+      "total_mean_over_judges": 0.0,
+      "judge_totals": [
+        0.0
+      ],
+      "question_id": "L4-21311947-30121529",
+      "arm": "dialysis"
+    },
+    {
+      "per_step": {
+        "a": {
+          "answer": 0.0,
+          "answer_rationale": "The chosen intervention (broad\u2011spectrum antibiotics) is not the correct next major intervention for this patient, and the causal chain is generic rather than patient\u2011specific.",
+          "request_quality_mean": 0.25,
+          "n_requests": 15,
+          "golden_recall": 0.667,
+          "full_credit": false
+        },
+        "b": {
+          "direction_acc": 0.333,
+          "n_scored": 3,
+          "all_correct": false,
+          "justification": 1.0,
+          "full_credit": false
+        },
+        "c": {
+          "identification": 0.0,
+          "mechanism": 0.0,
+          "full_credit": false
+        },
+        "d": {
+          "correct": 1.0,
+          "brier": 0.062,
+          "rationale": 1.0,
+          "full_credit": true
+        }
+      },
+      "total": 0.3332,
+      "fully_solved": false,
+      "total_mean_over_judges": 0.3332,
+      "judge_totals": [
+        0.3332
+      ],
+      "question_id": "L4-21385662-31049199",
+      "arm": "dialysis"
+    },
+    {
+      "per_step": {
+        "a": {
+          "answer": 0.0,
+          "answer_rationale": "The chosen intervention (broad\u2011spectrum antibiotics) is incorrect for this patient; the answer fails to provide the required dialysis intervention and thus does not meet the rubric criteria.",
+          "request_quality_mean": 0.5,
+          "n_requests": 9,
+          "golden_recall": 0.5,
+          "full_credit": false
+        },
+        "b": {
+          "direction_acc": 0.0,
+          "n_scored": 3,
+          "all_correct": false,
+          "justification": 0.0,
+          "full_credit": false
+        },
+        "c": {
+          "identification": 1.0,
+          "mechanism": 0.0,
+          "full_credit": false
+        },
+        "d": {
+          "correct": 0.0,
+          "brier": 0.562,
+          "rationale": 0.5,
+          "full_credit": false
+        }
+      },
+      "total": 0.25,
+      "fully_solved": false,
+      "total_mean_over_judges": 0.25,
+      "judge_totals": [
+        0.25
+      ],
+      "question_id": "L4-21444597-33599705",
+      "arm": "dialysis"
+    },
+    {
+      "per_step": {
+        "a": {
+          "answer": 0.0,
+          "answer_rationale": "The candidate incorrectly selects fluid resuscitation instead of the required intubation, and the causal chain does not incorporate the relevant phosphate value or other specific data needed for that intervention.",
+          "request_quality_mean": 0.5,
+          "n_requests": 6,
+          "golden_recall": 0.0,
+          "full_credit": false
+        },
+        "b": {
+          "direction_acc": 0.0,
+          "n_scored": 1,
+          "all_correct": false,
+          "justification": 0.0,
+          "full_credit": false
+        },
+        "d": {
+          "correct": 0.0,
+          "brier": 0.562,
+          "rationale": 1.0,
+          "full_credit": false
+        }
+      },
+      "total": 0.0,
+      "fully_solved": false,
+      "total_mean_over_judges": 0.0,
+      "judge_totals": [
+        0.0
+      ],
+      "question_id": "L4-21601338-32839122",
+      "arm": "ventilation"
+    },
+    {
+      "per_step": {
+        "a": {
+          "answer": 0.0,
+          "answer_rationale": "The candidate recommends antibiotics instead of the required dialysis and provides no patient\u2011specific causal chain with actual lab values.",
+          "request_quality_mean": 0.0,
+          "n_requests": 1,
+          "golden_recall": 0.0,
+          "full_credit": false
+        },
+        "b": {
+          "direction_acc": 0.0,
+          "n_scored": 3,
+          "all_correct": false,
+          "justification": 0.0,
+          "full_credit": false
+        },
+        "c": {
+          "identification": 1.0,
+          "mechanism": 0.0,
+          "full_credit": false
+        },
+        "d": {
+          "correct": 1.0,
+          "brier": 0.062,
+          "rationale": 1.0,
+          "full_credit": true
+        }
+      },
+      "total": 0.5,
+      "fully_solved": false,
+      "total_mean_over_judges": 0.5,
+      "judge_totals": [
+        0.5
+      ],
+      "question_id": "L4-21797716-35119474",
+      "arm": "dialysis"
+    },
+    {
+      "per_step": {
+        "a": {
+          "answer": 0.0,
+          "answer_rationale": "The candidate selected antibiotics instead of a transfusion and provided no specific lab values or patient\u2011specific causal reasoning.",
+          "request_quality_mean": 0.5,
+          "n_requests": 1,
+          "golden_recall": 0.0,
+          "full_credit": false
+        },
+        "b": {
+          "direction_acc": 0.667,
+          "n_scored": 3,
+          "all_correct": false,
+          "justification": 0.5,
+          "full_credit": false
+        },
+        "c": {
+          "identification": 1.0,
+          "mechanism": 0.0,
+          "full_credit": false
+        },
+        "d": {
+          "correct": 1.0,
+          "brier": 0.562,
+          "rationale": 0.5,
+          "full_credit": false
+        }
+      },
+      "total": 0.6667,
+      "fully_solved": false,
+      "total_mean_over_judges": 0.6667,
+      "judge_totals": [
+        0.6667
+      ],
+      "question_id": "L4-22112213-33144587",
+      "arm": "transfusion"
+    },
+    {
+      "per_step": {
+        "a": {
+          "answer": 0.0,
+          "answer_rationale": "The candidate selects fluid resuscitation rather than the required intubation and provides a generic causal chain that does not link specific lab values to respiratory failure.",
+          "request_quality_mean": 0.25,
+          "n_requests": 5,
+          "golden_recall": 0.0,
+          "full_credit": false
+        },
+        "b": {
+          "direction_acc": 0.333,
+          "n_scored": 3,
+          "all_correct": false,
+          "justification": 0.0,
+          "full_credit": false
+        },
+        "d": {
+          "correct": 0.0,
+          "brier": 0.562,
+          "rationale": 0.5,
+          "full_credit": false
+        }
+      },
+      "total": 0.111,
+      "fully_solved": false,
+      "total_mean_over_judges": 0.111,
+      "judge_totals": [
+        0.111
+      ],
+      "question_id": "L4-22234196-30389421",
+      "arm": "ventilation"
+    },
+    {
+      "per_step": {
+        "a": {
+          "answer": 0.0,
+          "answer_rationale": "The answer proposes antibiotics instead of the required invasive ventilation and relies on missing or nonspecific lab values.",
+          "request_quality_mean": 0.0,
+          "n_requests": 4,
+          "golden_recall": 0.333,
+          "full_credit": false
+        },
+        "b": {
+          "direction_acc": 0.0,
+          "n_scored": 3,
+          "all_correct": false,
+          "justification": 0.5,
+          "full_credit": false
+        },
+        "d": {
+          "correct": 1.0,
+          "brier": 0.062,
+          "rationale": 1.0,
+          "full_credit": true
+        }
+      },
+      "total": 0.3333,
+      "fully_solved": false,
+      "total_mean_over_judges": 0.3333,
+      "judge_totals": [
+        0.3333
+      ],
+      "question_id": "L4-22234483-32215335",
+      "arm": "ventilation"
+    },
+    {
+      "per_step": {
+        "a": {
+          "answer": 0.0,
+          "answer_rationale": "The answer proposes antibiotics instead of the required packed red blood cell transfusion and provides no patient\u2011specific lab values or causal chain.",
+          "request_quality_mean": 0.25,
+          "n_requests": 5,
+          "golden_recall": 0.0,
+          "full_credit": false
+        },
+        "b": {
+          "direction_acc": 0.5,
+          "n_scored": 4,
+          "all_correct": false,
+          "justification": 0.5,
+          "full_credit": false
+        },
+        "c": {
+          "identification": 1.0,
+          "mechanism": 0.0,
+          "full_credit": false
+        },
+        "d": {
+          "correct": 0.0,
+          "brier": 0.562,
+          "rationale": 1.0,
+          "full_credit": false
+        }
+      },
+      "total": 0.375,
+      "fully_solved": false,
+      "total_mean_over_judges": 0.375,
+      "judge_totals": [
+        0.375
+      ],
+      "question_id": "L4-22457016-31462114",
+      "arm": "transfusion"
+    },
+    {
+      "per_step": {
+        "a": {
+          "answer": 0.0,
+          "answer_rationale": "The candidate chose cardiac monitoring instead of invasive ventilation, and the causal chain is generic and unrelated to the required intervention.",
+          "request_quality_mean": 0.5,
+          "n_requests": 7,
+          "golden_recall": 0.0,
+          "full_credit": false
+        },
+        "b": {
+          "direction_acc": 1.0,
+          "n_scored": 1,
+          "all_correct": true,
+          "justification": 1.0,
+          "full_credit": true
+        },
+        "d": {
+          "correct": 0.0,
+          "brier": 0.608,
+          "rationale": 0.5,
+          "full_credit": false
+        }
+      },
+      "total": 0.3333,
+      "fully_solved": false,
+      "total_mean_over_judges": 0.3333,
+      "judge_totals": [
+        0.3333
+      ],
+      "question_id": "L4-22533648-30172532",
+      "arm": "ventilation"
+    },
+    {
+      "per_step": {
+        "a": {
+          "answer": 0.0,
+          "answer_rationale": "The answer recommends antibiotics rather than dialysis, which does not match the patient\u2019s lab evidence for acute kidney injury requiring a dialysis catheter.",
+          "request_quality_mean": 0.25,
+          "n_requests": 20,
+          "golden_recall": 0.5,
+          "full_credit": false
+        },
+        "b": {
+          "direction_acc": 0.0,
+          "n_scored": 2,
+          "all_correct": false,
+          "justification": 0.5,
+          "full_credit": false
+        },
+        "c": {
+          "identification": 0.0,
+          "mechanism": 0.0,
+          "full_credit": false
+        },
+        "d": {
+          "correct": 0.0,
+          "brier": 0.562,
+          "rationale": 0.0,
+          "full_credit": false
+        }
+      },
+      "total": 0.0,
+      "fully_solved": false,
+      "total_mean_over_judges": 0.0,
+      "judge_totals": [
+        0.0
+      ],
+      "question_id": "L4-22568401-31810165",
+      "arm": "dialysis"
+    },
+    {
+      "per_step": {
+        "a": {
+          "answer": 0.0,
+          "answer_rationale": "The candidate chose empiric antibiotics rather than invasive ventilation and provided a generic causal chain that does not cite the required pO2 or pH values.",
+          "request_quality_mean": 0.5,
+          "n_requests": 5,
+          "golden_recall": 0.5,
+          "full_credit": false
+        },
+        "b": {
+          "direction_acc": 1.0,
+          "n_scored": 1,
+          "all_correct": true,
+          "justification": 0.5,
+          "full_credit": false
+        },
+        "d": {
+          "correct": 0.0,
+          "brier": 0.562,
+          "rationale": 0.5,
+          "full_credit": false
+        }
+      },
+      "total": 0.3333,
+      "fully_solved": false,
+      "total_mean_over_judges": 0.3333,
+      "judge_totals": [
+        0.3333
+      ],
+      "question_id": "L4-22665778-30311657",
+      "arm": "ventilation"
+    },
+    {
+      "per_step": {
+        "a": {
+          "answer": 0.0,
+          "answer_rationale": "The candidate chose antibiotics instead of the required transfusion and provided no patient-specific lab evidence.",
+          "request_quality_mean": 0.25,
+          "n_requests": 3,
+          "golden_recall": 0.0,
+          "full_credit": false
+        },
+        "b": {
+          "direction_acc": 0.5,
+          "n_scored": 2,
+          "all_correct": false,
+          "justification": 1.0,
+          "full_credit": false
+        },
+        "c": {
+          "identification": 1.0,
+          "mechanism": 0.0,
+          "full_credit": false
+        },
+        "d": {
+          "correct": 0.0,
+          "brier": 0.562,
+          "rationale": 1.0,
+          "full_credit": false
+        }
+      },
+      "total": 0.375,
+      "fully_solved": false,
+      "total_mean_over_judges": 0.375,
+      "judge_totals": [
+        0.375
+      ],
+      "question_id": "L4-22834326-30746407",
+      "arm": "transfusion"
+    },
+    {
+      "per_step": {
+        "a": {
+          "answer": 0.0,
+          "answer_rationale": "The answer incorrectly recommends antibiotics instead of the required transfusion and provides no patient\u2011specific lab evidence.",
+          "request_quality_mean": 0.25,
+          "n_requests": 4,
+          "golden_recall": 0.0,
+          "full_credit": false
+        },
+        "b": {
+          "direction_acc": 0.2,
+          "n_scored": 5,
+          "all_correct": false,
+          "justification": 0.5,
+          "full_credit": false
+        },
+        "c": {
+          "identification": 0.0,
+          "mechanism": 0.0,
+          "full_credit": false
+        },
+        "d": {
+          "correct": 1.0,
+          "brier": 0.062,
+          "rationale": 1.0,
+          "full_credit": true
+        }
+      },
+      "total": 0.3,
+      "fully_solved": false,
+      "total_mean_over_judges": 0.3,
+      "judge_totals": [
+        0.3
+      ],
+      "question_id": "L4-22886167-33611415",
+      "arm": "transfusion"
+    },
+    {
+      "per_step": {
+        "a": {
+          "answer": 0.0,
+          "answer_rationale": "The candidate chose antibiotics instead of dialysis and provided a generic causal chain that does not reference the required renal labs.",
+          "request_quality_mean": 0.25,
+          "n_requests": 6,
+          "golden_recall": 0.0,
+          "full_credit": false
+        },
+        "b": {
+          "direction_acc": 0.0,
+          "n_scored": 4,
+          "all_correct": false,
+          "justification": 1.0,
+          "full_credit": false
+        },
+        "c": {
+          "identification": 1.0,
+          "mechanism": 0.0,
+          "full_credit": false
+        },
+        "d": {
+          "correct": 0.0,
+          "brier": 0.562,
+          "rationale": 0.5,
+          "full_credit": false
+        }
+      },
+      "total": 0.25,
+      "fully_solved": false,
+      "total_mean_over_judges": 0.25,
+      "judge_totals": [
+        0.25
+      ],
+      "question_id": "L4-23010698-33314987",
+      "arm": "dialysis"
+    },
+    {
+      "per_step": {
+        "a": {
+          "answer": 0.0,
+          "answer_rationale": "The response proposes antibiotics without providing any actual lab values or a patient\u2011specific causal chain, and it selects the incorrect intervention (dialysis) per the ground truth.",
+          "request_quality_mean": 0.5,
+          "n_requests": 1,
+          "golden_recall": 0.0,
+          "full_credit": false
+        },
+        "b": {
+          "direction_acc": 0.0,
+          "n_scored": 0,
+          "all_correct": false,
+          "justification": 0.5,
+          "full_credit": false
+        },
+        "d": {
+          "correct": 1.0,
+          "brier": 0.062,
+          "rationale": 0.5,
+          "full_credit": false
+        }
+      },
+      "total": 0.3333,
+      "fully_solved": false,
+      "total_mean_over_judges": 0.3333,
+      "judge_totals": [
+        0.3333
+      ],
+      "question_id": "L4-23039835-35384156",
+      "arm": "dialysis"
+    },
+    {
+      "per_step": {
+        "a": {
+          "answer": 0.0,
+          "answer_rationale": "The candidate chose fluid resuscitation, which is incorrect for a patient with markedly elevated creatinine (9.7) indicating acute kidney injury that requires dialysis; the causal chain is also inaccurate and not aligned with the correct intervention.",
+          "request_quality_mean": 1.0,
+          "n_requests": 4,
+          "golden_recall": 0.5,
+          "full_credit": false
+        },
+        "b": {
+          "direction_acc": 0.0,
+          "n_scored": 3,
+          "all_correct": false,
+          "justification": 0.0,
+          "full_credit": false
+        },
+        "c": {
+          "identification": 0.0,
+          "mechanism": 0.0,
+          "full_credit": false
+        },
+        "d": {
+          "correct": 0.0,
+          "brier": 0.562,
+          "rationale": 0.5,
+          "full_credit": false
+        }
+      },
+      "total": 0.0,
+      "fully_solved": false,
+      "total_mean_over_judges": 0.0,
+      "judge_totals": [
+        0.0
+      ],
+      "question_id": "L4-23051829-37456866",
+      "arm": "dialysis"
+    },
+    {
+      "per_step": {
+        "a": {
+          "answer": 0.0,
+          "answer_rationale": "The candidate recommends antibiotics rather than a transfusion and fails to cite Hemoglobin or Hematocrit values in its causal chain.",
+          "request_quality_mean": 0.5,
+          "n_requests": 5,
+          "golden_recall": 0.0,
+          "full_credit": false
+        },
+        "b": {
+          "direction_acc": 0.667,
+          "n_scored": 3,
+          "all_correct": false,
+          "justification": 0.5,
+          "full_credit": false
+        },
+        "c": {
+          "identification": 0.0,
+          "mechanism": 0.0,
+          "full_credit": false
+        },
+        "d": {
+          "correct": 0.0,
+          "brier": 0.562,
+          "rationale": 1.0,
+          "full_credit": false
+        }
+      },
+      "total": 0.1668,
+      "fully_solved": false,
+      "total_mean_over_judges": 0.1668,
+      "judge_totals": [
+        0.1668
+      ],
+      "question_id": "L4-23256164-32269334",
+      "arm": "transfusion"
+    },
+    {
+      "per_step": {
+        "a": {
+          "answer": 0.0,
+          "answer_rationale": "The answer proposes antibiotics instead of the required dialysis catheter and provides a generic sepsis chain without citing any actual lab values from this patient.",
+          "request_quality_mean": 0.5,
+          "n_requests": 5,
+          "golden_recall": 0.0,
+          "full_credit": false
+        },
+        "b": {
+          "direction_acc": 0.25,
+          "n_scored": 4,
+          "all_correct": false,
+          "justification": 0.0,
+          "full_credit": false
+        },
+        "d": {
+          "correct": 1.0,
+          "brier": 0.062,
+          "rationale": 1.0,
+          "full_credit": true
+        }
+      },
+      "total": 0.4167,
+      "fully_solved": false,
+      "total_mean_over_judges": 0.4167,
+      "judge_totals": [
+        0.4167
+      ],
+      "question_id": "L4-23392333-31289726",
+      "arm": "dialysis"
+    },
+    {
+      "per_step": {
+        "a": {
+          "answer": 0.0,
+          "answer_rationale": "The candidate chose antibiotics instead of the required transfusion and provided no patient\u2011specific causal chain or retrieved lab values.",
+          "request_quality_mean": 0.25,
+          "n_requests": 4,
+          "golden_recall": 0.0,
+          "full_credit": false
+        },
+        "b": {
+          "direction_acc": 1.0,
+          "n_scored": 2,
+          "all_correct": true,
+          "justification": 1.0,
+          "full_credit": true
+        },
+        "c": {
+          "identification": 1.0,
+          "mechanism": 0.0,
+          "full_credit": false
+        },
+        "d": {
+          "correct": 1.0,
+          "brier": 0.062,
+          "rationale": 1.0,
+          "full_credit": true
+        }
+      },
+      "total": 0.75,
+      "fully_solved": false,
+      "total_mean_over_judges": 0.75,
+      "judge_totals": [
+        0.75
+      ],
+      "question_id": "L4-23426019-32853769",
+      "arm": "transfusion"
+    },
+    {
+      "per_step": {
+        "a": {
+          "answer": 0.0,
+          "answer_rationale": "The answer proposes antibiotics instead of the required dialysis and provides a generic causal chain without citing any patient-specific lab values.",
+          "request_quality_mean": 0.25,
+          "n_requests": 3,
+          "golden_recall": 0.0,
+          "full_credit": false
+        },
+        "b": {
+          "direction_acc": 0.5,
+          "n_scored": 2,
+          "all_correct": false,
+          "justification": 0.0,
+          "full_credit": false
+        },
+        "c": {
+          "identification": 0.0,
+          "mechanism": 0.0,
+          "full_credit": false
+        },
+        "d": {
+          "correct": 0.0,
+          "brier": 0.062,
+          "rationale": 0.5,
+          "full_credit": false
+        }
+      },
+      "total": 0.125,
+      "fully_solved": false,
+      "total_mean_over_judges": 0.125,
+      "judge_totals": [
+        0.125
+      ],
+      "question_id": "L4-23482142-36788241",
+      "arm": "dialysis"
+    },
+    {
+      "per_step": {
+        "a": {
+          "answer": 0.0,
+          "answer_rationale": "The candidate recommends antibiotics rather than the required packed red blood cell transfusion, and its causal chain is generic and fails to cite specific quantitative lab values from this patient.",
+          "request_quality_mean": 0.25,
+          "n_requests": 5,
+          "golden_recall": 0.0,
+          "full_credit": false
+        },
+        "b": {
+          "direction_acc": 0.0,
+          "n_scored": 3,
+          "all_correct": false,
+          "justification": 0.0,
+          "full_credit": false
+        },
+        "d": {
+          "correct": 0.0,
+          "brier": 0.562,
+          "rationale": 0.5,
+          "full_credit": false
+        }
+      },
+      "total": 0.0,
+      "fully_solved": false,
+      "total_mean_over_judges": 0.0,
+      "judge_totals": [
+        0.0
+      ],
+      "question_id": "L4-23522597-31462217",
+      "arm": "transfusion"
+    },
+    {
+      "per_step": {
+        "a": {
+          "answer": 0.0,
+          "answer_rationale": "The answer proposes antibiotics instead of the required dialysis intervention and provides no patient\u2011specific causal chain citing actual lab values.",
+          "request_quality_mean": 0.5,
+          "n_requests": 1,
+          "golden_recall": 0.0,
+          "full_credit": false
+        },
+        "b": {
+          "direction_acc": 0.25,
+          "n_scored": 4,
+          "all_correct": false,
+          "justification": 0.5,
+          "full_credit": false
+        },
+        "c": {
+          "identification": 0.0,
+          "mechanism": 0.0,
+          "full_credit": false
+        },
+        "d": {
+          "correct": 1.0,
+          "brier": 0.562,
+          "rationale": 0.5,
+          "full_credit": false
+        }
+      },
+      "total": 0.3125,
+      "fully_solved": false,
+      "total_mean_over_judges": 0.3125,
+      "judge_totals": [
+        0.3125
+      ],
+      "question_id": "L4-23547256-31410566",
+      "arm": "dialysis"
+    },
+    {
+      "per_step": {
+        "a": {
+          "answer": 0.0,
+          "answer_rationale": "The candidate recommends antibiotics instead of the required invasive ventilation and provides a generic causal chain without citing any patient\u2011specific lab values.",
+          "request_quality_mean": 0.25,
+          "n_requests": 5,
+          "golden_recall": 0.0,
+          "full_credit": false
+        },
+        "b": {
+          "direction_acc": 0.25,
+          "n_scored": 4,
+          "all_correct": false,
+          "justification": 0.5,
+          "full_credit": false
+        },
+        "d": {
+          "correct": 1.0,
+          "brier": 0.062,
+          "rationale": 1.0,
+          "full_credit": true
+        }
+      },
+      "total": 0.4167,
+      "fully_solved": false,
+      "total_mean_over_judges": 0.4167,
+      "judge_totals": [
+        0.4167
+      ],
+      "question_id": "L4-23611374-34360324",
+      "arm": "ventilation"
+    },
+    {
+      "per_step": {
+        "a": {
+          "answer": 0.0,
+          "answer_rationale": "The candidate suggested antibiotics instead of a transfusion and provided no patient\u2011specific hemoglobin/hematocrit data, so the intervention is incorrect and the causal chain is not patient\u2011specific.",
+          "request_quality_mean": 0.5,
+          "n_requests": 1,
+          "golden_recall": 0.0,
+          "full_credit": false
+        },
+        "b": {
+          "direction_acc": 0.0,
+          "n_scored": 3,
+          "all_correct": false,
+          "justification": 0.0,
+          "full_credit": false
+        },
+        "d": {
+          "correct": 0.0,
+          "brier": 0.423,
+          "rationale": 0.5,
+          "full_credit": false
+        }
+      },
+      "total": 0.0,
+      "fully_solved": false,
+      "total_mean_over_judges": 0.0,
+      "judge_totals": [
+        0.0
+      ],
+      "question_id": "L4-23641399-31598816",
+      "arm": "transfusion"
+    },
+    {
+      "per_step": {
+        "a": {
+          "answer": 0.0,
+          "answer_rationale": "The candidate selected antibiotics instead of invasive ventilation and the causal chain does not reference the key oxygenation lab (pO2) required for that decision.",
+          "request_quality_mean": 0.5,
+          "n_requests": 5,
+          "golden_recall": 0.0,
+          "full_credit": false
+        },
+        "b": {
+          "direction_acc": 0.0,
+          "n_scored": 2,
+          "all_correct": false,
+          "justification": 0.0,
+          "full_credit": false
+        },
+        "d": {
+          "correct": 0.0,
+          "brier": 0.423,
+          "rationale": 0.5,
+          "full_credit": false
+        }
+      },
+      "total": 0.0,
+      "fully_solved": false,
+      "total_mean_over_judges": 0.0,
+      "judge_totals": [
+        0.0
+      ],
+      "question_id": "L4-23815944-30343099",
+      "arm": "ventilation"
+    },
+    {
+      "per_step": {
+        "a": {
+          "answer": 0.0,
+          "answer_rationale": "The candidate chose an irrelevant intervention (ventilator support) and provided a generic causal chain without citing any specific lab values related to the patient's condition.",
+          "request_quality_mean": 0.5,
+          "n_requests": 4,
+          "golden_recall": 0.0,
+          "full_credit": false
+        },
+        "b": {
+          "direction_acc": 0.667,
+          "n_scored": 3,
+          "all_correct": false,
+          "justification": 0.5,
+          "full_credit": false
+        },
+        "d": {
+          "correct": 0.0,
+          "brier": 0.562,
+          "rationale": 0.5,
+          "full_credit": false
+        }
+      },
+      "total": 0.2223,
+      "fully_solved": false,
+      "total_mean_over_judges": 0.2223,
+      "judge_totals": [
+        0.2223
+      ],
+      "question_id": "L4-23837343-31483420",
+      "arm": "transfusion"
+    },
+    {
+      "per_step": {
+        "a": {
+          "answer": 0.0,
+          "answer_rationale": "The answer proposes antibiotics instead of the required PRBC transfusion and provides no patient\u2011specific lab data or causal reasoning.",
+          "request_quality_mean": 0.5,
+          "n_requests": 1,
+          "golden_recall": 0.0,
+          "full_credit": false
+        },
+        "b": {
+          "direction_acc": 0.0,
+          "n_scored": 0,
+          "all_correct": false,
+          "justification": 0.5,
+          "full_credit": false
+        },
+        "d": {
+          "correct": 1.0,
+          "brier": 0.062,
+          "rationale": 0.5,
+          "full_credit": false
+        }
+      },
+      "total": 0.3333,
+      "fully_solved": false,
+      "total_mean_over_judges": 0.3333,
+      "judge_totals": [
+        0.3333
+      ],
+      "question_id": "L4-24270188-36068841",
+      "arm": "transfusion"
+    },
+    {
+      "per_step": {
+        "a": {
+          "answer": 0.0,
+          "answer_rationale": "The answer incorrectly selects cardiac monitoring and cites troponin/CK\u2011MB levels, whereas the correct intervention is dialysis catheter based on elevated creatinine; thus it is inaccurate.",
+          "request_quality_mean": 0.0,
+          "n_requests": 5,
+          "golden_recall": 0.0,
+          "full_credit": false
+        },
+        "b": {
+          "direction_acc": 0.5,
+          "n_scored": 4,
+          "all_correct": false,
+          "justification": 0.5,
+          "full_credit": false
+        },
+        "c": {
+          "identification": 0.0,
+          "mechanism": 0.0,
+          "full_credit": false
+        },
+        "d": {
+          "correct": 1.0,
+          "brier": 0.062,
+          "rationale": 1.0,
+          "full_credit": true
+        }
+      },
+      "total": 0.375,
+      "fully_solved": false,
+      "total_mean_over_judges": 0.375,
+      "judge_totals": [
+        0.375
+      ],
+      "question_id": "L4-24300234-33966594",
+      "arm": "dialysis"
+    },
+    {
+      "per_step": {
+        "a": {
+          "answer": 0.0,
+          "answer_rationale": "The answer proposes antibiotics instead of a transfusion and does not cite any patient-specific quantitative labs such as hematocrit or hemoglobin.",
+          "request_quality_mean": 0.25,
+          "n_requests": 4,
+          "golden_recall": 0.0,
+          "full_credit": false
+        },
+        "b": {
+          "direction_acc": 0.0,
+          "n_scored": 4,
+          "all_correct": false,
+          "justification": 0.5,
+          "full_credit": false
+        },
+        "c": {
+          "identification": 1.0,
+          "mechanism": 0.0,
+          "full_credit": false
+        },
+        "d": {
+          "correct": 1.0,
+          "brier": 0.562,
+          "rationale": 0.5,
+          "full_credit": false
+        }
+      },
+      "total": 0.5,
+      "fully_solved": false,
+      "total_mean_over_judges": 0.5,
+      "judge_totals": [
+        0.5
+      ],
+      "question_id": "L4-24341616-31737613",
+      "arm": "transfusion"
+    },
+    {
+      "per_step": {
+        "a": {
+          "answer": 0.0,
+          "answer_rationale": "The answer incorrectly recommends broad\u2011spectrum antibiotics instead of the required invasive ventilation and provides no patient\u2011specific causal chain or lab data.",
+          "request_quality_mean": 0.5,
+          "n_requests": 3,
+          "golden_recall": 0.0,
+          "full_credit": false
+        },
+        "b": {
+          "direction_acc": 1.0,
+          "n_scored": 2,
+          "all_correct": true,
+          "justification": 0.5,
+          "full_credit": false
+        },
+        "d": {
+          "correct": 1.0,
+          "brier": 0.062,
+          "rationale": 1.0,
+          "full_credit": true
+        }
+      },
+      "total": 0.6667,
+      "fully_solved": false,
+      "total_mean_over_judges": 0.6667,
+      "judge_totals": [
+        0.6667
+      ],
+      "question_id": "L4-24621538-31454821",
+      "arm": "ventilation"
+    },
+    {
+      "per_step": {
+        "a": {
+          "answer": 0.0,
+          "answer_rationale": "The answer proposes antibiotics instead of the required invasive ventilation and provides no patient\u2011specific lab evidence.",
+          "request_quality_mean": 0.5,
+          "n_requests": 1,
+          "golden_recall": 0.0,
+          "full_credit": false
+        },
+        "b": {
+          "direction_acc": 0.5,
+          "n_scored": 2,
+          "all_correct": false,
+          "justification": 0.0,
+          "full_credit": false
+        },
+        "d": {
+          "correct": 0.0,
+          "brier": 0.562,
+          "rationale": 1.0,
+          "full_credit": false
+        }
+      },
+      "total": 0.1667,
+      "fully_solved": false,
+      "total_mean_over_judges": 0.1667,
+      "judge_totals": [
+        0.1667
+      ],
+      "question_id": "L4-24734944-30264635",
+      "arm": "ventilation"
+    },
+    {
+      "per_step": {
+        "a": {
+          "answer": 0.0,
+          "answer_rationale": "The answer proposes antibiotics instead of the required transfusion and lacks patient-specific lab evidence.",
+          "request_quality_mean": 0.5,
+          "n_requests": 1,
+          "golden_recall": 0.0,
+          "full_credit": false
+        },
+        "b": {
+          "direction_acc": 0.5,
+          "n_scored": 4,
+          "all_correct": false,
+          "justification": 0.5,
+          "full_credit": false
+        },
+        "d": {
+          "correct": 1.0,
+          "brier": 0.122,
+          "rationale": 1.0,
+          "full_credit": true
+        }
+      },
+      "total": 0.5,
+      "fully_solved": false,
+      "total_mean_over_judges": 0.5,
+      "judge_totals": [
+        0.5
+      ],
+      "question_id": "L4-24850340-32323140",
+      "arm": "transfusion"
+    },
+    {
+      "per_step": {
+        "a": {
+          "answer": 0.0,
+          "answer_rationale": "The answer proposes antibiotics instead of a transfusion and relies on assumed rather than actual lab values, so it fails to provide a correct, patient\u2011specific causal chain.",
+          "request_quality_mean": 0.5,
+          "n_requests": 1,
+          "golden_recall": 0.0,
+          "full_credit": false
+        },
+        "b": {
+          "direction_acc": 0.333,
+          "n_scored": 3,
+          "all_correct": false,
+          "justification": 0.5,
+          "full_credit": false
+        },
+        "d": {
+          "correct": 1.0,
+          "brier": 0.062,
+          "rationale": 1.0,
+          "full_credit": true
+        }
+      },
+      "total": 0.4443,
+      "fully_solved": false,
+      "total_mean_over_judges": 0.4443,
+      "judge_totals": [
+        0.4443
+      ],
+      "question_id": "L4-25004043-36714605",
+      "arm": "transfusion"
+    },
+    {
+      "per_step": {
+        "a": {
+          "answer": 0.0,
+          "answer_rationale": "The candidate recommends antibiotics rather than the required dialysis intervention and fails to cite the specific potassium, urea nitrogen, or creatinine values needed for a patient\u2011specific causal chain.",
+          "request_quality_mean": 0.25,
+          "n_requests": 4,
+          "golden_recall": 0.0,
+          "full_credit": false
+        },
+        "b": {
+          "direction_acc": 0.5,
+          "n_scored": 2,
+          "all_correct": false,
+          "justification": 0.5,
+          "full_credit": false
+        },
+        "d": {
+          "correct": 1.0,
+          "brier": 0.062,
+          "rationale": 1.0,
+          "full_credit": true
+        }
+      },
+      "total": 0.5,
+      "fully_solved": false,
+      "total_mean_over_judges": 0.5,
+      "judge_totals": [
+        0.5
+      ],
+      "question_id": "L4-25006691-35090707",
+      "arm": "dialysis"
+    },
+    {
+      "per_step": {
+        "a": {
+          "answer": 0.0,
+          "answer_rationale": "The answer incorrectly chooses a generic mechanical ventilation instead of the specific non\u2011invasive ventilation required, rendering it inaccurate even though it cites lab values.",
+          "request_quality_mean": 0.5,
+          "n_requests": 5,
+          "golden_recall": 0.0,
+          "full_credit": false
+        },
+        "b": {
+          "direction_acc": 1.0,
+          "n_scored": 1,
+          "all_correct": true,
+          "justification": 1.0,
+          "full_credit": true
+        },
+        "d": {
+          "correct": 0.0,
+          "brier": 0.562,
+          "rationale": 1.0,
+          "full_credit": false
+        }
+      },
+      "total": 0.3333,
+      "fully_solved": false,
+      "total_mean_over_judges": 0.3333,
+      "judge_totals": [
+        0.3333
+      ],
+      "question_id": "L4-25049824-30350084",
+      "arm": "ventilation"
+    },
+    {
+      "per_step": {
+        "a": {
+          "answer": 0.0,
+          "answer_rationale": "The candidate chose broad\u2011spectrum antibiotics rather than the required invasive ventilation, and its causal chain does not link any retrieved labs to a need for ventilatory support.",
+          "request_quality_mean": 0.75,
+          "n_requests": 5,
+          "golden_recall": 1.0,
+          "full_credit": false
+        },
+        "b": {
+          "direction_acc": 0.0,
+          "n_scored": 1,
+          "all_correct": false,
+          "justification": 0.0,
+          "full_credit": false
+        },
+        "d": {
+          "correct": 0.0,
+          "brier": 0.562,
+          "rationale": 1.0,
+          "full_credit": false
+        }
+      },
+      "total": 0.0,
+      "fully_solved": false,
+      "total_mean_over_judges": 0.0,
+      "judge_totals": [
+        0.0
+      ],
+      "question_id": "L4-25075942-30358816",
+      "arm": "ventilation"
+    },
+    {
+      "per_step": {
+        "a": {
+          "answer": 0.0,
+          "answer_rationale": "The candidate recommends antibiotics rather than dialysis, and the causal chain cites irrelevant labs (WBC, LD) without referencing the required BUN/Creatinine values.",
+          "request_quality_mean": 0.25,
+          "n_requests": 9,
+          "golden_recall": 0.0,
+          "full_credit": false
+        },
+        "b": {
+          "direction_acc": 1.0,
+          "n_scored": 4,
+          "all_correct": true,
+          "justification": 1.0,
+          "full_credit": true
+        },
+        "c": {
+          "identification": 1.0,
+          "mechanism": 0.0,
+          "full_credit": false
+        },
+        "d": {
+          "correct": 0.0,
+          "brier": 0.562,
+          "rationale": 0.5,
+          "full_credit": false
+        }
+      },
+      "total": 0.5,
+      "fully_solved": false,
+      "total_mean_over_judges": 0.5,
+      "judge_totals": [
+        0.5
+      ],
+      "question_id": "L4-25087934-32568569",
+      "arm": "dialysis"
+    },
+    {
+      "per_step": {
+        "a": {
+          "answer": 0.0,
+          "answer_rationale": "The candidate recommends broad\u2011spectrum antibiotics rather than the required packed red blood cell transfusion, and its causal chain relies on troponin levels instead of the critical hematocrit/hemoglobin values needed for this patient.",
+          "request_quality_mean": 0.5,
+          "n_requests": 5,
+          "golden_recall": 0.0,
+          "full_credit": false
+        },
+        "b": {
+          "direction_acc": 0.0,
+          "n_scored": 5,
+          "all_correct": false,
+          "justification": 0.5,
+          "full_credit": false
+        },
+        "d": {
+          "correct": 1.0,
+          "brier": 0.062,
+          "rationale": 1.0,
+          "full_credit": true
+        }
+      },
+      "total": 0.3333,
+      "fully_solved": false,
+      "total_mean_over_judges": 0.3333,
+      "judge_totals": [
+        0.3333
+      ],
+      "question_id": "L4-25120789-35687682",
+      "arm": "transfusion"
+    },
+    {
+      "per_step": {
+        "a": {
+          "answer": 0.0,
+          "answer_rationale": "The candidate recommends antibiotics instead of the required dialysis and provides a generic causal chain without citing specific lab values.",
+          "request_quality_mean": 0.5,
+          "n_requests": 1,
+          "golden_recall": 0.0,
+          "full_credit": false
+        },
+        "b": {
+          "direction_acc": 0.0,
+          "n_scored": 0,
+          "all_correct": false,
+          "justification": 0.5,
+          "full_credit": false
+        },
+        "d": {
+          "correct": 0.0,
+          "brier": 0.562,
+          "rationale": 0.5,
+          "full_credit": false
+        }
+      },
+      "total": 0.0,
+      "fully_solved": false,
+      "total_mean_over_judges": 0.0,
+      "judge_totals": [
+        0.0
+      ],
+      "question_id": "L4-25125890-35762370",
+      "arm": "dialysis"
+    },
+    {
+      "per_step": {
+        "a": {
+          "answer": 0.0,
+          "answer_rationale": "The answer proposes supplemental oxygen and mechanical ventilation, which does not align with the required non\u2011invasive ventilation, and its causal chain misinterprets or misstates the patient\u2019s lab values.",
+          "request_quality_mean": 0.25,
+          "n_requests": 7,
+          "golden_recall": 0.0,
+          "full_credit": false
+        },
+        "b": {
+          "direction_acc": 0.0,
+          "n_scored": 1,
+          "all_correct": false,
+          "justification": 0.0,
+          "full_credit": false
+        },
+        "d": {
+          "correct": 0.0,
+          "brier": 0.423,
+          "rationale": 0.5,
+          "full_credit": false
+        }
+      },
+      "total": 0.0,
+      "fully_solved": false,
+      "total_mean_over_judges": 0.0,
+      "judge_totals": [
+        0.0
+      ],
+      "question_id": "L4-25201861-30114445",
+      "arm": "ventilation"
+    },
+    {
+      "per_step": {
+        "a": {
+          "answer": 0.0,
+          "answer_rationale": "The answer proposes antibiotics instead of the required hemodialysis and provides no patient\u2011specific lab values, making it irrelevant to the correct intervention.",
+          "request_quality_mean": 0.5,
+          "n_requests": 1,
+          "golden_recall": 0.0,
+          "full_credit": false
+        },
+        "b": {
+          "direction_acc": 0.0,
+          "n_scored": 2,
+          "all_correct": false,
+          "justification": 1.0,
+          "full_credit": false
+        },
+        "d": {
+          "correct": 1.0,
+          "brier": 0.062,
+          "rationale": 1.0,
+          "full_credit": true
+        }
+      },
+      "total": 0.3333,
+      "fully_solved": false,
+      "total_mean_over_judges": 0.3333,
+      "judge_totals": [
+        0.3333
+      ],
+      "question_id": "L4-25220743-34902936",
+      "arm": "dialysis"
+    },
+    {
+      "per_step": {
+        "a": {
+          "answer": 0.0,
+          "answer_rationale": "The candidate chose an inappropriate intervention (broad\u2011spectrum antibiotics) and provided a generic causal chain without citing any actual patient lab values.",
+          "request_quality_mean": 0.5,
+          "n_requests": 1,
+          "golden_recall": 0.0,
+          "full_credit": false
+        },
+        "b": {
+          "direction_acc": 0.0,
+          "n_scored": 0,
+          "all_correct": false,
+          "justification": 0.5,
+          "full_credit": false
+        },
+        "d": {
+          "correct": 0.0,
+          "brier": 0.122,
+          "rationale": 0.5,
+          "full_credit": false
+        }
+      },
+      "total": 0.0,
+      "fully_solved": false,
+      "total_mean_over_judges": 0.0,
+      "judge_totals": [
+        0.0
+      ],
+      "question_id": "L4-25289494-30416273",
+      "arm": "ventilation"
+    },
+    {
+      "per_step": {
+        "a": {
+          "answer": 0.0,
+          "answer_rationale": "The answer selects cardiac monitoring based on troponin/CK-MB values, which are unrelated to the patient\u2019s renal failure indicated by urea nitrogen and creatinine; thus it is irrelevant and incorrect.",
+          "request_quality_mean": 0.25,
+          "n_requests": 5,
+          "golden_recall": 0.0,
+          "full_credit": false
+        },
+        "b": {
+          "direction_acc": 0.25,
+          "n_scored": 4,
+          "all_correct": false,
+          "justification": 0.0,
+          "full_credit": false
+        },
+        "d": {
+          "correct": 0.0,
+          "brier": 0.562,
+          "rationale": 1.0,
+          "full_credit": false
+        }
+      },
+      "total": 0.0833,
+      "fully_solved": false,
+      "total_mean_over_judges": 0.0833,
+      "judge_totals": [
+        0.0833
+      ],
+      "question_id": "L4-25537165-31449902",
+      "arm": "dialysis"
+    },
+    {
+      "per_step": {
+        "a": {
+          "answer": 0.0,
+          "answer_rationale": "The candidate recommends antibiotics and respiratory support instead of the required packed red blood cell transfusion, and the causal chain does not cite the necessary hemoglobin/hematocrit values.",
+          "request_quality_mean": 0.5,
+          "n_requests": 5,
+          "golden_recall": 0.0,
+          "full_credit": false
+        },
+        "b": {
+          "direction_acc": 1.0,
+          "n_scored": 2,
+          "all_correct": true,
+          "justification": 0.0,
+          "full_credit": false
+        },
+        "c": {
+          "identification": 1.0,
+          "mechanism": 0.0,
+          "full_credit": false
+        },
+        "d": {
+          "correct": 0.0,
+          "brier": 0.562,
+          "rationale": 0.0,
+          "full_credit": false
+        }
+      },
+      "total": 0.5,
+      "fully_solved": false,
+      "total_mean_over_judges": 0.5,
+      "judge_totals": [
+        0.5
+      ],
+      "question_id": "L4-25546472-30671875",
+      "arm": "transfusion"
+    },
+    {
+      "per_step": {
+        "a": {
+          "answer": 0.0,
+          "answer_rationale": "The candidate recommends antibiotics instead of dialysis and provides a generic causal chain without citing any specific lab values.",
+          "request_quality_mean": 0.5,
+          "n_requests": 1,
+          "golden_recall": 0.0,
+          "full_credit": false
+        },
+        "b": {
+          "direction_acc": 0.25,
+          "n_scored": 4,
+          "all_correct": false,
+          "justification": 0.0,
+          "full_credit": false
+        },
+        "d": {
+          "correct": 0.0,
+          "brier": 0.562,
+          "rationale": 0.5,
+          "full_credit": false
+        }
+      },
+      "total": 0.0833,
+      "fully_solved": false,
+      "total_mean_over_judges": 0.0833,
+      "judge_totals": [
+        0.0833
+      ],
+      "question_id": "L4-25638541-30373977",
+      "arm": "dialysis"
+    },
+    {
+      "per_step": {
+        "a": {
+          "answer": 0.0,
+          "answer_rationale": "The candidate recommends antibiotics instead of the required invasive ventilation and provides no patient-specific lab evidence.",
+          "request_quality_mean": 0.5,
+          "n_requests": 2,
+          "golden_recall": 0.0,
+          "full_credit": false
+        },
+        "b": {
+          "direction_acc": 0.0,
+          "n_scored": 1,
+          "all_correct": false,
+          "justification": 0.0,
+          "full_credit": false
+        },
+        "d": {
+          "correct": 1.0,
+          "brier": 0.122,
+          "rationale": 0.5,
+          "full_credit": false
+        }
+      },
+      "total": 0.3333,
+      "fully_solved": false,
+      "total_mean_over_judges": 0.3333,
+      "judge_totals": [
+        0.3333
+      ],
+      "question_id": "L4-25661234-30803942",
+      "arm": "ventilation"
+    },
+    {
+      "per_step": {
+        "a": {
+          "answer": 0.0,
+          "answer_rationale": "The answer proposes vasopressors instead of the required non\u2011invasive ventilation and cites an irrelevant lactate value without addressing the patient\u2019s true respiratory failure.",
+          "request_quality_mean": 0.5,
+          "n_requests": 5,
+          "golden_recall": 0.0,
+          "full_credit": false
+        },
+        "b": {
+          "direction_acc": 0.5,
+          "n_scored": 2,
+          "all_correct": false,
+          "justification": 0.5,
+          "full_credit": false
+        },
+        "d": {
+          "correct": 1.0,
+          "brier": 0.062,
+          "rationale": 1.0,
+          "full_credit": true
+        }
+      },
+      "total": 0.5,
+      "fully_solved": false,
+      "total_mean_over_judges": 0.5,
+      "judge_totals": [
+        0.5
+      ],
+      "question_id": "L4-25891316-38950865",
+      "arm": "ventilation"
+    },
+    {
+      "per_step": {
+        "a": {
+          "answer": 0.0,
+          "answer_rationale": "The answer incorrectly recommends antibiotics instead of dialysis and offers only generic reasoning without citing actual patient lab values.",
+          "request_quality_mean": 0.5,
+          "n_requests": 1,
+          "golden_recall": 0.0,
+          "full_credit": false
+        },
+        "b": {
+          "direction_acc": 0.0,
+          "n_scored": 3,
+          "all_correct": false,
+          "justification": 0.5,
+          "full_credit": false
+        },
+        "c": {
+          "identification": 0.0,
+          "mechanism": 0.0,
+          "full_credit": false
+        },
+        "d": {
+          "correct": 1.0,
+          "brier": 0.062,
+          "rationale": 1.0,
+          "full_credit": true
+        }
+      },
+      "total": 0.25,
+      "fully_solved": false,
+      "total_mean_over_judges": 0.25,
+      "judge_totals": [
+        0.25
+      ],
+      "question_id": "L4-26111703-39128623",
+      "arm": "dialysis"
+    },
+    {
+      "per_step": {
+        "a": {
+          "answer": 0.0,
+          "answer_rationale": "The answer incorrectly recommends broad\u2011spectrum antibiotics rather than the required dialysis catheter, and its causal chain is generic and does not cite specific laboratory data.",
+          "request_quality_mean": 0.5,
+          "n_requests": 1,
+          "golden_recall": 0.0,
+          "full_credit": false
+        },
+        "b": {
+          "direction_acc": 0.0,
+          "n_scored": 0,
+          "all_correct": false,
+          "justification": 0.5,
+          "full_credit": false
+        },
+        "d": {
+          "correct": 1.0,
+          "brier": 0.062,
+          "rationale": 0.5,
+          "full_credit": false
+        }
+      },
+      "total": 0.3333,
+      "fully_solved": false,
+      "total_mean_over_judges": 0.3333,
+      "judge_totals": [
+        0.3333
+      ],
+      "question_id": "L4-26194666-34287358",
+      "arm": "dialysis"
+    },
+    {
+      "per_step": {
+        "a": {
+          "answer": 0.0,
+          "answer_rationale": "The candidate recommends antibiotics instead of the required non\u2011invasive ventilation and cites unrelated labs (lactate, WBC) rather than the necessary respiratory values.",
+          "request_quality_mean": 0.25,
+          "n_requests": 5,
+          "golden_recall": 0.0,
+          "full_credit": false
+        },
+        "b": {
+          "direction_acc": 1.0,
+          "n_scored": 1,
+          "all_correct": true,
+          "justification": 0.0,
+          "full_credit": false
+        },
+        "d": {
+          "correct": 0.0,
+          "brier": 0.122,
+          "rationale": 0.5,
+          "full_credit": false
+        }
+      },
+      "total": 0.3333,
+      "fully_solved": false,
+      "total_mean_over_judges": 0.3333,
+      "judge_totals": [
+        0.3333
+      ],
+      "question_id": "L4-26262205-33048877",
+      "arm": "ventilation"
+    },
+    {
+      "per_step": {
+        "a": {
+          "answer": 0.0,
+          "answer_rationale": "The candidate recommends antibiotics instead of the required invasive ventilation and cites unrelated urine labs.",
+          "request_quality_mean": 0.25,
+          "n_requests": 5,
+          "golden_recall": 0.333,
+          "full_credit": false
+        },
+        "b": {
+          "direction_acc": 1.0,
+          "n_scored": 2,
+          "all_correct": true,
+          "justification": 1.0,
+          "full_credit": true
+        },
+        "d": {
+          "correct": 0.0,
+          "brier": 0.562,
+          "rationale": 1.0,
+          "full_credit": false
+        }
+      },
+      "total": 0.3333,
+      "fully_solved": false,
+      "total_mean_over_judges": 0.3333,
+      "judge_totals": [
+        0.3333
+      ],
+      "question_id": "L4-26398825-30090650",
+      "arm": "ventilation"
+    },
+    {
+      "per_step": {
+        "a": {
+          "answer": 0.0,
+          "answer_rationale": "The answer proposes antibiotics instead of the required transfusion and relies on generic reasoning without citing actual patient lab values.",
+          "request_quality_mean": 0.5,
+          "n_requests": 1,
+          "golden_recall": 0.0,
+          "full_credit": false
+        },
+        "b": {
+          "direction_acc": 0.0,
+          "n_scored": 2,
+          "all_correct": false,
+          "justification": 0.5,
+          "full_credit": false
+        },
+        "d": {
+          "correct": 1.0,
+          "brier": 0.062,
+          "rationale": 0.5,
+          "full_credit": false
+        }
+      },
+      "total": 0.3333,
+      "fully_solved": false,
+      "total_mean_over_judges": 0.3333,
+      "judge_totals": [
+        0.3333
+      ],
+      "question_id": "L4-26404074-32466052",
+      "arm": "transfusion"
+    },
+    {
+      "per_step": {
+        "a": {
+          "answer": 0.0,
+          "answer_rationale": "The answer proposes fluid resuscitation and vasopressors for septic shock, ignoring the required dialysis intervention indicated by hyperkalemia, urea nitrogen, and creatinine values.",
+          "request_quality_mean": 0.25,
+          "n_requests": 5,
+          "golden_recall": 0.0,
+          "full_credit": false
+        },
+        "b": {
+          "direction_acc": 0.0,
+          "n_scored": 2,
+          "all_correct": false,
+          "justification": 0.5,
+          "full_credit": false
+        },
+        "d": {
+          "correct": 0.0,
+          "brier": 0.562,
+          "rationale": 1.0,
+          "full_credit": false
+        }
+      },
+      "total": 0.0,
+      "fully_solved": false,
+      "total_mean_over_judges": 0.0,
+      "judge_totals": [
+        0.0
+      ],
+      "question_id": "L4-26589042-31541318",
+      "arm": "dialysis"
+    },
+    {
+      "per_step": {
+        "a": {
+          "answer": 0.0,
+          "answer_rationale": "The answer incorrectly recommends empiric antibiotics rather than non\u2011invasive ventilation and does not provide a patient\u2011specific causal chain linking the retrieved labs to the need for ventilation.",
+          "request_quality_mean": 0.5,
+          "n_requests": 8,
+          "golden_recall": 0.0,
+          "full_credit": false
+        },
+        "b": {
+          "direction_acc": 0.0,
+          "n_scored": 0,
+          "all_correct": false,
+          "justification": 0.5,
+          "full_credit": false
+        },
+        "d": {
+          "correct": 0.0,
+          "brier": 0.608,
+          "rationale": 1.0,
+          "full_credit": false
+        }
+      },
+      "total": 0.0,
+      "fully_solved": false,
+      "total_mean_over_judges": 0.0,
+      "judge_totals": [
+        0.0
+      ],
+      "question_id": "L4-26746610-30169228",
+      "arm": "ventilation"
+    },
+    {
+      "per_step": {
+        "a": {
+          "answer": 0.0,
+          "answer_rationale": "The candidate recommends antibiotics instead of the required packed red blood cell transfusion and provides a causal chain unrelated to the necessary hemoglobin/hematocrit labs.",
+          "request_quality_mean": 0.0,
+          "n_requests": 6,
+          "golden_recall": 0.0,
+          "full_credit": false
+        },
+        "b": {
+          "direction_acc": 0.0,
+          "n_scored": 2,
+          "all_correct": false,
+          "justification": 0.0,
+          "full_credit": false
+        },
+        "d": {
+          "correct": 0.0,
+          "brier": 0.062,
+          "rationale": 0.5,
+          "full_credit": false
+        }
+      },
+      "total": 0.0,
+      "fully_solved": false,
+      "total_mean_over_judges": 0.0,
+      "judge_totals": [
+        0.0
+      ],
+      "question_id": "L4-26782759-34430333",
+      "arm": "transfusion"
+    },
+    {
+      "per_step": {
+        "a": {
+          "answer": 0.0,
+          "answer_rationale": "The candidate recommends antibiotics instead of invasive ventilation and provides a generic causal chain unrelated to the required lab values.",
+          "request_quality_mean": 0.25,
+          "n_requests": 5,
+          "golden_recall": 0.0,
+          "full_credit": false
+        },
+        "b": {
+          "direction_acc": 0.5,
+          "n_scored": 2,
+          "all_correct": false,
+          "justification": 0.0,
+          "full_credit": false
+        },
+        "d": {
+          "correct": 1.0,
+          "brier": 0.062,
+          "rationale": 1.0,
+          "full_credit": true
+        }
+      },
+      "total": 0.5,
+      "fully_solved": false,
+      "total_mean_over_judges": 0.5,
+      "judge_totals": [
+        0.5
+      ],
+      "question_id": "L4-26944893-31644215",
+      "arm": "ventilation"
+    },
+    {
+      "per_step": {
+        "a": {
+          "answer": 0.0,
+          "answer_rationale": "The candidate selected an incorrect intervention (antibiotics) and provided a generic causal chain without citing any specific lab values.",
+          "request_quality_mean": 0.5,
+          "n_requests": 1,
+          "golden_recall": 0.0,
+          "full_credit": false
+        },
+        "b": {
+          "direction_acc": 1.0,
+          "n_scored": 2,
+          "all_correct": true,
+          "justification": 0.5,
+          "full_credit": false
+        },
+        "d": {
+          "correct": 1.0,
+          "brier": 0.062,
+          "rationale": 0.0,
+          "full_credit": false
+        }
+      },
+      "total": 0.6667,
+      "fully_solved": false,
+      "total_mean_over_judges": 0.6667,
+      "judge_totals": [
+        0.6667
+      ],
+      "question_id": "L4-27047815-30601922",
+      "arm": "transfusion"
+    },
+    {
+      "per_step": {
+        "a": {
+          "answer": 0.0,
+          "answer_rationale": "The answer proposes antibiotics instead of the required packed RBC transfusion and provides a generic causal chain without citing any patient-specific lab values.",
+          "request_quality_mean": 0.5,
+          "n_requests": 1,
+          "golden_recall": 0.0,
+          "full_credit": false
+        },
+        "b": {
+          "direction_acc": 1.0,
+          "n_scored": 1,
+          "all_correct": true,
+          "justification": 0.5,
+          "full_credit": false
+        },
+        "d": {
+          "correct": 1.0,
+          "brier": 0.062,
+          "rationale": 0.5,
+          "full_credit": false
+        }
+      },
+      "total": 0.6667,
+      "fully_solved": false,
+      "total_mean_over_judges": 0.6667,
+      "judge_totals": [
+        0.6667
+      ],
+      "question_id": "L4-27092999-30772812",
+      "arm": "transfusion"
+    },
+    {
+      "per_step": {
+        "a": {
+          "answer": 0.0,
+          "answer_rationale": "The candidate recommends antibiotics instead of the required intubation, and provides no specific lab values or patient\u2011specific causal reasoning.",
+          "request_quality_mean": 0.5,
+          "n_requests": 1,
+          "golden_recall": 0.0,
+          "full_credit": false
+        },
+        "b": {
+          "direction_acc": 0.667,
+          "n_scored": 3,
+          "all_correct": false,
+          "justification": 0.0,
+          "full_credit": false
+        },
+        "d": {
+          "correct": 0.0,
+          "brier": 0.562,
+          "rationale": 1.0,
+          "full_credit": false
+        }
+      },
+      "total": 0.2223,
+      "fully_solved": false,
+      "total_mean_over_judges": 0.2223,
+      "judge_totals": [
+        0.2223
+      ],
+      "question_id": "L4-27107260-30547595",
+      "arm": "ventilation"
+    },
+    {
+      "per_step": {
+        "a": {
+          "answer": 0.0,
+          "answer_rationale": "The candidate chose an unrelated intervention (antibiotics) and provided a generic causal chain without citing any of the required lab values.",
+          "request_quality_mean": 0.0,
+          "n_requests": 1,
+          "golden_recall": 0.0,
+          "full_credit": false
+        },
+        "b": {
+          "direction_acc": 0.0,
+          "n_scored": 3,
+          "all_correct": false,
+          "justification": 0.5,
+          "full_credit": false
+        },
+        "c": {
+          "identification": 1.0,
+          "mechanism": 0.0,
+          "full_credit": false
+        },
+        "d": {
+          "correct": 1.0,
+          "brier": 0.062,
+          "rationale": 1.0,
+          "full_credit": true
+        }
+      },
+      "total": 0.5,
+      "fully_solved": false,
+      "total_mean_over_judges": 0.5,
+      "judge_totals": [
+        0.5
+      ],
+      "question_id": "L4-27142603-38407168",
+      "arm": "dialysis"
+    },
+    {
+      "per_step": {
+        "a": {
+          "answer": 0.0,
+          "answer_rationale": "The answer incorrectly recommends antibiotics rather than dialysis and provides no quantitative lab values supporting renal failure; it is not a correct or patient\u2011specific causal chain.",
+          "request_quality_mean": 0.25,
+          "n_requests": 18,
+          "golden_recall": 0.5,
+          "full_credit": false
+        },
+        "b": {
+          "direction_acc": 0.0,
+          "n_scored": 4,
+          "all_correct": false,
+          "justification": 0.5,
+          "full_credit": false
+        },
+        "d": {
+          "correct": 0.0,
+          "brier": 0.562,
+          "rationale": 0.5,
+          "full_credit": false
+        }
+      },
+      "total": 0.0,
+      "fully_solved": false,
+      "total_mean_over_judges": 0.0,
+      "judge_totals": [
+        0.0
+      ],
+      "question_id": "L4-27235918-37178400",
+      "arm": "dialysis"
+    },
+    {
+      "per_step": {
+        "a": {
+          "answer": 0.0,
+          "answer_rationale": "The answer recommends broad\u2011spectrum antibiotics rather than the required packed red blood cell transfusion and does not provide any patient\u2011specific quantitative lab values to support its reasoning.",
+          "request_quality_mean": 0.5,
+          "n_requests": 1,
+          "golden_recall": 0.0,
+          "full_credit": false
+        },
+        "b": {
+          "direction_acc": 0.5,
+          "n_scored": 2,
+          "all_correct": false,
+          "justification": 0.5,
+          "full_credit": false
+        },
+        "d": {
+          "correct": 1.0,
+          "brier": 0.062,
+          "rationale": 0.5,
+          "full_credit": false
+        }
+      },
+      "total": 0.5,
+      "fully_solved": false,
+      "total_mean_over_judges": 0.5,
+      "judge_totals": [
+        0.5
+      ],
+      "question_id": "L4-27341134-34527084",
+      "arm": "transfusion"
+    },
+    {
+      "per_step": {
+        "a": {
+          "answer": 0.0,
+          "answer_rationale": "The answer proposes antibiotics instead of the required dialysis catheter; it also lacks patient-specific lab values.",
+          "request_quality_mean": 0.5,
+          "n_requests": 1,
+          "golden_recall": 0.0,
+          "full_credit": false
+        },
+        "b": {
+          "direction_acc": 0.0,
+          "n_scored": 0,
+          "all_correct": false,
+          "justification": 0.5,
+          "full_credit": false
+        },
+        "d": {
+          "correct": 0.0,
+          "brier": 0.423,
+          "rationale": 0.5,
+          "full_credit": false
+        }
+      },
+      "total": 0.0,
+      "fully_solved": false,
+      "total_mean_over_judges": 0.0,
+      "judge_totals": [
+        0.0
+      ],
+      "question_id": "L4-27526169-31860554",
+      "arm": "dialysis"
+    },
+    {
+      "per_step": {
+        "a": {
+          "answer": 0.0,
+          "answer_rationale": "The candidate selects continuous cardiac monitoring instead of the required intubation/ventilation, and provides a generic causal chain without any actual patient lab values.",
+          "request_quality_mean": 0.25,
+          "n_requests": 6,
+          "golden_recall": 0.0,
+          "full_credit": false
+        },
+        "b": {
+          "direction_acc": 0.0,
+          "n_scored": 3,
+          "all_correct": false,
+          "justification": 0.0,
+          "full_credit": false
+        },
+        "d": {
+          "correct": 0.0,
+          "brier": 0.562,
+          "rationale": 1.0,
+          "full_credit": false
+        }
+      },
+      "total": 0.0,
+      "fully_solved": false,
+      "total_mean_over_judges": 0.0,
+      "judge_totals": [
+        0.0
+      ],
+      "question_id": "L4-27684514-30096307",
+      "arm": "ventilation"
+    },
+    {
+      "per_step": {
+        "a": {
+          "answer": 0.0,
+          "answer_rationale": "The candidate chose broad\u2011spectrum antibiotics instead of the required packed red blood cell transfusion and provided no actual lab values or patient\u2011specific causal reasoning.",
+          "request_quality_mean": 0.5,
+          "n_requests": 1,
+          "golden_recall": 0.0,
+          "full_credit": false
+        },
+        "b": {
+          "direction_acc": 0.5,
+          "n_scored": 2,
+          "all_correct": false,
+          "justification": 0.5,
+          "full_credit": false
+        },
+        "c": {
+          "identification": 0.0,
+          "mechanism": 0.0,
+          "full_credit": false
+        },
+        "d": {
+          "correct": 0.0,
+          "brier": 0.562,
+          "rationale": 0.5,
+          "full_credit": false
+        }
+      },
+      "total": 0.125,
+      "fully_solved": false,
+      "total_mean_over_judges": 0.125,
+      "judge_totals": [
+        0.125
+      ],
+      "question_id": "L4-27945411-31795319",
+      "arm": "transfusion"
+    },
+    {
+      "per_step": {
+        "a": {
+          "answer": 0.0,
+          "answer_rationale": "The candidate incorrectly proposes cardiac monitoring rather than the required packed red blood cell transfusion, and fails to cite the necessary hematocrit/hemoglobin lab values.",
+          "request_quality_mean": 0.25,
+          "n_requests": 5,
+          "golden_recall": 0.0,
+          "full_credit": false
+        },
+        "b": {
+          "direction_acc": 0.667,
+          "n_scored": 3,
+          "all_correct": false,
+          "justification": 0.0,
+          "full_credit": false
+        },
+        "c": {
+          "identification": 1.0,
+          "mechanism": 0.0,
+          "full_credit": false
+        },
+        "d": {
+          "correct": 1.0,
+          "brier": 0.562,
+          "rationale": 0.5,
+          "full_credit": false
+        }
+      },
+      "total": 0.6667,
+      "fully_solved": false,
+      "total_mean_over_judges": 0.6667,
+      "judge_totals": [
+        0.6667
+      ],
+      "question_id": "L4-27968246-30267249",
+      "arm": "transfusion"
+    },
+    {
+      "per_step": {
+        "a": {
+          "answer": 0.0,
+          "answer_rationale": "The candidate recommends antibiotics rather than the required packed red blood cell transfusion, and provides no patient\u2011specific lab values in its causal chain.",
+          "request_quality_mean": 0.5,
+          "n_requests": 1,
+          "golden_recall": 0.0,
+          "full_credit": false
+        },
+        "b": {
+          "direction_acc": 0.0,
+          "n_scored": 0,
+          "all_correct": false,
+          "justification": 0.5,
+          "full_credit": false
+        },
+        "d": {
+          "correct": 1.0,
+          "brier": 0.122,
+          "rationale": 0.5,
+          "full_credit": false
+        }
+      },
+      "total": 0.3333,
+      "fully_solved": false,
+      "total_mean_over_judges": 0.3333,
+      "judge_totals": [
+        0.3333
+      ],
+      "question_id": "L4-28161060-33344778",
+      "arm": "transfusion"
+    },
+    {
+      "per_step": {
+        "a": {
+          "answer": 0.0,
+          "answer_rationale": "The candidate selected fluid resuscitation instead of the required packed red blood cell transfusion, making the response inaccurate.",
+          "request_quality_mean": 0.25,
+          "n_requests": 14,
+          "golden_recall": 1.0,
+          "full_credit": false
+        },
+        "b": {
+          "direction_acc": 0.0,
+          "n_scored": 4,
+          "all_correct": false,
+          "justification": 0.5,
+          "full_credit": false
+        },
+        "c": {
+          "identification": 0.0,
+          "mechanism": 0.0,
+          "full_credit": false
+        },
+        "d": {
+          "correct": 1.0,
+          "brier": 0.562,
+          "rationale": 0.5,
+          "full_credit": false
+        }
+      },
+      "total": 0.25,
+      "fully_solved": false,
+      "total_mean_over_judges": 0.25,
+      "judge_totals": [
+        0.25
+      ],
+      "question_id": "L4-28231264-30717142",
+      "arm": "transfusion"
+    },
+    {
+      "per_step": {
+        "a": {
+          "answer": 0.0,
+          "answer_rationale": "The answer incorrectly proposes broad\u2011spectrum antibiotics instead of the required invasive ventilation, and its causal chain does not reference the patient\u2019s specific lab values (e.g., Troponin\u202fT) needed for that decision.",
+          "request_quality_mean": 0.5,
+          "n_requests": 5,
+          "golden_recall": 0.0,
+          "full_credit": false
+        },
+        "b": {
+          "direction_acc": 0.5,
+          "n_scored": 2,
+          "all_correct": false,
+          "justification": 0.5,
+          "full_credit": false
+        },
+        "d": {
+          "correct": 1.0,
+          "brier": 0.062,
+          "rationale": 0.5,
+          "full_credit": false
+        }
+      },
+      "total": 0.5,
+      "fully_solved": false,
+      "total_mean_over_judges": 0.5,
+      "judge_totals": [
+        0.5
+      ],
+      "question_id": "L4-28376297-34204437",
+      "arm": "ventilation"
+    },
+    {
+      "per_step": {
+        "a": {
+          "answer": 0.0,
+          "answer_rationale": "The candidate recommends mechanical ventilation instead of the required packed red blood cell transfusion based on hematocrit/hemoglobin values.",
+          "request_quality_mean": 0.5,
+          "n_requests": 12,
+          "golden_recall": 0.0,
+          "full_credit": false
+        },
+        "b": {
+          "direction_acc": 1.0,
+          "n_scored": 3,
+          "all_correct": true,
+          "justification": 0.5,
+          "full_credit": false
+        },
+        "c": {
+          "identification": 0.0,
+          "mechanism": 0.0,
+          "full_credit": false
+        },
+        "d": {
+          "correct": 1.0,
+          "brier": 0.562,
+          "rationale": 0.5,
+          "full_credit": false
+        }
+      },
+      "total": 0.5,
+      "fully_solved": false,
+      "total_mean_over_judges": 0.5,
+      "judge_totals": [
+        0.5
+      ],
+      "question_id": "L4-28516431-32877770",
+      "arm": "transfusion"
+    },
+    {
+      "per_step": {
+        "a": {
+          "answer": 0.0,
+          "answer_rationale": "The candidate recommends intravenous antibiotics, which is unrelated to the patient\u2019s hypoxemia indicated by pO2; the causal chain cites incorrect or nonspecific lab values and does not support the chosen intervention.",
+          "request_quality_mean": 0.5,
+          "n_requests": 11,
+          "golden_recall": 0.0,
+          "full_credit": false
+        },
+        "b": {
+          "direction_acc": 0.333,
+          "n_scored": 3,
+          "all_correct": false,
+          "justification": 0.5,
+          "full_credit": false
+        },
+        "d": {
+          "correct": 0.0,
+          "brier": 0.562,
+          "rationale": 1.0,
+          "full_credit": false
+        }
+      },
+      "total": 0.111,
+      "fully_solved": false,
+      "total_mean_over_judges": 0.111,
+      "judge_totals": [
+        0.111
+      ],
+      "question_id": "L4-28560179-35816578",
+      "arm": "ventilation"
+    },
+    {
+      "per_step": {
+        "a": {
+          "answer": 0.0,
+          "answer_rationale": "The answer proposes vasopressor support instead of invasive ventilation and cites unrelated labs (lactate, troponin) rather than the required pCO2, phosphate, and pO2 values.",
+          "request_quality_mean": 0.5,
+          "n_requests": 5,
+          "golden_recall": 0.0,
+          "full_credit": false
+        },
+        "b": {
+          "direction_acc": 1.0,
+          "n_scored": 3,
+          "all_correct": true,
+          "justification": 0.5,
+          "full_credit": false
+        },
+        "d": {
+          "correct": 1.0,
+          "brier": 0.062,
+          "rationale": 1.0,
+          "full_credit": true
+        }
+      },
+      "total": 0.6667,
+      "fully_solved": false,
+      "total_mean_over_judges": 0.6667,
+      "judge_totals": [
+        0.6667
+      ],
+      "question_id": "L4-28822676-33549924",
+      "arm": "ventilation"
+    },
+    {
+      "per_step": {
+        "a": {
+          "answer": 0.0,
+          "answer_rationale": "The candidate selects antibiotics instead of the required transfusion and does not use the key hemoglobin/hematocrit values in a patient\u2011specific causal chain.",
+          "request_quality_mean": 0.25,
+          "n_requests": 12,
+          "golden_recall": 0.5,
+          "full_credit": false
+        },
+        "b": {
+          "direction_acc": 0.667,
+          "n_scored": 3,
+          "all_correct": false,
+          "justification": 0.0,
+          "full_credit": false
+        },
+        "d": {
+          "correct": 1.0,
+          "brier": 0.062,
+          "rationale": 0.5,
+          "full_credit": false
+        }
+      },
+      "total": 0.5557,
+      "fully_solved": false,
+      "total_mean_over_judges": 0.5557,
+      "judge_totals": [
+        0.5557
+      ],
+      "question_id": "L4-28898326-34779368",
+      "arm": "transfusion"
+    },
+    {
+      "per_step": {
+        "a": {
+          "answer": 0.0,
+          "answer_rationale": "The candidate incorrectly interprets normal lab values as evidence of hypoxemia and acidosis, providing a nonsensical causal chain that does not support the chosen intervention.",
+          "request_quality_mean": 1.0,
+          "n_requests": 4,
+          "golden_recall": 1.0,
+          "full_credit": false
+        },
+        "b": {
+          "direction_acc": 0.333,
+          "n_scored": 3,
+          "all_correct": false,
+          "justification": 1.0,
+          "full_credit": false
+        },
+        "d": {
+          "correct": 0.0,
+          "brier": 0.562,
+          "rationale": 0.0,
+          "full_credit": false
+        }
+      },
+      "total": 0.111,
+      "fully_solved": false,
+      "total_mean_over_judges": 0.111,
+      "judge_totals": [
+        0.111
+      ],
+      "question_id": "L4-29018771-30094966",
+      "arm": "ventilation"
+    },
+    {
+      "per_step": {
+        "a": {
+          "answer": 0.0,
+          "answer_rationale": "The answer incorrectly recommends continuous cardiac monitoring based on a troponin value, whereas the correct next major intervention is intubation for ventilation; thus it is irrelevant and inaccurate.",
+          "request_quality_mean": 0.25,
+          "n_requests": 4,
+          "golden_recall": 1.0,
+          "full_credit": false
+        },
+        "b": {
+          "direction_acc": 0.5,
+          "n_scored": 2,
+          "all_correct": false,
+          "justification": 0.5,
+          "full_credit": false
+        },
+        "d": {
+          "correct": 1.0,
+          "brier": 0.062,
+          "rationale": 0.5,
+          "full_credit": false
+        }
+      },
+      "total": 0.5,
+      "fully_solved": false,
+      "total_mean_over_judges": 0.5,
+      "judge_totals": [
+        0.5
+      ],
+      "question_id": "L4-29162170-30247984",
+      "arm": "ventilation"
+    },
+    {
+      "per_step": {
+        "a": {
+          "answer": 0.0,
+          "answer_rationale": "The answer incorrectly selects broad\u2011spectrum antibiotics instead of the required non\u2011invasive ventilation and provides no patient\u2011specific lab data or causal chain.",
+          "request_quality_mean": 0.5,
+          "n_requests": 1,
+          "golden_recall": 0.0,
+          "full_credit": false
+        },
+        "b": {
+          "direction_acc": 0.0,
+          "n_scored": 0,
+          "all_correct": false,
+          "justification": 0.5,
+          "full_credit": false
+        },
+        "d": {
+          "correct": 1.0,
+          "brier": 0.122,
+          "rationale": 0.5,
+          "full_credit": false
+        }
+      },
+      "total": 0.3333,
+      "fully_solved": false,
+      "total_mean_over_judges": 0.3333,
+      "judge_totals": [
+        0.3333
+      ],
+      "question_id": "L4-29525186-31866472",
+      "arm": "ventilation"
+    },
+    {
+      "per_step": {
+        "a": {
+          "answer": 0.0,
+          "answer_rationale": "The candidate recommends antibiotics rather than the required packed red blood cell transfusion and provides no valid patient\u2011specific laboratory data.",
+          "request_quality_mean": 0.0,
+          "n_requests": 5,
+          "golden_recall": 0.0,
+          "full_credit": false
+        },
+        "b": {
+          "direction_acc": 0.75,
+          "n_scored": 4,
+          "all_correct": false,
+          "justification": 0.5,
+          "full_credit": false
+        },
+        "d": {
+          "correct": 1.0,
+          "brier": 0.062,
+          "rationale": 1.0,
+          "full_credit": true
+        }
+      },
+      "total": 0.5833,
+      "fully_solved": false,
+      "total_mean_over_judges": 0.5833,
+      "judge_totals": [
+        0.5833
+      ],
+      "question_id": "L4-29662253-33535112",
+      "arm": "transfusion"
+    },
+    {
+      "per_step": {
+        "a": {
+          "answer": 0.0,
+          "answer_rationale": "The candidate recommends antibiotics rather than the required intubation, and its causal chain does not use the necessary pCO2/pH values or form a proper patient\u2011specific reasoning.",
+          "request_quality_mean": 0.25,
+          "n_requests": 5,
+          "golden_recall": 0.0,
+          "full_credit": false
+        },
+        "b": {
+          "direction_acc": 1.0,
+          "n_scored": 1,
+          "all_correct": true,
+          "justification": 0.5,
+          "full_credit": false
+        },
+        "d": {
+          "correct": 1.0,
+          "brier": 0.062,
+          "rationale": 1.0,
+          "full_credit": true
+        }
+      },
+      "total": 0.6667,
+      "fully_solved": false,
+      "total_mean_over_judges": 0.6667,
+      "judge_totals": [
+        0.6667
+      ],
+      "question_id": "L4-29803011-38571233",
+      "arm": "ventilation"
+    },
+    {
+      "per_step": {
+        "a": {
+          "answer": 0.0,
+          "answer_rationale": "The candidate recommends antibiotics instead of the required packed red blood cell transfusion and provides no patient\u2011specific causal chain with actual lab values.",
+          "request_quality_mean": 0.5,
+          "n_requests": 1,
+          "golden_recall": 0.0,
+          "full_credit": false
+        },
+        "b": {
+          "direction_acc": 0.667,
+          "n_scored": 3,
+          "all_correct": false,
+          "justification": 0.5,
+          "full_credit": false
+        },
+        "c": {
+          "identification": 0.0,
+          "mechanism": 0.0,
+          "full_credit": false
+        },
+        "d": {
+          "correct": 0.0,
+          "brier": 0.562,
+          "rationale": 1.0,
+          "full_credit": false
+        }
+      },
+      "total": 0.1668,
+      "fully_solved": false,
+      "total_mean_over_judges": 0.1668,
+      "judge_totals": [
+        0.1668
+      ],
+      "question_id": "L4-29808063-31397948",
+      "arm": "transfusion"
+    },
+    {
+      "per_step": {
+        "a": {
+          "answer": 0.0,
+          "answer_rationale": "The candidate chose antibiotics instead of a transfusion and provided no patient\u2011specific lab values in the causal chain.",
+          "request_quality_mean": 0.25,
+          "n_requests": 3,
+          "golden_recall": 0.0,
+          "full_credit": false
+        },
+        "b": {
+          "direction_acc": 0.667,
+          "n_scored": 3,
+          "all_correct": false,
+          "justification": 0.5,
+          "full_credit": false
+        },
+        "c": {
+          "identification": 1.0,
+          "mechanism": 0.0,
+          "full_credit": false
+        },
+        "d": {
+          "correct": 0.0,
+          "brier": 0.062,
+          "rationale": 0.5,
+          "full_credit": false
+        }
+      },
+      "total": 0.4168,
+      "fully_solved": false,
+      "total_mean_over_judges": 0.4168,
+      "judge_totals": [
+        0.4168
+      ],
+      "question_id": "L4-29912863-32118057",
+      "arm": "transfusion"
+    }
+  ]
+}

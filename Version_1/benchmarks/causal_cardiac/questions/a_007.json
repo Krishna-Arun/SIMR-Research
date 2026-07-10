@@ -1,0 +1,27 @@
+{
+  "case_id": "a_007",
+  "benchmark": "intervention_physiological_effect",
+  "hadm_id": 26696682,
+  "procedure": {
+    "title": "Percutaneous transluminal coronary angioplasty [PTCA]",
+    "date": "2173-12-31 00:00"
+  },
+  "question": {
+    "stem": "Patient hadm_id: 26696682\n\nDemographics: None-year-old Male\nPrimary Diagnosis: Atherosclerotic heart disease of native coronary artery without angina pectoris\n\nPre-Procedure Lab Timeline (all available labs before 2173-12-31 00:00):\n\n| Datetime | Lab | Value | Unit | Flag |\n|---|---|---|---|---|\n| 2173-12-29 22:53 | Creatine Kinase, MB Isoenzyme | 4.0 | ng/mL | nan |\n| 2173-12-29 22:53 | Red Top Hold | nan | nan | nan |\n| 2173-12-29 22:53 | Troponin T | 0.02 | ng/mL | abnormal |\n| 2173-12-30 06:40 | Creatine Kinase (CK) | 93.0 | IU/L | nan |\n| 2173-12-30 06:40 | Creatine Kinase, MB Isoenzyme | 3.0 | ng/mL | nan |\n| 2173-12-30 06:40 | Troponin T | 0.02 | ng/mL | abnormal |\n| 2173-12-30 17:25 | Creatine Kinase (CK) | 90.0 | IU/L | nan |\n| 2173-12-30 17:25 | Creatine Kinase, MB Isoenzyme | 4.0 | ng/mL | nan |\n| 2173-12-30 17:25 | Troponin T | nan | ng/mL | nan |\n\nProcedure Performed: Percutaneous transluminal coronary angioplasty [PTCA] on 2173-12-31 00:00\n\nAnalyze the pre-intervention lab trajectory and clinical context. Given the patient's state and the intervention performed, describe what physiological changes you would expect to see in the post-intervention period. Specifically discuss expected direction and magnitude of change for key cardiac biomarkers (Troponin, CK, CK-MB).",
+    "type": "intervention_forward_prediction"
+  },
+  "visible_context": {
+    "pre_intervention_labs": 9,
+    "demographics": {
+      "age": null,
+      "gender": "Male"
+    },
+    "primary_diagnosis": "Atherosclerotic heart disease of native coronary artery without angina pectoris"
+  },
+  "ground_truth": {
+    "post_intervention_labs": "| Datetime | Lab | Value | Unit | Flag |\n|---|---|---|---|---|\n| 2173-12-31 13:34 | Troponin T | nan | ng/mL | nan |\n| 2173-12-31 21:05 | Creatine Kinase, MB Isoenzyme | 2.0 | ng/mL | nan |\n| 2173-12-31 21:05 | Troponin T | 0.01 | ng/mL | nan |\n| 2174-01-01 06:20 | Creatine Kinase, MB Isoenzyme | 2.0 | ng/mL | nan |\n| 2174-01-01 06:20 | Troponin T | 0.01 | ng/mL | nan |",
+    "n_post_labs": 5,
+    "expected_troponin_direction": "falling",
+    "expected_troponin_magnitude_pct": -50.0
+  }
+}

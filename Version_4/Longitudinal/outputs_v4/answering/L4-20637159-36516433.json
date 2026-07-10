@@ -1,0 +1,378 @@
+{
+  "question_id": "L4-20637159-36516433",
+  "sequence": [
+    "a",
+    "b",
+    "c",
+    "d"
+  ],
+  "anchor_family_hidden": true,
+  "demographics": {
+    "gender": "M",
+    "anchor_age": 65,
+    "admission_type": "DIRECT EMER.",
+    "race": "WHITE"
+  },
+  "steps": {
+    "a": {
+      "stem": "A 65-year-old M patient was admitted to the ICU. Using ONLY the supplemental data you can request (labs and microbiology are available by name/date first; you must justify and request the values you need), determine the SINGLE most likely next major intervention this patient requires, and justify it with a patient-specific causal chain that cites the specific lab values you retrieved.",
+      "question_type": "next_intervention_openended",
+      "tool_use": "Call Access_All_supplementals_no_values(question_id) first, then Request_a_supplemental / Request_values with justification.",
+      "question_id_for_tools": "L4-20637159-36516433"
+    },
+    "b": {
+      "stem": "Given that this patient underwent dialysis (Dialysis Catheter), select the core labs whose 72-hour trajectory is most informative and predict each one's direction (Rising / Falling / Stable) with a causal justification and a confidence.",
+      "candidate_labs": [
+        {
+          "lab": "Potassium",
+          "ref_low": 3.3,
+          "ref_high": 5.1,
+          "pre_value": 4.6
+        },
+        {
+          "lab": "MCH",
+          "ref_low": 27.0,
+          "ref_high": 32.0,
+          "pre_value": 31.9
+        },
+        {
+          "lab": "Urea Nitrogen",
+          "ref_low": 6.0,
+          "ref_high": 20.0,
+          "pre_value": 40.0
+        },
+        {
+          "lab": "Creatine Kinase (CK)",
+          "ref_low": 47.0,
+          "ref_high": 322.0,
+          "pre_value": 607.0
+        },
+        {
+          "lab": "MCV",
+          "ref_low": 82.0,
+          "ref_high": 98.0,
+          "pre_value": 94.0
+        },
+        {
+          "lab": "PTT",
+          "ref_low": 22.0,
+          "ref_high": 35.0,
+          "pre_value": 24.1
+        },
+        {
+          "lab": "Hematocrit",
+          "ref_low": 40.0,
+          "ref_high": 52.0,
+          "pre_value": 30.7
+        },
+        {
+          "lab": "INR(PT)",
+          "ref_low": 0.9,
+          "ref_high": 1.1,
+          "pre_value": 1.0
+        },
+        {
+          "lab": "Red Blood Cells",
+          "ref_low": 4.6,
+          "ref_high": 6.2,
+          "pre_value": 3.25
+        },
+        {
+          "lab": "Creatine Kinase, MB Isoenzyme",
+          "ref_low": 0.0,
+          "ref_high": 10.0,
+          "pre_value": 78.0
+        },
+        {
+          "lab": "Phosphate",
+          "ref_low": 2.7,
+          "ref_high": 4.5,
+          "pre_value": 5.3
+        },
+        {
+          "lab": "Hemoglobin",
+          "ref_low": 14.0,
+          "ref_high": 18.0,
+          "pre_value": 10.4
+        },
+        {
+          "lab": "RDW",
+          "ref_low": 10.5,
+          "ref_high": 15.5,
+          "pre_value": 14.4
+        },
+        {
+          "lab": "MCHC",
+          "ref_low": 31.0,
+          "ref_high": 35.0,
+          "pre_value": 33.8
+        },
+        {
+          "lab": "Calcium, Total",
+          "ref_low": 8.4,
+          "ref_high": 10.3,
+          "pre_value": 9.1
+        },
+        {
+          "lab": "Glucose",
+          "ref_low": 70.0,
+          "ref_high": 100.0,
+          "pre_value": 134.0
+        },
+        {
+          "lab": "CK-MB Index",
+          "ref_low": 0.0,
+          "ref_high": 6.0,
+          "pre_value": 12.9
+        },
+        {
+          "lab": "Chloride",
+          "ref_low": 96.0,
+          "ref_high": 108.0,
+          "pre_value": 94.0
+        },
+        {
+          "lab": "Magnesium",
+          "ref_low": 1.6,
+          "ref_high": 2.6,
+          "pre_value": 2.4
+        },
+        {
+          "lab": "Platelet Count",
+          "ref_low": 150.0,
+          "ref_high": 440.0,
+          "pre_value": 273.0
+        },
+        {
+          "lab": "Creatinine",
+          "ref_low": 0.5,
+          "ref_high": 1.2,
+          "pre_value": 5.4
+        },
+        {
+          "lab": "Sodium",
+          "ref_low": 133.0,
+          "ref_high": 145.0,
+          "pre_value": 128.0
+        },
+        {
+          "lab": "Anion Gap",
+          "ref_low": 8.0,
+          "ref_high": 20.0,
+          "pre_value": 17.0
+        },
+        {
+          "lab": "White Blood Cells",
+          "ref_low": 4.0,
+          "ref_high": 11.0,
+          "pre_value": 12.0
+        },
+        {
+          "lab": "PT",
+          "ref_low": 10.4,
+          "ref_high": 13.4,
+          "pre_value": 12.2
+        },
+        {
+          "lab": "Bicarbonate",
+          "ref_low": 22.0,
+          "ref_high": 32.0,
+          "pre_value": 22.0
+        }
+      ]
+    },
+    "c": {
+      "stem": "Two ICU patients (A and B) with similar baselines underwent DIFFERENT interventions. Given the observed post-intervention labs below, identify which patient they belong to and justify using the causal physiological effect of each intervention.",
+      "shared_labs": [
+        "Glucose",
+        "Hematocrit",
+        "Hemoglobin",
+        "INR(PT)",
+        "MCH",
+        "MCHC",
+        "MCV",
+        "PT",
+        "PTT",
+        "Platelet Count",
+        "RDW",
+        "Red Blood Cells",
+        "White Blood Cells"
+      ],
+      "observed_post": [
+        {
+          "lab": "Glucose",
+          "value": 164.0
+        },
+        {
+          "lab": "Hematocrit",
+          "value": 30.1
+        },
+        {
+          "lab": "Hemoglobin",
+          "value": 10.2
+        },
+        {
+          "lab": "INR(PT)",
+          "value": 1.1
+        },
+        {
+          "lab": "MCH",
+          "value": 30.2
+        },
+        {
+          "lab": "MCHC",
+          "value": 33.8
+        },
+        {
+          "lab": "MCV",
+          "value": 89.0
+        },
+        {
+          "lab": "PT",
+          "value": 13.0
+        },
+        {
+          "lab": "PTT",
+          "value": 24.7
+        },
+        {
+          "lab": "Platelet Count",
+          "value": 502.0
+        },
+        {
+          "lab": "RDW",
+          "value": 14.6
+        },
+        {
+          "lab": "Red Blood Cells",
+          "value": 3.37
+        },
+        {
+          "lab": "White Blood Cells",
+          "value": 17.3
+        }
+      ],
+      "patient_A": {
+        "procedure": "Dialysis Catheter",
+        "pre_labs": [
+          {
+            "lab": "MCH",
+            "value": 31.9
+          },
+          {
+            "lab": "MCV",
+            "value": 94.0
+          },
+          {
+            "lab": "PTT",
+            "value": 24.1
+          },
+          {
+            "lab": "Hematocrit",
+            "value": 30.7
+          },
+          {
+            "lab": "INR(PT)",
+            "value": 1.0
+          },
+          {
+            "lab": "Red Blood Cells",
+            "value": 3.25
+          },
+          {
+            "lab": "Hemoglobin",
+            "value": 10.4
+          },
+          {
+            "lab": "RDW",
+            "value": 14.4
+          },
+          {
+            "lab": "MCHC",
+            "value": 33.8
+          },
+          {
+            "lab": "Glucose",
+            "value": 134.0
+          },
+          {
+            "lab": "Platelet Count",
+            "value": 273.0
+          },
+          {
+            "lab": "White Blood Cells",
+            "value": 12.0
+          },
+          {
+            "lab": "PT",
+            "value": 12.2
+          }
+        ]
+      },
+      "patient_B": {
+        "procedure": "Invasive Ventilation",
+        "pre_labs": [
+          {
+            "lab": "MCH",
+            "value": 30.9
+          },
+          {
+            "lab": "MCV",
+            "value": 91.0
+          },
+          {
+            "lab": "PTT",
+            "value": 25.3
+          },
+          {
+            "lab": "Hematocrit",
+            "value": 25.8
+          },
+          {
+            "lab": "Red Blood Cells",
+            "value": 2.82
+          },
+          {
+            "lab": "Hemoglobin",
+            "value": 8.7
+          },
+          {
+            "lab": "RDW",
+            "value": 14.2
+          },
+          {
+            "lab": "MCHC",
+            "value": 33.9
+          },
+          {
+            "lab": "Glucose",
+            "value": 132.0
+          },
+          {
+            "lab": "Platelet Count",
+            "value": 202.0
+          },
+          {
+            "lab": "White Blood Cells",
+            "value": 11.3
+          },
+          {
+            "lab": "PT",
+            "value": 14.1
+          },
+          {
+            "lab": "INR(PT)",
+            "value": 1.3
+          }
+        ]
+      }
+    },
+    "d": {
+      "stem": "At discharge, considering this patient's clinical course, predict whether they will die within one year. Give a Yes/No call, a calibrated confidence (0-1), and a causal risk rationale referencing the patient's specific abnormal values/trends.",
+      "options": [
+        "Yes",
+        "No"
+      ]
+    }
+  }
+}

@@ -1,0 +1,7839 @@
+{
+  "case_id": 55,
+  "patient_id": "115973587",
+  "reversal_type": "falling\u2192rising",
+  "vis_trend": "falling",
+  "gap_hours": 28.7,
+  "n_ctx_trops": 5,
+  "n_gap_labs": 159,
+  "lv_err_pct": 99.3,
+  "trend_extrapolation_correct": false,
+  "question": {
+    "stem": "Patient EHRSHOT subject_id: 115973587\nPrevious Troponin I: 1.8 ng/mL at 2013-01-02 02:42\nLast known Troponin I: 0.1 ng/mL at 2013-02-10 13:30\nVisible troponin trend: falling (most recent readings decreasing)\nTroponin measurements are NOT available after 2013-02-10 13:30.\nAll other labs are available up to 2013-02-11 18:10.\nPredict Troponin I at: 2013-02-11 18:10 (28.7h after last known troponin)",
+    "target_datetime": "2013-02-11 18:10",
+    "last_trop_time": "2013-02-10 13:30",
+    "hours_ahead": 28.7,
+    "visible_trend": "falling"
+  },
+  "ground_truth": {
+    "value": 14.6,
+    "direction": "rising",
+    "last_visible": 0.1,
+    "visible_trend": "falling"
+  },
+  "trop_context": [
+    {
+      "datetime": "2012-12-30 15:16",
+      "value": 0.4,
+      "label": "Troponin I"
+    },
+    {
+      "datetime": "2012-12-30 17:05",
+      "value": 0.5,
+      "label": "Troponin I"
+    },
+    {
+      "datetime": "2012-12-31 02:05",
+      "value": 2.1,
+      "label": "Troponin I"
+    },
+    {
+      "datetime": "2013-01-02 02:42",
+      "value": 1.8,
+      "label": "Troponin I"
+    },
+    {
+      "datetime": "2013-02-10 13:30",
+      "value": 0.1,
+      "label": "Troponin I"
+    }
+  ],
+  "gap_labs": [
+    {
+      "datetime": "2013-02-10 14:00",
+      "label": "Systolic BP",
+      "value": 90.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2013-02-10 14:00",
+      "label": "Systolic BP",
+      "value": 84.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2013-02-10 14:00",
+      "label": "Heart Rate",
+      "value": 105.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2013-02-10 14:23",
+      "label": "Systolic BP",
+      "value": 75.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2013-02-10 14:23",
+      "label": "Systolic BP",
+      "value": 85.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2013-02-10 14:23",
+      "label": "Heart Rate",
+      "value": 121.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2013-02-10 14:23",
+      "label": "Heart Rate",
+      "value": 122.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2013-02-10 14:38",
+      "label": "Systolic BP",
+      "value": 75.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2013-02-10 14:38",
+      "label": "Systolic BP",
+      "value": 88.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2013-02-10 14:38",
+      "label": "Heart Rate",
+      "value": 120.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2013-02-10 14:38",
+      "label": "Heart Rate",
+      "value": 120.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2013-02-10 15:00",
+      "label": "Systolic BP",
+      "value": 82.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2013-02-10 15:00",
+      "label": "Systolic BP",
+      "value": 89.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2013-02-10 15:00",
+      "label": "Heart Rate",
+      "value": 119.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2013-02-10 15:00",
+      "label": "Heart Rate",
+      "value": 119.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2013-02-10 15:05",
+      "label": "Systolic BP",
+      "value": 97.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2013-02-10 15:05",
+      "label": "Heart Rate",
+      "value": 119.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2013-02-10 15:05",
+      "label": "Heart Rate",
+      "value": 119.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2013-02-10 16:00",
+      "label": "Systolic BP",
+      "value": 88.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2013-02-10 16:00",
+      "label": "Heart Rate",
+      "value": 111.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2013-02-10 16:00",
+      "label": "Heart Rate",
+      "value": 111.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2013-02-10 16:10",
+      "label": "Systolic BP",
+      "value": 87.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2013-02-10 16:10",
+      "label": "Heart Rate",
+      "value": 110.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2013-02-10 16:10",
+      "label": "Heart Rate",
+      "value": 110.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2013-02-10 16:20",
+      "label": "Systolic BP",
+      "value": 88.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2013-02-10 16:20",
+      "label": "Heart Rate",
+      "value": 110.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2013-02-10 16:20",
+      "label": "Heart Rate",
+      "value": 110.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2013-02-10 16:34",
+      "label": "Lactate",
+      "value": 6.3,
+      "unit": "mmol/L"
+    },
+    {
+      "datetime": "2013-02-10 16:35",
+      "label": "Systolic BP",
+      "value": 93.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2013-02-10 16:35",
+      "label": "Heart Rate",
+      "value": 108.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2013-02-10 16:35",
+      "label": "Heart Rate",
+      "value": 108.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2013-02-10 16:45",
+      "label": "Systolic BP",
+      "value": 102.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2013-02-10 16:45",
+      "label": "Heart Rate",
+      "value": 102.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2013-02-10 16:45",
+      "label": "Heart Rate",
+      "value": 102.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2013-02-10 16:54",
+      "label": "Systolic BP",
+      "value": 99.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2013-02-10 16:54",
+      "label": "Heart Rate",
+      "value": 104.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2013-02-10 16:54",
+      "label": "Heart Rate",
+      "value": 104.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2013-02-10 17:00",
+      "label": "Systolic BP",
+      "value": 103.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2013-02-10 17:00",
+      "label": "Heart Rate",
+      "value": 105.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2013-02-10 17:00",
+      "label": "Heart Rate",
+      "value": 105.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2013-02-10 17:21",
+      "label": "Hematocrit",
+      "value": 30.5,
+      "unit": "%"
+    },
+    {
+      "datetime": "2013-02-10 17:21",
+      "label": "Hemoglobin",
+      "value": 10.3,
+      "unit": "g/dL"
+    },
+    {
+      "datetime": "2013-02-10 19:00",
+      "label": "Creatinine",
+      "value": 0.8,
+      "unit": "mg/dL"
+    },
+    {
+      "datetime": "2013-02-10 19:00",
+      "label": "Potassium",
+      "value": 3.0,
+      "unit": "mmol/L"
+    },
+    {
+      "datetime": "2013-02-10 19:00",
+      "label": "BUN",
+      "value": 16.0,
+      "unit": "mg/dL"
+    },
+    {
+      "datetime": "2013-02-10 19:00",
+      "label": "Lactate",
+      "value": 6.0,
+      "unit": "mmol/L"
+    },
+    {
+      "datetime": "2013-02-10 19:00",
+      "label": "Systolic BP",
+      "value": 118.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2013-02-10 19:00",
+      "label": "Heart Rate",
+      "value": 94.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2013-02-10 19:57",
+      "label": "Heart Rate",
+      "value": 90.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2013-02-10 20:00",
+      "label": "Systolic BP",
+      "value": 103.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2013-02-10 20:00",
+      "label": "Heart Rate",
+      "value": 88.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2013-02-10 21:00",
+      "label": "Systolic BP",
+      "value": 113.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2013-02-10 21:00",
+      "label": "Heart Rate",
+      "value": 86.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2013-02-10 21:40",
+      "label": "Hematocrit",
+      "value": 30.5,
+      "unit": "%"
+    },
+    {
+      "datetime": "2013-02-10 21:40",
+      "label": "Hemoglobin",
+      "value": 10.4,
+      "unit": "g/dL"
+    },
+    {
+      "datetime": "2013-02-10 22:00",
+      "label": "Systolic BP",
+      "value": 100.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2013-02-10 22:00",
+      "label": "Heart Rate",
+      "value": 98.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2013-02-10 23:00",
+      "label": "Systolic BP",
+      "value": 115.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2013-02-10 23:00",
+      "label": "Heart Rate",
+      "value": 90.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2013-02-10 23:50",
+      "label": "Creatinine",
+      "value": 0.8,
+      "unit": "mg/dL"
+    },
+    {
+      "datetime": "2013-02-10 23:50",
+      "label": "Potassium",
+      "value": 4.1,
+      "unit": "mmol/L"
+    },
+    {
+      "datetime": "2013-02-10 23:50",
+      "label": "BUN",
+      "value": 18.0,
+      "unit": "mg/dL"
+    },
+    {
+      "datetime": "2013-02-10 23:50",
+      "label": "Lactate",
+      "value": 5.2,
+      "unit": "mmol/L"
+    },
+    {
+      "datetime": "2013-02-11 00:00",
+      "label": "Systolic BP",
+      "value": 128.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2013-02-11 00:00",
+      "label": "Heart Rate",
+      "value": 83.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2013-02-11 00:10",
+      "label": "Heart Rate",
+      "value": 85.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2013-02-11 01:00",
+      "label": "Systolic BP",
+      "value": 121.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2013-02-11 01:00",
+      "label": "Heart Rate",
+      "value": 81.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2013-02-11 02:00",
+      "label": "Systolic BP",
+      "value": 135.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2013-02-11 02:00",
+      "label": "Heart Rate",
+      "value": 75.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2013-02-11 03:00",
+      "label": "Systolic BP",
+      "value": 147.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2013-02-11 03:00",
+      "label": "Heart Rate",
+      "value": 64.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2013-02-11 04:00",
+      "label": "Systolic BP",
+      "value": 132.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2013-02-11 04:00",
+      "label": "Heart Rate",
+      "value": 68.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2013-02-11 04:17",
+      "label": "Heart Rate",
+      "value": 73.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2013-02-11 04:55",
+      "label": "Lactate",
+      "value": 3.2,
+      "unit": "mmol/L"
+    },
+    {
+      "datetime": "2013-02-11 04:55",
+      "label": "Hematocrit",
+      "value": 25.8,
+      "unit": "%"
+    },
+    {
+      "datetime": "2013-02-11 04:55",
+      "label": "Hemoglobin",
+      "value": 8.7,
+      "unit": "g/dL"
+    },
+    {
+      "datetime": "2013-02-11 05:00",
+      "label": "Systolic BP",
+      "value": 121.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2013-02-11 05:00",
+      "label": "Heart Rate",
+      "value": 73.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2013-02-11 05:00",
+      "label": "Heart Rate",
+      "value": 73.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2013-02-11 06:00",
+      "label": "Systolic BP",
+      "value": 97.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2013-02-11 06:00",
+      "label": "Heart Rate",
+      "value": 85.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2013-02-11 06:52",
+      "label": "Systolic BP",
+      "value": 95.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2013-02-11 06:52",
+      "label": "Heart Rate",
+      "value": 88.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2013-02-11 06:56",
+      "label": "Systolic BP",
+      "value": 63.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2013-02-11 06:56",
+      "label": "Heart Rate",
+      "value": 96.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2013-02-11 07:00",
+      "label": "Systolic BP",
+      "value": 64.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2013-02-11 07:00",
+      "label": "Heart Rate",
+      "value": 95.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2013-02-11 07:05",
+      "label": "Systolic BP",
+      "value": 66.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2013-02-11 07:05",
+      "label": "Heart Rate",
+      "value": 107.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2013-02-11 07:10",
+      "label": "Systolic BP",
+      "value": 67.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2013-02-11 07:10",
+      "label": "Heart Rate",
+      "value": 109.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2013-02-11 07:30",
+      "label": "Systolic BP",
+      "value": 88.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2013-02-11 07:30",
+      "label": "Heart Rate",
+      "value": 112.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2013-02-11 08:00",
+      "label": "Systolic BP",
+      "value": 88.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2013-02-11 08:00",
+      "label": "Heart Rate",
+      "value": 104.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2013-02-11 08:00",
+      "label": "Heart Rate",
+      "value": 104.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2013-02-11 08:30",
+      "label": "Systolic BP",
+      "value": 95.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2013-02-11 08:30",
+      "label": "Heart Rate",
+      "value": 110.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2013-02-11 08:30",
+      "label": "Heart Rate",
+      "value": 110.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2013-02-11 09:00",
+      "label": "Systolic BP",
+      "value": 111.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2013-02-11 09:00",
+      "label": "Heart Rate",
+      "value": 105.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2013-02-11 09:20",
+      "label": "Hematocrit",
+      "value": 25.4,
+      "unit": "%"
+    },
+    {
+      "datetime": "2013-02-11 09:20",
+      "label": "Hemoglobin",
+      "value": 8.5,
+      "unit": "g/dL"
+    },
+    {
+      "datetime": "2013-02-11 10:00",
+      "label": "Systolic BP",
+      "value": 118.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2013-02-11 10:00",
+      "label": "Heart Rate",
+      "value": 89.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2013-02-11 10:30",
+      "label": "Creatinine",
+      "value": 0.6,
+      "unit": "mg/dL"
+    },
+    {
+      "datetime": "2013-02-11 10:30",
+      "label": "Potassium",
+      "value": 3.7,
+      "unit": "mmol/L"
+    },
+    {
+      "datetime": "2013-02-11 10:30",
+      "label": "BUN",
+      "value": 18.0,
+      "unit": "mg/dL"
+    },
+    {
+      "datetime": "2013-02-11 10:30",
+      "label": "Systolic BP",
+      "value": 96.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2013-02-11 10:30",
+      "label": "Heart Rate",
+      "value": 104.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2013-02-11 11:05",
+      "label": "Systolic BP",
+      "value": 101.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2013-02-11 11:05",
+      "label": "Heart Rate",
+      "value": 100.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2013-02-11 12:00",
+      "label": "Systolic BP",
+      "value": 136.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2013-02-11 12:00",
+      "label": "Heart Rate",
+      "value": 123.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2013-02-11 12:00",
+      "label": "Heart Rate",
+      "value": 79.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2013-02-11 12:45",
+      "label": "Systolic BP",
+      "value": 113.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2013-02-11 12:45",
+      "label": "Heart Rate",
+      "value": 98.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2013-02-11 12:55",
+      "label": "Heart Rate",
+      "value": 98.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2013-02-11 13:15",
+      "label": "Systolic BP",
+      "value": 126.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2013-02-11 13:15",
+      "label": "Heart Rate",
+      "value": 79.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2013-02-11 13:30",
+      "label": "Systolic BP",
+      "value": 130.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2013-02-11 13:30",
+      "label": "Heart Rate",
+      "value": 79.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2013-02-11 13:30",
+      "label": "Heart Rate",
+      "value": 80.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2013-02-11 13:45",
+      "label": "Systolic BP",
+      "value": 135.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2013-02-11 13:45",
+      "label": "Heart Rate",
+      "value": 74.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2013-02-11 13:45",
+      "label": "Heart Rate",
+      "value": 73.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2013-02-11 14:00",
+      "label": "Systolic BP",
+      "value": 144.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2013-02-11 14:00",
+      "label": "Heart Rate",
+      "value": 65.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2013-02-11 14:00",
+      "label": "Heart Rate",
+      "value": 64.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2013-02-11 14:15",
+      "label": "Systolic BP",
+      "value": 142.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2013-02-11 14:15",
+      "label": "Heart Rate",
+      "value": 65.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2013-02-11 14:15",
+      "label": "Heart Rate",
+      "value": 65.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2013-02-11 14:20",
+      "label": "Lactate",
+      "value": 1.7,
+      "unit": "mmol/L"
+    },
+    {
+      "datetime": "2013-02-11 14:20",
+      "label": "Hematocrit",
+      "value": 28.6,
+      "unit": "%"
+    },
+    {
+      "datetime": "2013-02-11 14:30",
+      "label": "Systolic BP",
+      "value": 143.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2013-02-11 14:30",
+      "label": "Heart Rate",
+      "value": 61.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2013-02-11 14:30",
+      "label": "Heart Rate",
+      "value": 62.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2013-02-11 14:49",
+      "label": "Systolic BP",
+      "value": 147.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2013-02-11 14:49",
+      "label": "Systolic BP",
+      "value": 146.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2013-02-11 14:49",
+      "label": "Heart Rate",
+      "value": 55.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2013-02-11 14:49",
+      "label": "Heart Rate",
+      "value": 57.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2013-02-11 15:00",
+      "label": "Systolic BP",
+      "value": 140.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2013-02-11 15:00",
+      "label": "Heart Rate",
+      "value": 62.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2013-02-11 15:00",
+      "label": "Heart Rate",
+      "value": 62.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2013-02-11 16:00",
+      "label": "Systolic BP",
+      "value": 145.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2013-02-11 16:00",
+      "label": "Heart Rate",
+      "value": 55.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2013-02-11 16:00",
+      "label": "Heart Rate",
+      "value": 55.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2013-02-11 17:00",
+      "label": "Systolic BP",
+      "value": 133.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2013-02-11 17:00",
+      "label": "Heart Rate",
+      "value": 69.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2013-02-11 17:00",
+      "label": "Heart Rate",
+      "value": 69.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2013-02-11 18:00",
+      "label": "Systolic BP",
+      "value": 133.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2013-02-11 18:00",
+      "label": "Heart Rate",
+      "value": 70.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2013-02-11 18:00",
+      "label": "Heart Rate",
+      "value": 69.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2013-02-11 18:10",
+      "label": "Lactate",
+      "value": 1.7,
+      "unit": "mmol/L"
+    },
+    {
+      "datetime": "2013-02-11 18:10",
+      "label": "Hematocrit",
+      "value": 29.1,
+      "unit": "%"
+    },
+    {
+      "datetime": "2013-02-11 18:10",
+      "label": "Hemoglobin",
+      "value": 9.8,
+      "unit": "g/dL"
+    }
+  ],
+  "lab_timeline": [
+    {
+      "datetime": "2013-02-10 19:25",
+      "label": "20570-8",
+      "value": 27.0,
+      "unit": "%"
+    },
+    {
+      "datetime": "2013-02-10 19:25",
+      "label": "22735-5",
+      "value": 17.7,
+      "unit": "mmol/L"
+    },
+    {
+      "datetime": "2013-02-10 19:25",
+      "label": "2713-6",
+      "value": 97.0,
+      "unit": "%"
+    },
+    {
+      "datetime": "2013-02-10 19:25",
+      "label": "2947-0",
+      "value": 143.0,
+      "unit": "mmol/L"
+    },
+    {
+      "datetime": "2013-02-10 19:25",
+      "label": "30318-0",
+      "value": 9.0,
+      "unit": "mmol/L"
+    },
+    {
+      "datetime": "2013-02-10 19:25",
+      "label": "34705-4",
+      "value": 37.9,
+      "unit": "mmHg"
+    },
+    {
+      "datetime": "2013-02-10 19:25",
+      "label": "49701-6",
+      "value": 7.28,
+      "unit": ""
+    },
+    {
+      "datetime": "2013-02-10 19:25",
+      "label": "6298-4",
+      "value": 3.0,
+      "unit": "mmol/L"
+    },
+    {
+      "datetime": "2013-02-10 19:57",
+      "label": "Heart Rate",
+      "value": 90.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2013-02-10 19:57",
+      "label": "Resp Rate",
+      "value": 32.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2013-02-10 20:00",
+      "label": "60985-9",
+      "value": 6.0,
+      "unit": "mmHg"
+    },
+    {
+      "datetime": "2013-02-10 20:00",
+      "label": "Systolic BP",
+      "value": 103.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2013-02-10 20:00",
+      "label": "Heart Rate",
+      "value": 88.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2013-02-10 20:00",
+      "label": "Resp Rate",
+      "value": 32.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2013-02-10 20:00",
+      "label": "IO_OUT",
+      "value": 6.0,
+      "unit": "ml"
+    },
+    {
+      "datetime": "2013-02-10 20:48",
+      "label": "19254-2",
+      "value": 79.0,
+      "unit": "mmHg"
+    },
+    {
+      "datetime": "2013-02-10 20:48",
+      "label": "1994-3",
+      "value": 1.14,
+      "unit": "mmol/L"
+    },
+    {
+      "datetime": "2013-02-10 20:48",
+      "label": "20509-6",
+      "value": 9.5,
+      "unit": "g/dL"
+    },
+    {
+      "datetime": "2013-02-10 20:48",
+      "label": "20570-8",
+      "value": 28.0,
+      "unit": "%"
+    },
+    {
+      "datetime": "2013-02-10 20:48",
+      "label": "22735-5",
+      "value": 17.2,
+      "unit": "mmol/L"
+    },
+    {
+      "datetime": "2013-02-10 20:48",
+      "label": "2713-6",
+      "value": 94.0,
+      "unit": "%"
+    },
+    {
+      "datetime": "2013-02-10 20:48",
+      "label": "2947-0",
+      "value": 144.0,
+      "unit": "mmol/L"
+    },
+    {
+      "datetime": "2013-02-10 20:48",
+      "label": "30318-0",
+      "value": 10.0,
+      "unit": "mmol/L"
+    },
+    {
+      "datetime": "2013-02-10 20:48",
+      "label": "34705-4",
+      "value": 37.3,
+      "unit": "mmHg"
+    },
+    {
+      "datetime": "2013-02-10 20:48",
+      "label": "49701-6",
+      "value": 7.27,
+      "unit": ""
+    },
+    {
+      "datetime": "2013-02-10 20:48",
+      "label": "6298-4",
+      "value": 3.9,
+      "unit": "mmol/L"
+    },
+    {
+      "datetime": "2013-02-10 21:00",
+      "label": "60985-9",
+      "value": 7.0,
+      "unit": "mmHg"
+    },
+    {
+      "datetime": "2013-02-10 21:00",
+      "label": "Systolic BP",
+      "value": 113.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2013-02-10 21:00",
+      "label": "Heart Rate",
+      "value": 86.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2013-02-10 21:00",
+      "label": "Resp Rate",
+      "value": 32.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2013-02-10 21:00",
+      "label": "IO_OUT",
+      "value": 132.0,
+      "unit": "ml"
+    },
+    {
+      "datetime": "2013-02-10 21:40",
+      "label": "PTT",
+      "value": 27.7,
+      "unit": "sec"
+    },
+    {
+      "datetime": "2013-02-10 21:40",
+      "label": "20584-9",
+      "value": 17.9,
+      "unit": "K/uL"
+    },
+    {
+      "datetime": "2013-02-10 21:40",
+      "label": "Hematocrit",
+      "value": 30.5,
+      "unit": "%"
+    },
+    {
+      "datetime": "2013-02-10 21:40",
+      "label": "PT",
+      "value": 14.8,
+      "unit": "sec"
+    },
+    {
+      "datetime": "2013-02-10 21:40",
+      "label": "5905-5",
+      "value": 4.9,
+      "unit": "%"
+    },
+    {
+      "datetime": "2013-02-10 21:40",
+      "label": "INR",
+      "value": 1.2,
+      "unit": "INR"
+    },
+    {
+      "datetime": "2013-02-10 21:40",
+      "label": "704-7",
+      "value": 0.01,
+      "unit": "K/uL"
+    },
+    {
+      "datetime": "2013-02-10 21:40",
+      "label": "706-2",
+      "value": 0.1,
+      "unit": "%"
+    },
+    {
+      "datetime": "2013-02-10 21:40",
+      "label": "711-2",
+      "value": 0.01,
+      "unit": "K/uL"
+    },
+    {
+      "datetime": "2013-02-10 21:40",
+      "label": "713-8",
+      "value": 0.0,
+      "unit": "%"
+    },
+    {
+      "datetime": "2013-02-10 21:40",
+      "label": "Hemoglobin",
+      "value": 10.4,
+      "unit": "g/dL"
+    },
+    {
+      "datetime": "2013-02-10 21:40",
+      "label": "731-0",
+      "value": 0.45,
+      "unit": "K/uL"
+    },
+    {
+      "datetime": "2013-02-10 21:40",
+      "label": "736-9",
+      "value": 2.5,
+      "unit": "%"
+    },
+    {
+      "datetime": "2013-02-10 21:40",
+      "label": "742-7",
+      "value": 0.88,
+      "unit": "K/uL"
+    },
+    {
+      "datetime": "2013-02-10 21:40",
+      "label": "751-8",
+      "value": 16.57,
+      "unit": "K/uL"
+    },
+    {
+      "datetime": "2013-02-10 21:40",
+      "label": "770-8",
+      "value": 92.5,
+      "unit": "%"
+    },
+    {
+      "datetime": "2013-02-10 21:40",
+      "label": "Platelets",
+      "value": 149.0,
+      "unit": "K/uL"
+    },
+    {
+      "datetime": "2013-02-10 21:40",
+      "label": "785-6",
+      "value": 31.8,
+      "unit": "pg"
+    },
+    {
+      "datetime": "2013-02-10 21:40",
+      "label": "786-4",
+      "value": 33.9,
+      "unit": "g/dL"
+    },
+    {
+      "datetime": "2013-02-10 21:40",
+      "label": "787-2",
+      "value": 93.6,
+      "unit": "fL"
+    },
+    {
+      "datetime": "2013-02-10 21:40",
+      "label": "788-0",
+      "value": 15.8,
+      "unit": "%"
+    },
+    {
+      "datetime": "2013-02-10 21:40",
+      "label": "789-8",
+      "value": 3.26,
+      "unit": "MIL/uL"
+    },
+    {
+      "datetime": "2013-02-10 22:00",
+      "label": "60985-9",
+      "value": 6.0,
+      "unit": "mmHg"
+    },
+    {
+      "datetime": "2013-02-10 22:00",
+      "label": "Systolic BP",
+      "value": 100.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2013-02-10 22:00",
+      "label": "Heart Rate",
+      "value": 98.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2013-02-10 22:00",
+      "label": "Resp Rate",
+      "value": 32.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2013-02-10 22:00",
+      "label": "IO_OUT",
+      "value": 377.0,
+      "unit": "ml"
+    },
+    {
+      "datetime": "2013-02-10 23:00",
+      "label": "60985-9",
+      "value": 12.0,
+      "unit": "mmHg"
+    },
+    {
+      "datetime": "2013-02-10 23:00",
+      "label": "Systolic BP",
+      "value": 115.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2013-02-10 23:00",
+      "label": "Heart Rate",
+      "value": 90.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2013-02-10 23:00",
+      "label": "Resp Rate",
+      "value": 32.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2013-02-10 23:00",
+      "label": "IO_OUT",
+      "value": 276.0,
+      "unit": "ml"
+    },
+    {
+      "datetime": "2013-02-10 23:50",
+      "label": "ALT",
+      "value": 30.0,
+      "unit": "U/L"
+    },
+    {
+      "datetime": "2013-02-10 23:50",
+      "label": "Albumin",
+      "value": 2.3,
+      "unit": "g/dL"
+    },
+    {
+      "datetime": "2013-02-10 23:50",
+      "label": "Calcium",
+      "value": 7.7,
+      "unit": "mg/dL"
+    },
+    {
+      "datetime": "2013-02-10 23:50",
+      "label": "AST",
+      "value": 61.0,
+      "unit": "U/L"
+    },
+    {
+      "datetime": "2013-02-10 23:50",
+      "label": "Total Bilirubin",
+      "value": 1.4,
+      "unit": "mg/dL"
+    },
+    {
+      "datetime": "2013-02-10 23:50",
+      "label": "1995-0",
+      "value": 1.12,
+      "unit": "mmol/L"
+    },
+    {
+      "datetime": "2013-02-10 23:50",
+      "label": "2028-9",
+      "value": 17.0,
+      "unit": "mmol/L"
+    },
+    {
+      "datetime": "2013-02-10 23:50",
+      "label": "2075-0",
+      "value": 112.0,
+      "unit": "mmol/L"
+    },
+    {
+      "datetime": "2013-02-10 23:50",
+      "label": "CK",
+      "value": 525.0,
+      "unit": "U/L"
+    },
+    {
+      "datetime": "2013-02-10 23:50",
+      "label": "Creatinine",
+      "value": 0.8,
+      "unit": "mg/dL"
+    },
+    {
+      "datetime": "2013-02-10 23:50",
+      "label": "2336-6",
+      "value": 2.4,
+      "unit": "g/dL"
+    },
+    {
+      "datetime": "2013-02-10 23:50",
+      "label": "Glucose",
+      "value": 313.0,
+      "unit": "mg/dL"
+    },
+    {
+      "datetime": "2013-02-10 23:50",
+      "label": "2753-2",
+      "value": 7.37,
+      "unit": ""
+    },
+    {
+      "datetime": "2013-02-10 23:50",
+      "label": "Potassium",
+      "value": 4.1,
+      "unit": "mmol/L"
+    },
+    {
+      "datetime": "2013-02-10 23:50",
+      "label": "2885-2",
+      "value": 4.7,
+      "unit": "g/dL"
+    },
+    {
+      "datetime": "2013-02-10 23:50",
+      "label": "Sodium",
+      "value": 141.0,
+      "unit": "mmol/L"
+    },
+    {
+      "datetime": "2013-02-10 23:50",
+      "label": "3024-7",
+      "value": 1.2,
+      "unit": "ng/dL"
+    },
+    {
+      "datetime": "2013-02-10 23:50",
+      "label": "BUN",
+      "value": 18.0,
+      "unit": "mg/dL"
+    },
+    {
+      "datetime": "2013-02-10 23:50",
+      "label": "Lactate",
+      "value": 5.2,
+      "unit": "mmol/L"
+    },
+    {
+      "datetime": "2013-02-10 23:50",
+      "label": "33037-3",
+      "value": 12.0,
+      "unit": "mmol/L"
+    },
+    {
+      "datetime": "2013-02-10 23:50",
+      "label": "Alk Phosphatase",
+      "value": 55.0,
+      "unit": "U/L"
+    },
+    {
+      "datetime": "2013-02-10 23:55",
+      "label": "19254-2",
+      "value": 113.0,
+      "unit": "mmHg"
+    },
+    {
+      "datetime": "2013-02-10 23:55",
+      "label": "1994-3",
+      "value": 1.22,
+      "unit": "mmol/L"
+    },
+    {
+      "datetime": "2013-02-10 23:55",
+      "label": "20509-6",
+      "value": 9.2,
+      "unit": "g/dL"
+    },
+    {
+      "datetime": "2013-02-10 23:55",
+      "label": "20570-8",
+      "value": 27.0,
+      "unit": "%"
+    },
+    {
+      "datetime": "2013-02-10 23:55",
+      "label": "22735-5",
+      "value": 17.7,
+      "unit": "mmol/L"
+    },
+    {
+      "datetime": "2013-02-10 23:55",
+      "label": "2713-6",
+      "value": 98.0,
+      "unit": "%"
+    },
+    {
+      "datetime": "2013-02-10 23:55",
+      "label": "2947-0",
+      "value": 144.0,
+      "unit": "mmol/L"
+    },
+    {
+      "datetime": "2013-02-10 23:55",
+      "label": "30318-0",
+      "value": 9.0,
+      "unit": "mmol/L"
+    },
+    {
+      "datetime": "2013-02-10 23:55",
+      "label": "34705-4",
+      "value": 39.2,
+      "unit": "mmHg"
+    },
+    {
+      "datetime": "2013-02-10 23:55",
+      "label": "49701-6",
+      "value": 7.26,
+      "unit": ""
+    },
+    {
+      "datetime": "2013-02-10 23:55",
+      "label": "6298-4",
+      "value": 4.1,
+      "unit": "mmol/L"
+    },
+    {
+      "datetime": "2013-02-11 00:00",
+      "label": "60985-9",
+      "value": 10.0,
+      "unit": "mmHg"
+    },
+    {
+      "datetime": "2013-02-11 00:00",
+      "label": "Systolic BP",
+      "value": 128.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2013-02-11 00:00",
+      "label": "Heart Rate",
+      "value": 83.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2013-02-11 00:00",
+      "label": "Resp Rate",
+      "value": 32.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2013-02-11 00:00",
+      "label": "IO_OUT",
+      "value": 147.0,
+      "unit": "ml"
+    },
+    {
+      "datetime": "2013-02-11 00:09",
+      "label": "1994-3",
+      "value": 1.24,
+      "unit": "mmol/L"
+    },
+    {
+      "datetime": "2013-02-11 00:09",
+      "label": "20509-6",
+      "value": 8.8,
+      "unit": "g/dL"
+    },
+    {
+      "datetime": "2013-02-11 00:09",
+      "label": "20570-8",
+      "value": 26.0,
+      "unit": "%"
+    },
+    {
+      "datetime": "2013-02-11 00:09",
+      "label": "2947-0",
+      "value": 145.0,
+      "unit": "mmol/L"
+    },
+    {
+      "datetime": "2013-02-11 00:09",
+      "label": "30318-0",
+      "value": 10.0,
+      "unit": "mmol/L"
+    },
+    {
+      "datetime": "2013-02-11 00:09",
+      "label": "6298-4",
+      "value": 3.8,
+      "unit": "mmol/L"
+    },
+    {
+      "datetime": "2013-02-11 00:10",
+      "label": "Heart Rate",
+      "value": 85.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2013-02-11 00:10",
+      "label": "Resp Rate",
+      "value": 32.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2013-02-11 01:00",
+      "label": "Systolic BP",
+      "value": 121.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2013-02-11 01:00",
+      "label": "Heart Rate",
+      "value": 81.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2013-02-11 01:00",
+      "label": "Resp Rate",
+      "value": 32.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2013-02-11 01:00",
+      "label": "IO_OUT",
+      "value": 114.0,
+      "unit": "ml"
+    },
+    {
+      "datetime": "2013-02-11 01:32",
+      "label": "19254-2",
+      "value": 121.0,
+      "unit": "mmHg"
+    },
+    {
+      "datetime": "2013-02-11 01:32",
+      "label": "1994-3",
+      "value": 1.2,
+      "unit": "mmol/L"
+    },
+    {
+      "datetime": "2013-02-11 01:32",
+      "label": "20509-6",
+      "value": 8.5,
+      "unit": "g/dL"
+    },
+    {
+      "datetime": "2013-02-11 01:32",
+      "label": "20570-8",
+      "value": 25.0,
+      "unit": "%"
+    },
+    {
+      "datetime": "2013-02-11 01:32",
+      "label": "22735-5",
+      "value": 21.7,
+      "unit": "mmol/L"
+    },
+    {
+      "datetime": "2013-02-11 01:32",
+      "label": "2713-6",
+      "value": 98.0,
+      "unit": "%"
+    },
+    {
+      "datetime": "2013-02-11 01:32",
+      "label": "2947-0",
+      "value": 145.0,
+      "unit": "mmol/L"
+    },
+    {
+      "datetime": "2013-02-11 01:32",
+      "label": "30318-0",
+      "value": 4.0,
+      "unit": "mmol/L"
+    },
+    {
+      "datetime": "2013-02-11 01:32",
+      "label": "34705-4",
+      "value": 39.9,
+      "unit": "mmHg"
+    },
+    {
+      "datetime": "2013-02-11 01:32",
+      "label": "49701-6",
+      "value": 7.34,
+      "unit": ""
+    },
+    {
+      "datetime": "2013-02-11 01:32",
+      "label": "6298-4",
+      "value": 4.5,
+      "unit": "mmol/L"
+    },
+    {
+      "datetime": "2013-02-11 02:00",
+      "label": "60985-9",
+      "value": 10.0,
+      "unit": "mmHg"
+    },
+    {
+      "datetime": "2013-02-11 02:00",
+      "label": "Systolic BP",
+      "value": 135.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2013-02-11 02:00",
+      "label": "Heart Rate",
+      "value": 75.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2013-02-11 02:00",
+      "label": "Resp Rate",
+      "value": 32.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2013-02-11 03:00",
+      "label": "60985-9",
+      "value": 10.0,
+      "unit": "mmHg"
+    },
+    {
+      "datetime": "2013-02-11 03:00",
+      "label": "Systolic BP",
+      "value": 147.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2013-02-11 03:00",
+      "label": "Heart Rate",
+      "value": 64.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2013-02-11 03:00",
+      "label": "Resp Rate",
+      "value": 32.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2013-02-11 03:00",
+      "label": "IO_OUT",
+      "value": 68.0,
+      "unit": "ml"
+    },
+    {
+      "datetime": "2013-02-11 03:48",
+      "label": "Weight",
+      "value": 2451.2,
+      "unit": ""
+    },
+    {
+      "datetime": "2013-02-11 03:48",
+      "label": "8277-6",
+      "value": 1.83,
+      "unit": "sq meters"
+    },
+    {
+      "datetime": "2013-02-11 04:00",
+      "label": "60985-9",
+      "value": 8.0,
+      "unit": "mmHg"
+    },
+    {
+      "datetime": "2013-02-11 04:00",
+      "label": "Systolic BP",
+      "value": 132.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2013-02-11 04:00",
+      "label": "Heart Rate",
+      "value": 68.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2013-02-11 04:00",
+      "label": "Resp Rate",
+      "value": 32.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2013-02-11 04:00",
+      "label": "IO_OUT",
+      "value": 39.0,
+      "unit": "ml"
+    },
+    {
+      "datetime": "2013-02-11 04:06",
+      "label": "19254-2",
+      "value": 98.0,
+      "unit": "mmHg"
+    },
+    {
+      "datetime": "2013-02-11 04:06",
+      "label": "1994-3",
+      "value": 1.16,
+      "unit": "mmol/L"
+    },
+    {
+      "datetime": "2013-02-11 04:06",
+      "label": "20509-6",
+      "value": 8.5,
+      "unit": "g/dL"
+    },
+    {
+      "datetime": "2013-02-11 04:06",
+      "label": "20570-8",
+      "value": 25.0,
+      "unit": "%"
+    },
+    {
+      "datetime": "2013-02-11 04:06",
+      "label": "22735-5",
+      "value": 19.9,
+      "unit": "mmol/L"
+    },
+    {
+      "datetime": "2013-02-11 04:06",
+      "label": "2713-6",
+      "value": 98.0,
+      "unit": "%"
+    },
+    {
+      "datetime": "2013-02-11 04:06",
+      "label": "2947-0",
+      "value": 141.0,
+      "unit": "mmol/L"
+    },
+    {
+      "datetime": "2013-02-11 04:06",
+      "label": "30318-0",
+      "value": 5.0,
+      "unit": "mmol/L"
+    },
+    {
+      "datetime": "2013-02-11 04:06",
+      "label": "34705-4",
+      "value": 31.3,
+      "unit": "mmHg"
+    },
+    {
+      "datetime": "2013-02-11 04:06",
+      "label": "49701-6",
+      "value": 7.41,
+      "unit": ""
+    },
+    {
+      "datetime": "2013-02-11 04:06",
+      "label": "6298-4",
+      "value": 4.7,
+      "unit": "mmol/L"
+    },
+    {
+      "datetime": "2013-02-11 04:17",
+      "label": "Heart Rate",
+      "value": 73.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2013-02-11 04:17",
+      "label": "Resp Rate",
+      "value": 25.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2013-02-11 04:55",
+      "label": "PTT",
+      "value": 29.4,
+      "unit": "sec"
+    },
+    {
+      "datetime": "2013-02-11 04:55",
+      "label": "20584-9",
+      "value": 12.7,
+      "unit": "K/uL"
+    },
+    {
+      "datetime": "2013-02-11 04:55",
+      "label": "Lactate",
+      "value": 3.2,
+      "unit": "mmol/L"
+    },
+    {
+      "datetime": "2013-02-11 04:55",
+      "label": "Hematocrit",
+      "value": 25.8,
+      "unit": "%"
+    },
+    {
+      "datetime": "2013-02-11 04:55",
+      "label": "5905-5",
+      "value": 4.9,
+      "unit": "%"
+    },
+    {
+      "datetime": "2013-02-11 04:55",
+      "label": "704-7",
+      "value": 0.0,
+      "unit": "K/uL"
+    },
+    {
+      "datetime": "2013-02-11 04:55",
+      "label": "706-2",
+      "value": 0.0,
+      "unit": "%"
+    },
+    {
+      "datetime": "2013-02-11 04:55",
+      "label": "711-2",
+      "value": 0.0,
+      "unit": "K/uL"
+    },
+    {
+      "datetime": "2013-02-11 04:55",
+      "label": "713-8",
+      "value": 0.0,
+      "unit": "%"
+    },
+    {
+      "datetime": "2013-02-11 04:55",
+      "label": "Hemoglobin",
+      "value": 8.7,
+      "unit": "g/dL"
+    },
+    {
+      "datetime": "2013-02-11 04:55",
+      "label": "731-0",
+      "value": 0.54,
+      "unit": "K/uL"
+    },
+    {
+      "datetime": "2013-02-11 04:55",
+      "label": "736-9",
+      "value": 4.3,
+      "unit": "%"
+    },
+    {
+      "datetime": "2013-02-11 04:55",
+      "label": "742-7",
+      "value": 0.63,
+      "unit": "K/uL"
+    },
+    {
+      "datetime": "2013-02-11 04:55",
+      "label": "751-8",
+      "value": 11.53,
+      "unit": "K/uL"
+    },
+    {
+      "datetime": "2013-02-11 04:55",
+      "label": "770-8",
+      "value": 90.8,
+      "unit": "%"
+    },
+    {
+      "datetime": "2013-02-11 04:55",
+      "label": "Platelets",
+      "value": 108.0,
+      "unit": "K/uL"
+    },
+    {
+      "datetime": "2013-02-11 04:55",
+      "label": "785-6",
+      "value": 30.7,
+      "unit": "pg"
+    },
+    {
+      "datetime": "2013-02-11 04:55",
+      "label": "786-4",
+      "value": 33.6,
+      "unit": "g/dL"
+    },
+    {
+      "datetime": "2013-02-11 04:55",
+      "label": "787-2",
+      "value": 91.4,
+      "unit": "fL"
+    },
+    {
+      "datetime": "2013-02-11 04:55",
+      "label": "788-0",
+      "value": 17.5,
+      "unit": "%"
+    },
+    {
+      "datetime": "2013-02-11 04:55",
+      "label": "789-8",
+      "value": 2.82,
+      "unit": "MIL/uL"
+    },
+    {
+      "datetime": "2013-02-11 05:00",
+      "label": "60985-9",
+      "value": 7.0,
+      "unit": "mmHg"
+    },
+    {
+      "datetime": "2013-02-11 05:00",
+      "label": "Systolic BP",
+      "value": 121.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2013-02-11 05:00",
+      "label": "8634-8",
+      "value": 440.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2013-02-11 05:00",
+      "label": "8636-3",
+      "value": 472.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2013-02-11 05:00",
+      "label": "Heart Rate",
+      "value": 73.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2013-02-11 05:00",
+      "label": "Heart Rate",
+      "value": 73.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2013-02-11 05:00",
+      "label": "Resp Rate",
+      "value": 25.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2013-02-11 05:18",
+      "label": "19254-2",
+      "value": 72.0,
+      "unit": "mmHg"
+    },
+    {
+      "datetime": "2013-02-11 05:18",
+      "label": "1994-3",
+      "value": 1.2,
+      "unit": "mmol/L"
+    },
+    {
+      "datetime": "2013-02-11 05:18",
+      "label": "20509-6",
+      "value": 8.5,
+      "unit": "g/dL"
+    },
+    {
+      "datetime": "2013-02-11 05:18",
+      "label": "20570-8",
+      "value": 25.0,
+      "unit": "%"
+    },
+    {
+      "datetime": "2013-02-11 05:18",
+      "label": "22735-5",
+      "value": 20.8,
+      "unit": "mmol/L"
+    },
+    {
+      "datetime": "2013-02-11 05:18",
+      "label": "2713-6",
+      "value": 95.0,
+      "unit": "%"
+    },
+    {
+      "datetime": "2013-02-11 05:18",
+      "label": "2947-0",
+      "value": 141.0,
+      "unit": "mmol/L"
+    },
+    {
+      "datetime": "2013-02-11 05:18",
+      "label": "30318-0",
+      "value": 4.0,
+      "unit": "mmol/L"
+    },
+    {
+      "datetime": "2013-02-11 05:18",
+      "label": "34705-4",
+      "value": 33.7,
+      "unit": "mmHg"
+    },
+    {
+      "datetime": "2013-02-11 05:18",
+      "label": "49701-6",
+      "value": 7.4,
+      "unit": ""
+    },
+    {
+      "datetime": "2013-02-11 05:18",
+      "label": "6298-4",
+      "value": 4.8,
+      "unit": "mmol/L"
+    },
+    {
+      "datetime": "2013-02-11 05:49",
+      "label": "1994-3",
+      "value": 1.17,
+      "unit": "mmol/L"
+    },
+    {
+      "datetime": "2013-02-11 05:49",
+      "label": "20509-6",
+      "value": 7.5,
+      "unit": "g/dL"
+    },
+    {
+      "datetime": "2013-02-11 05:49",
+      "label": "20570-8",
+      "value": 22.0,
+      "unit": "%"
+    },
+    {
+      "datetime": "2013-02-11 05:49",
+      "label": "2947-0",
+      "value": 143.0,
+      "unit": "mmol/L"
+    },
+    {
+      "datetime": "2013-02-11 05:49",
+      "label": "30318-0",
+      "value": 6.0,
+      "unit": "mmol/L"
+    },
+    {
+      "datetime": "2013-02-11 05:49",
+      "label": "6298-4",
+      "value": 4.5,
+      "unit": "mmol/L"
+    },
+    {
+      "datetime": "2013-02-11 06:00",
+      "label": "1995-0",
+      "value": 1.06,
+      "unit": "mmol/L"
+    },
+    {
+      "datetime": "2013-02-11 06:00",
+      "label": "60985-9",
+      "value": 9.0,
+      "unit": "mmHg"
+    },
+    {
+      "datetime": "2013-02-11 06:00",
+      "label": "Systolic BP",
+      "value": 97.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2013-02-11 06:00",
+      "label": "Heart Rate",
+      "value": 85.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2013-02-11 06:00",
+      "label": "Resp Rate",
+      "value": 25.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2013-02-11 06:00",
+      "label": "IO_OUT",
+      "value": 60.0,
+      "unit": "ml"
+    },
+    {
+      "datetime": "2013-02-11 06:52",
+      "label": "60985-9",
+      "value": 9.0,
+      "unit": "mmHg"
+    },
+    {
+      "datetime": "2013-02-11 06:52",
+      "label": "Systolic BP",
+      "value": 95.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2013-02-11 06:52",
+      "label": "Heart Rate",
+      "value": 88.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2013-02-11 06:56",
+      "label": "60985-9",
+      "value": 9.0,
+      "unit": "mmHg"
+    },
+    {
+      "datetime": "2013-02-11 06:56",
+      "label": "Systolic BP",
+      "value": 63.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2013-02-11 06:56",
+      "label": "Heart Rate",
+      "value": 96.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2013-02-11 07:00",
+      "label": "60985-9",
+      "value": 259.0,
+      "unit": "mmHg"
+    },
+    {
+      "datetime": "2013-02-11 07:00",
+      "label": "Systolic BP",
+      "value": 64.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2013-02-11 07:00",
+      "label": "Heart Rate",
+      "value": 95.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2013-02-11 07:00",
+      "label": "Resp Rate",
+      "value": 25.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2013-02-11 07:00",
+      "label": "IO_OUT",
+      "value": 38.0,
+      "unit": "ml"
+    },
+    {
+      "datetime": "2013-02-11 07:05",
+      "label": "60985-9",
+      "value": 7.0,
+      "unit": "mmHg"
+    },
+    {
+      "datetime": "2013-02-11 07:05",
+      "label": "Systolic BP",
+      "value": 66.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2013-02-11 07:05",
+      "label": "Heart Rate",
+      "value": 107.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2013-02-11 07:10",
+      "label": "60985-9",
+      "value": 7.0,
+      "unit": "mmHg"
+    },
+    {
+      "datetime": "2013-02-11 07:10",
+      "label": "Systolic BP",
+      "value": 67.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2013-02-11 07:10",
+      "label": "Heart Rate",
+      "value": 109.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2013-02-11 07:30",
+      "label": "60985-9",
+      "value": 8.0,
+      "unit": "mmHg"
+    },
+    {
+      "datetime": "2013-02-11 07:30",
+      "label": "Systolic BP",
+      "value": 88.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2013-02-11 07:30",
+      "label": "8634-8",
+      "value": 536.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2013-02-11 07:30",
+      "label": "8636-3",
+      "value": 656.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2013-02-11 07:30",
+      "label": "Heart Rate",
+      "value": 112.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2013-02-11 07:30",
+      "label": "Resp Rate",
+      "value": 18.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2013-02-11 07:32",
+      "label": "19254-2",
+      "value": 56.0,
+      "unit": "mmHg"
+    },
+    {
+      "datetime": "2013-02-11 07:32",
+      "label": "1994-3",
+      "value": 1.19,
+      "unit": "mmol/L"
+    },
+    {
+      "datetime": "2013-02-11 07:32",
+      "label": "20509-6",
+      "value": 7.8,
+      "unit": "g/dL"
+    },
+    {
+      "datetime": "2013-02-11 07:32",
+      "label": "20570-8",
+      "value": 23.0,
+      "unit": "%"
+    },
+    {
+      "datetime": "2013-02-11 07:32",
+      "label": "22735-5",
+      "value": 20.5,
+      "unit": "mmol/L"
+    },
+    {
+      "datetime": "2013-02-11 07:32",
+      "label": "2713-6",
+      "value": 85.0,
+      "unit": "%"
+    },
+    {
+      "datetime": "2013-02-11 07:32",
+      "label": "2947-0",
+      "value": 144.0,
+      "unit": "mmol/L"
+    },
+    {
+      "datetime": "2013-02-11 07:32",
+      "label": "30318-0",
+      "value": 6.0,
+      "unit": "mmol/L"
+    },
+    {
+      "datetime": "2013-02-11 07:32",
+      "label": "34705-4",
+      "value": 43.4,
+      "unit": "mmHg"
+    },
+    {
+      "datetime": "2013-02-11 07:32",
+      "label": "49701-6",
+      "value": 7.28,
+      "unit": ""
+    },
+    {
+      "datetime": "2013-02-11 07:32",
+      "label": "6298-4",
+      "value": 3.6,
+      "unit": "mmol/L"
+    },
+    {
+      "datetime": "2013-02-11 08:00",
+      "label": "38214-3",
+      "value": 0.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2013-02-11 08:00",
+      "label": "60985-9",
+      "value": 7.0,
+      "unit": "mmHg"
+    },
+    {
+      "datetime": "2013-02-11 08:00",
+      "label": "Systolic BP",
+      "value": 88.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2013-02-11 08:00",
+      "label": "Heart Rate",
+      "value": 104.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2013-02-11 08:00",
+      "label": "Heart Rate",
+      "value": 104.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2013-02-11 08:00",
+      "label": "Resp Rate",
+      "value": 25.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2013-02-11 08:00",
+      "label": "IO_OUT",
+      "value": 32.0,
+      "unit": "ml"
+    },
+    {
+      "datetime": "2013-02-11 08:30",
+      "label": "60985-9",
+      "value": 7.0,
+      "unit": "mmHg"
+    },
+    {
+      "datetime": "2013-02-11 08:30",
+      "label": "Systolic BP",
+      "value": 95.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2013-02-11 08:30",
+      "label": "8634-8",
+      "value": 432.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2013-02-11 08:30",
+      "label": "8636-3",
+      "value": 540.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2013-02-11 08:30",
+      "label": "Heart Rate",
+      "value": 110.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2013-02-11 08:30",
+      "label": "Heart Rate",
+      "value": 110.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2013-02-11 08:30",
+      "label": "Resp Rate",
+      "value": 20.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2013-02-11 08:51",
+      "label": "19254-2",
+      "value": 63.0,
+      "unit": "mmHg"
+    },
+    {
+      "datetime": "2013-02-11 08:51",
+      "label": "1994-3",
+      "value": 1.16,
+      "unit": "mmol/L"
+    },
+    {
+      "datetime": "2013-02-11 08:51",
+      "label": "20509-6",
+      "value": 7.8,
+      "unit": "g/dL"
+    },
+    {
+      "datetime": "2013-02-11 08:51",
+      "label": "20570-8",
+      "value": 23.0,
+      "unit": "%"
+    },
+    {
+      "datetime": "2013-02-11 08:51",
+      "label": "22735-5",
+      "value": 21.7,
+      "unit": "mmol/L"
+    },
+    {
+      "datetime": "2013-02-11 08:51",
+      "label": "2713-6",
+      "value": 89.0,
+      "unit": "%"
+    },
+    {
+      "datetime": "2013-02-11 08:51",
+      "label": "2947-0",
+      "value": 145.0,
+      "unit": "mmol/L"
+    },
+    {
+      "datetime": "2013-02-11 08:51",
+      "label": "30318-0",
+      "value": 5.0,
+      "unit": "mmol/L"
+    },
+    {
+      "datetime": "2013-02-11 08:51",
+      "label": "34705-4",
+      "value": 45.4,
+      "unit": "mmHg"
+    },
+    {
+      "datetime": "2013-02-11 08:51",
+      "label": "49701-6",
+      "value": 7.29,
+      "unit": ""
+    },
+    {
+      "datetime": "2013-02-11 08:51",
+      "label": "6298-4",
+      "value": 3.6,
+      "unit": "mmol/L"
+    },
+    {
+      "datetime": "2013-02-11 09:00",
+      "label": "38214-3",
+      "value": 0.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2013-02-11 09:00",
+      "label": "60985-9",
+      "value": 11.0,
+      "unit": "mmHg"
+    },
+    {
+      "datetime": "2013-02-11 09:00",
+      "label": "Systolic BP",
+      "value": 111.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2013-02-11 09:00",
+      "label": "Heart Rate",
+      "value": 105.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2013-02-11 09:00",
+      "label": "Resp Rate",
+      "value": 24.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2013-02-11 09:00",
+      "label": "IO_OUT",
+      "value": 125.0,
+      "unit": "ml"
+    },
+    {
+      "datetime": "2013-02-11 09:20",
+      "label": "20584-9",
+      "value": 24.4,
+      "unit": "K/uL"
+    },
+    {
+      "datetime": "2013-02-11 09:20",
+      "label": "Hematocrit",
+      "value": 25.4,
+      "unit": "%"
+    },
+    {
+      "datetime": "2013-02-11 09:20",
+      "label": "5905-5",
+      "value": 4.1,
+      "unit": "%"
+    },
+    {
+      "datetime": "2013-02-11 09:20",
+      "label": "704-7",
+      "value": 0.0,
+      "unit": "K/uL"
+    },
+    {
+      "datetime": "2013-02-11 09:20",
+      "label": "706-2",
+      "value": 0.0,
+      "unit": "%"
+    },
+    {
+      "datetime": "2013-02-11 09:20",
+      "label": "711-2",
+      "value": 0.0,
+      "unit": "K/uL"
+    },
+    {
+      "datetime": "2013-02-11 09:20",
+      "label": "713-8",
+      "value": 0.0,
+      "unit": "%"
+    },
+    {
+      "datetime": "2013-02-11 09:20",
+      "label": "Hemoglobin",
+      "value": 8.5,
+      "unit": "g/dL"
+    },
+    {
+      "datetime": "2013-02-11 09:20",
+      "label": "731-0",
+      "value": 0.64,
+      "unit": "K/uL"
+    },
+    {
+      "datetime": "2013-02-11 09:20",
+      "label": "736-9",
+      "value": 2.6,
+      "unit": "%"
+    },
+    {
+      "datetime": "2013-02-11 09:20",
+      "label": "742-7",
+      "value": 1.0,
+      "unit": "K/uL"
+    },
+    {
+      "datetime": "2013-02-11 09:20",
+      "label": "751-8",
+      "value": 22.75,
+      "unit": "K/uL"
+    },
+    {
+      "datetime": "2013-02-11 09:20",
+      "label": "770-8",
+      "value": 93.3,
+      "unit": "%"
+    },
+    {
+      "datetime": "2013-02-11 09:20",
+      "label": "Platelets",
+      "value": 127.0,
+      "unit": "K/uL"
+    },
+    {
+      "datetime": "2013-02-11 09:20",
+      "label": "785-6",
+      "value": 30.7,
+      "unit": "pg"
+    },
+    {
+      "datetime": "2013-02-11 09:20",
+      "label": "786-4",
+      "value": 33.4,
+      "unit": "g/dL"
+    },
+    {
+      "datetime": "2013-02-11 09:20",
+      "label": "787-2",
+      "value": 92.0,
+      "unit": "fL"
+    },
+    {
+      "datetime": "2013-02-11 09:20",
+      "label": "788-0",
+      "value": 17.3,
+      "unit": "%"
+    },
+    {
+      "datetime": "2013-02-11 09:20",
+      "label": "789-8",
+      "value": 2.76,
+      "unit": "MIL/uL"
+    },
+    {
+      "datetime": "2013-02-11 10:00",
+      "label": "38214-3",
+      "value": 0.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2013-02-11 10:00",
+      "label": "60985-9",
+      "value": 8.0,
+      "unit": "mmHg"
+    },
+    {
+      "datetime": "2013-02-11 10:00",
+      "label": "Systolic BP",
+      "value": 118.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2013-02-11 10:00",
+      "label": "Heart Rate",
+      "value": 89.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2013-02-11 10:00",
+      "label": "Resp Rate",
+      "value": 7.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2013-02-11 10:00",
+      "label": "IO_OUT",
+      "value": 159.0,
+      "unit": "ml"
+    },
+    {
+      "datetime": "2013-02-11 10:30",
+      "label": "ALT",
+      "value": 36.0,
+      "unit": "U/L"
+    },
+    {
+      "datetime": "2013-02-11 10:30",
+      "label": "Albumin",
+      "value": 2.2,
+      "unit": "g/dL"
+    },
+    {
+      "datetime": "2013-02-11 10:30",
+      "label": "Calcium",
+      "value": 7.4,
+      "unit": "mg/dL"
+    },
+    {
+      "datetime": "2013-02-11 10:30",
+      "label": "AST",
+      "value": 121.0,
+      "unit": "U/L"
+    },
+    {
+      "datetime": "2013-02-11 10:30",
+      "label": "Total Bilirubin",
+      "value": 0.8,
+      "unit": "mg/dL"
+    },
+    {
+      "datetime": "2013-02-11 10:30",
+      "label": "2028-9",
+      "value": 24.0,
+      "unit": "mmol/L"
+    },
+    {
+      "datetime": "2013-02-11 10:30",
+      "label": "2075-0",
+      "value": 111.0,
+      "unit": "mmol/L"
+    },
+    {
+      "datetime": "2013-02-11 10:30",
+      "label": "2143-6",
+      "value": 58.5,
+      "unit": "ug/dL"
+    },
+    {
+      "datetime": "2013-02-11 10:30",
+      "label": "CK",
+      "value": 976.0,
+      "unit": "U/L"
+    },
+    {
+      "datetime": "2013-02-11 10:30",
+      "label": "Creatinine",
+      "value": 0.6,
+      "unit": "mg/dL"
+    },
+    {
+      "datetime": "2013-02-11 10:30",
+      "label": "2336-6",
+      "value": 2.5,
+      "unit": "g/dL"
+    },
+    {
+      "datetime": "2013-02-11 10:30",
+      "label": "Glucose",
+      "value": 255.0,
+      "unit": "mg/dL"
+    },
+    {
+      "datetime": "2013-02-11 10:30",
+      "label": "Potassium",
+      "value": 3.7,
+      "unit": "mmol/L"
+    },
+    {
+      "datetime": "2013-02-11 10:30",
+      "label": "2885-2",
+      "value": 4.7,
+      "unit": "g/dL"
+    },
+    {
+      "datetime": "2013-02-11 10:30",
+      "label": "Sodium",
+      "value": 141.0,
+      "unit": "mmol/L"
+    },
+    {
+      "datetime": "2013-02-11 10:30",
+      "label": "BUN",
+      "value": 18.0,
+      "unit": "mg/dL"
+    },
+    {
+      "datetime": "2013-02-11 10:30",
+      "label": "33037-3",
+      "value": 6.0,
+      "unit": "mmol/L"
+    },
+    {
+      "datetime": "2013-02-11 10:30",
+      "label": "60985-9",
+      "value": 9.0,
+      "unit": "mmHg"
+    },
+    {
+      "datetime": "2013-02-11 10:30",
+      "label": "Alk Phosphatase",
+      "value": 56.0,
+      "unit": "U/L"
+    },
+    {
+      "datetime": "2013-02-11 10:30",
+      "label": "Systolic BP",
+      "value": 96.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2013-02-11 10:30",
+      "label": "Heart Rate",
+      "value": 104.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2013-02-11 10:30",
+      "label": "Resp Rate",
+      "value": 22.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2013-02-11 10:33",
+      "label": "19254-2",
+      "value": 61.0,
+      "unit": "mmHg"
+    },
+    {
+      "datetime": "2013-02-11 10:33",
+      "label": "1994-3",
+      "value": 1.16,
+      "unit": "mmol/L"
+    },
+    {
+      "datetime": "2013-02-11 10:33",
+      "label": "20509-6",
+      "value": 8.2,
+      "unit": "g/dL"
+    },
+    {
+      "datetime": "2013-02-11 10:33",
+      "label": "20570-8",
+      "value": 24.0,
+      "unit": "%"
+    },
+    {
+      "datetime": "2013-02-11 10:33",
+      "label": "22735-5",
+      "value": 22.5,
+      "unit": "mmol/L"
+    },
+    {
+      "datetime": "2013-02-11 10:33",
+      "label": "2713-6",
+      "value": 89.0,
+      "unit": "%"
+    },
+    {
+      "datetime": "2013-02-11 10:33",
+      "label": "2947-0",
+      "value": 145.0,
+      "unit": "mmol/L"
+    },
+    {
+      "datetime": "2013-02-11 10:33",
+      "label": "30318-0",
+      "value": 4.0,
+      "unit": "mmol/L"
+    },
+    {
+      "datetime": "2013-02-11 10:33",
+      "label": "34705-4",
+      "value": 44.1,
+      "unit": "mmHg"
+    },
+    {
+      "datetime": "2013-02-11 10:33",
+      "label": "49701-6",
+      "value": 7.32,
+      "unit": ""
+    },
+    {
+      "datetime": "2013-02-11 10:33",
+      "label": "6298-4",
+      "value": 3.7,
+      "unit": "mmol/L"
+    },
+    {
+      "datetime": "2013-02-11 11:00",
+      "label": "IO_OUT",
+      "value": 165.0,
+      "unit": "ml"
+    },
+    {
+      "datetime": "2013-02-11 11:05",
+      "label": "60985-9",
+      "value": 10.0,
+      "unit": "mmHg"
+    },
+    {
+      "datetime": "2013-02-11 11:05",
+      "label": "Systolic BP",
+      "value": 101.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2013-02-11 11:05",
+      "label": "8634-8",
+      "value": 389.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2013-02-11 11:05",
+      "label": "8636-3",
+      "value": 464.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2013-02-11 11:05",
+      "label": "Heart Rate",
+      "value": 100.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2013-02-11 11:05",
+      "label": "Resp Rate",
+      "value": 19.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2013-02-11 11:30",
+      "label": "PTT",
+      "value": 26.0,
+      "unit": "sec"
+    },
+    {
+      "datetime": "2013-02-11 11:30",
+      "label": "PT",
+      "value": 14.8,
+      "unit": "sec"
+    },
+    {
+      "datetime": "2013-02-11 11:30",
+      "label": "INR",
+      "value": 1.2,
+      "unit": "INR"
+    },
+    {
+      "datetime": "2013-02-11 11:42",
+      "label": "11555-0",
+      "value": 2.0,
+      "unit": "mmol/L"
+    },
+    {
+      "datetime": "2013-02-11 11:42",
+      "label": "19254-2",
+      "value": 120.0,
+      "unit": "mmHg"
+    },
+    {
+      "datetime": "2013-02-11 11:42",
+      "label": "1994-3",
+      "value": 1.15,
+      "unit": "mmol/L"
+    },
+    {
+      "datetime": "2013-02-11 11:42",
+      "label": "20509-6",
+      "value": 7.8,
+      "unit": "g/dL"
+    },
+    {
+      "datetime": "2013-02-11 11:42",
+      "label": "20570-8",
+      "value": 23.0,
+      "unit": "%"
+    },
+    {
+      "datetime": "2013-02-11 11:42",
+      "label": "22735-5",
+      "value": 27.4,
+      "unit": "mmol/L"
+    },
+    {
+      "datetime": "2013-02-11 11:42",
+      "label": "2713-6",
+      "value": 99.0,
+      "unit": "%"
+    },
+    {
+      "datetime": "2013-02-11 11:42",
+      "label": "2947-0",
+      "value": 146.0,
+      "unit": "mmol/L"
+    },
+    {
+      "datetime": "2013-02-11 11:42",
+      "label": "34705-4",
+      "value": 47.7,
+      "unit": "mmHg"
+    },
+    {
+      "datetime": "2013-02-11 11:42",
+      "label": "49701-6",
+      "value": 7.37,
+      "unit": ""
+    },
+    {
+      "datetime": "2013-02-11 11:42",
+      "label": "6298-4",
+      "value": 3.9,
+      "unit": "mmol/L"
+    },
+    {
+      "datetime": "2013-02-11 12:00",
+      "label": "38214-3",
+      "value": 0.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2013-02-11 12:00",
+      "label": "60985-9",
+      "value": 12.0,
+      "unit": "mmHg"
+    },
+    {
+      "datetime": "2013-02-11 12:00",
+      "label": "Systolic BP",
+      "value": 136.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2013-02-11 12:00",
+      "label": "8634-8",
+      "value": 432.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2013-02-11 12:00",
+      "label": "8636-3",
+      "value": 469.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2013-02-11 12:00",
+      "label": "Heart Rate",
+      "value": 123.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2013-02-11 12:00",
+      "label": "Heart Rate",
+      "value": 79.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2013-02-11 12:00",
+      "label": "Resp Rate",
+      "value": 7.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2013-02-11 12:00",
+      "label": "IO_OUT",
+      "value": 90.0,
+      "unit": "ml"
+    },
+    {
+      "datetime": "2013-02-11 12:43",
+      "label": "11555-0",
+      "value": 2.0,
+      "unit": "mmol/L"
+    },
+    {
+      "datetime": "2013-02-11 12:43",
+      "label": "1994-3",
+      "value": 1.15,
+      "unit": "mmol/L"
+    },
+    {
+      "datetime": "2013-02-11 12:43",
+      "label": "20509-6",
+      "value": 8.8,
+      "unit": "g/dL"
+    },
+    {
+      "datetime": "2013-02-11 12:43",
+      "label": "20570-8",
+      "value": 26.0,
+      "unit": "%"
+    },
+    {
+      "datetime": "2013-02-11 12:43",
+      "label": "2947-0",
+      "value": 148.0,
+      "unit": "mmol/L"
+    },
+    {
+      "datetime": "2013-02-11 12:43",
+      "label": "6298-4",
+      "value": 3.8,
+      "unit": "mmol/L"
+    },
+    {
+      "datetime": "2013-02-11 12:45",
+      "label": "60985-9",
+      "value": 7.0,
+      "unit": "mmHg"
+    },
+    {
+      "datetime": "2013-02-11 12:45",
+      "label": "Systolic BP",
+      "value": 113.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2013-02-11 12:45",
+      "label": "8634-8",
+      "value": 360.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2013-02-11 12:45",
+      "label": "8636-3",
+      "value": 442.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2013-02-11 12:45",
+      "label": "Heart Rate",
+      "value": 98.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2013-02-11 12:45",
+      "label": "Resp Rate",
+      "value": 25.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2013-02-11 12:55",
+      "label": "Heart Rate",
+      "value": 98.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2013-02-11 12:55",
+      "label": "Resp Rate",
+      "value": 25.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2013-02-11 13:00",
+      "label": "38214-3",
+      "value": 0.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2013-02-11 13:00",
+      "label": "IO_OUT",
+      "value": 99.0,
+      "unit": "ml"
+    },
+    {
+      "datetime": "2013-02-11 13:15",
+      "label": "Temperature",
+      "value": 95.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2013-02-11 13:15",
+      "label": "Systolic BP",
+      "value": 126.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2013-02-11 13:15",
+      "label": "Heart Rate",
+      "value": 79.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2013-02-11 13:15",
+      "label": "Resp Rate",
+      "value": 25.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2013-02-11 13:30",
+      "label": "60985-9",
+      "value": 9.0,
+      "unit": "mmHg"
+    },
+    {
+      "datetime": "2013-02-11 13:30",
+      "label": "Systolic BP",
+      "value": 130.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2013-02-11 13:30",
+      "label": "8634-8",
+      "value": 440.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2013-02-11 13:30",
+      "label": "8636-3",
+      "value": 480.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2013-02-11 13:30",
+      "label": "Heart Rate",
+      "value": 79.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2013-02-11 13:30",
+      "label": "Heart Rate",
+      "value": 80.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2013-02-11 13:30",
+      "label": "Resp Rate",
+      "value": 25.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2013-02-11 13:45",
+      "label": "60985-9",
+      "value": 9.0,
+      "unit": "mmHg"
+    },
+    {
+      "datetime": "2013-02-11 13:45",
+      "label": "Systolic BP",
+      "value": 135.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2013-02-11 13:45",
+      "label": "8634-8",
+      "value": 448.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2013-02-11 13:45",
+      "label": "8636-3",
+      "value": 487.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2013-02-11 13:45",
+      "label": "Heart Rate",
+      "value": 74.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2013-02-11 13:45",
+      "label": "Heart Rate",
+      "value": 73.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2013-02-11 13:45",
+      "label": "Resp Rate",
+      "value": 13.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2013-02-11 14:00",
+      "label": "38214-3",
+      "value": 0.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2013-02-11 14:00",
+      "label": "60985-9",
+      "value": 11.0,
+      "unit": "mmHg"
+    },
+    {
+      "datetime": "2013-02-11 14:00",
+      "label": "Systolic BP",
+      "value": 144.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2013-02-11 14:00",
+      "label": "8634-8",
+      "value": 472.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2013-02-11 14:00",
+      "label": "8636-3",
+      "value": 485.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2013-02-11 14:00",
+      "label": "Heart Rate",
+      "value": 65.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2013-02-11 14:00",
+      "label": "Heart Rate",
+      "value": 64.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2013-02-11 14:00",
+      "label": "Resp Rate",
+      "value": 23.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2013-02-11 14:00",
+      "label": "IO_OUT",
+      "value": 124.0,
+      "unit": "ml"
+    },
+    {
+      "datetime": "2013-02-11 14:15",
+      "label": "60985-9",
+      "value": 10.0,
+      "unit": "mmHg"
+    },
+    {
+      "datetime": "2013-02-11 14:15",
+      "label": "Systolic BP",
+      "value": 142.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2013-02-11 14:15",
+      "label": "8634-8",
+      "value": 464.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2013-02-11 14:15",
+      "label": "8636-3",
+      "value": 477.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2013-02-11 14:15",
+      "label": "Heart Rate",
+      "value": 65.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2013-02-11 14:15",
+      "label": "Heart Rate",
+      "value": 65.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2013-02-11 14:15",
+      "label": "Resp Rate",
+      "value": 23.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2013-02-11 14:20",
+      "label": "20584-9",
+      "value": 24.3,
+      "unit": "K/uL"
+    },
+    {
+      "datetime": "2013-02-11 14:20",
+      "label": "CK",
+      "value": 1009.0,
+      "unit": "U/L"
+    },
+    {
+      "datetime": "2013-02-11 14:20",
+      "label": "23761-0",
+      "value": 80.0,
+      "unit": "%"
+    },
+    {
+      "datetime": "2013-02-11 14:20",
+      "label": "Lactate",
+      "value": 1.7,
+      "unit": "mmol/L"
+    },
+    {
+      "datetime": "2013-02-11 14:20",
+      "label": "Hematocrit",
+      "value": 28.6,
+      "unit": "%"
+    },
+    {
+      "datetime": "2013-02-11 14:20",
+      "label": "732-8",
+      "value": 1.2,
+      "unit": "K/uL"
+    },
+    {
+      "datetime": "2013-02-11 14:20",
+      "label": "737-7",
+      "value": 5.0,
+      "unit": "%"
+    },
+    {
+      "datetime": "2013-02-11 14:20",
+      "label": "743-5",
+      "value": 0.7,
+      "unit": "K/uL"
+    },
+    {
+      "datetime": "2013-02-11 14:20",
+      "label": "744-3",
+      "value": 3.0,
+      "unit": "%"
+    },
+    {
+      "datetime": "2013-02-11 14:20",
+      "label": "753-4",
+      "value": 22.4,
+      "unit": "K/uL"
+    },
+    {
+      "datetime": "2013-02-11 14:20",
+      "label": "Platelets",
+      "value": 98.0,
+      "unit": "K/uL"
+    },
+    {
+      "datetime": "2013-02-11 14:20",
+      "label": "787-2",
+      "value": 89.8,
+      "unit": "fL"
+    },
+    {
+      "datetime": "2013-02-11 14:20",
+      "label": "788-0",
+      "value": 14.2,
+      "unit": "%"
+    },
+    {
+      "datetime": "2013-02-11 14:20",
+      "label": "789-8",
+      "value": 3.19,
+      "unit": "MIL/uL"
+    },
+    {
+      "datetime": "2013-02-11 14:30",
+      "label": "60985-9",
+      "value": 11.0,
+      "unit": "mmHg"
+    },
+    {
+      "datetime": "2013-02-11 14:30",
+      "label": "Systolic BP",
+      "value": 143.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2013-02-11 14:30",
+      "label": "8634-8",
+      "value": 475.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2013-02-11 14:30",
+      "label": "8636-3",
+      "value": 486.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2013-02-11 14:30",
+      "label": "Heart Rate",
+      "value": 61.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2013-02-11 14:30",
+      "label": "Heart Rate",
+      "value": 62.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2013-02-11 14:30",
+      "label": "Resp Rate",
+      "value": 25.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2013-02-11 14:35",
+      "label": "11555-0",
+      "value": 7.0,
+      "unit": "mmol/L"
+    },
+    {
+      "datetime": "2013-02-11 14:35",
+      "label": "19254-2",
+      "value": 96.0,
+      "unit": "mmHg"
+    },
+    {
+      "datetime": "2013-02-11 14:35",
+      "label": "1994-3",
+      "value": 1.1,
+      "unit": "mmol/L"
+    },
+    {
+      "datetime": "2013-02-11 14:35",
+      "label": "20509-6",
+      "value": 9.2,
+      "unit": "g/dL"
+    },
+    {
+      "datetime": "2013-02-11 14:35",
+      "label": "20570-8",
+      "value": 27.0,
+      "unit": "%"
+    },
+    {
+      "datetime": "2013-02-11 14:35",
+      "label": "22735-5",
+      "value": 30.7,
+      "unit": "mmol/L"
+    },
+    {
+      "datetime": "2013-02-11 14:35",
+      "label": "2713-6",
+      "value": 98.0,
+      "unit": "%"
+    },
+    {
+      "datetime": "2013-02-11 14:35",
+      "label": "2947-0",
+      "value": 148.0,
+      "unit": "mmol/L"
+    },
+    {
+      "datetime": "2013-02-11 14:35",
+      "label": "34705-4",
+      "value": 42.4,
+      "unit": "mmHg"
+    },
+    {
+      "datetime": "2013-02-11 14:35",
+      "label": "49701-6",
+      "value": 7.47,
+      "unit": ""
+    },
+    {
+      "datetime": "2013-02-11 14:35",
+      "label": "6298-4",
+      "value": 4.1,
+      "unit": "mmol/L"
+    },
+    {
+      "datetime": "2013-02-11 14:49",
+      "label": "60985-9",
+      "value": 13.0,
+      "unit": "mmHg"
+    },
+    {
+      "datetime": "2013-02-11 14:49",
+      "label": "Diastolic BP",
+      "value": 77.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2013-02-11 14:49",
+      "label": "Systolic BP",
+      "value": 147.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2013-02-11 14:49",
+      "label": "Systolic BP",
+      "value": 146.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2013-02-11 14:49",
+      "label": "8634-8",
+      "value": 488.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2013-02-11 14:49",
+      "label": "8636-3",
+      "value": 485.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2013-02-11 14:49",
+      "label": "Heart Rate",
+      "value": 55.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2013-02-11 14:49",
+      "label": "Heart Rate",
+      "value": 57.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2013-02-11 14:49",
+      "label": "Resp Rate",
+      "value": 23.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2013-02-11 15:00",
+      "label": "60985-9",
+      "value": 8.0,
+      "unit": "mmHg"
+    },
+    {
+      "datetime": "2013-02-11 15:00",
+      "label": "Systolic BP",
+      "value": 140.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2013-02-11 15:00",
+      "label": "8634-8",
+      "value": 480.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2013-02-11 15:00",
+      "label": "8636-3",
+      "value": 485.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2013-02-11 15:00",
+      "label": "Heart Rate",
+      "value": 62.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2013-02-11 15:00",
+      "label": "Heart Rate",
+      "value": 62.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2013-02-11 15:00",
+      "label": "Resp Rate",
+      "value": 25.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2013-02-11 15:00",
+      "label": "IO_OUT",
+      "value": 100.0,
+      "unit": "ml"
+    },
+    {
+      "datetime": "2013-02-11 16:00",
+      "label": "60985-9",
+      "value": 7.0,
+      "unit": "mmHg"
+    },
+    {
+      "datetime": "2013-02-11 16:00",
+      "label": "Systolic BP",
+      "value": 145.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2013-02-11 16:00",
+      "label": "8634-8",
+      "value": 504.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2013-02-11 16:00",
+      "label": "8636-3",
+      "value": 490.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2013-02-11 16:00",
+      "label": "Heart Rate",
+      "value": 55.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2013-02-11 16:00",
+      "label": "Heart Rate",
+      "value": 55.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2013-02-11 16:00",
+      "label": "Resp Rate",
+      "value": 24.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2013-02-11 16:00",
+      "label": "IO_OUT",
+      "value": 98.0,
+      "unit": "ml"
+    },
+    {
+      "datetime": "2013-02-11 17:00",
+      "label": "60985-9",
+      "value": 7.0,
+      "unit": "mmHg"
+    },
+    {
+      "datetime": "2013-02-11 17:00",
+      "label": "Systolic BP",
+      "value": 133.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2013-02-11 17:00",
+      "label": "8634-8",
+      "value": 456.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2013-02-11 17:00",
+      "label": "8636-3",
+      "value": 482.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2013-02-11 17:00",
+      "label": "Heart Rate",
+      "value": 69.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2013-02-11 17:00",
+      "label": "Heart Rate",
+      "value": 69.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2013-02-11 17:00",
+      "label": "Resp Rate",
+      "value": 25.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2013-02-11 18:00",
+      "label": "60985-9",
+      "value": 9.0,
+      "unit": "mmHg"
+    },
+    {
+      "datetime": "2013-02-11 18:00",
+      "label": "Systolic BP",
+      "value": 133.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2013-02-11 18:00",
+      "label": "8634-8",
+      "value": 448.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2013-02-11 18:00",
+      "label": "8636-3",
+      "value": 474.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2013-02-11 18:00",
+      "label": "Heart Rate",
+      "value": 70.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2013-02-11 18:00",
+      "label": "Heart Rate",
+      "value": 69.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2013-02-11 18:00",
+      "label": "Resp Rate",
+      "value": 24.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2013-02-11 18:00",
+      "label": "IO_OUT",
+      "value": 73.0,
+      "unit": "ml"
+    },
+    {
+      "datetime": "2013-02-11 18:10",
+      "label": "PTT",
+      "value": 28.5,
+      "unit": "sec"
+    },
+    {
+      "datetime": "2013-02-11 18:10",
+      "label": "20584-9",
+      "value": 25.3,
+      "unit": "K/uL"
+    },
+    {
+      "datetime": "2013-02-11 18:10",
+      "label": "CK",
+      "value": 987.0,
+      "unit": "U/L"
+    },
+    {
+      "datetime": "2013-02-11 18:10",
+      "label": "Lactate",
+      "value": 1.7,
+      "unit": "mmol/L"
+    },
+    {
+      "datetime": "2013-02-11 18:10",
+      "label": "Hematocrit",
+      "value": 29.1,
+      "unit": "%"
+    },
+    {
+      "datetime": "2013-02-11 18:10",
+      "label": "5905-5",
+      "value": 5.4,
+      "unit": "%"
+    },
+    {
+      "datetime": "2013-02-11 18:10",
+      "label": "704-7",
+      "value": 0.0,
+      "unit": "K/uL"
+    },
+    {
+      "datetime": "2013-02-11 18:10",
+      "label": "706-2",
+      "value": 0.0,
+      "unit": "%"
+    },
+    {
+      "datetime": "2013-02-11 18:10",
+      "label": "711-2",
+      "value": 0.0,
+      "unit": "K/uL"
+    },
+    {
+      "datetime": "2013-02-11 18:10",
+      "label": "713-8",
+      "value": 0.0,
+      "unit": "%"
+    },
+    {
+      "datetime": "2013-02-11 18:10",
+      "label": "Hemoglobin",
+      "value": 9.8,
+      "unit": "g/dL"
+    },
+    {
+      "datetime": "2013-02-11 18:10",
+      "label": "731-0",
+      "value": 0.56,
+      "unit": "K/uL"
+    },
+    {
+      "datetime": "2013-02-11 18:10",
+      "label": "736-9",
+      "value": 2.2,
+      "unit": "%"
+    },
+    {
+      "datetime": "2013-02-11 18:10",
+      "label": "742-7",
+      "value": 1.38,
+      "unit": "K/uL"
+    },
+    {
+      "datetime": "2013-02-11 18:10",
+      "label": "751-8",
+      "value": 23.39,
+      "unit": "K/uL"
+    },
+    {
+      "datetime": "2013-02-11 18:10",
+      "label": "770-8",
+      "value": 92.4,
+      "unit": "%"
+    },
+    {
+      "datetime": "2013-02-11 18:10",
+      "label": "Platelets",
+      "value": 102.0,
+      "unit": "K/uL"
+    },
+    {
+      "datetime": "2013-02-11 18:10",
+      "label": "785-6",
+      "value": 30.2,
+      "unit": "pg"
+    },
+    {
+      "datetime": "2013-02-11 18:10",
+      "label": "786-4",
+      "value": 33.6,
+      "unit": "g/dL"
+    },
+    {
+      "datetime": "2013-02-11 18:10",
+      "label": "787-2",
+      "value": 90.0,
+      "unit": "fL"
+    },
+    {
+      "datetime": "2013-02-11 18:10",
+      "label": "788-0",
+      "value": 17.0,
+      "unit": "%"
+    },
+    {
+      "datetime": "2013-02-11 18:10",
+      "label": "789-8",
+      "value": 3.23,
+      "unit": "MIL/uL"
+    }
+  ],
+  "diagnoses": [
+    {
+      "date": "2012-06-30 00:00",
+      "code": "ICD9CM/530.0",
+      "description": "ICD9CM/530.0"
+    },
+    {
+      "date": "2012-06-30 00:00",
+      "code": "ICD9CM/530.0",
+      "description": "ICD9CM/530.0"
+    },
+    {
+      "date": "2012-06-30 10:40",
+      "code": "ICD9CM/530.0",
+      "description": "ICD9CM/530.0"
+    },
+    {
+      "date": "2012-07-01 00:00",
+      "code": "ICD9CM/530.0",
+      "description": "ICD9CM/530.0"
+    },
+    {
+      "date": "2012-08-03 00:00",
+      "code": "ICD9CM/530.0",
+      "description": "ICD9CM/530.0"
+    },
+    {
+      "date": "2012-08-03 10:30",
+      "code": "ICD9CM/530.0",
+      "description": "ICD9CM/530.0"
+    },
+    {
+      "date": "2012-08-17 00:00",
+      "code": "ICD9CM/787.20",
+      "description": "ICD9CM/787.20"
+    },
+    {
+      "date": "2012-10-04 00:00",
+      "code": "ICD9CM/410.90",
+      "description": "ICD9CM/410.90"
+    },
+    {
+      "date": "2012-10-12 00:00",
+      "code": "ICD9CM/780.4",
+      "description": "ICD9CM/780.4"
+    },
+    {
+      "date": "2012-10-12 00:00",
+      "code": "ICD9CM/780.4",
+      "description": "ICD9CM/780.4"
+    },
+    {
+      "date": "2012-10-12 00:00",
+      "code": "ICD9CM/786.50",
+      "description": "ICD9CM/786.50"
+    },
+    {
+      "date": "2012-10-12 00:00",
+      "code": "ICD9CM/786.50",
+      "description": "ICD9CM/786.50"
+    },
+    {
+      "date": "2012-10-28 00:00",
+      "code": "ICD9CM/786.50",
+      "description": "ICD9CM/786.50"
+    },
+    {
+      "date": "2012-12-13 00:00",
+      "code": "ICD9CM/414.12",
+      "description": "ICD9CM/414.12"
+    },
+    {
+      "date": "2012-12-30 00:00",
+      "code": "ICD9CM/410.22",
+      "description": "ICD9CM/410.22"
+    },
+    {
+      "date": "2012-12-30 00:00",
+      "code": "ICD9CM/410.90",
+      "description": "ICD9CM/410.90"
+    },
+    {
+      "date": "2012-12-30 00:00",
+      "code": "ICD9CM/414.12",
+      "description": "ICD9CM/414.12"
+    },
+    {
+      "date": "2012-12-30 00:00",
+      "code": "ICD9CM/459.0",
+      "description": "ICD9CM/459.0"
+    },
+    {
+      "date": "2012-12-30 00:00",
+      "code": "ICD9CM/785.51",
+      "description": "ICD9CM/785.51"
+    },
+    {
+      "date": "2012-12-30 00:00",
+      "code": "ICD9CM/793.19",
+      "description": "ICD9CM/793.19"
+    },
+    {
+      "date": "2012-12-30 06:54",
+      "code": "ICD9CM/255.41",
+      "description": "ICD9CM/255.41"
+    },
+    {
+      "date": "2012-12-30 06:54",
+      "code": "ICD9CM/276.2",
+      "description": "ICD9CM/276.2"
+    },
+    {
+      "date": "2012-12-30 06:54",
+      "code": "ICD9CM/285.1",
+      "description": "ICD9CM/285.1"
+    },
+    {
+      "date": "2012-12-30 06:54",
+      "code": "ICD9CM/300.00",
+      "description": "ICD9CM/300.00"
+    },
+    {
+      "date": "2012-12-30 06:54",
+      "code": "ICD9CM/412",
+      "description": "ICD9CM/412"
+    },
+    {
+      "date": "2012-12-30 06:54",
+      "code": "ICD9CM/413.9",
+      "description": "ICD9CM/413.9"
+    },
+    {
+      "date": "2012-12-30 06:54",
+      "code": "ICD9CM/414.01",
+      "description": "ICD9CM/414.01"
+    },
+    {
+      "date": "2012-12-30 06:54",
+      "code": "ICD9CM/414.12",
+      "description": "ICD9CM/414.12"
+    },
+    {
+      "date": "2012-12-30 06:54",
+      "code": "ICD9CM/414.12",
+      "description": "ICD9CM/414.12"
+    },
+    {
+      "date": "2012-12-30 06:54",
+      "code": "ICD9CM/427.5",
+      "description": "ICD9CM/427.5"
+    },
+    {
+      "date": "2012-12-30 06:54",
+      "code": "ICD9CM/458.1",
+      "description": "ICD9CM/458.1"
+    },
+    {
+      "date": "2012-12-30 06:54",
+      "code": "ICD9CM/530.0",
+      "description": "ICD9CM/530.0"
+    },
+    {
+      "date": "2012-12-30 06:54",
+      "code": "ICD9CM/530.81",
+      "description": "ICD9CM/530.81"
+    },
+    {
+      "date": "2012-12-30 06:54",
+      "code": "ICD9CM/593.9",
+      "description": "ICD9CM/593.9"
+    },
+    {
+      "date": "2012-12-30 06:54",
+      "code": "ICD9CM/719.49",
+      "description": "ICD9CM/719.49"
+    },
+    {
+      "date": "2012-12-30 06:54",
+      "code": "ICD9CM/785.51",
+      "description": "ICD9CM/785.51"
+    },
+    {
+      "date": "2012-12-30 06:54",
+      "code": "ICD9CM/799.02",
+      "description": "ICD9CM/799.02"
+    },
+    {
+      "date": "2012-12-30 06:54",
+      "code": "ICD9CM/997.1",
+      "description": "ICD9CM/997.1"
+    },
+    {
+      "date": "2012-12-30 06:54",
+      "code": "ICD9CM/E879.0",
+      "description": "ICD9CM/E879.0"
+    },
+    {
+      "date": "2012-12-30 06:54",
+      "code": "ICD9CM/V49.81",
+      "description": "ICD9CM/V49.81"
+    },
+    {
+      "date": "2012-12-31 00:00",
+      "code": "ICD9CM/401.1",
+      "description": "ICD9CM/401.1"
+    },
+    {
+      "date": "2012-12-31 00:00",
+      "code": "ICD9CM/410.90",
+      "description": "ICD9CM/410.90"
+    },
+    {
+      "date": "2012-12-31 00:00",
+      "code": "ICD9CM/427.89",
+      "description": "ICD9CM/427.89"
+    },
+    {
+      "date": "2012-12-31 00:00",
+      "code": "ICD9CM/459.0",
+      "description": "ICD9CM/459.0"
+    },
+    {
+      "date": "2012-12-31 00:00",
+      "code": "ICD9CM/785.51",
+      "description": "ICD9CM/785.51"
+    },
+    {
+      "date": "2012-12-31 00:00",
+      "code": "ICD9CM/793.19",
+      "description": "ICD9CM/793.19"
+    },
+    {
+      "date": "2012-12-31 00:00",
+      "code": "ICD9CM/794.31",
+      "description": "ICD9CM/794.31"
+    },
+    {
+      "date": "2013-01-01 00:00",
+      "code": "ICD9CM/410.90",
+      "description": "ICD9CM/410.90"
+    },
+    {
+      "date": "2013-01-01 00:00",
+      "code": "ICD9CM/459.0",
+      "description": "ICD9CM/459.0"
+    },
+    {
+      "date": "2013-01-01 00:00",
+      "code": "ICD9CM/785.51",
+      "description": "ICD9CM/785.51"
+    },
+    {
+      "date": "2013-01-02 00:00",
+      "code": "ICD9CM/410.90",
+      "description": "ICD9CM/410.90"
+    },
+    {
+      "date": "2013-01-02 00:00",
+      "code": "ICD9CM/414.12",
+      "description": "ICD9CM/414.12"
+    },
+    {
+      "date": "2013-01-02 00:00",
+      "code": "ICD9CM/459.0",
+      "description": "ICD9CM/459.0"
+    },
+    {
+      "date": "2013-01-02 00:00",
+      "code": "ICD9CM/511.9",
+      "description": "ICD9CM/511.9"
+    },
+    {
+      "date": "2013-01-02 00:00",
+      "code": "ICD9CM/514",
+      "description": "ICD9CM/514"
+    },
+    {
+      "date": "2013-01-02 00:00",
+      "code": "ICD9CM/518.0",
+      "description": "ICD9CM/518.0"
+    },
+    {
+      "date": "2013-01-02 00:00",
+      "code": "ICD9CM/785.51",
+      "description": "ICD9CM/785.51"
+    },
+    {
+      "date": "2013-01-02 00:00",
+      "code": "ICD9CM/786.50",
+      "description": "ICD9CM/786.50"
+    },
+    {
+      "date": "2013-01-03 00:00",
+      "code": "ICD9CM/410.90",
+      "description": "ICD9CM/410.90"
+    },
+    {
+      "date": "2013-01-03 00:00",
+      "code": "ICD9CM/412",
+      "description": "ICD9CM/412"
+    },
+    {
+      "date": "2013-01-03 00:00",
+      "code": "ICD9CM/459.0",
+      "description": "ICD9CM/459.0"
+    },
+    {
+      "date": "2013-01-03 00:00",
+      "code": "ICD9CM/511.9",
+      "description": "ICD9CM/511.9"
+    },
+    {
+      "date": "2013-01-03 00:00",
+      "code": "ICD9CM/518.0",
+      "description": "ICD9CM/518.0"
+    },
+    {
+      "date": "2013-01-03 00:00",
+      "code": "ICD9CM/785.51",
+      "description": "ICD9CM/785.51"
+    },
+    {
+      "date": "2013-01-04 00:00",
+      "code": "ICD9CM/414.00",
+      "description": "ICD9CM/414.00"
+    },
+    {
+      "date": "2013-01-04 00:00",
+      "code": "ICD9CM/425.4",
+      "description": "ICD9CM/425.4"
+    },
+    {
+      "date": "2013-01-05 00:00",
+      "code": "ICD9CM/414.00",
+      "description": "ICD9CM/414.00"
+    },
+    {
+      "date": "2013-01-05 00:00",
+      "code": "ICD9CM/425.4",
+      "description": "ICD9CM/425.4"
+    },
+    {
+      "date": "2013-01-19 00:00",
+      "code": "ICD9CM/788.1",
+      "description": "ICD9CM/788.1"
+    },
+    {
+      "date": "2013-01-19 00:00",
+      "code": "ICD9CM/788.1",
+      "description": "ICD9CM/788.1"
+    },
+    {
+      "date": "2013-01-19 13:01",
+      "code": "ICD9CM/788.1",
+      "description": "ICD9CM/788.1"
+    },
+    {
+      "date": "2013-01-27 00:00",
+      "code": "ICD9CM/414.12",
+      "description": "ICD9CM/414.12"
+    },
+    {
+      "date": "2013-01-27 00:00",
+      "code": "ICD9CM/414.12",
+      "description": "ICD9CM/414.12"
+    },
+    {
+      "date": "2013-01-27 14:37",
+      "code": "ICD9CM/414.12",
+      "description": "ICD9CM/414.12"
+    },
+    {
+      "date": "2013-01-28 00:00",
+      "code": "ICD9CM/530.0",
+      "description": "ICD9CM/530.0"
+    },
+    {
+      "date": "2013-01-31 00:00",
+      "code": "ICD9CM/414.12",
+      "description": "ICD9CM/414.12"
+    },
+    {
+      "date": "2013-02-09 00:00",
+      "code": "ICD9CM/414.12",
+      "description": "ICD9CM/414.12"
+    },
+    {
+      "date": "2013-02-09 00:00",
+      "code": "ICD9CM/530.0",
+      "description": "ICD9CM/530.0"
+    },
+    {
+      "date": "2013-02-09 00:00",
+      "code": "ICD9CM/785.50",
+      "description": "ICD9CM/785.50"
+    },
+    {
+      "date": "2013-02-09 00:00",
+      "code": "ICD9CM/786.50",
+      "description": "ICD9CM/786.50"
+    },
+    {
+      "date": "2013-02-10 00:00",
+      "code": "ICD9CM/348.1",
+      "description": "ICD9CM/348.1"
+    },
+    {
+      "date": "2013-02-10 00:00",
+      "code": "ICD9CM/414.01",
+      "description": "ICD9CM/414.01"
+    },
+    {
+      "date": "2013-02-10 00:00",
+      "code": "ICD9CM/414.01",
+      "description": "ICD9CM/414.01"
+    },
+    {
+      "date": "2013-02-10 00:00",
+      "code": "ICD9CM/414.12",
+      "description": "ICD9CM/414.12"
+    },
+    {
+      "date": "2013-02-10 00:00",
+      "code": "ICD9CM/427.5",
+      "description": "ICD9CM/427.5"
+    },
+    {
+      "date": "2013-02-10 00:00",
+      "code": "ICD9CM/427.89",
+      "description": "ICD9CM/427.89"
+    },
+    {
+      "date": "2013-02-10 00:00",
+      "code": "ICD9CM/427.9",
+      "description": "ICD9CM/427.9"
+    },
+    {
+      "date": "2013-02-10 00:00",
+      "code": "ICD9CM/780.09",
+      "description": "ICD9CM/780.09"
+    },
+    {
+      "date": "2013-02-10 00:00",
+      "code": "ICD9CM/785.50",
+      "description": "ICD9CM/785.50"
+    },
+    {
+      "date": "2013-02-10 00:00",
+      "code": "ICD9CM/785.51",
+      "description": "ICD9CM/785.51"
+    },
+    {
+      "date": "2013-02-10 00:00",
+      "code": "ICD9CM/786.51",
+      "description": "ICD9CM/786.51"
+    },
+    {
+      "date": "2013-02-10 00:00",
+      "code": "ICD9CM/794.31",
+      "description": "ICD9CM/794.31"
+    },
+    {
+      "date": "2013-02-10 06:46",
+      "code": "ICD9CM/262",
+      "description": "ICD9CM/262"
+    },
+    {
+      "date": "2013-02-10 06:46",
+      "code": "ICD9CM/293.0",
+      "description": "ICD9CM/293.0"
+    },
+    {
+      "date": "2013-02-10 06:46",
+      "code": "ICD9CM/307.9",
+      "description": "ICD9CM/307.9"
+    },
+    {
+      "date": "2013-02-10 06:46",
+      "code": "ICD9CM/348.39",
+      "description": "ICD9CM/348.39"
+    },
+    {
+      "date": "2013-02-10 06:46",
+      "code": "ICD9CM/411.81",
+      "description": "ICD9CM/411.81"
+    },
+    {
+      "date": "2013-02-10 06:46",
+      "code": "ICD9CM/412",
+      "description": "ICD9CM/412"
+    },
+    {
+      "date": "2013-02-10 06:46",
+      "code": "ICD9CM/414.01",
+      "description": "ICD9CM/414.01"
+    },
+    {
+      "date": "2013-02-10 06:46",
+      "code": "ICD9CM/414.01",
+      "description": "ICD9CM/414.01"
+    },
+    {
+      "date": "2013-02-10 06:46",
+      "code": "ICD9CM/414.12",
+      "description": "ICD9CM/414.12"
+    },
+    {
+      "date": "2013-02-10 06:46",
+      "code": "ICD9CM/424.0",
+      "description": "ICD9CM/424.0"
+    },
+    {
+      "date": "2013-02-10 06:46",
+      "code": "ICD9CM/427.5",
+      "description": "ICD9CM/427.5"
+    },
+    {
+      "date": "2013-02-10 06:46",
+      "code": "ICD9CM/428.0",
+      "description": "ICD9CM/428.0"
+    },
+    {
+      "date": "2013-02-10 06:46",
+      "code": "ICD9CM/428.43",
+      "description": "ICD9CM/428.43"
+    },
+    {
+      "date": "2013-02-10 06:46",
+      "code": "ICD9CM/458.1",
+      "description": "ICD9CM/458.1"
+    },
+    {
+      "date": "2013-02-10 06:46",
+      "code": "ICD9CM/507.0",
+      "description": "ICD9CM/507.0"
+    },
+    {
+      "date": "2013-02-10 06:46",
+      "code": "ICD9CM/518.81",
+      "description": "ICD9CM/518.81"
+    },
+    {
+      "date": "2013-02-10 06:46",
+      "code": "ICD9CM/530.5",
+      "description": "ICD9CM/530.5"
+    },
+    {
+      "date": "2013-02-10 06:46",
+      "code": "ICD9CM/530.81",
+      "description": "ICD9CM/530.81"
+    },
+    {
+      "date": "2013-02-10 06:46",
+      "code": "ICD9CM/584.9",
+      "description": "ICD9CM/584.9"
+    },
+    {
+      "date": "2013-02-10 06:46",
+      "code": "ICD9CM/585.9",
+      "description": "ICD9CM/585.9"
+    },
+    {
+      "date": "2013-02-10 06:46",
+      "code": "ICD9CM/715.90",
+      "description": "ICD9CM/715.90"
+    },
+    {
+      "date": "2013-02-10 06:46",
+      "code": "ICD9CM/780.01",
+      "description": "ICD9CM/780.01"
+    },
+    {
+      "date": "2013-02-10 06:46",
+      "code": "ICD9CM/785.59",
+      "description": "ICD9CM/785.59"
+    },
+    {
+      "date": "2013-02-10 06:46",
+      "code": "ICD9CM/787.20",
+      "description": "ICD9CM/787.20"
+    },
+    {
+      "date": "2013-02-10 06:46",
+      "code": "ICD9CM/996.72",
+      "description": "ICD9CM/996.72"
+    },
+    {
+      "date": "2013-02-10 06:46",
+      "code": "ICD9CM/E878.1",
+      "description": "ICD9CM/E878.1"
+    },
+    {
+      "date": "2013-02-10 06:46",
+      "code": "ICD9CM/E878.1",
+      "description": "ICD9CM/E878.1"
+    },
+    {
+      "date": "2013-02-10 06:46",
+      "code": "ICD9CM/V49.81",
+      "description": "ICD9CM/V49.81"
+    },
+    {
+      "date": "2013-02-11 00:00",
+      "code": "ICD9CM/255.41",
+      "description": "ICD9CM/255.41"
+    },
+    {
+      "date": "2013-02-11 00:00",
+      "code": "ICD9CM/276.52",
+      "description": "ICD9CM/276.52"
+    },
+    {
+      "date": "2013-02-11 00:00",
+      "code": "ICD9CM/285.9",
+      "description": "ICD9CM/285.9"
+    },
+    {
+      "date": "2013-02-11 00:00",
+      "code": "ICD9CM/348.1",
+      "description": "ICD9CM/348.1"
+    },
+    {
+      "date": "2013-02-11 00:00",
+      "code": "ICD9CM/427.5",
+      "description": "ICD9CM/427.5"
+    },
+    {
+      "date": "2013-02-11 00:00",
+      "code": "ICD9CM/427.89",
+      "description": "ICD9CM/427.89"
+    },
+    {
+      "date": "2013-02-11 00:00",
+      "code": "ICD9CM/486",
+      "description": "ICD9CM/486"
+    },
+    {
+      "date": "2013-02-11 00:00",
+      "code": "ICD9CM/518.81",
+      "description": "ICD9CM/518.81"
+    },
+    {
+      "date": "2013-02-11 00:00",
+      "code": "ICD9CM/780.09",
+      "description": "ICD9CM/780.09"
+    },
+    {
+      "date": "2013-02-11 00:00",
+      "code": "ICD9CM/785.50",
+      "description": "ICD9CM/785.50"
+    },
+    {
+      "date": "2013-02-11 00:00",
+      "code": "ICD9CM/785.51",
+      "description": "ICD9CM/785.51"
+    },
+    {
+      "date": "2013-02-11 00:00",
+      "code": "ICD9CM/785.59",
+      "description": "ICD9CM/785.59"
+    },
+    {
+      "date": "2013-02-11 00:00",
+      "code": "ICD9CM/794.31",
+      "description": "ICD9CM/794.31"
+    }
+  ],
+  "medications": [
+    {
+      "date": "2012-06-30 23:59",
+      "name": "RxNorm/1046770",
+      "code": "RxNorm/1046770"
+    },
+    {
+      "date": "2012-06-30 23:59",
+      "name": "RxNorm/1099292",
+      "code": "RxNorm/1099292"
+    },
+    {
+      "date": "2012-06-30 23:59",
+      "name": "RxNorm/1149632",
+      "code": "RxNorm/1149632"
+    },
+    {
+      "date": "2012-06-30 23:59",
+      "name": "RxNorm/260243",
+      "code": "RxNorm/260243"
+    },
+    {
+      "date": "2012-10-12 23:59",
+      "name": "RxNorm/1048408",
+      "code": "RxNorm/1048408"
+    },
+    {
+      "date": "2012-10-12 23:59",
+      "name": "RxNorm/197900",
+      "code": "RxNorm/197900"
+    },
+    {
+      "date": "2012-10-12 23:59",
+      "name": "RxNorm/200329",
+      "code": "RxNorm/200329"
+    },
+    {
+      "date": "2012-10-12 23:59",
+      "name": "RxNorm/308416",
+      "code": "RxNorm/308416"
+    },
+    {
+      "date": "2012-10-12 23:59",
+      "name": "RxNorm/617310",
+      "code": "RxNorm/617310"
+    },
+    {
+      "date": "2012-12-30 08:00",
+      "name": "RxNorm/1049909",
+      "code": "RxNorm/1049909"
+    },
+    {
+      "date": "2012-12-30 08:00",
+      "name": "RxNorm/212033",
+      "code": "RxNorm/212033"
+    },
+    {
+      "date": "2012-12-30 15:23",
+      "name": "RxNorm/311700",
+      "code": "RxNorm/311700"
+    },
+    {
+      "date": "2012-12-30 15:57",
+      "name": "RxNorm/749196",
+      "code": "RxNorm/749196"
+    },
+    {
+      "date": "2012-12-30 16:06",
+      "name": "RxNorm/311700",
+      "code": "RxNorm/311700"
+    },
+    {
+      "date": "2012-12-30 16:08",
+      "name": "RxNorm/1737466",
+      "code": "RxNorm/1737466"
+    },
+    {
+      "date": "2012-12-30 16:20",
+      "name": "RxNorm/1743877",
+      "code": "RxNorm/1743877"
+    },
+    {
+      "date": "2012-12-30 17:24",
+      "name": "RxNorm/1868486",
+      "code": "RxNorm/1868486"
+    },
+    {
+      "date": "2012-12-30 17:58",
+      "name": "RxNorm/238755",
+      "code": "RxNorm/238755"
+    },
+    {
+      "date": "2012-12-30 18:03",
+      "name": "RxNorm/1807508",
+      "code": "RxNorm/1807508"
+    },
+    {
+      "date": "2012-12-30 20:59",
+      "name": "RxNorm/1868486",
+      "code": "RxNorm/1868486"
+    },
+    {
+      "date": "2012-12-30 21:48",
+      "name": "RxNorm/283669",
+      "code": "RxNorm/283669"
+    },
+    {
+      "date": "2012-12-30 21:56",
+      "name": "RxNorm/829359",
+      "code": "RxNorm/829359"
+    },
+    {
+      "date": "2012-12-30 22:40",
+      "name": "RxNorm/829359",
+      "code": "RxNorm/829359"
+    },
+    {
+      "date": "2012-12-30 23:25",
+      "name": "RxNorm/242120",
+      "code": "RxNorm/242120"
+    },
+    {
+      "date": "2012-12-30 23:33",
+      "name": "RxNorm/312515",
+      "code": "RxNorm/312515"
+    },
+    {
+      "date": "2012-12-31 00:48",
+      "name": "RxNorm/311700",
+      "code": "RxNorm/311700"
+    },
+    {
+      "date": "2012-12-31 06:26",
+      "name": "RxNorm/242120",
+      "code": "RxNorm/242120"
+    },
+    {
+      "date": "2012-12-31 07:19",
+      "name": "RxNorm/1807508",
+      "code": "RxNorm/1807508"
+    },
+    {
+      "date": "2012-12-31 07:56",
+      "name": "RxNorm/283669",
+      "code": "RxNorm/283669"
+    },
+    {
+      "date": "2012-12-31 07:56",
+      "name": "RxNorm/308416",
+      "code": "RxNorm/308416"
+    },
+    {
+      "date": "2012-12-31 07:56",
+      "name": "RxNorm/309362",
+      "code": "RxNorm/309362"
+    },
+    {
+      "date": "2012-12-31 09:31",
+      "name": "RxNorm/238755",
+      "code": "RxNorm/238755"
+    },
+    {
+      "date": "2012-12-31 10:35",
+      "name": "RxNorm/311700",
+      "code": "RxNorm/311700"
+    },
+    {
+      "date": "2012-12-31 12:56",
+      "name": "RxNorm/311700",
+      "code": "RxNorm/311700"
+    },
+    {
+      "date": "2012-12-31 13:17",
+      "name": "RxNorm/797186",
+      "code": "RxNorm/797186"
+    },
+    {
+      "date": "2012-12-31 13:31",
+      "name": "RxNorm/242120",
+      "code": "RxNorm/242120"
+    },
+    {
+      "date": "2012-12-31 13:42",
+      "name": "RxNorm/311700",
+      "code": "RxNorm/311700"
+    },
+    {
+      "date": "2012-12-31 17:52",
+      "name": "RxNorm/1807508",
+      "code": "RxNorm/1807508"
+    },
+    {
+      "date": "2012-12-31 17:52",
+      "name": "RxNorm/238755",
+      "code": "RxNorm/238755"
+    },
+    {
+      "date": "2012-12-31 18:01",
+      "name": "RxNorm/242120",
+      "code": "RxNorm/242120"
+    },
+    {
+      "date": "2012-12-31 19:48",
+      "name": "RxNorm/283669",
+      "code": "RxNorm/283669"
+    },
+    {
+      "date": "2012-12-31 19:48",
+      "name": "RxNorm/617310",
+      "code": "RxNorm/617310"
+    },
+    {
+      "date": "2012-12-31 23:05",
+      "name": "RxNorm/238755",
+      "code": "RxNorm/238755"
+    },
+    {
+      "date": "2012-12-31 23:11",
+      "name": "RxNorm/242120",
+      "code": "RxNorm/242120"
+    },
+    {
+      "date": "2013-01-01 02:46",
+      "name": "RxNorm/311700",
+      "code": "RxNorm/311700"
+    },
+    {
+      "date": "2013-01-01 05:30",
+      "name": "RxNorm/1807508",
+      "code": "RxNorm/1807508"
+    },
+    {
+      "date": "2013-01-01 05:35",
+      "name": "RxNorm/238755",
+      "code": "RxNorm/238755"
+    },
+    {
+      "date": "2013-01-01 05:35",
+      "name": "RxNorm/242120",
+      "code": "RxNorm/242120"
+    },
+    {
+      "date": "2013-01-01 07:04",
+      "name": "RxNorm/311700",
+      "code": "RxNorm/311700"
+    },
+    {
+      "date": "2013-01-01 07:52",
+      "name": "RxNorm/283669",
+      "code": "RxNorm/283669"
+    },
+    {
+      "date": "2013-01-01 07:52",
+      "name": "RxNorm/308416",
+      "code": "RxNorm/308416"
+    },
+    {
+      "date": "2013-01-01 07:52",
+      "name": "RxNorm/309362",
+      "code": "RxNorm/309362"
+    },
+    {
+      "date": "2013-01-01 10:11",
+      "name": "RxNorm/1437702",
+      "code": "RxNorm/1437702"
+    },
+    {
+      "date": "2013-01-01 18:06",
+      "name": "RxNorm/1807513",
+      "code": "RxNorm/1807513"
+    },
+    {
+      "date": "2013-01-01 20:24",
+      "name": "RxNorm/283669",
+      "code": "RxNorm/283669"
+    },
+    {
+      "date": "2013-01-01 20:25",
+      "name": "RxNorm/238755",
+      "code": "RxNorm/238755"
+    },
+    {
+      "date": "2013-01-01 21:32",
+      "name": "RxNorm/197900",
+      "code": "RxNorm/197900"
+    },
+    {
+      "date": "2013-01-01 23:44",
+      "name": "RxNorm/199163",
+      "code": "RxNorm/199163"
+    },
+    {
+      "date": "2013-01-02 02:05",
+      "name": "RxNorm/311700",
+      "code": "RxNorm/311700"
+    },
+    {
+      "date": "2013-01-02 08:33",
+      "name": "RxNorm/238755",
+      "code": "RxNorm/238755"
+    },
+    {
+      "date": "2013-01-02 08:33",
+      "name": "RxNorm/283669",
+      "code": "RxNorm/283669"
+    },
+    {
+      "date": "2013-01-02 08:36",
+      "name": "RxNorm/1807513",
+      "code": "RxNorm/1807513"
+    },
+    {
+      "date": "2013-01-02 12:05",
+      "name": "RxNorm/1046982",
+      "code": "RxNorm/1046982"
+    },
+    {
+      "date": "2013-01-02 12:11",
+      "name": "RxNorm/1046982",
+      "code": "RxNorm/1046982"
+    },
+    {
+      "date": "2013-01-02 12:23",
+      "name": "RxNorm/1099316",
+      "code": "RxNorm/1099316"
+    },
+    {
+      "date": "2013-01-02 13:30",
+      "name": "RxNorm/308416",
+      "code": "RxNorm/308416"
+    },
+    {
+      "date": "2013-01-02 13:30",
+      "name": "RxNorm/309362",
+      "code": "RxNorm/309362"
+    },
+    {
+      "date": "2013-01-02 19:37",
+      "name": "RxNorm/238755",
+      "code": "RxNorm/238755"
+    },
+    {
+      "date": "2013-01-02 19:42",
+      "name": "RxNorm/283669",
+      "code": "RxNorm/283669"
+    },
+    {
+      "date": "2013-01-03 00:00",
+      "name": "RxNorm/197782",
+      "code": "RxNorm/197782"
+    },
+    {
+      "date": "2013-01-03 00:00",
+      "name": "RxNorm/197783",
+      "code": "RxNorm/197783"
+    },
+    {
+      "date": "2013-01-03 04:30",
+      "name": "RxNorm/1860466",
+      "code": "RxNorm/1860466"
+    },
+    {
+      "date": "2013-01-03 07:19",
+      "name": "RxNorm/1046982",
+      "code": "RxNorm/1046982"
+    },
+    {
+      "date": "2013-01-03 08:15",
+      "name": "RxNorm/238755",
+      "code": "RxNorm/238755"
+    },
+    {
+      "date": "2013-01-03 08:15",
+      "name": "RxNorm/283669",
+      "code": "RxNorm/283669"
+    },
+    {
+      "date": "2013-01-03 08:15",
+      "name": "RxNorm/308416",
+      "code": "RxNorm/308416"
+    },
+    {
+      "date": "2013-01-03 08:15",
+      "name": "RxNorm/309362",
+      "code": "RxNorm/309362"
+    },
+    {
+      "date": "2013-01-03 12:03",
+      "name": "RxNorm/198145",
+      "code": "RxNorm/198145"
+    },
+    {
+      "date": "2013-01-03 12:12",
+      "name": "RxNorm/307675",
+      "code": "RxNorm/307675"
+    },
+    {
+      "date": "2013-01-03 16:02",
+      "name": "RxNorm/1099316",
+      "code": "RxNorm/1099316"
+    },
+    {
+      "date": "2013-01-03 17:10",
+      "name": "RxNorm/314200",
+      "code": "RxNorm/314200"
+    },
+    {
+      "date": "2013-01-03 18:07",
+      "name": "RxNorm/242120",
+      "code": "RxNorm/242120"
+    },
+    {
+      "date": "2013-01-03 19:05",
+      "name": "RxNorm/307675",
+      "code": "RxNorm/307675"
+    },
+    {
+      "date": "2013-01-03 19:47",
+      "name": "RxNorm/1245686",
+      "code": "RxNorm/1245686"
+    },
+    {
+      "date": "2013-01-04 04:30",
+      "name": "RxNorm/307675",
+      "code": "RxNorm/307675"
+    },
+    {
+      "date": "2013-01-04 07:32",
+      "name": "RxNorm/309362",
+      "code": "RxNorm/309362"
+    },
+    {
+      "date": "2013-01-04 07:32",
+      "name": "RxNorm/314200",
+      "code": "RxNorm/314200"
+    },
+    {
+      "date": "2013-01-04 07:33",
+      "name": "RxNorm/197783",
+      "code": "RxNorm/197783"
+    },
+    {
+      "date": "2013-01-04 07:33",
+      "name": "RxNorm/308416",
+      "code": "RxNorm/308416"
+    },
+    {
+      "date": "2013-01-04 07:37",
+      "name": "RxNorm/1046770",
+      "code": "RxNorm/1046770"
+    },
+    {
+      "date": "2013-01-04 07:54",
+      "name": "RxNorm/1860466",
+      "code": "RxNorm/1860466"
+    },
+    {
+      "date": "2013-01-04 08:12",
+      "name": "RxNorm/1245468",
+      "code": "RxNorm/1245468"
+    },
+    {
+      "date": "2013-01-04 08:13",
+      "name": "RxNorm/1099316",
+      "code": "RxNorm/1099316"
+    },
+    {
+      "date": "2013-01-04 09:18",
+      "name": "RxNorm/314216",
+      "code": "RxNorm/314216"
+    },
+    {
+      "date": "2013-01-04 16:02",
+      "name": "RxNorm/1046770",
+      "code": "RxNorm/1046770"
+    },
+    {
+      "date": "2013-01-04 16:02",
+      "name": "RxNorm/314216",
+      "code": "RxNorm/314216"
+    },
+    {
+      "date": "2013-01-04 17:47",
+      "name": "RxNorm/242120",
+      "code": "RxNorm/242120"
+    },
+    {
+      "date": "2013-01-04 20:01",
+      "name": "RxNorm/307675",
+      "code": "RxNorm/307675"
+    },
+    {
+      "date": "2013-01-05 00:00",
+      "name": "RxNorm/309362",
+      "code": "RxNorm/309362"
+    },
+    {
+      "date": "2013-01-05 00:00",
+      "name": "RxNorm/859424",
+      "code": "RxNorm/859424"
+    },
+    {
+      "date": "2013-01-05 05:33",
+      "name": "RxNorm/307675",
+      "code": "RxNorm/307675"
+    },
+    {
+      "date": "2013-01-05 08:36",
+      "name": "RxNorm/1099316",
+      "code": "RxNorm/1099316"
+    },
+    {
+      "date": "2013-01-05 08:36",
+      "name": "RxNorm/308416",
+      "code": "RxNorm/308416"
+    },
+    {
+      "date": "2013-01-05 08:37",
+      "name": "RxNorm/309362",
+      "code": "RxNorm/309362"
+    },
+    {
+      "date": "2013-01-05 08:37",
+      "name": "RxNorm/314200",
+      "code": "RxNorm/314200"
+    },
+    {
+      "date": "2013-01-05 08:43",
+      "name": "RxNorm/1046770",
+      "code": "RxNorm/1046770"
+    },
+    {
+      "date": "2013-01-05 09:32",
+      "name": "RxNorm/1860466",
+      "code": "RxNorm/1860466"
+    },
+    {
+      "date": "2013-01-05 09:37",
+      "name": "RxNorm/1801298",
+      "code": "RxNorm/1801298"
+    },
+    {
+      "date": "2013-01-05 23:59",
+      "name": "RxNorm/1046770",
+      "code": "RxNorm/1046770"
+    },
+    {
+      "date": "2013-01-05 23:59",
+      "name": "RxNorm/1047905",
+      "code": "RxNorm/1047905"
+    },
+    {
+      "date": "2013-01-05 23:59",
+      "name": "RxNorm/1149632",
+      "code": "RxNorm/1149632"
+    },
+    {
+      "date": "2013-01-05 23:59",
+      "name": "RxNorm/1311396",
+      "code": "RxNorm/1311396"
+    },
+    {
+      "date": "2013-01-05 23:59",
+      "name": "RxNorm/1368706",
+      "code": "RxNorm/1368706"
+    },
+    {
+      "date": "2013-01-05 23:59",
+      "name": "RxNorm/139233",
+      "code": "RxNorm/139233"
+    },
+    {
+      "date": "2013-01-05 23:59",
+      "name": "RxNorm/142131",
+      "code": "RxNorm/142131"
+    },
+    {
+      "date": "2013-01-05 23:59",
+      "name": "RxNorm/155060",
+      "code": "RxNorm/155060"
+    },
+    {
+      "date": "2013-01-05 23:59",
+      "name": "RxNorm/214688",
+      "code": "RxNorm/214688"
+    },
+    {
+      "date": "2013-01-05 23:59",
+      "name": "RxNorm/236324",
+      "code": "RxNorm/236324"
+    },
+    {
+      "date": "2013-01-05 23:59",
+      "name": "RxNorm/236564",
+      "code": "RxNorm/236564"
+    },
+    {
+      "date": "2013-01-05 23:59",
+      "name": "RxNorm/236741",
+      "code": "RxNorm/236741"
+    },
+    {
+      "date": "2013-01-05 23:59",
+      "name": "RxNorm/241527",
+      "code": "RxNorm/241527"
+    },
+    {
+      "date": "2013-01-05 23:59",
+      "name": "RxNorm/2572292",
+      "code": "RxNorm/2572292"
+    },
+    {
+      "date": "2013-01-05 23:59",
+      "name": "RxNorm/283578",
+      "code": "RxNorm/283578"
+    },
+    {
+      "date": "2013-01-05 23:59",
+      "name": "RxNorm/289497",
+      "code": "RxNorm/289497"
+    },
+    {
+      "date": "2013-01-05 23:59",
+      "name": "RxNorm/29155",
+      "code": "RxNorm/29155"
+    },
+    {
+      "date": "2013-01-05 23:59",
+      "name": "RxNorm/29164",
+      "code": "RxNorm/29164"
+    },
+    {
+      "date": "2013-01-05 23:59",
+      "name": "RxNorm/314718",
+      "code": "RxNorm/314718"
+    },
+    {
+      "date": "2013-01-05 23:59",
+      "name": "RxNorm/476818",
+      "code": "RxNorm/476818"
+    },
+    {
+      "date": "2013-01-05 23:59",
+      "name": "RxNorm/486895",
+      "code": "RxNorm/486895"
+    },
+    {
+      "date": "2013-01-05 23:59",
+      "name": "RxNorm/52356",
+      "code": "RxNorm/52356"
+    },
+    {
+      "date": "2013-01-05 23:59",
+      "name": "RxNorm/52358",
+      "code": "RxNorm/52358"
+    },
+    {
+      "date": "2013-01-05 23:59",
+      "name": "RxNorm/6574",
+      "code": "RxNorm/6574"
+    },
+    {
+      "date": "2013-01-05 23:59",
+      "name": "RxNorm/6579",
+      "code": "RxNorm/6579"
+    },
+    {
+      "date": "2013-01-05 23:59",
+      "name": "RxNorm/6582",
+      "code": "RxNorm/6582"
+    },
+    {
+      "date": "2013-01-05 23:59",
+      "name": "RxNorm/6585",
+      "code": "RxNorm/6585"
+    },
+    {
+      "date": "2013-01-19 23:59",
+      "name": "RxNorm/1099316",
+      "code": "RxNorm/1099316"
+    },
+    {
+      "date": "2013-01-31 00:00",
+      "name": "RxNorm/309362",
+      "code": "RxNorm/309362"
+    },
+    {
+      "date": "2013-02-10 07:45",
+      "name": "RxNorm/1807627",
+      "code": "RxNorm/1807627"
+    },
+    {
+      "date": "2013-02-10 08:07",
+      "name": "RxNorm/1049909",
+      "code": "RxNorm/1049909"
+    },
+    {
+      "date": "2013-02-10 08:07",
+      "name": "RxNorm/197591",
+      "code": "RxNorm/197591"
+    },
+    {
+      "date": "2013-02-10 08:07",
+      "name": "RxNorm/212033",
+      "code": "RxNorm/212033"
+    },
+    {
+      "date": "2013-02-10 13:10",
+      "name": "RxNorm/1743720",
+      "code": "RxNorm/1743720"
+    },
+    {
+      "date": "2013-02-10 17:00",
+      "name": "RxNorm/1860466",
+      "code": "RxNorm/1860466"
+    },
+    {
+      "date": "2013-02-10 17:49",
+      "name": "RxNorm/1664981",
+      "code": "RxNorm/1664981"
+    },
+    {
+      "date": "2013-02-10 18:20",
+      "name": "RxNorm/1807508",
+      "code": "RxNorm/1807508"
+    },
+    {
+      "date": "2013-02-10 18:28",
+      "name": "RxNorm/1292887",
+      "code": "RxNorm/1292887"
+    },
+    {
+      "date": "2013-02-10 18:39",
+      "name": "RxNorm/859437",
+      "code": "RxNorm/859437"
+    },
+    {
+      "date": "2013-02-10 22:06",
+      "name": "RxNorm/283669",
+      "code": "RxNorm/283669"
+    },
+    {
+      "date": "2013-02-10 22:38",
+      "name": "RxNorm/834127",
+      "code": "RxNorm/834127"
+    },
+    {
+      "date": "2013-02-10 22:49",
+      "name": "RxNorm/797186",
+      "code": "RxNorm/797186"
+    },
+    {
+      "date": "2013-02-10 23:23",
+      "name": "RxNorm/1664981",
+      "code": "RxNorm/1664981"
+    },
+    {
+      "date": "2013-02-10 23:59",
+      "name": "RxNorm/259132",
+      "code": "RxNorm/259132"
+    },
+    {
+      "date": "2013-02-11 00:43",
+      "name": "RxNorm/1658692",
+      "code": "RxNorm/1658692"
+    },
+    {
+      "date": "2013-02-11 01:09",
+      "name": "RxNorm/829359",
+      "code": "RxNorm/829359"
+    },
+    {
+      "date": "2013-02-11 03:43",
+      "name": "RxNorm/1807508",
+      "code": "RxNorm/1807508"
+    },
+    {
+      "date": "2013-02-11 06:52",
+      "name": "RxNorm/1292887",
+      "code": "RxNorm/1292887"
+    },
+    {
+      "date": "2013-02-11 06:52",
+      "name": "RxNorm/1658692",
+      "code": "RxNorm/1658692"
+    },
+    {
+      "date": "2013-02-11 06:55",
+      "name": "RxNorm/1233778",
+      "code": "RxNorm/1233778"
+    },
+    {
+      "date": "2013-02-11 07:06",
+      "name": "RxNorm/1242904",
+      "code": "RxNorm/1242904"
+    },
+    {
+      "date": "2013-02-11 07:50",
+      "name": "RxNorm/1868486",
+      "code": "RxNorm/1868486"
+    },
+    {
+      "date": "2013-02-11 07:50",
+      "name": "RxNorm/792582",
+      "code": "RxNorm/792582"
+    },
+    {
+      "date": "2013-02-11 07:59",
+      "name": "RxNorm/1664981",
+      "code": "RxNorm/1664981"
+    },
+    {
+      "date": "2013-02-11 07:59",
+      "name": "RxNorm/238755",
+      "code": "RxNorm/238755"
+    },
+    {
+      "date": "2013-02-11 07:59",
+      "name": "RxNorm/283669",
+      "code": "RxNorm/283669"
+    },
+    {
+      "date": "2013-02-11 11:22",
+      "name": "RxNorm/834127",
+      "code": "RxNorm/834127"
+    },
+    {
+      "date": "2013-02-11 13:05",
+      "name": "RxNorm/311683",
+      "code": "RxNorm/311683"
+    },
+    {
+      "date": "2013-02-11 14:00",
+      "name": "RxNorm/1658692",
+      "code": "RxNorm/1658692"
+    },
+    {
+      "date": "2013-02-11 16:00",
+      "name": "RxNorm/238755",
+      "code": "RxNorm/238755"
+    },
+    {
+      "date": "2013-02-11 16:12",
+      "name": "RxNorm/1664981",
+      "code": "RxNorm/1664981"
+    },
+    {
+      "date": "2013-02-11 16:12",
+      "name": "RxNorm/1801298",
+      "code": "RxNorm/1801298"
+    },
+    {
+      "date": "2013-02-11 16:12",
+      "name": "RxNorm/309362",
+      "code": "RxNorm/309362"
+    },
+    {
+      "date": "2013-02-11 16:50",
+      "name": "RxNorm/1807508",
+      "code": "RxNorm/1807508"
+    },
+    {
+      "date": "2013-02-11 18:03",
+      "name": "RxNorm/318272",
+      "code": "RxNorm/318272"
+    }
+  ],
+  "procedures": [
+    {
+      "date": "2012-08-03 00:00",
+      "code": "CPT4/74220",
+      "description": "CPT4/74220"
+    },
+    {
+      "date": "2012-08-03 00:00",
+      "code": "CPT4/74220",
+      "description": "CPT4/74220"
+    },
+    {
+      "date": "2012-12-30 00:00",
+      "code": "CPT4/33967",
+      "description": "CPT4/33967"
+    },
+    {
+      "date": "2012-12-30 00:00",
+      "code": "CPT4/33967",
+      "description": "CPT4/33967"
+    },
+    {
+      "date": "2012-12-30 00:00",
+      "code": "CPT4/36415",
+      "description": "CPT4/36415"
+    },
+    {
+      "date": "2012-12-30 00:00",
+      "code": "CPT4/71010",
+      "description": "CPT4/71010"
+    },
+    {
+      "date": "2012-12-30 00:00",
+      "code": "CPT4/71010",
+      "description": "CPT4/71010"
+    },
+    {
+      "date": "2012-12-30 00:00",
+      "code": "CPT4/74000",
+      "description": "CPT4/74000"
+    },
+    {
+      "date": "2012-12-30 00:00",
+      "code": "CPT4/74000",
+      "description": "CPT4/74000"
+    },
+    {
+      "date": "2012-12-30 00:00",
+      "code": "CPT4/92978",
+      "description": "CPT4/92978"
+    },
+    {
+      "date": "2012-12-30 00:00",
+      "code": "CPT4/92978",
+      "description": "CPT4/92978"
+    },
+    {
+      "date": "2012-12-30 00:00",
+      "code": "CPT4/92980",
+      "description": "CPT4/92980"
+    },
+    {
+      "date": "2012-12-30 00:00",
+      "code": "CPT4/92980",
+      "description": "CPT4/92980"
+    },
+    {
+      "date": "2012-12-30 00:00",
+      "code": "CPT4/92981",
+      "description": "CPT4/92981"
+    },
+    {
+      "date": "2012-12-30 00:00",
+      "code": "CPT4/93456",
+      "description": "CPT4/93456"
+    },
+    {
+      "date": "2012-12-30 00:00",
+      "code": "CPT4/93456",
+      "description": "CPT4/93456"
+    },
+    {
+      "date": "2012-12-30 00:00",
+      "code": "CPT4/94002",
+      "description": "CPT4/94002"
+    },
+    {
+      "date": "2012-12-30 00:00",
+      "code": "CPT4/99291",
+      "description": "CPT4/99291"
+    },
+    {
+      "date": "2012-12-30 00:00",
+      "code": "CPT4/99292",
+      "description": "CPT4/99292"
+    },
+    {
+      "date": "2012-12-30 00:00",
+      "code": "ICD9Proc/00.24",
+      "description": "ICD9Proc/00.24"
+    },
+    {
+      "date": "2012-12-30 00:00",
+      "code": "ICD9Proc/00.24",
+      "description": "ICD9Proc/00.24"
+    },
+    {
+      "date": "2012-12-30 00:00",
+      "code": "ICD9Proc/00.41",
+      "description": "ICD9Proc/00.41"
+    },
+    {
+      "date": "2012-12-30 00:00",
+      "code": "ICD9Proc/00.41",
+      "description": "ICD9Proc/00.41"
+    },
+    {
+      "date": "2012-12-30 00:00",
+      "code": "ICD9Proc/00.48",
+      "description": "ICD9Proc/00.48"
+    },
+    {
+      "date": "2012-12-30 00:00",
+      "code": "ICD9Proc/00.48",
+      "description": "ICD9Proc/00.48"
+    },
+    {
+      "date": "2012-12-30 00:00",
+      "code": "ICD9Proc/00.66",
+      "description": "ICD9Proc/00.66"
+    },
+    {
+      "date": "2012-12-30 00:00",
+      "code": "ICD9Proc/00.66",
+      "description": "ICD9Proc/00.66"
+    },
+    {
+      "date": "2012-12-30 00:00",
+      "code": "ICD9Proc/36.06",
+      "description": "ICD9Proc/36.06"
+    },
+    {
+      "date": "2012-12-30 00:00",
+      "code": "ICD9Proc/36.06",
+      "description": "ICD9Proc/36.06"
+    },
+    {
+      "date": "2012-12-30 00:00",
+      "code": "ICD9Proc/37.21",
+      "description": "ICD9Proc/37.21"
+    },
+    {
+      "date": "2012-12-30 00:00",
+      "code": "ICD9Proc/37.21",
+      "description": "ICD9Proc/37.21"
+    },
+    {
+      "date": "2012-12-30 00:00",
+      "code": "ICD9Proc/37.61",
+      "description": "ICD9Proc/37.61"
+    },
+    {
+      "date": "2012-12-30 00:00",
+      "code": "ICD9Proc/37.61",
+      "description": "ICD9Proc/37.61"
+    },
+    {
+      "date": "2012-12-30 00:00",
+      "code": "ICD9Proc/88.56",
+      "description": "ICD9Proc/88.56"
+    },
+    {
+      "date": "2012-12-30 00:00",
+      "code": "ICD9Proc/88.56",
+      "description": "ICD9Proc/88.56"
+    },
+    {
+      "date": "2012-12-30 00:00",
+      "code": "ICD9Proc/96.04",
+      "description": "ICD9Proc/96.04"
+    },
+    {
+      "date": "2012-12-30 00:00",
+      "code": "ICD9Proc/96.04",
+      "description": "ICD9Proc/96.04"
+    },
+    {
+      "date": "2012-12-30 00:00",
+      "code": "ICD9Proc/96.71",
+      "description": "ICD9Proc/96.71"
+    },
+    {
+      "date": "2012-12-30 00:00",
+      "code": "ICD9Proc/96.71",
+      "description": "ICD9Proc/96.71"
+    },
+    {
+      "date": "2012-12-30 00:00",
+      "code": "ICD9Proc/99.60",
+      "description": "ICD9Proc/99.60"
+    },
+    {
+      "date": "2012-12-30 00:00",
+      "code": "ICD9Proc/99.60",
+      "description": "ICD9Proc/99.60"
+    },
+    {
+      "date": "2012-12-31 00:00",
+      "code": "CPT4/36415",
+      "description": "CPT4/36415"
+    },
+    {
+      "date": "2012-12-31 00:00",
+      "code": "CPT4/71010",
+      "description": "CPT4/71010"
+    },
+    {
+      "date": "2012-12-31 00:00",
+      "code": "CPT4/71010",
+      "description": "CPT4/71010"
+    },
+    {
+      "date": "2012-12-31 00:00",
+      "code": "CPT4/93005",
+      "description": "CPT4/93005"
+    },
+    {
+      "date": "2012-12-31 00:00",
+      "code": "CPT4/93010",
+      "description": "CPT4/93010"
+    },
+    {
+      "date": "2012-12-31 00:00",
+      "code": "CPT4/93308",
+      "description": "CPT4/93308"
+    },
+    {
+      "date": "2012-12-31 00:00",
+      "code": "CPT4/94003",
+      "description": "CPT4/94003"
+    },
+    {
+      "date": "2012-12-31 00:00",
+      "code": "CPT4/99291",
+      "description": "CPT4/99291"
+    },
+    {
+      "date": "2012-12-31 00:00",
+      "code": "ICD9Proc/99.04",
+      "description": "ICD9Proc/99.04"
+    },
+    {
+      "date": "2012-12-31 00:00",
+      "code": "ICD9Proc/99.04",
+      "description": "ICD9Proc/99.04"
+    },
+    {
+      "date": "2013-01-01 00:00",
+      "code": "CPT4/71010",
+      "description": "CPT4/71010"
+    },
+    {
+      "date": "2013-01-01 00:00",
+      "code": "CPT4/71010",
+      "description": "CPT4/71010"
+    },
+    {
+      "date": "2013-01-01 00:00",
+      "code": "CPT4/94003",
+      "description": "CPT4/94003"
+    },
+    {
+      "date": "2013-01-01 00:00",
+      "code": "CPT4/94640",
+      "description": "CPT4/94640"
+    },
+    {
+      "date": "2013-01-01 00:00",
+      "code": "CPT4/99291",
+      "description": "CPT4/99291"
+    },
+    {
+      "date": "2013-01-01 00:00",
+      "code": "ICD9Proc/97.44",
+      "description": "ICD9Proc/97.44"
+    },
+    {
+      "date": "2013-01-01 00:00",
+      "code": "ICD9Proc/97.44",
+      "description": "ICD9Proc/97.44"
+    },
+    {
+      "date": "2013-01-02 00:00",
+      "code": "CPT4/71010",
+      "description": "CPT4/71010"
+    },
+    {
+      "date": "2013-01-02 00:00",
+      "code": "CPT4/71010",
+      "description": "CPT4/71010"
+    },
+    {
+      "date": "2013-01-02 00:00",
+      "code": "CPT4/93005",
+      "description": "CPT4/93005"
+    },
+    {
+      "date": "2013-01-02 00:00",
+      "code": "CPT4/93010",
+      "description": "CPT4/93010"
+    },
+    {
+      "date": "2013-01-02 00:00",
+      "code": "CPT4/99233",
+      "description": "CPT4/99233"
+    },
+    {
+      "date": "2013-01-02 00:00",
+      "code": "ICD9Proc/38.97",
+      "description": "ICD9Proc/38.97"
+    },
+    {
+      "date": "2013-01-02 00:00",
+      "code": "ICD9Proc/38.97",
+      "description": "ICD9Proc/38.97"
+    },
+    {
+      "date": "2013-01-03 00:00",
+      "code": "CPT4/71010",
+      "description": "CPT4/71010"
+    },
+    {
+      "date": "2013-01-03 00:00",
+      "code": "CPT4/71010",
+      "description": "CPT4/71010"
+    },
+    {
+      "date": "2013-01-03 00:00",
+      "code": "CPT4/92526",
+      "description": "CPT4/92526"
+    },
+    {
+      "date": "2013-01-03 00:00",
+      "code": "CPT4/92610",
+      "description": "CPT4/92610"
+    },
+    {
+      "date": "2013-01-03 00:00",
+      "code": "CPT4/93306",
+      "description": "CPT4/93306"
+    },
+    {
+      "date": "2013-01-03 00:00",
+      "code": "CPT4/99233",
+      "description": "CPT4/99233"
+    },
+    {
+      "date": "2013-01-04 00:00",
+      "code": "CPT4/92526",
+      "description": "CPT4/92526"
+    },
+    {
+      "date": "2013-01-04 00:00",
+      "code": "CPT4/99233",
+      "description": "CPT4/99233"
+    },
+    {
+      "date": "2013-01-05 00:00",
+      "code": "CPT4/99238",
+      "description": "CPT4/99238"
+    },
+    {
+      "date": "2013-02-10 00:00",
+      "code": "CPT4/01920",
+      "description": "CPT4/01920"
+    },
+    {
+      "date": "2013-02-10 00:00",
+      "code": "CPT4/33967",
+      "description": "CPT4/33967"
+    },
+    {
+      "date": "2013-02-10 00:00",
+      "code": "CPT4/36415",
+      "description": "CPT4/36415"
+    },
+    {
+      "date": "2013-02-10 00:00",
+      "code": "CPT4/36600",
+      "description": "CPT4/36600"
+    },
+    {
+      "date": "2013-02-10 00:00",
+      "code": "CPT4/36620",
+      "description": "CPT4/36620"
+    },
+    {
+      "date": "2013-02-10 00:00",
+      "code": "CPT4/71010",
+      "description": "CPT4/71010"
+    },
+    {
+      "date": "2013-02-10 00:00",
+      "code": "CPT4/71010",
+      "description": "CPT4/71010"
+    },
+    {
+      "date": "2013-02-10 00:00",
+      "code": "CPT4/92928",
+      "description": "CPT4/92928"
+    },
+    {
+      "date": "2013-02-10 00:00",
+      "code": "CPT4/92973",
+      "description": "CPT4/92973"
+    },
+    {
+      "date": "2013-02-10 00:00",
+      "code": "CPT4/92978",
+      "description": "CPT4/92978"
+    },
+    {
+      "date": "2013-02-10 00:00",
+      "code": "CPT4/93005",
+      "description": "CPT4/93005"
+    },
+    {
+      "date": "2013-02-10 00:00",
+      "code": "CPT4/93010",
+      "description": "CPT4/93010"
+    },
+    {
+      "date": "2013-02-10 00:00",
+      "code": "CPT4/93306",
+      "description": "CPT4/93306"
+    },
+    {
+      "date": "2013-02-10 00:00",
+      "code": "CPT4/93454",
+      "description": "CPT4/93454"
+    },
+    {
+      "date": "2013-02-10 00:00",
+      "code": "CPT4/94002",
+      "description": "CPT4/94002"
+    },
+    {
+      "date": "2013-02-10 00:00",
+      "code": "CPT4/95951",
+      "description": "CPT4/95951"
+    },
+    {
+      "date": "2013-02-10 00:00",
+      "code": "CPT4/95951",
+      "description": "CPT4/95951"
+    },
+    {
+      "date": "2013-02-10 00:00",
+      "code": "CPT4/99291",
+      "description": "CPT4/99291"
+    },
+    {
+      "date": "2013-02-10 00:00",
+      "code": "ICD9Proc/00.24",
+      "description": "ICD9Proc/00.24"
+    },
+    {
+      "date": "2013-02-10 00:00",
+      "code": "ICD9Proc/00.24",
+      "description": "ICD9Proc/00.24"
+    },
+    {
+      "date": "2013-02-10 00:00",
+      "code": "ICD9Proc/00.40",
+      "description": "ICD9Proc/00.40"
+    },
+    {
+      "date": "2013-02-10 00:00",
+      "code": "ICD9Proc/00.40",
+      "description": "ICD9Proc/00.40"
+    },
+    {
+      "date": "2013-02-10 00:00",
+      "code": "ICD9Proc/00.45",
+      "description": "ICD9Proc/00.45"
+    },
+    {
+      "date": "2013-02-10 00:00",
+      "code": "ICD9Proc/00.45",
+      "description": "ICD9Proc/00.45"
+    },
+    {
+      "date": "2013-02-10 00:00",
+      "code": "ICD9Proc/00.66",
+      "description": "ICD9Proc/00.66"
+    },
+    {
+      "date": "2013-02-10 00:00",
+      "code": "ICD9Proc/00.66",
+      "description": "ICD9Proc/00.66"
+    },
+    {
+      "date": "2013-02-10 00:00",
+      "code": "ICD9Proc/36.07",
+      "description": "ICD9Proc/36.07"
+    },
+    {
+      "date": "2013-02-10 00:00",
+      "code": "ICD9Proc/36.07",
+      "description": "ICD9Proc/36.07"
+    },
+    {
+      "date": "2013-02-10 00:00",
+      "code": "ICD9Proc/37.61",
+      "description": "ICD9Proc/37.61"
+    },
+    {
+      "date": "2013-02-10 00:00",
+      "code": "ICD9Proc/37.61",
+      "description": "ICD9Proc/37.61"
+    },
+    {
+      "date": "2013-02-10 00:00",
+      "code": "ICD9Proc/96.04",
+      "description": "ICD9Proc/96.04"
+    },
+    {
+      "date": "2013-02-10 00:00",
+      "code": "ICD9Proc/96.04",
+      "description": "ICD9Proc/96.04"
+    },
+    {
+      "date": "2013-02-10 00:00",
+      "code": "ICD9Proc/96.72",
+      "description": "ICD9Proc/96.72"
+    },
+    {
+      "date": "2013-02-10 00:00",
+      "code": "ICD9Proc/96.72",
+      "description": "ICD9Proc/96.72"
+    },
+    {
+      "date": "2013-02-10 00:00",
+      "code": "ICD9Proc/99.60",
+      "description": "ICD9Proc/99.60"
+    },
+    {
+      "date": "2013-02-10 00:00",
+      "code": "ICD9Proc/99.60",
+      "description": "ICD9Proc/99.60"
+    },
+    {
+      "date": "2013-02-11 00:00",
+      "code": "CPT4/71010",
+      "description": "CPT4/71010"
+    },
+    {
+      "date": "2013-02-11 00:00",
+      "code": "CPT4/71010",
+      "description": "CPT4/71010"
+    },
+    {
+      "date": "2013-02-11 00:00",
+      "code": "CPT4/93005",
+      "description": "CPT4/93005"
+    },
+    {
+      "date": "2013-02-11 00:00",
+      "code": "CPT4/93010",
+      "description": "CPT4/93010"
+    },
+    {
+      "date": "2013-02-11 00:00",
+      "code": "CPT4/94003",
+      "description": "CPT4/94003"
+    },
+    {
+      "date": "2013-02-11 00:00",
+      "code": "CPT4/95951",
+      "description": "CPT4/95951"
+    },
+    {
+      "date": "2013-02-11 00:00",
+      "code": "CPT4/95951",
+      "description": "CPT4/95951"
+    },
+    {
+      "date": "2013-02-11 00:00",
+      "code": "CPT4/99223",
+      "description": "CPT4/99223"
+    },
+    {
+      "date": "2013-02-11 00:00",
+      "code": "CPT4/99291",
+      "description": "CPT4/99291"
+    },
+    {
+      "date": "2013-02-11 00:00",
+      "code": "CPT4/99291",
+      "description": "CPT4/99291"
+    },
+    {
+      "date": "2013-02-11 00:00",
+      "code": "CPT4/99292",
+      "description": "CPT4/99292"
+    },
+    {
+      "date": "2013-02-11 00:00",
+      "code": "ICD9Proc/38.91",
+      "description": "ICD9Proc/38.91"
+    },
+    {
+      "date": "2013-02-11 00:00",
+      "code": "ICD9Proc/38.91",
+      "description": "ICD9Proc/38.91"
+    },
+    {
+      "date": "2013-02-11 00:00",
+      "code": "ICD9Proc/89.14",
+      "description": "ICD9Proc/89.14"
+    },
+    {
+      "date": "2013-02-11 00:00",
+      "code": "ICD9Proc/89.14",
+      "description": "ICD9Proc/89.14"
+    },
+    {
+      "date": "2013-02-11 00:00",
+      "code": "ICD9Proc/99.04",
+      "description": "ICD9Proc/99.04"
+    },
+    {
+      "date": "2013-02-11 00:00",
+      "code": "ICD9Proc/99.04",
+      "description": "ICD9Proc/99.04"
+    }
+  ],
+  "observations": [
+    {
+      "date": "2012-06-30 00:00",
+      "observation": "OMOP_CONCEPT_ID/45882295",
+      "value": null
+    },
+    {
+      "date": "2012-06-30 00:00",
+      "observation": "OMOP_CONCEPT_ID/45882295",
+      "value": null
+    },
+    {
+      "date": "2012-06-30 00:00",
+      "observation": "OMOP_CONCEPT_ID/45878245",
+      "value": null
+    },
+    {
+      "date": "2012-06-30 00:00",
+      "observation": "OMOP_CONCEPT_ID/45878245",
+      "value": null
+    },
+    {
+      "date": "2012-06-30 00:00",
+      "observation": "OMOP_CONCEPT_ID/45878245",
+      "value": null
+    },
+    {
+      "date": "2012-06-30 00:00",
+      "observation": "OMOP_CONCEPT_ID/45878245",
+      "value": null
+    },
+    {
+      "date": "2012-06-30 00:00",
+      "observation": "OMOP_CONCEPT_ID/45878245",
+      "value": null
+    },
+    {
+      "date": "2012-06-30 00:00",
+      "observation": "OMOP_CONCEPT_ID/45876662",
+      "value": null
+    },
+    {
+      "date": "2012-06-30 10:55",
+      "observation": "LOINC/8327-9",
+      "value": "2.0"
+    },
+    {
+      "date": "2012-10-08 00:00",
+      "observation": "OMOP_CONCEPT_ID/45882295",
+      "value": null
+    },
+    {
+      "date": "2012-10-08 00:00",
+      "observation": "OMOP_CONCEPT_ID/45882295",
+      "value": null
+    },
+    {
+      "date": "2012-10-08 00:00",
+      "observation": "OMOP_CONCEPT_ID/45878245",
+      "value": null
+    },
+    {
+      "date": "2012-10-08 00:00",
+      "observation": "OMOP_CONCEPT_ID/45878245",
+      "value": null
+    },
+    {
+      "date": "2012-10-08 00:00",
+      "observation": "OMOP_CONCEPT_ID/45878245",
+      "value": null
+    },
+    {
+      "date": "2012-10-08 00:00",
+      "observation": "OMOP_CONCEPT_ID/45878245",
+      "value": null
+    },
+    {
+      "date": "2012-10-08 00:00",
+      "observation": "OMOP_CONCEPT_ID/45878245",
+      "value": null
+    },
+    {
+      "date": "2012-10-08 00:00",
+      "observation": "OMOP_CONCEPT_ID/312437",
+      "value": null
+    },
+    {
+      "date": "2012-10-08 00:00",
+      "observation": "OMOP_CONCEPT_ID/45876662",
+      "value": null
+    },
+    {
+      "date": "2012-10-12 13:28",
+      "observation": "LOINC/LP21258-6",
+      "value": "98.0"
+    },
+    {
+      "date": "2012-12-30 00:00",
+      "observation": "OMOP_CONCEPT_ID/45876662",
+      "value": null
+    },
+    {
+      "date": "2012-12-30 00:00",
+      "observation": "OMOP_CONCEPT_ID/45876662",
+      "value": null
+    },
+    {
+      "date": "2012-12-30 00:00",
+      "observation": "OMOP_CONCEPT_ID/45878245",
+      "value": null
+    },
+    {
+      "date": "2012-12-30 00:00",
+      "observation": "OMOP_CONCEPT_ID/45878245",
+      "value": null
+    },
+    {
+      "date": "2012-12-30 00:00",
+      "observation": "OMOP_CONCEPT_ID/45878245",
+      "value": null
+    },
+    {
+      "date": "2012-12-30 00:00",
+      "observation": "OMOP_CONCEPT_ID/45878245",
+      "value": null
+    },
+    {
+      "date": "2012-12-30 00:00",
+      "observation": "OMOP_CONCEPT_ID/45878245",
+      "value": null
+    },
+    {
+      "date": "2012-12-30 00:00",
+      "observation": "OMOP_CONCEPT_ID/312437",
+      "value": null
+    },
+    {
+      "date": "2012-12-30 00:00",
+      "observation": "OMOP_CONCEPT_ID/312327",
+      "value": null
+    },
+    {
+      "date": "2012-12-30 00:00",
+      "observation": "OMOP_CONCEPT_ID/45876662",
+      "value": null
+    },
+    {
+      "date": "2012-12-30 07:25",
+      "observation": "LOINC/8327-9",
+      "value": "1.0"
+    },
+    {
+      "date": "2012-12-30 07:25",
+      "observation": "LOINC/LP21258-6",
+      "value": "100.0"
+    },
+    {
+      "date": "2012-12-30 15:00",
+      "observation": "LOINC/LP21258-6",
+      "value": "100.0"
+    },
+    {
+      "date": "2012-12-30 16:00",
+      "observation": "LOINC/LP21258-6",
+      "value": "100.0"
+    },
+    {
+      "date": "2012-12-30 17:30",
+      "observation": "LOINC/LP21258-6",
+      "value": "100.0"
+    },
+    {
+      "date": "2012-12-30 18:00",
+      "observation": "LOINC/LP21258-6",
+      "value": "100.0"
+    },
+    {
+      "date": "2012-12-30 19:00",
+      "observation": "LOINC/LP21258-6",
+      "value": "100.0"
+    },
+    {
+      "date": "2012-12-30 20:00",
+      "observation": "LOINC/LP21258-6",
+      "value": "100.0"
+    },
+    {
+      "date": "2012-12-30 20:15",
+      "observation": "LOINC/LP21258-6",
+      "value": "100.0"
+    },
+    {
+      "date": "2012-12-30 21:00",
+      "observation": "LOINC/8327-9",
+      "value": "4.0"
+    },
+    {
+      "date": "2012-12-30 21:00",
+      "observation": "LOINC/LP21258-6",
+      "value": "100.0"
+    },
+    {
+      "date": "2012-12-30 21:30",
+      "observation": "LOINC/LP21258-6",
+      "value": "100.0"
+    },
+    {
+      "date": "2012-12-30 22:00",
+      "observation": "LOINC/LP21258-6",
+      "value": "80.0"
+    },
+    {
+      "date": "2012-12-30 22:30",
+      "observation": "LOINC/LP21258-6",
+      "value": "98.0"
+    },
+    {
+      "date": "2012-12-30 23:00",
+      "observation": "LOINC/LP21258-6",
+      "value": "100.0"
+    },
+    {
+      "date": "2012-12-31 00:00",
+      "observation": "LOINC/8327-9",
+      "value": "4.0"
+    },
+    {
+      "date": "2012-12-31 00:00",
+      "observation": "LOINC/LP21258-6",
+      "value": "100.0"
+    },
+    {
+      "date": "2012-12-31 00:15",
+      "observation": "LOINC/LP21258-6",
+      "value": "100.0"
+    },
+    {
+      "date": "2012-12-31 00:30",
+      "observation": "LOINC/LP21258-6",
+      "value": "96.0"
+    },
+    {
+      "date": "2012-12-31 01:00",
+      "observation": "LOINC/LP21258-6",
+      "value": "100.0"
+    },
+    {
+      "date": "2012-12-31 01:30",
+      "observation": "LOINC/8327-9",
+      "value": "4.0"
+    },
+    {
+      "date": "2012-12-31 01:30",
+      "observation": "LOINC/LP21258-6",
+      "value": "100.0"
+    },
+    {
+      "date": "2012-12-31 01:45",
+      "observation": "LOINC/8327-9",
+      "value": "4.0"
+    },
+    {
+      "date": "2012-12-31 01:45",
+      "observation": "LOINC/LP21258-6",
+      "value": "100.0"
+    },
+    {
+      "date": "2012-12-31 02:00",
+      "observation": "LOINC/LP21258-6",
+      "value": "100.0"
+    },
+    {
+      "date": "2012-12-31 03:00",
+      "observation": "LOINC/LP21258-6",
+      "value": "100.0"
+    },
+    {
+      "date": "2012-12-31 04:00",
+      "observation": "LOINC/LP21258-6",
+      "value": "100.0"
+    },
+    {
+      "date": "2012-12-31 04:23",
+      "observation": "LOINC/LP21258-6",
+      "value": "84.0"
+    },
+    {
+      "date": "2012-12-31 05:00",
+      "observation": "LOINC/8327-9",
+      "value": "4.0"
+    },
+    {
+      "date": "2012-12-31 05:00",
+      "observation": "LOINC/LP21258-6",
+      "value": "100.0"
+    },
+    {
+      "date": "2012-12-31 06:00",
+      "observation": "LOINC/LP21258-6",
+      "value": "100.0"
+    },
+    {
+      "date": "2012-12-31 07:00",
+      "observation": "LOINC/LP21258-6",
+      "value": "100.0"
+    },
+    {
+      "date": "2012-12-31 07:53",
+      "observation": "LOINC/LP21258-6",
+      "value": "100.0"
+    },
+    {
+      "date": "2012-12-31 08:00",
+      "observation": "LOINC/8327-9",
+      "value": "4.0"
+    },
+    {
+      "date": "2012-12-31 08:00",
+      "observation": "LOINC/LP21258-6",
+      "value": "100.0"
+    },
+    {
+      "date": "2012-12-31 09:00",
+      "observation": "LOINC/LP21258-6",
+      "value": "100.0"
+    },
+    {
+      "date": "2012-12-31 09:10",
+      "observation": "LOINC/8327-9",
+      "value": "4.0"
+    },
+    {
+      "date": "2012-12-31 10:00",
+      "observation": "LOINC/LP21258-6",
+      "value": "100.0"
+    },
+    {
+      "date": "2012-12-31 11:00",
+      "observation": "LOINC/LP21258-6",
+      "value": "100.0"
+    },
+    {
+      "date": "2012-12-31 11:20",
+      "observation": "LOINC/LP21258-6",
+      "value": "100.0"
+    },
+    {
+      "date": "2012-12-31 12:00",
+      "observation": "LOINC/LP21258-6",
+      "value": "100.0"
+    },
+    {
+      "date": "2012-12-31 13:00",
+      "observation": "LOINC/LP21258-6",
+      "value": "100.0"
+    },
+    {
+      "date": "2012-12-31 14:00",
+      "observation": "LOINC/LP21258-6",
+      "value": "99.0"
+    },
+    {
+      "date": "2012-12-31 14:17",
+      "observation": "LOINC/8327-9",
+      "value": "4.0"
+    },
+    {
+      "date": "2012-12-31 14:17",
+      "observation": "LOINC/LP21258-6",
+      "value": "99.0"
+    },
+    {
+      "date": "2012-12-31 14:33",
+      "observation": "LOINC/8327-9",
+      "value": "1.0"
+    },
+    {
+      "date": "2012-12-31 14:33",
+      "observation": "LOINC/LP21258-6",
+      "value": "99.0"
+    },
+    {
+      "date": "2012-12-31 15:00",
+      "observation": "LOINC/LP21258-6",
+      "value": "99.0"
+    },
+    {
+      "date": "2012-12-31 16:00",
+      "observation": "LOINC/LP21258-6",
+      "value": "99.0"
+    },
+    {
+      "date": "2012-12-31 17:00",
+      "observation": "LOINC/8327-9",
+      "value": "4.0"
+    },
+    {
+      "date": "2012-12-31 17:00",
+      "observation": "LOINC/LP21258-6",
+      "value": "99.0"
+    },
+    {
+      "date": "2012-12-31 18:00",
+      "observation": "LOINC/LP21258-6",
+      "value": "99.0"
+    },
+    {
+      "date": "2012-12-31 19:00",
+      "observation": "LOINC/8327-9",
+      "value": "1.0"
+    },
+    {
+      "date": "2012-12-31 19:00",
+      "observation": "LOINC/LP21258-6",
+      "value": "98.0"
+    },
+    {
+      "date": "2012-12-31 20:00",
+      "observation": "LOINC/LP21258-6",
+      "value": "96.0"
+    },
+    {
+      "date": "2012-12-31 21:00",
+      "observation": "LOINC/LP21258-6",
+      "value": "97.0"
+    },
+    {
+      "date": "2012-12-31 21:06",
+      "observation": "LOINC/LP21258-6",
+      "value": "97.0"
+    },
+    {
+      "date": "2012-12-31 22:00",
+      "observation": "LOINC/LP21258-6",
+      "value": "98.0"
+    },
+    {
+      "date": "2012-12-31 23:00",
+      "observation": "LOINC/LP21258-6",
+      "value": "98.0"
+    },
+    {
+      "date": "2012-12-31 23:15",
+      "observation": "LOINC/8327-9",
+      "value": "1.0"
+    },
+    {
+      "date": "2012-12-31 23:15",
+      "observation": "LOINC/LP21258-6",
+      "value": "98.0"
+    },
+    {
+      "date": "2013-01-01 00:00",
+      "observation": "LOINC/LP21258-6",
+      "value": "98.0"
+    },
+    {
+      "date": "2013-01-01 00:30",
+      "observation": "LOINC/LP21258-6",
+      "value": "98.0"
+    },
+    {
+      "date": "2013-01-01 01:00",
+      "observation": "LOINC/LP21258-6",
+      "value": "97.0"
+    },
+    {
+      "date": "2013-01-01 01:05",
+      "observation": "LOINC/LP21258-6",
+      "value": "97.0"
+    },
+    {
+      "date": "2013-01-01 01:10",
+      "observation": "LOINC/LP21258-6",
+      "value": "97.0"
+    },
+    {
+      "date": "2013-01-01 01:15",
+      "observation": "LOINC/LP21258-6",
+      "value": "97.0"
+    },
+    {
+      "date": "2013-01-01 02:00",
+      "observation": "LOINC/LP21258-6",
+      "value": "98.0"
+    },
+    {
+      "date": "2013-01-01 02:30",
+      "observation": "LOINC/LP21258-6",
+      "value": "98.0"
+    },
+    {
+      "date": "2013-01-01 03:08",
+      "observation": "LOINC/LP21258-6",
+      "value": "96.0"
+    },
+    {
+      "date": "2013-01-01 04:00",
+      "observation": "LOINC/LP21258-6",
+      "value": "98.0"
+    },
+    {
+      "date": "2013-01-01 05:00",
+      "observation": "LOINC/LP21258-6",
+      "value": "98.0"
+    },
+    {
+      "date": "2013-01-01 05:51",
+      "observation": "LOINC/LP21258-6",
+      "value": "98.0"
+    },
+    {
+      "date": "2013-01-01 06:00",
+      "observation": "LOINC/LP21258-6",
+      "value": "98.0"
+    },
+    {
+      "date": "2013-01-01 06:04",
+      "observation": "LOINC/LP21258-6",
+      "value": "98.0"
+    },
+    {
+      "date": "2013-01-01 07:00",
+      "observation": "LOINC/LP21258-6",
+      "value": "98.0"
+    },
+    {
+      "date": "2013-01-01 07:10",
+      "observation": "LOINC/LP21258-6",
+      "value": "99.0"
+    },
+    {
+      "date": "2013-01-01 07:15",
+      "observation": "LOINC/LP21258-6",
+      "value": "97.0"
+    },
+    {
+      "date": "2013-01-01 07:45",
+      "observation": "LOINC/LP21258-6",
+      "value": "97.0"
+    },
+    {
+      "date": "2013-01-01 07:55",
+      "observation": "LOINC/LP21258-6",
+      "value": "97.0"
+    },
+    {
+      "date": "2013-01-01 08:00",
+      "observation": "LOINC/LP21258-6",
+      "value": "94.0"
+    },
+    {
+      "date": "2013-01-01 08:05",
+      "observation": "LOINC/LP21258-6",
+      "value": "96.0"
+    },
+    {
+      "date": "2013-01-01 08:10",
+      "observation": "LOINC/LP21258-6",
+      "value": "97.0"
+    },
+    {
+      "date": "2013-01-01 09:00",
+      "observation": "LOINC/8327-9",
+      "value": "4.0"
+    },
+    {
+      "date": "2013-01-01 09:00",
+      "observation": "LOINC/LP21258-6",
+      "value": "98.0"
+    },
+    {
+      "date": "2013-01-01 09:30",
+      "observation": "LOINC/LP21258-6",
+      "value": "98.0"
+    },
+    {
+      "date": "2013-01-01 10:00",
+      "observation": "LOINC/LP21258-6",
+      "value": "98.0"
+    },
+    {
+      "date": "2013-01-01 10:11",
+      "observation": "LOINC/LP21258-6",
+      "value": "98.0"
+    },
+    {
+      "date": "2013-01-01 11:00",
+      "observation": "LOINC/LP21258-6",
+      "value": "100.0"
+    },
+    {
+      "date": "2013-01-01 12:00",
+      "observation": "LOINC/8327-9",
+      "value": "1.0"
+    },
+    {
+      "date": "2013-01-01 12:00",
+      "observation": "LOINC/LP21258-6",
+      "value": "100.0"
+    },
+    {
+      "date": "2013-01-01 12:08",
+      "observation": "LOINC/LP21258-6",
+      "value": "100.0"
+    },
+    {
+      "date": "2013-01-01 13:00",
+      "observation": "LOINC/LP21258-6",
+      "value": "100.0"
+    },
+    {
+      "date": "2013-01-01 14:00",
+      "observation": "LOINC/LP21258-6",
+      "value": "99.0"
+    },
+    {
+      "date": "2013-01-01 15:00",
+      "observation": "LOINC/LP21258-6",
+      "value": "98.0"
+    },
+    {
+      "date": "2013-01-01 15:55",
+      "observation": "LOINC/LP21258-6",
+      "value": "98.0"
+    },
+    {
+      "date": "2013-01-01 16:00",
+      "observation": "LOINC/LP21258-6",
+      "value": "99.0"
+    },
+    {
+      "date": "2013-01-01 17:00",
+      "observation": "LOINC/LP21258-6",
+      "value": "97.0"
+    },
+    {
+      "date": "2013-01-01 18:00",
+      "observation": "LOINC/LP21258-6",
+      "value": "94.0"
+    },
+    {
+      "date": "2013-01-01 19:00",
+      "observation": "LOINC/LP21258-6",
+      "value": "97.0"
+    },
+    {
+      "date": "2013-01-01 20:00",
+      "observation": "LOINC/LP21258-6",
+      "value": "97.0"
+    },
+    {
+      "date": "2013-01-01 21:00",
+      "observation": "LOINC/LP21258-6",
+      "value": "99.0"
+    },
+    {
+      "date": "2013-01-01 21:13",
+      "observation": "LOINC/8327-9",
+      "value": "1.0"
+    },
+    {
+      "date": "2013-01-01 21:13",
+      "observation": "LOINC/LP21258-6",
+      "value": "97.0"
+    },
+    {
+      "date": "2013-01-01 22:00",
+      "observation": "LOINC/LP21258-6",
+      "value": "98.0"
+    },
+    {
+      "date": "2013-01-01 23:00",
+      "observation": "LOINC/LP21258-6",
+      "value": "94.0"
+    },
+    {
+      "date": "2013-01-02 00:00",
+      "observation": "LOINC/LP21258-6",
+      "value": "95.0"
+    },
+    {
+      "date": "2013-01-02 01:00",
+      "observation": "LOINC/LP21258-6",
+      "value": "97.0"
+    },
+    {
+      "date": "2013-01-02 02:00",
+      "observation": "LOINC/LP21258-6",
+      "value": "95.0"
+    },
+    {
+      "date": "2013-01-02 03:00",
+      "observation": "LOINC/8327-9",
+      "value": "1.0"
+    },
+    {
+      "date": "2013-01-02 03:00",
+      "observation": "LOINC/LP21258-6",
+      "value": "96.0"
+    },
+    {
+      "date": "2013-01-02 04:00",
+      "observation": "LOINC/LP21258-6",
+      "value": "96.0"
+    },
+    {
+      "date": "2013-01-02 05:00",
+      "observation": "LOINC/LP21258-6",
+      "value": "92.0"
+    },
+    {
+      "date": "2013-01-02 06:00",
+      "observation": "LOINC/LP21258-6",
+      "value": "92.0"
+    },
+    {
+      "date": "2013-01-02 07:00",
+      "observation": "LOINC/LP21258-6",
+      "value": "87.0"
+    },
+    {
+      "date": "2013-01-02 07:39",
+      "observation": "LOINC/LP21258-6",
+      "value": "91.0"
+    },
+    {
+      "date": "2013-01-02 07:42",
+      "observation": "LOINC/LP21258-6",
+      "value": "97.0"
+    },
+    {
+      "date": "2013-01-02 08:00",
+      "observation": "LOINC/LP21258-6",
+      "value": "96.0"
+    },
+    {
+      "date": "2013-01-02 09:00",
+      "observation": "LOINC/LP21258-6",
+      "value": "95.0"
+    },
+    {
+      "date": "2013-01-02 10:00",
+      "observation": "LOINC/LP21258-6",
+      "value": "93.0"
+    },
+    {
+      "date": "2013-01-02 11:00",
+      "observation": "LOINC/LP21258-6",
+      "value": "90.0"
+    },
+    {
+      "date": "2013-01-02 12:00",
+      "observation": "LOINC/LP21258-6",
+      "value": "96.0"
+    },
+    {
+      "date": "2013-01-02 13:00",
+      "observation": "LOINC/LP21258-6",
+      "value": "94.0"
+    },
+    {
+      "date": "2013-01-02 14:00",
+      "observation": "LOINC/LP21258-6",
+      "value": "93.0"
+    },
+    {
+      "date": "2013-01-02 15:00",
+      "observation": "LOINC/LP21258-6",
+      "value": "98.0"
+    },
+    {
+      "date": "2013-01-02 16:00",
+      "observation": "LOINC/LP21258-6",
+      "value": "93.0"
+    },
+    {
+      "date": "2013-01-02 17:00",
+      "observation": "LOINC/LP21258-6",
+      "value": "94.0"
+    },
+    {
+      "date": "2013-01-02 18:00",
+      "observation": "LOINC/LP21258-6",
+      "value": "98.0"
+    },
+    {
+      "date": "2013-01-02 19:00",
+      "observation": "LOINC/LP21258-6",
+      "value": "100.0"
+    },
+    {
+      "date": "2013-01-02 20:00",
+      "observation": "LOINC/8327-9",
+      "value": "1.0"
+    },
+    {
+      "date": "2013-01-02 20:00",
+      "observation": "LOINC/LP21258-6",
+      "value": "98.0"
+    },
+    {
+      "date": "2013-01-02 21:00",
+      "observation": "LOINC/LP21258-6",
+      "value": "100.0"
+    },
+    {
+      "date": "2013-01-02 22:00",
+      "observation": "LOINC/LP21258-6",
+      "value": "100.0"
+    },
+    {
+      "date": "2013-01-02 23:00",
+      "observation": "LOINC/LP21258-6",
+      "value": "100.0"
+    },
+    {
+      "date": "2013-01-03 00:00",
+      "observation": "LOINC/8327-9",
+      "value": "1.0"
+    },
+    {
+      "date": "2013-01-03 00:00",
+      "observation": "LOINC/LP21258-6",
+      "value": "97.0"
+    },
+    {
+      "date": "2013-01-03 01:00",
+      "observation": "LOINC/LP21258-6",
+      "value": "94.0"
+    },
+    {
+      "date": "2013-01-03 02:00",
+      "observation": "LOINC/LP21258-6",
+      "value": "99.0"
+    },
+    {
+      "date": "2013-01-03 03:00",
+      "observation": "LOINC/LP21258-6",
+      "value": "100.0"
+    },
+    {
+      "date": "2013-01-03 04:00",
+      "observation": "LOINC/8327-9",
+      "value": "1.0"
+    },
+    {
+      "date": "2013-01-03 04:00",
+      "observation": "LOINC/LP21258-6",
+      "value": "99.0"
+    },
+    {
+      "date": "2013-01-03 04:50",
+      "observation": "LOINC/LP21258-6",
+      "value": "98.0"
+    },
+    {
+      "date": "2013-01-03 05:00",
+      "observation": "LOINC/LP21258-6",
+      "value": "99.0"
+    },
+    {
+      "date": "2013-01-03 06:00",
+      "observation": "LOINC/LP21258-6",
+      "value": "99.0"
+    },
+    {
+      "date": "2013-01-03 07:00",
+      "observation": "LOINC/8327-9",
+      "value": "1.0"
+    },
+    {
+      "date": "2013-01-03 07:00",
+      "observation": "LOINC/LP21258-6",
+      "value": "96.0"
+    },
+    {
+      "date": "2013-01-03 08:00",
+      "observation": "LOINC/LP21258-6",
+      "value": "99.0"
+    },
+    {
+      "date": "2013-01-03 09:00",
+      "observation": "LOINC/LP21258-6",
+      "value": "100.0"
+    },
+    {
+      "date": "2013-01-03 10:00",
+      "observation": "LOINC/LP21258-6",
+      "value": "89.0"
+    },
+    {
+      "date": "2013-01-03 11:00",
+      "observation": "LOINC/LP21258-6",
+      "value": "91.0"
+    },
+    {
+      "date": "2013-01-03 12:00",
+      "observation": "LOINC/LP21258-6",
+      "value": "94.0"
+    },
+    {
+      "date": "2013-01-03 12:55",
+      "observation": "LOINC/LP21258-6",
+      "value": "95.0"
+    },
+    {
+      "date": "2013-01-03 12:58",
+      "observation": "LOINC/LP21258-6",
+      "value": "95.0"
+    },
+    {
+      "date": "2013-01-03 13:00",
+      "observation": "LOINC/LP21258-6",
+      "value": "96.0"
+    },
+    {
+      "date": "2013-01-03 14:00",
+      "observation": "LOINC/LP21258-6",
+      "value": "95.0"
+    },
+    {
+      "date": "2013-01-03 16:00",
+      "observation": "LOINC/8327-9",
+      "value": "1.0"
+    },
+    {
+      "date": "2013-01-03 16:00",
+      "observation": "LOINC/LP21258-6",
+      "value": "97.0"
+    },
+    {
+      "date": "2013-01-03 19:00",
+      "observation": "LOINC/LP21258-6",
+      "value": "97.0"
+    },
+    {
+      "date": "2013-01-03 22:31",
+      "observation": "LOINC/8327-9",
+      "value": "1.0"
+    },
+    {
+      "date": "2013-01-03 22:31",
+      "observation": "LOINC/LP21258-6",
+      "value": "95.0"
+    },
+    {
+      "date": "2013-01-04 03:30",
+      "observation": "LOINC/8327-9",
+      "value": "1.0"
+    },
+    {
+      "date": "2013-01-04 03:30",
+      "observation": "LOINC/LP21258-6",
+      "value": "95.0"
+    },
+    {
+      "date": "2013-01-04 07:00",
+      "observation": "LOINC/8327-9",
+      "value": "1.0"
+    },
+    {
+      "date": "2013-01-04 07:00",
+      "observation": "LOINC/LP21258-6",
+      "value": "98.0"
+    },
+    {
+      "date": "2013-01-04 11:37",
+      "observation": "LOINC/8327-9",
+      "value": "1.0"
+    },
+    {
+      "date": "2013-01-04 11:37",
+      "observation": "LOINC/LP21258-6",
+      "value": "97.0"
+    },
+    {
+      "date": "2013-01-04 15:46",
+      "observation": "LOINC/8327-9",
+      "value": "1.0"
+    },
+    {
+      "date": "2013-01-04 15:46",
+      "observation": "LOINC/LP21258-6",
+      "value": "100.0"
+    },
+    {
+      "date": "2013-01-04 19:59",
+      "observation": "LOINC/8327-9",
+      "value": "1.0"
+    },
+    {
+      "date": "2013-01-04 19:59",
+      "observation": "LOINC/LP21258-6",
+      "value": "98.0"
+    },
+    {
+      "date": "2013-01-05 00:00",
+      "observation": "OMOP_CONCEPT_ID/4188539",
+      "value": null
+    },
+    {
+      "date": "2013-01-05 00:00",
+      "observation": "LOINC/8327-9",
+      "value": "1.0"
+    },
+    {
+      "date": "2013-01-05 00:00",
+      "observation": "LOINC/LP21258-6",
+      "value": "95.0"
+    },
+    {
+      "date": "2013-01-05 04:00",
+      "observation": "LOINC/8327-9",
+      "value": "1.0"
+    },
+    {
+      "date": "2013-01-05 04:00",
+      "observation": "LOINC/LP21258-6",
+      "value": "94.0"
+    },
+    {
+      "date": "2013-01-05 07:11",
+      "observation": "LOINC/8327-9",
+      "value": "1.0"
+    },
+    {
+      "date": "2013-01-05 07:11",
+      "observation": "LOINC/LP21258-6",
+      "value": "95.0"
+    },
+    {
+      "date": "2013-01-19 13:10",
+      "observation": "LOINC/LP21258-6",
+      "value": "100.0"
+    },
+    {
+      "date": "2013-01-20 00:00",
+      "observation": "OMOP_CONCEPT_ID/45876662",
+      "value": null
+    },
+    {
+      "date": "2013-01-20 00:00",
+      "observation": "OMOP_CONCEPT_ID/45876662",
+      "value": null
+    },
+    {
+      "date": "2013-01-20 00:00",
+      "observation": "OMOP_CONCEPT_ID/45878245",
+      "value": null
+    },
+    {
+      "date": "2013-01-20 00:00",
+      "observation": "OMOP_CONCEPT_ID/45878245",
+      "value": null
+    },
+    {
+      "date": "2013-01-20 00:00",
+      "observation": "OMOP_CONCEPT_ID/45878245",
+      "value": null
+    },
+    {
+      "date": "2013-01-20 00:00",
+      "observation": "OMOP_CONCEPT_ID/45878245",
+      "value": null
+    },
+    {
+      "date": "2013-01-20 00:00",
+      "observation": "OMOP_CONCEPT_ID/45878245",
+      "value": null
+    },
+    {
+      "date": "2013-01-20 00:00",
+      "observation": "OMOP_CONCEPT_ID/312327",
+      "value": null
+    },
+    {
+      "date": "2013-01-20 00:00",
+      "observation": "OMOP_CONCEPT_ID/312437",
+      "value": null
+    },
+    {
+      "date": "2013-01-20 00:00",
+      "observation": "OMOP_CONCEPT_ID/45876662",
+      "value": null
+    },
+    {
+      "date": "2013-01-27 14:43",
+      "observation": "LOINC/8327-9",
+      "value": "1.0"
+    },
+    {
+      "date": "2013-02-10 00:00",
+      "observation": "OMOP_CONCEPT_ID/45876662",
+      "value": null
+    },
+    {
+      "date": "2013-02-10 00:00",
+      "observation": "OMOP_CONCEPT_ID/45876662",
+      "value": null
+    },
+    {
+      "date": "2013-02-10 00:00",
+      "observation": "OMOP_CONCEPT_ID/45878245",
+      "value": null
+    },
+    {
+      "date": "2013-02-10 00:00",
+      "observation": "OMOP_CONCEPT_ID/45878245",
+      "value": null
+    },
+    {
+      "date": "2013-02-10 00:00",
+      "observation": "OMOP_CONCEPT_ID/45878245",
+      "value": null
+    },
+    {
+      "date": "2013-02-10 00:00",
+      "observation": "OMOP_CONCEPT_ID/45878245",
+      "value": null
+    },
+    {
+      "date": "2013-02-10 00:00",
+      "observation": "OMOP_CONCEPT_ID/45878245",
+      "value": null
+    },
+    {
+      "date": "2013-02-10 00:00",
+      "observation": "OMOP_CONCEPT_ID/312437",
+      "value": null
+    },
+    {
+      "date": "2013-02-10 00:00",
+      "observation": "OMOP_CONCEPT_ID/312327",
+      "value": null
+    },
+    {
+      "date": "2013-02-10 00:00",
+      "observation": "OMOP_CONCEPT_ID/45876662",
+      "value": null
+    },
+    {
+      "date": "2013-02-10 07:34",
+      "observation": "LOINC/8327-9",
+      "value": "1.0"
+    },
+    {
+      "date": "2013-02-10 07:34",
+      "observation": "LOINC/LP21258-6",
+      "value": "98.0"
+    },
+    {
+      "date": "2013-02-10 10:16",
+      "observation": "LOINC/LP21258-6",
+      "value": "100.0"
+    },
+    {
+      "date": "2013-02-10 10:30",
+      "observation": "LOINC/LP21258-6",
+      "value": "100.0"
+    },
+    {
+      "date": "2013-02-10 12:45",
+      "observation": "LOINC/LP21258-6",
+      "value": "95.0"
+    },
+    {
+      "date": "2013-02-10 13:00",
+      "observation": "LOINC/LP21258-6",
+      "value": "98.0"
+    },
+    {
+      "date": "2013-02-10 13:30",
+      "observation": "LOINC/LP21258-6",
+      "value": "100.0"
+    },
+    {
+      "date": "2013-02-10 13:55",
+      "observation": "LOINC/LP21258-6",
+      "value": "94.0"
+    },
+    {
+      "date": "2013-02-10 14:00",
+      "observation": "LOINC/LP21258-6",
+      "value": "96.0"
+    },
+    {
+      "date": "2013-02-10 14:23",
+      "observation": "LOINC/LP21258-6",
+      "value": "94.0"
+    },
+    {
+      "date": "2013-02-10 14:38",
+      "observation": "LOINC/LP21258-6",
+      "value": "90.0"
+    },
+    {
+      "date": "2013-02-10 15:00",
+      "observation": "LOINC/LP21258-6",
+      "value": "91.0"
+    },
+    {
+      "date": "2013-02-10 15:05",
+      "observation": "LOINC/LP21258-6",
+      "value": "93.0"
+    },
+    {
+      "date": "2013-02-10 17:00",
+      "observation": "LOINC/8327-9",
+      "value": "101.0"
+    },
+    {
+      "date": "2013-02-10 18:00",
+      "observation": "LOINC/8327-9",
+      "value": "101.0"
+    },
+    {
+      "date": "2013-02-10 18:00",
+      "observation": "LOINC/LP21258-6",
+      "value": "99.0"
+    },
+    {
+      "date": "2013-02-10 19:00",
+      "observation": "LOINC/8327-9",
+      "value": "101.0"
+    },
+    {
+      "date": "2013-02-10 19:00",
+      "observation": "LOINC/LP21258-6",
+      "value": "100.0"
+    },
+    {
+      "date": "2013-02-10 19:57",
+      "observation": "LOINC/LP21258-6",
+      "value": "100.0"
+    },
+    {
+      "date": "2013-02-10 20:00",
+      "observation": "LOINC/8327-9",
+      "value": "101.0"
+    },
+    {
+      "date": "2013-02-10 20:00",
+      "observation": "LOINC/LP21258-6",
+      "value": "100.0"
+    },
+    {
+      "date": "2013-02-10 21:00",
+      "observation": "LOINC/8327-9",
+      "value": "101.0"
+    },
+    {
+      "date": "2013-02-10 21:00",
+      "observation": "LOINC/LP21258-6",
+      "value": "99.0"
+    },
+    {
+      "date": "2013-02-10 22:00",
+      "observation": "LOINC/8327-9",
+      "value": "101.0"
+    },
+    {
+      "date": "2013-02-10 22:00",
+      "observation": "LOINC/LP21258-6",
+      "value": "100.0"
+    },
+    {
+      "date": "2013-02-10 23:00",
+      "observation": "LOINC/8327-9",
+      "value": "101.0"
+    },
+    {
+      "date": "2013-02-10 23:00",
+      "observation": "LOINC/LP21258-6",
+      "value": "100.0"
+    },
+    {
+      "date": "2013-02-11 00:00",
+      "observation": "OMOP_CONCEPT_ID/4188539",
+      "value": null
+    },
+    {
+      "date": "2013-02-11 00:00",
+      "observation": "OMOP_CONCEPT_ID/4188539",
+      "value": null
+    },
+    {
+      "date": "2013-02-11 00:00",
+      "observation": "OMOP_CONCEPT_ID/4188539",
+      "value": null
+    },
+    {
+      "date": "2013-02-11 00:00",
+      "observation": "LOINC/8327-9",
+      "value": "101.0"
+    },
+    {
+      "date": "2013-02-11 00:00",
+      "observation": "LOINC/LP21258-6",
+      "value": "100.0"
+    },
+    {
+      "date": "2013-02-11 00:10",
+      "observation": "LOINC/LP21258-6",
+      "value": "100.0"
+    },
+    {
+      "date": "2013-02-11 01:00",
+      "observation": "LOINC/8327-9",
+      "value": "101.0"
+    },
+    {
+      "date": "2013-02-11 01:00",
+      "observation": "LOINC/LP21258-6",
+      "value": "100.0"
+    },
+    {
+      "date": "2013-02-11 02:00",
+      "observation": "LOINC/8327-9",
+      "value": "101.0"
+    },
+    {
+      "date": "2013-02-11 02:00",
+      "observation": "LOINC/LP21258-6",
+      "value": "100.0"
+    },
+    {
+      "date": "2013-02-11 02:47",
+      "observation": "LOINC/LP21258-6",
+      "value": "100.0"
+    },
+    {
+      "date": "2013-02-11 03:00",
+      "observation": "LOINC/8327-9",
+      "value": "101.0"
+    },
+    {
+      "date": "2013-02-11 03:00",
+      "observation": "LOINC/LP21258-6",
+      "value": "100.0"
+    },
+    {
+      "date": "2013-02-11 04:00",
+      "observation": "LOINC/8327-9",
+      "value": "101.0"
+    },
+    {
+      "date": "2013-02-11 04:17",
+      "observation": "LOINC/LP21258-6",
+      "value": "100.0"
+    },
+    {
+      "date": "2013-02-11 05:00",
+      "observation": "LOINC/8327-9",
+      "value": "101.0"
+    },
+    {
+      "date": "2013-02-11 05:00",
+      "observation": "LOINC/LP21258-6",
+      "value": "98.0"
+    },
+    {
+      "date": "2013-02-11 06:00",
+      "observation": "LOINC/8327-9",
+      "value": "101.0"
+    },
+    {
+      "date": "2013-02-11 06:00",
+      "observation": "LOINC/LP21258-6",
+      "value": "98.0"
+    },
+    {
+      "date": "2013-02-11 07:00",
+      "observation": "LOINC/8327-9",
+      "value": "101.0"
+    },
+    {
+      "date": "2013-02-11 07:30",
+      "observation": "LOINC/8327-9",
+      "value": "101.0"
+    },
+    {
+      "date": "2013-02-11 07:30",
+      "observation": "LOINC/LP21258-6",
+      "value": "90.0"
+    },
+    {
+      "date": "2013-02-11 08:00",
+      "observation": "LOINC/8327-9",
+      "value": "101.0"
+    },
+    {
+      "date": "2013-02-11 08:00",
+      "observation": "LOINC/LP21258-6",
+      "value": "90.0"
+    },
+    {
+      "date": "2013-02-11 08:30",
+      "observation": "LOINC/8327-9",
+      "value": "101.0"
+    },
+    {
+      "date": "2013-02-11 08:30",
+      "observation": "LOINC/LP21258-6",
+      "value": "97.0"
+    },
+    {
+      "date": "2013-02-11 09:00",
+      "observation": "LOINC/8327-9",
+      "value": "101.0"
+    },
+    {
+      "date": "2013-02-11 09:00",
+      "observation": "LOINC/LP21258-6",
+      "value": "96.0"
+    },
+    {
+      "date": "2013-02-11 10:00",
+      "observation": "LOINC/8327-9",
+      "value": "101.0"
+    },
+    {
+      "date": "2013-02-11 10:00",
+      "observation": "LOINC/LP21258-6",
+      "value": "98.0"
+    },
+    {
+      "date": "2013-02-11 10:30",
+      "observation": "LOINC/8327-9",
+      "value": "101.0"
+    },
+    {
+      "date": "2013-02-11 10:30",
+      "observation": "LOINC/LP21258-6",
+      "value": "98.0"
+    },
+    {
+      "date": "2013-02-11 11:05",
+      "observation": "LOINC/8327-9",
+      "value": "101.0"
+    },
+    {
+      "date": "2013-02-11 11:05",
+      "observation": "LOINC/LP21258-6",
+      "value": "99.0"
+    },
+    {
+      "date": "2013-02-11 12:00",
+      "observation": "LOINC/8327-9",
+      "value": "101.0"
+    },
+    {
+      "date": "2013-02-11 12:00",
+      "observation": "LOINC/LP21258-6",
+      "value": "100.0"
+    },
+    {
+      "date": "2013-02-11 12:45",
+      "observation": "LOINC/LP21258-6",
+      "value": "100.0"
+    },
+    {
+      "date": "2013-02-11 12:55",
+      "observation": "LOINC/LP21258-6",
+      "value": "100.0"
+    },
+    {
+      "date": "2013-02-11 13:15",
+      "observation": "LOINC/8327-9",
+      "value": "101.0"
+    },
+    {
+      "date": "2013-02-11 13:30",
+      "observation": "LOINC/LP21258-6",
+      "value": "100.0"
+    },
+    {
+      "date": "2013-02-11 13:45",
+      "observation": "LOINC/LP21258-6",
+      "value": "100.0"
+    },
+    {
+      "date": "2013-02-11 14:00",
+      "observation": "LOINC/LP21258-6",
+      "value": "100.0"
+    },
+    {
+      "date": "2013-02-11 14:15",
+      "observation": "LOINC/LP21258-6",
+      "value": "100.0"
+    },
+    {
+      "date": "2013-02-11 14:30",
+      "observation": "LOINC/LP21258-6",
+      "value": "100.0"
+    },
+    {
+      "date": "2013-02-11 14:49",
+      "observation": "LOINC/LP21258-6",
+      "value": "100.0"
+    },
+    {
+      "date": "2013-02-11 15:00",
+      "observation": "LOINC/LP21258-6",
+      "value": "100.0"
+    },
+    {
+      "date": "2013-02-11 16:00",
+      "observation": "LOINC/LP21258-6",
+      "value": "100.0"
+    },
+    {
+      "date": "2013-02-11 17:00",
+      "observation": "LOINC/LP21258-6",
+      "value": "100.0"
+    },
+    {
+      "date": "2013-02-11 18:00",
+      "observation": "LOINC/LP21258-6",
+      "value": "100.0"
+    }
+  ],
+  "visit_history": [
+    {
+      "date": "2012-06-30 00:00",
+      "type": "STANFORD_VISIT/||History"
+    },
+    {
+      "date": "2012-06-30 10:45",
+      "type": "STANFORD_VISIT/Outpatient|Elective|Office Visit"
+    },
+    {
+      "date": "2012-08-03 10:30",
+      "type": "STANFORD_VISIT/Outpatient|Elective|Hospital Encounter"
+    },
+    {
+      "date": "2012-08-03 23:59",
+      "type": "NUCC/261QR0200X"
+    },
+    {
+      "date": "2012-08-17 00:00",
+      "type": "STANFORD_VISIT/||Orders Only"
+    },
+    {
+      "date": "2012-10-04 00:00",
+      "type": "STANFORD_VISIT/||Orders Only"
+    },
+    {
+      "date": "2012-10-08 00:00",
+      "type": "STANFORD_VISIT/||History"
+    },
+    {
+      "date": "2012-10-12 13:11",
+      "type": "STANFORD_VISIT/Outpatient|Elective|Office Visit"
+    },
+    {
+      "date": "2012-11-22 00:00",
+      "type": "Domain/OMOP generated"
+    },
+    {
+      "date": "2012-12-17 00:00",
+      "type": "STANFORD_VISIT/||Telephone"
+    },
+    {
+      "date": "2012-12-30 00:00",
+      "type": "Domain/OMOP generated"
+    },
+    {
+      "date": "2012-12-30 00:00",
+      "type": "STANFORD_VISIT/||History"
+    },
+    {
+      "date": "2012-12-30 06:54",
+      "type": "CMS Place of Service/OMOP4822038"
+    },
+    {
+      "date": "2012-12-30 06:54",
+      "type": "STANFORD_VISIT/Inpatient|Elective|Hospital Encounter"
+    },
+    {
+      "date": "2012-12-30 08:15",
+      "type": "SNOMED/308335008"
+    },
+    {
+      "date": "2012-12-30 14:54",
+      "type": "SNOMED/308335008"
+    },
+    {
+      "date": "2013-01-04 11:10",
+      "type": "SNOMED/308335008"
+    },
+    {
+      "date": "2013-01-05 00:00",
+      "type": "STANFORD_VISIT/||Orders Only"
+    },
+    {
+      "date": "2013-01-19 13:01",
+      "type": "STANFORD_VISIT/Outpatient|Elective|Office Visit"
+    },
+    {
+      "date": "2013-01-20 00:00",
+      "type": "Domain/OMOP generated"
+    },
+    {
+      "date": "2013-01-20 00:00",
+      "type": "STANFORD_VISIT/||History"
+    },
+    {
+      "date": "2013-01-27 14:37",
+      "type": "STANFORD_VISIT/Outpatient|Elective|Office Visit"
+    },
+    {
+      "date": "2013-01-28 00:00",
+      "type": "STANFORD_VISIT/||Orders Only"
+    },
+    {
+      "date": "2013-01-31 00:00",
+      "type": "STANFORD_VISIT/||Refill"
+    },
+    {
+      "date": "2013-02-10 00:00",
+      "type": "Domain/OMOP generated"
+    },
+    {
+      "date": "2013-02-10 00:00",
+      "type": "STANFORD_VISIT/||History"
+    },
+    {
+      "date": "2013-02-10 00:00",
+      "type": "STANFORD_VISIT/||Orders Only"
+    },
+    {
+      "date": "2013-02-10 00:00",
+      "type": "STANFORD_VISIT/||Orders Only"
+    },
+    {
+      "date": "2013-02-10 06:46",
+      "type": "CMS Place of Service/OMOP4822038"
+    },
+    {
+      "date": "2013-02-10 06:46",
+      "type": "STANFORD_VISIT/Inpatient|Elective|Hospital Encounter"
+    },
+    {
+      "date": "2013-02-10 06:58",
+      "type": "SNOMED/308335008"
+    },
+    {
+      "date": "2013-02-10 08:15",
+      "type": "SNOMED/308335008"
+    },
+    {
+      "date": "2013-02-10 12:34",
+      "type": "SNOMED/308335008"
+    }
+  ],
+  "data_summary": {
+    "n_lab_rows": 500,
+    "n_diagnoses": 133,
+    "n_medications": 173,
+    "n_procedures": 127,
+    "n_observations": 304,
+    "n_visits": 33,
+    "n_gap_labs": 158
+  }
+}

@@ -1,0 +1,27 @@
+{
+  "case_id": "a_031",
+  "benchmark": "intervention_physiological_effect",
+  "hadm_id": 21854291,
+  "procedure": {
+    "title": "Other electric countershock of heart",
+    "date": "2185-11-13 00:00"
+  },
+  "question": {
+    "stem": "Patient hadm_id: 21854291\n\nDemographics: None-year-old Female\nPrimary Diagnosis: Unspecified atrial fibrillation\n\nPre-Procedure Lab Timeline (all available labs before 2185-11-13 00:00):\n\n| Datetime | Lab | Value | Unit | Flag |\n|---|---|---|---|---|\n| 2185-11-11 20:42 | Creatine Kinase (CK) | 119.0 | IU/L | nan |\n| 2185-11-11 20:42 | Creatine Kinase, MB Isoenzyme | 9.0 | ng/mL | nan |\n| 2185-11-11 20:42 | Troponin T | 0.1 | ng/mL | abnormal |\n| 2185-11-12 04:34 | Troponin T | 0.12 | ng/mL | abnormal |\n| 2185-11-12 04:34 | Thyroxine (T4) | 6.0 | ug/dL | nan |\n| 2185-11-12 04:34 | Sodium | 139.0 | mEq/L | nan |\n| 2185-11-12 04:34 | Potassium | 4.1 | mEq/L | nan |\n| 2185-11-12 04:34 | Phosphate | 3.9 | mg/dL | nan |\n| 2185-11-12 04:34 | Magnesium | 2.0 | mg/dL | nan |\n| 2185-11-12 04:34 | Glucose | 116.0 | mg/dL | abnormal |\n| 2185-11-12 04:34 | Creatinine | 0.9 | mg/dL | nan |\n| 2185-11-12 04:34 | Creatine Kinase, MB Isoenzyme | 10.0 | ng/mL | nan |\n| 2185-11-12 04:34 | Creatine Kinase (CK) | 110.0 | IU/L | nan |\n| 2185-11-12 04:34 | CK-MB Index | 9.1 | % | abnormal |\n| 2185-11-12 04:34 | Chloride | 103.0 | mEq/L | nan |\n| 2185-11-12 04:34 | Calcium, Total | 9.3 | mg/dL | nan |\n| 2185-11-12 04:34 | Anion Gap | 15.0 | mEq/L | nan |\n| 2185-11-12 04:34 | Urea Nitrogen | 21.0 | mg/dL | abnormal |\n| 2185-11-12 04:34 | White Blood Cells | 8.2 | K/uL | nan |\n| 2185-11-12 04:34 | Red Blood Cells | 4.09 | m/uL | abnormal |\n| 2185-11-12 04:34 | RDW | 14.0 | % | nan |\n| 2185-11-12 04:34 | Platelet Count | 237.0 | K/uL | nan |\n| 2185-11-12 04:34 | MCV | 89.0 | fL | nan |\n| 2185-11-12 04:34 | MCHC | 33.9 | % | nan |\n| 2185-11-12 04:34 | MCH | 30.0 | pg | nan |\n| 2185-11-12 04:34 | Hemoglobin | 12.3 | g/dL | nan |\n| 2185-11-12 04:34 | Hematocrit | 36.2 | % | nan |\n| 2185-11-12 04:34 | PTT | 150.0 | sec | abnormal |\n| 2185-11-12 04:34 | PT | 14.3 | sec | abnormal |\n| 2185-11-12 04:34 | INR(PT) | 1.2 | nan | abnormal |\n| 2185-11-12 04:34 | Bicarbonate | 25.0 | mEq/L | nan |\n| 2185-11-12 09:54 | D-Dimer | nan | ng/mL | nan |\n| 2185-11-12 14:35 | PTT | 150.0 | sec | abnormal |\n| 2185-11-12 22:44 | PTT | 78.9 | sec | abnormal |\n\nProcedure Performed: Other electric countershock of heart on 2185-11-13 00:00\n\nAnalyze the pre-intervention lab trajectory and clinical context. Given the patient's state and the intervention performed, describe what physiological changes you would expect to see in the post-intervention period. Specifically discuss expected direction and magnitude of change for key cardiac biomarkers (Troponin, CK, CK-MB).",
+    "type": "intervention_forward_prediction"
+  },
+  "visible_context": {
+    "pre_intervention_labs": 34,
+    "demographics": {
+      "age": null,
+      "gender": "Female"
+    },
+    "primary_diagnosis": "Unspecified atrial fibrillation"
+  },
+  "ground_truth": {
+    "post_intervention_labs": "| Datetime | Lab | Value | Unit | Flag |\n|---|---|---|---|---|\n| 2185-11-13 05:32 | Creatine Kinase (CK) | 67.0 | IU/L | nan |\n| 2185-11-13 05:32 | Creatine Kinase, MB Isoenzyme | 5.0 | ng/mL | nan |\n| 2185-11-13 05:32 | Lactate Dehydrogenase (LD) | 158.0 | IU/L | nan |\n| 2185-11-13 05:32 | Troponin T | 0.14 | ng/mL | abnormal |",
+    "n_post_labs": 4,
+    "expected_troponin_direction": "stable",
+    "expected_troponin_magnitude_pct": 16.666666666666682
+  }
+}

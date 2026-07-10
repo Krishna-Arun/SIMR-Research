@@ -1,0 +1,293 @@
+[EVAL] Starting causal cardiac evaluation
+[EVAL] Model: qwen3.6:latest
+[EVAL] Ollama endpoint: http://127.0.0.1:55632/v1
+[EVAL] Concurrency: 5
+[EVAL] 
+=== Loading Benchmark A: Intervention → Physiological Effect ===
+[EVAL] Loaded 100 cases
+[EVAL] 
+--- Running condition: WITH PubMed ---
+[EVAL] Completed a + with_pubmed: 100 successful, 0 failed
+[EVAL] Wrote results to /Users/krishna_arun/Documents/Summer_Work/SIMR/SIMR-Research/benchmarks/causal_cardiac/results/a_with_pubmed_results.json
+[EVAL] 
+--- Running condition: WITHOUT PubMed ---
+[EVAL] Completed a + without_pubmed: 100 successful, 0 failed
+[EVAL] Wrote results to /Users/krishna_arun/Documents/Summer_Work/SIMR/SIMR-Research/benchmarks/causal_cardiac/results/a_without_pubmed_results.json
+[EVAL] 
+=== Loading Benchmark B: Physiological Change → Intervention Attribution ===
+[EVAL] Loaded 100 cases
+[EVAL] 
+--- Running condition: WITH PubMed ---
+Ollama API error (qwen3.6:latest): Connection error.
+Ollama API error (qwen3.6:latest): Connection error.
+Ollama API error (qwen3.6:latest): Connection error.
+Ollama API error (qwen3.6:latest): Connection error.
+Ollama API error (qwen3.6:latest): Connection error.
+[EVAL] Error answering benchmark B: Connection error.
+[EVAL] Error answering benchmark B: Connection error.
+[EVAL] Error answering benchmark B: Connection error.
+[EVAL] Error answering benchmark B: Connection error.
+[EVAL] Error answering benchmark B: Connection error.
+Ollama API error (qwen3.6:latest): Connection error.
+Ollama API error (qwen3.6:latest): Connection error.
+Ollama API error (qwen3.6:latest): Connection error.
+Ollama API error (qwen3.6:latest): Connection error.
+Ollama API error (qwen3.6:latest): Connection error.
+[EVAL] Error answering benchmark B: Connection error.
+[EVAL] Error answering benchmark B: Connection error.
+[EVAL] Error answering benchmark B: Connection error.
+[EVAL] Error answering benchmark B: Connection error.
+[EVAL] Error answering benchmark B: Connection error.
+Ollama API error (qwen3.6:latest): Connection error.
+Ollama API error (qwen3.6:latest): Connection error.
+Ollama API error (qwen3.6:latest): Connection error.
+Ollama API error (qwen3.6:latest): Connection error.
+Ollama API error (qwen3.6:latest): Connection error.
+[EVAL] Error answering benchmark B: Connection error.
+[EVAL] Error answering benchmark B: Connection error.
+[EVAL] Error answering benchmark B: Connection error.
+[EVAL] Error answering benchmark B: Connection error.
+[EVAL] Error answering benchmark B: Connection error.
+Ollama API [EVAL] Error answering benchmark A: Expected ',' or '}' after property value in JSON at position 2558 (line 25 column 4)
+[EVAL] Error answering benchmark A: Expected ',' or '}' after property value in JSON at position 1004 (line 13 column 4)
+[EVAL] Error answering benchmark A: Connection error.
+[EVAL] Error answering benchmark A: Connection error.
+Ollama API error (qwen3.6:latest): Connection error.
+Ollama API error (qwen3.6:latest): Request timed out.
+Ollama API error (qwen3.6:latest): Request timed out.
+Ollama API error (qwen3.6:latest): Request timed out.
+Ollama API error (qwen3.6:latest): Request timed out.
+Ollama API error (qwen3.6:latest): Request timed out.
+Ollama API error (qwen3.6:latest): Request timed out.
+Ollama API error (qwen3.6:latest): Request timed out.
+[EVAL] Error answering benchmark A: Request timed out.
+[EVAL] Error answering benchmark A: Expected ',' or '}' after property value in JSON at position 2364 (line 31 column 4)
+Ollama API error (qwen3.6:latest): Request timed out.
+[EVAL] Error answering benchmark A: Expected ',' or '}' after property value in JSON at position 1663 (line 21 column 6)
+Ollama API error (qwen3.6:latest): Request timed out.
+Ollama API error (qwen3.6:latest): Request timed out.
+Ollama API error (qwen3.6:latest): Request timed out.
+Ollama API error (qwen3.6:latest): Request timed out.
+[EVAL] Error answering benchmark A: Expected ',' or '}' after property value in JSON at position 2072 (line 25 column 4)
+Ollama API error (qwen3.6:latest): Request timed out.
+[EVAL] Error answering benchmark A: Expected ',' or '}' after property value in JSON at position 1944 (line 25 column 4)
+Ollama API error (qwen3.6:latest): Request timed out.
+Ollama API error (qwen3.6:latest): Request timed out.
+Ollama API error (qwen3.6:latest): Request timed out.
+Ollama API error (qwen3.6:latest): Request timed out.
+Ollama API error (qwen3.6:latest): Request timed out.
+[EVAL] Error answering benchmark A: Failed to parse response as JSON:
+{
+  "clinical_context": "NSTEMI patient undergoing PCI with stent placement. Pre-procedure labs show plateauing troponin T (~0.74 ng/mL) and declining CK-MB (11 ng/mL), indicating the acute infarction event has likely peaked. The procedure involves mechanical reperfusion, iodinated contrast administration, and potential periprocedural myocardial injury.",
+  "post_intervention_predictions": {
+    "Troponin_T": {
+      "direction": "Transient rise followed by gradual decline",
+      "magnitude_per
+Ollama API error (qwen3.6:latest): Request timed out.
+Ollama API error (qwen3.6:latest): Request timed out.
+[EVAL] Error answering benchmark A: Failed to parse response as JSON:
+{
+  "Troponin T": {
+    "direction": "Rising then falling",
+    "magnitude_percent_change": "+10-25% peak (within 12-24h),
+Ollama API error (qwen3.6:latest): Request timed out.
+Ollama API error (qwen3.6:latest): Request timed out.
+Ollama API error (qwen3.6:latest): Request timed out.
+[EVAL] Error answering benchmark A: Expected ',' or '}' after property value in JSON at position 1553 (line 19 column 4)
+Ollama API error (qwen3.6:latest): Request timed out.
+Ollama API error (qwen3.6:latest): Request timed out.
+[EVAL] Error answering benchmark A: Expected ',' or '}' after property value in JSON at position 1805 (line 21 column 6)
+Ollama API error (qwen3.6:latest): Request timed out.
+Ollama API error (qwen3.6:latest): Request timed out.
+Ollama API error (qwen3.6:latest): Request timed out.
+[EVAL] Error answering benchmark A: Expected ',' or '}' after property value in JSON at position 1736 (line 19 column 4)
+[EVAL] Error answering benchmark A: Failed to parse response as JSON:
+{
+  "procedure": "Destruction of Conduction Mechanism, Percutaneous Approach (Cardiac Catheter Ablation)",
+  "
+Ollama API error (qwen3.6:latest): Request timed out.
+Ollama API error (qwen3.6:latest): Request timed out.
+Ollama API error (qwen3.6:latest): Request timed out.
+Ollama API error (qwen3.6:latest): Request timed out.
+Ollama API error (qwen3.6:latest): Request timed out.
+[EVAL] Error answering benchmark A: Expected ',' or '}' after property value in JSON at position 1611 (line 22 column 4)
+ Error answering benchmark B: Connection error.
+[EVAL] Error answering benchmark B: Connection error.
+[EVAL] Error answering benchmark B: Connection error.
+[EVAL] Error answering benchmark B: Connection error.
+[EVAL] Error answering benchmark B: Connection error.
+Ollama API error (qwen3.6:latest): Connection error.
+Ollama API error (qwen3.6:latest): Connection error.
+Ollama API error (qwen3.6:latest): Connection error.
+Ollama API error (qwen3.6:latest): Connection error.
+Ollama API error (qwen3.6:latest): Connection error.
+[EVAL] Error answering benchmark B: Connection error.
+[EVAL] Error answering benchmark B: Connection error.
+[EVAL] Error answering benchmark B: Connection error.
+[EVAL] Error answering benchmark B: Connection error.
+[EVAL] Error answering benchmark B: Connection error.
+Ollama API error (qwen3.6:latest): Connection error.
+Ollama API error (qwen3.6:latest): Connection error.
+Ollama API error (qwen3.6:latest): Connection error.
+Ollama API error (qwen3.6:latest): Connection error.
+Ollama API error (qwen3.6:latest): Connection error.
+[EVAL] Error answering benchmark B: Connection error.
+[EVAL] Error answering benchmark B: Connection error.
+[EVAL] Error answering benchmark B: Connection error.
+[EVAL] Error answering benchmark B: Connection error.
+[EVAL] Error answering benchmark B: Connection error.
+Ollama API error (qwen3.6:latest): Connection error.
+Ollama API error (qwen3.6:latest): Connection error.
+Ollama API error (qwen3.6:latest): Connection error.
+Ollama API error (qwen3.6:latest): Connection error.
+Ollama API error (qwen3.6:latest): Connection error.
+[EVAL] Error answering benchmark B: Connection error.
+[EVAL] Error answering benchmark B: Connection error.
+[EVAL] Error answering benchmark B: Connection error.
+[EVAL] Error answering benchmark B: Connection error.
+[EVAL] Error answering benchmark B: Connection error.
+Ollama API error (qwen3.6:latest): Connection error.
+Ollama API error (qwen3.6:latest): Connection error.
+Ollama API error (qwen3.6:latest): Connection error.
+Ollama API error (qwen3.6:latest): Connection error.
+Ollama API error (qwen3.6:latest): Connection error.
+[EVAL] Error answering benchmark B: Connection error.
+[EVAL] Error answering benchmark B: Connection error.
+[EVAL] Error answering benchmark B: Connection error.
+[EVAL] Error answering benchmark B: Connection error.
+[EVAL] Error answering benchmark B: Connection error.
+Ollama API error (qwen3.6:latest): Connection error.
+Ollama API error (qwen3.6:latest): Connection error.
+Ollama API error (qwen3.6:latest): Connection error.
+Ollama API error (qwen3.6:latest): Connection error.
+Ollama API error (qwen3.6:latest): Connection error.
+[EVAL] Error answering benchmark B: Connection error.
+[EVAL] Error answering benchmark B: Connection error.
+[EVAL] Error answering benchmark B: Connection error.
+[EVAL] Error answering benchmark B: Connection error.
+[EVAL] Error answering benchmark B: Connection error.
+Ollama API error (qwen3.6:latest): Connection error.
+Ollama API error (qwen3.6:latest): Connection error.
+Ollama API error (qwen3.6:latest): Connection error.
+Ollama API error (qwen3.6:latest): Connection error.
+Ollama API error (qwen3.6:latest): Connection error.
+[EVAL] Error answering benchmark B: Connection error.
+[EVAL] Error answering benchmark B: Connection error.
+[EVAL] Error answering benchmark B: Connection error.
+[EVAL] Error answering benchmark B: Connection error.
+[EVAL] Error answering benchmark B: Connection error.
+Ollama API error (qwen3.6:latest): Connection error.
+Ollama API error (qwen3.6:latest): Connection error.
+Ollama API error (qwen3.6:latest): Connection error.
+Ollama API error (qwen3.6:latest): Connection error.
+Ollama API error (qwen3.6:latest): Connection error.
+[EVAL] Error answering benchmark B: Connection error.
+[EVAL] Error answering benchmark B: Connection error.
+[EVAL] Error answering benchmark B: Connection error.
+[EVAL] Error answering benchmark B: Connection error.
+[EVAL] Error answering benchmark B: Connection error.
+Ollama API error (qwen3.6:latest): Connection error.
+Ollama API error (qwen3.6:latest): Connection error.
+Ollama API error (qwen3.6:latest): Connection error.
+Ollama API error (qwen3.6:latest): Connection error.
+Ollama API error (qwen3.6:latest): Connection error.
+[EVAL] Error answering benchmark B: Connection error.
+[EVAL] Error answering benchmark B: Connection error.
+[EVAL] Error answering benchmark B: Connection error.
+[EVAL] Error answering benchmark B: Connection error.
+[EVAL] Error answering benchmark B: Connection error.
+Ollama API error (qwen3.6:latest): Connection error.
+Ollama API error (qwen3.6:latest): Connection error.
+Ollama API error (qwen3.6:latest): Connection error.
+Ollama API error (qwen3.6:latest): Connection error.
+Ollama API error (qwen3.6:latest): Connection error.
+[EVAL] Error answering benchmark B: Connection error.
+[EVAL] Error answering benchmark B: Connection error.
+[EVAL] Error answering benchmark B: Connection error.
+[EVAL] Error answering benchmark B: Connection error.
+[EVAL] Error answering benchmark B: Connection error.
+Ollama API error (qwen3.6:latest): Connection error.
+Ollama API error (qwen3.6:latest): Connection error.
+Ollama API error (qwen3.6:latest): Connection error.
+Ollama API error (qwen3.6:latest): Connection error.
+Ollama API error (qwen3.6:latest): Connection error.
+[EVAL] Error answering benchmark B: Connection error.
+[EVAL] Error answering benchmark B: Connection error.
+[EVAL] Error answering benchmark B: Connection error.
+[EVAL] Error answering benchmark B: Connection error.
+[EVAL] Error answering benchmark B: Connection error.
+Ollama API error (qwen3.6:latest): Connection error.
+Ollama API error (qwen3.6:latest): Connection error.
+Ollama API error (qwen3.6:latest): Connection error.
+Ollama API error (qwen3.6:latest): Connection error.
+Ollama API error (qwen3.6:latest): Connection error.
+[EVAL] Error answering benchmark B: Connection error.
+[EVAL] Error answering benchmark B: Connection error.
+[EVAL] Error answering benchmark B: Connection error.
+[EVAL] Error answering benchmark B: Connection error.
+[EVAL] Error answering benchmark B: Connection error.
+Ollama API error (qwen3.6:latest): Connection error.
+Ollama API error (qwen3.6:latest): Connection error.
+Ollama API error (qwen3.6:latest): Connection error.
+Ollama API error (qwen3.6:latest): Connection error.
+Ollama API error (qwen3.6:latest): Connection error.
+[EVAL] Error answering benchmark B: Connection error.
+[EVAL] Error answering benchmark B: Connection error.
+[EVAL] Error answering benchmark B: Connection error.
+[EVAL] Error answering benchmark B: Connection error.
+[EVAL] Error answering benchmark B: Connection error.
+Ollama API error (qwen3.6:latest): Connection error.
+Ollama API error (qwen3.6:latest): Connection error.
+Ollama API error (qwen3.6:latest): Connection error.
+Ollama API error (qwen3.6:latest): Connection error.
+Ollama API error (qwen3.6:latest): Connection error.
+[EVAL] Error answering benchmark B: Connection error.
+[EVAL] Error answering benchmark B: Connection error.
+[EVAL] Error answering benchmark B: Connection error.
+[EVAL] Error answering benchmark B: Connection error.
+[EVAL] Error answering benchmark B: Connection error.
+Ollama API error (qwen3.6:latest): Connection error.
+Ollama API error (qwen3.6:latest): Connection error.
+Ollama API error (qwen3.6:latest): Connection error.
+Ollama API error (qwen3.6:latest): Connection error.
+Ollama API error (qwen3.6:latest): Connection error.
+[EVAL] Error answering benchmark B: Connection error.
+[EVAL] Error answering benchmark B: Connection error.
+[EVAL] Error answering benchmark B: Connection error.
+[EVAL] Error answering benchmark B: Connection error.
+[EVAL] Error answering benchmark B: Connection error.
+Ollama API error (qwen3.6:latest): Connection error.
+Ollama API error (qwen3.6:latest): Connection error.
+Ollama API error (qwen3.6:latest): Connection error.
+Ollama API error (qwen3.6:latest): Connection error.
+Ollama API error (qwen3.6:latest): Connection error.
+[EVAL] Error answering benchmark B: Connection error.
+[EVAL] Error answering benchmark B: Connection error.
+[EVAL] Error answering benchmark B: Connection error.
+[EVAL] Error answering benchmark B: Connection error.
+[EVAL] Error answering benchmark B: Connection error.
+Ollama API error (qwen3.6:latest): Connection error.
+Ollama API error (qwen3.6:latest): Connection error.
+Ollama API error (qwen3.6:latest): Connection error.
+Ollama API error (qwen3.6:latest): Connection error.
+Ollama API error (qwen3.6:latest): Connection error.
+[EVAL] Error answering benchmark B: Connection error.
+[EVAL] Error answering benchmark B: Connection error.
+[EVAL] Error answering benchmark B: Connection error.
+[EVAL] Error answering benchmark B: Connection error.
+[EVAL] Error answering benchmark B: Connection error.
+Ollama API error (qwen3.6:latest): Connection error.
+Ollama API error (qwen3.6:latest): Connection error.
+Ollama API error (qwen3.6:latest): Connection error.
+Ollama API error (qwen3.6:latest): Connection error.
+Ollama API error (qwen3.6:latest): Connection error.
+[EVAL] Error answering benchmark B: Connection error.
+[EVAL] Error answering benchmark B: Connection error.
+[EVAL] Error answering benchmark B: Connection error.
+[EVAL] Error answering benchmark B: Connection error.
+[EVAL] Error answering benchmark B: Connection error.
+[EVAL] Completed b + without_pubmed: 0 successful, 100 failed
+[EVAL] Wrote results to /Users/krishna_arun/Documents/Summer_Work/SIMR/SIMR-Research/benchmarks/causal_cardiac/results/b_without_pubmed_results.json
+[EVAL] 
+=== Evaluation complete ===
+[EVAL] Results saved to /Users/krishna_arun/Documents/Summer_Work/SIMR/SIMR-Research/benchmarks/causal_cardiac/results

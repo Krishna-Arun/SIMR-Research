@@ -1,0 +1,180 @@
+{
+  "question_id": "L4-25220743-34902936",
+  "sequence": [
+    "a",
+    "b",
+    "c",
+    "d"
+  ],
+  "anchor_family_hidden": true,
+  "demographics": {
+    "gender": "F",
+    "anchor_age": 65,
+    "admission_type": "URGENT",
+    "race": "WHITE"
+  },
+  "steps": {
+    "a": {
+      "stem": "A 65-year-old F patient was admitted to the ICU. Using ONLY the supplemental data you can request (labs and microbiology are available by name/date first; you must justify and request the values you need), determine the SINGLE most likely next major intervention this patient requires, and justify it with a patient-specific causal chain that cites the specific lab values you retrieved.",
+      "question_type": "next_intervention_openended",
+      "tool_use": "Call Access_All_supplementals_no_values(question_id) first, then Request_a_supplemental / Request_values with justification.",
+      "question_id_for_tools": "L4-25220743-34902936"
+    },
+    "b": {
+      "stem": "Given that this patient underwent dialysis (Hemodialysis), select the core labs whose 72-hour trajectory is most informative and predict each one's direction (Rising / Falling / Stable) with a causal justification and a confidence.",
+      "candidate_labs": [
+        {
+          "lab": "Potassium",
+          "ref_low": 3.3,
+          "ref_high": 5.1,
+          "pre_value": 5.0
+        },
+        {
+          "lab": "MCH",
+          "ref_low": 26.0,
+          "ref_high": 32.0,
+          "pre_value": 30.4
+        },
+        {
+          "lab": "Urea Nitrogen",
+          "ref_low": 6.0,
+          "ref_high": 20.0,
+          "pre_value": 66.0
+        },
+        {
+          "lab": "MCV",
+          "ref_low": 82.0,
+          "ref_high": 98.0,
+          "pre_value": 100.0
+        },
+        {
+          "lab": "PTT",
+          "ref_low": 25.0,
+          "ref_high": 36.5,
+          "pre_value": 57.2
+        },
+        {
+          "lab": "Hematocrit",
+          "ref_low": 34.0,
+          "ref_high": 45.0,
+          "pre_value": 36.4
+        },
+        {
+          "lab": "INR(PT)",
+          "ref_low": 0.9,
+          "ref_high": 1.1,
+          "pre_value": 1.1
+        },
+        {
+          "lab": "Red Blood Cells",
+          "ref_low": 3.9,
+          "ref_high": 5.2,
+          "pre_value": 3.65
+        },
+        {
+          "lab": "Phosphate",
+          "ref_low": 2.7,
+          "ref_high": 4.5,
+          "pre_value": 5.2
+        },
+        {
+          "lab": "Hemoglobin",
+          "ref_low": 11.2,
+          "ref_high": 15.7,
+          "pre_value": 11.1
+        },
+        {
+          "lab": "RDW",
+          "ref_low": 10.5,
+          "ref_high": 15.5,
+          "pre_value": 14.4
+        },
+        {
+          "lab": "MCHC",
+          "ref_low": 32.0,
+          "ref_high": 37.0,
+          "pre_value": 30.5
+        },
+        {
+          "lab": "Calcium, Total",
+          "ref_low": 8.4,
+          "ref_high": 10.3,
+          "pre_value": 8.0
+        },
+        {
+          "lab": "Glucose",
+          "ref_low": 70.0,
+          "ref_high": 100.0,
+          "pre_value": 149.0
+        },
+        {
+          "lab": "RDW-SD",
+          "ref_low": 35.1,
+          "ref_high": 46.3,
+          "pre_value": 52.7
+        },
+        {
+          "lab": "Chloride",
+          "ref_low": 96.0,
+          "ref_high": 108.0,
+          "pre_value": 91.0
+        },
+        {
+          "lab": "Magnesium",
+          "ref_low": 1.6,
+          "ref_high": 2.6,
+          "pre_value": 2.2
+        },
+        {
+          "lab": "Platelet Count",
+          "ref_low": 150.0,
+          "ref_high": 400.0,
+          "pre_value": 256.0
+        },
+        {
+          "lab": "Creatinine",
+          "ref_low": 0.4,
+          "ref_high": 1.1,
+          "pre_value": 5.5
+        },
+        {
+          "lab": "Sodium",
+          "ref_low": 133.0,
+          "ref_high": 145.0,
+          "pre_value": 133.0
+        },
+        {
+          "lab": "Anion Gap",
+          "ref_low": 8.0,
+          "ref_high": 20.0,
+          "pre_value": 23.0
+        },
+        {
+          "lab": "White Blood Cells",
+          "ref_low": 4.0,
+          "ref_high": 10.0,
+          "pre_value": 15.6
+        },
+        {
+          "lab": "PT",
+          "ref_low": 9.4,
+          "ref_high": 12.5,
+          "pre_value": 11.7
+        },
+        {
+          "lab": "Bicarbonate",
+          "ref_low": 22.0,
+          "ref_high": 32.0,
+          "pre_value": 24.0
+        }
+      ]
+    },
+    "d": {
+      "stem": "At discharge, considering this patient's clinical course, predict whether they will die within one year. Give a Yes/No call, a calibrated confidence (0-1), and a causal risk rationale referencing the patient's specific abnormal values/trends.",
+      "options": [
+        "Yes",
+        "No"
+      ]
+    }
+  }
+}

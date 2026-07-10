@@ -1,0 +1,547 @@
+{
+  "patient_id": "115970553",
+  "action_label": "prbc_transfusion",
+  "patient_context": {
+    "demographics": {
+      "age": 42,
+      "gender": "Male"
+    },
+    "admission_history": [
+      {
+        "admit_date": "2022-10-03",
+        "discharge_date": "2022-10-03",
+        "admission_type": "Inpatient",
+        "diagnoses": [],
+        "procedures_performed": [],
+        "medications": []
+      },
+      {
+        "admit_date": "2022-10-07",
+        "discharge_date": "2022-10-07",
+        "admission_type": "Inpatient",
+        "diagnoses": [],
+        "procedures_performed": [],
+        "medications": []
+      },
+      {
+        "admit_date": "2022-10-08",
+        "discharge_date": "2022-10-08",
+        "admission_type": "Inpatient",
+        "diagnoses": [],
+        "procedures_performed": [],
+        "medications": []
+      },
+      {
+        "admit_date": "2022-10-10",
+        "discharge_date": "2022-10-10",
+        "admission_type": "Inpatient",
+        "diagnoses": [],
+        "procedures_performed": [],
+        "medications": []
+      },
+      {
+        "admit_date": "2022-10-10",
+        "discharge_date": "2022-10-10",
+        "admission_type": "Inpatient",
+        "diagnoses": [
+          "End-stage renal disease"
+        ],
+        "procedures_performed": [],
+        "medications": []
+      }
+    ],
+    "current_admission": {
+      "admit_date": "2022-03-31",
+      "admission_type": "Inpatient",
+      "admission_location": "Emergency Department",
+      "diagnoses": [
+        "Sepsis, unspecified organism",
+        "B44.9",
+        "B95.7",
+        "D50.0",
+        "Acute posthemorrhagic anemia",
+        "Anemia, unspecified",
+        "D68.9",
+        "D69.49"
+      ],
+      "medications": []
+    }
+  },
+  "lab_data": [
+    {
+      "date": "2022-07-04",
+      "label": "ALT",
+      "value": "28.0",
+      "flag": null,
+      "ref_lower": "7",
+      "ref_upper": "56"
+    },
+    {
+      "date": "2022-07-04",
+      "label": "Albumin",
+      "value": "2.9",
+      "flag": "low",
+      "ref_lower": "3.5",
+      "ref_upper": "5.0"
+    },
+    {
+      "date": "2022-07-04",
+      "label": "Anion Gap",
+      "value": "___",
+      "flag": null,
+      "ref_lower": "8",
+      "ref_upper": "16"
+    },
+    {
+      "date": "2022-07-04",
+      "label": "BUN",
+      "value": "___",
+      "flag": "abnormal",
+      "ref_lower": "7.0",
+      "ref_upper": "25.0"
+    },
+    {
+      "date": "2022-07-04",
+      "label": "Calcium",
+      "value": "9.1",
+      "flag": null,
+      "ref_lower": "8.5",
+      "ref_upper": "10.5"
+    },
+    {
+      "date": "2022-07-04",
+      "label": "Chloride",
+      "value": "104.0",
+      "flag": null,
+      "ref_lower": "98",
+      "ref_upper": "107"
+    },
+    {
+      "date": "2022-07-04",
+      "label": "Creatinine",
+      "value": "___",
+      "flag": null,
+      "ref_lower": "0.5",
+      "ref_upper": "1.2"
+    },
+    {
+      "date": "2022-07-04",
+      "label": "Glucose",
+      "value": "___",
+      "flag": "abnormal",
+      "ref_lower": "70",
+      "ref_upper": "99"
+    },
+    {
+      "date": "2022-07-04",
+      "label": "Hemoglobin",
+      "value": "___",
+      "flag": "low",
+      "ref_lower": "12.0",
+      "ref_upper": "17.5"
+    },
+    {
+      "date": "2022-07-04",
+      "label": "INR",
+      "value": "___",
+      "flag": "abnormal",
+      "ref_lower": "0.9",
+      "ref_upper": "1.1"
+    },
+    {
+      "date": "2022-07-04",
+      "label": "Phosphorus",
+      "value": "4.3",
+      "flag": null,
+      "ref_lower": "2.5",
+      "ref_upper": "4.5"
+    },
+    {
+      "date": "2022-07-04",
+      "label": "Platelets",
+      "value": "___",
+      "flag": "low",
+      "ref_lower": "150",
+      "ref_upper": "400"
+    },
+    {
+      "date": "2022-07-04",
+      "label": "Potassium",
+      "value": "___",
+      "flag": null,
+      "ref_lower": "3.5",
+      "ref_upper": "5.0"
+    },
+    {
+      "date": "2022-07-04",
+      "label": "Sodium",
+      "value": "___",
+      "flag": null,
+      "ref_lower": "136",
+      "ref_upper": "145"
+    },
+    {
+      "date": "2022-07-04",
+      "label": "eGFR",
+      "value": "___",
+      "flag": null,
+      "ref_lower": "60",
+      "ref_upper": "120"
+    },
+    {
+      "date": "2022-07-05",
+      "label": "ALT",
+      "value": "23.0",
+      "flag": null,
+      "ref_lower": "7",
+      "ref_upper": "56"
+    },
+    {
+      "date": "2022-07-05",
+      "label": "Albumin",
+      "value": "2.6",
+      "flag": "low",
+      "ref_lower": "3.5",
+      "ref_upper": "5.0"
+    },
+    {
+      "date": "2022-07-05",
+      "label": "Anion Gap",
+      "value": "___",
+      "flag": null,
+      "ref_lower": "8",
+      "ref_upper": "16"
+    },
+    {
+      "date": "2022-07-05",
+      "label": "BUN",
+      "value": "___",
+      "flag": "abnormal",
+      "ref_lower": "7.0",
+      "ref_upper": "25.0"
+    },
+    {
+      "date": "2022-07-05",
+      "label": "Calcium",
+      "value": "9.6",
+      "flag": null,
+      "ref_lower": "8.5",
+      "ref_upper": "10.5"
+    },
+    {
+      "date": "2022-07-05",
+      "label": "Chloride",
+      "value": "105.0",
+      "flag": null,
+      "ref_lower": "98",
+      "ref_upper": "107"
+    },
+    {
+      "date": "2022-07-05",
+      "label": "Creatinine",
+      "value": "___",
+      "flag": null,
+      "ref_lower": "0.5",
+      "ref_upper": "1.2"
+    },
+    {
+      "date": "2022-07-05",
+      "label": "Glucose",
+      "value": "___",
+      "flag": "abnormal",
+      "ref_lower": "70",
+      "ref_upper": "99"
+    },
+    {
+      "date": "2022-07-05",
+      "label": "Hemoglobin",
+      "value": "___",
+      "flag": "low",
+      "ref_lower": "12.0",
+      "ref_upper": "17.5"
+    },
+    {
+      "date": "2022-07-05",
+      "label": "INR",
+      "value": "___",
+      "flag": "abnormal",
+      "ref_lower": "0.9",
+      "ref_upper": "1.1"
+    },
+    {
+      "date": "2022-07-05",
+      "label": "Platelets",
+      "value": "___",
+      "flag": "low",
+      "ref_lower": "150",
+      "ref_upper": "400"
+    },
+    {
+      "date": "2022-07-05",
+      "label": "Potassium",
+      "value": "___",
+      "flag": null,
+      "ref_lower": "3.5",
+      "ref_upper": "5.0"
+    },
+    {
+      "date": "2022-07-05",
+      "label": "Sodium",
+      "value": "___",
+      "flag": null,
+      "ref_lower": "136",
+      "ref_upper": "145"
+    },
+    {
+      "date": "2022-07-05",
+      "label": "eGFR",
+      "value": "___",
+      "flag": null,
+      "ref_lower": "60",
+      "ref_upper": "120"
+    },
+    {
+      "date": "2022-07-06",
+      "label": "ALT",
+      "value": "24.0",
+      "flag": null,
+      "ref_lower": "7",
+      "ref_upper": "56"
+    },
+    {
+      "date": "2022-07-06",
+      "label": "Albumin",
+      "value": "2.6",
+      "flag": "low",
+      "ref_lower": "3.5",
+      "ref_upper": "5.0"
+    },
+    {
+      "date": "2022-07-06",
+      "label": "Anion Gap",
+      "value": "___",
+      "flag": null,
+      "ref_lower": "8",
+      "ref_upper": "16"
+    },
+    {
+      "date": "2022-07-06",
+      "label": "BUN",
+      "value": "___",
+      "flag": "abnormal",
+      "ref_lower": "7.0",
+      "ref_upper": "25.0"
+    },
+    {
+      "date": "2022-07-06",
+      "label": "Calcium",
+      "value": "9.0",
+      "flag": null,
+      "ref_lower": "8.5",
+      "ref_upper": "10.5"
+    },
+    {
+      "date": "2022-07-06",
+      "label": "Chloride",
+      "value": "105.0",
+      "flag": null,
+      "ref_lower": "98",
+      "ref_upper": "107"
+    },
+    {
+      "date": "2022-07-06",
+      "label": "Creatinine",
+      "value": "___",
+      "flag": null,
+      "ref_lower": "0.5",
+      "ref_upper": "1.2"
+    },
+    {
+      "date": "2022-07-06",
+      "label": "Glucose",
+      "value": "___",
+      "flag": "abnormal",
+      "ref_lower": "70",
+      "ref_upper": "99"
+    },
+    {
+      "date": "2022-07-06",
+      "label": "Hemoglobin",
+      "value": "___",
+      "flag": "low",
+      "ref_lower": "12.0",
+      "ref_upper": "17.5"
+    },
+    {
+      "date": "2022-07-06",
+      "label": "INR",
+      "value": "___",
+      "flag": "abnormal",
+      "ref_lower": "0.9",
+      "ref_upper": "1.1"
+    },
+    {
+      "date": "2022-07-06",
+      "label": "Phosphorus",
+      "value": "3.7",
+      "flag": null,
+      "ref_lower": "2.5",
+      "ref_upper": "4.5"
+    },
+    {
+      "date": "2022-07-06",
+      "label": "Platelets",
+      "value": "___",
+      "flag": "low",
+      "ref_lower": "150",
+      "ref_upper": "400"
+    },
+    {
+      "date": "2022-07-06",
+      "label": "Potassium",
+      "value": "___",
+      "flag": null,
+      "ref_lower": "3.5",
+      "ref_upper": "5.0"
+    },
+    {
+      "date": "2022-07-06",
+      "label": "Sodium",
+      "value": "___",
+      "flag": "abnormal",
+      "ref_lower": "136",
+      "ref_upper": "145"
+    },
+    {
+      "date": "2022-07-06",
+      "label": "eGFR",
+      "value": "___",
+      "flag": "abnormal",
+      "ref_lower": "60",
+      "ref_upper": "120"
+    },
+    {
+      "date": "2022-07-07",
+      "label": "ALT",
+      "value": "21.0",
+      "flag": null,
+      "ref_lower": "7",
+      "ref_upper": "56"
+    },
+    {
+      "date": "2022-07-07",
+      "label": "Albumin",
+      "value": "2.4",
+      "flag": "low",
+      "ref_lower": "3.5",
+      "ref_upper": "5.0"
+    },
+    {
+      "date": "2022-07-07",
+      "label": "Anion Gap",
+      "value": "___",
+      "flag": null,
+      "ref_lower": "8",
+      "ref_upper": "16"
+    },
+    {
+      "date": "2022-07-07",
+      "label": "BUN",
+      "value": "___",
+      "flag": "abnormal",
+      "ref_lower": "7.0",
+      "ref_upper": "25.0"
+    },
+    {
+      "date": "2022-07-07",
+      "label": "Calcium",
+      "value": "9.2",
+      "flag": null,
+      "ref_lower": "8.5",
+      "ref_upper": "10.5"
+    },
+    {
+      "date": "2022-07-07",
+      "label": "Chloride",
+      "value": "105.0",
+      "flag": null,
+      "ref_lower": "98",
+      "ref_upper": "107"
+    },
+    {
+      "date": "2022-07-07",
+      "label": "Creatinine",
+      "value": "___",
+      "flag": null,
+      "ref_lower": "0.5",
+      "ref_upper": "1.2"
+    },
+    {
+      "date": "2022-07-07",
+      "label": "Glucose",
+      "value": "___",
+      "flag": "abnormal",
+      "ref_lower": "70",
+      "ref_upper": "99"
+    },
+    {
+      "date": "2022-07-07",
+      "label": "Hemoglobin",
+      "value": "___",
+      "flag": "low",
+      "ref_lower": "12.0",
+      "ref_upper": "17.5"
+    },
+    {
+      "date": "2022-07-07",
+      "label": "INR",
+      "value": "___",
+      "flag": "abnormal",
+      "ref_lower": "0.9",
+      "ref_upper": "1.1"
+    },
+    {
+      "date": "2022-07-07",
+      "label": "Phosphorus",
+      "value": "3.7",
+      "flag": null,
+      "ref_lower": "2.5",
+      "ref_upper": "4.5"
+    },
+    {
+      "date": "2022-07-07",
+      "label": "Platelets",
+      "value": "___",
+      "flag": "low",
+      "ref_lower": "150",
+      "ref_upper": "400"
+    },
+    {
+      "date": "2022-07-07",
+      "label": "Potassium",
+      "value": "___",
+      "flag": null,
+      "ref_lower": "3.5",
+      "ref_upper": "5.0"
+    },
+    {
+      "date": "2022-07-07",
+      "label": "Sodium",
+      "value": "___",
+      "flag": "abnormal",
+      "ref_lower": "136",
+      "ref_upper": "145"
+    },
+    {
+      "date": "2022-07-07",
+      "label": "eGFR",
+      "value": "___",
+      "flag": "abnormal",
+      "ref_lower": "60",
+      "ref_upper": "120"
+    }
+  ],
+  "ground_truth_procedure": "Packed Red Blood Cell Transfusion",
+  "ground_truth_action": "Packed Red Blood Cell Transfusion",
+  "guidelines_context": "Clinical guidelines context: This patient requires evaluation for the next major procedural intervention based on their current lab trajectory and clinical presentation. Apply relevant clinical thresholds: KDIGO AKI staging (creatinine \u22650.3 mg/dL rise in 48h, or \u22651.5\u00d7 baseline in 7 days); RRT indications (K\u207a > 6.5, bicarbonate < 10, uremia, refractory fluid overload); ACS (troponin elevation + ischemic symptoms \u2192 cardiac cath/PCI); transfusion triggers (hemoglobin < 7\u20138 g/dL in symptomatic anemia); DKA/HHS (glucose > 250\u2013300 with ketosis or hyperosmolarity \u2192 insulin infusion); severe hyponatremia (Na < 125 with symptoms \u2192 hypertonic saline); sepsis-3 (lactate > 2 + suspected infection \u2192 antibiotics/vasopressors). Use all available lab data to identify the most urgent clinical action and the likely next major procedure."
+}

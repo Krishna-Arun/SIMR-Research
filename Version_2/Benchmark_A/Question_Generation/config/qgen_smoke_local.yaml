@@ -1,0 +1,48 @@
+project: Benchmark_A_QuestionGen
+pipeline_version: qgen-0.1.0
+seed: 20260627
+data:
+  source: full
+  full_root: /Users/krishna_arun/Documents/Summer_Work/SIMR/SIMR-Research/Version_2/Benchmark_A/Question_Generation
+  demo_root: /Users/krishna_arun/Documents/Summer_Work/SIMR/SIMR-Research/Version_2/Benchmark_A/Question_Generation
+  out_dir: /Users/krishna_arun/Documents/Summer_Work/SIMR/SIMR-Research/Version_2/Benchmark_A/Question_Generation/outputs
+cohort:
+  diagnosis_filter: cardiovascular_primary
+  require_icu: true
+  require_micro_events: 1
+  min_distinct_labs: 20
+  min_lab_measurements: 50
+  chunksize: 2000000
+  materialize_slices: true
+  pool_size: 5000
+time_zero:
+  policy: icu_intime_plus
+  offset_hours: 24
+generation:
+  concurrency: 1
+  target_n: 1
+  diagnosis_frac: 0.5
+  max_iterations: 1
+  max_tool_calls_per_agent: 3
+  agent_wall_clock_s: 300
+models:
+  optimizer:
+    model_id: qwen2.5:7b
+    backend: ollama
+    endpoint: http://localhost:11434/v1
+    max_tokens: 2048
+    temperature: 0.2
+    tool_calling: react
+  evaluator:
+    model_id: qwen2.5:7b
+    backend: ollama
+    endpoint: http://localhost:11434/v1
+    max_tokens: 2048
+    temperature: 0.0
+    tool_calling: react
+pubmed_mcp:
+  server_dir: /Users/krishna_arun/Documents/Summer_Work/SIMR/SIMR-Research/Version_2/PubMed-MCP-Server
+  node_bin: /opt/homebrew/bin/node
+  entry: build/index.js
+  call_timeout_s: 30
+  max_consecutive_failures: 3

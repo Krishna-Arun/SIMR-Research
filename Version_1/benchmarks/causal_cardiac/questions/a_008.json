@@ -1,0 +1,27 @@
+{
+  "case_id": "a_008",
+  "benchmark": "intervention_physiological_effect",
+  "hadm_id": 22791315,
+  "procedure": {
+    "title": "Dilation of Coronary Artery, Two Arteries with Drug-eluting Intraluminal Device, Percutaneous Approach",
+    "date": "2165-01-03 00:00"
+  },
+  "question": {
+    "stem": "Patient hadm_id: 22791315\n\nDemographics: None-year-old Unknown\nPrimary Diagnosis: Non-ST elevation (NSTEMI) myocardial infarction\n\nPre-Procedure Lab Timeline (all available labs before 2165-01-03 00:00):\n\n| Datetime | Lab | Value | Unit | Flag |\n|---|---|---|---|---|\n| 2165-01-02 07:45 | Hematocrit | 42.7 | % | nan |\n| 2165-01-02 07:45 | Urea Nitrogen | 7.0 | mg/dL | nan |\n| 2165-01-02 07:45 | Troponin T | 1.55 | ng/mL | abnormal |\n| 2165-01-02 07:45 | Sodium | 140.0 | mEq/L | nan |\n| 2165-01-02 07:45 | Potassium | 3.8 | mEq/L | nan |\n| 2165-01-02 07:45 | Phosphate | 2.8 | mg/dL | nan |\n| 2165-01-02 07:45 | Lactate Dehydrogenase (LD) | 468.0 | IU/L | abnormal |\n| 2165-01-02 07:45 | Glucose | 193.0 | mg/dL | abnormal |\n| 2165-01-02 07:45 | Creatinine | 0.8 | mg/dL | nan |\n| 2165-01-02 07:45 | Creatine Kinase, MB Isoenzyme | 106.0 | ng/mL | abnormal |\n| 2165-01-02 07:45 | Creatine Kinase (CK) | 1013.0 | IU/L | abnormal |\n| 2165-01-02 07:45 | CK-MB Index | 10.5 | % | abnormal |\n| 2165-01-02 07:45 | Chloride | 103.0 | mEq/L | nan |\n| 2165-01-02 07:45 | Calcium, Total | 9.4 | mg/dL | nan |\n| 2165-01-02 07:45 | Bilirubin, Total | 0.7 | mg/dL | nan |\n| 2165-01-02 07:45 | Bicarbonate | 24.0 | mEq/L | nan |\n| 2165-01-02 07:45 | Magnesium | 1.8 | mg/dL | nan |\n| 2165-01-02 07:45 | Anion Gap | 17.0 | mEq/L | nan |\n| 2165-01-02 07:45 | MCH | 29.9 | pg | nan |\n| 2165-01-02 07:45 | MCHC | 34.4 | g/dL | nan |\n| 2165-01-02 07:45 | MCV | 87.0 | fL | nan |\n| 2165-01-02 07:45 | Platelet Count | 179.0 | K/uL | nan |\n| 2165-01-02 07:45 | Asparate Aminotransferase (AST) | 107.0 | IU/L | abnormal |\n| 2165-01-02 07:45 | RDW | 13.3 | % | nan |\n| 2165-01-02 07:45 | Hemoglobin | 14.7 | g/dL | nan |\n| 2165-01-02 07:45 | Red Blood Cells | 4.91 | m/uL | nan |\n| 2165-01-02 07:45 | RDW-SD | 41.1 | fL | nan |\n| 2165-01-02 07:45 | INR(PT) | 1.0 | nan | nan |\n| 2165-01-02 07:45 | PT | 10.8 | sec | nan |\n| 2165-01-02 07:45 | PTT | 27.2 | sec | nan |\n| 2165-01-02 07:45 | Alanine Aminotransferase (ALT) | 60.0 | IU/L | abnormal |\n| 2165-01-02 07:45 | Alkaline Phosphatase | 122.0 | IU/L | nan |\n| 2165-01-02 07:45 | White Blood Cells | 7.9 | K/uL | nan |\n| 2165-01-02 08:32 | D-Dimer | 240.0 | ng/mL | nan |\n| 2165-01-02 14:57 | Troponin T | 1.41 | ng/mL | abnormal |\n| 2165-01-02 14:57 | Creatine Kinase, MB Isoenzyme | 53.0 | ng/mL | abnormal |\n| 2165-01-02 15:04 | Green Top Hold (plasma) | nan | nan | nan |\n| 2165-01-02 16:01 | Lactate | 3.3 | mmol/L | abnormal |\n| 2165-01-02 21:59 | Creatine Kinase, MB Isoenzyme | 31.0 | ng/mL | abnormal |\n| 2165-01-02 21:59 | Troponin T | 1.36 | ng/mL | abnormal |\n| 2165-01-02 21:59 | PTT | 56.1 | sec | abnormal |\n| 2165-01-02 22:26 | Lactate | 2.4 | mmol/L | abnormal |\n\nProcedure Performed: Dilation of Coronary Artery, Two Arteries with Drug-eluting Intraluminal Device, Percutaneous Approach on 2165-01-03 00:00\n\nAnalyze the pre-intervention lab trajectory and clinical context. Given the patient's state and the intervention performed, describe what physiological changes you would expect to see in the post-intervention period. Specifically discuss expected direction and magnitude of change for key cardiac biomarkers (Troponin, CK, CK-MB).",
+    "type": "intervention_forward_prediction"
+  },
+  "visible_context": {
+    "pre_intervention_labs": 42,
+    "demographics": {
+      "age": null,
+      "gender": "Unknown"
+    },
+    "primary_diagnosis": "Non-ST elevation (NSTEMI) myocardial infarction"
+  },
+  "ground_truth": {
+    "post_intervention_labs": "| Datetime | Lab | Value | Unit | Flag |\n|---|---|---|---|---|\n| 2165-01-03 05:15 | Creatine Kinase, MB Isoenzyme | 18.0 | ng/mL | abnormal |\n| 2165-01-03 05:15 | Troponin T | 1.45 | ng/mL | abnormal |\n| 2165-01-04 06:45 | Lactate Dehydrogenase (LD) | 377.0 | IU/L | abnormal |\n| 2165-01-04 06:45 | Troponin T | 1.29 | ng/mL | abnormal |",
+    "n_post_labs": 4,
+    "expected_troponin_direction": "stable",
+    "expected_troponin_magnitude_pct": 6.617647058823518
+  }
+}

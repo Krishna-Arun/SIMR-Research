@@ -1,0 +1,270 @@
+{
+  "question_id": "L4-21797716-35119474",
+  "sequence": [
+    "a",
+    "b",
+    "c",
+    "d"
+  ],
+  "anchor_family_hidden": true,
+  "demographics": {
+    "gender": "M",
+    "anchor_age": 50,
+    "admission_type": "EW EMER.",
+    "race": "BLACK/AFRICAN AMERICAN"
+  },
+  "steps": {
+    "a": {
+      "stem": "A 50-year-old M patient was admitted to the ICU. Using ONLY the supplemental data you can request (labs and microbiology are available by name/date first; you must justify and request the values you need), determine the SINGLE most likely next major intervention this patient requires, and justify it with a patient-specific causal chain that cites the specific lab values you retrieved.",
+      "question_type": "next_intervention_openended",
+      "tool_use": "Call Access_All_supplementals_no_values(question_id) first, then Request_a_supplemental / Request_values with justification.",
+      "question_id_for_tools": "L4-21797716-35119474"
+    },
+    "b": {
+      "stem": "Given that this patient underwent dialysis (Hemodialysis), select the core labs whose 72-hour trajectory is most informative and predict each one's direction (Rising / Falling / Stable) with a causal justification and a confidence.",
+      "candidate_labs": [
+        {
+          "lab": "Potassium",
+          "ref_low": 3.3,
+          "ref_high": 5.1,
+          "pre_value": 5.0
+        },
+        {
+          "lab": "MCH",
+          "ref_low": 26.0,
+          "ref_high": 32.0,
+          "pre_value": 30.2
+        },
+        {
+          "lab": "Urea Nitrogen",
+          "ref_low": 6.0,
+          "ref_high": 20.0,
+          "pre_value": 41.0
+        },
+        {
+          "lab": "MCV",
+          "ref_low": 82.0,
+          "ref_high": 98.0,
+          "pre_value": 98.0
+        },
+        {
+          "lab": "Hematocrit",
+          "ref_low": 40.0,
+          "ref_high": 51.0,
+          "pre_value": 39.7
+        },
+        {
+          "lab": "Red Blood Cells",
+          "ref_low": 4.6,
+          "ref_high": 6.1,
+          "pre_value": 4.04
+        },
+        {
+          "lab": "Phosphate",
+          "ref_low": 2.7,
+          "ref_high": 4.5,
+          "pre_value": 6.9
+        },
+        {
+          "lab": "Hemoglobin",
+          "ref_low": 13.7,
+          "ref_high": 17.5,
+          "pre_value": 12.2
+        },
+        {
+          "lab": "RDW",
+          "ref_low": 10.5,
+          "ref_high": 15.5,
+          "pre_value": 16.1
+        },
+        {
+          "lab": "MCHC",
+          "ref_low": 32.0,
+          "ref_high": 37.0,
+          "pre_value": 30.7
+        },
+        {
+          "lab": "Calcium, Total",
+          "ref_low": 8.4,
+          "ref_high": 10.3,
+          "pre_value": 9.0
+        },
+        {
+          "lab": "Glucose",
+          "ref_low": 70.0,
+          "ref_high": 100.0,
+          "pre_value": 117.0
+        },
+        {
+          "lab": "Chloride",
+          "ref_low": 96.0,
+          "ref_high": 108.0,
+          "pre_value": 96.0
+        },
+        {
+          "lab": "Magnesium",
+          "ref_low": 1.6,
+          "ref_high": 2.6,
+          "pre_value": 2.4
+        },
+        {
+          "lab": "RDW-SD",
+          "ref_low": 35.1,
+          "ref_high": 46.3,
+          "pre_value": 58.6
+        },
+        {
+          "lab": "Platelet Count",
+          "ref_low": 150.0,
+          "ref_high": 400.0,
+          "pre_value": 104.0
+        },
+        {
+          "lab": "Creatinine",
+          "ref_low": 0.5,
+          "ref_high": 1.2,
+          "pre_value": 5.9
+        },
+        {
+          "lab": "Sodium",
+          "ref_low": 133.0,
+          "ref_high": 145.0,
+          "pre_value": 140.0
+        },
+        {
+          "lab": "Anion Gap",
+          "ref_low": 8.0,
+          "ref_high": 16.0,
+          "pre_value": 18.0
+        },
+        {
+          "lab": "White Blood Cells",
+          "ref_low": 4.0,
+          "ref_high": 10.0,
+          "pre_value": 7.0
+        },
+        {
+          "lab": "Bicarbonate",
+          "ref_low": 22.0,
+          "ref_high": 32.0,
+          "pre_value": 26.0
+        }
+      ]
+    },
+    "c": {
+      "stem": "Two ICU patients (A and B) with similar baselines underwent DIFFERENT interventions. Given the observed post-intervention labs below, identify which patient they belong to and justify using the causal physiological effect of each intervention.",
+      "shared_labs": [
+        "Anion Gap",
+        "Bicarbonate",
+        "Chloride",
+        "Glucose",
+        "Magnesium",
+        "Potassium",
+        "Sodium"
+      ],
+      "observed_post": [
+        {
+          "lab": "Anion Gap",
+          "value": 15.0
+        },
+        {
+          "lab": "Bicarbonate",
+          "value": 27.0
+        },
+        {
+          "lab": "Chloride",
+          "value": 96.0
+        },
+        {
+          "lab": "Glucose",
+          "value": 119.0
+        },
+        {
+          "lab": "Magnesium",
+          "value": 2.3
+        },
+        {
+          "lab": "Potassium",
+          "value": 4.4
+        },
+        {
+          "lab": "Sodium",
+          "value": 138.0
+        }
+      ],
+      "patient_A": {
+        "procedure": "Hemodialysis",
+        "pre_labs": [
+          {
+            "lab": "Potassium",
+            "value": 5.0
+          },
+          {
+            "lab": "Glucose",
+            "value": 117.0
+          },
+          {
+            "lab": "Chloride",
+            "value": 96.0
+          },
+          {
+            "lab": "Magnesium",
+            "value": 2.4
+          },
+          {
+            "lab": "Sodium",
+            "value": 140.0
+          },
+          {
+            "lab": "Anion Gap",
+            "value": 18.0
+          },
+          {
+            "lab": "Bicarbonate",
+            "value": 26.0
+          }
+        ]
+      },
+      "patient_B": {
+        "procedure": "Invasive Ventilation",
+        "pre_labs": [
+          {
+            "lab": "Potassium",
+            "value": 4.5
+          },
+          {
+            "lab": "Glucose",
+            "value": 130.0
+          },
+          {
+            "lab": "Magnesium",
+            "value": 2.7
+          },
+          {
+            "lab": "Chloride",
+            "value": 98.0
+          },
+          {
+            "lab": "Sodium",
+            "value": 133.0
+          },
+          {
+            "lab": "Anion Gap",
+            "value": 13.0
+          },
+          {
+            "lab": "Bicarbonate",
+            "value": 27.0
+          }
+        ]
+      }
+    },
+    "d": {
+      "stem": "At discharge, considering this patient's clinical course, predict whether they will die within one year. Give a Yes/No call, a calibrated confidence (0-1), and a causal risk rationale referencing the patient's specific abnormal values/trends.",
+      "options": [
+        "Yes",
+        "No"
+      ]
+    }
+  }
+}

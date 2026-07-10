@@ -1,0 +1,4883 @@
+{
+  "case_id": 13,
+  "patient_id": "115972482",
+  "reversal_type": "rising\u2192falling",
+  "vis_trend": "rising",
+  "gap_hours": 19.6,
+  "n_ctx_trops": 4,
+  "n_gap_labs": 92,
+  "lv_err_pct": 217.1,
+  "trend_extrapolation_correct": false,
+  "question": {
+    "stem": "Patient EHRSHOT subject_id: 115972482\nPrevious Troponin I: 0.127 ng/mL at 2021-03-07 03:05\nLast known Troponin I: 0.222 ng/mL at 2021-03-07 07:49\nVisible troponin trend: rising (most recent readings increasing)\nTroponin measurements are NOT available after 2021-03-07 07:49.\nAll other labs are available up to 2021-03-08 03:23.\nPredict Troponin I at: 2021-03-08 03:23 (19.6h after last known troponin)",
+    "target_datetime": "2021-03-08 03:23",
+    "last_trop_time": "2021-03-07 07:49",
+    "hours_ahead": 19.6,
+    "visible_trend": "rising"
+  },
+  "ground_truth": {
+    "value": 0.07,
+    "direction": "falling",
+    "last_visible": 0.222,
+    "visible_trend": "rising"
+  },
+  "trop_context": [
+    {
+      "datetime": "2021-03-06 23:06",
+      "value": 0.017,
+      "label": "Troponin I"
+    },
+    {
+      "datetime": "2021-03-07 00:35",
+      "value": 0.041,
+      "label": "Troponin I"
+    },
+    {
+      "datetime": "2021-03-07 03:05",
+      "value": 0.127,
+      "label": "Troponin I"
+    },
+    {
+      "datetime": "2021-03-07 07:49",
+      "value": 0.222,
+      "label": "Troponin I"
+    }
+  ],
+  "gap_labs": [
+    {
+      "datetime": "2021-03-07 08:00",
+      "label": "Systolic BP",
+      "value": 114.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2021-03-07 08:00",
+      "label": "Heart Rate",
+      "value": 97.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2021-03-07 08:00",
+      "label": "Heart Rate",
+      "value": 97.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2021-03-07 09:00",
+      "label": "Systolic BP",
+      "value": 123.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2021-03-07 09:00",
+      "label": "Heart Rate",
+      "value": 105.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2021-03-07 09:00",
+      "label": "Heart Rate",
+      "value": 109.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2021-03-07 10:00",
+      "label": "Systolic BP",
+      "value": 109.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2021-03-07 10:00",
+      "label": "Heart Rate",
+      "value": 108.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2021-03-07 10:00",
+      "label": "Heart Rate",
+      "value": 108.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2021-03-07 11:00",
+      "label": "Systolic BP",
+      "value": 100.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2021-03-07 11:00",
+      "label": "Heart Rate",
+      "value": 96.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2021-03-07 11:00",
+      "label": "Heart Rate",
+      "value": 96.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2021-03-07 12:00",
+      "label": "Systolic BP",
+      "value": 103.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2021-03-07 12:00",
+      "label": "Heart Rate",
+      "value": 83.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2021-03-07 12:00",
+      "label": "Heart Rate",
+      "value": 86.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2021-03-07 13:00",
+      "label": "Systolic BP",
+      "value": 103.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2021-03-07 13:00",
+      "label": "Heart Rate",
+      "value": 93.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2021-03-07 13:00",
+      "label": "Heart Rate",
+      "value": 93.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2021-03-07 13:34",
+      "label": "Systolic BP",
+      "value": 94.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2021-03-07 13:42",
+      "label": "Heart Rate",
+      "value": 85.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2021-03-07 14:00",
+      "label": "Systolic BP",
+      "value": 96.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2021-03-07 14:00",
+      "label": "Heart Rate",
+      "value": 88.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2021-03-07 14:00",
+      "label": "Heart Rate",
+      "value": 86.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2021-03-07 15:00",
+      "label": "Systolic BP",
+      "value": 105.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2021-03-07 15:00",
+      "label": "Heart Rate",
+      "value": 100.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2021-03-07 15:00",
+      "label": "Heart Rate",
+      "value": 100.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2021-03-07 15:14",
+      "label": "Systolic BP",
+      "value": 90.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2021-03-07 15:48",
+      "label": "Creatinine",
+      "value": 0.8,
+      "unit": "mg/dL"
+    },
+    {
+      "datetime": "2021-03-07 15:48",
+      "label": "Potassium",
+      "value": 4.4,
+      "unit": "mmol/L"
+    },
+    {
+      "datetime": "2021-03-07 15:48",
+      "label": "BUN",
+      "value": 12.0,
+      "unit": "mg/dL"
+    },
+    {
+      "datetime": "2021-03-07 15:48",
+      "label": "Lactate",
+      "value": 1.3,
+      "unit": "mmol/L"
+    },
+    {
+      "datetime": "2021-03-07 15:48",
+      "label": "Hematocrit",
+      "value": 40.2,
+      "unit": "%"
+    },
+    {
+      "datetime": "2021-03-07 15:48",
+      "label": "Hemoglobin",
+      "value": 12.8,
+      "unit": "g/dL"
+    },
+    {
+      "datetime": "2021-03-07 16:00",
+      "label": "Systolic BP",
+      "value": 93.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2021-03-07 16:00",
+      "label": "Heart Rate",
+      "value": 91.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2021-03-07 16:00",
+      "label": "Heart Rate",
+      "value": 92.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2021-03-07 17:00",
+      "label": "Systolic BP",
+      "value": 87.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2021-03-07 17:00",
+      "label": "Heart Rate",
+      "value": 90.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2021-03-07 17:00",
+      "label": "Heart Rate",
+      "value": 88.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2021-03-07 18:00",
+      "label": "Systolic BP",
+      "value": 89.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2021-03-07 18:00",
+      "label": "Heart Rate",
+      "value": 81.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2021-03-07 18:00",
+      "label": "Heart Rate",
+      "value": 80.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2021-03-07 19:00",
+      "label": "Systolic BP",
+      "value": 96.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2021-03-07 19:00",
+      "label": "Heart Rate",
+      "value": 71.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2021-03-07 19:00",
+      "label": "Heart Rate",
+      "value": 71.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2021-03-07 20:00",
+      "label": "Systolic BP",
+      "value": 95.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2021-03-07 20:00",
+      "label": "Heart Rate",
+      "value": 78.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2021-03-07 20:00",
+      "label": "Heart Rate",
+      "value": 78.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2021-03-07 21:00",
+      "label": "Systolic BP",
+      "value": 94.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2021-03-07 21:00",
+      "label": "Heart Rate",
+      "value": 76.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2021-03-07 21:00",
+      "label": "Heart Rate",
+      "value": 76.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2021-03-07 21:10",
+      "label": "Heart Rate",
+      "value": 74.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2021-03-07 21:30",
+      "label": "Systolic BP",
+      "value": 93.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2021-03-07 21:30",
+      "label": "Heart Rate",
+      "value": 78.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2021-03-07 21:30",
+      "label": "Heart Rate",
+      "value": 79.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2021-03-07 22:00",
+      "label": "Systolic BP",
+      "value": 97.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2021-03-07 22:00",
+      "label": "Heart Rate",
+      "value": 71.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2021-03-07 22:00",
+      "label": "Heart Rate",
+      "value": 73.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2021-03-07 23:00",
+      "label": "Systolic BP",
+      "value": 103.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2021-03-07 23:00",
+      "label": "Heart Rate",
+      "value": 66.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2021-03-07 23:00",
+      "label": "Heart Rate",
+      "value": 65.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2021-03-07 23:15",
+      "label": "Systolic BP",
+      "value": 103.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2021-03-07 23:15",
+      "label": "Heart Rate",
+      "value": 54.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2021-03-07 23:15",
+      "label": "Heart Rate",
+      "value": 54.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2021-03-07 23:30",
+      "label": "Systolic BP",
+      "value": 96.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2021-03-07 23:30",
+      "label": "Heart Rate",
+      "value": 65.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2021-03-07 23:30",
+      "label": "Heart Rate",
+      "value": 65.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2021-03-07 23:45",
+      "label": "Systolic BP",
+      "value": 100.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2021-03-07 23:45",
+      "label": "Heart Rate",
+      "value": 71.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2021-03-07 23:45",
+      "label": "Heart Rate",
+      "value": 69.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2021-03-08 00:00",
+      "label": "Systolic BP",
+      "value": 103.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2021-03-08 00:00",
+      "label": "Heart Rate",
+      "value": 66.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2021-03-08 00:00",
+      "label": "Heart Rate",
+      "value": 61.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2021-03-08 00:15",
+      "label": "Systolic BP",
+      "value": 102.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2021-03-08 00:15",
+      "label": "Heart Rate",
+      "value": 74.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2021-03-08 00:30",
+      "label": "Systolic BP",
+      "value": 118.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2021-03-08 00:30",
+      "label": "Heart Rate",
+      "value": 78.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2021-03-08 00:45",
+      "label": "Systolic BP",
+      "value": 108.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2021-03-08 00:45",
+      "label": "Heart Rate",
+      "value": 84.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2021-03-08 01:00",
+      "label": "Systolic BP",
+      "value": 99.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2021-03-08 01:00",
+      "label": "Heart Rate",
+      "value": 72.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2021-03-08 02:00",
+      "label": "Systolic BP",
+      "value": 95.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2021-03-08 02:00",
+      "label": "Heart Rate",
+      "value": 60.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2021-03-08 02:00",
+      "label": "Heart Rate",
+      "value": 60.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2021-03-08 03:00",
+      "label": "Systolic BP",
+      "value": 95.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2021-03-08 03:00",
+      "label": "Heart Rate",
+      "value": 67.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2021-03-08 03:00",
+      "label": "Heart Rate",
+      "value": 65.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2021-03-08 03:23",
+      "label": "Creatinine",
+      "value": 0.78,
+      "unit": "mg/dL"
+    },
+    {
+      "datetime": "2021-03-08 03:23",
+      "label": "Potassium",
+      "value": 4.2,
+      "unit": "mmol/L"
+    },
+    {
+      "datetime": "2021-03-08 03:23",
+      "label": "BUN",
+      "value": 15.0,
+      "unit": "mg/dL"
+    },
+    {
+      "datetime": "2021-03-08 03:23",
+      "label": "Hematocrit",
+      "value": 35.7,
+      "unit": "%"
+    },
+    {
+      "datetime": "2021-03-08 03:23",
+      "label": "Hemoglobin",
+      "value": 11.6,
+      "unit": "g/dL"
+    }
+  ],
+  "lab_timeline": [
+    {
+      "datetime": "2021-03-07 02:49",
+      "label": "22735-5",
+      "value": 25.0,
+      "unit": "mmol/L"
+    },
+    {
+      "datetime": "2021-03-07 02:49",
+      "label": "2713-6",
+      "value": 100.0,
+      "unit": "%"
+    },
+    {
+      "datetime": "2021-03-07 02:49",
+      "label": "34705-4",
+      "value": 56.5,
+      "unit": "mmHg"
+    },
+    {
+      "datetime": "2021-03-07 02:49",
+      "label": "49701-6",
+      "value": 7.25,
+      "unit": ""
+    },
+    {
+      "datetime": "2021-03-07 02:54",
+      "label": "Resp Rate",
+      "value": 24.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2021-03-07 03:00",
+      "label": "35088-4",
+      "value": 9.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2021-03-07 03:00",
+      "label": "Temperature",
+      "value": 98.6,
+      "unit": ""
+    },
+    {
+      "datetime": "2021-03-07 03:00",
+      "label": "Diastolic BP",
+      "value": 63.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2021-03-07 03:00",
+      "label": "8478-0",
+      "value": 73.0,
+      "unit": "mmHg"
+    },
+    {
+      "datetime": "2021-03-07 03:00",
+      "label": "Systolic BP",
+      "value": 92.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2021-03-07 03:00",
+      "label": "Systolic BP",
+      "value": 101.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2021-03-07 03:00",
+      "label": "8634-8",
+      "value": 360.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2021-03-07 03:00",
+      "label": "8636-3",
+      "value": 485.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2021-03-07 03:00",
+      "label": "Heart Rate",
+      "value": 110.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2021-03-07 03:00",
+      "label": "Heart Rate",
+      "value": 110.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2021-03-07 03:00",
+      "label": "Resp Rate",
+      "value": 26.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2021-03-07 03:05",
+      "label": "Troponin I",
+      "value": 0.127,
+      "unit": "ng/mL"
+    },
+    {
+      "datetime": "2021-03-07 03:05",
+      "label": "14927-8",
+      "value": 113.0,
+      "unit": "mg/dL"
+    },
+    {
+      "datetime": "2021-03-07 03:05",
+      "label": "PTT",
+      "value": 26.6,
+      "unit": "seconds"
+    },
+    {
+      "datetime": "2021-03-07 03:05",
+      "label": "ALT",
+      "value": 83.0,
+      "unit": "U/L"
+    },
+    {
+      "datetime": "2021-03-07 03:05",
+      "label": "Albumin",
+      "value": 3.6,
+      "unit": "g/dL"
+    },
+    {
+      "datetime": "2021-03-07 03:05",
+      "label": "Calcium",
+      "value": 7.5,
+      "unit": "mg/dL"
+    },
+    {
+      "datetime": "2021-03-07 03:05",
+      "label": "19123-9",
+      "value": 2.7,
+      "unit": "mg/dL"
+    },
+    {
+      "datetime": "2021-03-07 03:05",
+      "label": "AST",
+      "value": 179.0,
+      "unit": "U/L"
+    },
+    {
+      "datetime": "2021-03-07 03:05",
+      "label": "Total Bilirubin",
+      "value": 0.8,
+      "unit": "mg/dL"
+    },
+    {
+      "datetime": "2021-03-07 03:05",
+      "label": "2028-9",
+      "value": 22.0,
+      "unit": "mmol/L"
+    },
+    {
+      "datetime": "2021-03-07 03:05",
+      "label": "20584-9",
+      "value": 5.4,
+      "unit": "K/uL"
+    },
+    {
+      "datetime": "2021-03-07 03:05",
+      "label": "2075-0",
+      "value": 107.0,
+      "unit": "mmol/L"
+    },
+    {
+      "datetime": "2021-03-07 03:05",
+      "label": "Creatinine",
+      "value": 1.04,
+      "unit": "mg/dL"
+    },
+    {
+      "datetime": "2021-03-07 03:05",
+      "label": "2336-6",
+      "value": 2.4,
+      "unit": "g/dL"
+    },
+    {
+      "datetime": "2021-03-07 03:05",
+      "label": "Glucose",
+      "value": 105.0,
+      "unit": "mg/dL"
+    },
+    {
+      "datetime": "2021-03-07 03:05",
+      "label": "Phosphorus",
+      "value": 4.5,
+      "unit": "mg/dL"
+    },
+    {
+      "datetime": "2021-03-07 03:05",
+      "label": "Potassium",
+      "value": 4.3,
+      "unit": "mmol/L"
+    },
+    {
+      "datetime": "2021-03-07 03:05",
+      "label": "2885-2",
+      "value": 6.0,
+      "unit": "g/dL"
+    },
+    {
+      "datetime": "2021-03-07 03:05",
+      "label": "Sodium",
+      "value": 143.0,
+      "unit": "mmol/L"
+    },
+    {
+      "datetime": "2021-03-07 03:05",
+      "label": "BUN",
+      "value": 10.0,
+      "unit": "mg/dL"
+    },
+    {
+      "datetime": "2021-03-07 03:05",
+      "label": "3243-3",
+      "value": 16.0,
+      "unit": "seconds"
+    },
+    {
+      "datetime": "2021-03-07 03:05",
+      "label": "Fibrinogen",
+      "value": 278.0,
+      "unit": "mg/dL"
+    },
+    {
+      "datetime": "2021-03-07 03:05",
+      "label": "Lactate",
+      "value": 2.7,
+      "unit": "mmol/L"
+    },
+    {
+      "datetime": "2021-03-07 03:05",
+      "label": "33037-3",
+      "value": 14.0,
+      "unit": "mmol/L"
+    },
+    {
+      "datetime": "2021-03-07 03:05",
+      "label": "Hematocrit",
+      "value": 40.6,
+      "unit": "%"
+    },
+    {
+      "datetime": "2021-03-07 03:05",
+      "label": "48065-7",
+      "value": 1.66,
+      "unit": "ug/mL FEU"
+    },
+    {
+      "datetime": "2021-03-07 03:05",
+      "label": "PT",
+      "value": 13.6,
+      "unit": "seconds"
+    },
+    {
+      "datetime": "2021-03-07 03:05",
+      "label": "5905-5",
+      "value": 4.0,
+      "unit": "%"
+    },
+    {
+      "datetime": "2021-03-07 03:05",
+      "label": "62238-1",
+      "value": 84.0,
+      "unit": "mL/min/1.73 m2"
+    },
+    {
+      "datetime": "2021-03-07 03:05",
+      "label": "INR",
+      "value": 1.1,
+      "unit": ""
+    },
+    {
+      "datetime": "2021-03-07 03:05",
+      "label": "Alk Phosphatase",
+      "value": 92.0,
+      "unit": "U/L"
+    },
+    {
+      "datetime": "2021-03-07 03:05",
+      "label": "704-7",
+      "value": 0.02,
+      "unit": "K/uL"
+    },
+    {
+      "datetime": "2021-03-07 03:05",
+      "label": "706-2",
+      "value": 0.4,
+      "unit": "%"
+    },
+    {
+      "datetime": "2021-03-07 03:05",
+      "label": "711-2",
+      "value": 0.15,
+      "unit": "K/uL"
+    },
+    {
+      "datetime": "2021-03-07 03:05",
+      "label": "713-8",
+      "value": 2.8,
+      "unit": "%"
+    },
+    {
+      "datetime": "2021-03-07 03:05",
+      "label": "Hemoglobin",
+      "value": 13.2,
+      "unit": "g/dL"
+    },
+    {
+      "datetime": "2021-03-07 03:05",
+      "label": "731-0",
+      "value": 0.83,
+      "unit": "K/uL"
+    },
+    {
+      "datetime": "2021-03-07 03:05",
+      "label": "736-9",
+      "value": 15.3,
+      "unit": "%"
+    },
+    {
+      "datetime": "2021-03-07 03:05",
+      "label": "742-7",
+      "value": 0.22,
+      "unit": "K/uL"
+    },
+    {
+      "datetime": "2021-03-07 03:05",
+      "label": "751-8",
+      "value": 4.21,
+      "unit": "K/uL"
+    },
+    {
+      "datetime": "2021-03-07 03:05",
+      "label": "770-8",
+      "value": 77.3,
+      "unit": "%"
+    },
+    {
+      "datetime": "2021-03-07 03:05",
+      "label": "Platelets",
+      "value": 187.0,
+      "unit": "K/uL"
+    },
+    {
+      "datetime": "2021-03-07 03:05",
+      "label": "785-6",
+      "value": 31.1,
+      "unit": "pg"
+    },
+    {
+      "datetime": "2021-03-07 03:05",
+      "label": "786-4",
+      "value": 32.5,
+      "unit": "g/dL"
+    },
+    {
+      "datetime": "2021-03-07 03:05",
+      "label": "787-2",
+      "value": 95.5,
+      "unit": "fL"
+    },
+    {
+      "datetime": "2021-03-07 03:05",
+      "label": "788-0",
+      "value": 12.3,
+      "unit": "%"
+    },
+    {
+      "datetime": "2021-03-07 03:05",
+      "label": "789-8",
+      "value": 4.25,
+      "unit": "MIL/uL"
+    },
+    {
+      "datetime": "2021-03-07 03:05",
+      "label": "88293-6",
+      "value": 97.0,
+      "unit": "mL/min/1.73 m2"
+    },
+    {
+      "datetime": "2021-03-07 03:30",
+      "label": "Diastolic BP",
+      "value": 66.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2021-03-07 03:30",
+      "label": "8478-0",
+      "value": 74.0,
+      "unit": "mmHg"
+    },
+    {
+      "datetime": "2021-03-07 03:30",
+      "label": "Systolic BP",
+      "value": 85.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2021-03-07 03:30",
+      "label": "Systolic BP",
+      "value": 90.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2021-03-07 03:30",
+      "label": "8634-8",
+      "value": 376.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2021-03-07 03:30",
+      "label": "8636-3",
+      "value": 493.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2021-03-07 03:30",
+      "label": "Heart Rate",
+      "value": 103.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2021-03-07 03:30",
+      "label": "Heart Rate",
+      "value": 103.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2021-03-07 03:30",
+      "label": "Resp Rate",
+      "value": 28.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2021-03-07 04:00",
+      "label": "Temperature",
+      "value": 99.1,
+      "unit": ""
+    },
+    {
+      "datetime": "2021-03-07 04:00",
+      "label": "Systolic BP",
+      "value": 92.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2021-03-07 04:00",
+      "label": "8634-8",
+      "value": 408.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2021-03-07 04:00",
+      "label": "8636-3",
+      "value": 502.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2021-03-07 04:00",
+      "label": "Heart Rate",
+      "value": 90.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2021-03-07 04:00",
+      "label": "Heart Rate",
+      "value": 90.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2021-03-07 04:00",
+      "label": "Resp Rate",
+      "value": 28.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2021-03-07 04:00",
+      "label": "IO_OUT",
+      "value": 200.0,
+      "unit": "ml"
+    },
+    {
+      "datetime": "2021-03-07 04:30",
+      "label": "Systolic BP",
+      "value": 98.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2021-03-07 04:30",
+      "label": "8634-8",
+      "value": 400.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2021-03-07 04:30",
+      "label": "8636-3",
+      "value": 498.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2021-03-07 04:30",
+      "label": "Heart Rate",
+      "value": 94.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2021-03-07 04:30",
+      "label": "Heart Rate",
+      "value": 94.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2021-03-07 04:30",
+      "label": "Resp Rate",
+      "value": 28.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2021-03-07 05:00",
+      "label": "Temperature",
+      "value": 99.5,
+      "unit": ""
+    },
+    {
+      "datetime": "2021-03-07 05:00",
+      "label": "Systolic BP",
+      "value": 99.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2021-03-07 05:00",
+      "label": "8634-8",
+      "value": 392.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2021-03-07 05:00",
+      "label": "8636-3",
+      "value": 488.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2021-03-07 05:00",
+      "label": "Heart Rate",
+      "value": 95.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2021-03-07 05:00",
+      "label": "Heart Rate",
+      "value": 94.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2021-03-07 05:00",
+      "label": "Resp Rate",
+      "value": 28.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2021-03-07 05:30",
+      "label": "Systolic BP",
+      "value": 94.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2021-03-07 05:30",
+      "label": "8634-8",
+      "value": 368.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2021-03-07 05:30",
+      "label": "8636-3",
+      "value": 487.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2021-03-07 05:30",
+      "label": "Heart Rate",
+      "value": 104.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2021-03-07 05:30",
+      "label": "Heart Rate",
+      "value": 104.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2021-03-07 05:30",
+      "label": "Resp Rate",
+      "value": 28.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2021-03-07 05:55",
+      "label": "Resp Rate",
+      "value": 28.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2021-03-07 06:00",
+      "label": "Temperature",
+      "value": 100.2,
+      "unit": ""
+    },
+    {
+      "datetime": "2021-03-07 06:00",
+      "label": "Systolic BP",
+      "value": 109.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2021-03-07 06:00",
+      "label": "8634-8",
+      "value": 376.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2021-03-07 06:00",
+      "label": "8636-3",
+      "value": 504.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2021-03-07 06:00",
+      "label": "Heart Rate",
+      "value": 103.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2021-03-07 06:00",
+      "label": "Heart Rate",
+      "value": 103.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2021-03-07 06:00",
+      "label": "Resp Rate",
+      "value": 12.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2021-03-07 06:00",
+      "label": "IO_OUT",
+      "value": 265.0,
+      "unit": "ml"
+    },
+    {
+      "datetime": "2021-03-07 06:47",
+      "label": "11555-0",
+      "value": -17.0,
+      "unit": "mmol/L"
+    },
+    {
+      "datetime": "2021-03-07 06:47",
+      "label": "19254-2",
+      "value": 121.0,
+      "unit": "mmHg"
+    },
+    {
+      "datetime": "2021-03-07 06:47",
+      "label": "22735-5",
+      "value": 9.7,
+      "unit": "mmol/L"
+    },
+    {
+      "datetime": "2021-03-07 06:47",
+      "label": "2713-6",
+      "value": 98.0,
+      "unit": "%"
+    },
+    {
+      "datetime": "2021-03-07 06:47",
+      "label": "34705-4",
+      "value": 20.8,
+      "unit": "mmHg"
+    },
+    {
+      "datetime": "2021-03-07 06:47",
+      "label": "49701-6",
+      "value": 7.28,
+      "unit": ""
+    },
+    {
+      "datetime": "2021-03-07 07:00",
+      "label": "Systolic BP",
+      "value": 113.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2021-03-07 07:00",
+      "label": "8634-8",
+      "value": 376.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2021-03-07 07:00",
+      "label": "8636-3",
+      "value": 495.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2021-03-07 07:00",
+      "label": "Heart Rate",
+      "value": 104.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2021-03-07 07:00",
+      "label": "Heart Rate",
+      "value": 104.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2021-03-07 07:00",
+      "label": "Resp Rate",
+      "value": 12.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2021-03-07 07:04",
+      "label": "38214-3",
+      "value": 0.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2021-03-07 07:06",
+      "label": "10230-1",
+      "value": 69.4,
+      "unit": "%"
+    },
+    {
+      "datetime": "2021-03-07 07:49",
+      "label": "Troponin I",
+      "value": 0.222,
+      "unit": "ng/mL"
+    },
+    {
+      "datetime": "2021-03-07 07:49",
+      "label": "Lactate",
+      "value": 1.9,
+      "unit": "mmol/L"
+    },
+    {
+      "datetime": "2021-03-07 07:49",
+      "label": "HbA1c",
+      "value": 5.0,
+      "unit": "%"
+    },
+    {
+      "datetime": "2021-03-07 08:00",
+      "label": "35088-4",
+      "value": 6.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2021-03-07 08:00",
+      "label": "Temperature",
+      "value": 37.2,
+      "unit": ""
+    },
+    {
+      "datetime": "2021-03-07 08:00",
+      "label": "Temperature",
+      "value": 99.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2021-03-07 08:00",
+      "label": "Systolic BP",
+      "value": 114.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2021-03-07 08:00",
+      "label": "8634-8",
+      "value": 376.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2021-03-07 08:00",
+      "label": "8636-3",
+      "value": 488.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2021-03-07 08:00",
+      "label": "Heart Rate",
+      "value": 97.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2021-03-07 08:00",
+      "label": "Heart Rate",
+      "value": 97.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2021-03-07 08:00",
+      "label": "Resp Rate",
+      "value": 12.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2021-03-07 08:00",
+      "label": "IO_OUT",
+      "value": 75.0,
+      "unit": "ml"
+    },
+    {
+      "datetime": "2021-03-07 08:09",
+      "label": "76248-4",
+      "value": 5.0,
+      "unit": "cm H20"
+    },
+    {
+      "datetime": "2021-03-07 08:09",
+      "label": "Resp Rate",
+      "value": 22.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2021-03-07 08:43",
+      "label": "17863-2",
+      "value": 1.09,
+      "unit": "mmol/L"
+    },
+    {
+      "datetime": "2021-03-07 08:43",
+      "label": "17863-2",
+      "value": 1.07,
+      "unit": "mmol/L"
+    },
+    {
+      "datetime": "2021-03-07 08:43",
+      "label": "19214-6",
+      "value": 31.7,
+      "unit": "mm Hg"
+    },
+    {
+      "datetime": "2021-03-07 08:43",
+      "label": "19216-1",
+      "value": 34.2,
+      "unit": "mm Hg"
+    },
+    {
+      "datetime": "2021-03-07 08:43",
+      "label": "1925-7",
+      "value": -0.3,
+      "unit": "mEq/L"
+    },
+    {
+      "datetime": "2021-03-07 08:43",
+      "label": "1925-7",
+      "value": 0.1,
+      "unit": "mEq/L"
+    },
+    {
+      "datetime": "2021-03-07 08:43",
+      "label": "2019-8",
+      "value": 63.6,
+      "unit": "mm Hg"
+    },
+    {
+      "datetime": "2021-03-07 08:43",
+      "label": "22735-5",
+      "value": 26.2,
+      "unit": "mEq/L"
+    },
+    {
+      "datetime": "2021-03-07 08:43",
+      "label": "22735-5",
+      "value": 27.1,
+      "unit": "mEq/L"
+    },
+    {
+      "datetime": "2021-03-07 08:43",
+      "label": "2339-0",
+      "value": 107.0,
+      "unit": "mg/dL"
+    },
+    {
+      "datetime": "2021-03-07 08:43",
+      "label": "2339-0",
+      "value": 105.0,
+      "unit": "mg/dL"
+    },
+    {
+      "datetime": "2021-03-07 08:43",
+      "label": "2703-7",
+      "value": 113.0,
+      "unit": "mm Hg"
+    },
+    {
+      "datetime": "2021-03-07 08:43",
+      "label": "2744-1",
+      "value": 7.239,
+      "unit": ""
+    },
+    {
+      "datetime": "2021-03-07 09:00",
+      "label": "38214-3",
+      "value": 0.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2021-03-07 09:00",
+      "label": "Temperature",
+      "value": 37.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2021-03-07 09:00",
+      "label": "Temperature",
+      "value": 98.6,
+      "unit": ""
+    },
+    {
+      "datetime": "2021-03-07 09:00",
+      "label": "Systolic BP",
+      "value": 123.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2021-03-07 09:00",
+      "label": "8634-8",
+      "value": 360.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2021-03-07 09:00",
+      "label": "8636-3",
+      "value": 481.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2021-03-07 09:00",
+      "label": "Heart Rate",
+      "value": 105.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2021-03-07 09:00",
+      "label": "Heart Rate",
+      "value": 109.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2021-03-07 09:00",
+      "label": "Resp Rate",
+      "value": 11.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2021-03-07 09:00",
+      "label": "IO_OUT",
+      "value": 45.0,
+      "unit": "ml"
+    },
+    {
+      "datetime": "2021-03-07 09:33",
+      "label": "76248-4",
+      "value": 5.0,
+      "unit": "cm H20"
+    },
+    {
+      "datetime": "2021-03-07 09:33",
+      "label": "8302-2",
+      "value": 64.331,
+      "unit": ""
+    },
+    {
+      "datetime": "2021-03-07 09:33",
+      "label": "Resp Rate",
+      "value": 37.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2021-03-07 09:59",
+      "label": "76248-4",
+      "value": 8.0,
+      "unit": "cm H20"
+    },
+    {
+      "datetime": "2021-03-07 09:59",
+      "label": "8302-2",
+      "value": 64.331,
+      "unit": ""
+    },
+    {
+      "datetime": "2021-03-07 09:59",
+      "label": "Resp Rate",
+      "value": 38.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2021-03-07 10:00",
+      "label": "Temperature",
+      "value": 37.1,
+      "unit": ""
+    },
+    {
+      "datetime": "2021-03-07 10:00",
+      "label": "Temperature",
+      "value": 98.8,
+      "unit": ""
+    },
+    {
+      "datetime": "2021-03-07 10:00",
+      "label": "Systolic BP",
+      "value": 109.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2021-03-07 10:00",
+      "label": "8634-8",
+      "value": 352.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2021-03-07 10:00",
+      "label": "8636-3",
+      "value": 474.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2021-03-07 10:00",
+      "label": "Heart Rate",
+      "value": 108.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2021-03-07 10:00",
+      "label": "Heart Rate",
+      "value": 108.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2021-03-07 10:00",
+      "label": "Resp Rate",
+      "value": 28.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2021-03-07 10:00",
+      "label": "IO_OUT",
+      "value": 35.0,
+      "unit": "ml"
+    },
+    {
+      "datetime": "2021-03-07 10:20",
+      "label": "2339-0",
+      "value": 84.0,
+      "unit": "mg/dL"
+    },
+    {
+      "datetime": "2021-03-07 10:50",
+      "label": "11555-0",
+      "value": -2.0,
+      "unit": "mmol/L"
+    },
+    {
+      "datetime": "2021-03-07 10:50",
+      "label": "19254-2",
+      "value": 78.0,
+      "unit": "mmHg"
+    },
+    {
+      "datetime": "2021-03-07 10:50",
+      "label": "22735-5",
+      "value": 25.4,
+      "unit": "mmol/L"
+    },
+    {
+      "datetime": "2021-03-07 10:50",
+      "label": "2713-6",
+      "value": 93.0,
+      "unit": "%"
+    },
+    {
+      "datetime": "2021-03-07 10:50",
+      "label": "34705-4",
+      "value": 56.0,
+      "unit": "mmHg"
+    },
+    {
+      "datetime": "2021-03-07 10:50",
+      "label": "49701-6",
+      "value": 7.27,
+      "unit": ""
+    },
+    {
+      "datetime": "2021-03-07 10:59",
+      "label": "76248-4",
+      "value": 8.0,
+      "unit": "cm H20"
+    },
+    {
+      "datetime": "2021-03-07 10:59",
+      "label": "Resp Rate",
+      "value": 35.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2021-03-07 11:00",
+      "label": "38214-3",
+      "value": 0.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2021-03-07 11:00",
+      "label": "Temperature",
+      "value": 98.6,
+      "unit": ""
+    },
+    {
+      "datetime": "2021-03-07 11:00",
+      "label": "Temperature",
+      "value": 37.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2021-03-07 11:00",
+      "label": "Systolic BP",
+      "value": 100.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2021-03-07 11:00",
+      "label": "8634-8",
+      "value": 392.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2021-03-07 11:00",
+      "label": "8636-3",
+      "value": 496.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2021-03-07 11:00",
+      "label": "Heart Rate",
+      "value": 96.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2021-03-07 11:00",
+      "label": "Heart Rate",
+      "value": 96.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2021-03-07 11:00",
+      "label": "Resp Rate",
+      "value": 35.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2021-03-07 11:58",
+      "label": "11555-0",
+      "value": -2.0,
+      "unit": "mmol/L"
+    },
+    {
+      "datetime": "2021-03-07 11:58",
+      "label": "19254-2",
+      "value": 75.0,
+      "unit": "mmHg"
+    },
+    {
+      "datetime": "2021-03-07 11:58",
+      "label": "22735-5",
+      "value": 24.6,
+      "unit": "mmol/L"
+    },
+    {
+      "datetime": "2021-03-07 11:58",
+      "label": "2713-6",
+      "value": 93.0,
+      "unit": "%"
+    },
+    {
+      "datetime": "2021-03-07 11:58",
+      "label": "34705-4",
+      "value": 51.8,
+      "unit": "mmHg"
+    },
+    {
+      "datetime": "2021-03-07 11:58",
+      "label": "49701-6",
+      "value": 7.28,
+      "unit": ""
+    },
+    {
+      "datetime": "2021-03-07 12:00",
+      "label": "35088-4",
+      "value": 6.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2021-03-07 12:00",
+      "label": "38214-3",
+      "value": 0.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2021-03-07 12:00",
+      "label": "Temperature",
+      "value": 97.9,
+      "unit": ""
+    },
+    {
+      "datetime": "2021-03-07 12:00",
+      "label": "Systolic BP",
+      "value": 103.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2021-03-07 12:00",
+      "label": "8634-8",
+      "value": 408.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2021-03-07 12:00",
+      "label": "8636-3",
+      "value": 491.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2021-03-07 12:00",
+      "label": "Heart Rate",
+      "value": 83.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2021-03-07 12:00",
+      "label": "Heart Rate",
+      "value": 86.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2021-03-07 12:00",
+      "label": "Resp Rate",
+      "value": 35.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2021-03-07 12:00",
+      "label": "IO_OUT",
+      "value": 40.0,
+      "unit": "ml"
+    },
+    {
+      "datetime": "2021-03-07 12:32",
+      "label": "17863-2",
+      "value": 1.0,
+      "unit": "mmol/L"
+    },
+    {
+      "datetime": "2021-03-07 12:32",
+      "label": "19214-6",
+      "value": 28.6,
+      "unit": "mm Hg"
+    },
+    {
+      "datetime": "2021-03-07 12:32",
+      "label": "1925-7",
+      "value": 0.0,
+      "unit": "mEq/L"
+    },
+    {
+      "datetime": "2021-03-07 12:32",
+      "label": "2019-8",
+      "value": 55.4,
+      "unit": "mm Hg"
+    },
+    {
+      "datetime": "2021-03-07 12:32",
+      "label": "22735-5",
+      "value": 25.8,
+      "unit": "mEq/L"
+    },
+    {
+      "datetime": "2021-03-07 12:32",
+      "label": "2339-0",
+      "value": 98.0,
+      "unit": "mg/dL"
+    },
+    {
+      "datetime": "2021-03-07 12:32",
+      "label": "2703-7",
+      "value": 86.1,
+      "unit": "mm Hg"
+    },
+    {
+      "datetime": "2021-03-07 12:32",
+      "label": "2744-1",
+      "value": 7.29,
+      "unit": ""
+    },
+    {
+      "datetime": "2021-03-07 13:00",
+      "label": "Systolic BP",
+      "value": 103.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2021-03-07 13:00",
+      "label": "8634-8",
+      "value": 400.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2021-03-07 13:00",
+      "label": "8636-3",
+      "value": 506.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2021-03-07 13:00",
+      "label": "Heart Rate",
+      "value": 93.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2021-03-07 13:00",
+      "label": "Heart Rate",
+      "value": 93.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2021-03-07 13:00",
+      "label": "Resp Rate",
+      "value": 25.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2021-03-07 13:00",
+      "label": "IO_OUT",
+      "value": 35.0,
+      "unit": "ml"
+    },
+    {
+      "datetime": "2021-03-07 13:34",
+      "label": "Diastolic BP",
+      "value": 74.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2021-03-07 13:34",
+      "label": "8478-0",
+      "value": 81.0,
+      "unit": "mmHg"
+    },
+    {
+      "datetime": "2021-03-07 13:34",
+      "label": "Systolic BP",
+      "value": 94.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2021-03-07 13:42",
+      "label": "76248-4",
+      "value": 8.0,
+      "unit": "cm H20"
+    },
+    {
+      "datetime": "2021-03-07 13:42",
+      "label": "Heart Rate",
+      "value": 85.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2021-03-07 13:42",
+      "label": "Resp Rate",
+      "value": 35.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2021-03-07 14:00",
+      "label": "38214-3",
+      "value": 0.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2021-03-07 14:00",
+      "label": "Temperature",
+      "value": 97.3,
+      "unit": ""
+    },
+    {
+      "datetime": "2021-03-07 14:00",
+      "label": "Systolic BP",
+      "value": 96.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2021-03-07 14:00",
+      "label": "8634-8",
+      "value": 416.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2021-03-07 14:00",
+      "label": "8636-3",
+      "value": 498.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2021-03-07 14:00",
+      "label": "Heart Rate",
+      "value": 88.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2021-03-07 14:00",
+      "label": "Heart Rate",
+      "value": 86.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2021-03-07 14:00",
+      "label": "Resp Rate",
+      "value": 35.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2021-03-07 14:00",
+      "label": "IO_OUT",
+      "value": 40.0,
+      "unit": "ml"
+    },
+    {
+      "datetime": "2021-03-07 15:00",
+      "label": "38214-3",
+      "value": 0.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2021-03-07 15:00",
+      "label": "Systolic BP",
+      "value": 105.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2021-03-07 15:00",
+      "label": "8634-8",
+      "value": 376.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2021-03-07 15:00",
+      "label": "8636-3",
+      "value": 493.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2021-03-07 15:00",
+      "label": "Heart Rate",
+      "value": 100.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2021-03-07 15:00",
+      "label": "Heart Rate",
+      "value": 100.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2021-03-07 15:00",
+      "label": "Resp Rate",
+      "value": 35.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2021-03-07 15:00",
+      "label": "IO_OUT",
+      "value": 25.0,
+      "unit": "ml"
+    },
+    {
+      "datetime": "2021-03-07 15:14",
+      "label": "Diastolic BP",
+      "value": 74.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2021-03-07 15:14",
+      "label": "8478-0",
+      "value": 79.0,
+      "unit": "mmHg"
+    },
+    {
+      "datetime": "2021-03-07 15:14",
+      "label": "Systolic BP",
+      "value": 90.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2021-03-07 15:48",
+      "label": "Calcium",
+      "value": 8.1,
+      "unit": "mg/dL"
+    },
+    {
+      "datetime": "2021-03-07 15:48",
+      "label": "17863-2",
+      "value": 1.01,
+      "unit": "mmol/L"
+    },
+    {
+      "datetime": "2021-03-07 15:48",
+      "label": "17863-2",
+      "value": 1.04,
+      "unit": "mmol/L"
+    },
+    {
+      "datetime": "2021-03-07 15:48",
+      "label": "19214-6",
+      "value": 28.7,
+      "unit": "mm Hg"
+    },
+    {
+      "datetime": "2021-03-07 15:48",
+      "label": "19216-1",
+      "value": 29.9,
+      "unit": "mm Hg"
+    },
+    {
+      "datetime": "2021-03-07 15:48",
+      "label": "1925-7",
+      "value": 1.0,
+      "unit": "mEq/L"
+    },
+    {
+      "datetime": "2021-03-07 15:48",
+      "label": "1925-7",
+      "value": 1.5,
+      "unit": "mEq/L"
+    },
+    {
+      "datetime": "2021-03-07 15:48",
+      "label": "2019-8",
+      "value": 52.6,
+      "unit": "mm Hg"
+    },
+    {
+      "datetime": "2021-03-07 15:48",
+      "label": "2028-9",
+      "value": 26.0,
+      "unit": "mmol/L"
+    },
+    {
+      "datetime": "2021-03-07 15:48",
+      "label": "20584-9",
+      "value": 7.7,
+      "unit": "K/uL"
+    },
+    {
+      "datetime": "2021-03-07 15:48",
+      "label": "2075-0",
+      "value": 109.0,
+      "unit": "mmol/L"
+    },
+    {
+      "datetime": "2021-03-07 15:48",
+      "label": "Creatinine",
+      "value": 0.8,
+      "unit": "mg/dL"
+    },
+    {
+      "datetime": "2021-03-07 15:48",
+      "label": "22735-5",
+      "value": 26.4,
+      "unit": "mEq/L"
+    },
+    {
+      "datetime": "2021-03-07 15:48",
+      "label": "22735-5",
+      "value": 27.5,
+      "unit": "mEq/L"
+    },
+    {
+      "datetime": "2021-03-07 15:48",
+      "label": "2339-0",
+      "value": 94.0,
+      "unit": "mg/dL"
+    },
+    {
+      "datetime": "2021-03-07 15:48",
+      "label": "2339-0",
+      "value": 96.0,
+      "unit": "mg/dL"
+    },
+    {
+      "datetime": "2021-03-07 15:48",
+      "label": "Glucose",
+      "value": 95.0,
+      "unit": "mg/dL"
+    },
+    {
+      "datetime": "2021-03-07 15:48",
+      "label": "2703-7",
+      "value": 96.7,
+      "unit": "mm Hg"
+    },
+    {
+      "datetime": "2021-03-07 15:48",
+      "label": "2744-1",
+      "value": 7.32,
+      "unit": ""
+    },
+    {
+      "datetime": "2021-03-07 15:48",
+      "label": "Potassium",
+      "value": 4.4,
+      "unit": "mmol/L"
+    },
+    {
+      "datetime": "2021-03-07 15:48",
+      "label": "Sodium",
+      "value": 140.0,
+      "unit": "mmol/L"
+    },
+    {
+      "datetime": "2021-03-07 15:48",
+      "label": "BUN",
+      "value": 12.0,
+      "unit": "mg/dL"
+    },
+    {
+      "datetime": "2021-03-07 15:48",
+      "label": "Lactate",
+      "value": 1.3,
+      "unit": "mmol/L"
+    },
+    {
+      "datetime": "2021-03-07 15:48",
+      "label": "33037-3",
+      "value": 5.0,
+      "unit": "mmol/L"
+    },
+    {
+      "datetime": "2021-03-07 15:48",
+      "label": "Hematocrit",
+      "value": 40.2,
+      "unit": "%"
+    },
+    {
+      "datetime": "2021-03-07 15:48",
+      "label": "62238-1",
+      "value": 105.0,
+      "unit": "mL/min/1.73 m2"
+    },
+    {
+      "datetime": "2021-03-07 15:48",
+      "label": "Hemoglobin",
+      "value": 12.8,
+      "unit": "g/dL"
+    },
+    {
+      "datetime": "2021-03-07 15:48",
+      "label": "Platelets",
+      "value": 182.0,
+      "unit": "K/uL"
+    },
+    {
+      "datetime": "2021-03-07 15:48",
+      "label": "785-6",
+      "value": 30.9,
+      "unit": "pg"
+    },
+    {
+      "datetime": "2021-03-07 15:48",
+      "label": "786-4",
+      "value": 31.8,
+      "unit": "g/dL"
+    },
+    {
+      "datetime": "2021-03-07 15:48",
+      "label": "787-2",
+      "value": 97.1,
+      "unit": "fL"
+    },
+    {
+      "datetime": "2021-03-07 15:48",
+      "label": "788-0",
+      "value": 12.4,
+      "unit": "%"
+    },
+    {
+      "datetime": "2021-03-07 15:48",
+      "label": "789-8",
+      "value": 4.14,
+      "unit": "MIL/uL"
+    },
+    {
+      "datetime": "2021-03-07 15:48",
+      "label": "88293-6",
+      "value": 121.0,
+      "unit": "mL/min/1.73 m2"
+    },
+    {
+      "datetime": "2021-03-07 15:52",
+      "label": "2339-0",
+      "value": 86.0,
+      "unit": "mg/dL"
+    },
+    {
+      "datetime": "2021-03-07 16:00",
+      "label": "35088-4",
+      "value": 6.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2021-03-07 16:00",
+      "label": "38214-3",
+      "value": 0.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2021-03-07 16:00",
+      "label": "Temperature",
+      "value": 37.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2021-03-07 16:00",
+      "label": "Temperature",
+      "value": 98.6,
+      "unit": ""
+    },
+    {
+      "datetime": "2021-03-07 16:00",
+      "label": "Systolic BP",
+      "value": 93.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2021-03-07 16:00",
+      "label": "8634-8",
+      "value": 400.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2021-03-07 16:00",
+      "label": "8636-3",
+      "value": 501.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2021-03-07 16:00",
+      "label": "Heart Rate",
+      "value": 91.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2021-03-07 16:00",
+      "label": "Heart Rate",
+      "value": 92.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2021-03-07 16:00",
+      "label": "Resp Rate",
+      "value": 35.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2021-03-07 16:00",
+      "label": "IO_OUT",
+      "value": 20.0,
+      "unit": "ml"
+    },
+    {
+      "datetime": "2021-03-07 16:36",
+      "label": "76248-4",
+      "value": 8.0,
+      "unit": "cm H20"
+    },
+    {
+      "datetime": "2021-03-07 16:36",
+      "label": "8302-2",
+      "value": 64.331,
+      "unit": ""
+    },
+    {
+      "datetime": "2021-03-07 16:36",
+      "label": "Resp Rate",
+      "value": 35.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2021-03-07 16:45",
+      "label": "76248-4",
+      "value": 8.0,
+      "unit": "cm H20"
+    },
+    {
+      "datetime": "2021-03-07 16:45",
+      "label": "8302-2",
+      "value": 64.331,
+      "unit": ""
+    },
+    {
+      "datetime": "2021-03-07 16:45",
+      "label": "Resp Rate",
+      "value": 35.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2021-03-07 17:00",
+      "label": "35088-4",
+      "value": 6.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2021-03-07 17:00",
+      "label": "38214-3",
+      "value": 0.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2021-03-07 17:00",
+      "label": "Temperature",
+      "value": 37.1,
+      "unit": ""
+    },
+    {
+      "datetime": "2021-03-07 17:00",
+      "label": "Temperature",
+      "value": 98.8,
+      "unit": ""
+    },
+    {
+      "datetime": "2021-03-07 17:00",
+      "label": "Systolic BP",
+      "value": 87.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2021-03-07 17:00",
+      "label": "8634-8",
+      "value": 408.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2021-03-07 17:00",
+      "label": "8636-3",
+      "value": 491.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2021-03-07 17:00",
+      "label": "Heart Rate",
+      "value": 90.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2021-03-07 17:00",
+      "label": "Heart Rate",
+      "value": 88.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2021-03-07 17:00",
+      "label": "Resp Rate",
+      "value": 35.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2021-03-07 17:00",
+      "label": "IO_OUT",
+      "value": 35.0,
+      "unit": "ml"
+    },
+    {
+      "datetime": "2021-03-07 17:29",
+      "label": "11555-0",
+      "value": 3.0,
+      "unit": "mmol/L"
+    },
+    {
+      "datetime": "2021-03-07 17:29",
+      "label": "19254-2",
+      "value": 108.0,
+      "unit": "mmHg"
+    },
+    {
+      "datetime": "2021-03-07 17:29",
+      "label": "22735-5",
+      "value": 27.5,
+      "unit": "mmol/L"
+    },
+    {
+      "datetime": "2021-03-07 17:29",
+      "label": "2713-6",
+      "value": 98.0,
+      "unit": "%"
+    },
+    {
+      "datetime": "2021-03-07 17:29",
+      "label": "34705-4",
+      "value": 42.7,
+      "unit": "mmHg"
+    },
+    {
+      "datetime": "2021-03-07 17:29",
+      "label": "49701-6",
+      "value": 7.42,
+      "unit": ""
+    },
+    {
+      "datetime": "2021-03-07 18:00",
+      "label": "38214-3",
+      "value": 0.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2021-03-07 18:00",
+      "label": "Temperature",
+      "value": 98.6,
+      "unit": ""
+    },
+    {
+      "datetime": "2021-03-07 18:00",
+      "label": "Temperature",
+      "value": 37.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2021-03-07 18:00",
+      "label": "Systolic BP",
+      "value": 89.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2021-03-07 18:00",
+      "label": "8634-8",
+      "value": 424.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2021-03-07 18:00",
+      "label": "8636-3",
+      "value": 499.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2021-03-07 18:00",
+      "label": "Heart Rate",
+      "value": 81.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2021-03-07 18:00",
+      "label": "Heart Rate",
+      "value": 80.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2021-03-07 18:00",
+      "label": "Resp Rate",
+      "value": 35.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2021-03-07 18:00",
+      "label": "IO_OUT",
+      "value": 100.0,
+      "unit": "ml"
+    },
+    {
+      "datetime": "2021-03-07 19:00",
+      "label": "38214-3",
+      "value": 0.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2021-03-07 19:00",
+      "label": "Temperature",
+      "value": 98.6,
+      "unit": ""
+    },
+    {
+      "datetime": "2021-03-07 19:00",
+      "label": "Systolic BP",
+      "value": 96.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2021-03-07 19:00",
+      "label": "8634-8",
+      "value": 472.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2021-03-07 19:00",
+      "label": "8636-3",
+      "value": 513.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2021-03-07 19:00",
+      "label": "Heart Rate",
+      "value": 71.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2021-03-07 19:00",
+      "label": "Heart Rate",
+      "value": 71.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2021-03-07 19:00",
+      "label": "Resp Rate",
+      "value": 35.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2021-03-07 19:00",
+      "label": "IO_OUT",
+      "value": 70.0,
+      "unit": "ml"
+    },
+    {
+      "datetime": "2021-03-07 20:00",
+      "label": "35088-4",
+      "value": 8.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2021-03-07 20:00",
+      "label": "38214-3",
+      "value": 0.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2021-03-07 20:00",
+      "label": "Temperature",
+      "value": 98.8,
+      "unit": ""
+    },
+    {
+      "datetime": "2021-03-07 20:00",
+      "label": "Temperature",
+      "value": 37.1,
+      "unit": ""
+    },
+    {
+      "datetime": "2021-03-07 20:00",
+      "label": "Systolic BP",
+      "value": 95.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2021-03-07 20:00",
+      "label": "8634-8",
+      "value": 456.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2021-03-07 20:00",
+      "label": "8636-3",
+      "value": 513.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2021-03-07 20:00",
+      "label": "Heart Rate",
+      "value": 78.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2021-03-07 20:00",
+      "label": "Heart Rate",
+      "value": 78.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2021-03-07 20:00",
+      "label": "Resp Rate",
+      "value": 35.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2021-03-07 20:00",
+      "label": "IO_OUT",
+      "value": 100.0,
+      "unit": "ml"
+    },
+    {
+      "datetime": "2021-03-07 21:00",
+      "label": "Temperature",
+      "value": 98.8,
+      "unit": ""
+    },
+    {
+      "datetime": "2021-03-07 21:00",
+      "label": "Systolic BP",
+      "value": 94.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2021-03-07 21:00",
+      "label": "8634-8",
+      "value": 488.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2021-03-07 21:00",
+      "label": "8636-3",
+      "value": 549.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2021-03-07 21:00",
+      "label": "Heart Rate",
+      "value": 76.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2021-03-07 21:00",
+      "label": "Heart Rate",
+      "value": 76.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2021-03-07 21:00",
+      "label": "Resp Rate",
+      "value": 35.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2021-03-07 21:10",
+      "label": "76248-4",
+      "value": 8.0,
+      "unit": "cm H20"
+    },
+    {
+      "datetime": "2021-03-07 21:10",
+      "label": "Heart Rate",
+      "value": 74.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2021-03-07 21:10",
+      "label": "Resp Rate",
+      "value": 35.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2021-03-07 21:30",
+      "label": "35088-4",
+      "value": 8.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2021-03-07 21:30",
+      "label": "Systolic BP",
+      "value": 93.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2021-03-07 21:30",
+      "label": "8634-8",
+      "value": 464.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2021-03-07 21:30",
+      "label": "8636-3",
+      "value": 529.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2021-03-07 21:30",
+      "label": "Heart Rate",
+      "value": 78.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2021-03-07 21:30",
+      "label": "Heart Rate",
+      "value": 79.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2021-03-07 21:30",
+      "label": "Resp Rate",
+      "value": 31.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2021-03-07 22:00",
+      "label": "Temperature",
+      "value": 99.1,
+      "unit": ""
+    },
+    {
+      "datetime": "2021-03-07 22:00",
+      "label": "Systolic BP",
+      "value": 97.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2021-03-07 22:00",
+      "label": "8634-8",
+      "value": 480.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2021-03-07 22:00",
+      "label": "8636-3",
+      "value": 522.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2021-03-07 22:00",
+      "label": "Heart Rate",
+      "value": 71.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2021-03-07 22:00",
+      "label": "Heart Rate",
+      "value": 73.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2021-03-07 22:00",
+      "label": "Resp Rate",
+      "value": 35.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2021-03-07 22:37",
+      "label": "2339-0",
+      "value": 77.0,
+      "unit": "mg/dL"
+    },
+    {
+      "datetime": "2021-03-07 23:00",
+      "label": "Temperature",
+      "value": 37.1,
+      "unit": ""
+    },
+    {
+      "datetime": "2021-03-07 23:00",
+      "label": "Temperature",
+      "value": 98.8,
+      "unit": ""
+    },
+    {
+      "datetime": "2021-03-07 23:00",
+      "label": "Systolic BP",
+      "value": 103.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2021-03-07 23:00",
+      "label": "8634-8",
+      "value": 520.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2021-03-07 23:00",
+      "label": "8636-3",
+      "value": 545.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2021-03-07 23:00",
+      "label": "Heart Rate",
+      "value": 66.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2021-03-07 23:00",
+      "label": "Heart Rate",
+      "value": 65.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2021-03-07 23:00",
+      "label": "Resp Rate",
+      "value": 35.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2021-03-07 23:00",
+      "label": "IO_OUT",
+      "value": 125.0,
+      "unit": "ml"
+    },
+    {
+      "datetime": "2021-03-07 23:15",
+      "label": "Systolic BP",
+      "value": 103.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2021-03-07 23:15",
+      "label": "8634-8",
+      "value": 528.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2021-03-07 23:15",
+      "label": "8636-3",
+      "value": 541.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2021-03-07 23:15",
+      "label": "Heart Rate",
+      "value": 54.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2021-03-07 23:15",
+      "label": "Heart Rate",
+      "value": 54.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2021-03-07 23:15",
+      "label": "Resp Rate",
+      "value": 35.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2021-03-07 23:30",
+      "label": "Systolic BP",
+      "value": 96.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2021-03-07 23:30",
+      "label": "8634-8",
+      "value": 544.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2021-03-07 23:30",
+      "label": "8636-3",
+      "value": 571.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2021-03-07 23:30",
+      "label": "Heart Rate",
+      "value": 65.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2021-03-07 23:30",
+      "label": "Heart Rate",
+      "value": 65.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2021-03-07 23:30",
+      "label": "Resp Rate",
+      "value": 35.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2021-03-07 23:45",
+      "label": "Systolic BP",
+      "value": 100.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2021-03-07 23:45",
+      "label": "8634-8",
+      "value": 504.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2021-03-07 23:45",
+      "label": "8636-3",
+      "value": 537.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2021-03-07 23:45",
+      "label": "Heart Rate",
+      "value": 71.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2021-03-07 23:45",
+      "label": "Heart Rate",
+      "value": 69.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2021-03-07 23:45",
+      "label": "Resp Rate",
+      "value": 35.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2021-03-08 00:00",
+      "label": "35088-4",
+      "value": 9.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2021-03-08 00:00",
+      "label": "Temperature",
+      "value": 98.2,
+      "unit": ""
+    },
+    {
+      "datetime": "2021-03-08 00:00",
+      "label": "Temperature",
+      "value": 36.8,
+      "unit": ""
+    },
+    {
+      "datetime": "2021-03-08 00:00",
+      "label": "Systolic BP",
+      "value": 103.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2021-03-08 00:00",
+      "label": "8634-8",
+      "value": 512.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2021-03-08 00:00",
+      "label": "8636-3",
+      "value": 533.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2021-03-08 00:00",
+      "label": "Heart Rate",
+      "value": 66.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2021-03-08 00:00",
+      "label": "Heart Rate",
+      "value": 61.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2021-03-08 00:00",
+      "label": "Resp Rate",
+      "value": 31.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2021-03-08 00:00",
+      "label": "IO_OUT",
+      "value": 50.0,
+      "unit": "ml"
+    },
+    {
+      "datetime": "2021-03-08 00:15",
+      "label": "Systolic BP",
+      "value": 102.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2021-03-08 00:15",
+      "label": "8634-8",
+      "value": 488.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2021-03-08 00:15",
+      "label": "8636-3",
+      "value": 512.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2021-03-08 00:15",
+      "label": "Heart Rate",
+      "value": 74.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2021-03-08 00:15",
+      "label": "Resp Rate",
+      "value": 27.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2021-03-08 00:30",
+      "label": "Systolic BP",
+      "value": 118.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2021-03-08 00:30",
+      "label": "8634-8",
+      "value": 432.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2021-03-08 00:30",
+      "label": "8636-3",
+      "value": 499.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2021-03-08 00:30",
+      "label": "Heart Rate",
+      "value": 78.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2021-03-08 00:30",
+      "label": "Resp Rate",
+      "value": 35.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2021-03-08 00:45",
+      "label": "76248-4",
+      "value": 8.7,
+      "unit": "cm H20"
+    },
+    {
+      "datetime": "2021-03-08 00:45",
+      "label": "Systolic BP",
+      "value": 108.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2021-03-08 00:45",
+      "label": "8634-8",
+      "value": 416.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2021-03-08 00:45",
+      "label": "8636-3",
+      "value": 501.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2021-03-08 00:45",
+      "label": "Heart Rate",
+      "value": 84.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2021-03-08 00:45",
+      "label": "Resp Rate",
+      "value": 35.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2021-03-08 01:00",
+      "label": "Temperature",
+      "value": 97.7,
+      "unit": ""
+    },
+    {
+      "datetime": "2021-03-08 01:00",
+      "label": "Temperature",
+      "value": 36.5,
+      "unit": ""
+    },
+    {
+      "datetime": "2021-03-08 01:00",
+      "label": "Systolic BP",
+      "value": 99.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2021-03-08 01:00",
+      "label": "8634-8",
+      "value": 448.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2021-03-08 01:00",
+      "label": "8636-3",
+      "value": 504.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2021-03-08 01:00",
+      "label": "Heart Rate",
+      "value": 72.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2021-03-08 01:00",
+      "label": "Resp Rate",
+      "value": 35.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2021-03-08 01:00",
+      "label": "IO_OUT",
+      "value": 60.0,
+      "unit": "ml"
+    },
+    {
+      "datetime": "2021-03-08 02:00",
+      "label": "Temperature",
+      "value": 97.5,
+      "unit": ""
+    },
+    {
+      "datetime": "2021-03-08 02:00",
+      "label": "Temperature",
+      "value": 36.4,
+      "unit": ""
+    },
+    {
+      "datetime": "2021-03-08 02:00",
+      "label": "Systolic BP",
+      "value": 95.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2021-03-08 02:00",
+      "label": "8634-8",
+      "value": 520.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2021-03-08 02:00",
+      "label": "8636-3",
+      "value": 533.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2021-03-08 02:00",
+      "label": "Heart Rate",
+      "value": 60.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2021-03-08 02:00",
+      "label": "Heart Rate",
+      "value": 60.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2021-03-08 02:00",
+      "label": "Resp Rate",
+      "value": 35.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2021-03-08 02:00",
+      "label": "IO_OUT",
+      "value": 55.0,
+      "unit": "ml"
+    },
+    {
+      "datetime": "2021-03-08 03:00",
+      "label": "Temperature",
+      "value": 36.6,
+      "unit": ""
+    },
+    {
+      "datetime": "2021-03-08 03:00",
+      "label": "Temperature",
+      "value": 97.9,
+      "unit": ""
+    },
+    {
+      "datetime": "2021-03-08 03:00",
+      "label": "Systolic BP",
+      "value": 95.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2021-03-08 03:00",
+      "label": "8634-8",
+      "value": 512.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2021-03-08 03:00",
+      "label": "8636-3",
+      "value": 545.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2021-03-08 03:00",
+      "label": "Heart Rate",
+      "value": 67.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2021-03-08 03:00",
+      "label": "Heart Rate",
+      "value": 65.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2021-03-08 03:00",
+      "label": "Resp Rate",
+      "value": 35.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2021-03-08 03:23",
+      "label": "ALT",
+      "value": 48.0,
+      "unit": "U/L"
+    },
+    {
+      "datetime": "2021-03-08 03:23",
+      "label": "ALT",
+      "value": 48.0,
+      "unit": "U/L"
+    },
+    {
+      "datetime": "2021-03-08 03:23",
+      "label": "Albumin",
+      "value": 3.0,
+      "unit": "g/dL"
+    },
+    {
+      "datetime": "2021-03-08 03:23",
+      "label": "Albumin",
+      "value": 3.0,
+      "unit": "g/dL"
+    },
+    {
+      "datetime": "2021-03-08 03:23",
+      "label": "Calcium",
+      "value": 8.2,
+      "unit": "mg/dL"
+    },
+    {
+      "datetime": "2021-03-08 03:23",
+      "label": "19123-9",
+      "value": 2.3,
+      "unit": "mg/dL"
+    },
+    {
+      "datetime": "2021-03-08 03:23",
+      "label": "AST",
+      "value": 45.0,
+      "unit": "U/L"
+    },
+    {
+      "datetime": "2021-03-08 03:23",
+      "label": "AST",
+      "value": 45.0,
+      "unit": "U/L"
+    },
+    {
+      "datetime": "2021-03-08 03:23",
+      "label": "1968-7",
+      "value": 0.33,
+      "unit": "mg/dL"
+    },
+    {
+      "datetime": "2021-03-08 03:23",
+      "label": "1971-1",
+      "value": 1.3,
+      "unit": "mg/dL"
+    },
+    {
+      "datetime": "2021-03-08 03:23",
+      "label": "Total Bilirubin",
+      "value": 1.6,
+      "unit": "mg/dL"
+    },
+    {
+      "datetime": "2021-03-08 03:23",
+      "label": "Total Bilirubin",
+      "value": 1.6,
+      "unit": "mg/dL"
+    },
+    {
+      "datetime": "2021-03-08 03:23",
+      "label": "2028-9",
+      "value": 24.0,
+      "unit": "mmol/L"
+    },
+    {
+      "datetime": "2021-03-08 03:23",
+      "label": "20584-9",
+      "value": 6.7,
+      "unit": "K/uL"
+    },
+    {
+      "datetime": "2021-03-08 03:23",
+      "label": "2075-0",
+      "value": 109.0,
+      "unit": "mmol/L"
+    },
+    {
+      "datetime": "2021-03-08 03:23",
+      "label": "Creatinine",
+      "value": 0.78,
+      "unit": "mg/dL"
+    },
+    {
+      "datetime": "2021-03-08 03:23",
+      "label": "2336-6",
+      "value": 2.4,
+      "unit": "g/dL"
+    },
+    {
+      "datetime": "2021-03-08 03:23",
+      "label": "Glucose",
+      "value": 117.0,
+      "unit": "mg/dL"
+    },
+    {
+      "datetime": "2021-03-08 03:23",
+      "label": "Phosphorus",
+      "value": 2.6,
+      "unit": "mg/dL"
+    },
+    {
+      "datetime": "2021-03-08 03:23",
+      "label": "Potassium",
+      "value": 4.2,
+      "unit": "mmol/L"
+    },
+    {
+      "datetime": "2021-03-08 03:23",
+      "label": "2885-2",
+      "value": 5.4,
+      "unit": "g/dL"
+    },
+    {
+      "datetime": "2021-03-08 03:23",
+      "label": "2885-2",
+      "value": 5.4,
+      "unit": "g/dL"
+    },
+    {
+      "datetime": "2021-03-08 03:23",
+      "label": "Sodium",
+      "value": 139.0,
+      "unit": "mmol/L"
+    },
+    {
+      "datetime": "2021-03-08 03:23",
+      "label": "BUN",
+      "value": 15.0,
+      "unit": "mg/dL"
+    },
+    {
+      "datetime": "2021-03-08 03:23",
+      "label": "33037-3",
+      "value": 6.0,
+      "unit": "mmol/L"
+    },
+    {
+      "datetime": "2021-03-08 03:23",
+      "label": "Hematocrit",
+      "value": 35.7,
+      "unit": "%"
+    },
+    {
+      "datetime": "2021-03-08 03:23",
+      "label": "5905-5",
+      "value": 4.9,
+      "unit": "%"
+    },
+    {
+      "datetime": "2021-03-08 03:23",
+      "label": "62238-1",
+      "value": 106.0,
+      "unit": "mL/min/1.73 m2"
+    },
+    {
+      "datetime": "2021-03-08 03:23",
+      "label": "Alk Phosphatase",
+      "value": 79.0,
+      "unit": "U/L"
+    },
+    {
+      "datetime": "2021-03-08 03:23",
+      "label": "Alk Phosphatase",
+      "value": 79.0,
+      "unit": "U/L"
+    },
+    {
+      "datetime": "2021-03-08 03:23",
+      "label": "704-7",
+      "value": 0.05,
+      "unit": "K/uL"
+    },
+    {
+      "datetime": "2021-03-08 03:23",
+      "label": "706-2",
+      "value": 0.7,
+      "unit": "%"
+    },
+    {
+      "datetime": "2021-03-08 03:23",
+      "label": "711-2",
+      "value": 0.2,
+      "unit": "K/uL"
+    },
+    {
+      "datetime": "2021-03-08 03:23",
+      "label": "713-8",
+      "value": 3.0,
+      "unit": "%"
+    },
+    {
+      "datetime": "2021-03-08 03:23",
+      "label": "Hemoglobin",
+      "value": 11.6,
+      "unit": "g/dL"
+    },
+    {
+      "datetime": "2021-03-08 03:23",
+      "label": "731-0",
+      "value": 1.33,
+      "unit": "K/uL"
+    },
+    {
+      "datetime": "2021-03-08 03:23",
+      "label": "736-9",
+      "value": 19.8,
+      "unit": "%"
+    },
+    {
+      "datetime": "2021-03-08 03:23",
+      "label": "742-7",
+      "value": 0.33,
+      "unit": "K/uL"
+    },
+    {
+      "datetime": "2021-03-08 03:23",
+      "label": "751-8",
+      "value": 4.78,
+      "unit": "K/uL"
+    },
+    {
+      "datetime": "2021-03-08 03:23",
+      "label": "770-8",
+      "value": 71.3,
+      "unit": "%"
+    },
+    {
+      "datetime": "2021-03-08 03:23",
+      "label": "Platelets",
+      "value": 185.0,
+      "unit": "K/uL"
+    },
+    {
+      "datetime": "2021-03-08 03:23",
+      "label": "785-6",
+      "value": 31.3,
+      "unit": "pg"
+    },
+    {
+      "datetime": "2021-03-08 03:23",
+      "label": "786-4",
+      "value": 32.5,
+      "unit": "g/dL"
+    },
+    {
+      "datetime": "2021-03-08 03:23",
+      "label": "787-2",
+      "value": 96.2,
+      "unit": "fL"
+    },
+    {
+      "datetime": "2021-03-08 03:23",
+      "label": "788-0",
+      "value": 12.4,
+      "unit": "%"
+    },
+    {
+      "datetime": "2021-03-08 03:23",
+      "label": "789-8",
+      "value": 3.71,
+      "unit": "MIL/uL"
+    },
+    {
+      "datetime": "2021-03-08 03:23",
+      "label": "88293-6",
+      "value": 123.0,
+      "unit": "mL/min/1.73 m2"
+    }
+  ],
+  "diagnoses": [
+    {
+      "date": "2021-03-06 00:00",
+      "code": "ICD10CM/I35.8",
+      "description": "ICD10CM/I35.8"
+    },
+    {
+      "date": "2021-03-06 00:00",
+      "code": "ICD10CM/I46.9",
+      "description": "ICD10CM/I46.9"
+    },
+    {
+      "date": "2021-03-06 00:00",
+      "code": "ICD10CM/I46.9",
+      "description": "ICD10CM/I46.9"
+    },
+    {
+      "date": "2021-03-06 00:00",
+      "code": "ICD10CM/J96.02",
+      "description": "ICD10CM/J96.02"
+    },
+    {
+      "date": "2021-03-06 00:00",
+      "code": "ICD10CM/R06.02",
+      "description": "ICD10CM/R06.02"
+    },
+    {
+      "date": "2021-03-06 00:00",
+      "code": "ICD10CM/R41.82",
+      "description": "ICD10CM/R41.82"
+    },
+    {
+      "date": "2021-03-06 00:00",
+      "code": "ICD10CM/R91.8",
+      "description": "ICD10CM/R91.8"
+    },
+    {
+      "date": "2021-03-06 00:00",
+      "code": "ICD10CM/S01.01XA",
+      "description": "ICD10CM/S01.01XA"
+    },
+    {
+      "date": "2021-03-06 00:00",
+      "code": "ICD10CM/S19.9XXA",
+      "description": "ICD10CM/S19.9XXA"
+    },
+    {
+      "date": "2021-03-06 00:00",
+      "code": "ICD10CM/S29.9XXA",
+      "description": "ICD10CM/S29.9XXA"
+    },
+    {
+      "date": "2021-03-06 00:00",
+      "code": "ICD10CM/S39.92XA",
+      "description": "ICD10CM/S39.92XA"
+    },
+    {
+      "date": "2021-03-06 22:05",
+      "code": "ICD10CM/A04.72",
+      "description": "ICD10CM/A04.72"
+    },
+    {
+      "date": "2021-03-06 22:05",
+      "code": "ICD10CM/D53.9",
+      "description": "ICD10CM/D53.9"
+    },
+    {
+      "date": "2021-03-06 22:05",
+      "code": "ICD10CM/E66.09",
+      "description": "ICD10CM/E66.09"
+    },
+    {
+      "date": "2021-03-06 22:05",
+      "code": "ICD10CM/E87.0",
+      "description": "ICD10CM/E87.0"
+    },
+    {
+      "date": "2021-03-06 22:05",
+      "code": "ICD10CM/E87.2",
+      "description": "ICD10CM/E87.2"
+    },
+    {
+      "date": "2021-03-06 22:05",
+      "code": "ICD10CM/F05",
+      "description": "ICD10CM/F05"
+    },
+    {
+      "date": "2021-03-06 22:05",
+      "code": "ICD10CM/F10.229",
+      "description": "ICD10CM/F10.229"
+    },
+    {
+      "date": "2021-03-06 22:05",
+      "code": "ICD10CM/F10.229",
+      "description": "ICD10CM/F10.229"
+    },
+    {
+      "date": "2021-03-06 22:05",
+      "code": "ICD10CM/F10.239",
+      "description": "ICD10CM/F10.239"
+    },
+    {
+      "date": "2021-03-06 22:05",
+      "code": "ICD10CM/F10.239",
+      "description": "ICD10CM/F10.239"
+    },
+    {
+      "date": "2021-03-06 22:05",
+      "code": "ICD10CM/F12.90",
+      "description": "ICD10CM/F12.90"
+    },
+    {
+      "date": "2021-03-06 22:05",
+      "code": "ICD10CM/F22",
+      "description": "ICD10CM/F22"
+    },
+    {
+      "date": "2021-03-06 22:05",
+      "code": "ICD10CM/G47.33",
+      "description": "ICD10CM/G47.33"
+    },
+    {
+      "date": "2021-03-06 22:05",
+      "code": "ICD10CM/G93.41",
+      "description": "ICD10CM/G93.41"
+    },
+    {
+      "date": "2021-03-06 22:05",
+      "code": "ICD10CM/I10",
+      "description": "ICD10CM/I10"
+    },
+    {
+      "date": "2021-03-06 22:05",
+      "code": "ICD10CM/I35.0",
+      "description": "ICD10CM/I35.0"
+    },
+    {
+      "date": "2021-03-06 22:05",
+      "code": "ICD10CM/I46.8",
+      "description": "ICD10CM/I46.8"
+    },
+    {
+      "date": "2021-03-06 22:05",
+      "code": "ICD10CM/I46.9",
+      "description": "ICD10CM/I46.9"
+    },
+    {
+      "date": "2021-03-06 22:05",
+      "code": "ICD10CM/J69.0",
+      "description": "ICD10CM/J69.0"
+    },
+    {
+      "date": "2021-03-06 22:05",
+      "code": "ICD10CM/J96.01",
+      "description": "ICD10CM/J96.01"
+    },
+    {
+      "date": "2021-03-06 22:05",
+      "code": "ICD10CM/J96.02",
+      "description": "ICD10CM/J96.02"
+    },
+    {
+      "date": "2021-03-06 22:05",
+      "code": "ICD10CM/N17.9",
+      "description": "ICD10CM/N17.9"
+    },
+    {
+      "date": "2021-03-06 22:05",
+      "code": "ICD10CM/R33.9",
+      "description": "ICD10CM/R33.9"
+    },
+    {
+      "date": "2021-03-06 22:05",
+      "code": "ICD10CM/S00.83XA",
+      "description": "ICD10CM/S00.83XA"
+    },
+    {
+      "date": "2021-03-06 22:05",
+      "code": "ICD10CM/S01.01XA",
+      "description": "ICD10CM/S01.01XA"
+    },
+    {
+      "date": "2021-03-06 22:05",
+      "code": "ICD10CM/S01.111A",
+      "description": "ICD10CM/S01.111A"
+    },
+    {
+      "date": "2021-03-07 00:00",
+      "code": "ICD10CM/F10.929",
+      "description": "ICD10CM/F10.929"
+    },
+    {
+      "date": "2021-03-07 00:00",
+      "code": "ICD10CM/G92",
+      "description": "ICD10CM/G92"
+    },
+    {
+      "date": "2021-03-07 00:00",
+      "code": "ICD10CM/G93.1",
+      "description": "ICD10CM/G93.1"
+    },
+    {
+      "date": "2021-03-07 00:00",
+      "code": "ICD10CM/G93.41",
+      "description": "ICD10CM/G93.41"
+    },
+    {
+      "date": "2021-03-07 00:00",
+      "code": "ICD10CM/I46.8",
+      "description": "ICD10CM/I46.8"
+    },
+    {
+      "date": "2021-03-07 00:00",
+      "code": "ICD10CM/I46.9",
+      "description": "ICD10CM/I46.9"
+    },
+    {
+      "date": "2021-03-07 00:00",
+      "code": "ICD10CM/I46.9",
+      "description": "ICD10CM/I46.9"
+    },
+    {
+      "date": "2021-03-07 00:00",
+      "code": "ICD10CM/I49.3",
+      "description": "ICD10CM/I49.3"
+    },
+    {
+      "date": "2021-03-07 00:00",
+      "code": "ICD10CM/R00.0",
+      "description": "ICD10CM/R00.0"
+    },
+    {
+      "date": "2021-03-07 00:00",
+      "code": "ICD10CM/R91.8",
+      "description": "ICD10CM/R91.8"
+    },
+    {
+      "date": "2021-03-07 00:00",
+      "code": "ICD10CM/S01.01XA",
+      "description": "ICD10CM/S01.01XA"
+    },
+    {
+      "date": "2021-03-07 00:00",
+      "code": "ICD10CM/S19.9XXA",
+      "description": "ICD10CM/S19.9XXA"
+    },
+    {
+      "date": "2021-03-08 00:00",
+      "code": "ICD10CM/I46.9",
+      "description": "ICD10CM/I46.9"
+    },
+    {
+      "date": "2021-03-08 00:00",
+      "code": "ICD10CM/J96.02",
+      "description": "ICD10CM/J96.02"
+    },
+    {
+      "date": "2021-03-08 00:00",
+      "code": "ICD10CM/R14.0",
+      "description": "ICD10CM/R14.0"
+    }
+  ],
+  "medications": [
+    {
+      "date": "2021-03-06 22:49",
+      "name": "RxNorm/727373",
+      "code": "RxNorm/727373"
+    },
+    {
+      "date": "2021-03-06 22:53",
+      "name": "RxNorm/1654006",
+      "code": "RxNorm/1654006"
+    },
+    {
+      "date": "2021-03-06 22:54",
+      "name": "RxNorm/1234995",
+      "code": "RxNorm/1234995"
+    },
+    {
+      "date": "2021-03-06 22:56",
+      "name": "RxNorm/792582",
+      "code": "RxNorm/792582"
+    },
+    {
+      "date": "2021-03-06 23:10",
+      "name": "RxNorm/311700",
+      "code": "RxNorm/311700"
+    },
+    {
+      "date": "2021-03-06 23:39",
+      "name": "RxNorm/311700",
+      "code": "RxNorm/311700"
+    },
+    {
+      "date": "2021-03-07 00:06",
+      "name": "RxNorm/311700",
+      "code": "RxNorm/311700"
+    },
+    {
+      "date": "2021-03-07 00:09",
+      "name": "RxNorm/312507",
+      "code": "RxNorm/312507"
+    },
+    {
+      "date": "2021-03-07 00:21",
+      "name": "RxNorm/1735003",
+      "code": "RxNorm/1735003"
+    },
+    {
+      "date": "2021-03-07 00:23",
+      "name": "RxNorm/311700",
+      "code": "RxNorm/311700"
+    },
+    {
+      "date": "2021-03-07 00:57",
+      "name": "RxNorm/1658259",
+      "code": "RxNorm/1658259"
+    },
+    {
+      "date": "2021-03-07 01:40",
+      "name": "RxNorm/1010751",
+      "code": "RxNorm/1010751"
+    },
+    {
+      "date": "2021-03-07 01:40",
+      "name": "RxNorm/311700",
+      "code": "RxNorm/311700"
+    },
+    {
+      "date": "2021-03-07 01:52",
+      "name": "RxNorm/1808217",
+      "code": "RxNorm/1808217"
+    },
+    {
+      "date": "2021-03-07 03:16",
+      "name": "RxNorm/2118449",
+      "code": "RxNorm/2118449"
+    },
+    {
+      "date": "2021-03-07 03:29",
+      "name": "RxNorm/2475337",
+      "code": "RxNorm/2475337"
+    },
+    {
+      "date": "2021-03-07 04:04",
+      "name": "RxNorm/307675",
+      "code": "RxNorm/307675"
+    },
+    {
+      "date": "2021-03-07 04:04",
+      "name": "RxNorm/866083",
+      "code": "RxNorm/866083"
+    },
+    {
+      "date": "2021-03-07 05:10",
+      "name": "RxNorm/897756",
+      "code": "RxNorm/897756"
+    },
+    {
+      "date": "2021-03-07 05:29",
+      "name": "RxNorm/1860466",
+      "code": "RxNorm/1860466"
+    },
+    {
+      "date": "2021-03-07 05:30",
+      "name": "RxNorm/2121591",
+      "code": "RxNorm/2121591"
+    },
+    {
+      "date": "2021-03-07 06:04",
+      "name": "RxNorm/897756",
+      "code": "RxNorm/897756"
+    },
+    {
+      "date": "2021-03-07 10:21",
+      "name": "RxNorm/1743833",
+      "code": "RxNorm/1743833"
+    },
+    {
+      "date": "2021-03-07 10:21",
+      "name": "RxNorm/834127",
+      "code": "RxNorm/834127"
+    },
+    {
+      "date": "2021-03-07 10:28",
+      "name": "RxNorm/310410",
+      "code": "RxNorm/310410"
+    },
+    {
+      "date": "2021-03-07 10:28",
+      "name": "RxNorm/313323",
+      "code": "RxNorm/313323"
+    },
+    {
+      "date": "2021-03-07 14:32",
+      "name": "RxNorm/311670",
+      "code": "RxNorm/311670"
+    },
+    {
+      "date": "2021-03-07 14:34",
+      "name": "RxNorm/2121591",
+      "code": "RxNorm/2121591"
+    },
+    {
+      "date": "2021-03-07 15:43",
+      "name": "RxNorm/2475337",
+      "code": "RxNorm/2475337"
+    },
+    {
+      "date": "2021-03-07 18:16",
+      "name": "RxNorm/2118448",
+      "code": "RxNorm/2118448"
+    },
+    {
+      "date": "2021-03-07 22:12",
+      "name": "RxNorm/1743833",
+      "code": "RxNorm/1743833"
+    },
+    {
+      "date": "2021-03-07 22:12",
+      "name": "RxNorm/252732",
+      "code": "RxNorm/252732"
+    },
+    {
+      "date": "2021-03-07 22:12",
+      "name": "RxNorm/834127",
+      "code": "RxNorm/834127"
+    },
+    {
+      "date": "2021-03-07 22:12",
+      "name": "RxNorm/883726",
+      "code": "RxNorm/883726"
+    },
+    {
+      "date": "2021-03-07 22:13",
+      "name": "RxNorm/2121591",
+      "code": "RxNorm/2121591"
+    },
+    {
+      "date": "2021-03-07 23:41",
+      "name": "RxNorm/312507",
+      "code": "RxNorm/312507"
+    }
+  ],
+  "procedures": [
+    {
+      "date": "2021-03-06 00:00",
+      "code": "CPT4/31500",
+      "description": "CPT4/31500"
+    },
+    {
+      "date": "2021-03-06 00:00",
+      "code": "CPT4/31500",
+      "description": "CPT4/31500"
+    },
+    {
+      "date": "2021-03-06 00:00",
+      "code": "CPT4/36415",
+      "description": "CPT4/36415"
+    },
+    {
+      "date": "2021-03-06 00:00",
+      "code": "CPT4/36556",
+      "description": "CPT4/36556"
+    },
+    {
+      "date": "2021-03-06 00:00",
+      "code": "CPT4/36556",
+      "description": "CPT4/36556"
+    },
+    {
+      "date": "2021-03-06 00:00",
+      "code": "CPT4/36620",
+      "description": "CPT4/36620"
+    },
+    {
+      "date": "2021-03-06 00:00",
+      "code": "CPT4/70450",
+      "description": "CPT4/70450"
+    },
+    {
+      "date": "2021-03-06 00:00",
+      "code": "CPT4/70450",
+      "description": "CPT4/70450"
+    },
+    {
+      "date": "2021-03-06 00:00",
+      "code": "CPT4/71045",
+      "description": "CPT4/71045"
+    },
+    {
+      "date": "2021-03-06 00:00",
+      "code": "CPT4/71045",
+      "description": "CPT4/71045"
+    },
+    {
+      "date": "2021-03-06 00:00",
+      "code": "CPT4/71045",
+      "description": "CPT4/71045"
+    },
+    {
+      "date": "2021-03-06 00:00",
+      "code": "CPT4/71275",
+      "description": "CPT4/71275"
+    },
+    {
+      "date": "2021-03-06 00:00",
+      "code": "CPT4/71275",
+      "description": "CPT4/71275"
+    },
+    {
+      "date": "2021-03-06 00:00",
+      "code": "CPT4/72125",
+      "description": "CPT4/72125"
+    },
+    {
+      "date": "2021-03-06 00:00",
+      "code": "CPT4/72125",
+      "description": "CPT4/72125"
+    },
+    {
+      "date": "2021-03-06 00:00",
+      "code": "CPT4/74177",
+      "description": "CPT4/74177"
+    },
+    {
+      "date": "2021-03-06 00:00",
+      "code": "CPT4/74177",
+      "description": "CPT4/74177"
+    },
+    {
+      "date": "2021-03-06 00:00",
+      "code": "CPT4/76604",
+      "description": "CPT4/76604"
+    },
+    {
+      "date": "2021-03-06 00:00",
+      "code": "CPT4/76604",
+      "description": "CPT4/76604"
+    },
+    {
+      "date": "2021-03-06 00:00",
+      "code": "CPT4/76705",
+      "description": "CPT4/76705"
+    },
+    {
+      "date": "2021-03-06 00:00",
+      "code": "CPT4/76705",
+      "description": "CPT4/76705"
+    },
+    {
+      "date": "2021-03-06 00:00",
+      "code": "CPT4/93308",
+      "description": "CPT4/93308"
+    },
+    {
+      "date": "2021-03-06 00:00",
+      "code": "CPT4/93308",
+      "description": "CPT4/93308"
+    },
+    {
+      "date": "2021-03-06 00:00",
+      "code": "CPT4/94002",
+      "description": "CPT4/94002"
+    },
+    {
+      "date": "2021-03-06 00:00",
+      "code": "CPT4/96365",
+      "description": "CPT4/96365"
+    },
+    {
+      "date": "2021-03-06 00:00",
+      "code": "CPT4/96375",
+      "description": "CPT4/96375"
+    },
+    {
+      "date": "2021-03-06 00:00",
+      "code": "CPT4/99291",
+      "description": "CPT4/99291"
+    },
+    {
+      "date": "2021-03-06 00:00",
+      "code": "CPT4/99291",
+      "description": "CPT4/99291"
+    },
+    {
+      "date": "2021-03-06 00:00",
+      "code": "ICD10PCS/0BH17EZ",
+      "description": "ICD10PCS/0BH17EZ"
+    },
+    {
+      "date": "2021-03-06 00:00",
+      "code": "ICD10PCS/0BH17EZ",
+      "description": "ICD10PCS/0BH17EZ"
+    },
+    {
+      "date": "2021-03-06 00:00",
+      "code": "ICD10PCS/5A1945Z",
+      "description": "ICD10PCS/5A1945Z"
+    },
+    {
+      "date": "2021-03-06 00:00",
+      "code": "ICD10PCS/5A1945Z",
+      "description": "ICD10PCS/5A1945Z"
+    },
+    {
+      "date": "2021-03-07 00:00",
+      "code": "CPT4/36415",
+      "description": "CPT4/36415"
+    },
+    {
+      "date": "2021-03-07 00:00",
+      "code": "CPT4/70450",
+      "description": "CPT4/70450"
+    },
+    {
+      "date": "2021-03-07 00:00",
+      "code": "CPT4/70450",
+      "description": "CPT4/70450"
+    },
+    {
+      "date": "2021-03-07 00:00",
+      "code": "CPT4/71045",
+      "description": "CPT4/71045"
+    },
+    {
+      "date": "2021-03-07 00:00",
+      "code": "CPT4/71045",
+      "description": "CPT4/71045"
+    },
+    {
+      "date": "2021-03-07 00:00",
+      "code": "CPT4/71045",
+      "description": "CPT4/71045"
+    },
+    {
+      "date": "2021-03-07 00:00",
+      "code": "CPT4/72125",
+      "description": "CPT4/72125"
+    },
+    {
+      "date": "2021-03-07 00:00",
+      "code": "CPT4/72125",
+      "description": "CPT4/72125"
+    },
+    {
+      "date": "2021-03-07 00:00",
+      "code": "CPT4/80306",
+      "description": "CPT4/80306"
+    },
+    {
+      "date": "2021-03-07 00:00",
+      "code": "CPT4/93005",
+      "description": "CPT4/93005"
+    },
+    {
+      "date": "2021-03-07 00:00",
+      "code": "CPT4/93010",
+      "description": "CPT4/93010"
+    },
+    {
+      "date": "2021-03-07 00:00",
+      "code": "CPT4/93306",
+      "description": "CPT4/93306"
+    },
+    {
+      "date": "2021-03-07 00:00",
+      "code": "CPT4/93306",
+      "description": "CPT4/93306"
+    },
+    {
+      "date": "2021-03-07 00:00",
+      "code": "CPT4/94003",
+      "description": "CPT4/94003"
+    },
+    {
+      "date": "2021-03-07 00:00",
+      "code": "CPT4/95700",
+      "description": "CPT4/95700"
+    },
+    {
+      "date": "2021-03-07 00:00",
+      "code": "CPT4/95711",
+      "description": "CPT4/95711"
+    },
+    {
+      "date": "2021-03-07 00:00",
+      "code": "CPT4/95718",
+      "description": "CPT4/95718"
+    },
+    {
+      "date": "2021-03-07 00:00",
+      "code": "CPT4/96375",
+      "description": "CPT4/96375"
+    },
+    {
+      "date": "2021-03-07 00:00",
+      "code": "CPT4/96376",
+      "description": "CPT4/96376"
+    },
+    {
+      "date": "2021-03-07 00:00",
+      "code": "CPT4/99291",
+      "description": "CPT4/99291"
+    },
+    {
+      "date": "2021-03-07 00:00",
+      "code": "ICD10PCS/4A10X4Z",
+      "description": "ICD10PCS/4A10X4Z"
+    },
+    {
+      "date": "2021-03-07 00:00",
+      "code": "ICD10PCS/4A10X4Z",
+      "description": "ICD10PCS/4A10X4Z"
+    },
+    {
+      "date": "2021-03-08 00:00",
+      "code": "CPT4/31500",
+      "description": "CPT4/31500"
+    },
+    {
+      "date": "2021-03-08 00:00",
+      "code": "CPT4/71045",
+      "description": "CPT4/71045"
+    },
+    {
+      "date": "2021-03-08 00:00",
+      "code": "CPT4/71045",
+      "description": "CPT4/71045"
+    },
+    {
+      "date": "2021-03-08 00:00",
+      "code": "CPT4/74018",
+      "description": "CPT4/74018"
+    },
+    {
+      "date": "2021-03-08 00:00",
+      "code": "CPT4/74018",
+      "description": "CPT4/74018"
+    },
+    {
+      "date": "2021-03-08 00:00",
+      "code": "CPT4/94003",
+      "description": "CPT4/94003"
+    },
+    {
+      "date": "2021-03-08 00:00",
+      "code": "CPT4/94640",
+      "description": "CPT4/94640"
+    },
+    {
+      "date": "2021-03-08 00:00",
+      "code": "CPT4/99291",
+      "description": "CPT4/99291"
+    },
+    {
+      "date": "2021-03-08 00:00",
+      "code": "ICD10PCS/0BH18EZ",
+      "description": "ICD10PCS/0BH18EZ"
+    },
+    {
+      "date": "2021-03-08 00:00",
+      "code": "ICD10PCS/0BH18EZ",
+      "description": "ICD10PCS/0BH18EZ"
+    },
+    {
+      "date": "2021-03-08 00:00",
+      "code": "ICD10PCS/5A1945Z",
+      "description": "ICD10PCS/5A1945Z"
+    },
+    {
+      "date": "2021-03-08 00:00",
+      "code": "ICD10PCS/5A1945Z",
+      "description": "ICD10PCS/5A1945Z"
+    }
+  ],
+  "observations": [
+    {
+      "date": "2021-03-06 22:10",
+      "observation": "LOINC/LP21258-6",
+      "value": "90.0"
+    },
+    {
+      "date": "2021-03-06 22:15",
+      "observation": "LOINC/LP21258-6",
+      "value": "93.0"
+    },
+    {
+      "date": "2021-03-06 22:48",
+      "observation": "LOINC/LP21258-6",
+      "value": "91.0"
+    },
+    {
+      "date": "2021-03-06 23:05",
+      "observation": "LOINC/LP21258-6",
+      "value": "100.0"
+    },
+    {
+      "date": "2021-03-06 23:50",
+      "observation": "LOINC/LP21258-6",
+      "value": "94.0"
+    },
+    {
+      "date": "2021-03-06 23:55",
+      "observation": "LOINC/LP21258-6",
+      "value": "93.0"
+    },
+    {
+      "date": "2021-03-07 00:00",
+      "observation": "LOINC/LP21258-6",
+      "value": "93.0"
+    },
+    {
+      "date": "2021-03-07 00:01",
+      "observation": "LOINC/LP21258-6",
+      "value": "93.0"
+    },
+    {
+      "date": "2021-03-07 00:05",
+      "observation": "LOINC/LP21258-6",
+      "value": "95.0"
+    },
+    {
+      "date": "2021-03-07 00:10",
+      "observation": "LOINC/LP21258-6",
+      "value": "98.0"
+    },
+    {
+      "date": "2021-03-07 00:15",
+      "observation": "LOINC/LP21258-6",
+      "value": "99.0"
+    },
+    {
+      "date": "2021-03-07 00:20",
+      "observation": "LOINC/LP21258-6",
+      "value": "98.0"
+    },
+    {
+      "date": "2021-03-07 00:25",
+      "observation": "LOINC/LP21258-6",
+      "value": "96.0"
+    },
+    {
+      "date": "2021-03-07 00:30",
+      "observation": "LOINC/LP21258-6",
+      "value": "98.0"
+    },
+    {
+      "date": "2021-03-07 00:35",
+      "observation": "LOINC/LP21258-6",
+      "value": "100.0"
+    },
+    {
+      "date": "2021-03-07 00:40",
+      "observation": "LOINC/LP21258-6",
+      "value": "100.0"
+    },
+    {
+      "date": "2021-03-07 00:45",
+      "observation": "LOINC/LP21258-6",
+      "value": "100.0"
+    },
+    {
+      "date": "2021-03-07 00:50",
+      "observation": "LOINC/8327-9",
+      "value": "7.0"
+    },
+    {
+      "date": "2021-03-07 00:50",
+      "observation": "LOINC/LP21258-6",
+      "value": "100.0"
+    },
+    {
+      "date": "2021-03-07 00:55",
+      "observation": "LOINC/8327-9",
+      "value": "7.0"
+    },
+    {
+      "date": "2021-03-07 00:55",
+      "observation": "LOINC/LP21258-6",
+      "value": "100.0"
+    },
+    {
+      "date": "2021-03-07 01:00",
+      "observation": "LOINC/8327-9",
+      "value": "7.0"
+    },
+    {
+      "date": "2021-03-07 01:00",
+      "observation": "LOINC/LP21258-6",
+      "value": "100.0"
+    },
+    {
+      "date": "2021-03-07 01:05",
+      "observation": "LOINC/LP21258-6",
+      "value": "100.0"
+    },
+    {
+      "date": "2021-03-07 01:10",
+      "observation": "LOINC/8327-9",
+      "value": "7.0"
+    },
+    {
+      "date": "2021-03-07 01:10",
+      "observation": "LOINC/LP21258-6",
+      "value": "100.0"
+    },
+    {
+      "date": "2021-03-07 01:15",
+      "observation": "LOINC/LP21258-6",
+      "value": "100.0"
+    },
+    {
+      "date": "2021-03-07 01:20",
+      "observation": "LOINC/LP21258-6",
+      "value": "100.0"
+    },
+    {
+      "date": "2021-03-07 01:25",
+      "observation": "LOINC/LP21258-6",
+      "value": "100.0"
+    },
+    {
+      "date": "2021-03-07 01:30",
+      "observation": "LOINC/LP21258-6",
+      "value": "100.0"
+    },
+    {
+      "date": "2021-03-07 01:40",
+      "observation": "LOINC/LP21258-6",
+      "value": "96.0"
+    },
+    {
+      "date": "2021-03-07 01:45",
+      "observation": "LOINC/LP21258-6",
+      "value": "99.0"
+    },
+    {
+      "date": "2021-03-07 02:35",
+      "observation": "LOINC/LP21258-6",
+      "value": "97.0"
+    },
+    {
+      "date": "2021-03-07 02:40",
+      "observation": "LOINC/LP21258-6",
+      "value": "100.0"
+    },
+    {
+      "date": "2021-03-07 02:54",
+      "observation": "LOINC/LP21258-6",
+      "value": "100.0"
+    },
+    {
+      "date": "2021-03-07 03:00",
+      "observation": "LOINC/LP21258-6",
+      "value": "100.0"
+    },
+    {
+      "date": "2021-03-07 03:30",
+      "observation": "LOINC/LP21258-6",
+      "value": "100.0"
+    },
+    {
+      "date": "2021-03-07 04:00",
+      "observation": "LOINC/LP21258-6",
+      "value": "100.0"
+    },
+    {
+      "date": "2021-03-07 04:30",
+      "observation": "LOINC/LP21258-6",
+      "value": "100.0"
+    },
+    {
+      "date": "2021-03-07 05:00",
+      "observation": "LOINC/LP21258-6",
+      "value": "100.0"
+    },
+    {
+      "date": "2021-03-07 05:30",
+      "observation": "LOINC/LP21258-6",
+      "value": "100.0"
+    },
+    {
+      "date": "2021-03-07 05:55",
+      "observation": "LOINC/LP21258-6",
+      "value": "100.0"
+    },
+    {
+      "date": "2021-03-07 06:00",
+      "observation": "LOINC/LP21258-6",
+      "value": "100.0"
+    },
+    {
+      "date": "2021-03-07 07:00",
+      "observation": "LOINC/LP21258-6",
+      "value": "100.0"
+    },
+    {
+      "date": "2021-03-07 08:00",
+      "observation": "LOINC/8327-9",
+      "value": "7.0"
+    },
+    {
+      "date": "2021-03-07 08:00",
+      "observation": "LOINC/LP21258-6",
+      "value": "100.0"
+    },
+    {
+      "date": "2021-03-07 08:09",
+      "observation": "LOINC/LP21258-6",
+      "value": "100.0"
+    },
+    {
+      "date": "2021-03-07 09:00",
+      "observation": "LOINC/8327-9",
+      "value": "7.0"
+    },
+    {
+      "date": "2021-03-07 09:00",
+      "observation": "LOINC/LP21258-6",
+      "value": "100.0"
+    },
+    {
+      "date": "2021-03-07 09:33",
+      "observation": "LOINC/LP21258-6",
+      "value": "100.0"
+    },
+    {
+      "date": "2021-03-07 09:59",
+      "observation": "LOINC/LP21258-6",
+      "value": "97.0"
+    },
+    {
+      "date": "2021-03-07 10:00",
+      "observation": "LOINC/8327-9",
+      "value": "7.0"
+    },
+    {
+      "date": "2021-03-07 10:00",
+      "observation": "LOINC/LP21258-6",
+      "value": "97.0"
+    },
+    {
+      "date": "2021-03-07 10:59",
+      "observation": "LOINC/LP21258-6",
+      "value": "97.0"
+    },
+    {
+      "date": "2021-03-07 11:00",
+      "observation": "LOINC/8327-9",
+      "value": "7.0"
+    },
+    {
+      "date": "2021-03-07 11:00",
+      "observation": "LOINC/LP21258-6",
+      "value": "97.0"
+    },
+    {
+      "date": "2021-03-07 12:00",
+      "observation": "LOINC/LP21258-6",
+      "value": "95.0"
+    },
+    {
+      "date": "2021-03-07 13:00",
+      "observation": "LOINC/LP21258-6",
+      "value": "100.0"
+    },
+    {
+      "date": "2021-03-07 13:42",
+      "observation": "LOINC/LP21258-6",
+      "value": "100.0"
+    },
+    {
+      "date": "2021-03-07 14:00",
+      "observation": "LOINC/LP21258-6",
+      "value": "100.0"
+    },
+    {
+      "date": "2021-03-07 15:00",
+      "observation": "LOINC/LP21258-6",
+      "value": "98.0"
+    },
+    {
+      "date": "2021-03-07 16:00",
+      "observation": "LOINC/8327-9",
+      "value": "7.0"
+    },
+    {
+      "date": "2021-03-07 16:00",
+      "observation": "LOINC/LP21258-6",
+      "value": "100.0"
+    },
+    {
+      "date": "2021-03-07 16:36",
+      "observation": "LOINC/LP21258-6",
+      "value": "100.0"
+    },
+    {
+      "date": "2021-03-07 17:00",
+      "observation": "LOINC/8327-9",
+      "value": "7.0"
+    },
+    {
+      "date": "2021-03-07 17:00",
+      "observation": "LOINC/LP21258-6",
+      "value": "100.0"
+    },
+    {
+      "date": "2021-03-07 18:00",
+      "observation": "LOINC/8327-9",
+      "value": "7.0"
+    },
+    {
+      "date": "2021-03-07 18:00",
+      "observation": "LOINC/LP21258-6",
+      "value": "100.0"
+    },
+    {
+      "date": "2021-03-07 19:00",
+      "observation": "LOINC/LP21258-6",
+      "value": "100.0"
+    },
+    {
+      "date": "2021-03-07 20:00",
+      "observation": "LOINC/8327-9",
+      "value": "7.0"
+    },
+    {
+      "date": "2021-03-07 20:00",
+      "observation": "LOINC/LP21258-6",
+      "value": "100.0"
+    },
+    {
+      "date": "2021-03-07 21:00",
+      "observation": "LOINC/LP21258-6",
+      "value": "100.0"
+    },
+    {
+      "date": "2021-03-07 21:10",
+      "observation": "LOINC/LP21258-6",
+      "value": "100.0"
+    },
+    {
+      "date": "2021-03-07 21:30",
+      "observation": "LOINC/LP21258-6",
+      "value": "99.0"
+    },
+    {
+      "date": "2021-03-07 22:00",
+      "observation": "LOINC/LP21258-6",
+      "value": "100.0"
+    },
+    {
+      "date": "2021-03-07 23:00",
+      "observation": "LOINC/8327-9",
+      "value": "7.0"
+    },
+    {
+      "date": "2021-03-07 23:00",
+      "observation": "LOINC/LP21258-6",
+      "value": "100.0"
+    },
+    {
+      "date": "2021-03-07 23:15",
+      "observation": "LOINC/LP21258-6",
+      "value": "100.0"
+    },
+    {
+      "date": "2021-03-07 23:30",
+      "observation": "LOINC/LP21258-6",
+      "value": "100.0"
+    },
+    {
+      "date": "2021-03-07 23:45",
+      "observation": "LOINC/LP21258-6",
+      "value": "100.0"
+    },
+    {
+      "date": "2021-03-08 00:00",
+      "observation": "LOINC/8327-9",
+      "value": "7.0"
+    },
+    {
+      "date": "2021-03-08 00:00",
+      "observation": "LOINC/LP21258-6",
+      "value": "100.0"
+    },
+    {
+      "date": "2021-03-08 00:45",
+      "observation": "LOINC/LP21258-6",
+      "value": "100.0"
+    },
+    {
+      "date": "2021-03-08 01:00",
+      "observation": "LOINC/8327-9",
+      "value": "7.0"
+    },
+    {
+      "date": "2021-03-08 02:00",
+      "observation": "LOINC/8327-9",
+      "value": "7.0"
+    },
+    {
+      "date": "2021-03-08 02:00",
+      "observation": "LOINC/LP21258-6",
+      "value": "100.0"
+    },
+    {
+      "date": "2021-03-08 03:00",
+      "observation": "LOINC/8327-9",
+      "value": "7.0"
+    },
+    {
+      "date": "2021-03-08 03:00",
+      "observation": "LOINC/LP21258-6",
+      "value": "100.0"
+    }
+  ],
+  "visit_history": [
+    {
+      "date": "2021-03-06 22:05",
+      "type": "STANFORD_VISIT/Inpatient|Emergency|Hospital Encounter"
+    },
+    {
+      "date": "2021-03-06 22:05",
+      "type": "Visit/ER"
+    },
+    {
+      "date": "2021-03-06 22:21",
+      "type": "Domain/OMOP generated"
+    },
+    {
+      "date": "2021-03-06 22:28",
+      "type": "Domain/OMOP generated"
+    },
+    {
+      "date": "2021-03-06 23:08",
+      "type": "Domain/OMOP generated"
+    },
+    {
+      "date": "2021-03-06 23:14",
+      "type": "Domain/OMOP generated"
+    },
+    {
+      "date": "2021-03-06 23:14",
+      "type": "Domain/OMOP generated"
+    },
+    {
+      "date": "2021-03-07 00:00",
+      "type": "Domain/OMOP generated"
+    },
+    {
+      "date": "2021-03-07 01:53",
+      "type": "STANFORD_VISIT/Inpatient||Appointment"
+    },
+    {
+      "date": "2021-03-07 02:32",
+      "type": "SNOMED/308335008"
+    },
+    {
+      "date": "2021-03-07 08:19",
+      "type": "STANFORD_VISIT/Inpatient||Appointment"
+    },
+    {
+      "date": "2021-03-07 10:25",
+      "type": "STANFORD_VISIT/Inpatient||Appointment"
+    },
+    {
+      "date": "2021-03-07 21:21",
+      "type": "SNOMED/308335008"
+    }
+  ],
+  "data_summary": {
+    "n_lab_rows": 500,
+    "n_diagnoses": 52,
+    "n_medications": 36,
+    "n_procedures": 66,
+    "n_observations": 88,
+    "n_visits": 13,
+    "n_gap_labs": 92
+  }
+}

@@ -1,0 +1,6794 @@
+{
+  "case_id": 24,
+  "patient_id": "115973246",
+  "reversal_type": "stable\u2192falling",
+  "vis_trend": "stable",
+  "gap_hours": 23.8,
+  "n_ctx_trops": 2,
+  "n_gap_labs": 59,
+  "lv_err_pct": 509.9,
+  "trend_extrapolation_correct": false,
+  "question": {
+    "stem": "Patient EHRSHOT subject_id: 115973246\nPrevious Troponin I: 0.652 ng/mL at 2018-11-06 19:25\nLast known Troponin I: 0.555 ng/mL at 2018-11-07 02:26\nVisible troponin trend: stable (most recent readings within \u00b120%)\nTroponin measurements are NOT available after 2018-11-07 02:26.\nAll other labs are available up to 2018-11-08 02:15.\nPredict Troponin I at: 2018-11-08 02:15 (23.8h after last known troponin)",
+    "target_datetime": "2018-11-08 02:15",
+    "last_trop_time": "2018-11-07 02:26",
+    "hours_ahead": 23.8,
+    "visible_trend": "stable"
+  },
+  "ground_truth": {
+    "value": 0.091,
+    "direction": "falling",
+    "last_visible": 0.555,
+    "visible_trend": "stable"
+  },
+  "trop_context": [
+    {
+      "datetime": "2018-11-06 19:25",
+      "value": 0.652,
+      "label": "Troponin I"
+    },
+    {
+      "datetime": "2018-11-07 02:26",
+      "value": 0.555,
+      "label": "Troponin I"
+    }
+  ],
+  "gap_labs": [
+    {
+      "datetime": "2018-11-07 02:30",
+      "label": "Systolic BP",
+      "value": 100.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2018-11-07 02:30",
+      "label": "Heart Rate",
+      "value": 78.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2018-11-07 02:30",
+      "label": "Heart Rate",
+      "value": 76.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2018-11-07 03:00",
+      "label": "Systolic BP",
+      "value": 89.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2018-11-07 03:00",
+      "label": "Heart Rate",
+      "value": 78.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2018-11-07 03:00",
+      "label": "Heart Rate",
+      "value": 77.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2018-11-07 03:13",
+      "label": "Systolic BP",
+      "value": 97.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2018-11-07 03:13",
+      "label": "Heart Rate",
+      "value": 79.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2018-11-07 03:13",
+      "label": "Heart Rate",
+      "value": 78.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2018-11-07 03:49",
+      "label": "Systolic BP",
+      "value": 91.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2018-11-07 03:49",
+      "label": "Heart Rate",
+      "value": 80.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2018-11-07 03:49",
+      "label": "Heart Rate",
+      "value": 80.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2018-11-07 04:11",
+      "label": "Systolic BP",
+      "value": 101.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2018-11-07 04:11",
+      "label": "Heart Rate",
+      "value": 85.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2018-11-07 04:11",
+      "label": "Heart Rate",
+      "value": 86.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2018-11-07 04:23",
+      "label": "Systolic BP",
+      "value": 101.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2018-11-07 04:23",
+      "label": "Heart Rate",
+      "value": 80.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2018-11-07 04:23",
+      "label": "Heart Rate",
+      "value": 81.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2018-11-07 04:35",
+      "label": "Heart Rate",
+      "value": 80.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2018-11-07 04:35",
+      "label": "Heart Rate",
+      "value": 80.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2018-11-07 04:38",
+      "label": "Systolic BP",
+      "value": 100.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2018-11-07 04:38",
+      "label": "Heart Rate",
+      "value": 78.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2018-11-07 04:38",
+      "label": "Heart Rate",
+      "value": 78.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2018-11-07 05:47",
+      "label": "Systolic BP",
+      "value": 91.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2018-11-07 05:47",
+      "label": "Heart Rate",
+      "value": 77.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2018-11-07 05:47",
+      "label": "Heart Rate",
+      "value": 77.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2018-11-07 05:57",
+      "label": "Systolic BP",
+      "value": 105.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2018-11-07 05:57",
+      "label": "Heart Rate",
+      "value": 85.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2018-11-07 05:57",
+      "label": "Heart Rate",
+      "value": 85.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2018-11-07 07:00",
+      "label": "Systolic BP",
+      "value": 103.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2018-11-07 07:00",
+      "label": "Heart Rate",
+      "value": 82.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2018-11-07 08:11",
+      "label": "Creatinine",
+      "value": 1.39,
+      "unit": "mg/dL"
+    },
+    {
+      "datetime": "2018-11-07 08:11",
+      "label": "Potassium",
+      "value": 4.8,
+      "unit": "mmol/L"
+    },
+    {
+      "datetime": "2018-11-07 08:11",
+      "label": "BUN",
+      "value": 28.0,
+      "unit": "mg/dL"
+    },
+    {
+      "datetime": "2018-11-07 08:22",
+      "label": "Heart Rate",
+      "value": 90.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2018-11-07 08:22",
+      "label": "Heart Rate",
+      "value": 90.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2018-11-07 11:49",
+      "label": "Systolic BP",
+      "value": 97.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2018-11-07 11:49",
+      "label": "Heart Rate",
+      "value": 83.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2018-11-07 11:49",
+      "label": "Heart Rate",
+      "value": 83.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2018-11-07 11:50",
+      "label": "Systolic BP",
+      "value": 101.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2018-11-07 12:31",
+      "label": "Heart Rate",
+      "value": 87.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2018-11-07 16:01",
+      "label": "Systolic BP",
+      "value": 103.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2018-11-07 16:01",
+      "label": "Heart Rate",
+      "value": 82.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2018-11-07 16:12",
+      "label": "Creatinine",
+      "value": 1.28,
+      "unit": "mg/dL"
+    },
+    {
+      "datetime": "2018-11-07 16:12",
+      "label": "Potassium",
+      "value": 5.5,
+      "unit": "mmol/L"
+    },
+    {
+      "datetime": "2018-11-07 16:12",
+      "label": "BUN",
+      "value": 32.0,
+      "unit": "mg/dL"
+    },
+    {
+      "datetime": "2018-11-07 16:12",
+      "label": "Hematocrit",
+      "value": 22.9,
+      "unit": "%"
+    },
+    {
+      "datetime": "2018-11-07 16:12",
+      "label": "Hemoglobin",
+      "value": 7.3,
+      "unit": "g/dL"
+    },
+    {
+      "datetime": "2018-11-07 16:47",
+      "label": "Heart Rate",
+      "value": 77.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2018-11-07 20:14",
+      "label": "Systolic BP",
+      "value": 119.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2018-11-07 20:14",
+      "label": "Heart Rate",
+      "value": 78.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2018-11-07 20:14",
+      "label": "Heart Rate",
+      "value": 82.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2018-11-08 00:38",
+      "label": "Systolic BP",
+      "value": 110.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2018-11-08 00:38",
+      "label": "Heart Rate",
+      "value": 80.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2018-11-08 01:05",
+      "label": "Systolic BP",
+      "value": 108.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2018-11-08 01:05",
+      "label": "Heart Rate",
+      "value": 82.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2018-11-08 02:15",
+      "label": "Creatinine",
+      "value": 1.04,
+      "unit": "mg/dL"
+    },
+    {
+      "datetime": "2018-11-08 02:15",
+      "label": "Potassium",
+      "value": 5.4,
+      "unit": "mmol/L"
+    },
+    {
+      "datetime": "2018-11-08 02:15",
+      "label": "BUN",
+      "value": 35.0,
+      "unit": "mg/dL"
+    }
+  ],
+  "lab_timeline": [
+    {
+      "datetime": "2018-11-06 20:20",
+      "label": "Systolic BP",
+      "value": 92.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2018-11-06 20:20",
+      "label": "8634-8",
+      "value": 376.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2018-11-06 20:20",
+      "label": "8636-3",
+      "value": 500.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2018-11-06 20:20",
+      "label": "Heart Rate",
+      "value": 103.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2018-11-06 20:20",
+      "label": "Heart Rate",
+      "value": 106.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2018-11-06 20:20",
+      "label": "Resp Rate",
+      "value": 30.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2018-11-06 20:23",
+      "label": "38214-3",
+      "value": 0.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2018-11-06 20:23",
+      "label": "Temperature",
+      "value": 39.9,
+      "unit": ""
+    },
+    {
+      "datetime": "2018-11-06 20:23",
+      "label": "Temperature",
+      "value": 102.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2018-11-06 20:23",
+      "label": "Diastolic BP",
+      "value": 50.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2018-11-06 20:23",
+      "label": "8478-0",
+      "value": 65.0,
+      "unit": "mmHg"
+    },
+    {
+      "datetime": "2018-11-06 20:23",
+      "label": "Systolic BP",
+      "value": 96.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2018-11-06 20:23",
+      "label": "8634-8",
+      "value": 384.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2018-11-06 20:23",
+      "label": "8636-3",
+      "value": 515.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2018-11-06 20:23",
+      "label": "Heart Rate",
+      "value": 107.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2018-11-06 20:23",
+      "label": "Heart Rate",
+      "value": 108.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2018-11-06 20:23",
+      "label": "Resp Rate",
+      "value": 28.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2018-11-06 20:25",
+      "label": "Diastolic BP",
+      "value": 49.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2018-11-06 20:25",
+      "label": "8478-0",
+      "value": 62.0,
+      "unit": "mmHg"
+    },
+    {
+      "datetime": "2018-11-06 20:25",
+      "label": "Systolic BP",
+      "value": 89.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2018-11-06 20:25",
+      "label": "8634-8",
+      "value": 368.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2018-11-06 20:25",
+      "label": "8636-3",
+      "value": 487.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2018-11-06 20:25",
+      "label": "Heart Rate",
+      "value": 105.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2018-11-06 20:25",
+      "label": "Heart Rate",
+      "value": 103.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2018-11-06 20:25",
+      "label": "Resp Rate",
+      "value": 29.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2018-11-06 20:30",
+      "label": "Diastolic BP",
+      "value": 47.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2018-11-06 20:30",
+      "label": "8478-0",
+      "value": 62.0,
+      "unit": "mmHg"
+    },
+    {
+      "datetime": "2018-11-06 20:30",
+      "label": "Systolic BP",
+      "value": 92.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2018-11-06 20:30",
+      "label": "8634-8",
+      "value": 368.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2018-11-06 20:30",
+      "label": "8636-3",
+      "value": 482.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2018-11-06 20:30",
+      "label": "Heart Rate",
+      "value": 99.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2018-11-06 20:30",
+      "label": "Heart Rate",
+      "value": 104.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2018-11-06 20:30",
+      "label": "Resp Rate",
+      "value": 30.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2018-11-06 20:35",
+      "label": "Diastolic BP",
+      "value": 53.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2018-11-06 20:35",
+      "label": "8478-0",
+      "value": 65.0,
+      "unit": "mmHg"
+    },
+    {
+      "datetime": "2018-11-06 20:35",
+      "label": "Systolic BP",
+      "value": 90.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2018-11-06 20:35",
+      "label": "8634-8",
+      "value": 376.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2018-11-06 20:35",
+      "label": "8636-3",
+      "value": 495.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2018-11-06 20:35",
+      "label": "Heart Rate",
+      "value": 101.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2018-11-06 20:35",
+      "label": "Heart Rate",
+      "value": 101.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2018-11-06 20:35",
+      "label": "Resp Rate",
+      "value": 27.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2018-11-06 20:36",
+      "label": "Lactate",
+      "value": 1.8,
+      "unit": "mmol/L"
+    },
+    {
+      "datetime": "2018-11-06 20:40",
+      "label": "Diastolic BP",
+      "value": 61.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2018-11-06 20:40",
+      "label": "8478-0",
+      "value": 72.0,
+      "unit": "mmHg"
+    },
+    {
+      "datetime": "2018-11-06 20:40",
+      "label": "Systolic BP",
+      "value": 95.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2018-11-06 20:40",
+      "label": "8634-8",
+      "value": 368.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2018-11-06 20:40",
+      "label": "8636-3",
+      "value": 491.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2018-11-06 20:40",
+      "label": "Heart Rate",
+      "value": 105.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2018-11-06 20:40",
+      "label": "Heart Rate",
+      "value": 107.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2018-11-06 20:40",
+      "label": "Resp Rate",
+      "value": 23.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2018-11-06 20:41",
+      "label": "IO_OUT",
+      "value": 1800.0,
+      "unit": "mL"
+    },
+    {
+      "datetime": "2018-11-06 20:45",
+      "label": "8634-8",
+      "value": 384.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2018-11-06 20:45",
+      "label": "8636-3",
+      "value": 506.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2018-11-06 20:45",
+      "label": "Heart Rate",
+      "value": 108.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2018-11-06 20:45",
+      "label": "Heart Rate",
+      "value": 103.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2018-11-06 20:45",
+      "label": "Resp Rate",
+      "value": 28.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2018-11-06 20:54",
+      "label": "Diastolic BP",
+      "value": 46.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2018-11-06 20:54",
+      "label": "8478-0",
+      "value": 61.0,
+      "unit": "mmHg"
+    },
+    {
+      "datetime": "2018-11-06 20:54",
+      "label": "Systolic BP",
+      "value": 90.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2018-11-06 20:54",
+      "label": "8634-8",
+      "value": 376.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2018-11-06 20:54",
+      "label": "8636-3",
+      "value": 490.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2018-11-06 20:54",
+      "label": "Heart Rate",
+      "value": 101.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2018-11-06 20:54",
+      "label": "Heart Rate",
+      "value": 102.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2018-11-06 20:54",
+      "label": "Resp Rate",
+      "value": 31.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2018-11-06 20:57",
+      "label": "8634-8",
+      "value": 384.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2018-11-06 20:57",
+      "label": "8636-3",
+      "value": 498.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2018-11-06 20:57",
+      "label": "Heart Rate",
+      "value": 103.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2018-11-06 20:57",
+      "label": "Heart Rate",
+      "value": 101.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2018-11-06 20:57",
+      "label": "Resp Rate",
+      "value": 27.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2018-11-06 21:00",
+      "label": "38214-3",
+      "value": 0.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2018-11-06 21:00",
+      "label": "Diastolic BP",
+      "value": 51.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2018-11-06 21:00",
+      "label": "8478-0",
+      "value": 64.0,
+      "unit": "mmHg"
+    },
+    {
+      "datetime": "2018-11-06 21:00",
+      "label": "Systolic BP",
+      "value": 90.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2018-11-06 21:00",
+      "label": "8634-8",
+      "value": 376.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2018-11-06 21:00",
+      "label": "8636-3",
+      "value": 493.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2018-11-06 21:00",
+      "label": "Heart Rate",
+      "value": 102.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2018-11-06 21:00",
+      "label": "Heart Rate",
+      "value": 103.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2018-11-06 21:00",
+      "label": "Resp Rate",
+      "value": 24.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2018-11-06 21:13",
+      "label": "Temperature",
+      "value": 101.3,
+      "unit": ""
+    },
+    {
+      "datetime": "2018-11-06 21:13",
+      "label": "Temperature",
+      "value": 39.5,
+      "unit": ""
+    },
+    {
+      "datetime": "2018-11-06 21:13",
+      "label": "8634-8",
+      "value": 376.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2018-11-06 21:13",
+      "label": "8636-3",
+      "value": 488.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2018-11-06 21:13",
+      "label": "Heart Rate",
+      "value": 100.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2018-11-06 21:13",
+      "label": "Heart Rate",
+      "value": 100.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2018-11-06 21:13",
+      "label": "Resp Rate",
+      "value": 28.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2018-11-06 21:15",
+      "label": "IO_OUT",
+      "value": 150.0,
+      "unit": "mL"
+    },
+    {
+      "datetime": "2018-11-06 21:18",
+      "label": "Diastolic BP",
+      "value": 54.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2018-11-06 21:18",
+      "label": "8478-0",
+      "value": 65.0,
+      "unit": "mmHg"
+    },
+    {
+      "datetime": "2018-11-06 21:18",
+      "label": "Systolic BP",
+      "value": 88.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2018-11-06 21:18",
+      "label": "8634-8",
+      "value": 392.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2018-11-06 21:18",
+      "label": "8636-3",
+      "value": 509.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2018-11-06 21:18",
+      "label": "Heart Rate",
+      "value": 102.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2018-11-06 21:18",
+      "label": "Heart Rate",
+      "value": 98.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2018-11-06 21:18",
+      "label": "Resp Rate",
+      "value": 21.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2018-11-06 21:19",
+      "label": "Diastolic BP",
+      "value": 63.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2018-11-06 21:19",
+      "label": "8478-0",
+      "value": 76.0,
+      "unit": "mmHg"
+    },
+    {
+      "datetime": "2018-11-06 21:19",
+      "label": "Systolic BP",
+      "value": 102.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2018-11-06 21:19",
+      "label": "8634-8",
+      "value": 392.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2018-11-06 21:19",
+      "label": "8636-3",
+      "value": 498.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2018-11-06 21:19",
+      "label": "Heart Rate",
+      "value": 106.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2018-11-06 21:19",
+      "label": "Heart Rate",
+      "value": 106.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2018-11-06 21:19",
+      "label": "Resp Rate",
+      "value": 26.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2018-11-06 21:26",
+      "label": "Diastolic BP",
+      "value": 51.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2018-11-06 21:26",
+      "label": "8478-0",
+      "value": 69.0,
+      "unit": "mmHg"
+    },
+    {
+      "datetime": "2018-11-06 21:26",
+      "label": "Systolic BP",
+      "value": 104.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2018-11-06 21:29",
+      "label": "5803-2",
+      "value": 5.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2018-11-06 21:29",
+      "label": "5811-5",
+      "value": 1.026,
+      "unit": ""
+    },
+    {
+      "datetime": "2018-11-06 21:35",
+      "label": "Diastolic BP",
+      "value": 56.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2018-11-06 21:35",
+      "label": "8478-0",
+      "value": 72.0,
+      "unit": "mmHg"
+    },
+    {
+      "datetime": "2018-11-06 21:35",
+      "label": "Systolic BP",
+      "value": 104.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2018-11-06 21:38",
+      "label": "Temperature",
+      "value": 100.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2018-11-06 21:38",
+      "label": "Temperature",
+      "value": 38.8,
+      "unit": ""
+    },
+    {
+      "datetime": "2018-11-06 21:38",
+      "label": "Diastolic BP",
+      "value": 59.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2018-11-06 21:38",
+      "label": "8478-0",
+      "value": 75.0,
+      "unit": "mmHg"
+    },
+    {
+      "datetime": "2018-11-06 21:38",
+      "label": "Systolic BP",
+      "value": 107.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2018-11-06 21:38",
+      "label": "8634-8",
+      "value": 360.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2018-11-06 21:38",
+      "label": "8636-3",
+      "value": 476.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2018-11-06 21:38",
+      "label": "Heart Rate",
+      "value": 104.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2018-11-06 21:38",
+      "label": "Heart Rate",
+      "value": 104.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2018-11-06 21:38",
+      "label": "Resp Rate",
+      "value": 30.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2018-11-06 21:43",
+      "label": "Heart Rate",
+      "value": 107.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2018-11-06 21:43",
+      "label": "Heart Rate",
+      "value": 101.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2018-11-06 21:43",
+      "label": "Resp Rate",
+      "value": 28.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2018-11-06 21:46",
+      "label": "8634-8",
+      "value": 392.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2018-11-06 21:46",
+      "label": "8636-3",
+      "value": 509.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2018-11-06 21:46",
+      "label": "Heart Rate",
+      "value": 100.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2018-11-06 21:46",
+      "label": "Heart Rate",
+      "value": 101.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2018-11-06 21:46",
+      "label": "Resp Rate",
+      "value": 23.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2018-11-06 21:50",
+      "label": "Diastolic BP",
+      "value": 62.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2018-11-06 21:50",
+      "label": "8478-0",
+      "value": 72.0,
+      "unit": "mmHg"
+    },
+    {
+      "datetime": "2018-11-06 21:50",
+      "label": "Systolic BP",
+      "value": 91.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2018-11-06 21:50",
+      "label": "8634-8",
+      "value": 392.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2018-11-06 21:50",
+      "label": "8636-3",
+      "value": 501.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2018-11-06 21:50",
+      "label": "Heart Rate",
+      "value": 97.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2018-11-06 21:50",
+      "label": "Heart Rate",
+      "value": 98.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2018-11-06 21:50",
+      "label": "Resp Rate",
+      "value": 24.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2018-11-06 21:51",
+      "label": "Diastolic BP",
+      "value": 61.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2018-11-06 21:51",
+      "label": "8478-0",
+      "value": 70.0,
+      "unit": "mmHg"
+    },
+    {
+      "datetime": "2018-11-06 21:51",
+      "label": "Systolic BP",
+      "value": 88.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2018-11-06 21:59",
+      "label": "Diastolic BP",
+      "value": 62.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2018-11-06 21:59",
+      "label": "8478-0",
+      "value": 72.0,
+      "unit": "mmHg"
+    },
+    {
+      "datetime": "2018-11-06 21:59",
+      "label": "Systolic BP",
+      "value": 91.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2018-11-06 21:59",
+      "label": "8634-8",
+      "value": 376.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2018-11-06 21:59",
+      "label": "8636-3",
+      "value": 504.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2018-11-06 21:59",
+      "label": "Heart Rate",
+      "value": 105.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2018-11-06 21:59",
+      "label": "Heart Rate",
+      "value": 105.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2018-11-06 21:59",
+      "label": "Resp Rate",
+      "value": 22.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2018-11-06 22:04",
+      "label": "Temperature",
+      "value": 37.2,
+      "unit": ""
+    },
+    {
+      "datetime": "2018-11-06 22:04",
+      "label": "Temperature",
+      "value": 99.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2018-11-06 22:09",
+      "label": "Diastolic BP",
+      "value": 54.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2018-11-06 22:09",
+      "label": "8478-0",
+      "value": 67.0,
+      "unit": "mmHg"
+    },
+    {
+      "datetime": "2018-11-06 22:09",
+      "label": "Systolic BP",
+      "value": 94.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2018-11-06 22:09",
+      "label": "8634-8",
+      "value": 384.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2018-11-06 22:09",
+      "label": "8636-3",
+      "value": 496.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2018-11-06 22:09",
+      "label": "Heart Rate",
+      "value": 100.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2018-11-06 22:09",
+      "label": "Heart Rate",
+      "value": 101.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2018-11-06 22:09",
+      "label": "Resp Rate",
+      "value": 18.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2018-11-06 22:13",
+      "label": "IO_OUT",
+      "value": 250.0,
+      "unit": "mL"
+    },
+    {
+      "datetime": "2018-11-06 22:23",
+      "label": "Diastolic BP",
+      "value": 52.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2018-11-06 22:23",
+      "label": "8478-0",
+      "value": 66.0,
+      "unit": "mmHg"
+    },
+    {
+      "datetime": "2018-11-06 22:23",
+      "label": "Systolic BP",
+      "value": 93.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2018-11-06 22:30",
+      "label": "Diastolic BP",
+      "value": 50.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2018-11-06 22:30",
+      "label": "8478-0",
+      "value": 64.0,
+      "unit": "mmHg"
+    },
+    {
+      "datetime": "2018-11-06 22:30",
+      "label": "Systolic BP",
+      "value": 93.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2018-11-06 22:30",
+      "label": "8634-8",
+      "value": 392.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2018-11-06 22:30",
+      "label": "8636-3",
+      "value": 501.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2018-11-06 22:30",
+      "label": "Heart Rate",
+      "value": 98.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2018-11-06 22:30",
+      "label": "Heart Rate",
+      "value": 98.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2018-11-06 22:30",
+      "label": "Resp Rate",
+      "value": 25.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2018-11-06 22:50",
+      "label": "IO_OUT",
+      "value": 0.0,
+      "unit": "mL"
+    },
+    {
+      "datetime": "2018-11-06 23:00",
+      "label": "Diastolic BP",
+      "value": 53.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2018-11-06 23:00",
+      "label": "8478-0",
+      "value": 65.0,
+      "unit": "mmHg"
+    },
+    {
+      "datetime": "2018-11-06 23:00",
+      "label": "Systolic BP",
+      "value": 89.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2018-11-06 23:15",
+      "label": "Diastolic BP",
+      "value": 54.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2018-11-06 23:15",
+      "label": "8478-0",
+      "value": 65.0,
+      "unit": "mmHg"
+    },
+    {
+      "datetime": "2018-11-06 23:15",
+      "label": "Systolic BP",
+      "value": 88.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2018-11-06 23:17",
+      "label": "Lactate",
+      "value": 1.5,
+      "unit": "mmol/L"
+    },
+    {
+      "datetime": "2018-11-06 23:23",
+      "label": "Diastolic BP",
+      "value": 54.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2018-11-06 23:23",
+      "label": "8478-0",
+      "value": 68.0,
+      "unit": "mmHg"
+    },
+    {
+      "datetime": "2018-11-06 23:23",
+      "label": "Systolic BP",
+      "value": 97.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2018-11-06 23:23",
+      "label": "8634-8",
+      "value": 408.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2018-11-06 23:23",
+      "label": "8636-3",
+      "value": 502.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2018-11-06 23:23",
+      "label": "Heart Rate",
+      "value": 90.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2018-11-06 23:23",
+      "label": "Heart Rate",
+      "value": 91.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2018-11-06 23:23",
+      "label": "Resp Rate",
+      "value": 23.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2018-11-06 23:30",
+      "label": "Diastolic BP",
+      "value": 56.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2018-11-06 23:30",
+      "label": "8478-0",
+      "value": 68.0,
+      "unit": "mmHg"
+    },
+    {
+      "datetime": "2018-11-06 23:30",
+      "label": "Systolic BP",
+      "value": 91.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2018-11-06 23:30",
+      "label": "8634-8",
+      "value": 408.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2018-11-06 23:30",
+      "label": "8636-3",
+      "value": 500.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2018-11-06 23:30",
+      "label": "Heart Rate",
+      "value": 91.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2018-11-06 23:30",
+      "label": "Heart Rate",
+      "value": 90.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2018-11-06 23:30",
+      "label": "Resp Rate",
+      "value": 21.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2018-11-06 23:35",
+      "label": "Temperature",
+      "value": 38.4,
+      "unit": ""
+    },
+    {
+      "datetime": "2018-11-06 23:35",
+      "label": "Temperature",
+      "value": 99.3,
+      "unit": ""
+    },
+    {
+      "datetime": "2018-11-06 23:35",
+      "label": "8634-8",
+      "value": 400.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2018-11-06 23:35",
+      "label": "8636-3",
+      "value": 490.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2018-11-06 23:35",
+      "label": "Heart Rate",
+      "value": 90.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2018-11-06 23:35",
+      "label": "Heart Rate",
+      "value": 90.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2018-11-06 23:35",
+      "label": "Resp Rate",
+      "value": 24.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2018-11-06 23:45",
+      "label": "Diastolic BP",
+      "value": 59.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2018-11-06 23:45",
+      "label": "8478-0",
+      "value": 72.0,
+      "unit": "mmHg"
+    },
+    {
+      "datetime": "2018-11-06 23:45",
+      "label": "Systolic BP",
+      "value": 98.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2018-11-06 23:45",
+      "label": "8634-8",
+      "value": 384.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2018-11-06 23:45",
+      "label": "8636-3",
+      "value": 491.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2018-11-06 23:45",
+      "label": "Heart Rate",
+      "value": 88.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2018-11-06 23:45",
+      "label": "Heart Rate",
+      "value": 88.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2018-11-06 23:45",
+      "label": "Resp Rate",
+      "value": 29.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2018-11-07 00:00",
+      "label": "Diastolic BP",
+      "value": 59.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2018-11-07 00:00",
+      "label": "8478-0",
+      "value": 70.0,
+      "unit": "mmHg"
+    },
+    {
+      "datetime": "2018-11-07 00:00",
+      "label": "Systolic BP",
+      "value": 91.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2018-11-07 00:00",
+      "label": "8634-8",
+      "value": 416.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2018-11-07 00:00",
+      "label": "8636-3",
+      "value": 498.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2018-11-07 00:00",
+      "label": "Heart Rate",
+      "value": 87.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2018-11-07 00:00",
+      "label": "Heart Rate",
+      "value": 86.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2018-11-07 00:00",
+      "label": "Resp Rate",
+      "value": 21.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2018-11-07 00:15",
+      "label": "Diastolic BP",
+      "value": 59.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2018-11-07 00:15",
+      "label": "8478-0",
+      "value": 65.0,
+      "unit": "mmHg"
+    },
+    {
+      "datetime": "2018-11-07 00:15",
+      "label": "Systolic BP",
+      "value": 77.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2018-11-07 00:15",
+      "label": "8634-8",
+      "value": 416.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2018-11-07 00:15",
+      "label": "8636-3",
+      "value": 489.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2018-11-07 00:15",
+      "label": "Heart Rate",
+      "value": 81.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2018-11-07 00:15",
+      "label": "Heart Rate",
+      "value": 83.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2018-11-07 00:20",
+      "label": "Diastolic BP",
+      "value": 54.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2018-11-07 00:20",
+      "label": "8478-0",
+      "value": 68.0,
+      "unit": "mmHg"
+    },
+    {
+      "datetime": "2018-11-07 00:20",
+      "label": "Systolic BP",
+      "value": 95.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2018-11-07 00:20",
+      "label": "8634-8",
+      "value": 416.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2018-11-07 00:20",
+      "label": "8636-3",
+      "value": 489.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2018-11-07 00:20",
+      "label": "Heart Rate",
+      "value": 88.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2018-11-07 00:20",
+      "label": "Heart Rate",
+      "value": 85.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2018-11-07 00:25",
+      "label": "IO_OUT",
+      "value": 100.0,
+      "unit": "mL"
+    },
+    {
+      "datetime": "2018-11-07 00:35",
+      "label": "Diastolic BP",
+      "value": 53.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2018-11-07 00:35",
+      "label": "8478-0",
+      "value": 66.0,
+      "unit": "mmHg"
+    },
+    {
+      "datetime": "2018-11-07 00:35",
+      "label": "Systolic BP",
+      "value": 91.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2018-11-07 00:35",
+      "label": "8634-8",
+      "value": 424.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2018-11-07 00:35",
+      "label": "8636-3",
+      "value": 502.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2018-11-07 00:35",
+      "label": "Heart Rate",
+      "value": 84.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2018-11-07 00:35",
+      "label": "Heart Rate",
+      "value": 84.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2018-11-07 00:35",
+      "label": "Resp Rate",
+      "value": 21.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2018-11-07 00:45",
+      "label": "Diastolic BP",
+      "value": 55.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2018-11-07 00:45",
+      "label": "8478-0",
+      "value": 68.0,
+      "unit": "mmHg"
+    },
+    {
+      "datetime": "2018-11-07 00:45",
+      "label": "Systolic BP",
+      "value": 93.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2018-11-07 00:45",
+      "label": "8634-8",
+      "value": 440.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2018-11-07 00:45",
+      "label": "8636-3",
+      "value": 514.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2018-11-07 00:45",
+      "label": "Heart Rate",
+      "value": 83.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2018-11-07 00:45",
+      "label": "Heart Rate",
+      "value": 83.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2018-11-07 00:45",
+      "label": "Resp Rate",
+      "value": 22.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2018-11-07 01:00",
+      "label": "Diastolic BP",
+      "value": 63.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2018-11-07 01:00",
+      "label": "8478-0",
+      "value": 74.0,
+      "unit": "mmHg"
+    },
+    {
+      "datetime": "2018-11-07 01:00",
+      "label": "Systolic BP",
+      "value": 95.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2018-11-07 01:00",
+      "label": "8634-8",
+      "value": 400.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2018-11-07 01:00",
+      "label": "8636-3",
+      "value": 493.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2018-11-07 01:00",
+      "label": "Heart Rate",
+      "value": 90.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2018-11-07 01:00",
+      "label": "Heart Rate",
+      "value": 89.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2018-11-07 01:00",
+      "label": "Resp Rate",
+      "value": 31.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2018-11-07 01:00",
+      "label": "IO_OUT",
+      "value": 325.0,
+      "unit": "mL"
+    },
+    {
+      "datetime": "2018-11-07 01:30",
+      "label": "Diastolic BP",
+      "value": 57.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2018-11-07 01:30",
+      "label": "8478-0",
+      "value": 68.0,
+      "unit": "mmHg"
+    },
+    {
+      "datetime": "2018-11-07 01:30",
+      "label": "Systolic BP",
+      "value": 91.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2018-11-07 01:30",
+      "label": "8634-8",
+      "value": 432.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2018-11-07 01:30",
+      "label": "8636-3",
+      "value": 499.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2018-11-07 01:30",
+      "label": "Heart Rate",
+      "value": 80.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2018-11-07 01:30",
+      "label": "Heart Rate",
+      "value": 79.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2018-11-07 01:30",
+      "label": "Resp Rate",
+      "value": 21.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2018-11-07 02:00",
+      "label": "Diastolic BP",
+      "value": 59.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2018-11-07 02:00",
+      "label": "8478-0",
+      "value": 72.0,
+      "unit": "mmHg"
+    },
+    {
+      "datetime": "2018-11-07 02:00",
+      "label": "Systolic BP",
+      "value": 97.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2018-11-07 02:00",
+      "label": "8634-8",
+      "value": 448.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2018-11-07 02:00",
+      "label": "8636-3",
+      "value": 521.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2018-11-07 02:00",
+      "label": "Heart Rate",
+      "value": 80.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2018-11-07 02:00",
+      "label": "Heart Rate",
+      "value": 81.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2018-11-07 02:00",
+      "label": "Resp Rate",
+      "value": 19.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2018-11-07 02:05",
+      "label": "Diastolic BP",
+      "value": 59.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2018-11-07 02:05",
+      "label": "8478-0",
+      "value": 71.0,
+      "unit": "mmHg"
+    },
+    {
+      "datetime": "2018-11-07 02:05",
+      "label": "Systolic BP",
+      "value": 94.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2018-11-07 02:05",
+      "label": "8634-8",
+      "value": 440.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2018-11-07 02:05",
+      "label": "8636-3",
+      "value": 511.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2018-11-07 02:05",
+      "label": "Heart Rate",
+      "value": 79.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2018-11-07 02:05",
+      "label": "Heart Rate",
+      "value": 81.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2018-11-07 02:05",
+      "label": "Resp Rate",
+      "value": 20.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2018-11-07 02:26",
+      "label": "Troponin I",
+      "value": 0.555,
+      "unit": "ng/mL"
+    },
+    {
+      "datetime": "2018-11-07 02:28",
+      "label": "IO_OUT",
+      "value": 325.0,
+      "unit": "mL"
+    },
+    {
+      "datetime": "2018-11-07 02:30",
+      "label": "Diastolic BP",
+      "value": 53.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2018-11-07 02:30",
+      "label": "8478-0",
+      "value": 69.0,
+      "unit": "mmHg"
+    },
+    {
+      "datetime": "2018-11-07 02:30",
+      "label": "Systolic BP",
+      "value": 100.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2018-11-07 02:30",
+      "label": "8634-8",
+      "value": 456.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2018-11-07 02:30",
+      "label": "8636-3",
+      "value": 517.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2018-11-07 02:30",
+      "label": "Heart Rate",
+      "value": 78.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2018-11-07 02:30",
+      "label": "Heart Rate",
+      "value": 76.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2018-11-07 02:30",
+      "label": "Resp Rate",
+      "value": 21.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2018-11-07 03:00",
+      "label": "Diastolic BP",
+      "value": 60.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2018-11-07 03:00",
+      "label": "8478-0",
+      "value": 70.0,
+      "unit": "mmHg"
+    },
+    {
+      "datetime": "2018-11-07 03:00",
+      "label": "Systolic BP",
+      "value": 89.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2018-11-07 03:00",
+      "label": "8634-8",
+      "value": 456.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2018-11-07 03:00",
+      "label": "8636-3",
+      "value": 517.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2018-11-07 03:00",
+      "label": "Heart Rate",
+      "value": 78.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2018-11-07 03:00",
+      "label": "Heart Rate",
+      "value": 77.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2018-11-07 03:00",
+      "label": "Resp Rate",
+      "value": 20.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2018-11-07 03:13",
+      "label": "Diastolic BP",
+      "value": 64.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2018-11-07 03:13",
+      "label": "8478-0",
+      "value": 75.0,
+      "unit": "mmHg"
+    },
+    {
+      "datetime": "2018-11-07 03:13",
+      "label": "Systolic BP",
+      "value": 97.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2018-11-07 03:13",
+      "label": "8634-8",
+      "value": 448.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2018-11-07 03:13",
+      "label": "8636-3",
+      "value": 514.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2018-11-07 03:13",
+      "label": "Heart Rate",
+      "value": 79.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2018-11-07 03:13",
+      "label": "Heart Rate",
+      "value": 78.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2018-11-07 03:13",
+      "label": "Resp Rate",
+      "value": 19.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2018-11-07 03:49",
+      "label": "Diastolic BP",
+      "value": 60.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2018-11-07 03:49",
+      "label": "8478-0",
+      "value": 70.0,
+      "unit": "mmHg"
+    },
+    {
+      "datetime": "2018-11-07 03:49",
+      "label": "Systolic BP",
+      "value": 91.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2018-11-07 03:49",
+      "label": "8634-8",
+      "value": 440.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2018-11-07 03:49",
+      "label": "8636-3",
+      "value": 511.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2018-11-07 03:49",
+      "label": "Heart Rate",
+      "value": 80.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2018-11-07 03:49",
+      "label": "Heart Rate",
+      "value": 80.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2018-11-07 03:49",
+      "label": "Resp Rate",
+      "value": 21.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2018-11-07 04:05",
+      "label": "Weight",
+      "value": 3777.8,
+      "unit": ""
+    },
+    {
+      "datetime": "2018-11-07 04:05",
+      "label": "8277-6",
+      "value": 2.35,
+      "unit": "sq meters"
+    },
+    {
+      "datetime": "2018-11-07 04:11",
+      "label": "Diastolic BP",
+      "value": 67.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2018-11-07 04:11",
+      "label": "8478-0",
+      "value": 78.0,
+      "unit": "mmHg"
+    },
+    {
+      "datetime": "2018-11-07 04:11",
+      "label": "Systolic BP",
+      "value": 101.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2018-11-07 04:11",
+      "label": "8634-8",
+      "value": 416.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2018-11-07 04:11",
+      "label": "8636-3",
+      "value": 498.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2018-11-07 04:11",
+      "label": "Heart Rate",
+      "value": 85.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2018-11-07 04:11",
+      "label": "Heart Rate",
+      "value": 86.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2018-11-07 04:11",
+      "label": "Resp Rate",
+      "value": 22.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2018-11-07 04:11",
+      "label": "IO_OUT",
+      "value": 400.0,
+      "unit": "mL"
+    },
+    {
+      "datetime": "2018-11-07 04:23",
+      "label": "Temperature",
+      "value": 97.5,
+      "unit": ""
+    },
+    {
+      "datetime": "2018-11-07 04:23",
+      "label": "Temperature",
+      "value": 36.4,
+      "unit": ""
+    },
+    {
+      "datetime": "2018-11-07 04:23",
+      "label": "Diastolic BP",
+      "value": 60.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2018-11-07 04:23",
+      "label": "8478-0",
+      "value": 74.0,
+      "unit": "mmHg"
+    },
+    {
+      "datetime": "2018-11-07 04:23",
+      "label": "Systolic BP",
+      "value": 101.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2018-11-07 04:23",
+      "label": "8634-8",
+      "value": 432.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2018-11-07 04:23",
+      "label": "8636-3",
+      "value": 496.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2018-11-07 04:23",
+      "label": "Heart Rate",
+      "value": 80.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2018-11-07 04:23",
+      "label": "Heart Rate",
+      "value": 81.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2018-11-07 04:23",
+      "label": "Resp Rate",
+      "value": 20.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2018-11-07 04:35",
+      "label": "8634-8",
+      "value": 424.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2018-11-07 04:35",
+      "label": "8636-3",
+      "value": 493.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2018-11-07 04:35",
+      "label": "Heart Rate",
+      "value": 80.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2018-11-07 04:35",
+      "label": "Heart Rate",
+      "value": 80.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2018-11-07 04:35",
+      "label": "Resp Rate",
+      "value": 23.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2018-11-07 04:38",
+      "label": "Diastolic BP",
+      "value": 63.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2018-11-07 04:38",
+      "label": "8478-0",
+      "value": 75.0,
+      "unit": "mmHg"
+    },
+    {
+      "datetime": "2018-11-07 04:38",
+      "label": "Systolic BP",
+      "value": 100.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2018-11-07 04:38",
+      "label": "8634-8",
+      "value": 440.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2018-11-07 04:38",
+      "label": "8636-3",
+      "value": 502.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2018-11-07 04:38",
+      "label": "Heart Rate",
+      "value": 78.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2018-11-07 04:38",
+      "label": "Heart Rate",
+      "value": 78.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2018-11-07 04:38",
+      "label": "Resp Rate",
+      "value": 21.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2018-11-07 05:47",
+      "label": "Diastolic BP",
+      "value": 57.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2018-11-07 05:47",
+      "label": "8478-0",
+      "value": 68.0,
+      "unit": "mmHg"
+    },
+    {
+      "datetime": "2018-11-07 05:47",
+      "label": "Systolic BP",
+      "value": 91.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2018-11-07 05:47",
+      "label": "8634-8",
+      "value": 448.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2018-11-07 05:47",
+      "label": "8636-3",
+      "value": 508.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2018-11-07 05:47",
+      "label": "Heart Rate",
+      "value": 77.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2018-11-07 05:47",
+      "label": "Heart Rate",
+      "value": 77.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2018-11-07 05:47",
+      "label": "Resp Rate",
+      "value": 16.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2018-11-07 05:57",
+      "label": "Diastolic BP",
+      "value": 66.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2018-11-07 05:57",
+      "label": "8478-0",
+      "value": 79.0,
+      "unit": "mmHg"
+    },
+    {
+      "datetime": "2018-11-07 05:57",
+      "label": "Systolic BP",
+      "value": 105.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2018-11-07 05:57",
+      "label": "8634-8",
+      "value": 416.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2018-11-07 05:57",
+      "label": "8636-3",
+      "value": 498.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2018-11-07 05:57",
+      "label": "Heart Rate",
+      "value": 85.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2018-11-07 05:57",
+      "label": "Heart Rate",
+      "value": 85.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2018-11-07 05:57",
+      "label": "Resp Rate",
+      "value": 21.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2018-11-07 07:00",
+      "label": "38214-3",
+      "value": 1.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2018-11-07 07:00",
+      "label": "Temperature",
+      "value": 36.5,
+      "unit": ""
+    },
+    {
+      "datetime": "2018-11-07 07:00",
+      "label": "Temperature",
+      "value": 97.7,
+      "unit": ""
+    },
+    {
+      "datetime": "2018-11-07 07:00",
+      "label": "Diastolic BP",
+      "value": 61.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2018-11-07 07:00",
+      "label": "8478-0",
+      "value": 75.0,
+      "unit": "mmHg"
+    },
+    {
+      "datetime": "2018-11-07 07:00",
+      "label": "Systolic BP",
+      "value": 103.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2018-11-07 07:00",
+      "label": "Heart Rate",
+      "value": 82.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2018-11-07 07:00",
+      "label": "Resp Rate",
+      "value": 23.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2018-11-07 08:11",
+      "label": "ALT",
+      "value": 178.0,
+      "unit": "U/L"
+    },
+    {
+      "datetime": "2018-11-07 08:11",
+      "label": "Albumin",
+      "value": 2.4,
+      "unit": "g/dL"
+    },
+    {
+      "datetime": "2018-11-07 08:11",
+      "label": "Calcium",
+      "value": 7.9,
+      "unit": "mg/dL"
+    },
+    {
+      "datetime": "2018-11-07 08:11",
+      "label": "19123-9",
+      "value": 2.0,
+      "unit": "mg/dL"
+    },
+    {
+      "datetime": "2018-11-07 08:11",
+      "label": "AST",
+      "value": 233.0,
+      "unit": "U/L"
+    },
+    {
+      "datetime": "2018-11-07 08:11",
+      "label": "Total Bilirubin",
+      "value": 0.9,
+      "unit": "mg/dL"
+    },
+    {
+      "datetime": "2018-11-07 08:11",
+      "label": "2028-9",
+      "value": 11.0,
+      "unit": "mmol/L"
+    },
+    {
+      "datetime": "2018-11-07 08:11",
+      "label": "2075-0",
+      "value": 111.0,
+      "unit": "mmol/L"
+    },
+    {
+      "datetime": "2018-11-07 08:11",
+      "label": "Creatinine",
+      "value": 1.39,
+      "unit": "mg/dL"
+    },
+    {
+      "datetime": "2018-11-07 08:11",
+      "label": "2336-6",
+      "value": 3.8,
+      "unit": "g/dL"
+    },
+    {
+      "datetime": "2018-11-07 08:11",
+      "label": "Glucose",
+      "value": 129.0,
+      "unit": "mg/dL"
+    },
+    {
+      "datetime": "2018-11-07 08:11",
+      "label": "Potassium",
+      "value": 4.8,
+      "unit": "mmol/L"
+    },
+    {
+      "datetime": "2018-11-07 08:11",
+      "label": "2885-2",
+      "value": 6.2,
+      "unit": "g/dL"
+    },
+    {
+      "datetime": "2018-11-07 08:11",
+      "label": "Sodium",
+      "value": 139.0,
+      "unit": "mmol/L"
+    },
+    {
+      "datetime": "2018-11-07 08:11",
+      "label": "BUN",
+      "value": 28.0,
+      "unit": "mg/dL"
+    },
+    {
+      "datetime": "2018-11-07 08:11",
+      "label": "33037-3",
+      "value": 17.0,
+      "unit": "mmol/L"
+    },
+    {
+      "datetime": "2018-11-07 08:11",
+      "label": "Alk Phosphatase",
+      "value": 118.0,
+      "unit": "U/L"
+    },
+    {
+      "datetime": "2018-11-07 08:22",
+      "label": "8634-8",
+      "value": 400.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2018-11-07 08:22",
+      "label": "8636-3",
+      "value": 480.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2018-11-07 08:22",
+      "label": "8636-3",
+      "value": 481.54,
+      "unit": ""
+    },
+    {
+      "datetime": "2018-11-07 08:22",
+      "label": "Heart Rate",
+      "value": 90.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2018-11-07 08:22",
+      "label": "Heart Rate",
+      "value": 90.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2018-11-07 08:22",
+      "label": "Resp Rate",
+      "value": 24.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2018-11-07 08:45",
+      "label": "IO_OUT",
+      "value": 300.0,
+      "unit": "mL"
+    },
+    {
+      "datetime": "2018-11-07 11:49",
+      "label": "38214-3",
+      "value": 0.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2018-11-07 11:49",
+      "label": "Temperature",
+      "value": 97.9,
+      "unit": ""
+    },
+    {
+      "datetime": "2018-11-07 11:49",
+      "label": "Temperature",
+      "value": 36.6,
+      "unit": ""
+    },
+    {
+      "datetime": "2018-11-07 11:49",
+      "label": "Diastolic BP",
+      "value": 65.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2018-11-07 11:49",
+      "label": "8478-0",
+      "value": 76.0,
+      "unit": "mmHg"
+    },
+    {
+      "datetime": "2018-11-07 11:49",
+      "label": "Systolic BP",
+      "value": 97.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2018-11-07 11:49",
+      "label": "Heart Rate",
+      "value": 83.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2018-11-07 11:49",
+      "label": "Heart Rate",
+      "value": 83.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2018-11-07 11:50",
+      "label": "Diastolic BP",
+      "value": 64.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2018-11-07 11:50",
+      "label": "8478-0",
+      "value": 76.0,
+      "unit": "mmHg"
+    },
+    {
+      "datetime": "2018-11-07 11:50",
+      "label": "Systolic BP",
+      "value": 101.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2018-11-07 12:31",
+      "label": "Heart Rate",
+      "value": 87.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2018-11-07 12:31",
+      "label": "Resp Rate",
+      "value": 27.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2018-11-07 16:01",
+      "label": "Weight",
+      "value": 3784.8601,
+      "unit": ""
+    },
+    {
+      "datetime": "2018-11-07 16:01",
+      "label": "8277-6",
+      "value": 2.35,
+      "unit": "sq meters"
+    },
+    {
+      "datetime": "2018-11-07 16:01",
+      "label": "Temperature",
+      "value": 36.4,
+      "unit": ""
+    },
+    {
+      "datetime": "2018-11-07 16:01",
+      "label": "Temperature",
+      "value": 97.5,
+      "unit": ""
+    },
+    {
+      "datetime": "2018-11-07 16:01",
+      "label": "Diastolic BP",
+      "value": 62.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2018-11-07 16:01",
+      "label": "8478-0",
+      "value": 76.0,
+      "unit": "mmHg"
+    },
+    {
+      "datetime": "2018-11-07 16:01",
+      "label": "Systolic BP",
+      "value": 103.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2018-11-07 16:01",
+      "label": "Heart Rate",
+      "value": 82.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2018-11-07 16:01",
+      "label": "Resp Rate",
+      "value": 20.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2018-11-07 16:03",
+      "label": "IO_OUT",
+      "value": 0.0,
+      "unit": "mL"
+    },
+    {
+      "datetime": "2018-11-07 16:12",
+      "label": "ALT",
+      "value": 205.0,
+      "unit": "U/L"
+    },
+    {
+      "datetime": "2018-11-07 16:12",
+      "label": "Albumin",
+      "value": 2.5,
+      "unit": "g/dL"
+    },
+    {
+      "datetime": "2018-11-07 16:12",
+      "label": "Calcium",
+      "value": 8.5,
+      "unit": "mg/dL"
+    },
+    {
+      "datetime": "2018-11-07 16:12",
+      "label": "AST",
+      "value": 255.0,
+      "unit": "U/L"
+    },
+    {
+      "datetime": "2018-11-07 16:12",
+      "label": "Total Bilirubin",
+      "value": 0.6,
+      "unit": "mg/dL"
+    },
+    {
+      "datetime": "2018-11-07 16:12",
+      "label": "2028-9",
+      "value": 10.0,
+      "unit": "mmol/L"
+    },
+    {
+      "datetime": "2018-11-07 16:12",
+      "label": "20584-9",
+      "value": 14.8,
+      "unit": "K/uL"
+    },
+    {
+      "datetime": "2018-11-07 16:12",
+      "label": "2075-0",
+      "value": 113.0,
+      "unit": "mmol/L"
+    },
+    {
+      "datetime": "2018-11-07 16:12",
+      "label": "Creatinine",
+      "value": 1.28,
+      "unit": "mg/dL"
+    },
+    {
+      "datetime": "2018-11-07 16:12",
+      "label": "2336-6",
+      "value": 4.0,
+      "unit": "g/dL"
+    },
+    {
+      "datetime": "2018-11-07 16:12",
+      "label": "Glucose",
+      "value": 184.0,
+      "unit": "mg/dL"
+    },
+    {
+      "datetime": "2018-11-07 16:12",
+      "label": "Potassium",
+      "value": 5.5,
+      "unit": "mmol/L"
+    },
+    {
+      "datetime": "2018-11-07 16:12",
+      "label": "2885-2",
+      "value": 6.5,
+      "unit": "g/dL"
+    },
+    {
+      "datetime": "2018-11-07 16:12",
+      "label": "Sodium",
+      "value": 137.0,
+      "unit": "mmol/L"
+    },
+    {
+      "datetime": "2018-11-07 16:12",
+      "label": "BUN",
+      "value": 32.0,
+      "unit": "mg/dL"
+    },
+    {
+      "datetime": "2018-11-07 16:12",
+      "label": "33037-3",
+      "value": 14.0,
+      "unit": "mmol/L"
+    },
+    {
+      "datetime": "2018-11-07 16:12",
+      "label": "Hematocrit",
+      "value": 22.9,
+      "unit": "%"
+    },
+    {
+      "datetime": "2018-11-07 16:12",
+      "label": "5905-5",
+      "value": 1.2,
+      "unit": "%"
+    },
+    {
+      "datetime": "2018-11-07 16:12",
+      "label": "Alk Phosphatase",
+      "value": 110.0,
+      "unit": "U/L"
+    },
+    {
+      "datetime": "2018-11-07 16:12",
+      "label": "704-7",
+      "value": 0.01,
+      "unit": "K/uL"
+    },
+    {
+      "datetime": "2018-11-07 16:12",
+      "label": "706-2",
+      "value": 0.1,
+      "unit": "%"
+    },
+    {
+      "datetime": "2018-11-07 16:12",
+      "label": "711-2",
+      "value": 0.0,
+      "unit": "K/uL"
+    },
+    {
+      "datetime": "2018-11-07 16:12",
+      "label": "713-8",
+      "value": 0.0,
+      "unit": "%"
+    },
+    {
+      "datetime": "2018-11-07 16:12",
+      "label": "Hemoglobin",
+      "value": 7.3,
+      "unit": "g/dL"
+    },
+    {
+      "datetime": "2018-11-07 16:12",
+      "label": "731-0",
+      "value": 0.07,
+      "unit": "K/uL"
+    },
+    {
+      "datetime": "2018-11-07 16:12",
+      "label": "736-9",
+      "value": 0.5,
+      "unit": "%"
+    },
+    {
+      "datetime": "2018-11-07 16:12",
+      "label": "742-7",
+      "value": 0.17,
+      "unit": "K/uL"
+    },
+    {
+      "datetime": "2018-11-07 16:12",
+      "label": "751-8",
+      "value": 14.55,
+      "unit": "K/uL"
+    },
+    {
+      "datetime": "2018-11-07 16:12",
+      "label": "770-8",
+      "value": 98.3,
+      "unit": "%"
+    },
+    {
+      "datetime": "2018-11-07 16:12",
+      "label": "Platelets",
+      "value": 44.0,
+      "unit": "K/uL"
+    },
+    {
+      "datetime": "2018-11-07 16:12",
+      "label": "785-6",
+      "value": 30.3,
+      "unit": "pg"
+    },
+    {
+      "datetime": "2018-11-07 16:12",
+      "label": "786-4",
+      "value": 31.9,
+      "unit": "g/dL"
+    },
+    {
+      "datetime": "2018-11-07 16:12",
+      "label": "787-2",
+      "value": 94.7,
+      "unit": "fL"
+    },
+    {
+      "datetime": "2018-11-07 16:12",
+      "label": "788-0",
+      "value": 17.3,
+      "unit": "%"
+    },
+    {
+      "datetime": "2018-11-07 16:12",
+      "label": "789-8",
+      "value": 2.42,
+      "unit": "MIL/uL"
+    },
+    {
+      "datetime": "2018-11-07 16:43",
+      "label": "Resp Rate",
+      "value": 18.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2018-11-07 16:47",
+      "label": "Heart Rate",
+      "value": 77.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2018-11-07 18:02",
+      "label": "IO_OUT",
+      "value": 1600.0,
+      "unit": "mL"
+    },
+    {
+      "datetime": "2018-11-07 19:11",
+      "label": "IO_OUT",
+      "value": 250.0,
+      "unit": "mL"
+    },
+    {
+      "datetime": "2018-11-07 19:45",
+      "label": "8634-8",
+      "value": 0.36,
+      "unit": ""
+    },
+    {
+      "datetime": "2018-11-07 19:45",
+      "label": "8636-3",
+      "value": 0.44,
+      "unit": ""
+    },
+    {
+      "datetime": "2018-11-07 20:14",
+      "label": "38214-3",
+      "value": 0.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2018-11-07 20:14",
+      "label": "Temperature",
+      "value": 36.4,
+      "unit": ""
+    },
+    {
+      "datetime": "2018-11-07 20:14",
+      "label": "Temperature",
+      "value": 97.5,
+      "unit": ""
+    },
+    {
+      "datetime": "2018-11-07 20:14",
+      "label": "Diastolic BP",
+      "value": 74.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2018-11-07 20:14",
+      "label": "8478-0",
+      "value": 89.0,
+      "unit": "mmHg"
+    },
+    {
+      "datetime": "2018-11-07 20:14",
+      "label": "Systolic BP",
+      "value": 119.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2018-11-07 20:14",
+      "label": "8634-8",
+      "value": 416.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2018-11-07 20:14",
+      "label": "8636-3",
+      "value": 480.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2018-11-07 20:14",
+      "label": "Heart Rate",
+      "value": 78.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2018-11-07 20:14",
+      "label": "Heart Rate",
+      "value": 82.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2018-11-07 20:14",
+      "label": "Resp Rate",
+      "value": 23.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2018-11-07 21:56",
+      "label": "IO_OUT",
+      "value": 400.0,
+      "unit": "mL"
+    },
+    {
+      "datetime": "2018-11-08 00:38",
+      "label": "38214-3",
+      "value": 0.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2018-11-08 00:38",
+      "label": "Temperature",
+      "value": 36.5,
+      "unit": ""
+    },
+    {
+      "datetime": "2018-11-08 00:38",
+      "label": "Temperature",
+      "value": 97.7,
+      "unit": ""
+    },
+    {
+      "datetime": "2018-11-08 00:38",
+      "label": "Diastolic BP",
+      "value": 75.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2018-11-08 00:38",
+      "label": "8478-0",
+      "value": 87.0,
+      "unit": "mmHg"
+    },
+    {
+      "datetime": "2018-11-08 00:38",
+      "label": "Systolic BP",
+      "value": 110.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2018-11-08 00:38",
+      "label": "Heart Rate",
+      "value": 80.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2018-11-08 00:38",
+      "label": "Resp Rate",
+      "value": 20.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2018-11-08 00:40",
+      "label": "IO_OUT",
+      "value": 275.0,
+      "unit": "mL"
+    },
+    {
+      "datetime": "2018-11-08 01:05",
+      "label": "Temperature",
+      "value": 36.4,
+      "unit": ""
+    },
+    {
+      "datetime": "2018-11-08 01:05",
+      "label": "Temperature",
+      "value": 97.5,
+      "unit": ""
+    },
+    {
+      "datetime": "2018-11-08 01:05",
+      "label": "Diastolic BP",
+      "value": 71.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2018-11-08 01:05",
+      "label": "8478-0",
+      "value": 83.0,
+      "unit": "mmHg"
+    },
+    {
+      "datetime": "2018-11-08 01:05",
+      "label": "Systolic BP",
+      "value": 108.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2018-11-08 01:05",
+      "label": "8634-8",
+      "value": 408.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2018-11-08 01:05",
+      "label": "8636-3",
+      "value": 474.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2018-11-08 01:05",
+      "label": "Heart Rate",
+      "value": 82.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2018-11-08 01:05",
+      "label": "Resp Rate",
+      "value": 17.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2018-11-08 01:58",
+      "label": "IO_OUT",
+      "value": 300.0,
+      "unit": "mL"
+    },
+    {
+      "datetime": "2018-11-08 02:15",
+      "label": "Calcium",
+      "value": 8.6,
+      "unit": "mg/dL"
+    },
+    {
+      "datetime": "2018-11-08 02:15",
+      "label": "2028-9",
+      "value": 12.0,
+      "unit": "mmol/L"
+    },
+    {
+      "datetime": "2018-11-08 02:15",
+      "label": "2075-0",
+      "value": 113.0,
+      "unit": "mmol/L"
+    },
+    {
+      "datetime": "2018-11-08 02:15",
+      "label": "Creatinine",
+      "value": 1.04,
+      "unit": "mg/dL"
+    },
+    {
+      "datetime": "2018-11-08 02:15",
+      "label": "Glucose",
+      "value": 201.0,
+      "unit": "mg/dL"
+    },
+    {
+      "datetime": "2018-11-08 02:15",
+      "label": "Potassium",
+      "value": 5.4,
+      "unit": "mmol/L"
+    },
+    {
+      "datetime": "2018-11-08 02:15",
+      "label": "Sodium",
+      "value": 137.0,
+      "unit": "mmol/L"
+    },
+    {
+      "datetime": "2018-11-08 02:15",
+      "label": "BUN",
+      "value": 35.0,
+      "unit": "mg/dL"
+    },
+    {
+      "datetime": "2018-11-08 02:15",
+      "label": "33037-3",
+      "value": 12.0,
+      "unit": "mmol/L"
+    }
+  ],
+  "diagnoses": [
+    {
+      "date": "2006-11-16 00:00",
+      "code": "ICD9CM/272.4",
+      "description": "ICD9CM/272.4"
+    },
+    {
+      "date": "2016-09-22 00:00",
+      "code": "ICD10CM/C44.91",
+      "description": "ICD10CM/C44.91"
+    },
+    {
+      "date": "2016-09-22 00:00",
+      "code": "ICD10CM/L98.9",
+      "description": "ICD10CM/L98.9"
+    },
+    {
+      "date": "2018-04-12 00:00",
+      "code": "ICD10CM/C86.5",
+      "description": "ICD10CM/C86.5"
+    },
+    {
+      "date": "2018-04-12 00:00",
+      "code": "ICD10CM/L40.8",
+      "description": "ICD10CM/L40.8"
+    },
+    {
+      "date": "2018-06-20 00:00",
+      "code": "ICD10CM/C86.5",
+      "description": "ICD10CM/C86.5"
+    },
+    {
+      "date": "2018-06-20 00:00",
+      "code": "ICD10CM/C86.5",
+      "description": "ICD10CM/C86.5"
+    },
+    {
+      "date": "2018-06-20 12:51",
+      "code": "ICD10CM/C86.5",
+      "description": "ICD10CM/C86.5"
+    },
+    {
+      "date": "2018-09-14 00:00",
+      "code": "ICD10CM/C86.5",
+      "description": "ICD10CM/C86.5"
+    },
+    {
+      "date": "2018-09-14 00:00",
+      "code": "ICD10CM/C86.5",
+      "description": "ICD10CM/C86.5"
+    },
+    {
+      "date": "2018-09-14 00:00",
+      "code": "ICD10CM/C86.5",
+      "description": "ICD10CM/C86.5"
+    },
+    {
+      "date": "2018-09-14 11:03",
+      "code": "ICD10CM/C86.5",
+      "description": "ICD10CM/C86.5"
+    },
+    {
+      "date": "2018-09-15 00:00",
+      "code": "ICD10CM/C86.5",
+      "description": "ICD10CM/C86.5"
+    },
+    {
+      "date": "2018-09-19 00:00",
+      "code": "ICD10CM/C86.5",
+      "description": "ICD10CM/C86.5"
+    },
+    {
+      "date": "2018-09-19 00:00",
+      "code": "ICD10CM/C86.5",
+      "description": "ICD10CM/C86.5"
+    },
+    {
+      "date": "2018-09-19 00:00",
+      "code": "ICD10CM/C86.5",
+      "description": "ICD10CM/C86.5"
+    },
+    {
+      "date": "2018-09-19 08:47",
+      "code": "ICD10CM/C86.5",
+      "description": "ICD10CM/C86.5"
+    },
+    {
+      "date": "2018-09-19 08:47",
+      "code": "ICD10CM/D72.810",
+      "description": "ICD10CM/D72.810"
+    },
+    {
+      "date": "2018-09-20 00:00",
+      "code": "ICD10CM/C86.5",
+      "description": "ICD10CM/C86.5"
+    },
+    {
+      "date": "2018-09-21 00:00",
+      "code": "ICD10CM/C86.5",
+      "description": "ICD10CM/C86.5"
+    },
+    {
+      "date": "2018-09-21 00:00",
+      "code": "ICD10CM/C86.5",
+      "description": "ICD10CM/C86.5"
+    },
+    {
+      "date": "2018-09-21 00:00",
+      "code": "ICD10CM/D64.89",
+      "description": "ICD10CM/D64.89"
+    },
+    {
+      "date": "2018-09-21 00:00",
+      "code": "ICD10CM/D72.810",
+      "description": "ICD10CM/D72.810"
+    },
+    {
+      "date": "2018-09-21 00:00",
+      "code": "ICD10CM/R94.31",
+      "description": "ICD10CM/R94.31"
+    },
+    {
+      "date": "2018-09-23 00:00",
+      "code": "ICD10CM/C86.5",
+      "description": "ICD10CM/C86.5"
+    },
+    {
+      "date": "2018-09-23 00:00",
+      "code": "ICD10CM/C86.5",
+      "description": "ICD10CM/C86.5"
+    },
+    {
+      "date": "2018-09-23 00:00",
+      "code": "ICD10CM/C86.5",
+      "description": "ICD10CM/C86.5"
+    },
+    {
+      "date": "2018-09-23 00:00",
+      "code": "ICD10CM/C86.5",
+      "description": "ICD10CM/C86.5"
+    },
+    {
+      "date": "2018-09-23 00:00",
+      "code": "ICD10CM/I35.1",
+      "description": "ICD10CM/I35.1"
+    },
+    {
+      "date": "2018-09-23 08:41",
+      "code": "ICD10CM/C86.5",
+      "description": "ICD10CM/C86.5"
+    },
+    {
+      "date": "2018-09-23 08:41",
+      "code": "ICD10CM/I35.1",
+      "description": "ICD10CM/I35.1"
+    },
+    {
+      "date": "2018-09-27 00:00",
+      "code": "ICD10CM/C86.5",
+      "description": "ICD10CM/C86.5"
+    },
+    {
+      "date": "2018-09-27 00:00",
+      "code": "ICD10CM/C86.5",
+      "description": "ICD10CM/C86.5"
+    },
+    {
+      "date": "2018-09-27 13:55",
+      "code": "ICD10CM/C86.5",
+      "description": "ICD10CM/C86.5"
+    },
+    {
+      "date": "2018-10-03 00:00",
+      "code": "ICD10CM/C86.5",
+      "description": "ICD10CM/C86.5"
+    },
+    {
+      "date": "2018-10-03 00:00",
+      "code": "ICD10CM/C86.5",
+      "description": "ICD10CM/C86.5"
+    },
+    {
+      "date": "2018-10-03 00:00",
+      "code": "ICD10CM/C86.5",
+      "description": "ICD10CM/C86.5"
+    },
+    {
+      "date": "2018-10-03 00:00",
+      "code": "ICD10CM/C86.5",
+      "description": "ICD10CM/C86.5"
+    },
+    {
+      "date": "2018-10-03 00:00",
+      "code": "ICD10CM/C86.5",
+      "description": "ICD10CM/C86.5"
+    },
+    {
+      "date": "2018-10-03 00:00",
+      "code": "ICD10CM/C86.5",
+      "description": "ICD10CM/C86.5"
+    },
+    {
+      "date": "2018-10-03 00:00",
+      "code": "ICD10CM/C86.5",
+      "description": "ICD10CM/C86.5"
+    },
+    {
+      "date": "2018-10-03 13:17",
+      "code": "ICD10CM/C86.5",
+      "description": "ICD10CM/C86.5"
+    },
+    {
+      "date": "2018-10-05 00:00",
+      "code": "ICD10CM/C86.5",
+      "description": "ICD10CM/C86.5"
+    },
+    {
+      "date": "2018-10-05 00:00",
+      "code": "ICD10CM/C86.5",
+      "description": "ICD10CM/C86.5"
+    },
+    {
+      "date": "2018-10-05 07:35",
+      "code": "ICD10CM/C86.5",
+      "description": "ICD10CM/C86.5"
+    },
+    {
+      "date": "2018-10-06 00:00",
+      "code": "ICD10CM/C86.5",
+      "description": "ICD10CM/C86.5"
+    },
+    {
+      "date": "2018-10-06 00:00",
+      "code": "ICD10CM/C86.5",
+      "description": "ICD10CM/C86.5"
+    },
+    {
+      "date": "2018-10-07 00:00",
+      "code": "ICD10CM/C86.5",
+      "description": "ICD10CM/C86.5"
+    },
+    {
+      "date": "2018-10-08 00:00",
+      "code": "ICD10CM/C86.5",
+      "description": "ICD10CM/C86.5"
+    },
+    {
+      "date": "2018-10-08 09:30",
+      "code": "ICD10CM/C86.5",
+      "description": "ICD10CM/C86.5"
+    },
+    {
+      "date": "2018-10-09 00:00",
+      "code": "ICD10CM/C86.5",
+      "description": "ICD10CM/C86.5"
+    },
+    {
+      "date": "2018-10-10 00:00",
+      "code": "ICD10CM/C86.5",
+      "description": "ICD10CM/C86.5"
+    },
+    {
+      "date": "2018-10-11 00:00",
+      "code": "ICD10CM/C86.5",
+      "description": "ICD10CM/C86.5"
+    },
+    {
+      "date": "2018-10-12 00:00",
+      "code": "ICD10CM/C86.5",
+      "description": "ICD10CM/C86.5"
+    },
+    {
+      "date": "2018-10-13 00:00",
+      "code": "ICD10CM/C86.5",
+      "description": "ICD10CM/C86.5"
+    },
+    {
+      "date": "2018-10-14 00:00",
+      "code": "ICD10CM/C86.5",
+      "description": "ICD10CM/C86.5"
+    },
+    {
+      "date": "2018-10-15 00:00",
+      "code": "ICD10CM/C86.5",
+      "description": "ICD10CM/C86.5"
+    },
+    {
+      "date": "2018-10-16 00:00",
+      "code": "ICD10CM/C86.5",
+      "description": "ICD10CM/C86.5"
+    },
+    {
+      "date": "2018-10-17 00:00",
+      "code": "ICD10CM/C86.5",
+      "description": "ICD10CM/C86.5"
+    },
+    {
+      "date": "2018-10-18 00:00",
+      "code": "ICD10CM/C86.5",
+      "description": "ICD10CM/C86.5"
+    },
+    {
+      "date": "2018-10-18 00:00",
+      "code": "ICD10CM/C86.5",
+      "description": "ICD10CM/C86.5"
+    },
+    {
+      "date": "2018-10-19 00:00",
+      "code": "ICD10CM/C86.5",
+      "description": "ICD10CM/C86.5"
+    },
+    {
+      "date": "2018-10-26 00:00",
+      "code": "ICD10CM/C86.5",
+      "description": "ICD10CM/C86.5"
+    },
+    {
+      "date": "2018-10-31 00:00",
+      "code": "ICD10CM/C86.5",
+      "description": "ICD10CM/C86.5"
+    },
+    {
+      "date": "2018-10-31 00:00",
+      "code": "ICD10CM/C86.5",
+      "description": "ICD10CM/C86.5"
+    },
+    {
+      "date": "2018-10-31 00:00",
+      "code": "ICD10CM/C86.5",
+      "description": "ICD10CM/C86.5"
+    },
+    {
+      "date": "2018-10-31 00:00",
+      "code": "ICD10CM/C86.5",
+      "description": "ICD10CM/C86.5"
+    },
+    {
+      "date": "2018-10-31 00:00",
+      "code": "ICD10CM/C86.5",
+      "description": "ICD10CM/C86.5"
+    },
+    {
+      "date": "2018-10-31 00:00",
+      "code": "ICD10CM/C86.5",
+      "description": "ICD10CM/C86.5"
+    },
+    {
+      "date": "2018-10-31 13:55",
+      "code": "ICD10CM/C86.5",
+      "description": "ICD10CM/C86.5"
+    },
+    {
+      "date": "2018-10-31 14:22",
+      "code": "ICD10CM/C86.5",
+      "description": "ICD10CM/C86.5"
+    },
+    {
+      "date": "2018-11-03 00:00",
+      "code": "ICD10CM/C86.5",
+      "description": "ICD10CM/C86.5"
+    },
+    {
+      "date": "2018-11-04 00:00",
+      "code": "ICD10CM/C86.5",
+      "description": "ICD10CM/C86.5"
+    },
+    {
+      "date": "2018-11-04 10:28",
+      "code": "ICD10CM/B37.0",
+      "description": "ICD10CM/B37.0"
+    },
+    {
+      "date": "2018-11-04 10:28",
+      "code": "ICD10CM/B37.2",
+      "description": "ICD10CM/B37.2"
+    },
+    {
+      "date": "2018-11-04 10:28",
+      "code": "ICD10CM/B37.2",
+      "description": "ICD10CM/B37.2"
+    },
+    {
+      "date": "2018-11-04 10:28",
+      "code": "ICD10CM/C86.5",
+      "description": "ICD10CM/C86.5"
+    },
+    {
+      "date": "2018-11-04 10:28",
+      "code": "ICD10CM/C86.5",
+      "description": "ICD10CM/C86.5"
+    },
+    {
+      "date": "2018-11-04 10:28",
+      "code": "ICD10CM/D61.810",
+      "description": "ICD10CM/D61.810"
+    },
+    {
+      "date": "2018-11-04 10:28",
+      "code": "ICD10CM/D70.9",
+      "description": "ICD10CM/D70.9"
+    },
+    {
+      "date": "2018-11-04 10:28",
+      "code": "ICD10CM/D72.828",
+      "description": "ICD10CM/D72.828"
+    },
+    {
+      "date": "2018-11-04 10:28",
+      "code": "ICD10CM/E03.9",
+      "description": "ICD10CM/E03.9"
+    },
+    {
+      "date": "2018-11-04 10:28",
+      "code": "ICD10CM/E55.9",
+      "description": "ICD10CM/E55.9"
+    },
+    {
+      "date": "2018-11-04 10:28",
+      "code": "ICD10CM/E78.5",
+      "description": "ICD10CM/E78.5"
+    },
+    {
+      "date": "2018-11-04 10:28",
+      "code": "ICD10CM/E87.1",
+      "description": "ICD10CM/E87.1"
+    },
+    {
+      "date": "2018-11-04 10:28",
+      "code": "ICD10CM/E87.2",
+      "description": "ICD10CM/E87.2"
+    },
+    {
+      "date": "2018-11-04 10:28",
+      "code": "ICD10CM/E87.6",
+      "description": "ICD10CM/E87.6"
+    },
+    {
+      "date": "2018-11-04 10:28",
+      "code": "ICD10CM/E87.70",
+      "description": "ICD10CM/E87.70"
+    },
+    {
+      "date": "2018-11-04 10:28",
+      "code": "ICD10CM/G47.00",
+      "description": "ICD10CM/G47.00"
+    },
+    {
+      "date": "2018-11-04 10:28",
+      "code": "ICD10CM/I24.8",
+      "description": "ICD10CM/I24.8"
+    },
+    {
+      "date": "2018-11-04 10:28",
+      "code": "ICD10CM/I95.9",
+      "description": "ICD10CM/I95.9"
+    },
+    {
+      "date": "2018-11-04 10:28",
+      "code": "ICD10CM/J81.1",
+      "description": "ICD10CM/J81.1"
+    },
+    {
+      "date": "2018-11-04 10:28",
+      "code": "ICD10CM/K12.31",
+      "description": "ICD10CM/K12.31"
+    },
+    {
+      "date": "2018-11-04 10:28",
+      "code": "ICD10CM/K62.89",
+      "description": "ICD10CM/K62.89"
+    },
+    {
+      "date": "2018-11-04 10:28",
+      "code": "ICD10CM/L27.0",
+      "description": "ICD10CM/L27.0"
+    },
+    {
+      "date": "2018-11-04 10:28",
+      "code": "ICD10CM/M10.9",
+      "description": "ICD10CM/M10.9"
+    },
+    {
+      "date": "2018-11-04 10:28",
+      "code": "ICD10CM/R09.02",
+      "description": "ICD10CM/R09.02"
+    },
+    {
+      "date": "2018-11-04 10:28",
+      "code": "ICD10CM/R50.81",
+      "description": "ICD10CM/R50.81"
+    },
+    {
+      "date": "2018-11-04 10:28",
+      "code": "ICD10CM/R73.9",
+      "description": "ICD10CM/R73.9"
+    },
+    {
+      "date": "2018-11-04 10:28",
+      "code": "ICD10CM/R74.0",
+      "description": "ICD10CM/R74.0"
+    },
+    {
+      "date": "2018-11-05 00:00",
+      "code": "ICD10CM/C86.5",
+      "description": "ICD10CM/C86.5"
+    },
+    {
+      "date": "2018-11-06 00:00",
+      "code": "ICD10CM/C86.5",
+      "description": "ICD10CM/C86.5"
+    },
+    {
+      "date": "2018-11-06 00:00",
+      "code": "ICD10CM/I49.1",
+      "description": "ICD10CM/I49.1"
+    },
+    {
+      "date": "2018-11-06 00:00",
+      "code": "ICD10CM/R00.0",
+      "description": "ICD10CM/R00.0"
+    },
+    {
+      "date": "2018-11-06 00:00",
+      "code": "ICD10CM/R91.8",
+      "description": "ICD10CM/R91.8"
+    },
+    {
+      "date": "2018-11-06 00:00",
+      "code": "ICD10CM/R94.31",
+      "description": "ICD10CM/R94.31"
+    },
+    {
+      "date": "2018-11-07 00:00",
+      "code": "ICD10CM/C86.5",
+      "description": "ICD10CM/C86.5"
+    },
+    {
+      "date": "2018-11-08 00:00",
+      "code": "ICD10CM/C86.5",
+      "description": "ICD10CM/C86.5"
+    }
+  ],
+  "medications": [
+    {
+      "date": "2017-01-03 00:00",
+      "name": "RxNorm/314231",
+      "code": "RxNorm/314231"
+    },
+    {
+      "date": "2017-01-03 00:00",
+      "name": "RxNorm/892251",
+      "code": "RxNorm/892251"
+    },
+    {
+      "date": "2018-04-11 00:00",
+      "name": "RxNorm/197320",
+      "code": "RxNorm/197320"
+    },
+    {
+      "date": "2018-06-20 23:59",
+      "name": "RxNorm/1291286",
+      "code": "RxNorm/1291286"
+    },
+    {
+      "date": "2018-10-03 00:00",
+      "name": "RxNorm/197900",
+      "code": "RxNorm/197900"
+    },
+    {
+      "date": "2018-10-03 00:00",
+      "name": "RxNorm/198365",
+      "code": "RxNorm/198365"
+    },
+    {
+      "date": "2018-10-03 00:00",
+      "name": "RxNorm/310273",
+      "code": "RxNorm/310273"
+    },
+    {
+      "date": "2018-10-03 00:00",
+      "name": "RxNorm/311296",
+      "code": "RxNorm/311296"
+    },
+    {
+      "date": "2018-10-03 00:00",
+      "name": "RxNorm/312086",
+      "code": "RxNorm/312086"
+    },
+    {
+      "date": "2018-10-03 00:00",
+      "name": "RxNorm/727535",
+      "code": "RxNorm/727535"
+    },
+    {
+      "date": "2018-10-03 00:00",
+      "name": "RxNorm/727544",
+      "code": "RxNorm/727544"
+    },
+    {
+      "date": "2018-10-03 00:00",
+      "name": "RxNorm/727634",
+      "code": "RxNorm/727634"
+    },
+    {
+      "date": "2018-10-05 08:43",
+      "name": "RxNorm/311700",
+      "code": "RxNorm/311700"
+    },
+    {
+      "date": "2018-10-05 08:47",
+      "name": "RxNorm/311700",
+      "code": "RxNorm/311700"
+    },
+    {
+      "date": "2018-10-05 08:54",
+      "name": "RxNorm/311700",
+      "code": "RxNorm/311700"
+    },
+    {
+      "date": "2018-10-05 08:57",
+      "name": "RxNorm/1010671",
+      "code": "RxNorm/1010671"
+    },
+    {
+      "date": "2018-10-05 08:57",
+      "name": "RxNorm/1010688",
+      "code": "RxNorm/1010688"
+    },
+    {
+      "date": "2018-10-06 11:44",
+      "name": "RxNorm/1116927",
+      "code": "RxNorm/1116927"
+    },
+    {
+      "date": "2018-10-06 11:44",
+      "name": "RxNorm/637551",
+      "code": "RxNorm/637551"
+    },
+    {
+      "date": "2018-10-06 11:45",
+      "name": "RxNorm/1740467",
+      "code": "RxNorm/1740467"
+    },
+    {
+      "date": "2018-10-06 11:57",
+      "name": "RxNorm/1740467",
+      "code": "RxNorm/1740467"
+    },
+    {
+      "date": "2018-10-06 12:56",
+      "name": "RxNorm/1719286",
+      "code": "RxNorm/1719286"
+    },
+    {
+      "date": "2018-10-06 17:30",
+      "name": "RxNorm/637551",
+      "code": "RxNorm/637551"
+    },
+    {
+      "date": "2018-10-07 16:59",
+      "name": "RxNorm/727535",
+      "code": "RxNorm/727535"
+    },
+    {
+      "date": "2018-10-07 16:59",
+      "name": "RxNorm/727544",
+      "code": "RxNorm/727544"
+    },
+    {
+      "date": "2018-10-08 09:49",
+      "name": "RxNorm/727535",
+      "code": "RxNorm/727535"
+    },
+    {
+      "date": "2018-10-08 09:49",
+      "name": "RxNorm/727544",
+      "code": "RxNorm/727544"
+    },
+    {
+      "date": "2018-10-09 09:28",
+      "name": "RxNorm/727535",
+      "code": "RxNorm/727535"
+    },
+    {
+      "date": "2018-10-09 09:28",
+      "name": "RxNorm/727544",
+      "code": "RxNorm/727544"
+    },
+    {
+      "date": "2018-10-10 10:13",
+      "name": "RxNorm/727535",
+      "code": "RxNorm/727535"
+    },
+    {
+      "date": "2018-10-10 10:13",
+      "name": "RxNorm/727544",
+      "code": "RxNorm/727544"
+    },
+    {
+      "date": "2018-10-11 10:33",
+      "name": "RxNorm/727535",
+      "code": "RxNorm/727535"
+    },
+    {
+      "date": "2018-10-11 10:33",
+      "name": "RxNorm/727544",
+      "code": "RxNorm/727544"
+    },
+    {
+      "date": "2018-10-12 10:16",
+      "name": "RxNorm/727535",
+      "code": "RxNorm/727535"
+    },
+    {
+      "date": "2018-10-12 10:16",
+      "name": "RxNorm/727544",
+      "code": "RxNorm/727544"
+    },
+    {
+      "date": "2018-10-13 10:30",
+      "name": "RxNorm/727535",
+      "code": "RxNorm/727535"
+    },
+    {
+      "date": "2018-10-13 10:30",
+      "name": "RxNorm/727544",
+      "code": "RxNorm/727544"
+    },
+    {
+      "date": "2018-10-14 10:10",
+      "name": "RxNorm/727535",
+      "code": "RxNorm/727535"
+    },
+    {
+      "date": "2018-10-14 10:10",
+      "name": "RxNorm/727544",
+      "code": "RxNorm/727544"
+    },
+    {
+      "date": "2018-10-15 10:29",
+      "name": "RxNorm/727535",
+      "code": "RxNorm/727535"
+    },
+    {
+      "date": "2018-10-15 10:29",
+      "name": "RxNorm/727544",
+      "code": "RxNorm/727544"
+    },
+    {
+      "date": "2018-10-16 10:20",
+      "name": "RxNorm/727535",
+      "code": "RxNorm/727535"
+    },
+    {
+      "date": "2018-10-16 10:20",
+      "name": "RxNorm/727544",
+      "code": "RxNorm/727544"
+    },
+    {
+      "date": "2018-10-17 10:18",
+      "name": "RxNorm/727535",
+      "code": "RxNorm/727535"
+    },
+    {
+      "date": "2018-10-18 07:40",
+      "name": "RxNorm/727535",
+      "code": "RxNorm/727535"
+    },
+    {
+      "date": "2018-10-18 07:40",
+      "name": "RxNorm/727544",
+      "code": "RxNorm/727544"
+    },
+    {
+      "date": "2018-10-18 10:05",
+      "name": "RxNorm/21183",
+      "code": "RxNorm/21183"
+    },
+    {
+      "date": "2018-10-18 10:05",
+      "name": "RxNorm/56466",
+      "code": "RxNorm/56466"
+    },
+    {
+      "date": "2018-10-18 13:55",
+      "name": "RxNorm/1801298",
+      "code": "RxNorm/1801298"
+    },
+    {
+      "date": "2018-10-19 07:41",
+      "name": "RxNorm/727535",
+      "code": "RxNorm/727535"
+    },
+    {
+      "date": "2018-10-19 07:41",
+      "name": "RxNorm/727544",
+      "code": "RxNorm/727544"
+    },
+    {
+      "date": "2018-10-19 07:55",
+      "name": "RxNorm/21183",
+      "code": "RxNorm/21183"
+    },
+    {
+      "date": "2018-10-19 07:55",
+      "name": "RxNorm/56466",
+      "code": "RxNorm/56466"
+    },
+    {
+      "date": "2018-10-31 00:00",
+      "name": "RxNorm/310891",
+      "code": "RxNorm/310891"
+    },
+    {
+      "date": "2018-11-03 00:00",
+      "name": "RxNorm/310891",
+      "code": "RxNorm/310891"
+    },
+    {
+      "date": "2018-11-04 14:34",
+      "name": "RxNorm/637551",
+      "code": "RxNorm/637551"
+    },
+    {
+      "date": "2018-11-04 15:57",
+      "name": "RxNorm/1367410",
+      "code": "RxNorm/1367410"
+    },
+    {
+      "date": "2018-11-04 15:57",
+      "name": "RxNorm/1658717",
+      "code": "RxNorm/1658717"
+    },
+    {
+      "date": "2018-11-04 15:57",
+      "name": "RxNorm/197320",
+      "code": "RxNorm/197320"
+    },
+    {
+      "date": "2018-11-04 15:57",
+      "name": "RxNorm/310273",
+      "code": "RxNorm/310273"
+    },
+    {
+      "date": "2018-11-04 15:57",
+      "name": "RxNorm/310891",
+      "code": "RxNorm/310891"
+    },
+    {
+      "date": "2018-11-04 20:35",
+      "name": "RxNorm/1658717",
+      "code": "RxNorm/1658717"
+    },
+    {
+      "date": "2018-11-04 20:40",
+      "name": "RxNorm/310273",
+      "code": "RxNorm/310273"
+    },
+    {
+      "date": "2018-11-04 20:41",
+      "name": "RxNorm/310891",
+      "code": "RxNorm/310891"
+    },
+    {
+      "date": "2018-11-04 21:21",
+      "name": "RxNorm/1437739",
+      "code": "RxNorm/1437739"
+    },
+    {
+      "date": "2018-11-05 01:30",
+      "name": "RxNorm/637551",
+      "code": "RxNorm/637551"
+    },
+    {
+      "date": "2018-11-05 05:44",
+      "name": "RxNorm/966221",
+      "code": "RxNorm/966221"
+    },
+    {
+      "date": "2018-11-05 09:03",
+      "name": "RxNorm/197320",
+      "code": "RxNorm/197320"
+    },
+    {
+      "date": "2018-11-05 09:03",
+      "name": "RxNorm/310273",
+      "code": "RxNorm/310273"
+    },
+    {
+      "date": "2018-11-05 09:03",
+      "name": "RxNorm/313782",
+      "code": "RxNorm/313782"
+    },
+    {
+      "date": "2018-11-05 09:06",
+      "name": "RxNorm/310891",
+      "code": "RxNorm/310891"
+    },
+    {
+      "date": "2018-11-05 10:26",
+      "name": "RxNorm/996520",
+      "code": "RxNorm/996520"
+    },
+    {
+      "date": "2018-11-05 16:10",
+      "name": "RxNorm/1658717",
+      "code": "RxNorm/1658717"
+    },
+    {
+      "date": "2018-11-05 16:10",
+      "name": "RxNorm/996520",
+      "code": "RxNorm/996520"
+    },
+    {
+      "date": "2018-11-05 17:35",
+      "name": "RxNorm/637551",
+      "code": "RxNorm/637551"
+    },
+    {
+      "date": "2018-11-05 19:28",
+      "name": "RxNorm/1658717",
+      "code": "RxNorm/1658717"
+    },
+    {
+      "date": "2018-11-05 20:20",
+      "name": "RxNorm/1437739",
+      "code": "RxNorm/1437739"
+    },
+    {
+      "date": "2018-11-05 20:20",
+      "name": "RxNorm/310273",
+      "code": "RxNorm/310273"
+    },
+    {
+      "date": "2018-11-05 20:23",
+      "name": "RxNorm/310891",
+      "code": "RxNorm/310891"
+    },
+    {
+      "date": "2018-11-06 02:04",
+      "name": "RxNorm/637551",
+      "code": "RxNorm/637551"
+    },
+    {
+      "date": "2018-11-06 05:42",
+      "name": "RxNorm/966221",
+      "code": "RxNorm/966221"
+    },
+    {
+      "date": "2018-11-06 08:58",
+      "name": "RxNorm/197320",
+      "code": "RxNorm/197320"
+    },
+    {
+      "date": "2018-11-06 08:58",
+      "name": "RxNorm/310273",
+      "code": "RxNorm/310273"
+    },
+    {
+      "date": "2018-11-06 08:58",
+      "name": "RxNorm/996520",
+      "code": "RxNorm/996520"
+    },
+    {
+      "date": "2018-11-06 10:32",
+      "name": "RxNorm/1049909",
+      "code": "RxNorm/1049909"
+    },
+    {
+      "date": "2018-11-06 10:32",
+      "name": "RxNorm/310891",
+      "code": "RxNorm/310891"
+    },
+    {
+      "date": "2018-11-06 10:32",
+      "name": "RxNorm/313782",
+      "code": "RxNorm/313782"
+    },
+    {
+      "date": "2018-11-06 12:06",
+      "name": "RxNorm/310248",
+      "code": "RxNorm/310248"
+    },
+    {
+      "date": "2018-11-06 12:14",
+      "name": "RxNorm/1807627",
+      "code": "RxNorm/1807627"
+    },
+    {
+      "date": "2018-11-06 14:10",
+      "name": "RxNorm/1049633",
+      "code": "RxNorm/1049633"
+    },
+    {
+      "date": "2018-11-06 14:16",
+      "name": "RxNorm/861476",
+      "code": "RxNorm/861476"
+    },
+    {
+      "date": "2018-11-06 14:23",
+      "name": "RxNorm/861476",
+      "code": "RxNorm/861476"
+    },
+    {
+      "date": "2018-11-06 16:10",
+      "name": "RxNorm/310248",
+      "code": "RxNorm/310248"
+    },
+    {
+      "date": "2018-11-06 16:11",
+      "name": "RxNorm/313782",
+      "code": "RxNorm/313782"
+    },
+    {
+      "date": "2018-11-06 17:10",
+      "name": "RxNorm/238100",
+      "code": "RxNorm/238100"
+    },
+    {
+      "date": "2018-11-06 17:45",
+      "name": "RxNorm/309696",
+      "code": "RxNorm/309696"
+    },
+    {
+      "date": "2018-11-06 19:21",
+      "name": "RxNorm/238755",
+      "code": "RxNorm/238755"
+    },
+    {
+      "date": "2018-11-06 19:27",
+      "name": "RxNorm/836358",
+      "code": "RxNorm/836358"
+    },
+    {
+      "date": "2018-11-06 19:46",
+      "name": "RxNorm/313782",
+      "code": "RxNorm/313782"
+    },
+    {
+      "date": "2018-11-06 20:11",
+      "name": "RxNorm/1807508",
+      "code": "RxNorm/1807508"
+    },
+    {
+      "date": "2018-11-06 20:12",
+      "name": "RxNorm/637551",
+      "code": "RxNorm/637551"
+    },
+    {
+      "date": "2018-11-06 21:03",
+      "name": "RxNorm/1658717",
+      "code": "RxNorm/1658717"
+    },
+    {
+      "date": "2018-11-06 21:14",
+      "name": "RxNorm/1807508",
+      "code": "RxNorm/1807508"
+    },
+    {
+      "date": "2018-11-06 21:31",
+      "name": "RxNorm/310273",
+      "code": "RxNorm/310273"
+    },
+    {
+      "date": "2018-11-06 21:34",
+      "name": "RxNorm/1437739",
+      "code": "RxNorm/1437739"
+    },
+    {
+      "date": "2018-11-06 23:38",
+      "name": "RxNorm/310891",
+      "code": "RxNorm/310891"
+    },
+    {
+      "date": "2018-11-07 00:25",
+      "name": "RxNorm/637551",
+      "code": "RxNorm/637551"
+    },
+    {
+      "date": "2018-11-07 04:34",
+      "name": "RxNorm/966221",
+      "code": "RxNorm/966221"
+    },
+    {
+      "date": "2018-11-07 08:06",
+      "name": "RxNorm/197320",
+      "code": "RxNorm/197320"
+    },
+    {
+      "date": "2018-11-07 08:06",
+      "name": "RxNorm/310273",
+      "code": "RxNorm/310273"
+    },
+    {
+      "date": "2018-11-07 08:07",
+      "name": "RxNorm/310891",
+      "code": "RxNorm/310891"
+    },
+    {
+      "date": "2018-11-07 09:59",
+      "name": "RxNorm/637551",
+      "code": "RxNorm/637551"
+    },
+    {
+      "date": "2018-11-07 21:48",
+      "name": "RxNorm/1807627",
+      "code": "RxNorm/1807627"
+    },
+    {
+      "date": "2018-11-07 21:50",
+      "name": "RxNorm/1437739",
+      "code": "RxNorm/1437739"
+    },
+    {
+      "date": "2018-11-07 21:50",
+      "name": "RxNorm/310273",
+      "code": "RxNorm/310273"
+    },
+    {
+      "date": "2018-11-07 22:03",
+      "name": "RxNorm/310891",
+      "code": "RxNorm/310891"
+    },
+    {
+      "date": "2018-11-07 22:07",
+      "name": "RxNorm/1658717",
+      "code": "RxNorm/1658717"
+    },
+    {
+      "date": "2018-11-08 01:18",
+      "name": "RxNorm/856377",
+      "code": "RxNorm/856377"
+    }
+  ],
+  "procedures": [
+    {
+      "date": "2016-09-22 00:00",
+      "code": "CPT4/88305",
+      "description": "CPT4/88305"
+    },
+    {
+      "date": "2018-04-12 00:00",
+      "code": "CPT4/88305",
+      "description": "CPT4/88305"
+    },
+    {
+      "date": "2018-04-12 00:00",
+      "code": "CPT4/88323",
+      "description": "CPT4/88323"
+    },
+    {
+      "date": "2018-09-21 00:00",
+      "code": "CPT4/36415",
+      "description": "CPT4/36415"
+    },
+    {
+      "date": "2018-09-21 00:00",
+      "code": "CPT4/38222",
+      "description": "CPT4/38222"
+    },
+    {
+      "date": "2018-09-21 00:00",
+      "code": "CPT4/38222",
+      "description": "CPT4/38222"
+    },
+    {
+      "date": "2018-09-21 00:00",
+      "code": "CPT4/88305",
+      "description": "CPT4/88305"
+    },
+    {
+      "date": "2018-09-21 00:00",
+      "code": "CPT4/88311",
+      "description": "CPT4/88311"
+    },
+    {
+      "date": "2018-09-21 00:00",
+      "code": "CPT4/93005",
+      "description": "CPT4/93005"
+    },
+    {
+      "date": "2018-09-21 00:00",
+      "code": "CPT4/93010",
+      "description": "CPT4/93010"
+    },
+    {
+      "date": "2018-09-23 00:00",
+      "code": "CPT4/93306",
+      "description": "CPT4/93306"
+    },
+    {
+      "date": "2018-09-23 00:00",
+      "code": "CPT4/94010",
+      "description": "CPT4/94010"
+    },
+    {
+      "date": "2018-09-23 00:00",
+      "code": "CPT4/94375",
+      "description": "CPT4/94375"
+    },
+    {
+      "date": "2018-09-23 00:00",
+      "code": "CPT4/94729",
+      "description": "CPT4/94729"
+    },
+    {
+      "date": "2018-09-23 00:00",
+      "code": "CPT4/94729",
+      "description": "CPT4/94729"
+    },
+    {
+      "date": "2018-10-03 00:00",
+      "code": "CPT4/36415",
+      "description": "CPT4/36415"
+    },
+    {
+      "date": "2018-10-03 00:00",
+      "code": "CPT4/36415",
+      "description": "CPT4/36415"
+    },
+    {
+      "date": "2018-10-03 00:00",
+      "code": "CPT4/71046",
+      "description": "CPT4/71046"
+    },
+    {
+      "date": "2018-10-03 00:00",
+      "code": "CPT4/71046",
+      "description": "CPT4/71046"
+    },
+    {
+      "date": "2018-10-03 00:00",
+      "code": "CPT4/93005",
+      "description": "CPT4/93005"
+    },
+    {
+      "date": "2018-10-03 00:00",
+      "code": "CPT4/93010",
+      "description": "CPT4/93010"
+    },
+    {
+      "date": "2018-10-05 00:00",
+      "code": "CPT4/36558",
+      "description": "CPT4/36558"
+    },
+    {
+      "date": "2018-10-05 00:00",
+      "code": "CPT4/36558",
+      "description": "CPT4/36558"
+    },
+    {
+      "date": "2018-10-05 00:00",
+      "code": "CPT4/36590",
+      "description": "CPT4/36590"
+    },
+    {
+      "date": "2018-10-05 00:00",
+      "code": "CPT4/36590",
+      "description": "CPT4/36590"
+    },
+    {
+      "date": "2018-10-05 00:00",
+      "code": "CPT4/76937",
+      "description": "CPT4/76937"
+    },
+    {
+      "date": "2018-10-05 00:00",
+      "code": "CPT4/76937",
+      "description": "CPT4/76937"
+    },
+    {
+      "date": "2018-10-05 00:00",
+      "code": "CPT4/77001",
+      "description": "CPT4/77001"
+    },
+    {
+      "date": "2018-10-05 00:00",
+      "code": "CPT4/77001",
+      "description": "CPT4/77001"
+    },
+    {
+      "date": "2018-10-05 00:00",
+      "code": "CPT4/96521",
+      "description": "CPT4/96521"
+    },
+    {
+      "date": "2018-10-05 00:00",
+      "code": "CPT4/99152",
+      "description": "CPT4/99152"
+    },
+    {
+      "date": "2018-10-05 00:00",
+      "code": "CPT4/99152",
+      "description": "CPT4/99152"
+    },
+    {
+      "date": "2018-10-05 00:00",
+      "code": "CPT4/99153",
+      "description": "CPT4/99153"
+    },
+    {
+      "date": "2018-10-05 00:00",
+      "code": "CPT4/99153",
+      "description": "CPT4/99153"
+    },
+    {
+      "date": "2018-10-05 00:00",
+      "code": "ICD10PCS/02HV33Z",
+      "description": "ICD10PCS/02HV33Z"
+    },
+    {
+      "date": "2018-10-05 00:00",
+      "code": "ICD10PCS/02HV33Z",
+      "description": "ICD10PCS/02HV33Z"
+    },
+    {
+      "date": "2018-10-05 00:00",
+      "code": "ICD10PCS/0JH63XZ",
+      "description": "ICD10PCS/0JH63XZ"
+    },
+    {
+      "date": "2018-10-05 00:00",
+      "code": "ICD10PCS/0JH63XZ",
+      "description": "ICD10PCS/0JH63XZ"
+    },
+    {
+      "date": "2018-10-05 00:00",
+      "code": "ICD10PCS/0JPT0WZ",
+      "description": "ICD10PCS/0JPT0WZ"
+    },
+    {
+      "date": "2018-10-05 00:00",
+      "code": "ICD10PCS/0JPT0WZ",
+      "description": "ICD10PCS/0JPT0WZ"
+    },
+    {
+      "date": "2018-10-05 00:00",
+      "code": "ICD10PCS/B5181ZA",
+      "description": "ICD10PCS/B5181ZA"
+    },
+    {
+      "date": "2018-10-05 00:00",
+      "code": "ICD10PCS/B5181ZA",
+      "description": "ICD10PCS/B5181ZA"
+    },
+    {
+      "date": "2018-10-06 00:00",
+      "code": "CPT4/96367",
+      "description": "CPT4/96367"
+    },
+    {
+      "date": "2018-10-06 00:00",
+      "code": "CPT4/96368",
+      "description": "CPT4/96368"
+    },
+    {
+      "date": "2018-10-06 00:00",
+      "code": "CPT4/96375",
+      "description": "CPT4/96375"
+    },
+    {
+      "date": "2018-10-06 00:00",
+      "code": "CPT4/96413",
+      "description": "CPT4/96413"
+    },
+    {
+      "date": "2018-10-06 00:00",
+      "code": "CPT4/96415",
+      "description": "CPT4/96415"
+    },
+    {
+      "date": "2018-10-06 00:00",
+      "code": "CPT4/96521",
+      "description": "CPT4/96521"
+    },
+    {
+      "date": "2018-10-07 00:00",
+      "code": "CPT4/96372",
+      "description": "CPT4/96372"
+    },
+    {
+      "date": "2018-10-08 00:00",
+      "code": "CPT4/96372",
+      "description": "CPT4/96372"
+    },
+    {
+      "date": "2018-10-09 00:00",
+      "code": "CPT4/96372",
+      "description": "CPT4/96372"
+    },
+    {
+      "date": "2018-10-10 00:00",
+      "code": "CPT4/96372",
+      "description": "CPT4/96372"
+    },
+    {
+      "date": "2018-10-11 00:00",
+      "code": "CPT4/96372",
+      "description": "CPT4/96372"
+    },
+    {
+      "date": "2018-10-12 00:00",
+      "code": "CPT4/36415",
+      "description": "CPT4/36415"
+    },
+    {
+      "date": "2018-10-12 00:00",
+      "code": "CPT4/96372",
+      "description": "CPT4/96372"
+    },
+    {
+      "date": "2018-10-13 00:00",
+      "code": "CPT4/96372",
+      "description": "CPT4/96372"
+    },
+    {
+      "date": "2018-10-14 00:00",
+      "code": "CPT4/96372",
+      "description": "CPT4/96372"
+    },
+    {
+      "date": "2018-10-15 00:00",
+      "code": "CPT4/36415",
+      "description": "CPT4/36415"
+    },
+    {
+      "date": "2018-10-15 00:00",
+      "code": "CPT4/96372",
+      "description": "CPT4/96372"
+    },
+    {
+      "date": "2018-10-16 00:00",
+      "code": "CPT4/36415",
+      "description": "CPT4/36415"
+    },
+    {
+      "date": "2018-10-16 00:00",
+      "code": "CPT4/96372",
+      "description": "CPT4/96372"
+    },
+    {
+      "date": "2018-10-17 00:00",
+      "code": "CPT4/96372",
+      "description": "CPT4/96372"
+    },
+    {
+      "date": "2018-10-18 00:00",
+      "code": "CPT4/36415",
+      "description": "CPT4/36415"
+    },
+    {
+      "date": "2018-10-18 00:00",
+      "code": "CPT4/38206",
+      "description": "CPT4/38206"
+    },
+    {
+      "date": "2018-10-18 00:00",
+      "code": "CPT4/38207",
+      "description": "CPT4/38207"
+    },
+    {
+      "date": "2018-10-18 00:00",
+      "code": "CPT4/96365",
+      "description": "CPT4/96365"
+    },
+    {
+      "date": "2018-10-18 00:00",
+      "code": "CPT4/96372",
+      "description": "CPT4/96372"
+    },
+    {
+      "date": "2018-10-19 00:00",
+      "code": "CPT4/38206",
+      "description": "CPT4/38206"
+    },
+    {
+      "date": "2018-10-19 00:00",
+      "code": "CPT4/38207",
+      "description": "CPT4/38207"
+    },
+    {
+      "date": "2018-10-19 00:00",
+      "code": "CPT4/96365",
+      "description": "CPT4/96365"
+    },
+    {
+      "date": "2018-10-19 00:00",
+      "code": "CPT4/96366",
+      "description": "CPT4/96366"
+    },
+    {
+      "date": "2018-10-19 00:00",
+      "code": "CPT4/96372",
+      "description": "CPT4/96372"
+    },
+    {
+      "date": "2018-10-31 00:00",
+      "code": "CPT4/36591",
+      "description": "CPT4/36591"
+    },
+    {
+      "date": "2018-10-31 00:00",
+      "code": "CPT4/71046",
+      "description": "CPT4/71046"
+    },
+    {
+      "date": "2018-10-31 00:00",
+      "code": "CPT4/71046",
+      "description": "CPT4/71046"
+    },
+    {
+      "date": "2018-11-04 00:00",
+      "code": "CPT4/99223",
+      "description": "CPT4/99223"
+    },
+    {
+      "date": "2018-11-04 00:00",
+      "code": "ICD10PCS/3E03305",
+      "description": "ICD10PCS/3E03305"
+    },
+    {
+      "date": "2018-11-04 00:00",
+      "code": "ICD10PCS/3E03305",
+      "description": "ICD10PCS/3E03305"
+    },
+    {
+      "date": "2018-11-05 00:00",
+      "code": "CPT4/99233",
+      "description": "CPT4/99233"
+    },
+    {
+      "date": "2018-11-06 00:00",
+      "code": "CPT4/36415",
+      "description": "CPT4/36415"
+    },
+    {
+      "date": "2018-11-06 00:00",
+      "code": "CPT4/71045",
+      "description": "CPT4/71045"
+    },
+    {
+      "date": "2018-11-06 00:00",
+      "code": "CPT4/71045",
+      "description": "CPT4/71045"
+    },
+    {
+      "date": "2018-11-06 00:00",
+      "code": "CPT4/93005",
+      "description": "CPT4/93005"
+    },
+    {
+      "date": "2018-11-06 00:00",
+      "code": "CPT4/93010",
+      "description": "CPT4/93010"
+    },
+    {
+      "date": "2018-11-06 00:00",
+      "code": "CPT4/94640",
+      "description": "CPT4/94640"
+    },
+    {
+      "date": "2018-11-06 00:00",
+      "code": "CPT4/99233",
+      "description": "CPT4/99233"
+    },
+    {
+      "date": "2018-11-07 00:00",
+      "code": "CPT4/97161",
+      "description": "CPT4/97161"
+    },
+    {
+      "date": "2018-11-07 00:00",
+      "code": "CPT4/97530",
+      "description": "CPT4/97530"
+    },
+    {
+      "date": "2018-11-07 00:00",
+      "code": "CPT4/99233",
+      "description": "CPT4/99233"
+    },
+    {
+      "date": "2018-11-08 00:00",
+      "code": "CPT4/99233",
+      "description": "CPT4/99233"
+    }
+  ],
+  "observations": [
+    {
+      "date": "2018-06-20 00:00",
+      "observation": "OMOP_CONCEPT_ID/45876662",
+      "value": null
+    },
+    {
+      "date": "2018-06-20 00:00",
+      "observation": "OMOP_CONCEPT_ID/45876662",
+      "value": null
+    },
+    {
+      "date": "2018-06-20 00:00",
+      "observation": "OMOP_CONCEPT_ID/45878245",
+      "value": null
+    },
+    {
+      "date": "2018-06-20 00:00",
+      "observation": "OMOP_CONCEPT_ID/45878245",
+      "value": null
+    },
+    {
+      "date": "2018-06-20 00:00",
+      "observation": "OMOP_CONCEPT_ID/45878245",
+      "value": null
+    },
+    {
+      "date": "2018-06-20 00:00",
+      "observation": "OMOP_CONCEPT_ID/45878245",
+      "value": null
+    },
+    {
+      "date": "2018-06-20 00:00",
+      "observation": "OMOP_CONCEPT_ID/45878245",
+      "value": null
+    },
+    {
+      "date": "2018-06-20 00:00",
+      "observation": "OMOP_CONCEPT_ID/45876662",
+      "value": null
+    },
+    {
+      "date": "2018-06-20 13:11",
+      "observation": "LOINC/8327-9",
+      "value": "1.0"
+    },
+    {
+      "date": "2018-06-20 13:11",
+      "observation": "LOINC/LP21258-6",
+      "value": "98.0"
+    },
+    {
+      "date": "2018-09-14 12:31",
+      "observation": "LOINC/8327-9",
+      "value": "1.0"
+    },
+    {
+      "date": "2018-09-14 12:31",
+      "observation": "LOINC/LP21258-6",
+      "value": "99.0"
+    },
+    {
+      "date": "2018-09-19 00:00",
+      "observation": "OMOP_CONCEPT_ID/45876662",
+      "value": null
+    },
+    {
+      "date": "2018-09-19 00:00",
+      "observation": "OMOP_CONCEPT_ID/45876662",
+      "value": null
+    },
+    {
+      "date": "2018-09-19 00:00",
+      "observation": "OMOP_CONCEPT_ID/45878245",
+      "value": null
+    },
+    {
+      "date": "2018-09-19 00:00",
+      "observation": "OMOP_CONCEPT_ID/45878245",
+      "value": null
+    },
+    {
+      "date": "2018-09-19 00:00",
+      "observation": "OMOP_CONCEPT_ID/45878245",
+      "value": null
+    },
+    {
+      "date": "2018-09-19 00:00",
+      "observation": "OMOP_CONCEPT_ID/45878245",
+      "value": null
+    },
+    {
+      "date": "2018-09-19 00:00",
+      "observation": "OMOP_CONCEPT_ID/45878245",
+      "value": null
+    },
+    {
+      "date": "2018-09-19 00:00",
+      "observation": "OMOP_CONCEPT_ID/45876662",
+      "value": null
+    },
+    {
+      "date": "2018-09-19 09:56",
+      "observation": "LOINC/8327-9",
+      "value": "1.0"
+    },
+    {
+      "date": "2018-09-19 09:56",
+      "observation": "LOINC/LP21258-6",
+      "value": "100.0"
+    },
+    {
+      "date": "2018-09-21 12:42",
+      "observation": "LOINC/8327-9",
+      "value": "1.0"
+    },
+    {
+      "date": "2018-09-21 12:42",
+      "observation": "LOINC/LP21258-6",
+      "value": "99.0"
+    },
+    {
+      "date": "2018-10-03 00:00",
+      "observation": "OMOP_CONCEPT_ID/45876662",
+      "value": null
+    },
+    {
+      "date": "2018-10-03 00:00",
+      "observation": "OMOP_CONCEPT_ID/45876662",
+      "value": null
+    },
+    {
+      "date": "2018-10-03 00:00",
+      "observation": "OMOP_CONCEPT_ID/45878245",
+      "value": null
+    },
+    {
+      "date": "2018-10-03 00:00",
+      "observation": "OMOP_CONCEPT_ID/45878245",
+      "value": null
+    },
+    {
+      "date": "2018-10-03 00:00",
+      "observation": "OMOP_CONCEPT_ID/45878245",
+      "value": null
+    },
+    {
+      "date": "2018-10-03 00:00",
+      "observation": "OMOP_CONCEPT_ID/45878245",
+      "value": null
+    },
+    {
+      "date": "2018-10-03 00:00",
+      "observation": "OMOP_CONCEPT_ID/45878245",
+      "value": null
+    },
+    {
+      "date": "2018-10-03 00:00",
+      "observation": "OMOP_CONCEPT_ID/45876662",
+      "value": null
+    },
+    {
+      "date": "2018-10-03 14:57",
+      "observation": "LOINC/LP21258-6",
+      "value": "99.0"
+    },
+    {
+      "date": "2018-10-03 15:08",
+      "observation": "LOINC/8327-9",
+      "value": "1.0"
+    },
+    {
+      "date": "2018-10-05 00:00",
+      "observation": "OMOP_CONCEPT_ID/45876662",
+      "value": null
+    },
+    {
+      "date": "2018-10-05 00:00",
+      "observation": "OMOP_CONCEPT_ID/45876662",
+      "value": null
+    },
+    {
+      "date": "2018-10-05 00:00",
+      "observation": "OMOP_CONCEPT_ID/45878245",
+      "value": null
+    },
+    {
+      "date": "2018-10-05 00:00",
+      "observation": "OMOP_CONCEPT_ID/45878245",
+      "value": null
+    },
+    {
+      "date": "2018-10-05 00:00",
+      "observation": "OMOP_CONCEPT_ID/45878245",
+      "value": null
+    },
+    {
+      "date": "2018-10-05 00:00",
+      "observation": "OMOP_CONCEPT_ID/45878245",
+      "value": null
+    },
+    {
+      "date": "2018-10-05 00:00",
+      "observation": "OMOP_CONCEPT_ID/45878245",
+      "value": null
+    },
+    {
+      "date": "2018-10-05 00:00",
+      "observation": "OMOP_CONCEPT_ID/439777",
+      "value": null
+    },
+    {
+      "date": "2018-10-05 00:00",
+      "observation": "OMOP_CONCEPT_ID/135204",
+      "value": null
+    },
+    {
+      "date": "2018-10-05 00:00",
+      "observation": "OMOP_CONCEPT_ID/138384",
+      "value": null
+    },
+    {
+      "date": "2018-10-05 00:00",
+      "observation": "OMOP_CONCEPT_ID/45876662",
+      "value": null
+    },
+    {
+      "date": "2018-10-05 08:00",
+      "observation": "LOINC/8327-9",
+      "value": "103.0"
+    },
+    {
+      "date": "2018-10-05 08:00",
+      "observation": "LOINC/LP21258-6",
+      "value": "97.0"
+    },
+    {
+      "date": "2018-10-05 08:37",
+      "observation": "LOINC/LP21258-6",
+      "value": "100.0"
+    },
+    {
+      "date": "2018-10-05 08:39",
+      "observation": "LOINC/LP21258-6",
+      "value": "99.0"
+    },
+    {
+      "date": "2018-10-05 08:44",
+      "observation": "LOINC/LP21258-6",
+      "value": "97.0"
+    },
+    {
+      "date": "2018-10-05 08:49",
+      "observation": "LOINC/LP21258-6",
+      "value": "94.0"
+    },
+    {
+      "date": "2018-10-05 08:54",
+      "observation": "LOINC/LP21258-6",
+      "value": "97.0"
+    },
+    {
+      "date": "2018-10-05 08:59",
+      "observation": "LOINC/LP21258-6",
+      "value": "97.0"
+    },
+    {
+      "date": "2018-10-05 09:04",
+      "observation": "LOINC/LP21258-6",
+      "value": "98.0"
+    },
+    {
+      "date": "2018-10-05 09:09",
+      "observation": "LOINC/LP21258-6",
+      "value": "95.0"
+    },
+    {
+      "date": "2018-10-05 09:14",
+      "observation": "LOINC/LP21258-6",
+      "value": "96.0"
+    },
+    {
+      "date": "2018-10-05 09:19",
+      "observation": "LOINC/LP21258-6",
+      "value": "96.0"
+    },
+    {
+      "date": "2018-10-05 09:24",
+      "observation": "LOINC/LP21258-6",
+      "value": "95.0"
+    },
+    {
+      "date": "2018-10-05 09:35",
+      "observation": "LOINC/8327-9",
+      "value": "103.0"
+    },
+    {
+      "date": "2018-10-05 09:35",
+      "observation": "LOINC/LP21258-6",
+      "value": "94.0"
+    },
+    {
+      "date": "2018-10-05 09:45",
+      "observation": "LOINC/LP21258-6",
+      "value": "95.0"
+    },
+    {
+      "date": "2018-10-05 10:00",
+      "observation": "LOINC/LP21258-6",
+      "value": "86.0"
+    },
+    {
+      "date": "2018-10-05 10:08",
+      "observation": "LOINC/LP21258-6",
+      "value": "95.0"
+    },
+    {
+      "date": "2018-10-05 14:22",
+      "observation": "LOINC/8327-9",
+      "value": "1.0"
+    },
+    {
+      "date": "2018-10-05 14:22",
+      "observation": "LOINC/LP21258-6",
+      "value": "100.0"
+    },
+    {
+      "date": "2018-10-06 00:00",
+      "observation": "OMOP_CONCEPT_ID/4188539",
+      "value": null
+    },
+    {
+      "date": "2018-10-06 00:00",
+      "observation": "OMOP_CONCEPT_ID/45876662",
+      "value": null
+    },
+    {
+      "date": "2018-10-06 00:00",
+      "observation": "OMOP_CONCEPT_ID/45876662",
+      "value": null
+    },
+    {
+      "date": "2018-10-06 00:00",
+      "observation": "OMOP_CONCEPT_ID/45878245",
+      "value": null
+    },
+    {
+      "date": "2018-10-06 00:00",
+      "observation": "OMOP_CONCEPT_ID/45878245",
+      "value": null
+    },
+    {
+      "date": "2018-10-06 00:00",
+      "observation": "OMOP_CONCEPT_ID/45878245",
+      "value": null
+    },
+    {
+      "date": "2018-10-06 00:00",
+      "observation": "OMOP_CONCEPT_ID/45878245",
+      "value": null
+    },
+    {
+      "date": "2018-10-06 00:00",
+      "observation": "OMOP_CONCEPT_ID/45878245",
+      "value": null
+    },
+    {
+      "date": "2018-10-06 00:00",
+      "observation": "OMOP_CONCEPT_ID/138384",
+      "value": null
+    },
+    {
+      "date": "2018-10-06 00:00",
+      "observation": "OMOP_CONCEPT_ID/439777",
+      "value": null
+    },
+    {
+      "date": "2018-10-06 00:00",
+      "observation": "OMOP_CONCEPT_ID/135204",
+      "value": null
+    },
+    {
+      "date": "2018-10-06 00:00",
+      "observation": "OMOP_CONCEPT_ID/45876662",
+      "value": null
+    },
+    {
+      "date": "2018-10-06 11:06",
+      "observation": "LOINC/8327-9",
+      "value": "1.0"
+    },
+    {
+      "date": "2018-10-06 11:06",
+      "observation": "LOINC/LP21258-6",
+      "value": "100.0"
+    },
+    {
+      "date": "2018-10-07 15:24",
+      "observation": "LOINC/8327-9",
+      "value": "1.0"
+    },
+    {
+      "date": "2018-10-07 15:24",
+      "observation": "LOINC/LP21258-6",
+      "value": "98.0"
+    },
+    {
+      "date": "2018-10-08 09:45",
+      "observation": "LOINC/8327-9",
+      "value": "1.0"
+    },
+    {
+      "date": "2018-10-08 09:45",
+      "observation": "LOINC/LP21258-6",
+      "value": "99.0"
+    },
+    {
+      "date": "2018-10-09 09:21",
+      "observation": "LOINC/8327-9",
+      "value": "1.0"
+    },
+    {
+      "date": "2018-10-09 09:21",
+      "observation": "LOINC/LP21258-6",
+      "value": "97.0"
+    },
+    {
+      "date": "2018-10-10 10:04",
+      "observation": "LOINC/8327-9",
+      "value": "1.0"
+    },
+    {
+      "date": "2018-10-10 10:04",
+      "observation": "LOINC/LP21258-6",
+      "value": "97.0"
+    },
+    {
+      "date": "2018-10-11 10:05",
+      "observation": "LOINC/8327-9",
+      "value": "1.0"
+    },
+    {
+      "date": "2018-10-11 10:11",
+      "observation": "LOINC/8327-9",
+      "value": "1.0"
+    },
+    {
+      "date": "2018-10-11 10:11",
+      "observation": "LOINC/LP21258-6",
+      "value": "98.0"
+    },
+    {
+      "date": "2018-10-12 10:06",
+      "observation": "LOINC/8327-9",
+      "value": "1.0"
+    },
+    {
+      "date": "2018-10-12 10:06",
+      "observation": "LOINC/LP21258-6",
+      "value": "93.0"
+    },
+    {
+      "date": "2018-10-13 10:07",
+      "observation": "LOINC/8327-9",
+      "value": "1.0"
+    },
+    {
+      "date": "2018-10-13 10:07",
+      "observation": "LOINC/LP21258-6",
+      "value": "100.0"
+    },
+    {
+      "date": "2018-10-14 10:02",
+      "observation": "LOINC/8327-9",
+      "value": "1.0"
+    },
+    {
+      "date": "2018-10-14 10:04",
+      "observation": "LOINC/8327-9",
+      "value": "1.0"
+    },
+    {
+      "date": "2018-10-14 10:04",
+      "observation": "LOINC/LP21258-6",
+      "value": "99.0"
+    },
+    {
+      "date": "2018-10-15 10:20",
+      "observation": "LOINC/8327-9",
+      "value": "1.0"
+    },
+    {
+      "date": "2018-10-15 10:20",
+      "observation": "LOINC/LP21258-6",
+      "value": "100.0"
+    },
+    {
+      "date": "2018-10-16 10:00",
+      "observation": "LOINC/8327-9",
+      "value": "1.0"
+    },
+    {
+      "date": "2018-10-16 10:00",
+      "observation": "LOINC/LP21258-6",
+      "value": "100.0"
+    },
+    {
+      "date": "2018-10-17 10:03",
+      "observation": "LOINC/8327-9",
+      "value": "1.0"
+    },
+    {
+      "date": "2018-10-17 10:03",
+      "observation": "LOINC/LP21258-6",
+      "value": "96.0"
+    },
+    {
+      "date": "2018-10-18 07:23",
+      "observation": "LOINC/8327-9",
+      "value": "1.0"
+    },
+    {
+      "date": "2018-10-18 07:23",
+      "observation": "LOINC/LP21258-6",
+      "value": "99.0"
+    },
+    {
+      "date": "2018-10-18 09:57",
+      "observation": "LOINC/8327-9",
+      "value": "1.0"
+    },
+    {
+      "date": "2018-10-18 09:57",
+      "observation": "LOINC/LP21258-6",
+      "value": "99.0"
+    },
+    {
+      "date": "2018-10-18 14:51",
+      "observation": "LOINC/8327-9",
+      "value": "1.0"
+    },
+    {
+      "date": "2018-10-18 14:51",
+      "observation": "LOINC/LP21258-6",
+      "value": "99.0"
+    },
+    {
+      "date": "2018-10-19 07:19",
+      "observation": "LOINC/8327-9",
+      "value": "1.0"
+    },
+    {
+      "date": "2018-10-19 07:19",
+      "observation": "LOINC/LP21258-6",
+      "value": "97.0"
+    },
+    {
+      "date": "2018-10-19 12:50",
+      "observation": "LOINC/8327-9",
+      "value": "1.0"
+    },
+    {
+      "date": "2018-10-19 12:50",
+      "observation": "LOINC/LP21258-6",
+      "value": "97.0"
+    },
+    {
+      "date": "2018-10-31 00:00",
+      "observation": "OMOP_CONCEPT_ID/4188539",
+      "value": null
+    },
+    {
+      "date": "2018-10-31 00:00",
+      "observation": "OMOP_CONCEPT_ID/45876662",
+      "value": null
+    },
+    {
+      "date": "2018-10-31 00:00",
+      "observation": "OMOP_CONCEPT_ID/45876662",
+      "value": null
+    },
+    {
+      "date": "2018-10-31 00:00",
+      "observation": "OMOP_CONCEPT_ID/45878245",
+      "value": null
+    },
+    {
+      "date": "2018-10-31 00:00",
+      "observation": "OMOP_CONCEPT_ID/45878245",
+      "value": null
+    },
+    {
+      "date": "2018-10-31 00:00",
+      "observation": "OMOP_CONCEPT_ID/45878245",
+      "value": null
+    },
+    {
+      "date": "2018-10-31 00:00",
+      "observation": "OMOP_CONCEPT_ID/45878245",
+      "value": null
+    },
+    {
+      "date": "2018-10-31 00:00",
+      "observation": "OMOP_CONCEPT_ID/45878245",
+      "value": null
+    },
+    {
+      "date": "2018-10-31 00:00",
+      "observation": "OMOP_CONCEPT_ID/135204",
+      "value": null
+    },
+    {
+      "date": "2018-10-31 00:00",
+      "observation": "OMOP_CONCEPT_ID/138384",
+      "value": null
+    },
+    {
+      "date": "2018-10-31 00:00",
+      "observation": "OMOP_CONCEPT_ID/439777",
+      "value": null
+    },
+    {
+      "date": "2018-10-31 00:00",
+      "observation": "OMOP_CONCEPT_ID/45876662",
+      "value": null
+    },
+    {
+      "date": "2018-10-31 14:34",
+      "observation": "LOINC/8327-9",
+      "value": "1.0"
+    },
+    {
+      "date": "2018-10-31 14:34",
+      "observation": "LOINC/LP21258-6",
+      "value": "99.0"
+    },
+    {
+      "date": "2018-11-03 00:00",
+      "observation": "OMOP_CONCEPT_ID/4188539",
+      "value": null
+    },
+    {
+      "date": "2018-11-03 00:00",
+      "observation": "OMOP_CONCEPT_ID/4188539",
+      "value": null
+    },
+    {
+      "date": "2018-11-04 00:00",
+      "observation": "OMOP_CONCEPT_ID/45876662",
+      "value": null
+    },
+    {
+      "date": "2018-11-04 00:00",
+      "observation": "OMOP_CONCEPT_ID/45876662",
+      "value": null
+    },
+    {
+      "date": "2018-11-04 00:00",
+      "observation": "OMOP_CONCEPT_ID/45878245",
+      "value": null
+    },
+    {
+      "date": "2018-11-04 00:00",
+      "observation": "OMOP_CONCEPT_ID/45878245",
+      "value": null
+    },
+    {
+      "date": "2018-11-04 00:00",
+      "observation": "OMOP_CONCEPT_ID/45878245",
+      "value": null
+    },
+    {
+      "date": "2018-11-04 00:00",
+      "observation": "OMOP_CONCEPT_ID/45878245",
+      "value": null
+    },
+    {
+      "date": "2018-11-04 00:00",
+      "observation": "OMOP_CONCEPT_ID/45878245",
+      "value": null
+    },
+    {
+      "date": "2018-11-04 00:00",
+      "observation": "OMOP_CONCEPT_ID/439777",
+      "value": null
+    },
+    {
+      "date": "2018-11-04 00:00",
+      "observation": "OMOP_CONCEPT_ID/135204",
+      "value": null
+    },
+    {
+      "date": "2018-11-04 00:00",
+      "observation": "OMOP_CONCEPT_ID/138384",
+      "value": null
+    },
+    {
+      "date": "2018-11-04 00:00",
+      "observation": "OMOP_CONCEPT_ID/45876662",
+      "value": null
+    },
+    {
+      "date": "2018-11-04 10:37",
+      "observation": "LOINC/8327-9",
+      "value": "1.0"
+    },
+    {
+      "date": "2018-11-04 10:37",
+      "observation": "LOINC/LP21258-6",
+      "value": "98.0"
+    },
+    {
+      "date": "2018-11-04 15:30",
+      "observation": "LOINC/8327-9",
+      "value": "1.0"
+    },
+    {
+      "date": "2018-11-04 15:30",
+      "observation": "LOINC/LP21258-6",
+      "value": "96.0"
+    },
+    {
+      "date": "2018-11-04 20:35",
+      "observation": "LOINC/8327-9",
+      "value": "1.0"
+    },
+    {
+      "date": "2018-11-04 20:35",
+      "observation": "LOINC/LP21258-6",
+      "value": "96.0"
+    },
+    {
+      "date": "2018-11-05 00:10",
+      "observation": "LOINC/8327-9",
+      "value": "1.0"
+    },
+    {
+      "date": "2018-11-05 00:10",
+      "observation": "LOINC/LP21258-6",
+      "value": "97.0"
+    },
+    {
+      "date": "2018-11-05 04:36",
+      "observation": "LOINC/8327-9",
+      "value": "1.0"
+    },
+    {
+      "date": "2018-11-05 04:36",
+      "observation": "LOINC/LP21258-6",
+      "value": "96.0"
+    },
+    {
+      "date": "2018-11-05 07:59",
+      "observation": "LOINC/8327-9",
+      "value": "1.0"
+    },
+    {
+      "date": "2018-11-05 07:59",
+      "observation": "LOINC/LP21258-6",
+      "value": "95.0"
+    },
+    {
+      "date": "2018-11-05 12:15",
+      "observation": "LOINC/8327-9",
+      "value": "1.0"
+    },
+    {
+      "date": "2018-11-05 12:15",
+      "observation": "LOINC/LP21258-6",
+      "value": "96.0"
+    },
+    {
+      "date": "2018-11-05 15:52",
+      "observation": "LOINC/8327-9",
+      "value": "1.0"
+    },
+    {
+      "date": "2018-11-05 15:52",
+      "observation": "LOINC/LP21258-6",
+      "value": "98.0"
+    },
+    {
+      "date": "2018-11-05 19:28",
+      "observation": "LOINC/8327-9",
+      "value": "1.0"
+    },
+    {
+      "date": "2018-11-05 19:28",
+      "observation": "LOINC/LP21258-6",
+      "value": "95.0"
+    },
+    {
+      "date": "2018-11-06 00:40",
+      "observation": "LOINC/8327-9",
+      "value": "1.0"
+    },
+    {
+      "date": "2018-11-06 00:40",
+      "observation": "LOINC/LP21258-6",
+      "value": "94.0"
+    },
+    {
+      "date": "2018-11-06 05:42",
+      "observation": "LOINC/8327-9",
+      "value": "1.0"
+    },
+    {
+      "date": "2018-11-06 05:42",
+      "observation": "LOINC/LP21258-6",
+      "value": "97.0"
+    },
+    {
+      "date": "2018-11-06 08:17",
+      "observation": "LOINC/8327-9",
+      "value": "1.0"
+    },
+    {
+      "date": "2018-11-06 08:17",
+      "observation": "LOINC/LP21258-6",
+      "value": "95.0"
+    },
+    {
+      "date": "2018-11-06 12:16",
+      "observation": "LOINC/8327-9",
+      "value": "1.0"
+    },
+    {
+      "date": "2018-11-06 12:16",
+      "observation": "LOINC/LP21258-6",
+      "value": "96.0"
+    },
+    {
+      "date": "2018-11-06 12:29",
+      "observation": "LOINC/8327-9",
+      "value": "1.0"
+    },
+    {
+      "date": "2018-11-06 12:29",
+      "observation": "LOINC/LP21258-6",
+      "value": "94.0"
+    },
+    {
+      "date": "2018-11-06 13:02",
+      "observation": "LOINC/8327-9",
+      "value": "1.0"
+    },
+    {
+      "date": "2018-11-06 13:02",
+      "observation": "LOINC/LP21258-6",
+      "value": "94.0"
+    },
+    {
+      "date": "2018-11-06 13:25",
+      "observation": "LOINC/8327-9",
+      "value": "1.0"
+    },
+    {
+      "date": "2018-11-06 13:25",
+      "observation": "LOINC/LP21258-6",
+      "value": "97.0"
+    },
+    {
+      "date": "2018-11-06 14:00",
+      "observation": "LOINC/8327-9",
+      "value": "1.0"
+    },
+    {
+      "date": "2018-11-06 14:00",
+      "observation": "LOINC/LP21258-6",
+      "value": "97.0"
+    },
+    {
+      "date": "2018-11-06 14:08",
+      "observation": "LOINC/8327-9",
+      "value": "4.0"
+    },
+    {
+      "date": "2018-11-06 14:08",
+      "observation": "LOINC/LP21258-6",
+      "value": "96.0"
+    },
+    {
+      "date": "2018-11-06 14:22",
+      "observation": "LOINC/8327-9",
+      "value": "4.0"
+    },
+    {
+      "date": "2018-11-06 14:22",
+      "observation": "LOINC/LP21258-6",
+      "value": "100.0"
+    },
+    {
+      "date": "2018-11-06 14:36",
+      "observation": "LOINC/8327-9",
+      "value": "1.0"
+    },
+    {
+      "date": "2018-11-06 14:36",
+      "observation": "LOINC/LP21258-6",
+      "value": "94.0"
+    },
+    {
+      "date": "2018-11-06 15:09",
+      "observation": "LOINC/8327-9",
+      "value": "1.0"
+    },
+    {
+      "date": "2018-11-06 15:09",
+      "observation": "LOINC/LP21258-6",
+      "value": "90.0"
+    },
+    {
+      "date": "2018-11-06 15:38",
+      "observation": "LOINC/8327-9",
+      "value": "1.0"
+    },
+    {
+      "date": "2018-11-06 15:38",
+      "observation": "LOINC/LP21258-6",
+      "value": "91.0"
+    },
+    {
+      "date": "2018-11-06 16:03",
+      "observation": "LOINC/8327-9",
+      "value": "1.0"
+    },
+    {
+      "date": "2018-11-06 16:03",
+      "observation": "LOINC/LP21258-6",
+      "value": "94.0"
+    },
+    {
+      "date": "2018-11-06 19:00",
+      "observation": "LOINC/LP21258-6",
+      "value": "88.0"
+    },
+    {
+      "date": "2018-11-06 19:05",
+      "observation": "LOINC/LP21258-6",
+      "value": "92.0"
+    },
+    {
+      "date": "2018-11-06 19:06",
+      "observation": "LOINC/LP21258-6",
+      "value": "88.0"
+    },
+    {
+      "date": "2018-11-06 19:09",
+      "observation": "LOINC/8327-9",
+      "value": "4.0"
+    },
+    {
+      "date": "2018-11-06 19:09",
+      "observation": "LOINC/LP21258-6",
+      "value": "88.0"
+    },
+    {
+      "date": "2018-11-06 19:15",
+      "observation": "LOINC/LP21258-6",
+      "value": "93.0"
+    },
+    {
+      "date": "2018-11-06 19:20",
+      "observation": "LOINC/LP21258-6",
+      "value": "94.0"
+    },
+    {
+      "date": "2018-11-06 19:25",
+      "observation": "LOINC/LP21258-6",
+      "value": "92.0"
+    },
+    {
+      "date": "2018-11-06 19:30",
+      "observation": "LOINC/LP21258-6",
+      "value": "99.0"
+    },
+    {
+      "date": "2018-11-06 19:35",
+      "observation": "LOINC/LP21258-6",
+      "value": "95.0"
+    },
+    {
+      "date": "2018-11-06 19:40",
+      "observation": "LOINC/8327-9",
+      "value": "4.0"
+    },
+    {
+      "date": "2018-11-06 19:40",
+      "observation": "LOINC/LP21258-6",
+      "value": "99.0"
+    },
+    {
+      "date": "2018-11-06 19:42",
+      "observation": "LOINC/LP21258-6",
+      "value": "97.0"
+    },
+    {
+      "date": "2018-11-06 19:49",
+      "observation": "LOINC/LP21258-6",
+      "value": "95.0"
+    },
+    {
+      "date": "2018-11-06 19:50",
+      "observation": "LOINC/LP21258-6",
+      "value": "95.0"
+    },
+    {
+      "date": "2018-11-06 19:53",
+      "observation": "LOINC/LP21258-6",
+      "value": "96.0"
+    },
+    {
+      "date": "2018-11-06 19:55",
+      "observation": "LOINC/LP21258-6",
+      "value": "92.0"
+    },
+    {
+      "date": "2018-11-06 20:00",
+      "observation": "LOINC/LP21258-6",
+      "value": "91.0"
+    },
+    {
+      "date": "2018-11-06 20:05",
+      "observation": "LOINC/LP21258-6",
+      "value": "95.0"
+    },
+    {
+      "date": "2018-11-06 20:10",
+      "observation": "LOINC/LP21258-6",
+      "value": "89.0"
+    },
+    {
+      "date": "2018-11-06 20:20",
+      "observation": "LOINC/LP21258-6",
+      "value": "91.0"
+    },
+    {
+      "date": "2018-11-06 20:23",
+      "observation": "LOINC/8327-9",
+      "value": "4.0"
+    },
+    {
+      "date": "2018-11-06 20:23",
+      "observation": "LOINC/LP21258-6",
+      "value": "89.0"
+    },
+    {
+      "date": "2018-11-06 20:25",
+      "observation": "LOINC/LP21258-6",
+      "value": "92.0"
+    },
+    {
+      "date": "2018-11-06 20:30",
+      "observation": "LOINC/LP21258-6",
+      "value": "91.0"
+    },
+    {
+      "date": "2018-11-06 20:35",
+      "observation": "LOINC/LP21258-6",
+      "value": "93.0"
+    },
+    {
+      "date": "2018-11-06 20:40",
+      "observation": "LOINC/LP21258-6",
+      "value": "92.0"
+    },
+    {
+      "date": "2018-11-06 20:45",
+      "observation": "LOINC/LP21258-6",
+      "value": "93.0"
+    },
+    {
+      "date": "2018-11-06 20:54",
+      "observation": "LOINC/LP21258-6",
+      "value": "92.0"
+    },
+    {
+      "date": "2018-11-06 20:57",
+      "observation": "LOINC/LP21258-6",
+      "value": "92.0"
+    },
+    {
+      "date": "2018-11-06 21:00",
+      "observation": "LOINC/LP21258-6",
+      "value": "91.0"
+    },
+    {
+      "date": "2018-11-06 21:13",
+      "observation": "LOINC/8327-9",
+      "value": "4.0"
+    },
+    {
+      "date": "2018-11-06 21:13",
+      "observation": "LOINC/LP21258-6",
+      "value": "92.0"
+    },
+    {
+      "date": "2018-11-06 21:18",
+      "observation": "LOINC/LP21258-6",
+      "value": "95.0"
+    },
+    {
+      "date": "2018-11-06 21:19",
+      "observation": "LOINC/LP21258-6",
+      "value": "95.0"
+    },
+    {
+      "date": "2018-11-06 21:38",
+      "observation": "LOINC/8327-9",
+      "value": "4.0"
+    },
+    {
+      "date": "2018-11-06 21:38",
+      "observation": "LOINC/LP21258-6",
+      "value": "92.0"
+    },
+    {
+      "date": "2018-11-06 21:43",
+      "observation": "LOINC/LP21258-6",
+      "value": "90.0"
+    },
+    {
+      "date": "2018-11-06 21:46",
+      "observation": "LOINC/LP21258-6",
+      "value": "94.0"
+    },
+    {
+      "date": "2018-11-06 21:50",
+      "observation": "LOINC/LP21258-6",
+      "value": "93.0"
+    },
+    {
+      "date": "2018-11-06 21:59",
+      "observation": "LOINC/LP21258-6",
+      "value": "95.0"
+    },
+    {
+      "date": "2018-11-06 22:04",
+      "observation": "LOINC/8327-9",
+      "value": "1.0"
+    },
+    {
+      "date": "2018-11-06 22:09",
+      "observation": "LOINC/LP21258-6",
+      "value": "92.0"
+    },
+    {
+      "date": "2018-11-06 22:30",
+      "observation": "LOINC/LP21258-6",
+      "value": "93.0"
+    },
+    {
+      "date": "2018-11-06 23:00",
+      "observation": "LOINC/LP21258-6",
+      "value": "93.0"
+    },
+    {
+      "date": "2018-11-06 23:23",
+      "observation": "LOINC/LP21258-6",
+      "value": "92.0"
+    },
+    {
+      "date": "2018-11-06 23:30",
+      "observation": "LOINC/LP21258-6",
+      "value": "94.0"
+    },
+    {
+      "date": "2018-11-06 23:35",
+      "observation": "LOINC/8327-9",
+      "value": "4.0"
+    },
+    {
+      "date": "2018-11-06 23:35",
+      "observation": "LOINC/LP21258-6",
+      "value": "94.0"
+    },
+    {
+      "date": "2018-11-06 23:45",
+      "observation": "LOINC/LP21258-6",
+      "value": "95.0"
+    },
+    {
+      "date": "2018-11-07 00:00",
+      "observation": "LOINC/LP21258-6",
+      "value": "93.0"
+    },
+    {
+      "date": "2018-11-07 00:15",
+      "observation": "LOINC/LP21258-6",
+      "value": "94.0"
+    },
+    {
+      "date": "2018-11-07 00:20",
+      "observation": "LOINC/LP21258-6",
+      "value": "94.0"
+    },
+    {
+      "date": "2018-11-07 00:35",
+      "observation": "LOINC/LP21258-6",
+      "value": "95.0"
+    },
+    {
+      "date": "2018-11-07 00:45",
+      "observation": "LOINC/LP21258-6",
+      "value": "95.0"
+    },
+    {
+      "date": "2018-11-07 01:00",
+      "observation": "LOINC/LP21258-6",
+      "value": "96.0"
+    },
+    {
+      "date": "2018-11-07 01:30",
+      "observation": "LOINC/LP21258-6",
+      "value": "96.0"
+    },
+    {
+      "date": "2018-11-07 02:00",
+      "observation": "LOINC/LP21258-6",
+      "value": "96.0"
+    },
+    {
+      "date": "2018-11-07 02:05",
+      "observation": "LOINC/LP21258-6",
+      "value": "96.0"
+    },
+    {
+      "date": "2018-11-07 02:30",
+      "observation": "LOINC/LP21258-6",
+      "value": "95.0"
+    },
+    {
+      "date": "2018-11-07 03:00",
+      "observation": "LOINC/LP21258-6",
+      "value": "95.0"
+    },
+    {
+      "date": "2018-11-07 03:13",
+      "observation": "LOINC/LP21258-6",
+      "value": "94.0"
+    },
+    {
+      "date": "2018-11-07 03:49",
+      "observation": "LOINC/LP21258-6",
+      "value": "93.0"
+    },
+    {
+      "date": "2018-11-07 04:11",
+      "observation": "LOINC/LP21258-6",
+      "value": "94.0"
+    },
+    {
+      "date": "2018-11-07 04:23",
+      "observation": "LOINC/8327-9",
+      "value": "1.0"
+    },
+    {
+      "date": "2018-11-07 04:23",
+      "observation": "LOINC/LP21258-6",
+      "value": "93.0"
+    },
+    {
+      "date": "2018-11-07 04:35",
+      "observation": "LOINC/LP21258-6",
+      "value": "94.0"
+    },
+    {
+      "date": "2018-11-07 04:38",
+      "observation": "LOINC/LP21258-6",
+      "value": "94.0"
+    },
+    {
+      "date": "2018-11-07 05:47",
+      "observation": "LOINC/LP21258-6",
+      "value": "95.0"
+    },
+    {
+      "date": "2018-11-07 05:57",
+      "observation": "LOINC/LP21258-6",
+      "value": "96.0"
+    },
+    {
+      "date": "2018-11-07 07:00",
+      "observation": "LOINC/8327-9",
+      "value": "1.0"
+    },
+    {
+      "date": "2018-11-07 07:00",
+      "observation": "LOINC/LP21258-6",
+      "value": "96.0"
+    },
+    {
+      "date": "2018-11-07 08:22",
+      "observation": "LOINC/LP21258-6",
+      "value": "96.0"
+    },
+    {
+      "date": "2018-11-07 11:49",
+      "observation": "LOINC/8327-9",
+      "value": "1.0"
+    },
+    {
+      "date": "2018-11-07 11:49",
+      "observation": "LOINC/LP21258-6",
+      "value": "95.0"
+    },
+    {
+      "date": "2018-11-07 12:31",
+      "observation": "LOINC/LP21258-6",
+      "value": "96.0"
+    },
+    {
+      "date": "2018-11-07 16:01",
+      "observation": "LOINC/8327-9",
+      "value": "1.0"
+    },
+    {
+      "date": "2018-11-07 16:01",
+      "observation": "LOINC/LP21258-6",
+      "value": "100.0"
+    },
+    {
+      "date": "2018-11-07 20:14",
+      "observation": "LOINC/8327-9",
+      "value": "1.0"
+    },
+    {
+      "date": "2018-11-07 20:14",
+      "observation": "LOINC/LP21258-6",
+      "value": "98.0"
+    },
+    {
+      "date": "2018-11-08 00:38",
+      "observation": "LOINC/8327-9",
+      "value": "1.0"
+    },
+    {
+      "date": "2018-11-08 00:38",
+      "observation": "LOINC/LP21258-6",
+      "value": "98.0"
+    },
+    {
+      "date": "2018-11-08 01:05",
+      "observation": "LOINC/8327-9",
+      "value": "1.0"
+    }
+  ],
+  "visit_history": [
+    {
+      "date": "2013-04-24 10:55",
+      "type": "STANFORD_VISIT/Outpatient|Elective|Hospital Encounter"
+    },
+    {
+      "date": "2013-04-24 23:59",
+      "type": "NUCC/261QR0200X"
+    },
+    {
+      "date": "2016-02-17 14:05",
+      "type": "STANFORD_VISIT/Outpatient|Elective|Hospital Encounter"
+    },
+    {
+      "date": "2016-02-17 23:59",
+      "type": "NUCC/261QR0200X"
+    },
+    {
+      "date": "2016-03-02 11:35",
+      "type": "STANFORD_VISIT/Outpatient|Elective|Hospital Encounter"
+    },
+    {
+      "date": "2016-03-02 23:59",
+      "type": "NUCC/261QR0200X"
+    },
+    {
+      "date": "2016-09-23 15:10",
+      "type": "STANFORD_VISIT/Outpatient|Elective|Hospital Encounter"
+    },
+    {
+      "date": "2016-09-23 23:59",
+      "type": "Visit/OMOP4822461"
+    },
+    {
+      "date": "2016-12-27 00:00",
+      "type": "STANFORD_VISIT/Inpatient|Urgent|Hospital Encounter"
+    },
+    {
+      "date": "2017-04-23 14:10",
+      "type": "STANFORD_VISIT/Outpatient|Elective|Hospital Encounter"
+    },
+    {
+      "date": "2017-04-23 23:59",
+      "type": "NUCC/261QR0200X"
+    },
+    {
+      "date": "2018-02-01 09:10",
+      "type": "STANFORD_VISIT/Outpatient|Elective|Hospital Encounter"
+    },
+    {
+      "date": "2018-02-01 23:59",
+      "type": "NUCC/261QR0200X"
+    },
+    {
+      "date": "2018-03-25 15:10",
+      "type": "STANFORD_VISIT/Outpatient|Elective|Hospital Encounter"
+    },
+    {
+      "date": "2018-03-25 23:59",
+      "type": "NUCC/261QR0200X"
+    },
+    {
+      "date": "2018-04-12 00:00",
+      "type": "STANFORD_VISIT/||Orders Only"
+    },
+    {
+      "date": "2018-04-12 00:00",
+      "type": "STANFORD_VISIT/||Orders Only"
+    },
+    {
+      "date": "2018-04-12 12:30",
+      "type": "STANFORD_VISIT/Outpatient|Elective|Hospital Encounter"
+    },
+    {
+      "date": "2018-04-12 23:59",
+      "type": "Visit/OMOP4822461"
+    },
+    {
+      "date": "2018-04-21 08:55",
+      "type": "NUCC/261QR0200X"
+    },
+    {
+      "date": "2018-04-21 08:55",
+      "type": "STANFORD_VISIT/Outpatient|Elective|Hospital Encounter"
+    },
+    {
+      "date": "2018-04-21 08:55",
+      "type": "STANFORD_VISIT/Outpatient|Elective|Hospital Encounter"
+    },
+    {
+      "date": "2018-04-21 23:59",
+      "type": "NUCC/261QR0200X"
+    },
+    {
+      "date": "2018-05-03 09:10",
+      "type": "STANFORD_VISIT/Outpatient|Elective|Hospital Encounter"
+    },
+    {
+      "date": "2018-05-03 23:59",
+      "type": "NUCC/261QR0200X"
+    },
+    {
+      "date": "2018-06-20 00:00",
+      "type": "Domain/OMOP generated"
+    },
+    {
+      "date": "2018-06-20 00:00",
+      "type": "STANFORD_VISIT/||History"
+    },
+    {
+      "date": "2018-06-20 12:51",
+      "type": "STANFORD_VISIT/Oncology Series|Elective|Office Visit"
+    },
+    {
+      "date": "2018-07-21 09:55",
+      "type": "NUCC/261QR0200X"
+    },
+    {
+      "date": "2018-07-21 09:55",
+      "type": "STANFORD_VISIT/Outpatient|Elective|Hospital Encounter"
+    },
+    {
+      "date": "2018-07-21 09:55",
+      "type": "STANFORD_VISIT/Outpatient|Elective|Hospital Encounter"
+    },
+    {
+      "date": "2018-07-21 23:59",
+      "type": "NUCC/261QR0200X"
+    },
+    {
+      "date": "2018-07-22 00:00",
+      "type": "Domain/OMOP generated"
+    },
+    {
+      "date": "2018-09-12 11:30",
+      "type": "STANFORD_VISIT/Outpatient|Elective|Hospital Encounter"
+    },
+    {
+      "date": "2018-09-12 23:59",
+      "type": "NUCC/261QR0200X"
+    },
+    {
+      "date": "2018-09-14 11:03",
+      "type": "STANFORD_VISIT/Oncology Series|Elective|Office Visit"
+    },
+    {
+      "date": "2018-09-15 00:00",
+      "type": "STANFORD_VISIT/||Orders Only"
+    },
+    {
+      "date": "2018-09-18 00:00",
+      "type": "Domain/OMOP generated"
+    },
+    {
+      "date": "2018-09-19 00:00",
+      "type": "STANFORD_VISIT/||History"
+    },
+    {
+      "date": "2018-09-19 00:00",
+      "type": "STANFORD_VISIT/||Orders Only"
+    },
+    {
+      "date": "2018-09-19 08:47",
+      "type": "STANFORD_VISIT/BMT Series|Elective|Office Visit"
+    },
+    {
+      "date": "2018-09-19 08:47",
+      "type": "STANFORD_VISIT/Outpatient|Elective|Office Visit"
+    },
+    {
+      "date": "2018-09-20 00:00",
+      "type": "STANFORD_VISIT/||Orders Only"
+    },
+    {
+      "date": "2018-09-21 12:19",
+      "type": "STANFORD_VISIT/BMT Series|Elective|Hospital Encounter"
+    },
+    {
+      "date": "2018-09-21 23:59",
+      "type": "SNOMED/308335008"
+    },
+    {
+      "date": "2018-09-23 08:41",
+      "type": "STANFORD_VISIT/Outpatient|Elective|Hospital Encounter"
+    },
+    {
+      "date": "2018-09-23 09:59",
+      "type": "CMS Place of Service/OMOP4822038"
+    },
+    {
+      "date": "2018-09-23 10:00",
+      "type": "STANFORD_VISIT/Outpatient|Elective|Hospital Encounter"
+    },
+    {
+      "date": "2018-09-23 23:59",
+      "type": "SNOMED/308335008"
+    },
+    {
+      "date": "2018-09-27 00:00",
+      "type": "STANFORD_VISIT/||Orders Only"
+    },
+    {
+      "date": "2018-09-27 13:55",
+      "type": "STANFORD_VISIT/BMT Series|Elective|Hospital Encounter"
+    },
+    {
+      "date": "2018-09-27 23:59",
+      "type": "SNOMED/308335008"
+    },
+    {
+      "date": "2018-10-03 00:00",
+      "type": "STANFORD_VISIT/||History"
+    },
+    {
+      "date": "2018-10-03 00:00",
+      "type": "STANFORD_VISIT/||Orders Only"
+    },
+    {
+      "date": "2018-10-03 00:00",
+      "type": "STANFORD_VISIT/||Orders Only"
+    },
+    {
+      "date": "2018-10-03 13:17",
+      "type": "STANFORD_VISIT/Outpatient|Elective|Hospital Encounter"
+    },
+    {
+      "date": "2018-10-03 13:18",
+      "type": "Visit/OMOP4822461"
+    },
+    {
+      "date": "2018-10-03 14:05",
+      "type": "STANFORD_VISIT/Outpatient|Elective|Hospital Encounter"
+    },
+    {
+      "date": "2018-10-03 14:41",
+      "type": "STANFORD_VISIT/BMT Series|Elective|Office Visit"
+    },
+    {
+      "date": "2018-10-03 16:29",
+      "type": "NUCC/261QR0200X"
+    },
+    {
+      "date": "2018-10-03 16:30",
+      "type": "STANFORD_VISIT/Outpatient|Elective|Hospital Encounter"
+    },
+    {
+      "date": "2018-10-03 23:59",
+      "type": "Visit/OMOP4822461"
+    },
+    {
+      "date": "2018-10-05 00:00",
+      "type": "STANFORD_VISIT/||History"
+    },
+    {
+      "date": "2018-10-05 00:00",
+      "type": "STANFORD_VISIT/||Surgery"
+    },
+    {
+      "date": "2018-10-05 07:35",
+      "type": "NUCC/261QR0200X"
+    },
+    {
+      "date": "2018-10-05 07:35",
+      "type": "STANFORD_VISIT/OP Surgery/Procedure|Elective|Hospital Encounter"
+    },
+    {
+      "date": "2018-10-05 08:29",
+      "type": "CMS Place of Service/24"
+    },
+    {
+      "date": "2018-10-05 09:35",
+      "type": "CMS Place of Service/24"
+    },
+    {
+      "date": "2018-10-05 13:47",
+      "type": "STANFORD_VISIT/BMT Series|Elective|Hospital Encounter"
+    },
+    {
+      "date": "2018-10-05 23:59",
+      "type": "SNOMED/308335008"
+    },
+    {
+      "date": "2018-10-06 00:00",
+      "type": "STANFORD_VISIT/||History"
+    },
+    {
+      "date": "2018-10-06 10:43",
+      "type": "STANFORD_VISIT/BMT Series|Elective|Hospital Encounter"
+    },
+    {
+      "date": "2018-10-06 23:59",
+      "type": "SNOMED/308335008"
+    },
+    {
+      "date": "2018-10-07 14:59",
+      "type": "STANFORD_VISIT/BMT Series|Elective|Hospital Encounter"
+    },
+    {
+      "date": "2018-10-07 23:59",
+      "type": "SNOMED/308335008"
+    },
+    {
+      "date": "2018-10-08 09:30",
+      "type": "STANFORD_VISIT/Apheresis Series|Elective|Hospital Encounter"
+    },
+    {
+      "date": "2018-10-08 23:59",
+      "type": "NUCC/261QX0200X"
+    },
+    {
+      "date": "2018-10-09 09:18",
+      "type": "STANFORD_VISIT/Apheresis Series|Elective|Hospital Encounter"
+    },
+    {
+      "date": "2018-10-09 23:59",
+      "type": "NUCC/261QX0200X"
+    },
+    {
+      "date": "2018-10-10 10:00",
+      "type": "STANFORD_VISIT/Apheresis Series|Elective|Hospital Encounter"
+    },
+    {
+      "date": "2018-10-10 23:59",
+      "type": "NUCC/261QX0200X"
+    },
+    {
+      "date": "2018-10-11 10:00",
+      "type": "STANFORD_VISIT/Apheresis Series|Elective|Hospital Encounter"
+    },
+    {
+      "date": "2018-10-11 23:59",
+      "type": "NUCC/261QX0200X"
+    },
+    {
+      "date": "2018-10-12 09:58",
+      "type": "STANFORD_VISIT/Apheresis Series|Elective|Hospital Encounter"
+    },
+    {
+      "date": "2018-10-12 23:59",
+      "type": "NUCC/261QX0200X"
+    },
+    {
+      "date": "2018-10-13 10:00",
+      "type": "STANFORD_VISIT/Apheresis Series|Elective|Hospital Encounter"
+    },
+    {
+      "date": "2018-10-13 23:59",
+      "type": "NUCC/261QX0200X"
+    },
+    {
+      "date": "2018-10-14 10:00",
+      "type": "STANFORD_VISIT/Apheresis Series|Elective|Hospital Encounter"
+    },
+    {
+      "date": "2018-10-14 23:59",
+      "type": "NUCC/261QX0200X"
+    },
+    {
+      "date": "2018-10-15 10:00",
+      "type": "STANFORD_VISIT/Apheresis Series|Elective|Hospital Encounter"
+    },
+    {
+      "date": "2018-10-15 23:59",
+      "type": "NUCC/261QX0200X"
+    },
+    {
+      "date": "2018-10-16 09:52",
+      "type": "STANFORD_VISIT/Apheresis Series|Elective|Hospital Encounter"
+    },
+    {
+      "date": "2018-10-16 23:59",
+      "type": "NUCC/261QX0200X"
+    },
+    {
+      "date": "2018-10-17 10:00",
+      "type": "STANFORD_VISIT/Apheresis Series|Elective|Hospital Encounter"
+    },
+    {
+      "date": "2018-10-17 23:59",
+      "type": "NUCC/261QX0200X"
+    },
+    {
+      "date": "2018-10-18 07:10",
+      "type": "STANFORD_VISIT/Apheresis Series|Elective|Hospital Encounter"
+    },
+    {
+      "date": "2018-10-18 09:54",
+      "type": "NUCC/261QX0200X"
+    },
+    {
+      "date": "2018-10-18 09:55",
+      "type": "STANFORD_VISIT/Apheresis Series|Elective|Hospital Encounter"
+    },
+    {
+      "date": "2018-10-18 23:59",
+      "type": "NUCC/261QX0200X"
+    },
+    {
+      "date": "2018-10-19 07:23",
+      "type": "STANFORD_VISIT/Apheresis Series|Elective|Hospital Encounter"
+    },
+    {
+      "date": "2018-10-19 23:59",
+      "type": "NUCC/261QX0200X"
+    },
+    {
+      "date": "2018-10-26 10:00",
+      "type": "STANFORD_VISIT/BMT Series|Elective|Hospital Encounter"
+    },
+    {
+      "date": "2018-10-26 23:59",
+      "type": "SNOMED/308335008"
+    },
+    {
+      "date": "2018-10-31 00:00",
+      "type": "STANFORD_VISIT/||History"
+    },
+    {
+      "date": "2018-10-31 13:07",
+      "type": "STANFORD_VISIT/BMT Series|Elective|Hospital Encounter"
+    },
+    {
+      "date": "2018-10-31 13:54",
+      "type": "SNOMED/308335008"
+    },
+    {
+      "date": "2018-10-31 13:55",
+      "type": "STANFORD_VISIT/Outpatient|Elective|Hospital Encounter"
+    },
+    {
+      "date": "2018-10-31 14:22",
+      "type": "STANFORD_VISIT/BMT Series|Elective|Office Visit"
+    },
+    {
+      "date": "2018-10-31 23:59",
+      "type": "NUCC/261QR0200X"
+    },
+    {
+      "date": "2018-11-03 00:00",
+      "type": "STANFORD_VISIT/||Orders Only"
+    },
+    {
+      "date": "2018-11-04 00:00",
+      "type": "STANFORD_VISIT/||History"
+    },
+    {
+      "date": "2018-11-04 10:28",
+      "type": "NUCC/261QX0200X"
+    },
+    {
+      "date": "2018-11-04 10:28",
+      "type": "STANFORD_VISIT/Inpatient|Emergency|Hospital Encounter"
+    },
+    {
+      "date": "2018-11-06 19:16",
+      "type": "STANFORD_VISIT/Inpatient||Appointment"
+    }
+  ],
+  "data_summary": {
+    "n_lab_rows": 500,
+    "n_diagnoses": 108,
+    "n_medications": 118,
+    "n_procedures": 90,
+    "n_observations": 269,
+    "n_visits": 114,
+    "n_gap_labs": 59
+  }
+}

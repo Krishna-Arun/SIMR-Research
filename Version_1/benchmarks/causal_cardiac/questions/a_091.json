@@ -1,0 +1,27 @@
+{
+  "case_id": "a_091",
+  "benchmark": "intervention_physiological_effect",
+  "hadm_id": 25569856,
+  "procedure": {
+    "title": "Left heart cardiac catheterization",
+    "date": "2197-05-26 00:00"
+  },
+  "question": {
+    "stem": "Patient hadm_id: 25569856\n\nDemographics: None-year-old Unknown\nPrimary Diagnosis: Non-ST elevation (NSTEMI) myocardial infarction\n\nPre-Procedure Lab Timeline (all available labs before 2197-05-26 00:00):\n\n| Datetime | Lab | Value | Unit | Flag |\n|---|---|---|---|---|\n| 2197-05-24 21:30 | Creatine Kinase (CK) | 35.0 | IU/L | abnormal |\n| 2197-05-24 21:30 | Creatine Kinase, MB Isoenzyme | 5.0 | ng/mL | nan |\n| 2197-05-24 21:30 | Troponin T | 0.12 | ng/mL | abnormal |\n| 2197-05-25 03:15 | Calcium, Total | 8.3 | mg/dL | abnormal |\n| 2197-05-25 03:15 | Chloride | 110.0 | mEq/L | abnormal |\n| 2197-05-25 03:15 | Creatine Kinase (CK) | 31.0 | IU/L | abnormal |\n| 2197-05-25 03:15 | Creatine Kinase, MB Isoenzyme | 4.0 | ng/mL | nan |\n| 2197-05-25 03:15 | Creatinine | 2.0 | mg/dL | abnormal |\n| 2197-05-25 03:15 | Glucose | 125.0 | mg/dL | abnormal |\n| 2197-05-25 03:15 | Lactate Dehydrogenase (LD) | 188.0 | IU/L | nan |\n| 2197-05-25 03:15 | Bilirubin, Total | 1.1 | mg/dL | nan |\n| 2197-05-25 03:15 | Magnesium | 2.0 | mg/dL | nan |\n| 2197-05-25 03:15 | Phosphate | 3.5 | mg/dL | nan |\n| 2197-05-25 03:15 | Potassium | 4.6 | mEq/L | nan |\n| 2197-05-25 03:15 | Troponin T | 0.12 | ng/mL | abnormal |\n| 2197-05-25 03:15 | Urea Nitrogen | 63.0 | mg/dL | abnormal |\n| 2197-05-25 03:15 | Haptoglobin | 128.0 | mg/dL | nan |\n| 2197-05-25 03:15 | Bilirubin, Indirect | 0.7 | mg/dL | nan |\n| 2197-05-25 03:15 | Sodium | 146.0 | mEq/L | abnormal |\n| 2197-05-25 03:15 | Bicarbonate | 28.0 | mEq/L | nan |\n| 2197-05-25 03:15 | Bilirubin, Direct | 0.4 | mg/dL | abnormal |\n| 2197-05-25 03:15 | INR(PT) | 2.1 | nan | abnormal |\n| 2197-05-25 03:15 | PT | 23.0 | sec | abnormal |\n| 2197-05-25 03:15 | PTT | 37.3 | sec | abnormal |\n| 2197-05-25 03:15 | Hematocrit | 27.6 | % | abnormal |\n| 2197-05-25 03:15 | Hemoglobin | 8.9 | g/dL | abnormal |\n| 2197-05-25 03:15 | MCH | 33.6 | pg | abnormal |\n| 2197-05-25 03:15 | Inpatient Hematology/Oncology Smear | nan | nan | nan |\n| 2197-05-25 03:15 | MCV | 105.0 | fL | abnormal |\n| 2197-05-25 03:15 | Platelet Count | 85.0 | K/uL | abnormal |\n| 2197-05-25 03:15 | RDW | 17.6 | % | abnormal |\n| 2197-05-25 03:15 | Red Blood Cells | 2.63 | m/uL | abnormal |\n| 2197-05-25 03:15 | White Blood Cells | 4.9 | K/uL | nan |\n| 2197-05-25 03:15 | Anion Gap | 13.0 | mEq/L | nan |\n| 2197-05-25 03:15 | MCHC | 32.1 | % | nan |\n| 2197-05-25 12:35 | Phosphate | 3.3 | mg/dL | nan |\n| 2197-05-25 12:35 | Urea Nitrogen | 61.0 | mg/dL | abnormal |\n| 2197-05-25 12:35 | Sodium | 144.0 | mEq/L | nan |\n| 2197-05-25 12:35 | Magnesium | 1.9 | mg/dL | nan |\n| 2197-05-25 12:35 | Potassium | 4.3 | mEq/L | nan |\n| 2197-05-25 12:35 | Chloride | 110.0 | mEq/L | abnormal |\n| 2197-05-25 12:35 | Calcium, Total | 8.3 | mg/dL | abnormal |\n| 2197-05-25 12:35 | Bicarbonate | 29.0 | mEq/L | nan |\n| 2197-05-25 12:35 | Anion Gap | 9.0 | mEq/L | nan |\n| 2197-05-25 12:35 | Creatinine | 2.0 | mg/dL | abnormal |\n| 2197-05-25 15:15 | Fibrinogen, Functional | 279.0 | mg/dL | nan |\n\nProcedure Performed: Left heart cardiac catheterization on 2197-05-26 00:00\n\nAnalyze the pre-intervention lab trajectory and clinical context. Given the patient's state and the intervention performed, describe what physiological changes you would expect to see in the post-intervention period. Specifically discuss expected direction and magnitude of change for key cardiac biomarkers (Troponin, CK, CK-MB).",
+    "type": "intervention_forward_prediction"
+  },
+  "visible_context": {
+    "pre_intervention_labs": 46,
+    "demographics": {
+      "age": null,
+      "gender": "Unknown"
+    },
+    "primary_diagnosis": "Non-ST elevation (NSTEMI) myocardial infarction"
+  },
+  "ground_truth": {
+    "post_intervention_labs": "| Datetime | Lab | Value | Unit | Flag |\n|---|---|---|---|---|\n| 2197-05-26 21:25 | Troponin T | 0.13 | ng/mL | abnormal |\n| 2197-05-27 06:30 | Lactate Dehydrogenase (LD) | 209.0 | IU/L | nan |\n| 2197-06-01 06:55 | Creatine Kinase, MB Isoenzyme | 4.0 | ng/mL | nan |\n| 2197-06-01 06:55 | Troponin T | 0.15 | ng/mL | abnormal |\n| 2197-06-01 14:45 | Creatine Kinase, MB Isoenzyme | 3.0 | ng/mL | nan |\n| 2197-06-01 14:45 | Troponin T | 0.13 | ng/mL | abnormal |",
+    "n_post_labs": 6,
+    "expected_troponin_direction": "stable",
+    "expected_troponin_magnitude_pct": 8.333333333333341
+  }
+}

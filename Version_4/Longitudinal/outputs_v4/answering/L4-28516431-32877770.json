@@ -1,0 +1,201 @@
+{
+  "question_id": "L4-28516431-32877770",
+  "sequence": [
+    "a",
+    "b",
+    "c",
+    "d"
+  ],
+  "anchor_family_hidden": true,
+  "demographics": {
+    "gender": "F",
+    "anchor_age": 76,
+    "admission_type": "SURGICAL SAME DAY ADMISSION",
+    "race": "WHITE"
+  },
+  "steps": {
+    "a": {
+      "stem": "A 76-year-old F patient was admitted to the ICU. Using ONLY the supplemental data you can request (labs and microbiology are available by name/date first; you must justify and request the values you need), determine the SINGLE most likely next major intervention this patient requires, and justify it with a patient-specific causal chain that cites the specific lab values you retrieved.",
+      "question_type": "next_intervention_openended",
+      "tool_use": "Call Access_All_supplementals_no_values(question_id) first, then Request_a_supplemental / Request_values with justification.",
+      "question_id_for_tools": "L4-28516431-32877770"
+    },
+    "b": {
+      "stem": "Given that this patient underwent transfusion (Packed Red Blood Cells), select the core labs whose 72-hour trajectory is most informative and predict each one's direction (Rising / Falling / Stable) with a causal justification and a confidence.",
+      "candidate_labs": [
+        {
+          "lab": "MCH",
+          "ref_low": 27.0,
+          "ref_high": 32.0,
+          "pre_value": 30.8
+        },
+        {
+          "lab": "pCO2",
+          "ref_low": 35.0,
+          "ref_high": 45.0,
+          "pre_value": 37.0
+        },
+        {
+          "lab": "MCV",
+          "ref_low": 82.0,
+          "ref_high": 98.0,
+          "pre_value": 92.0
+        },
+        {
+          "lab": "PTT",
+          "ref_low": 22.0,
+          "ref_high": 35.0,
+          "pre_value": 27.0
+        },
+        {
+          "lab": "Hematocrit",
+          "ref_low": 36.0,
+          "ref_high": 48.0,
+          "pre_value": 27.9
+        },
+        {
+          "lab": "INR(PT)",
+          "ref_low": 0.9,
+          "ref_high": 1.1,
+          "pre_value": 1.7
+        },
+        {
+          "lab": "Red Blood Cells",
+          "ref_low": 4.2,
+          "ref_high": 5.4,
+          "pre_value": 3.03
+        },
+        {
+          "lab": "Hemoglobin",
+          "ref_low": 12.0,
+          "ref_high": 16.0,
+          "pre_value": 9.7
+        },
+        {
+          "lab": "RDW",
+          "ref_low": 10.5,
+          "ref_high": 15.5,
+          "pre_value": 13.7
+        },
+        {
+          "lab": "MCHC",
+          "ref_low": 31.0,
+          "ref_high": 35.0,
+          "pre_value": 33.5
+        },
+        {
+          "lab": "pO2",
+          "ref_low": 85.0,
+          "ref_high": 105.0,
+          "pre_value": 70.0
+        },
+        {
+          "lab": "Platelet Count",
+          "ref_low": 150.0,
+          "ref_high": 440.0,
+          "pre_value": 159.0
+        },
+        {
+          "lab": "pH",
+          "ref_low": 7.35,
+          "ref_high": 7.45,
+          "pre_value": 7.46
+        },
+        {
+          "lab": "White Blood Cells",
+          "ref_low": 4.0,
+          "ref_high": 11.0,
+          "pre_value": 7.2
+        },
+        {
+          "lab": "Calculated Total CO2",
+          "ref_low": 21.0,
+          "ref_high": 30.0,
+          "pre_value": 27.0
+        },
+        {
+          "lab": "PT",
+          "ref_low": 10.4,
+          "ref_high": 13.4,
+          "pre_value": 18.4
+        }
+      ]
+    },
+    "c": {
+      "stem": "Two ICU patients (A and B) with similar baselines underwent DIFFERENT interventions. Given the observed post-intervention labs below, identify which patient they belong to and justify using the causal physiological effect of each intervention.",
+      "shared_labs": [
+        "Calculated Total CO2",
+        "pCO2",
+        "pH",
+        "pO2"
+      ],
+      "observed_post": [
+        {
+          "lab": "Calculated Total CO2",
+          "value": 26.0
+        },
+        {
+          "lab": "pCO2",
+          "value": 40.0
+        },
+        {
+          "lab": "pH",
+          "value": 7.4
+        },
+        {
+          "lab": "pO2",
+          "value": 73.0
+        }
+      ],
+      "patient_A": {
+        "procedure": "Packed Red Blood Cells",
+        "pre_labs": [
+          {
+            "lab": "pCO2",
+            "value": 37.0
+          },
+          {
+            "lab": "pO2",
+            "value": 70.0
+          },
+          {
+            "lab": "pH",
+            "value": 7.46
+          },
+          {
+            "lab": "Calculated Total CO2",
+            "value": 27.0
+          }
+        ]
+      },
+      "patient_B": {
+        "procedure": "Non-invasive Ventilation",
+        "pre_labs": [
+          {
+            "lab": "Calculated Total CO2",
+            "value": 27.0
+          },
+          {
+            "lab": "pO2",
+            "value": 71.0
+          },
+          {
+            "lab": "pH",
+            "value": 7.44
+          },
+          {
+            "lab": "pCO2",
+            "value": 39.0
+          }
+        ]
+      }
+    },
+    "d": {
+      "stem": "At discharge, considering this patient's clinical course, predict whether they will die within one year. Give a Yes/No call, a calibrated confidence (0-1), and a causal risk rationale referencing the patient's specific abnormal values/trends.",
+      "options": [
+        "Yes",
+        "No"
+      ]
+    }
+  }
+}

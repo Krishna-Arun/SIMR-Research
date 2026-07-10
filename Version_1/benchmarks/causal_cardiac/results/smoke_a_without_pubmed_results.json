@@ -1,0 +1,202 @@
+{
+  "benchmark": "intervention_physiological_effect",
+  "condition": "WITHOUT PubMed",
+  "model": "qwen3.6:latest",
+  "is_smoke_test": true,
+  "n_cases": 5,
+  "successful": 5,
+  "failed": 0,
+  "timestamp": "2026-06-24T00:51:51.944Z",
+  "results": [
+    {
+      "case_id": "a_001",
+      "hadm_id": 123456,
+      "prediction": {
+        "troponin_direction": "rising",
+        "troponin_magnitude_pct": 150,
+        "ck_direction": "rising",
+        "creatinine_direction": "stable",
+        "causal_justification": "PCI involves mechanical manipulation of the coronary artery, which can cause minor myocardial injury and release of cardiac biomarkers like troponin and CK. This is a common and expected finding post-PCI, even in the absence of a major periprocedural MI. Creatinine levels are typically stable unless there is contrast-induced nephropathy, which is not indicated here.",
+        "_metadata": {
+          "model": "qwen3.6:latest",
+          "finish_reason": "stop",
+          "usage": {
+            "prompt_tokens": 52,
+            "completion_tokens": 141
+          },
+          "confidence_from_logits": {
+            "average_logprob": -1.664,
+            "min_logprob": -23.099,
+            "average_probability": 0.652,
+            "average_entropy": 0.694,
+            "confidence_score": 0.878,
+            "confidence_level": "high",
+            "n_tokens": 141
+          }
+        },
+        "_confidence": {
+          "average_logprob": -1.664,
+          "min_logprob": -23.099,
+          "average_probability": 0.652,
+          "average_entropy": 0.694,
+          "confidence_score": 0.878,
+          "confidence_level": "high",
+          "n_tokens": 141
+        }
+      },
+      "success": true
+    },
+    {
+      "case_id": "a_002",
+      "hadm_id": 123457,
+      "prediction": {
+        "troponin_direction": "rising",
+        "troponin_magnitude_pct": 100,
+        "ck_direction": "rising",
+        "creatinine_direction": "stable",
+        "causal_justification": "The patient underwent coronary artery bypass surgery, which involves significant myocardial manipulation and ischemia-reperfusion injury. This leads to myocardial cell damage, causing troponin and CK levels to rise. The creatinine level is expected to remain stable as there is no indication of renal injury.",
+        "_metadata": {
+          "model": "qwen3.6:latest",
+          "finish_reason": "stop",
+          "usage": {
+            "prompt_tokens": 51,
+            "completion_tokens": 125
+          },
+          "confidence_from_logits": {
+            "average_logprob": -2.001,
+            "min_logprob": -24.844,
+            "average_probability": 0.625,
+            "average_entropy": 0.688,
+            "confidence_score": 0.865,
+            "confidence_level": "high",
+            "n_tokens": 125
+          }
+        },
+        "_confidence": {
+          "average_logprob": -2.001,
+          "min_logprob": -24.844,
+          "average_probability": 0.625,
+          "average_entropy": 0.688,
+          "confidence_score": 0.865,
+          "confidence_level": "high",
+          "n_tokens": 125
+        }
+      },
+      "success": true
+    },
+    {
+      "case_id": "a_003",
+      "hadm_id": 123458,
+      "prediction": {
+        "troponin_direction": "stable",
+        "troponin_magnitude_pct": 0,
+        "ck_direction": "stable",
+        "creatinine_direction": "stable",
+        "causal_justification": "Diagnostic catheterization is a low-risk procedure that typically does not cause myocardial injury or significant renal stress. Therefore, cardiac biomarkers (troponin, CK) and renal function (creatinine) are expected to remain stable.",
+        "_metadata": {
+          "model": "qwen3.6:latest",
+          "finish_reason": "stop",
+          "usage": {
+            "prompt_tokens": 50,
+            "completion_tokens": 113
+          },
+          "confidence_from_logits": {
+            "average_logprob": -1.836,
+            "min_logprob": -24.72,
+            "average_probability": 0.664,
+            "average_entropy": 0.625,
+            "confidence_score": 0.877,
+            "confidence_level": "high",
+            "n_tokens": 113
+          }
+        },
+        "_confidence": {
+          "average_logprob": -1.836,
+          "min_logprob": -24.72,
+          "average_probability": 0.664,
+          "average_entropy": 0.625,
+          "confidence_score": 0.877,
+          "confidence_level": "high",
+          "n_tokens": 113
+        }
+      },
+      "success": true
+    },
+    {
+      "case_id": "a_004",
+      "hadm_id": 123459,
+      "prediction": {
+        "troponin_direction": "stable",
+        "troponin_magnitude_pct": 0,
+        "ck_direction": "stable",
+        "creatinine_direction": "stable",
+        "causal_justification": "The implantation of a mechanical circulatory support (MCS) device in cardiogenic shock primarily aims to restore systemic perfusion and reduce cardiac workload. While the procedure itself is invasive, it does not inherently cause significant myocardial necrosis (troponin) or muscle breakdown (CK) beyond baseline levels, nor does it directly impact renal function (creatinine) acutely. The primary physiologic goal is hemodynamic stabilization, which would prevent further end-organ damage rather than cause new injury.",
+        "_metadata": {
+          "model": "qwen3.6:latest",
+          "finish_reason": "stop",
+          "usage": {
+            "prompt_tokens": 52,
+            "completion_tokens": 167
+          },
+          "confidence_from_logits": {
+            "average_logprob": -1.512,
+            "min_logprob": -23.147,
+            "average_probability": 0.684,
+            "average_entropy": 0.627,
+            "confidence_score": 0.889,
+            "confidence_level": "high",
+            "n_tokens": 167
+          }
+        },
+        "_confidence": {
+          "average_logprob": -1.512,
+          "min_logprob": -23.147,
+          "average_probability": 0.684,
+          "average_entropy": 0.627,
+          "confidence_score": 0.889,
+          "confidence_level": "high",
+          "n_tokens": 167
+        }
+      },
+      "success": true
+    },
+    {
+      "case_id": "a_005",
+      "hadm_id": 123460,
+      "prediction": {
+        "troponin_direction": "stable",
+        "troponin_magnitude_pct": 0,
+        "ck_direction": "stable",
+        "creatinine_direction": "stable",
+        "causal_justification": "IABP insertion is a mechanical support strategy that improves coronary perfusion and reduces afterload. It does not directly cause myocardial necrosis or renal injury. Therefore, cardiac and renal biomarkers are expected to remain stable or improve due to better perfusion, rather than show an acute rise.",
+        "_metadata": {
+          "model": "qwen3.6:latest",
+          "finish_reason": "stop",
+          "usage": {
+            "prompt_tokens": 54,
+            "completion_tokens": 125
+          },
+          "confidence_from_logits": {
+            "average_logprob": -2.201,
+            "min_logprob": -25.403,
+            "average_probability": 0.612,
+            "average_entropy": 0.673,
+            "confidence_score": 0.858,
+            "confidence_level": "high",
+            "n_tokens": 125
+          }
+        },
+        "_confidence": {
+          "average_logprob": -2.201,
+          "min_logprob": -25.403,
+          "average_probability": 0.612,
+          "average_entropy": 0.673,
+          "confidence_score": 0.858,
+          "confidence_level": "high",
+          "n_tokens": 125
+        }
+      },
+      "success": true
+    }
+  ]
+}

@@ -1,0 +1,27 @@
+{
+  "case_id": "a_090",
+  "benchmark": "intervention_physiological_effect",
+  "hadm_id": 26968894,
+  "procedure": {
+    "title": "Left heart cardiac catheterization",
+    "date": "2117-11-18 00:00"
+  },
+  "question": {
+    "stem": "Patient hadm_id: 26968894\n\nDemographics: None-year-old Unknown\nPrimary Diagnosis: Non-ST elevation (NSTEMI) myocardial infarction\n\nPre-Procedure Lab Timeline (all available labs before 2117-11-18 00:00):\n\n| Datetime | Lab | Value | Unit | Flag |\n|---|---|---|---|---|\n| 2117-11-17 18:30 | Anion Gap | 16.0 | mEq/L | nan |\n| 2117-11-17 18:30 | White Blood Cells | 12.1 | K/uL | abnormal |\n| 2117-11-17 18:30 | Red Blood Cells | 2.88 | m/uL | abnormal |\n| 2117-11-17 18:30 | RDW | 14.5 | % | nan |\n| 2117-11-17 18:30 | MCV | 103.0 | fL | abnormal |\n| 2117-11-17 18:30 | MCHC | 34.1 | % | nan |\n| 2117-11-17 18:30 | MCH | 35.1 | pg | abnormal |\n| 2117-11-17 18:30 | Hemoglobin | 10.1 | g/dL | abnormal |\n| 2117-11-17 18:30 | Hematocrit | 29.6 | % | abnormal |\n| 2117-11-17 18:30 | Urea Nitrogen | 44.0 | mg/dL | abnormal |\n| 2117-11-17 18:30 | Troponin T | 0.26 | ng/mL | abnormal |\n| 2117-11-17 18:30 | Sodium | 129.0 | mEq/L | abnormal |\n| 2117-11-17 18:30 | Platelet Count | 277.0 | K/uL | nan |\n| 2117-11-17 18:30 | Phosphate | 3.3 | mg/dL | nan |\n| 2117-11-17 18:30 | Magnesium | 2.3 | mg/dL | nan |\n| 2117-11-17 18:30 | Glucose | 287.0 | mg/dL | abnormal |\n| 2117-11-17 18:30 | Creatinine | 1.6 | mg/dL | abnormal |\n| 2117-11-17 18:30 | Creatine Kinase, MB Isoenzyme | 12.0 | ng/mL | abnormal |\n| 2117-11-17 18:30 | Creatine Kinase (CK) | 137.0 | IU/L | nan |\n| 2117-11-17 18:30 | CK-MB Index | 8.8 | % | abnormal |\n| 2117-11-17 18:30 | Potassium | 3.6 | mEq/L | nan |\n| 2117-11-17 18:30 | Chloride | 95.0 | mEq/L | abnormal |\n| 2117-11-17 18:30 | Calcium, Total | 9.4 | mg/dL | nan |\n| 2117-11-17 18:30 | Bicarbonate | 22.0 | mEq/L | nan |\n| 2117-11-17 23:43 | Troponin T | 0.26 | ng/mL | abnormal |\n| 2117-11-17 23:43 | PTT | 40.7 | sec | abnormal |\n| 2117-11-17 23:43 | Creatine Kinase (CK) | 119.0 | IU/L | nan |\n| 2117-11-17 23:43 | Creatine Kinase, MB Isoenzyme | 9.0 | ng/mL | nan |\n\nProcedure Performed: Left heart cardiac catheterization on 2117-11-18 00:00\n\nAnalyze the pre-intervention lab trajectory and clinical context. Given the patient's state and the intervention performed, describe what physiological changes you would expect to see in the post-intervention period. Specifically discuss expected direction and magnitude of change for key cardiac biomarkers (Troponin, CK, CK-MB).",
+    "type": "intervention_forward_prediction"
+  },
+  "visible_context": {
+    "pre_intervention_labs": 28,
+    "demographics": {
+      "age": null,
+      "gender": "Unknown"
+    },
+    "primary_diagnosis": "Non-ST elevation (NSTEMI) myocardial infarction"
+  },
+  "ground_truth": {
+    "post_intervention_labs": "| Datetime | Lab | Value | Unit | Flag |\n|---|---|---|---|---|\n| 2117-11-18 07:00 | Creatine Kinase (CK) | 107.0 | IU/L | nan |\n| 2117-11-18 07:00 | Creatine Kinase, MB Isoenzyme | 8.0 | ng/mL | nan |\n| 2117-11-18 07:00 | Troponin T | 0.2 | ng/mL | abnormal |\n| 2117-11-19 06:41 | Creatine Kinase (CK) | 68.0 | IU/L | nan |\n| 2117-11-19 06:41 | Creatine Kinase, MB Isoenzyme | nan | ng/mL | nan |",
+    "n_post_labs": 5,
+    "expected_troponin_direction": "falling",
+    "expected_troponin_magnitude_pct": -23.076923076923077
+  }
+}

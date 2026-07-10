@@ -1,0 +1,350 @@
+{
+  "summary": {
+    "n": 10,
+    "judge": "qwen3-8b",
+    "judge_runs": 1,
+    "mean_total": 0.4736,
+    "a_answer_full_credit_rate": 0.0,
+    "b_all_correct_rate": 0.3,
+    "d_correct_rate": 1.0,
+    "fully_solved_rate": 0.0,
+    "mean_brier_d": 0.062
+  },
+  "results": [
+    {
+      "per_step": {
+        "a": {
+          "answer": 0.0,
+          "answer_rationale": "The intervention 'broad-spectrum antibiotics' is incorrect (ground truth requires invasive ventilation). The causal chain lacks patient-specific lab values (phosphate/pO2) and instead cites non-relevant labs (CBC/CMP) without forming a 2-step causal chain.",
+          "request_quality_mean": 0.5,
+          "n_requests": 3,
+          "golden_recall": 0.0,
+          "full_credit": false
+        },
+        "b": {
+          "direction_acc": 0.5,
+          "n_scored": 2,
+          "all_correct": false,
+          "justification": 0.0,
+          "full_credit": false
+        },
+        "d": {
+          "correct": 1.0,
+          "brier": 0.062,
+          "rationale": 1.0,
+          "full_credit": true
+        }
+      },
+      "total": 0.5,
+      "fully_solved": false,
+      "total_mean_over_judges": 0.5,
+      "judge_totals": [
+        0.5
+      ],
+      "question_id": "L4-20251229-30348068",
+      "arm": "ventilation"
+    },
+    {
+      "per_step": {
+        "a": {
+          "answer": 0.0,
+          "answer_rationale": "The candidate selected insulin administration as the intervention, but the correct intervention family is dialysis. The causal chain correctly cites lab values but fails to align with the required intervention.",
+          "request_quality_mean": 0.5,
+          "n_requests": 8,
+          "golden_recall": 0.0,
+          "full_credit": false
+        },
+        "b": {
+          "direction_acc": 0.0,
+          "n_scored": 0,
+          "all_correct": false,
+          "justification": 0.5,
+          "full_credit": false
+        },
+        "d": {
+          "correct": 1.0,
+          "brier": 0.062,
+          "rationale": 1.0,
+          "full_credit": true
+        }
+      },
+      "total": 0.3333,
+      "fully_solved": false,
+      "total_mean_over_judges": 0.3333,
+      "judge_totals": [
+        0.3333
+      ],
+      "question_id": "L4-20385529-33618985",
+      "arm": "dialysis"
+    },
+    {
+      "per_step": {
+        "a": {
+          "answer": 0.0,
+          "answer_rationale": "The intervention 'broad-spectrum antibiotics' is incorrect; the correct intervention is dialysis. The causal chain correctly cites lab values but fails to address the required intervention.",
+          "request_quality_mean": 0.5,
+          "n_requests": 7,
+          "golden_recall": 0.0,
+          "full_credit": false
+        },
+        "b": {
+          "direction_acc": 0.0,
+          "n_scored": 0,
+          "all_correct": false,
+          "justification": 0.5,
+          "full_credit": false
+        },
+        "d": {
+          "correct": 1.0,
+          "brier": 0.062,
+          "rationale": 1.0,
+          "full_credit": true
+        }
+      },
+      "total": 0.3333,
+      "fully_solved": false,
+      "total_mean_over_judges": 0.3333,
+      "judge_totals": [
+        0.3333
+      ],
+      "question_id": "L4-21060845-32288816",
+      "arm": "dialysis"
+    },
+    {
+      "per_step": {
+        "a": {
+          "answer": 0.5,
+          "answer_rationale": "The answer selects antibiotics but the correct intervention is dialysis. While creatinine and potassium are cited, the causal chain focuses on sepsis rather than renal failure requiring dialysis, and urea nitrogen (a golden lab) is missing.",
+          "request_quality_mean": 0.375,
+          "n_requests": 12,
+          "golden_recall": 0.667,
+          "full_credit": false
+        },
+        "b": {
+          "direction_acc": 0.333,
+          "n_scored": 3,
+          "all_correct": false,
+          "justification": 1.0,
+          "full_credit": false
+        },
+        "c": {
+          "identification": 0.0,
+          "mechanism": 0.5,
+          "full_credit": false
+        },
+        "d": {
+          "correct": 1.0,
+          "brier": 0.062,
+          "rationale": 0.5,
+          "full_credit": false
+        }
+      },
+      "total": 0.4582,
+      "fully_solved": false,
+      "total_mean_over_judges": 0.4582,
+      "judge_totals": [
+        0.4582
+      ],
+      "question_id": "L4-21385662-31049199",
+      "arm": "dialysis"
+    },
+    {
+      "per_step": {
+        "a": {
+          "answer": 0.0,
+          "answer_rationale": "The intervention (diuretics) is incorrect for the hidden reference's required dialysis, and the causal chain lacks patient-specific labs (Potassium, Urea Nitrogen, Creatinine) critical for dialysis decision-making.",
+          "request_quality_mean": 0.375,
+          "n_requests": 4,
+          "golden_recall": 0.0,
+          "full_credit": false
+        },
+        "b": {
+          "direction_acc": 0.0,
+          "n_scored": 4,
+          "all_correct": false,
+          "justification": 0.0,
+          "full_credit": false
+        },
+        "d": {
+          "correct": 1.0,
+          "brier": 0.062,
+          "rationale": 1.0,
+          "full_credit": true
+        }
+      },
+      "total": 0.3333,
+      "fully_solved": false,
+      "total_mean_over_judges": 0.3333,
+      "judge_totals": [
+        0.3333
+      ],
+      "question_id": "L4-23392333-31289726",
+      "arm": "dialysis"
+    },
+    {
+      "per_step": {
+        "a": {
+          "answer": 0.0,
+          "answer_rationale": "The intervention 'broad-spectrum antibiotics' is incorrect (correct intervention is invasive ventilation), and the causal chain is generic/textbook without specific patient data or relevant lab values.",
+          "request_quality_mean": 0.5,
+          "n_requests": 1,
+          "golden_recall": 0.0,
+          "full_credit": false
+        },
+        "b": {
+          "direction_acc": 0.0,
+          "n_scored": 0,
+          "all_correct": false,
+          "justification": 0.5,
+          "full_credit": false
+        },
+        "d": {
+          "correct": 1.0,
+          "brier": 0.062,
+          "rationale": 0.5,
+          "full_credit": false
+        }
+      },
+      "total": 0.3333,
+      "fully_solved": false,
+      "total_mean_over_judges": 0.3333,
+      "judge_totals": [
+        0.3333
+      ],
+      "question_id": "L4-25289494-30416273",
+      "arm": "ventilation"
+    },
+    {
+      "per_step": {
+        "a": {
+          "answer": 0.0,
+          "answer_rationale": "The intervention (antibiotics) is incorrect for the hidden reference (transfusion), and the causal chain does not cite the required labs (Hematocrit/Hemoglobin) or form a patient-specific chain.",
+          "request_quality_mean": 0.5,
+          "n_requests": 1,
+          "golden_recall": 0.0,
+          "full_credit": false
+        },
+        "b": {
+          "direction_acc": 1.0,
+          "n_scored": 3,
+          "all_correct": true,
+          "justification": 0.0,
+          "full_credit": false
+        },
+        "d": {
+          "correct": 1.0,
+          "brier": 0.062,
+          "rationale": 0.5,
+          "full_credit": false
+        }
+      },
+      "total": 0.6667,
+      "fully_solved": false,
+      "total_mean_over_judges": 0.6667,
+      "judge_totals": [
+        0.6667
+      ],
+      "question_id": "L4-27047815-30601922",
+      "arm": "transfusion"
+    },
+    {
+      "per_step": {
+        "a": {
+          "answer": 0.0,
+          "answer_rationale": "The candidate selected antibiotics for infection, but the hidden reference requires transfusion (Packed Red Blood Cells) due to hematocrit. The causal chain cites unspecified CBC values instead of specific hematocrit data, missing the patient-specific lab value critical for the correct intervention.",
+          "request_quality_mean": 0.5,
+          "n_requests": 1,
+          "golden_recall": 0.0,
+          "full_credit": false
+        },
+        "b": {
+          "direction_acc": 1.0,
+          "n_scored": 1,
+          "all_correct": true,
+          "justification": 1.0,
+          "full_credit": true
+        },
+        "d": {
+          "correct": 1.0,
+          "brier": 0.062,
+          "rationale": 0.5,
+          "full_credit": false
+        }
+      },
+      "total": 0.6667,
+      "fully_solved": false,
+      "total_mean_over_judges": 0.6667,
+      "judge_totals": [
+        0.6667
+      ],
+      "question_id": "L4-27092999-30772812",
+      "arm": "transfusion"
+    },
+    {
+      "per_step": {
+        "a": {
+          "answer": 0.0,
+          "answer_rationale": "The intervention 'broad-spectrum antibiotics' is incorrect; the correct intervention is invasive ventilation. The causal chain references lactate and WBC, but the hidden reference requires Troponin T, which was not retrieved.",
+          "request_quality_mean": 0.25,
+          "n_requests": 5,
+          "golden_recall": 0.0,
+          "full_credit": false
+        },
+        "b": {
+          "direction_acc": 1.0,
+          "n_scored": 1,
+          "all_correct": true,
+          "justification": 0.0,
+          "full_credit": false
+        },
+        "d": {
+          "correct": 1.0,
+          "brier": 0.062,
+          "rationale": 1.0,
+          "full_credit": true
+        }
+      },
+      "total": 0.6667,
+      "fully_solved": false,
+      "total_mean_over_judges": 0.6667,
+      "judge_totals": [
+        0.6667
+      ],
+      "question_id": "L4-28376297-34204437",
+      "arm": "ventilation"
+    },
+    {
+      "per_step": {
+        "a": {
+          "answer": 0.0,
+          "answer_rationale": "The intervention 'cardiac monitoring' is incorrect (ground truth requires intubation), and the cited labs (troponin T 0.01 ng/mL, CK-MB NaN) do not support myocardial injury or justify cardiac monitoring.",
+          "request_quality_mean": 0.375,
+          "n_requests": 4,
+          "golden_recall": 0.0,
+          "full_credit": false
+        },
+        "b": {
+          "direction_acc": 0.333,
+          "n_scored": 3,
+          "all_correct": false,
+          "justification": 0.5,
+          "full_credit": false
+        },
+        "d": {
+          "correct": 1.0,
+          "brier": 0.062,
+          "rationale": 1.0,
+          "full_credit": true
+        }
+      },
+      "total": 0.4443,
+      "fully_solved": false,
+      "total_mean_over_judges": 0.4443,
+      "judge_totals": [
+        0.4443
+      ],
+      "question_id": "L4-29162170-30247984",
+      "arm": "ventilation"
+    }
+  ]
+}

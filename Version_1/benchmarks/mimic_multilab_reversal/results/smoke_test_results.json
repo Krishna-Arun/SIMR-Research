@@ -1,0 +1,27 @@
+{
+  "timestamp": "2026-06-24T03:06:45.686Z",
+  "test_type": "smoke_test",
+  "n_cases": 3,
+  "n_successful": 0,
+  "results": [
+    {
+      "case_id": "smoke_001",
+      "phase": "short_term_post",
+      "error": "404 model 'qwen:latest' not found",
+      "success": false
+    },
+    {
+      "case_id": "smoke_002",
+      "phase": "pre_procedure",
+      "error": "404 model 'qwen:latest' not found",
+      "success": false
+    },
+    {
+      "case_id": "smoke_003",
+      "phase": "medium_term_post",
+      "error": "404 model 'qwen:latest' not found",
+      "success": false
+    }
+  ],
+  "aggregated_scores": null
+}

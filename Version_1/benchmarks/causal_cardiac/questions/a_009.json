@@ -1,0 +1,27 @@
+{
+  "case_id": "a_009",
+  "benchmark": "intervention_physiological_effect",
+  "hadm_id": 22278176,
+  "procedure": {
+    "title": "Implant of pulsation balloon",
+    "date": "2150-08-17 00:00"
+  },
+  "question": {
+    "stem": "Patient hadm_id: 22278176\n\nDemographics: None-year-old Unknown\nPrimary Diagnosis: Non-ST elevation (NSTEMI) myocardial infarction\n\nPre-Procedure Lab Timeline (all available labs before 2150-08-17 00:00):\n\n| Datetime | Lab | Value | Unit | Flag |\n|---|---|---|---|---|\n| 2150-08-16 17:04 | INR(PT) | 1.4 | nan | abnormal |\n| 2150-08-16 17:04 | % Hemoglobin A1c | 6.9 | % | abnormal |\n| 2150-08-16 17:04 | Urea Nitrogen | 58.0 | mg/dL | abnormal |\n| 2150-08-16 17:04 | Troponin T | 5.27 | ng/mL | abnormal |\n| 2150-08-16 17:04 | Sodium | 139.0 | mEq/L | nan |\n| 2150-08-16 17:04 | Potassium | 3.7 | mEq/L | nan |\n| 2150-08-16 17:04 | Magnesium | 1.5 | mg/dL | abnormal |\n| 2150-08-16 17:04 | Glucose | 146.0 | mg/dL | abnormal |\n| 2150-08-16 17:04 | Estimated GFR (MDRD equation) | nan | nan | nan |\n| 2150-08-16 17:04 | Creatinine | 2.0 | mg/dL | abnormal |\n| 2150-08-16 17:04 | Creatine Kinase, MB Isoenzyme | 19.0 | ng/mL | abnormal |\n| 2150-08-16 17:04 | CK-MB Index | 4.1 | % | nan |\n| 2150-08-16 17:04 | Chloride | 98.0 | mEq/L | nan |\n| 2150-08-16 17:04 | Creatine Kinase (CK) | 459.0 | IU/L | abnormal |\n| 2150-08-16 17:04 | Anion Gap | 18.0 | mEq/L | nan |\n| 2150-08-16 17:04 | PT | 16.0 | sec | abnormal |\n| 2150-08-16 17:04 | PTT | 46.5 | sec | abnormal |\n| 2150-08-16 17:04 | Hematocrit | 32.4 | % | abnormal |\n| 2150-08-16 17:04 | Bicarbonate | 27.0 | mEq/L | nan |\n| 2150-08-16 17:04 | MCH | 29.2 | pg | nan |\n| 2150-08-16 17:04 | MCHC | 35.2 | % | abnormal |\n| 2150-08-16 17:04 | Hemoglobin | 11.4 | g/dL | abnormal |\n| 2150-08-16 17:04 | Platelet Count | 369.0 | K/uL | nan |\n| 2150-08-16 17:04 | RDW | 13.1 | % | nan |\n| 2150-08-16 17:04 | Red Blood Cells | 3.89 | m/uL | abnormal |\n| 2150-08-16 17:04 | White Blood Cells | 14.6 | K/uL | abnormal |\n| 2150-08-16 17:04 | MCV | 83.0 | fL | nan |\n| 2150-08-16 21:38 | Creatine Kinase (CK) | 345.0 | IU/L | abnormal |\n| 2150-08-16 21:38 | Troponin T | 4.2 | ng/mL | abnormal |\n| 2150-08-16 21:38 | Potassium | 3.6 | mEq/L | nan |\n| 2150-08-16 21:38 | NTproBNP | 24846.0 | pg/mL | abnormal |\n| 2150-08-16 21:38 | Creatine Kinase, MB Isoenzyme | 15.0 | ng/mL | abnormal |\n| 2150-08-16 21:38 | CK-MB Index | 4.3 | % | nan |\n| 2150-08-16 21:38 | Creatine Kinase (CK) | 327.0 | IU/L | abnormal |\n| 2150-08-16 21:38 | Troponin T | 4.15 | ng/mL | abnormal |\n| 2150-08-16 21:38 | Potassium | 3.6 | mEq/L | nan |\n| 2150-08-16 21:38 | NTproBNP | 24973.0 | pg/mL | abnormal |\n| 2150-08-16 21:38 | Creatine Kinase, MB Isoenzyme | 14.0 | ng/mL | abnormal |\n| 2150-08-16 21:38 | CK-MB Index | 4.3 | % | nan |\n| 2150-08-16 21:38 | PTT | 51.8 | sec | abnormal |\n\nProcedure Performed: Implant of pulsation balloon on 2150-08-17 00:00\n\nAnalyze the pre-intervention lab trajectory and clinical context. Given the patient's state and the intervention performed, describe what physiological changes you would expect to see in the post-intervention period. Specifically discuss expected direction and magnitude of change for key cardiac biomarkers (Troponin, CK, CK-MB).",
+    "type": "intervention_forward_prediction"
+  },
+  "visible_context": {
+    "pre_intervention_labs": 40,
+    "demographics": {
+      "age": null,
+      "gender": "Unknown"
+    },
+    "primary_diagnosis": "Non-ST elevation (NSTEMI) myocardial infarction"
+  },
+  "ground_truth": {
+    "post_intervention_labs": "| Datetime | Lab | Value | Unit | Flag |\n|---|---|---|---|---|\n| 2150-08-17 05:31 | Troponin T | 3.52 | ng/mL | abnormal |\n| 2150-08-17 05:31 | Creatine Kinase, MB Isoenzyme | 10.0 | ng/mL | nan |\n| 2150-08-17 05:31 | NTproBNP | 22587.0 | pg/mL | abnormal |\n| 2150-08-17 05:31 | CK-MB Index | 4.8 | % | nan |\n| 2150-08-17 05:31 | Creatine Kinase (CK) | 210.0 | IU/L | abnormal |\n| 2150-08-17 10:30 | Creatine Kinase (CK) | 170.0 | IU/L | nan |\n| 2150-08-17 10:30 | Troponin T | 2.87 | ng/mL | abnormal |\n| 2150-08-17 19:04 | Creatine Kinase (CK) | 143.0 | IU/L | nan |\n| 2150-08-17 19:04 | Creatine Kinase, MB Isoenzyme | 6.0 | ng/mL | nan |\n| 2150-08-18 20:00 | Creatine Kinase (CK) | 112.0 | IU/L | nan |\n| 2150-08-18 20:00 | Creatine Kinase, MB Isoenzyme | 5.0 | ng/mL | nan |\n| 2150-08-19 04:24 | Creatine Kinase (CK) | 130.0 | IU/L | nan |\n| 2150-08-19 04:24 | Creatine Kinase, MB Isoenzyme | 7.0 | ng/mL | nan |",
+    "n_post_labs": 13,
+    "expected_troponin_direction": "stable",
+    "expected_troponin_magnitude_pct": -15.180722891566273
+  }
+}

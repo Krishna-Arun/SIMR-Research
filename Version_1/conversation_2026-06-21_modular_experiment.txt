@@ -1,0 +1,147 @@
+# Conversation Transcript: Modular Two-Condition AKI Experiment Framework
+# Date: 2026-06-21
+# Session: Continuation from previous session (context-compacted)
+
+================================================================================
+USER REQUEST
+================================================================================
+
+User wanted to create two different test conditions for the AKI benchmark:
+1. WITH tools: Answering agent with access ONLY to the two MIMIC-IV lab tools
+2. WITHOUT tools: Answering agent with zero external tools
+
+Key requirements:
+- Modular architecture (easy to swap models, add new conditions later)
+- Detailed kidney specialist system prompts for both agents
+- Both agents can only call the 2 lab MCP tools (NOT guidelines search, NOT PubMed)
+- No hardcoding - everything should be configurable
+
+================================================================================
+ARCHITECTURE DECISIONS
+================================================================================
+
+The framework uses CONDITION_CONFIGS as the central "modularity seam":
+
+    const CONDITION_CONFIGS = {
+      with_lab_tools: { label, model, system_prompt },
+      no_tools:       { label, model, system_prompt },
+      // Future entries go here (GPT-4, Gemini, multi-agent, +PubMed)
+    }
+
+Adding a new condition = one new entry in this object. Zero other changes.
+
+Tool restriction mechanism: Claude workflows cannot programmatically hide MCP tools,
+so restriction is enforced entirely via system prompt instructions ("DO NOT call X").
+
+================================================================================
+FILES CREATED
+================================================================================
+
+1. benchmark/answer_agent.js (NEW - 276 lines)
+   Sub-workflow that runs ONE condition for ONE case and returns a trajectory.
+
+   Args: { condition: string, case_id: number }
+   Returns: { condition, case_id, patient_id, trajectory: { lab_requests, final_answer, reasoning_summary } }
+
+   Structure:
+   - CONDITION_CONFIGS (modularity seam)
+   - NEPHROLOGIST_PERSONA (shared for both conditions)
+   - WITH_LAB_TOOLS_INSTRUCTIONS (tool access + restrictions)
+   - NO_TOOLS_INSTRUCTIONS (no tool access instructions)
+   - Phase 'Load' (reads benchmark JSON for question stem)
+   - Phase 'Answer' (single agent call with config-driven prompt)
+
+2. benchmark/experiment.js (NEW - 115 lines)
+   Orchestrator workflow that runs ALL conditions x cases and feeds to supervisor grader.
+
+   Args: { case_ids?: number[], conditions?: string[] } (defaults: all 4 cases, both conditions)
+
+   Flow:
+   Phase 'Answer' -> parallel answer_agent calls for each (condition x case_id)
+   Phase 'Grade'  -> parallel supervisor_grader calls on each trajectory
+   Phase 'Compare'-> build comparison table
+
+3. CLAUDE.md (MODIFIED - added experiment section to architecture docs)
+
+================================================================================
+SYSTEM PROMPT DETAILS
+================================================================================
+
+SHARED: Dr. Maya Patel, triple-board-certified nephrologist/intensivist
+- 18 years experience at academic medical center
+- Johns Hopkins fellowship, dual board certs in nephrology + critical care
+- Expertise in AKI staging (KDIGO 2012), RRT indications, hemodynamic nephrology
+- Reasoning process: Orient -> Assess -> Investigate -> Integrate -> Decide -> Justify
+
+with_lab_tools ADDITION:
+- Access to EXACTLY TWO tools: request_all_labs_no_values + request_a_lab
+- Must call request_all_labs_no_values FIRST (shows lab menu with dates)
+- Then call request_a_lab for each needed lab with patient-specific justification
+- STRICTLY FORBIDDEN from search_kidney_guidelines and PubMed
+
+no_tools ADDITION:
+- NO external tools allowed - reason entirely from case stem
+- Trajectory lists labs that WOULD be ordered in real practice
+- value_received set to null for all entries
+
+================================================================================
+MCP SERVER FIX
+================================================================================
+
+The kidney MCP server failed to connect because `mcp` Python package was missing.
+Fixed by: pip3 install -r requirements.txt (in kidney-mcp-server/)
+
+Server starts successfully after fix:
+  [kidney-mcp] Initialising RAG index ...
+  [kidney-rag] Loading embedding model 'all-MiniLM-L6-v2' ...
+  [kidney-rag] 4024 chunks restored from cache.
+  [kidney-mcp] RAG index ready. Starting MCP server.
+
+================================================================================
+SMOKE TEST RESULTS (with_lab_tools, case 1)
+================================================================================
+
+Command: Workflow({scriptPath: 'answer_agent.js'}, {condition: 'with_lab_tools', case_id: 1})
+
+Result:
+  - Args received correctly: condition='with_lab_tools', case_id=1
+  - Case loaded: patient 10039708, ground_truth = CRRT
+  - Final answer: "Continuous Renal Replacement Therapy (CRRT)" CORRECT
+  - Trajectory: 10 lab requests, all with detailed patient-specific justifications
+  - Tool calls: NONE made (value_received=null for all entries)
+
+Why no tool calls? The kidney MCP server was NOT connected to the session because
+the `mcp` Python package was missing at startup. After installing it, the server
+works fine but requires a Claude Code restart to connect.
+
+Score expectations after fix:
+  - with_lab_tools condition should score higher (real values available)
+  - no_tools condition reveals pure clinical reasoning ability
+
+================================================================================
+MODULAR EXTENSION POINTS
+================================================================================
+
+Future changes needed:
+
+| Need                      | Where to change                         |
+|---------------------------|----------------------------------------|
+| New tool condition        | Add entry to CONDITION_CONFIGS         |
+| Swap model (GPT-4)       | Set model field; add executor dispatch |
+| Multi-agent system        | Add multi_agent executor + workflow()  |
+| Run only some cases       | Pass {case_ids: [1,2]}                 |
+| Run only some conditions  | Pass {conditions: ['with_lab_tools']}  |
+
+================================================================================
+VERIFICATION CHECKLIST (pending)
+================================================================================
+
+[x] answer_agent.js created and args-passing works
+[x] experiment.js created
+[x] MCP server dependency fixed (pip install requirements.txt)
+[ ] Restart Claude Code for kidney MCP connection
+[ ] Re-run with_lab_tools smoke test -> should show actual MCP tool calls
+[ ] Run no_tools smoke test -> should show value_received=null entries
+[ ] Run full experiment -> compare scores across conditions
+
+================================================================================

@@ -1,0 +1,741 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SIMR Benchmarks - Organized Dashboard</title>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      min-height: 100vh;
+      padding: 20px;
+      color: #333;
+    }
+    .container {
+      max-width: 1500px;
+      margin: 0 auto;
+      background: white;
+      border-radius: 12px;
+      box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+      overflow: hidden;
+    }
+    .header {
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      color: white;
+      padding: 30px 40px;
+      text-align: center;
+    }
+    .header h1 { font-size: 2em; margin-bottom: 10px; }
+
+    .tabs {
+      display: flex;
+      background: #f8f9fa;
+      border-bottom: 2px solid #e0e0e0;
+      overflow-x: auto;
+      flex-wrap: wrap;
+    }
+    .tab-button {
+      padding: 15px 20px;
+      border: none;
+      background: #f8f9fa;
+      cursor: pointer;
+      font-size: 0.95em;
+      font-weight: 600;
+      color: #666;
+      transition: all 0.3s ease;
+      white-space: nowrap;
+      border-bottom: 3px solid transparent;
+    }
+    .tab-button:hover { background: #e8e9ea; }
+    .tab-button.active { color: white; border-bottom: 3px solid; }
+    .tab-button.aki.active { background: #667eea; }
+    .tab-button.dirchange-v1.active { background: #e74c3c; }
+    .tab-button.dirchange-v2.active { background: #f39c12; }
+
+    .content { padding: 40px; }
+    .tab-content { display: none; }
+    .tab-content.active { display: block; }
+
+    .section { margin-bottom: 50px; }
+    .section h2 {
+      font-size: 1.8em;
+      margin-bottom: 20px;
+      border-bottom: 4px solid;
+      padding-bottom: 12px;
+    }
+    .aki .section h2 { color: #667eea; border-color: #667eea; }
+    .dirchange-v1 .section h2 { color: #e74c3c; border-color: #e74c3c; }
+    .dirchange-v2 .section h2 { color: #f39c12; border-color: #f39c12; }
+
+    .card {
+      background: #f8f9fa;
+      padding: 20px;
+      border-radius: 8px;
+      border-left: 5px solid;
+      margin-bottom: 15px;
+      line-height: 1.6;
+    }
+    .aki .card { border-left-color: #667eea; }
+    .dirchange-v1 .card { border-left-color: #e74c3c; }
+    .dirchange-v2 .card { border-left-color: #f39c12; }
+
+    .card p { margin-bottom: 10px; }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 20px 0;
+      background: white;
+      font-size: 0.9em;
+    }
+    th, td {
+      padding: 12px 15px;
+      text-align: left;
+      border-bottom: 1px solid #e0e0e0;
+    }
+    th {
+      background: #f0f0f0;
+      font-weight: 600;
+    }
+    tr:hover { background: #f8f9fa; }
+
+    .chart-container {
+      position: relative;
+      height: 350px;
+      margin: 30px 0;
+      background: #f8f9fa;
+      padding: 20px;
+      border-radius: 8px;
+    }
+
+    .example-box {
+      background: #f0f4ff;
+      border-left: 5px solid;
+      padding: 20px;
+      border-radius: 8px;
+      margin: 20px 0;
+    }
+    .aki .example-box { background: #f0f4ff; border-left-color: #667eea; }
+    .dirchange-v1 .example-box { background: #fef5f5; border-left-color: #e74c3c; }
+    .dirchange-v2 .example-box { background: #fdf6f1; border-left-color: #f39c12; }
+
+    .example-box h4 {
+      margin-bottom: 15px;
+      font-size: 1.1em;
+    }
+    .aki .example-box h4 { color: #667eea; }
+    .dirchange-v1 .example-box h4 { color: #e74c3c; }
+    .dirchange-v2 .example-box h4 { color: #f39c12; }
+
+    .score-box {
+      background: white;
+      padding: 15px;
+      border-radius: 6px;
+      margin: 15px 0;
+      border-left: 4px solid;
+    }
+    .aki .score-box { border-left-color: #667eea; }
+    .dirchange-v1 .score-box { border-left-color: #e74c3c; }
+    .dirchange-v2 .score-box { border-left-color: #f39c12; }
+
+    .key-finding {
+      background: #fff3cd;
+      border-left: 5px solid #ffc107;
+      padding: 20px;
+      border-radius: 8px;
+      margin: 15px 0;
+    }
+    .key-finding p { margin-bottom: 10px; line-height: 1.6; }
+
+    .metric { display: grid; grid-template-columns: 200px 1fr; gap: 15px; margin: 8px 0; }
+    .metric-label { font-weight: 600; }
+
+    @media (max-width: 768px) {
+      .content { padding: 20px; }
+      .section h2 { font-size: 1.3em; }
+      .chart-container { height: 300px; }
+      table { font-size: 0.8em; }
+      th, td { padding: 8px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <h1>🏥 SIMR Clinical Reasoning Benchmarks</h1>
+      <p>Organized structure: Context → Scoring → Sample Case → Results → Key Findings</p>
+    </div>
+
+    <div class="tabs">
+      <button class="tab-button aki active" onclick="switchTab(event, 'aki')">AKI</button>
+      <button class="tab-button dirchange-v1" onclick="switchTab(event, 'dirchange-v1')">Dirchange v1</button>
+      <button class="tab-button dirchange-v2" onclick="switchTab(event, 'dirchange-v2')">Dirchange v2</button>
+    </div>
+
+    <div class="content">
+
+      <!-- ===== AKI ===== -->
+      <div id="aki" class="tab-content active aki">
+
+        <div class="section">
+          <h2>1️⃣ Context: What This Benchmark Tests</h2>
+          <div class="card">
+            <p><strong>Dataset:</strong> 4 MIMIC-IV acute kidney injury cases with KDIGO 2012 classification</p>
+            <p><strong>Task:</strong> Predict the next major procedural intervention given patient context WITHOUT lab values in the stem.</p>
+            <p><strong>Why It Matters:</strong> Tests whether AI agents ground clinical reasoning in evidence (KDIGO guidelines + PubMed citations) and make patient-specific lab requests.</p>
+            <p><strong>Conditions:</strong></p>
+            <ul style="margin-left: 20px; margin-top: 10px;">
+              <li><strong>WITH_LAB_TOOLS:</strong> Agent can query MCP tools for specific labs</li>
+              <li><strong>NO_TOOLS:</strong> Agent must reason from clinical context alone</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="section">
+          <h2>2️⃣ Scoring: How It's Graded</h2>
+          <div class="card">
+            <div class="metric">
+              <div class="metric-label"><strong>Lab Score (0.70 max)</strong></div>
+              <div>R_core (0.35) + R_wrong (0.20) + R_under (0.10) + R_over (0.20) + R_justification (0.15)</div>
+            </div>
+            <div class="metric">
+              <div class="metric-label"><strong>Answer Score (1.00 max)</strong></div>
+              <div>c1 (correct procedure) + c2 (lab use) + c3 (causal chain) + c4 (patient accuracy)</div>
+            </div>
+            <p style="margin-top: 15px; padding: 12px; background: #fff3cd; border-radius: 6px; border-left: 4px solid #ffc107;">
+              <strong>Total = lab_score + answer_score (max 1.70)</strong>
+            </p>
+          </div>
+        </div>
+
+        <div class="section">
+          <h2>3️⃣ Sample Case: Patient 10039708 (46F, AKI)</h2>
+          <div class="example-box">
+            <h4>Question Given to Agent</h4>
+            <p style="background: white; padding: 12px; border-radius: 6px; margin: 10px 0; font-size: 0.95em;">
+              A 46-year-old Female with acute kidney failure with tubular necrosis, acute heart failure, NSTEMI, respiratory failure, and anemia on mechanical ventilation. <strong>Based on available laboratory data, what is the next most probable major procedural intervention?</strong>
+            </p>
+
+            <h4>Expected Answer & Scoring</h4>
+            <div class="score-box">
+              <div class="metric">
+                <div class="metric-label"><strong>Ground Truth:</strong></div>
+                <div>CRRT (Continuous Renal Replacement Therapy)</div>
+              </div>
+              <div class="metric">
+                <div class="metric-label"><strong>WITH_LAB_TOOLS Score:</strong></div>
+                <div><strong>1.268 / 1.70</strong> — Lab score 0.676 + Answer score 0.602</div>
+              </div>
+              <div class="metric">
+                <div class="metric-label"><strong>NO_TOOLS Score:</strong></div>
+                <div><strong>1.383 / 1.70</strong> — Surprisingly higher! Lab score 0.700 + Answer score 0.683</div>
+              </div>
+              <p style="margin-top: 12px; font-size: 0.9em; color: #666;">
+                <strong>Why Higher Without Tools?</strong> Agent without tools made fewer but better-justified requests. With tools, agent over-requested labs, penalizing the score.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="section">
+          <h2>4️⃣ Results: All 4 Cases</h2>
+
+          <table>
+            <thead>
+              <tr>
+                <th>Case</th>
+                <th>Patient</th>
+                <th>Condition</th>
+                <th>Total</th>
+                <th>Lab Score</th>
+                <th>Answer Score</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>1</strong></td>
+                <td>10039708</td>
+                <td>WITH_LAB_TOOLS</td>
+                <td style="background: #d4edda;"><strong>1.268</strong></td>
+                <td>0.676</td>
+                <td>0.602</td>
+              </tr>
+              <tr>
+                <td><strong>1</strong></td>
+                <td>10039708</td>
+                <td>NO_TOOLS</td>
+                <td style="background: #f8d7da;"><strong>1.383</strong></td>
+                <td>0.700</td>
+                <td>0.683</td>
+              </tr>
+              <tr>
+                <td><strong>2</strong></td>
+                <td>10035631</td>
+                <td>WITH_LAB_TOOLS</td>
+                <td style="background: #d4edda;"><strong>1.135</strong></td>
+                <td>0.700</td>
+                <td>0.435</td>
+              </tr>
+              <tr>
+                <td><strong>2</strong></td>
+                <td>10035631</td>
+                <td>NO_TOOLS</td>
+                <td style="background: #f8d7da;"><strong>1.347</strong></td>
+                <td>0.700</td>
+                <td>0.647</td>
+              </tr>
+              <tr>
+                <td colspan="6" style="text-align: center; padding: 20px; background: #f0f0f0;"><strong>Cases 3 & 4 follow similar pattern: NO_TOOLS outperforms WITH_LAB_TOOLS</strong></td>
+              </tr>
+            </tbody>
+          </table>
+
+          <div class="chart-container">
+            <canvas id="akiChart"></canvas>
+          </div>
+        </div>
+
+        <div class="section">
+          <h2>5️⃣ Key Findings</h2>
+          <div class="key-finding">
+            <p><strong>1. NO_TOOLS Unexpectedly Outperformed:</strong> Average score 1.120 vs 1.069 with tools. Agents struggle with over-requesting when tools available.</p>
+            <p><strong>2. Patient-Specific Justification Critical:</strong> R_justification heavily weighted. Generic lab requests scored zero; patient-anchored requests scored full credit.</p>
+            <p><strong>3. Procedure Naming Varied (0.00–1.00):</strong> Only agents who explained modality selection (CRRT vs IHD) and hemodynamic reasoning earned full c1 credit.</p>
+            <p><strong>4. Multi-System Integration Required:</strong> Best cases integrated AKI + cardiac failure + respiratory failure → CRRT decision.</p>
+          </div>
+        </div>
+
+        <div class="section">
+          <h2>6️⃣ How Questions Are Created (Evaluator-Optimizer Loop)</h2>
+          <div class="card">
+            <p>AKI benchmarks use an <strong>iterative generation loop</strong> (up to 5 rounds) where questions are automatically generated and strictly evaluated against 4 criteria. Only questions that PASS all criteria are approved for the benchmark.</p>
+
+            <p style="margin-top: 15px;"><strong>The 4-Criterion Evaluation Process:</strong></p>
+            <div style="margin-left: 20px; margin-top: 10px;">
+              <p><strong>Criterion A: Clinically Sound Context</strong> — Question presents realistic clinical scenario without lab values. No contrived situations.</p>
+              <p style="margin-top: 10px;"><strong>Criterion B: Requires Labs</strong> — Question must be UNANSWERABLE from clinical context alone. Labs are the critical missing piece.</p>
+              <p style="margin-top: 10px;"><strong>Criterion C: Correct Lab Classification</strong> — L_core labs must be essential for the decision and grounded in published guidelines (KDIGO 2012 + PubMed citations). L_optional and L_irrelevant must have clear justifications.</p>
+              <p style="margin-top: 10px;"><strong>Criterion D: Patient Accuracy</strong> — Demographics, diagnoses, and clinical facts must match the actual patient from MIMIC-IV. No invented facts.</p>
+            </div>
+
+            <p style="margin-top: 15px;"><strong>Example: Patient 10039708 Generation Loop</strong></p>
+            <p style="margin-top: 10px; font-size: 0.9em;">Round 1: Generated question → REJECTED (Criterion C failed. Lab classification did not cite KDIGO Section 5.3 RRT indications.)</p>
+            <p style="margin-top: 8px; font-size: 0.9em;">Round 2: Regenerated with explicit KDIGO Section 5.3 citations (Cr ≥4.0, K+ ≥6.5, HCO3- <10) + PubMed PMIDs → PASSED all 4 criteria</p>
+
+            <p style="margin-top: 15px;"><strong>Rubric Building:</strong> Once a question passes all 4 criteria, a detailed answer rubric is built (c1: correct procedure, c2–c4: required labs, causal reasoning, patient context).</p>
+          </div>
+        </div>
+
+        <div class="section">
+          <h2>7️⃣ How Questions Are Graded (Two-Stage Process)</h2>
+          <div class="card">
+            <p><strong>Stage 1: Automatic Lab Scoring</strong></p>
+            <p style="margin-top: 10px; font-size: 0.9em;">lab_score = min(0.70, 0.35·R_core + 0.20·R_wrong + 0.10·R_under + 0.20·R_over + 0.15·R_justification)</p>
+            <div style="margin-left: 20px; margin-top: 10px; font-size: 0.9em;">
+              <p><strong>R_core (0.35):</strong> Fraction of L_core labs correctly requested + interpreted with KDIGO thresholds</p>
+              <p style="margin-top: 8px;"><strong>R_wrong (0.20):</strong> Penalty for L_irrelevant labs cited as primary drivers</p>
+              <p style="margin-top: 8px;"><strong>R_under (0.10):</strong> Exponential penalty for missing L_core labs</p>
+              <p style="margin-top: 8px;"><strong>R_over (0.20):</strong> Exponential penalty for excessive lab requests</p>
+              <p style="margin-top: 8px;"><strong>R_justification (0.15):</strong> 0 (absent) | 0.5 (generic) | 1.0 (patient-specific, tied to THIS patient's condition)</p>
+            </div>
+
+            <p style="margin-top: 15px;"><strong>Stage 2: Supervisor Grading (Three-Agent Team)</strong></p>
+            <div style="margin-left: 20px; margin-top: 10px; font-size: 0.9em;">
+              <p><strong>Reward Agent:</strong> Scores c1–c4 on 0–1 scale per the rubric</p>
+              <p style="margin-top: 8px;"><strong>Critic Agent:</strong> Explains WHY each score was assigned; identifies gaps and strengths</p>
+              <p style="margin-top: 8px;"><strong>Optimizer Agent:</strong> Placeholder for future RL optimization; suggests how answer could have scored higher</p>
+            </div>
+
+            <p style="margin-top: 15px;"><strong>Final Score:</strong> Total = lab_score (0–0.70) + answer_score (0–1.00) = max 1.70</p>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- ===== DIRCHANGE V1 ===== -->
+      <div id="dirchange-v1" class="tab-content dirchange-v1">
+
+        <div class="section">
+          <h2>1️⃣ Context: What This Benchmark Tests</h2>
+          <div class="card">
+            <p><strong>Dataset:</strong> 100 EHRSHOT cardiac cases with direction-reversal windows</p>
+            <p><strong>Task:</strong> Predict next serial Troponin I value and direction when visible trend reverses.</p>
+            <p><strong>Why Hard:</strong> Last-value heuristic AND trend-extrapolation both fail by construction. Requires cross-lab signal integration (BNP, creatinine, lactate, vitals).</p>
+            <p><strong>Four Reversal Types:</strong> Rising→Falling (35), Falling→Rising (35), Stable→Rising (15), Stable→Falling (15)</p>
+          </div>
+        </div>
+
+        <div class="section">
+          <h2>2️⃣ Scoring: How It's Graded</h2>
+          <div class="card">
+            <div class="metric">
+              <div class="metric-label"><strong>Direction Correct (0.40)</strong></div>
+              <div>Binary: predicted direction == ground truth (threshold: >20% change)</div>
+            </div>
+            <div class="metric">
+              <div class="metric-label"><strong>Within 50% Error (0.35)</strong></div>
+              <div>|predicted - actual| / actual ≤ 0.50</div>
+            </div>
+            <div class="metric">
+              <div class="metric-label"><strong>Within 20% Error (0.25)</strong></div>
+              <div>|predicted - actual| / actual ≤ 0.20</div>
+            </div>
+            <p style="margin-top: 12px; font-size: 0.9em; color: #666;">Max score: 1.0 | Baseline (random direction): 33% accuracy</p>
+          </div>
+        </div>
+
+        <div class="section">
+          <h2>3️⃣ Sample Case: Rising → Falling (Success)</h2>
+          <div class="example-box">
+            <h4>Troponin Trajectory</h4>
+            <p style="background: white; padding: 12px; border-radius: 6px; margin: 10px 0;">
+              <strong>Sept 25:</strong> 0.2 ng/mL → <strong>Sept 26:</strong> 3.4 ng/mL → <strong>Sept 27:</strong> 7.8 ng/mL [VISIBLE: RISING] → <strong>Sept 28:</strong> 2.1 ng/mL [GROUND TRUTH: FALLING]
+            </p>
+
+            <h4>Agent Prediction</h4>
+            <p style="background: white; padding: 12px; border-radius: 6px; margin: 10px 0; font-size: 0.9em; font-style: italic;">
+              Troponin rose sharply (0.2→7.8 in 38h, decelerating). Cross-lab signals show recovery: BNP falling (650→480), Cr improving (1.4→1.1), Lactate falling (2.8→1.5). Peak has passed. At 47.4h, entering clearance phase. <strong>Predict: 3.5 ng/mL, Direction: FALLING</strong>
+            </p>
+
+            <h4>Scoring</h4>
+            <div class="score-box">
+              <div class="metric">
+                <div class="metric-label">Direction:</div>
+                <div>✅ Falling = Falling → <strong>+0.40</strong></div>
+              </div>
+              <div class="metric">
+                <div class="metric-label">Error:</div>
+                <div>|3.5 - 2.1| / 2.1 = 67%</div>
+              </div>
+              <div class="metric">
+                <div class="metric-label">Within 50%:</div>
+                <div>❌ NO (67% > 50%) → <strong>+0.00</strong></div>
+              </div>
+              <div class="metric">
+                <div class="metric-label">Within 20%:</div>
+                <div>❌ NO → <strong>+0.00</strong></div>
+              </div>
+              <p style="margin-top: 12px; padding: 10px; background: #d4edda; border-radius: 6px;">
+                <strong>Total: 0.40 / 1.0 (40%)</strong> — All points from direction detection
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="section">
+          <h2>4️⃣ Results: All 100 Cases by Reversal Type</h2>
+
+          <table>
+            <thead>
+              <tr>
+                <th>Reversal Type</th>
+                <th>N Cases</th>
+                <th>Direction Accuracy</th>
+                <th>Within 50%</th>
+                <th>Within 20%</th>
+                <th>Mean Score</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Rising → Falling</strong></td>
+                <td>35</td>
+                <td style="background: #d4edda;">91%</td>
+                <td>34%</td>
+                <td>20%</td>
+                <td><strong>0.54</strong></td>
+              </tr>
+              <tr>
+                <td><strong>Falling → Rising</strong></td>
+                <td>35</td>
+                <td style="background: #d4edda;">86%</td>
+                <td>9%</td>
+                <td>3%</td>
+                <td><strong>0.42</strong></td>
+              </tr>
+              <tr>
+                <td><strong>Stable → Rising</strong></td>
+                <td>15</td>
+                <td style="background: #d4edda;">93%</td>
+                <td>20%</td>
+                <td>7%</td>
+                <td><strong>0.40</strong></td>
+              </tr>
+              <tr>
+                <td><strong>Stable → Falling</strong></td>
+                <td>15</td>
+                <td style="background: #f8d7da;">33%</td>
+                <td>20%</td>
+                <td>0%</td>
+                <td><strong>0.24</strong></td>
+              </tr>
+              <tr style="background: #f0f0f0; font-weight: bold;">
+                <td>OVERALL</td>
+                <td>100</td>
+                <td style="text-align: center;">82%</td>
+                <td style="text-align: center;">31%</td>
+                <td style="text-align: center;">14%</td>
+                <td style="text-align: center;">0.42</td>
+              </tr>
+            </tbody>
+          </table>
+
+          <div class="chart-container">
+            <canvas id="v1Chart"></canvas>
+          </div>
+        </div>
+
+        <div class="section">
+          <h2>5️⃣ Key Findings</h2>
+          <div class="key-finding">
+            <p><strong>1. Direction Detection >> Value Precision:</strong> 82% direction accuracy (far above 33% random), but only 31% within 50% value error.</p>
+            <p><strong>2. Upward Reversals Much Easier:</strong> Rising→Falling (91%) and Stable→Rising (93%) vs Stable→Falling (33%). Rising bias dominates.</p>
+            <p><strong>3. Magnitude Anchoring:</strong> Falling→Rising cases: 100% direction accuracy BUT only 3% within 50% error. Agent anchors on last low value, misses future peak.</p>
+            <p><strong>4. Recovery Signals Hard:</strong> Stable→Falling requires detecting subtle recovery signals (falling BNP, improving Cr) without visible momentum. Agent defaults to rising.</p>
+          </div>
+        </div>
+
+        <div class="section">
+          <h2>6️⃣ How Questions Are Created (Case Preparation)</h2>
+          <div class="card">
+            <p><strong>Data Source:</strong> 100 cardiac cases selected from EHRSHOT database (ACS + HF patients with complete troponin trajectory data).</p>
+
+            <p style="margin-top: 15px;"><strong>Direction-Reversal Window Design:</strong> For each patient, identify the visible troponin trend (rising, falling, or stable), then select a future timepoint where the trend reverses. This ensures both last-value AND trend-extrapolation heuristics fail by construction.</p>
+
+            <p style="margin-top: 15px;"><strong>Data Leakage Prevention:</strong> The ground-truth troponin value at the target time is hidden from the agent during prediction. Cross-lab signals (BNP, creatinine, lactate, vitals) available up to the target time, but the troponin value itself is not revealed until scoring.</p>
+
+            <p style="margin-top: 15px;"><strong>Case Distribution:</strong> Stratified by reversal type to ensure balanced difficulty assessment: Rising→Falling (35), Falling→Rising (35), Stable→Rising (15), Stable→Falling (15).</p>
+          </div>
+        </div>
+
+        <div class="section">
+          <h2>7️⃣ How Questions Are Graded</h2>
+          <div class="card">
+            <p><strong>Scoring Formula (identical to v1):</strong></p>
+            <div style="margin-left: 20px; margin-top: 10px; font-size: 0.9em;">
+              <p>Direction Correct = 0.40 (binary: predicted direction == ground truth, threshold >20% change)</p>
+              <p style="margin-top: 8px;">Within 50% Error = 0.35 (|predicted - actual| / actual ≤ 0.50)</p>
+              <p style="margin-top: 8px;">Within 20% Error = 0.25 (|predicted - actual| / actual ≤ 0.20)</p>
+              <p style="margin-top: 8px;">Max Score = 1.0 | Baseline (random direction) = 33% accuracy</p>
+            </div>
+
+            <p style="margin-top: 15px;"><strong>Stratified Analysis:</strong> Results reported separately by reversal type to identify where agents struggle most (e.g., Stable→Falling shows only 33% direction accuracy despite being clinically critical).</p>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- ===== DIRCHANGE V2 ===== -->
+      <div id="dirchange-v2" class="tab-content dirchange-v2">
+
+        <div class="section">
+          <h2>1️⃣ Context: What This Benchmark Tests</h2>
+          <div class="card">
+            <p><strong>Dataset:</strong> 100 EHRSHOT cases (reorganized with explicit conditions)</p>
+            <p><strong>Task:</strong> Predict next Troponin I value across different tool/context conditions.</p>
+            <p><strong>Conditions:</strong></p>
+            <ul style="margin-left: 20px; margin-top: 10px;">
+              <li><strong>Baseline:</strong> Labs only, no external tools (control)</li>
+              <li><strong>With PubMed:</strong> Labs + MCP PubMed server access (test)</li>
+            </ul>
+            <p style="margin-top: 15px;"><strong>Purpose:</strong> Measure whether external literature access helps or confuses troponin prediction.</p>
+          </div>
+        </div>
+
+        <div class="section">
+          <h2>2️⃣ Scoring: How It's Graded</h2>
+          <div class="card">
+            <p>Identical to v1: Direction (0.40) + Within 50% (0.35) + Within 20% (0.25) = max 1.0</p>
+          </div>
+        </div>
+
+        <div class="section">
+          <h2>3️⃣ Sample Case: Case 1 (Rising → Falling)</h2>
+          <div class="example-box">
+            <h4>Condition Comparison</h4>
+            <table style="margin: 10px 0;">
+              <tr>
+                <td style="font-weight: 600; width: 120px;">Baseline:</td>
+                <td style="background: white; padding: 8px; border-radius: 4px;">Predicted 3.5, Falling → Direction ✅ Score <strong>0.40</strong></td>
+              </tr>
+              <tr>
+                <td style="font-weight: 600;">With PubMed:</td>
+                <td style="background: white; padding: 8px; border-radius: 4px;">Predicted 3.5, Falling → Direction ✅ Score <strong>0.40</strong></td>
+              </tr>
+            </table>
+            <p style="margin-top: 10px; font-size: 0.9em; color: #666;"><strong>Both conditions yielded same answer.</strong> For this case, PubMed access made no difference.</p>
+          </div>
+        </div>
+
+        <div class="section">
+          <h2>4️⃣ Results: 20 Cases Across Conditions</h2>
+
+          <table>
+            <thead>
+              <tr>
+                <th>Metric</th>
+                <th>Baseline</th>
+                <th>With PubMed</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Mean Score</strong></td>
+                <td style="background: #d4edda;"><strong>0.288</strong></td>
+                <td>0.238</td>
+              </tr>
+              <tr>
+                <td><strong>Direction Accuracy</strong></td>
+                <td style="background: #d4edda;"><strong>20% (4/20)</strong></td>
+                <td>15% (3/20)</td>
+              </tr>
+              <tr>
+                <td><strong>Predicted "Rising"</strong></td>
+                <td>12/20 (60%)</td>
+                <td>12/20 (60%)</td>
+              </tr>
+              <tr>
+                <td><strong>Within 50% Error</strong></td>
+                <td>45% (9/20)</td>
+                <td>40% (8/20)</td>
+              </tr>
+              <tr>
+                <td><strong>Within 20% Error</strong></td>
+                <td style="background: #d4edda;"><strong>20% (4/20)</strong></td>
+                <td>15% (3/20)</td>
+              </tr>
+            </tbody>
+          </table>
+
+          <div class="chart-container">
+            <canvas id="v2Chart"></canvas>
+          </div>
+        </div>
+
+        <div class="section">
+          <h2>5️⃣ Key Findings</h2>
+          <div class="key-finding">
+            <p><strong>1. PubMed Access Paradox:</strong> Baseline (0.288) OUTPERFORMS With PubMed (0.238). External tools sometimes confuse more than help.</p>
+            <p><strong>2. External Literature Hurts:</strong> Adding PubMed access decreased both mean score (-5%) and direction accuracy (20% → 15%). Agent gets distracted by general literature instead of focusing on patient-specific cross-lab signals.</p>
+            <p><strong>3. Rising Bias Persists:</strong> 60% predicted rising in both conditions. Not a prompt artifact — fundamental to agent heuristics.</p>
+            <p><strong>4. Lesson:</strong> For troponin prediction, agent's intuition from lab patterns > ability to integrate external literature. Sometimes less is more.</p>
+          </div>
+        </div>
+
+        <div class="section">
+          <h2>6️⃣ How Conditions Are Designed</h2>
+          <div class="card">
+            <p><strong>v2 vs v1:</strong> Dirchange v1 is a single-condition benchmark (agents have only lab data). Dirchange v2 adds experimental conditions to test whether external tools help or hurt prediction accuracy.</p>
+
+            <p style="margin-top: 15px;"><strong>Baseline Condition:</strong> Labs only, no external tools. Agent has access to troponin trajectory, BNP, creatinine, lactate, vitals, medications — the full lab arsenal from EHRSHOT. This is the control group.</p>
+
+            <p style="margin-top: 15px;"><strong>With PubMed Condition:</strong> Same lab data PLUS access to MCP PubMed server. Agent can search for literature on troponin kinetics, cardiac markers, HF pathophysiology, etc. The question: does external literature help agents make better cross-lab inferences, or does it introduce noise and distraction?</p>
+
+            <p style="margin-top: 15px;"><strong>Key Insight:</strong> The paradoxical finding that PubMed access DECREASES performance (0.288 → 0.238) suggests that for troponin prediction, agent's pattern recognition from lab data > ability to integrate general literature. Agents may be pattern-matching against general troponin descriptions rather than focusing on THIS patient's specific multi-lab trajectory.</p>
+          </div>
+        </div>
+
+        <div class="section">
+          <h2>7️⃣ Scoring & Analysis</h2>
+          <div class="card">
+            <p><strong>Scoring Formula:</strong> Identical to v1 (Direction 0.40 + Within 50% 0.35 + Within 20% 0.25 = max 1.0).</p>
+
+            <p style="margin-top: 15px;"><strong>Within-Condition Analysis:</strong> For each case, we compare Baseline vs With PubMed predictions and scores. Same 20 cases, same evaluation criteria, different information access.</p>
+
+            <p style="margin-top: 15px;"><strong>Aggregate Metrics:</strong> Mean score, direction accuracy, error distribution across both conditions. Charts show the stark performance gap and help diagnose whether PubMed access is genuinely distracting agents or if the decrement is noise (20 cases is a small sample).</p>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+
+  <script>
+    function switchTab(event, tabName) {
+      document.querySelectorAll('.tab-content').forEach(c => c.classList.remove('active'));
+      document.getElementById(tabName).classList.add('active');
+      document.querySelectorAll('.tab-button').forEach(b => b.classList.remove('active'));
+      event.target.classList.add('active');
+      setTimeout(() => {
+        if (window.akiChart) window.akiChart.resize();
+        if (window.v1Chart) window.v1Chart.resize();
+        if (window.v2Chart) window.v2Chart.resize();
+      }, 100);
+    }
+
+    const akiCtx = document.getElementById('akiChart')?.getContext('2d');
+    if (akiCtx) {
+      window.akiChart = new Chart(akiCtx, {
+        type: 'bar',
+        data: {
+          labels: ['WITH_LAB_TOOLS', 'NO_TOOLS'],
+          datasets: [{
+            label: 'Mean Total Score',
+            data: [1.069, 1.120],
+            backgroundColor: ['rgba(102, 126, 234, 0.8)', 'rgba(118, 75, 162, 0.8)'],
+            borderColor: ['rgba(102, 126, 234, 1)', 'rgba(118, 75, 162, 1)'],
+            borderWidth: 2,
+            borderRadius: 6,
+          }]
+        },
+        options: {
+          responsive: true,
+          maintainAspectRatio: false,
+          plugins: {
+            legend: { position: 'top' },
+            title: { display: true, text: 'AKI: Score by Condition', font: { size: 14, weight: 'bold' } }
+          },
+          scales: {
+            y: { beginAtZero: true, max: 1.7, title: { display: true, text: 'Total Score (max 1.70)' } },
+            x: { grid: { display: false } }
+          }
+        }
+      });
+    }
+
+    const v1Ctx = document.getElementById('v1Chart')?.getContext('2d');
+    if (v1Ctx) {
+      window.v1Chart = new Chart(v1Ctx, {
+        type: 'bar',
+        data: {
+          labels: ['Rising→Falling', 'Falling→Rising', 'Stable→Rising', 'Stable→Falling'],
+          datasets: [
+            { label: 'Direction Accuracy (%)', data: [91, 86, 93, 33], backgroundColor: 'rgba(231, 76, 60, 0.8)', borderColor: 'rgba(231, 76, 60, 1)', borderWidth: 2, borderRadius: 6, yAxisID: 'y' },
+            { label: 'Within 50% Error (%)', data: [34, 9, 20, 20], backgroundColor: 'rgba(243, 156, 18, 0.8)', borderColor: 'rgba(243, 156, 18, 1)', borderWidth: 2, borderRadius: 6, yAxisID: 'y1' }
+          ]
+        },
+        options: {
+          responsive: true,
+          maintainAspectRatio: false,
+          plugins: { legend: { position: 'top' }, title: { display: true, text: 'v1: Performance by Reversal Type', font: { size: 14, weight: 'bold' } } },
+          scales: { y: { beginAtZero: true, max: 100, title: { display: true, text: 'Direction Accuracy (%)' } }, y1: { position: 'right', beginAtZero: true, max: 100, title: { display: true, text: 'Within 50% Error (%)' }, grid: { drawOnChartArea: false } }, x: { grid: { display: false } } }
+        }
+      });
+    }
+
+    const v2Ctx = document.getElementById('v2Chart')?.getContext('2d');
+    if (v2Ctx) {
+      window.v2Chart = new Chart(v2Ctx, {
+        type: 'bar',
+        data: {
+          labels: ['Baseline', 'With PubMed'],
+          datasets: [
+            { label: 'Mean Score', data: [0.288, 0.238], backgroundColor: ['rgba(52, 211, 153, 0.8)', 'rgba(59, 130, 246, 0.8)'], borderColor: ['rgba(52, 211, 153, 1)', 'rgba(59, 130, 246, 1)'], borderWidth: 2, borderRadius: 6 },
+            { label: 'Direction Accuracy (%)', data: [20, 15], backgroundColor: ['rgba(74, 222, 128, 0.6)', 'rgba(96, 165, 250, 0.6)'], borderColor: ['rgba(74, 222, 128, 1)', 'rgba(96, 165, 250, 1)'], borderWidth: 2, borderRadius: 6, yAxisID: 'y1' }
+          ]
+        },
+        options: {
+          responsive: true,
+          maintainAspectRatio: false,
+          plugins: { legend: { position: 'top' }, title: { display: true, text: 'v2: Score vs Direction Accuracy', font: { size: 14, weight: 'bold' } } },
+          scales: { y: { beginAtZero: true, max: 1.0, title: { display: true, text: 'Mean Score' } }, y1: { position: 'right', beginAtZero: true, max: 100, title: { display: true, text: 'Direction Accuracy (%)' }, grid: { drawOnChartArea: false } }, x: { grid: { display: false } } }
+        }
+      });
+    }
+  </script>
+</body>
+</html>

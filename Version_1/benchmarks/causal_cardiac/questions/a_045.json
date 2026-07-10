@@ -1,0 +1,27 @@
+{
+  "case_id": "a_045",
+  "benchmark": "intervention_physiological_effect",
+  "hadm_id": 29831794,
+  "procedure": {
+    "title": "Dilation of Coronary Artery, One Artery with Drug-eluting Intraluminal Device, Percutaneous Approach",
+    "date": "2133-10-29 00:00"
+  },
+  "question": {
+    "stem": "Patient hadm_id: 29831794\n\nDemographics: None-year-old Unknown\nPrimary Diagnosis: Non-ST elevation (NSTEMI) myocardial infarction\n\nPre-Procedure Lab Timeline (all available labs before 2133-10-29 00:00):\n\n| Datetime | Lab | Value | Unit | Flag |\n|---|---|---|---|---|\n| 2133-10-27 21:05 | Creatine Kinase, MB Isoenzyme | 1.0 | ng/mL | nan |\n| 2133-10-27 21:05 | Troponin T | 0.1 | ng/mL | abnormal |\n| 2133-10-28 00:23 | PTT | 90.3 | sec | abnormal |\n| 2133-10-28 08:05 | RDW-SD | 41.8 | fL | nan |\n| 2133-10-28 08:05 | White Blood Cells | 9.1 | K/uL | nan |\n| 2133-10-28 08:05 | Red Blood Cells | 4.74 | m/uL | nan |\n| 2133-10-28 08:05 | RDW | 12.3 | % | nan |\n| 2133-10-28 08:05 | Platelet Count | 205.0 | K/uL | nan |\n| 2133-10-28 08:05 | MCV | 93.0 | fL | nan |\n| 2133-10-28 08:05 | MCH | 30.8 | pg | nan |\n| 2133-10-28 08:05 | Hemoglobin | 14.6 | g/dL | nan |\n| 2133-10-28 08:05 | Hematocrit | 43.9 | % | nan |\n| 2133-10-28 08:05 | Urea Nitrogen | 23.0 | mg/dL | abnormal |\n| 2133-10-28 08:05 | MCHC | 33.3 | g/dL | nan |\n| 2133-10-28 08:05 | Sodium | 135.0 | mEq/L | nan |\n| 2133-10-28 08:05 | Potassium | 4.1 | mEq/L | nan |\n| 2133-10-28 08:05 | Phosphate | 3.9 | mg/dL | nan |\n| 2133-10-28 08:05 | Magnesium | 2.0 | mg/dL | nan |\n| 2133-10-28 08:05 | Troponin T | 0.09 | ng/mL | abnormal |\n| 2133-10-28 08:05 | Glucose | 135.0 | mg/dL | abnormal |\n| 2133-10-28 08:05 | Creatinine | 1.3 | mg/dL | abnormal |\n| 2133-10-28 08:05 | Chloride | 101.0 | mEq/L | nan |\n| 2133-10-28 08:05 | Calcium, Total | 9.4 | mg/dL | nan |\n| 2133-10-28 08:05 | Bicarbonate | 21.0 | mEq/L | abnormal |\n| 2133-10-28 08:05 | Anion Gap | 17.0 | mEq/L | nan |\n| 2133-10-28 09:20 | PTT | 64.2 | sec | abnormal |\n| 2133-10-28 15:05 | Troponin T | 0.1 | ng/mL | abnormal |\n| 2133-10-28 15:05 | PTT | 52.0 | sec | abnormal |\n\nProcedure Performed: Dilation of Coronary Artery, One Artery with Drug-eluting Intraluminal Device, Percutaneous Approach on 2133-10-29 00:00\n\nAnalyze the pre-intervention lab trajectory and clinical context. Given the patient's state and the intervention performed, describe what physiological changes you would expect to see in the post-intervention period. Specifically discuss expected direction and magnitude of change for key cardiac biomarkers (Troponin, CK, CK-MB).",
+    "type": "intervention_forward_prediction"
+  },
+  "visible_context": {
+    "pre_intervention_labs": 28,
+    "demographics": {
+      "age": null,
+      "gender": "Unknown"
+    },
+    "primary_diagnosis": "Non-ST elevation (NSTEMI) myocardial infarction"
+  },
+  "ground_truth": {
+    "post_intervention_labs": "| Datetime | Lab | Value | Unit | Flag |\n|---|---|---|---|---|\n| 2133-10-29 19:05 | Creatine Kinase, MB Isoenzyme | 2.0 | ng/mL | nan |\n| 2133-10-29 19:05 | Troponin T | 0.06 | ng/mL | abnormal |\n| 2133-10-30 05:50 | Creatine Kinase, MB Isoenzyme | 3.0 | ng/mL | nan |\n| 2133-10-30 05:50 | Troponin T | 0.05 | ng/mL | abnormal |",
+    "n_post_labs": 4,
+    "expected_troponin_direction": "falling",
+    "expected_troponin_magnitude_pct": -40.00000000000001
+  }
+}

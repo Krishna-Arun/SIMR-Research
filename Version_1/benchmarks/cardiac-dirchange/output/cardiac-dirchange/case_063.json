@@ -1,0 +1,861 @@
+{
+  "case_id": 63,
+  "patient_id": "115969702",
+  "reversal_type": "falling\u2192rising",
+  "vis_trend": "falling",
+  "gap_hours": 10.6,
+  "n_ctx_trops": 2,
+  "n_gap_labs": 5,
+  "lv_err_pct": 99.7,
+  "trend_extrapolation_correct": false,
+  "question": {
+    "stem": "Patient EHRSHOT subject_id: 115969702\nPrevious Troponin I: 0.1 ng/mL at 2008-02-21 07:20\nLast known Troponin I: 0.05 ng/mL at 2008-02-21 07:22\nVisible troponin trend: falling (most recent readings decreasing)\nTroponin measurements are NOT available after 2008-02-21 07:22.\nAll other labs are available up to 2008-02-21 18:00.\nPredict Troponin I at: 2008-02-21 18:00 (10.6h after last known troponin)",
+    "target_datetime": "2008-02-21 18:00",
+    "last_trop_time": "2008-02-21 07:22",
+    "hours_ahead": 10.6,
+    "visible_trend": "falling"
+  },
+  "ground_truth": {
+    "value": 18.5,
+    "direction": "rising",
+    "last_visible": 0.05,
+    "visible_trend": "falling"
+  },
+  "trop_context": [
+    {
+      "datetime": "2008-02-21 07:20",
+      "value": 0.1,
+      "label": "Troponin I"
+    },
+    {
+      "datetime": "2008-02-21 07:22",
+      "value": 0.05,
+      "label": "Troponin I"
+    }
+  ],
+  "gap_labs": [
+    {
+      "datetime": "2008-02-21 11:15",
+      "label": "Creatinine",
+      "value": 1.6,
+      "unit": "mg/dL"
+    },
+    {
+      "datetime": "2008-02-21 11:15",
+      "label": "Potassium",
+      "value": 3.7,
+      "unit": "mmol/L"
+    },
+    {
+      "datetime": "2008-02-21 11:15",
+      "label": "BUN",
+      "value": 20.0,
+      "unit": "mg/dL"
+    },
+    {
+      "datetime": "2008-02-21 11:15",
+      "label": "Hematocrit",
+      "value": 42.4,
+      "unit": "%"
+    },
+    {
+      "datetime": "2008-02-21 11:15",
+      "label": "Hemoglobin",
+      "value": 14.4,
+      "unit": "g/dL"
+    }
+  ],
+  "lab_timeline": [
+    {
+      "datetime": "2008-02-21 07:20",
+      "label": "10535-3",
+      "value": 0.6,
+      "unit": "ng/mL"
+    },
+    {
+      "datetime": "2008-02-21 07:20",
+      "label": "Troponin I",
+      "value": 0.1,
+      "unit": "ng/mL"
+    },
+    {
+      "datetime": "2008-02-21 07:20",
+      "label": "PTT",
+      "value": 55.6,
+      "unit": "sec"
+    },
+    {
+      "datetime": "2008-02-21 07:20",
+      "label": "ALT",
+      "value": 38.0,
+      "unit": "U/L"
+    },
+    {
+      "datetime": "2008-02-21 07:20",
+      "label": "Albumin",
+      "value": 2.5,
+      "unit": "g/dL"
+    },
+    {
+      "datetime": "2008-02-21 07:20",
+      "label": "Calcium",
+      "value": 9.8,
+      "unit": "mg/dL"
+    },
+    {
+      "datetime": "2008-02-21 07:20",
+      "label": "AST",
+      "value": 41.0,
+      "unit": "U/L"
+    },
+    {
+      "datetime": "2008-02-21 07:20",
+      "label": "Total Bilirubin",
+      "value": 0.5,
+      "unit": "mg/dL"
+    },
+    {
+      "datetime": "2008-02-21 07:20",
+      "label": "2028-9",
+      "value": 24.0,
+      "unit": "mmol/L"
+    },
+    {
+      "datetime": "2008-02-21 07:20",
+      "label": "20584-9",
+      "value": 10.5,
+      "unit": "K/uL"
+    },
+    {
+      "datetime": "2008-02-21 07:20",
+      "label": "2075-0",
+      "value": 105.0,
+      "unit": "mmol/L"
+    },
+    {
+      "datetime": "2008-02-21 07:20",
+      "label": "Creatinine",
+      "value": 1.5,
+      "unit": "mg/dL"
+    },
+    {
+      "datetime": "2008-02-21 07:20",
+      "label": "2336-6",
+      "value": 7.2,
+      "unit": "g/dL"
+    },
+    {
+      "datetime": "2008-02-21 07:20",
+      "label": "Glucose",
+      "value": 222.0,
+      "unit": "mg/dL"
+    },
+    {
+      "datetime": "2008-02-21 07:20",
+      "label": "Potassium",
+      "value": 4.3,
+      "unit": "mmol/L"
+    },
+    {
+      "datetime": "2008-02-21 07:20",
+      "label": "2885-2",
+      "value": 9.7,
+      "unit": "g/dL"
+    },
+    {
+      "datetime": "2008-02-21 07:20",
+      "label": "Sodium",
+      "value": 142.0,
+      "unit": "mmol/L"
+    },
+    {
+      "datetime": "2008-02-21 07:20",
+      "label": "BUN",
+      "value": 15.0,
+      "unit": "mg/dL"
+    },
+    {
+      "datetime": "2008-02-21 07:20",
+      "label": "33037-3",
+      "value": 13.0,
+      "unit": "mmol/L"
+    },
+    {
+      "datetime": "2008-02-21 07:20",
+      "label": "Hematocrit",
+      "value": 48.1,
+      "unit": "%"
+    },
+    {
+      "datetime": "2008-02-21 07:20",
+      "label": "PT",
+      "value": 31.7,
+      "unit": "sec"
+    },
+    {
+      "datetime": "2008-02-21 07:20",
+      "label": "5905-5",
+      "value": 4.7,
+      "unit": "%"
+    },
+    {
+      "datetime": "2008-02-21 07:20",
+      "label": "INR",
+      "value": 3.2,
+      "unit": "INR"
+    },
+    {
+      "datetime": "2008-02-21 07:20",
+      "label": "Alk Phosphatase",
+      "value": 260.0,
+      "unit": "U/L"
+    },
+    {
+      "datetime": "2008-02-21 07:20",
+      "label": "704-7",
+      "value": 0.12,
+      "unit": "K/uL"
+    },
+    {
+      "datetime": "2008-02-21 07:20",
+      "label": "706-2",
+      "value": 1.1,
+      "unit": "%"
+    },
+    {
+      "datetime": "2008-02-21 07:20",
+      "label": "711-2",
+      "value": 0.41,
+      "unit": "K/uL"
+    },
+    {
+      "datetime": "2008-02-21 07:20",
+      "label": "713-8",
+      "value": 3.9,
+      "unit": "%"
+    },
+    {
+      "datetime": "2008-02-21 07:20",
+      "label": "Hemoglobin",
+      "value": 16.1,
+      "unit": "g/dL"
+    },
+    {
+      "datetime": "2008-02-21 07:20",
+      "label": "731-0",
+      "value": 3.85,
+      "unit": "K/uL"
+    },
+    {
+      "datetime": "2008-02-21 07:20",
+      "label": "736-9",
+      "value": 36.8,
+      "unit": "%"
+    },
+    {
+      "datetime": "2008-02-21 07:20",
+      "label": "742-7",
+      "value": 0.49,
+      "unit": "K/uL"
+    },
+    {
+      "datetime": "2008-02-21 07:20",
+      "label": "751-8",
+      "value": 5.6,
+      "unit": "K/uL"
+    },
+    {
+      "datetime": "2008-02-21 07:20",
+      "label": "770-8",
+      "value": 53.5,
+      "unit": "%"
+    },
+    {
+      "datetime": "2008-02-21 07:20",
+      "label": "Platelets",
+      "value": 338.0,
+      "unit": "K/uL"
+    },
+    {
+      "datetime": "2008-02-21 07:20",
+      "label": "785-6",
+      "value": 27.4,
+      "unit": "pg"
+    },
+    {
+      "datetime": "2008-02-21 07:20",
+      "label": "786-4",
+      "value": 33.5,
+      "unit": "g/dL"
+    },
+    {
+      "datetime": "2008-02-21 07:20",
+      "label": "787-2",
+      "value": 81.9,
+      "unit": "fL"
+    },
+    {
+      "datetime": "2008-02-21 07:20",
+      "label": "788-0",
+      "value": 16.6,
+      "unit": "%"
+    },
+    {
+      "datetime": "2008-02-21 07:20",
+      "label": "789-8",
+      "value": 5.87,
+      "unit": "MIL/uL"
+    },
+    {
+      "datetime": "2008-02-21 07:22",
+      "label": "Troponin I",
+      "value": 0.05,
+      "unit": "ng/ML"
+    },
+    {
+      "datetime": "2008-02-21 08:02",
+      "label": "30318-0",
+      "value": 3.0,
+      "unit": "mmol/L"
+    },
+    {
+      "datetime": "2008-02-21 09:32",
+      "label": "19254-2",
+      "value": 110.0,
+      "unit": "mmHg"
+    },
+    {
+      "datetime": "2008-02-21 09:32",
+      "label": "22735-5",
+      "value": 18.5,
+      "unit": "mmol/L"
+    },
+    {
+      "datetime": "2008-02-21 09:32",
+      "label": "2713-6",
+      "value": 98.0,
+      "unit": "%"
+    },
+    {
+      "datetime": "2008-02-21 09:32",
+      "label": "30318-0",
+      "value": 7.0,
+      "unit": "mmol/L"
+    },
+    {
+      "datetime": "2008-02-21 09:32",
+      "label": "34705-4",
+      "value": 33.1,
+      "unit": "mmHg"
+    },
+    {
+      "datetime": "2008-02-21 09:32",
+      "label": "49701-6",
+      "value": 7.36,
+      "unit": ""
+    },
+    {
+      "datetime": "2008-02-21 11:01",
+      "label": "19254-2",
+      "value": 97.0,
+      "unit": "mmHg"
+    },
+    {
+      "datetime": "2008-02-21 11:01",
+      "label": "22735-5",
+      "value": 21.2,
+      "unit": "mmol/L"
+    },
+    {
+      "datetime": "2008-02-21 11:01",
+      "label": "2713-6",
+      "value": 97.0,
+      "unit": "%"
+    },
+    {
+      "datetime": "2008-02-21 11:01",
+      "label": "30318-0",
+      "value": 4.0,
+      "unit": "mmol/L"
+    },
+    {
+      "datetime": "2008-02-21 11:01",
+      "label": "34705-4",
+      "value": 36.8,
+      "unit": "mmHg"
+    },
+    {
+      "datetime": "2008-02-21 11:01",
+      "label": "49701-6",
+      "value": 7.37,
+      "unit": ""
+    },
+    {
+      "datetime": "2008-02-21 11:15",
+      "label": "PTT",
+      "value": 71.3,
+      "unit": "sec"
+    },
+    {
+      "datetime": "2008-02-21 11:15",
+      "label": "Calcium",
+      "value": 8.2,
+      "unit": "mg/dL"
+    },
+    {
+      "datetime": "2008-02-21 11:15",
+      "label": "19123-9",
+      "value": 1.8,
+      "unit": "mg/dL"
+    },
+    {
+      "datetime": "2008-02-21 11:15",
+      "label": "1995-0",
+      "value": 1.08,
+      "unit": "mmol/L"
+    },
+    {
+      "datetime": "2008-02-21 11:15",
+      "label": "2028-9",
+      "value": 22.0,
+      "unit": "mmol/L"
+    },
+    {
+      "datetime": "2008-02-21 11:15",
+      "label": "20584-9",
+      "value": 11.0,
+      "unit": "K/uL"
+    },
+    {
+      "datetime": "2008-02-21 11:15",
+      "label": "2075-0",
+      "value": 108.0,
+      "unit": "mmol/L"
+    },
+    {
+      "datetime": "2008-02-21 11:15",
+      "label": "Creatinine",
+      "value": 1.6,
+      "unit": "mg/dL"
+    },
+    {
+      "datetime": "2008-02-21 11:15",
+      "label": "Glucose",
+      "value": 231.0,
+      "unit": "mg/dL"
+    },
+    {
+      "datetime": "2008-02-21 11:15",
+      "label": "Phosphorus",
+      "value": 3.1,
+      "unit": "mg/dL"
+    },
+    {
+      "datetime": "2008-02-21 11:15",
+      "label": "Potassium",
+      "value": 3.7,
+      "unit": "mmol/L"
+    },
+    {
+      "datetime": "2008-02-21 11:15",
+      "label": "Sodium",
+      "value": 139.0,
+      "unit": "mmol/L"
+    },
+    {
+      "datetime": "2008-02-21 11:15",
+      "label": "BUN",
+      "value": 20.0,
+      "unit": "mg/dL"
+    },
+    {
+      "datetime": "2008-02-21 11:15",
+      "label": "33037-3",
+      "value": 9.0,
+      "unit": "mmol/L"
+    },
+    {
+      "datetime": "2008-02-21 11:15",
+      "label": "Hematocrit",
+      "value": 42.4,
+      "unit": "%"
+    },
+    {
+      "datetime": "2008-02-21 11:15",
+      "label": "5803-2",
+      "value": 7.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2008-02-21 11:15",
+      "label": "5811-5",
+      "value": 1.008,
+      "unit": ""
+    },
+    {
+      "datetime": "2008-02-21 11:15",
+      "label": "PT",
+      "value": 38.5,
+      "unit": "sec"
+    },
+    {
+      "datetime": "2008-02-21 11:15",
+      "label": "5905-5",
+      "value": 3.6,
+      "unit": "%"
+    },
+    {
+      "datetime": "2008-02-21 11:15",
+      "label": "INR",
+      "value": 4.1,
+      "unit": "INR"
+    },
+    {
+      "datetime": "2008-02-21 11:15",
+      "label": "704-7",
+      "value": 0.04,
+      "unit": "K/uL"
+    },
+    {
+      "datetime": "2008-02-21 11:15",
+      "label": "706-2",
+      "value": 0.3,
+      "unit": "%"
+    },
+    {
+      "datetime": "2008-02-21 11:15",
+      "label": "711-2",
+      "value": 0.02,
+      "unit": "K/uL"
+    },
+    {
+      "datetime": "2008-02-21 11:15",
+      "label": "713-8",
+      "value": 0.2,
+      "unit": "%"
+    },
+    {
+      "datetime": "2008-02-21 11:15",
+      "label": "Hemoglobin",
+      "value": 14.4,
+      "unit": "g/dL"
+    },
+    {
+      "datetime": "2008-02-21 11:15",
+      "label": "731-0",
+      "value": 0.56,
+      "unit": "K/uL"
+    },
+    {
+      "datetime": "2008-02-21 11:15",
+      "label": "736-9",
+      "value": 5.1,
+      "unit": "%"
+    },
+    {
+      "datetime": "2008-02-21 11:15",
+      "label": "742-7",
+      "value": 0.4,
+      "unit": "K/uL"
+    },
+    {
+      "datetime": "2008-02-21 11:15",
+      "label": "751-8",
+      "value": 9.97,
+      "unit": "K/uL"
+    },
+    {
+      "datetime": "2008-02-21 11:15",
+      "label": "770-8",
+      "value": 90.8,
+      "unit": "%"
+    },
+    {
+      "datetime": "2008-02-21 11:15",
+      "label": "Platelets",
+      "value": 334.0,
+      "unit": "K/uL"
+    },
+    {
+      "datetime": "2008-02-21 11:15",
+      "label": "785-6",
+      "value": 27.5,
+      "unit": "pg"
+    },
+    {
+      "datetime": "2008-02-21 11:15",
+      "label": "786-4",
+      "value": 33.9,
+      "unit": "g/dL"
+    },
+    {
+      "datetime": "2008-02-21 11:15",
+      "label": "787-2",
+      "value": 81.1,
+      "unit": "fL"
+    },
+    {
+      "datetime": "2008-02-21 11:15",
+      "label": "788-0",
+      "value": 16.7,
+      "unit": "%"
+    },
+    {
+      "datetime": "2008-02-21 11:15",
+      "label": "789-8",
+      "value": 5.22,
+      "unit": "MIL/uL"
+    },
+    {
+      "datetime": "2008-02-21 11:44",
+      "label": "19254-2",
+      "value": 169.0,
+      "unit": "mmHg"
+    },
+    {
+      "datetime": "2008-02-21 11:44",
+      "label": "22735-5",
+      "value": 20.0,
+      "unit": "mmol/L"
+    },
+    {
+      "datetime": "2008-02-21 11:44",
+      "label": "2713-6",
+      "value": 99.0,
+      "unit": "%"
+    },
+    {
+      "datetime": "2008-02-21 11:44",
+      "label": "30318-0",
+      "value": 6.0,
+      "unit": "mmol/L"
+    },
+    {
+      "datetime": "2008-02-21 11:44",
+      "label": "34705-4",
+      "value": 36.7,
+      "unit": "mmHg"
+    },
+    {
+      "datetime": "2008-02-21 11:44",
+      "label": "49701-6",
+      "value": 7.35,
+      "unit": ""
+    },
+    {
+      "datetime": "2008-02-21 13:02",
+      "label": "19254-2",
+      "value": 213.0,
+      "unit": "mmHg"
+    },
+    {
+      "datetime": "2008-02-21 13:02",
+      "label": "22735-5",
+      "value": 21.5,
+      "unit": "mmol/L"
+    },
+    {
+      "datetime": "2008-02-21 13:02",
+      "label": "2713-6",
+      "value": 100.0,
+      "unit": "%"
+    },
+    {
+      "datetime": "2008-02-21 13:02",
+      "label": "30318-0",
+      "value": 3.0,
+      "unit": "mmol/L"
+    },
+    {
+      "datetime": "2008-02-21 13:02",
+      "label": "34705-4",
+      "value": 34.6,
+      "unit": "mmHg"
+    },
+    {
+      "datetime": "2008-02-21 13:02",
+      "label": "49701-6",
+      "value": 7.4,
+      "unit": ""
+    },
+    {
+      "datetime": "2008-02-21 14:00",
+      "label": "PTT",
+      "value": 78.5,
+      "unit": "sec"
+    },
+    {
+      "datetime": "2008-02-21 14:00",
+      "label": "3243-3",
+      "value": 21.1,
+      "unit": "sec"
+    },
+    {
+      "datetime": "2008-02-21 14:00",
+      "label": "Fibrinogen",
+      "value": 789.0,
+      "unit": "mg/dL"
+    },
+    {
+      "datetime": "2008-02-21 14:00",
+      "label": "PT",
+      "value": 41.9,
+      "unit": "sec"
+    },
+    {
+      "datetime": "2008-02-21 14:00",
+      "label": "INR",
+      "value": 4.6,
+      "unit": "INR"
+    },
+    {
+      "datetime": "2008-02-21 14:04",
+      "label": "19254-2",
+      "value": 188.0,
+      "unit": "mmHg"
+    },
+    {
+      "datetime": "2008-02-21 14:04",
+      "label": "22735-5",
+      "value": 20.6,
+      "unit": "mmol/L"
+    },
+    {
+      "datetime": "2008-02-21 14:04",
+      "label": "2713-6",
+      "value": 100.0,
+      "unit": "%"
+    },
+    {
+      "datetime": "2008-02-21 14:04",
+      "label": "30318-0",
+      "value": 5.0,
+      "unit": "mmol/L"
+    },
+    {
+      "datetime": "2008-02-21 14:04",
+      "label": "34705-4",
+      "value": 38.0,
+      "unit": "mmHg"
+    },
+    {
+      "datetime": "2008-02-21 14:04",
+      "label": "49701-6",
+      "value": 7.34,
+      "unit": ""
+    },
+    {
+      "datetime": "2008-02-21 15:31",
+      "label": "19254-2",
+      "value": 238.0,
+      "unit": "mmHg"
+    },
+    {
+      "datetime": "2008-02-21 15:31",
+      "label": "22735-5",
+      "value": 22.0,
+      "unit": "mmol/L"
+    },
+    {
+      "datetime": "2008-02-21 15:31",
+      "label": "2713-6",
+      "value": 100.0,
+      "unit": "%"
+    },
+    {
+      "datetime": "2008-02-21 15:31",
+      "label": "30318-0",
+      "value": 3.0,
+      "unit": "mmol/L"
+    },
+    {
+      "datetime": "2008-02-21 15:31",
+      "label": "34705-4",
+      "value": 36.3,
+      "unit": "mmHg"
+    },
+    {
+      "datetime": "2008-02-21 15:31",
+      "label": "49701-6",
+      "value": 7.39,
+      "unit": ""
+    },
+    {
+      "datetime": "2008-02-21 16:58",
+      "label": "19254-2",
+      "value": 101.0,
+      "unit": "mmHg"
+    },
+    {
+      "datetime": "2008-02-21 16:58",
+      "label": "22735-5",
+      "value": 21.2,
+      "unit": "mmol/L"
+    },
+    {
+      "datetime": "2008-02-21 16:58",
+      "label": "2713-6",
+      "value": 97.0,
+      "unit": "%"
+    },
+    {
+      "datetime": "2008-02-21 16:58",
+      "label": "30318-0",
+      "value": 4.0,
+      "unit": "mmol/L"
+    },
+    {
+      "datetime": "2008-02-21 16:58",
+      "label": "34705-4",
+      "value": 38.5,
+      "unit": "mmHg"
+    },
+    {
+      "datetime": "2008-02-21 16:58",
+      "label": "49701-6",
+      "value": 7.35,
+      "unit": ""
+    },
+    {
+      "datetime": "2008-02-21 18:00",
+      "label": "CK",
+      "value": 345.0,
+      "unit": "U/L"
+    }
+  ],
+  "diagnoses": [],
+  "medications": [],
+  "procedures": [],
+  "observations": [],
+  "visit_history": [
+    {
+      "date": "2008-02-21 00:00",
+      "type": "STANFORD_VISIT/||Orders Only"
+    },
+    {
+      "date": "2008-02-21 00:00",
+      "type": "STANFORD_VISIT/||Orders Only"
+    },
+    {
+      "date": "2008-02-21 00:00",
+      "type": "STANFORD_VISIT/||Orders Only"
+    },
+    {
+      "date": "2008-02-21 00:00",
+      "type": "STANFORD_VISIT/||Orders Only"
+    },
+    {
+      "date": "2008-02-21 09:41",
+      "type": "STANFORD_VISIT/Inpatient|Emergency|Hospital Encounter"
+    }
+  ],
+  "data_summary": {
+    "n_lab_rows": 126,
+    "n_diagnoses": 0,
+    "n_medications": 0,
+    "n_procedures": 0,
+    "n_observations": 0,
+    "n_visits": 5,
+    "n_gap_labs": 5
+  }
+}

@@ -1,0 +1,1032 @@
+{
+  "case_id": 38,
+  "patient_id": "115969645",
+  "reversal_type": "rising\u2192falling",
+  "vis_trend": "rising",
+  "gap_hours": 8.3,
+  "n_ctx_trops": 2,
+  "n_gap_labs": 10,
+  "lv_err_pct": 100.0,
+  "trend_extrapolation_correct": false,
+  "question": {
+    "stem": "Patient EHRSHOT subject_id: 115969645\nPrevious Troponin I: 0.0 ng/mL at 2008-10-10 20:24\nLast known Troponin I: 0.2 ng/mL at 2008-10-10 20:25\nVisible troponin trend: rising (most recent readings increasing)\nTroponin measurements are NOT available after 2008-10-10 20:25.\nAll other labs are available up to 2008-10-11 04:45.\nPredict Troponin I at: 2008-10-11 04:45 (8.3h after last known troponin)",
+    "target_datetime": "2008-10-11 04:45",
+    "last_trop_time": "2008-10-10 20:25",
+    "hours_ahead": 8.3,
+    "visible_trend": "rising"
+  },
+  "ground_truth": {
+    "value": 0.0,
+    "direction": "falling",
+    "last_visible": 0.2,
+    "visible_trend": "rising"
+  },
+  "trop_context": [
+    {
+      "datetime": "2008-10-10 20:24",
+      "value": 0.0,
+      "label": "Troponin I"
+    },
+    {
+      "datetime": "2008-10-10 20:25",
+      "value": 0.2,
+      "label": "Troponin I"
+    }
+  ],
+  "gap_labs": [
+    {
+      "datetime": "2008-10-10 20:30",
+      "label": "Systolic BP",
+      "value": 99.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2008-10-10 20:30",
+      "label": "Heart Rate",
+      "value": 113.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2008-10-10 21:00",
+      "label": "Systolic BP",
+      "value": 150.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2008-10-10 21:00",
+      "label": "Heart Rate",
+      "value": 79.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2008-10-10 22:50",
+      "label": "Systolic BP",
+      "value": 150.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2008-10-10 22:50",
+      "label": "Heart Rate",
+      "value": 76.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2008-10-10 23:26",
+      "label": "Systolic BP",
+      "value": 153.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2008-10-10 23:26",
+      "label": "Heart Rate",
+      "value": 78.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2008-10-11 02:55",
+      "label": "Systolic BP",
+      "value": 124.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2008-10-11 02:55",
+      "label": "Heart Rate",
+      "value": 72.0,
+      "unit": ""
+    }
+  ],
+  "lab_timeline": [
+    {
+      "datetime": "2001-07-23 08:21",
+      "label": "13457-7",
+      "value": 136.0,
+      "unit": "mg/dL"
+    },
+    {
+      "datetime": "2001-07-23 08:21",
+      "label": "14927-8",
+      "value": 112.0,
+      "unit": "mg/dL"
+    },
+    {
+      "datetime": "2001-07-23 08:21",
+      "label": "ALT",
+      "value": 22.0,
+      "unit": "IU/L"
+    },
+    {
+      "datetime": "2001-07-23 08:21",
+      "label": "Albumin",
+      "value": 3.6,
+      "unit": "g/dL"
+    },
+    {
+      "datetime": "2001-07-23 08:21",
+      "label": "AST",
+      "value": 22.0,
+      "unit": "IU/L"
+    },
+    {
+      "datetime": "2001-07-23 08:21",
+      "label": "1968-7",
+      "value": 0.1,
+      "unit": "mg/dL"
+    },
+    {
+      "datetime": "2001-07-23 08:21",
+      "label": "Total Bilirubin",
+      "value": 1.0,
+      "unit": "mg/dL"
+    },
+    {
+      "datetime": "2001-07-23 08:21",
+      "label": "2085-9",
+      "value": 58.0,
+      "unit": "mg/dL"
+    },
+    {
+      "datetime": "2001-07-23 08:21",
+      "label": "2093-3",
+      "value": 216.0,
+      "unit": "mg/dL"
+    },
+    {
+      "datetime": "2001-07-23 08:21",
+      "label": "2885-2",
+      "value": 6.5,
+      "unit": "g/dL"
+    },
+    {
+      "datetime": "2001-07-23 08:21",
+      "label": "Alk Phosphatase",
+      "value": 46.0,
+      "unit": "IU/L"
+    },
+    {
+      "datetime": "2001-11-18 10:11",
+      "label": "13457-7",
+      "value": 201.0,
+      "unit": "mg/dL"
+    },
+    {
+      "datetime": "2001-11-18 10:11",
+      "label": "13458-5",
+      "value": 31.0,
+      "unit": "mg/dL"
+    },
+    {
+      "datetime": "2001-11-18 10:11",
+      "label": "14927-8",
+      "value": 157.0,
+      "unit": "mg/dL"
+    },
+    {
+      "datetime": "2001-11-18 10:11",
+      "label": "2085-9",
+      "value": 49.0,
+      "unit": "mg/dL"
+    },
+    {
+      "datetime": "2001-11-18 10:11",
+      "label": "2093-3",
+      "value": 281.0,
+      "unit": "mg/dL"
+    },
+    {
+      "datetime": "2002-02-10 11:39",
+      "label": "13457-7",
+      "value": 148.0,
+      "unit": "mg/dL"
+    },
+    {
+      "datetime": "2002-02-10 11:39",
+      "label": "14927-8",
+      "value": 130.0,
+      "unit": "mg/dL"
+    },
+    {
+      "datetime": "2002-02-10 11:39",
+      "label": "2085-9",
+      "value": 54.0,
+      "unit": "mg/dL"
+    },
+    {
+      "datetime": "2002-02-10 11:39",
+      "label": "2093-3",
+      "value": 228.0,
+      "unit": "mg/dL"
+    },
+    {
+      "datetime": "2002-11-25 08:44",
+      "label": "13457-7",
+      "value": 165.0,
+      "unit": "mg/dL"
+    },
+    {
+      "datetime": "2002-11-25 08:44",
+      "label": "14927-8",
+      "value": 109.0,
+      "unit": "mg/dL"
+    },
+    {
+      "datetime": "2002-11-25 08:44",
+      "label": "2085-9",
+      "value": 55.0,
+      "unit": "mg/dL"
+    },
+    {
+      "datetime": "2002-11-25 08:44",
+      "label": "2093-3",
+      "value": 242.0,
+      "unit": "mg/dL"
+    },
+    {
+      "datetime": "2003-02-13 09:17",
+      "label": "13457-7",
+      "value": 189.0,
+      "unit": "mg/dL"
+    },
+    {
+      "datetime": "2003-02-13 09:17",
+      "label": "13458-5",
+      "value": 21.0,
+      "unit": "mg/dL"
+    },
+    {
+      "datetime": "2003-02-13 09:17",
+      "label": "14927-8",
+      "value": 104.0,
+      "unit": "mg/dL"
+    },
+    {
+      "datetime": "2003-02-13 09:17",
+      "label": "2085-9",
+      "value": 64.0,
+      "unit": "mg/dL"
+    },
+    {
+      "datetime": "2003-02-13 09:17",
+      "label": "2093-3",
+      "value": 274.0,
+      "unit": "mg/dL"
+    },
+    {
+      "datetime": "2008-03-20 06:25",
+      "label": "20584-9",
+      "value": 10.4,
+      "unit": "K/uL"
+    },
+    {
+      "datetime": "2008-03-20 06:25",
+      "label": "Hematocrit",
+      "value": 33.0,
+      "unit": "%"
+    },
+    {
+      "datetime": "2008-03-20 06:25",
+      "label": "5905-5",
+      "value": 8.6,
+      "unit": "%"
+    },
+    {
+      "datetime": "2008-03-20 06:25",
+      "label": "704-7",
+      "value": 0.03,
+      "unit": "K/uL"
+    },
+    {
+      "datetime": "2008-03-20 06:25",
+      "label": "706-2",
+      "value": 0.3,
+      "unit": "%"
+    },
+    {
+      "datetime": "2008-03-20 06:25",
+      "label": "711-2",
+      "value": 0.01,
+      "unit": "K/uL"
+    },
+    {
+      "datetime": "2008-03-20 06:25",
+      "label": "713-8",
+      "value": 0.1,
+      "unit": "%"
+    },
+    {
+      "datetime": "2008-03-20 06:25",
+      "label": "Hemoglobin",
+      "value": 11.3,
+      "unit": "g/dL"
+    },
+    {
+      "datetime": "2008-03-20 06:25",
+      "label": "731-0",
+      "value": 1.02,
+      "unit": "K/uL"
+    },
+    {
+      "datetime": "2008-03-20 06:25",
+      "label": "736-9",
+      "value": 9.8,
+      "unit": "%"
+    },
+    {
+      "datetime": "2008-03-20 06:25",
+      "label": "742-7",
+      "value": 0.9,
+      "unit": "K/uL"
+    },
+    {
+      "datetime": "2008-03-20 06:25",
+      "label": "751-8",
+      "value": 8.42,
+      "unit": "K/uL"
+    },
+    {
+      "datetime": "2008-03-20 06:25",
+      "label": "770-8",
+      "value": 81.2,
+      "unit": "%"
+    },
+    {
+      "datetime": "2008-03-20 06:25",
+      "label": "Platelets",
+      "value": 235.0,
+      "unit": "K/uL"
+    },
+    {
+      "datetime": "2008-03-20 06:25",
+      "label": "785-6",
+      "value": 30.9,
+      "unit": "pg"
+    },
+    {
+      "datetime": "2008-03-20 06:25",
+      "label": "786-4",
+      "value": 34.3,
+      "unit": "g/dL"
+    },
+    {
+      "datetime": "2008-03-20 06:25",
+      "label": "787-2",
+      "value": 90.0,
+      "unit": "fL"
+    },
+    {
+      "datetime": "2008-03-20 06:25",
+      "label": "788-0",
+      "value": 13.2,
+      "unit": "%"
+    },
+    {
+      "datetime": "2008-03-20 06:25",
+      "label": "789-8",
+      "value": 3.66,
+      "unit": "MIL/uL"
+    },
+    {
+      "datetime": "2008-10-10 00:00",
+      "label": "3151-8",
+      "value": 99.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2008-10-10 00:00",
+      "label": "Temperature",
+      "value": 98.4,
+      "unit": "F"
+    },
+    {
+      "datetime": "2008-10-10 00:00",
+      "label": "271649006",
+      "value": 124.0,
+      "unit": "mmHg"
+    },
+    {
+      "datetime": "2008-10-10 00:00",
+      "label": "271650006",
+      "value": 70.0,
+      "unit": "mmHg"
+    },
+    {
+      "datetime": "2008-10-10 00:00",
+      "label": "78564009",
+      "value": 72.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2008-10-10 18:56",
+      "label": "Temperature",
+      "value": 98.1,
+      "unit": ""
+    },
+    {
+      "datetime": "2008-10-10 18:56",
+      "label": "Diastolic BP",
+      "value": 92.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2008-10-10 18:56",
+      "label": "Systolic BP",
+      "value": 155.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2008-10-10 18:56",
+      "label": "Heart Rate",
+      "value": 73.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2008-10-10 18:56",
+      "label": "Resp Rate",
+      "value": 20.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2008-10-10 19:40",
+      "label": "Diastolic BP",
+      "value": 74.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2008-10-10 19:40",
+      "label": "Systolic BP",
+      "value": 160.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2008-10-10 19:40",
+      "label": "Heart Rate",
+      "value": 71.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2008-10-10 19:40",
+      "label": "Resp Rate",
+      "value": 22.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2008-10-10 20:24",
+      "label": "Troponin I",
+      "value": 0.0,
+      "unit": "ng/ML"
+    },
+    {
+      "datetime": "2008-10-10 20:25",
+      "label": "Troponin I",
+      "value": 0.2,
+      "unit": "ng/mL"
+    },
+    {
+      "datetime": "2008-10-10 20:25",
+      "label": "Calcium",
+      "value": 10.0,
+      "unit": "mg/dL"
+    },
+    {
+      "datetime": "2008-10-10 20:25",
+      "label": "2028-9",
+      "value": 30.0,
+      "unit": "mmol/L"
+    },
+    {
+      "datetime": "2008-10-10 20:25",
+      "label": "20584-9",
+      "value": 5.9,
+      "unit": "K/uL"
+    },
+    {
+      "datetime": "2008-10-10 20:25",
+      "label": "2075-0",
+      "value": 106.0,
+      "unit": "mmol/L"
+    },
+    {
+      "datetime": "2008-10-10 20:25",
+      "label": "Creatinine",
+      "value": 0.8,
+      "unit": "mg/dL"
+    },
+    {
+      "datetime": "2008-10-10 20:25",
+      "label": "Glucose",
+      "value": 105.0,
+      "unit": "mg/dL"
+    },
+    {
+      "datetime": "2008-10-10 20:25",
+      "label": "Potassium",
+      "value": 4.3,
+      "unit": "mmol/L"
+    },
+    {
+      "datetime": "2008-10-10 20:25",
+      "label": "Sodium",
+      "value": 142.0,
+      "unit": "mmol/L"
+    },
+    {
+      "datetime": "2008-10-10 20:25",
+      "label": "BUN",
+      "value": 24.0,
+      "unit": "mg/dL"
+    },
+    {
+      "datetime": "2008-10-10 20:25",
+      "label": "33037-3",
+      "value": 6.0,
+      "unit": "mmol/L"
+    },
+    {
+      "datetime": "2008-10-10 20:25",
+      "label": "Hematocrit",
+      "value": 39.0,
+      "unit": "%"
+    },
+    {
+      "datetime": "2008-10-10 20:25",
+      "label": "48065-7",
+      "value": 727.0,
+      "unit": "FEU"
+    },
+    {
+      "datetime": "2008-10-10 20:25",
+      "label": "5905-5",
+      "value": 9.8,
+      "unit": "%"
+    },
+    {
+      "datetime": "2008-10-10 20:25",
+      "label": "704-7",
+      "value": 0.05,
+      "unit": "K/uL"
+    },
+    {
+      "datetime": "2008-10-10 20:25",
+      "label": "706-2",
+      "value": 0.9,
+      "unit": "%"
+    },
+    {
+      "datetime": "2008-10-10 20:25",
+      "label": "711-2",
+      "value": 0.13,
+      "unit": "K/uL"
+    },
+    {
+      "datetime": "2008-10-10 20:25",
+      "label": "713-8",
+      "value": 2.2,
+      "unit": "%"
+    },
+    {
+      "datetime": "2008-10-10 20:25",
+      "label": "Hemoglobin",
+      "value": 13.6,
+      "unit": "g/dL"
+    },
+    {
+      "datetime": "2008-10-10 20:25",
+      "label": "731-0",
+      "value": 1.98,
+      "unit": "K/uL"
+    },
+    {
+      "datetime": "2008-10-10 20:25",
+      "label": "736-9",
+      "value": 33.3,
+      "unit": "%"
+    },
+    {
+      "datetime": "2008-10-10 20:25",
+      "label": "742-7",
+      "value": 0.58,
+      "unit": "K/uL"
+    },
+    {
+      "datetime": "2008-10-10 20:25",
+      "label": "751-8",
+      "value": 3.2,
+      "unit": "K/uL"
+    },
+    {
+      "datetime": "2008-10-10 20:25",
+      "label": "770-8",
+      "value": 53.8,
+      "unit": "%"
+    },
+    {
+      "datetime": "2008-10-10 20:25",
+      "label": "Platelets",
+      "value": 285.0,
+      "unit": "K/uL"
+    },
+    {
+      "datetime": "2008-10-10 20:25",
+      "label": "785-6",
+      "value": 31.5,
+      "unit": "pg"
+    },
+    {
+      "datetime": "2008-10-10 20:25",
+      "label": "786-4",
+      "value": 35.0,
+      "unit": "g/dL"
+    },
+    {
+      "datetime": "2008-10-10 20:25",
+      "label": "787-2",
+      "value": 89.9,
+      "unit": "fL"
+    },
+    {
+      "datetime": "2008-10-10 20:25",
+      "label": "788-0",
+      "value": 14.0,
+      "unit": "%"
+    },
+    {
+      "datetime": "2008-10-10 20:25",
+      "label": "789-8",
+      "value": 4.34,
+      "unit": "MIL/uL"
+    },
+    {
+      "datetime": "2008-10-10 20:30",
+      "label": "Temperature",
+      "value": 99.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2008-10-10 20:30",
+      "label": "Diastolic BP",
+      "value": 57.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2008-10-10 20:30",
+      "label": "Systolic BP",
+      "value": 99.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2008-10-10 20:30",
+      "label": "Heart Rate",
+      "value": 113.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2008-10-10 20:30",
+      "label": "Resp Rate",
+      "value": 20.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2008-10-10 21:00",
+      "label": "Temperature",
+      "value": 98.2,
+      "unit": ""
+    },
+    {
+      "datetime": "2008-10-10 21:00",
+      "label": "Diastolic BP",
+      "value": 84.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2008-10-10 21:00",
+      "label": "Systolic BP",
+      "value": 150.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2008-10-10 21:00",
+      "label": "Heart Rate",
+      "value": 79.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2008-10-10 21:00",
+      "label": "Resp Rate",
+      "value": 19.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2008-10-10 22:50",
+      "label": "Diastolic BP",
+      "value": 79.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2008-10-10 22:50",
+      "label": "Systolic BP",
+      "value": 150.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2008-10-10 22:50",
+      "label": "Heart Rate",
+      "value": 76.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2008-10-10 22:50",
+      "label": "Resp Rate",
+      "value": 17.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2008-10-10 23:26",
+      "label": "Temperature",
+      "value": 99.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2008-10-10 23:26",
+      "label": "Diastolic BP",
+      "value": 68.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2008-10-10 23:26",
+      "label": "Systolic BP",
+      "value": 153.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2008-10-10 23:26",
+      "label": "Heart Rate",
+      "value": 78.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2008-10-10 23:26",
+      "label": "Resp Rate",
+      "value": 18.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2008-10-11 02:55",
+      "label": "Diastolic BP",
+      "value": 74.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2008-10-11 02:55",
+      "label": "Systolic BP",
+      "value": 124.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2008-10-11 02:55",
+      "label": "Heart Rate",
+      "value": 72.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2008-10-11 02:55",
+      "label": "Resp Rate",
+      "value": 16.0,
+      "unit": ""
+    }
+  ],
+  "diagnoses": [
+    {
+      "date": "2003-05-04 00:00",
+      "code": "ICD9CM/211.3",
+      "description": "ICD9CM/211.3"
+    },
+    {
+      "date": "2008-03-02 00:00",
+      "code": "ICD9CM/272.4",
+      "description": "ICD9CM/272.4"
+    },
+    {
+      "date": "2008-10-10 00:00",
+      "code": "ICD9CM/786.51",
+      "description": "ICD9CM/786.51"
+    }
+  ],
+  "medications": [
+    {
+      "date": "2008-10-10 21:03",
+      "name": "RxNorm/212033",
+      "code": "RxNorm/212033"
+    }
+  ],
+  "procedures": [],
+  "observations": [
+    {
+      "date": "2008-10-10 00:00",
+      "observation": "OMOP_CONCEPT_ID/45876662",
+      "value": null
+    },
+    {
+      "date": "2008-10-10 00:00",
+      "observation": "OMOP_CONCEPT_ID/45876662",
+      "value": null
+    },
+    {
+      "date": "2008-10-10 00:00",
+      "observation": "OMOP_CONCEPT_ID/45878245",
+      "value": null
+    },
+    {
+      "date": "2008-10-10 00:00",
+      "observation": "OMOP_CONCEPT_ID/45878245",
+      "value": null
+    },
+    {
+      "date": "2008-10-10 00:00",
+      "observation": "OMOP_CONCEPT_ID/45878245",
+      "value": null
+    },
+    {
+      "date": "2008-10-10 00:00",
+      "observation": "OMOP_CONCEPT_ID/45878245",
+      "value": null
+    },
+    {
+      "date": "2008-10-10 00:00",
+      "observation": "OMOP_CONCEPT_ID/45878245",
+      "value": null
+    },
+    {
+      "date": "2008-10-10 00:00",
+      "observation": "OMOP_CONCEPT_ID/45877986",
+      "value": null
+    },
+    {
+      "date": "2008-10-10 18:56",
+      "observation": "LOINC/8327-9",
+      "value": "1.0"
+    },
+    {
+      "date": "2008-10-10 18:56",
+      "observation": "LOINC/LP21258-6",
+      "value": "99.0"
+    },
+    {
+      "date": "2008-10-10 19:40",
+      "observation": "LOINC/LP21258-6",
+      "value": "99.0"
+    },
+    {
+      "date": "2008-10-10 20:30",
+      "observation": "LOINC/8327-9",
+      "value": "1.0"
+    },
+    {
+      "date": "2008-10-10 20:30",
+      "observation": "LOINC/LP21258-6",
+      "value": "99.0"
+    },
+    {
+      "date": "2008-10-10 21:00",
+      "observation": "LOINC/8327-9",
+      "value": "1.0"
+    },
+    {
+      "date": "2008-10-10 21:00",
+      "observation": "LOINC/LP21258-6",
+      "value": "98.0"
+    },
+    {
+      "date": "2008-10-10 22:50",
+      "observation": "LOINC/LP21258-6",
+      "value": "99.0"
+    },
+    {
+      "date": "2008-10-10 23:26",
+      "observation": "LOINC/8327-9",
+      "value": "1.0"
+    },
+    {
+      "date": "2008-10-11 00:00",
+      "observation": "OMOP_CONCEPT_ID/45876662",
+      "value": null
+    },
+    {
+      "date": "2008-10-11 00:00",
+      "observation": "OMOP_CONCEPT_ID/45876662",
+      "value": null
+    },
+    {
+      "date": "2008-10-11 00:00",
+      "observation": "OMOP_CONCEPT_ID/45878245",
+      "value": null
+    },
+    {
+      "date": "2008-10-11 00:00",
+      "observation": "OMOP_CONCEPT_ID/45878245",
+      "value": null
+    },
+    {
+      "date": "2008-10-11 00:00",
+      "observation": "OMOP_CONCEPT_ID/45878245",
+      "value": null
+    },
+    {
+      "date": "2008-10-11 00:00",
+      "observation": "OMOP_CONCEPT_ID/45878245",
+      "value": null
+    },
+    {
+      "date": "2008-10-11 00:00",
+      "observation": "OMOP_CONCEPT_ID/45878245",
+      "value": null
+    },
+    {
+      "date": "2008-10-11 00:00",
+      "observation": "OMOP_CONCEPT_ID/45877986",
+      "value": null
+    },
+    {
+      "date": "2008-10-11 02:55",
+      "observation": "LOINC/LP21258-6",
+      "value": "96.0"
+    }
+  ],
+  "visit_history": [
+    {
+      "date": "2001-05-10 00:00",
+      "type": "Domain/OMOP generated"
+    },
+    {
+      "date": "2001-11-21 00:00",
+      "type": "STANFORD_VISIT/||Hx Scan"
+    },
+    {
+      "date": "2002-01-01 00:00",
+      "type": "STANFORD_VISIT/||Hx Scan"
+    },
+    {
+      "date": "2002-02-11 00:00",
+      "type": "STANFORD_VISIT/||Hx Scan"
+    },
+    {
+      "date": "2002-10-20 00:00",
+      "type": "STANFORD_VISIT/||Hx Scan"
+    },
+    {
+      "date": "2002-11-25 00:00",
+      "type": "Domain/OMOP generated"
+    },
+    {
+      "date": "2003-02-13 00:00",
+      "type": "Domain/OMOP generated"
+    },
+    {
+      "date": "2004-07-04 00:00",
+      "type": "Domain/OMOP generated"
+    },
+    {
+      "date": "2004-12-18 00:00",
+      "type": "STANFORD_VISIT/||Historical Ambulatory Encounter"
+    },
+    {
+      "date": "2008-03-11 15:42",
+      "type": "STANFORD_VISIT/Single Encounter (O)||Hospital Encounter"
+    },
+    {
+      "date": "2008-03-19 00:00",
+      "type": "STANFORD_VISIT/||Orders Only"
+    },
+    {
+      "date": "2008-03-19 18:28",
+      "type": "STANFORD_VISIT/Inpatient|Urgent|Hospital Encounter"
+    },
+    {
+      "date": "2008-03-20 00:00",
+      "type": "Domain/OMOP generated"
+    },
+    {
+      "date": "2008-03-25 00:00",
+      "type": "STANFORD_VISIT/||Hx Scan"
+    },
+    {
+      "date": "2008-10-10 00:00",
+      "type": "STANFORD_VISIT/||History"
+    },
+    {
+      "date": "2008-10-10 23:18",
+      "type": "STANFORD_VISIT/Observation||Hospital Encounter"
+    },
+    {
+      "date": "2008-10-11 00:00",
+      "type": "STANFORD_VISIT/||History"
+    }
+  ],
+  "data_summary": {
+    "n_lab_rows": 116,
+    "n_diagnoses": 3,
+    "n_medications": 1,
+    "n_procedures": 0,
+    "n_observations": 26,
+    "n_visits": 17,
+    "n_gap_labs": 10
+  }
+}

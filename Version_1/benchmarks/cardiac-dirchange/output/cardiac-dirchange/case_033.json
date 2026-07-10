@@ -1,0 +1,2144 @@
+{
+  "case_id": 33,
+  "patient_id": "115969330",
+  "reversal_type": "rising\u2192falling",
+  "vis_trend": "rising",
+  "gap_hours": 17.6,
+  "n_ctx_trops": 2,
+  "n_gap_labs": 30,
+  "lv_err_pct": 500.0,
+  "trend_extrapolation_correct": false,
+  "question": {
+    "stem": "Patient EHRSHOT subject_id: 115969330\nPrevious Troponin I: 0.025 ng/mL at 2020-02-05 07:44\nLast known Troponin I: 0.126 ng/mL at 2020-02-05 12:24\nVisible troponin trend: rising (most recent readings increasing)\nTroponin measurements are NOT available after 2020-02-05 12:24.\nAll other labs are available up to 2020-02-06 06:01.\nPredict Troponin I at: 2020-02-06 06:01 (17.6h after last known troponin)",
+    "target_datetime": "2020-02-06 06:01",
+    "last_trop_time": "2020-02-05 12:24",
+    "hours_ahead": 17.6,
+    "visible_trend": "rising"
+  },
+  "ground_truth": {
+    "value": 0.021,
+    "direction": "falling",
+    "last_visible": 0.126,
+    "visible_trend": "rising"
+  },
+  "trop_context": [
+    {
+      "datetime": "2020-02-05 07:44",
+      "value": 0.025,
+      "label": "Troponin I"
+    },
+    {
+      "datetime": "2020-02-05 12:24",
+      "value": 0.126,
+      "label": "Troponin I"
+    }
+  ],
+  "gap_labs": [
+    {
+      "datetime": "2020-02-05 13:30",
+      "label": "Systolic BP",
+      "value": 128.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2020-02-05 13:30",
+      "label": "Heart Rate",
+      "value": 99.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2020-02-05 13:45",
+      "label": "Systolic BP",
+      "value": 133.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2020-02-05 13:45",
+      "label": "Heart Rate",
+      "value": 95.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2020-02-05 14:30",
+      "label": "Systolic BP",
+      "value": 134.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2020-02-05 14:30",
+      "label": "Heart Rate",
+      "value": 104.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2020-02-05 16:07",
+      "label": "Systolic BP",
+      "value": 123.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2020-02-05 16:07",
+      "label": "Heart Rate",
+      "value": 89.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2020-02-05 16:59",
+      "label": "Systolic BP",
+      "value": 127.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2020-02-05 16:59",
+      "label": "Heart Rate",
+      "value": 103.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2020-02-05 16:59",
+      "label": "Heart Rate",
+      "value": 91.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2020-02-05 20:02",
+      "label": "Systolic BP",
+      "value": 121.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2020-02-05 20:02",
+      "label": "Heart Rate",
+      "value": 99.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2020-02-06 01:00",
+      "label": "Systolic BP",
+      "value": 107.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2020-02-06 01:00",
+      "label": "Heart Rate",
+      "value": 85.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2020-02-06 04:11",
+      "label": "Systolic BP",
+      "value": 109.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2020-02-06 04:11",
+      "label": "Heart Rate",
+      "value": 104.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2020-02-06 04:11",
+      "label": "Heart Rate",
+      "value": 102.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2020-02-06 06:01",
+      "label": "Creatinine",
+      "value": 0.8,
+      "unit": "mg/dL"
+    },
+    {
+      "datetime": "2020-02-06 06:01",
+      "label": "Creatinine",
+      "value": 0.8,
+      "unit": "mg/dL"
+    },
+    {
+      "datetime": "2020-02-06 06:01",
+      "label": "Potassium",
+      "value": 4.3,
+      "unit": "mmol/L"
+    },
+    {
+      "datetime": "2020-02-06 06:01",
+      "label": "Potassium",
+      "value": 4.3,
+      "unit": "mmol/L"
+    },
+    {
+      "datetime": "2020-02-06 06:01",
+      "label": "BUN",
+      "value": 3.0,
+      "unit": "mg/dL"
+    },
+    {
+      "datetime": "2020-02-06 06:01",
+      "label": "BUN",
+      "value": 3.0,
+      "unit": "mg/dL"
+    },
+    {
+      "datetime": "2020-02-06 06:01",
+      "label": "Lactate",
+      "value": 0.8,
+      "unit": "mmol/L"
+    },
+    {
+      "datetime": "2020-02-06 06:01",
+      "label": "Lactate",
+      "value": 0.8,
+      "unit": "mmol/L"
+    },
+    {
+      "datetime": "2020-02-06 06:01",
+      "label": "Hematocrit",
+      "value": 34.2,
+      "unit": "%"
+    },
+    {
+      "datetime": "2020-02-06 06:01",
+      "label": "Hematocrit",
+      "value": 34.2,
+      "unit": "%"
+    },
+    {
+      "datetime": "2020-02-06 06:01",
+      "label": "Hemoglobin",
+      "value": 11.2,
+      "unit": "g/dL"
+    },
+    {
+      "datetime": "2020-02-06 06:01",
+      "label": "Hemoglobin",
+      "value": 11.2,
+      "unit": "g/dL"
+    }
+  ],
+  "lab_timeline": [
+    {
+      "datetime": "2020-02-05 00:00",
+      "label": "Weight",
+      "value": 1998.4,
+      "unit": "ounces"
+    },
+    {
+      "datetime": "2020-02-05 00:00",
+      "label": "3151-8",
+      "value": 100.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2020-02-05 00:00",
+      "label": "39156-5",
+      "value": 23.6,
+      "unit": ""
+    },
+    {
+      "datetime": "2020-02-05 00:00",
+      "label": "8302-2",
+      "value": 61.0,
+      "unit": "[in_us]"
+    },
+    {
+      "datetime": "2020-02-05 00:00",
+      "label": "Temperature",
+      "value": 98.4,
+      "unit": "F"
+    },
+    {
+      "datetime": "2020-02-05 00:00",
+      "label": "271649006",
+      "value": 122.0,
+      "unit": "mmHg"
+    },
+    {
+      "datetime": "2020-02-05 00:00",
+      "label": "271650006",
+      "value": 90.0,
+      "unit": "mmHg"
+    },
+    {
+      "datetime": "2020-02-05 00:00",
+      "label": "301898006",
+      "value": 1.56,
+      "unit": ""
+    },
+    {
+      "datetime": "2020-02-05 00:00",
+      "label": "78564009",
+      "value": 67.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2020-02-05 07:32",
+      "label": "Weight",
+      "value": 4405.6699,
+      "unit": ""
+    },
+    {
+      "datetime": "2020-02-05 07:32",
+      "label": "38214-3",
+      "value": 3.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2020-02-05 07:32",
+      "label": "8277-6",
+      "value": 2.32,
+      "unit": "sq meters"
+    },
+    {
+      "datetime": "2020-02-05 07:32",
+      "label": "8302-2",
+      "value": 61.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2020-02-05 07:32",
+      "label": "Temperature",
+      "value": 36.9,
+      "unit": ""
+    },
+    {
+      "datetime": "2020-02-05 07:32",
+      "label": "Temperature",
+      "value": 98.4,
+      "unit": ""
+    },
+    {
+      "datetime": "2020-02-05 07:32",
+      "label": "Diastolic BP",
+      "value": 92.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2020-02-05 07:32",
+      "label": "8478-0",
+      "value": 103.0,
+      "unit": "mmHg"
+    },
+    {
+      "datetime": "2020-02-05 07:32",
+      "label": "Systolic BP",
+      "value": 126.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2020-02-05 07:32",
+      "label": "Heart Rate",
+      "value": 146.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2020-02-05 07:32",
+      "label": "Heart Rate",
+      "value": 147.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2020-02-05 07:32",
+      "label": "Resp Rate",
+      "value": 20.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2020-02-05 07:36",
+      "label": "2339-0",
+      "value": 140.0,
+      "unit": "mg/dL"
+    },
+    {
+      "datetime": "2020-02-05 07:36",
+      "label": "2339-0",
+      "value": 140.0,
+      "unit": "mg/dL"
+    },
+    {
+      "datetime": "2020-02-05 07:36",
+      "label": "Diastolic BP",
+      "value": 90.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2020-02-05 07:36",
+      "label": "8478-0",
+      "value": 105.0,
+      "unit": "mmHg"
+    },
+    {
+      "datetime": "2020-02-05 07:36",
+      "label": "Systolic BP",
+      "value": 134.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2020-02-05 07:36",
+      "label": "Heart Rate",
+      "value": 122.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2020-02-05 07:36",
+      "label": "Heart Rate",
+      "value": 126.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2020-02-05 07:36",
+      "label": "Resp Rate",
+      "value": 20.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2020-02-05 07:44",
+      "label": "Troponin I",
+      "value": 0.025,
+      "unit": "ng/mL"
+    },
+    {
+      "datetime": "2020-02-05 07:44",
+      "label": "ALT",
+      "value": 23.0,
+      "unit": "U/L"
+    },
+    {
+      "datetime": "2020-02-05 07:44",
+      "label": "ALT",
+      "value": 23.0,
+      "unit": "U/L"
+    },
+    {
+      "datetime": "2020-02-05 07:44",
+      "label": "Albumin",
+      "value": 4.8,
+      "unit": "g/dL"
+    },
+    {
+      "datetime": "2020-02-05 07:44",
+      "label": "Albumin",
+      "value": 4.8,
+      "unit": "g/dL"
+    },
+    {
+      "datetime": "2020-02-05 07:44",
+      "label": "Calcium",
+      "value": 9.7,
+      "unit": "mg/dL"
+    },
+    {
+      "datetime": "2020-02-05 07:44",
+      "label": "Calcium",
+      "value": 9.7,
+      "unit": "mg/dL"
+    },
+    {
+      "datetime": "2020-02-05 07:44",
+      "label": "AST",
+      "value": 29.0,
+      "unit": "U/L"
+    },
+    {
+      "datetime": "2020-02-05 07:44",
+      "label": "AST",
+      "value": 29.0,
+      "unit": "U/L"
+    },
+    {
+      "datetime": "2020-02-05 07:44",
+      "label": "Total Bilirubin",
+      "value": 0.5,
+      "unit": "mg/dL"
+    },
+    {
+      "datetime": "2020-02-05 07:44",
+      "label": "Total Bilirubin",
+      "value": 0.5,
+      "unit": "mg/dL"
+    },
+    {
+      "datetime": "2020-02-05 07:44",
+      "label": "CRP",
+      "value": 0.1,
+      "unit": "mg/dL"
+    },
+    {
+      "datetime": "2020-02-05 07:44",
+      "label": "CRP",
+      "value": 0.1,
+      "unit": "mg/dL"
+    },
+    {
+      "datetime": "2020-02-05 07:44",
+      "label": "2028-9",
+      "value": 15.0,
+      "unit": "mmol/L"
+    },
+    {
+      "datetime": "2020-02-05 07:44",
+      "label": "2028-9",
+      "value": 15.0,
+      "unit": "mmol/L"
+    },
+    {
+      "datetime": "2020-02-05 07:44",
+      "label": "20584-9",
+      "value": 6.5,
+      "unit": "K/uL"
+    },
+    {
+      "datetime": "2020-02-05 07:44",
+      "label": "20584-9",
+      "value": 6.5,
+      "unit": "K/uL"
+    },
+    {
+      "datetime": "2020-02-05 07:44",
+      "label": "2075-0",
+      "value": 98.0,
+      "unit": "mmol/L"
+    },
+    {
+      "datetime": "2020-02-05 07:44",
+      "label": "2075-0",
+      "value": 98.0,
+      "unit": "mmol/L"
+    },
+    {
+      "datetime": "2020-02-05 07:44",
+      "label": "Creatinine",
+      "value": 0.86,
+      "unit": "mg/dL"
+    },
+    {
+      "datetime": "2020-02-05 07:44",
+      "label": "Creatinine",
+      "value": 0.86,
+      "unit": "mg/dL"
+    },
+    {
+      "datetime": "2020-02-05 07:44",
+      "label": "2336-6",
+      "value": 3.8,
+      "unit": "g/dL"
+    },
+    {
+      "datetime": "2020-02-05 07:44",
+      "label": "2336-6",
+      "value": 3.8,
+      "unit": "g/dL"
+    },
+    {
+      "datetime": "2020-02-05 07:44",
+      "label": "Glucose",
+      "value": 157.0,
+      "unit": "mg/dL"
+    },
+    {
+      "datetime": "2020-02-05 07:44",
+      "label": "Glucose",
+      "value": 157.0,
+      "unit": "mg/dL"
+    },
+    {
+      "datetime": "2020-02-05 07:44",
+      "label": "Potassium",
+      "value": 3.1,
+      "unit": "mmol/L"
+    },
+    {
+      "datetime": "2020-02-05 07:44",
+      "label": "Potassium",
+      "value": 3.1,
+      "unit": "mmol/L"
+    },
+    {
+      "datetime": "2020-02-05 07:44",
+      "label": "2885-2",
+      "value": 8.6,
+      "unit": "g/dL"
+    },
+    {
+      "datetime": "2020-02-05 07:44",
+      "label": "2885-2",
+      "value": 8.6,
+      "unit": "g/dL"
+    },
+    {
+      "datetime": "2020-02-05 07:44",
+      "label": "Sodium",
+      "value": 138.0,
+      "unit": "mmol/L"
+    },
+    {
+      "datetime": "2020-02-05 07:44",
+      "label": "Sodium",
+      "value": 138.0,
+      "unit": "mmol/L"
+    },
+    {
+      "datetime": "2020-02-05 07:44",
+      "label": "30341-2",
+      "value": 22.0,
+      "unit": "mm/hr"
+    },
+    {
+      "datetime": "2020-02-05 07:44",
+      "label": "30341-2",
+      "value": 22.0,
+      "unit": "mm/hr"
+    },
+    {
+      "datetime": "2020-02-05 07:44",
+      "label": "BUN",
+      "value": 13.0,
+      "unit": "mg/dL"
+    },
+    {
+      "datetime": "2020-02-05 07:44",
+      "label": "BUN",
+      "value": 13.0,
+      "unit": "mg/dL"
+    },
+    {
+      "datetime": "2020-02-05 07:44",
+      "label": "33037-3",
+      "value": 25.0,
+      "unit": "mmol/L"
+    },
+    {
+      "datetime": "2020-02-05 07:44",
+      "label": "33037-3",
+      "value": 25.0,
+      "unit": "mmol/L"
+    },
+    {
+      "datetime": "2020-02-05 07:44",
+      "label": "33914-3",
+      "value": 94.0,
+      "unit": "mL/min/1.73 m2"
+    },
+    {
+      "datetime": "2020-02-05 07:44",
+      "label": "33914-3",
+      "value": 108.0,
+      "unit": "mL/min/1.73 m2"
+    },
+    {
+      "datetime": "2020-02-05 07:44",
+      "label": "Hematocrit",
+      "value": 41.3,
+      "unit": "%"
+    },
+    {
+      "datetime": "2020-02-05 07:44",
+      "label": "Hematocrit",
+      "value": 41.3,
+      "unit": "%"
+    },
+    {
+      "datetime": "2020-02-05 07:44",
+      "label": "62238-1",
+      "value": 94.0,
+      "unit": "mL/min/1.73 m2"
+    },
+    {
+      "datetime": "2020-02-05 07:44",
+      "label": "Alk Phosphatase",
+      "value": 78.0,
+      "unit": "U/L"
+    },
+    {
+      "datetime": "2020-02-05 07:44",
+      "label": "Alk Phosphatase",
+      "value": 78.0,
+      "unit": "U/L"
+    },
+    {
+      "datetime": "2020-02-05 07:44",
+      "label": "Hemoglobin",
+      "value": 13.9,
+      "unit": "g/dL"
+    },
+    {
+      "datetime": "2020-02-05 07:44",
+      "label": "Hemoglobin",
+      "value": 13.9,
+      "unit": "g/dL"
+    },
+    {
+      "datetime": "2020-02-05 07:44",
+      "label": "Platelets",
+      "value": 171.0,
+      "unit": "K/uL"
+    },
+    {
+      "datetime": "2020-02-05 07:44",
+      "label": "Platelets",
+      "value": 171.0,
+      "unit": "K/uL"
+    },
+    {
+      "datetime": "2020-02-05 07:44",
+      "label": "785-6",
+      "value": 29.8,
+      "unit": "pg"
+    },
+    {
+      "datetime": "2020-02-05 07:44",
+      "label": "785-6",
+      "value": 29.8,
+      "unit": "pg"
+    },
+    {
+      "datetime": "2020-02-05 07:44",
+      "label": "786-4",
+      "value": 33.7,
+      "unit": "g/dL"
+    },
+    {
+      "datetime": "2020-02-05 07:44",
+      "label": "786-4",
+      "value": 33.7,
+      "unit": "g/dL"
+    },
+    {
+      "datetime": "2020-02-05 07:44",
+      "label": "787-2",
+      "value": 88.4,
+      "unit": "fL"
+    },
+    {
+      "datetime": "2020-02-05 07:44",
+      "label": "787-2",
+      "value": 88.4,
+      "unit": "fL"
+    },
+    {
+      "datetime": "2020-02-05 07:44",
+      "label": "788-0",
+      "value": 12.1,
+      "unit": "%"
+    },
+    {
+      "datetime": "2020-02-05 07:44",
+      "label": "788-0",
+      "value": 12.1,
+      "unit": "%"
+    },
+    {
+      "datetime": "2020-02-05 07:44",
+      "label": "789-8",
+      "value": 4.67,
+      "unit": "MIL/uL"
+    },
+    {
+      "datetime": "2020-02-05 07:44",
+      "label": "789-8",
+      "value": 4.67,
+      "unit": "MIL/uL"
+    },
+    {
+      "datetime": "2020-02-05 07:44",
+      "label": "88293-6",
+      "value": 108.0,
+      "unit": "mL/min/1.73 m2"
+    },
+    {
+      "datetime": "2020-02-05 07:45",
+      "label": "Diastolic BP",
+      "value": 86.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2020-02-05 07:45",
+      "label": "8478-0",
+      "value": 95.0,
+      "unit": "mmHg"
+    },
+    {
+      "datetime": "2020-02-05 07:45",
+      "label": "Systolic BP",
+      "value": 114.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2020-02-05 07:45",
+      "label": "Heart Rate",
+      "value": 125.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2020-02-05 07:45",
+      "label": "Resp Rate",
+      "value": 16.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2020-02-05 08:00",
+      "label": "35088-4",
+      "value": 15.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2020-02-05 08:47",
+      "label": "48065-7",
+      "value": 228.0,
+      "unit": "ng/mL FEU"
+    },
+    {
+      "datetime": "2020-02-05 08:47",
+      "label": "48065-7",
+      "value": 228.0,
+      "unit": "ng/mL FEU"
+    },
+    {
+      "datetime": "2020-02-05 08:50",
+      "label": "11555-0",
+      "value": -5.0,
+      "unit": "mmol/L"
+    },
+    {
+      "datetime": "2020-02-05 08:50",
+      "label": "11555-0",
+      "value": -5.0,
+      "unit": "mmol/L"
+    },
+    {
+      "datetime": "2020-02-05 09:15",
+      "label": "Diastolic BP",
+      "value": 96.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2020-02-05 09:15",
+      "label": "8478-0",
+      "value": 104.0,
+      "unit": "mmHg"
+    },
+    {
+      "datetime": "2020-02-05 09:15",
+      "label": "Systolic BP",
+      "value": 120.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2020-02-05 09:15",
+      "label": "Heart Rate",
+      "value": 96.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2020-02-05 09:15",
+      "label": "Resp Rate",
+      "value": 19.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2020-02-05 12:24",
+      "label": "Troponin I",
+      "value": 0.126,
+      "unit": "ng/mL"
+    },
+    {
+      "datetime": "2020-02-05 12:24",
+      "label": "19123-9",
+      "value": 1.6,
+      "unit": "mg/dL"
+    },
+    {
+      "datetime": "2020-02-05 12:24",
+      "label": "19123-9",
+      "value": 1.6,
+      "unit": "mg/dL"
+    },
+    {
+      "datetime": "2020-02-05 13:30",
+      "label": "Diastolic BP",
+      "value": 80.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2020-02-05 13:30",
+      "label": "8478-0",
+      "value": 96.0,
+      "unit": "mmHg"
+    },
+    {
+      "datetime": "2020-02-05 13:30",
+      "label": "Systolic BP",
+      "value": 128.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2020-02-05 13:30",
+      "label": "Heart Rate",
+      "value": 99.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2020-02-05 13:30",
+      "label": "Resp Rate",
+      "value": 23.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2020-02-05 13:45",
+      "label": "Diastolic BP",
+      "value": 80.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2020-02-05 13:45",
+      "label": "8478-0",
+      "value": 98.0,
+      "unit": "mmHg"
+    },
+    {
+      "datetime": "2020-02-05 13:45",
+      "label": "Systolic BP",
+      "value": 133.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2020-02-05 13:45",
+      "label": "Heart Rate",
+      "value": 95.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2020-02-05 13:45",
+      "label": "Resp Rate",
+      "value": 12.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2020-02-05 13:57",
+      "label": "11555-0",
+      "value": -3.0,
+      "unit": "mmol/L"
+    },
+    {
+      "datetime": "2020-02-05 13:57",
+      "label": "11555-0",
+      "value": -3.0,
+      "unit": "mmol/L"
+    },
+    {
+      "datetime": "2020-02-05 14:30",
+      "label": "38214-3",
+      "value": 1.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2020-02-05 14:30",
+      "label": "Diastolic BP",
+      "value": 91.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2020-02-05 14:30",
+      "label": "8478-0",
+      "value": 105.0,
+      "unit": "mmHg"
+    },
+    {
+      "datetime": "2020-02-05 14:30",
+      "label": "Systolic BP",
+      "value": 134.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2020-02-05 14:30",
+      "label": "Heart Rate",
+      "value": 104.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2020-02-05 14:30",
+      "label": "Resp Rate",
+      "value": 16.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2020-02-05 16:07",
+      "label": "38214-3",
+      "value": 2.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2020-02-05 16:07",
+      "label": "Diastolic BP",
+      "value": 77.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2020-02-05 16:07",
+      "label": "8478-0",
+      "value": 92.0,
+      "unit": "mmHg"
+    },
+    {
+      "datetime": "2020-02-05 16:07",
+      "label": "Systolic BP",
+      "value": 123.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2020-02-05 16:07",
+      "label": "Heart Rate",
+      "value": 89.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2020-02-05 16:07",
+      "label": "Resp Rate",
+      "value": 16.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2020-02-05 16:59",
+      "label": "38214-3",
+      "value": 0.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2020-02-05 16:59",
+      "label": "Temperature",
+      "value": 99.3,
+      "unit": ""
+    },
+    {
+      "datetime": "2020-02-05 16:59",
+      "label": "Temperature",
+      "value": 37.4,
+      "unit": ""
+    },
+    {
+      "datetime": "2020-02-05 16:59",
+      "label": "Diastolic BP",
+      "value": 84.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2020-02-05 16:59",
+      "label": "8478-0",
+      "value": 98.0,
+      "unit": "mmHg"
+    },
+    {
+      "datetime": "2020-02-05 16:59",
+      "label": "Systolic BP",
+      "value": 127.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2020-02-05 16:59",
+      "label": "8634-8",
+      "value": 0.38,
+      "unit": ""
+    },
+    {
+      "datetime": "2020-02-05 16:59",
+      "label": "8636-3",
+      "value": 0.48,
+      "unit": ""
+    },
+    {
+      "datetime": "2020-02-05 16:59",
+      "label": "Heart Rate",
+      "value": 103.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2020-02-05 16:59",
+      "label": "Heart Rate",
+      "value": 91.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2020-02-05 16:59",
+      "label": "Resp Rate",
+      "value": 19.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2020-02-05 20:02",
+      "label": "35088-4",
+      "value": 15.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2020-02-05 20:02",
+      "label": "38214-3",
+      "value": 0.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2020-02-05 20:02",
+      "label": "Temperature",
+      "value": 36.8,
+      "unit": ""
+    },
+    {
+      "datetime": "2020-02-05 20:02",
+      "label": "Temperature",
+      "value": 98.2,
+      "unit": ""
+    },
+    {
+      "datetime": "2020-02-05 20:02",
+      "label": "Diastolic BP",
+      "value": 73.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2020-02-05 20:02",
+      "label": "8478-0",
+      "value": 89.0,
+      "unit": "mmHg"
+    },
+    {
+      "datetime": "2020-02-05 20:02",
+      "label": "Systolic BP",
+      "value": 121.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2020-02-05 20:02",
+      "label": "8634-8",
+      "value": 0.38,
+      "unit": ""
+    },
+    {
+      "datetime": "2020-02-05 20:02",
+      "label": "8636-3",
+      "value": 0.45,
+      "unit": ""
+    },
+    {
+      "datetime": "2020-02-05 20:02",
+      "label": "Heart Rate",
+      "value": 99.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2020-02-05 20:45",
+      "label": "IO_OUT",
+      "value": 500.0,
+      "unit": "mL"
+    },
+    {
+      "datetime": "2020-02-05 23:58",
+      "label": "IO_OUT",
+      "value": 200.0,
+      "unit": "mL"
+    },
+    {
+      "datetime": "2020-02-06 01:00",
+      "label": "Temperature",
+      "value": 97.5,
+      "unit": ""
+    },
+    {
+      "datetime": "2020-02-06 01:00",
+      "label": "Temperature",
+      "value": 36.4,
+      "unit": ""
+    },
+    {
+      "datetime": "2020-02-06 01:00",
+      "label": "Diastolic BP",
+      "value": 68.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2020-02-06 01:00",
+      "label": "8478-0",
+      "value": 81.0,
+      "unit": "mmHg"
+    },
+    {
+      "datetime": "2020-02-06 01:00",
+      "label": "Systolic BP",
+      "value": 107.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2020-02-06 01:00",
+      "label": "Heart Rate",
+      "value": 85.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2020-02-06 01:00",
+      "label": "Resp Rate",
+      "value": 27.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2020-02-06 01:22",
+      "label": "IO_OUT",
+      "value": 1.0,
+      "unit": "mL"
+    },
+    {
+      "datetime": "2020-02-06 04:11",
+      "label": "Temperature",
+      "value": 36.8,
+      "unit": ""
+    },
+    {
+      "datetime": "2020-02-06 04:11",
+      "label": "Temperature",
+      "value": 98.2,
+      "unit": ""
+    },
+    {
+      "datetime": "2020-02-06 04:11",
+      "label": "Diastolic BP",
+      "value": 55.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2020-02-06 04:11",
+      "label": "8478-0",
+      "value": 73.0,
+      "unit": "mmHg"
+    },
+    {
+      "datetime": "2020-02-06 04:11",
+      "label": "Systolic BP",
+      "value": 109.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2020-02-06 04:11",
+      "label": "8634-8",
+      "value": 460.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2020-02-06 04:11",
+      "label": "8636-3",
+      "value": 538.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2020-02-06 04:11",
+      "label": "Heart Rate",
+      "value": 104.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2020-02-06 04:11",
+      "label": "Heart Rate",
+      "value": 102.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2020-02-06 04:11",
+      "label": "Resp Rate",
+      "value": 18.0,
+      "unit": ""
+    },
+    {
+      "datetime": "2020-02-06 06:01",
+      "label": "Calcium",
+      "value": 8.8,
+      "unit": "mg/dL"
+    },
+    {
+      "datetime": "2020-02-06 06:01",
+      "label": "Calcium",
+      "value": 8.8,
+      "unit": "mg/dL"
+    },
+    {
+      "datetime": "2020-02-06 06:01",
+      "label": "19123-9",
+      "value": 1.8,
+      "unit": "mg/dL"
+    },
+    {
+      "datetime": "2020-02-06 06:01",
+      "label": "19123-9",
+      "value": 1.8,
+      "unit": "mg/dL"
+    },
+    {
+      "datetime": "2020-02-06 06:01",
+      "label": "2028-9",
+      "value": 22.0,
+      "unit": "mmol/L"
+    },
+    {
+      "datetime": "2020-02-06 06:01",
+      "label": "2028-9",
+      "value": 22.0,
+      "unit": "mmol/L"
+    },
+    {
+      "datetime": "2020-02-06 06:01",
+      "label": "20584-9",
+      "value": 6.0,
+      "unit": "K/uL"
+    },
+    {
+      "datetime": "2020-02-06 06:01",
+      "label": "20584-9",
+      "value": 6.0,
+      "unit": "K/uL"
+    },
+    {
+      "datetime": "2020-02-06 06:01",
+      "label": "2075-0",
+      "value": 104.0,
+      "unit": "mmol/L"
+    },
+    {
+      "datetime": "2020-02-06 06:01",
+      "label": "2075-0",
+      "value": 104.0,
+      "unit": "mmol/L"
+    },
+    {
+      "datetime": "2020-02-06 06:01",
+      "label": "Creatinine",
+      "value": 0.8,
+      "unit": "mg/dL"
+    },
+    {
+      "datetime": "2020-02-06 06:01",
+      "label": "Creatinine",
+      "value": 0.8,
+      "unit": "mg/dL"
+    },
+    {
+      "datetime": "2020-02-06 06:01",
+      "label": "Glucose",
+      "value": 96.0,
+      "unit": "mg/dL"
+    },
+    {
+      "datetime": "2020-02-06 06:01",
+      "label": "Glucose",
+      "value": 96.0,
+      "unit": "mg/dL"
+    },
+    {
+      "datetime": "2020-02-06 06:01",
+      "label": "Potassium",
+      "value": 4.3,
+      "unit": "mmol/L"
+    },
+    {
+      "datetime": "2020-02-06 06:01",
+      "label": "Potassium",
+      "value": 4.3,
+      "unit": "mmol/L"
+    },
+    {
+      "datetime": "2020-02-06 06:01",
+      "label": "Sodium",
+      "value": 139.0,
+      "unit": "mmol/L"
+    },
+    {
+      "datetime": "2020-02-06 06:01",
+      "label": "Sodium",
+      "value": 139.0,
+      "unit": "mmol/L"
+    },
+    {
+      "datetime": "2020-02-06 06:01",
+      "label": "BUN",
+      "value": 3.0,
+      "unit": "mg/dL"
+    },
+    {
+      "datetime": "2020-02-06 06:01",
+      "label": "BUN",
+      "value": 3.0,
+      "unit": "mg/dL"
+    },
+    {
+      "datetime": "2020-02-06 06:01",
+      "label": "Lactate",
+      "value": 0.8,
+      "unit": "mmol/L"
+    },
+    {
+      "datetime": "2020-02-06 06:01",
+      "label": "Lactate",
+      "value": 0.8,
+      "unit": "mmol/L"
+    },
+    {
+      "datetime": "2020-02-06 06:01",
+      "label": "33037-3",
+      "value": 13.0,
+      "unit": "mmol/L"
+    },
+    {
+      "datetime": "2020-02-06 06:01",
+      "label": "33037-3",
+      "value": 13.0,
+      "unit": "mmol/L"
+    },
+    {
+      "datetime": "2020-02-06 06:01",
+      "label": "33914-3",
+      "value": 118.0,
+      "unit": "mL/min/1.73 m2"
+    },
+    {
+      "datetime": "2020-02-06 06:01",
+      "label": "33914-3",
+      "value": 102.0,
+      "unit": "mL/min/1.73 m2"
+    },
+    {
+      "datetime": "2020-02-06 06:01",
+      "label": "Hematocrit",
+      "value": 34.2,
+      "unit": "%"
+    },
+    {
+      "datetime": "2020-02-06 06:01",
+      "label": "Hematocrit",
+      "value": 34.2,
+      "unit": "%"
+    },
+    {
+      "datetime": "2020-02-06 06:01",
+      "label": "5905-5",
+      "value": 9.1,
+      "unit": "%"
+    },
+    {
+      "datetime": "2020-02-06 06:01",
+      "label": "5905-5",
+      "value": 9.1,
+      "unit": "%"
+    },
+    {
+      "datetime": "2020-02-06 06:01",
+      "label": "62238-1",
+      "value": 102.0,
+      "unit": "mL/min/1.73 m2"
+    },
+    {
+      "datetime": "2020-02-06 06:01",
+      "label": "704-7",
+      "value": 0.01,
+      "unit": "K/uL"
+    },
+    {
+      "datetime": "2020-02-06 06:01",
+      "label": "704-7",
+      "value": 0.01,
+      "unit": "K/uL"
+    },
+    {
+      "datetime": "2020-02-06 06:01",
+      "label": "706-2",
+      "value": 0.2,
+      "unit": "%"
+    },
+    {
+      "datetime": "2020-02-06 06:01",
+      "label": "706-2",
+      "value": 0.2,
+      "unit": "%"
+    },
+    {
+      "datetime": "2020-02-06 06:01",
+      "label": "711-2",
+      "value": 0.07,
+      "unit": "K/uL"
+    },
+    {
+      "datetime": "2020-02-06 06:01",
+      "label": "711-2",
+      "value": 0.07,
+      "unit": "K/uL"
+    },
+    {
+      "datetime": "2020-02-06 06:01",
+      "label": "713-8",
+      "value": 1.2,
+      "unit": "%"
+    },
+    {
+      "datetime": "2020-02-06 06:01",
+      "label": "713-8",
+      "value": 1.2,
+      "unit": "%"
+    },
+    {
+      "datetime": "2020-02-06 06:01",
+      "label": "Hemoglobin",
+      "value": 11.2,
+      "unit": "g/dL"
+    },
+    {
+      "datetime": "2020-02-06 06:01",
+      "label": "Hemoglobin",
+      "value": 11.2,
+      "unit": "g/dL"
+    },
+    {
+      "datetime": "2020-02-06 06:01",
+      "label": "731-0",
+      "value": 1.57,
+      "unit": "K/uL"
+    },
+    {
+      "datetime": "2020-02-06 06:01",
+      "label": "731-0",
+      "value": 1.57,
+      "unit": "K/uL"
+    },
+    {
+      "datetime": "2020-02-06 06:01",
+      "label": "736-9",
+      "value": 26.0,
+      "unit": "%"
+    },
+    {
+      "datetime": "2020-02-06 06:01",
+      "label": "736-9",
+      "value": 26.0,
+      "unit": "%"
+    },
+    {
+      "datetime": "2020-02-06 06:01",
+      "label": "742-7",
+      "value": 0.55,
+      "unit": "K/uL"
+    },
+    {
+      "datetime": "2020-02-06 06:01",
+      "label": "742-7",
+      "value": 0.55,
+      "unit": "K/uL"
+    },
+    {
+      "datetime": "2020-02-06 06:01",
+      "label": "751-8",
+      "value": 3.81,
+      "unit": "K/uL"
+    },
+    {
+      "datetime": "2020-02-06 06:01",
+      "label": "751-8",
+      "value": 3.81,
+      "unit": "K/uL"
+    },
+    {
+      "datetime": "2020-02-06 06:01",
+      "label": "770-8",
+      "value": 63.2,
+      "unit": "%"
+    },
+    {
+      "datetime": "2020-02-06 06:01",
+      "label": "770-8",
+      "value": 63.2,
+      "unit": "%"
+    },
+    {
+      "datetime": "2020-02-06 06:01",
+      "label": "Platelets",
+      "value": 138.0,
+      "unit": "K/uL"
+    },
+    {
+      "datetime": "2020-02-06 06:01",
+      "label": "Platelets",
+      "value": 138.0,
+      "unit": "K/uL"
+    },
+    {
+      "datetime": "2020-02-06 06:01",
+      "label": "785-6",
+      "value": 29.9,
+      "unit": "pg"
+    },
+    {
+      "datetime": "2020-02-06 06:01",
+      "label": "785-6",
+      "value": 29.9,
+      "unit": "pg"
+    },
+    {
+      "datetime": "2020-02-06 06:01",
+      "label": "786-4",
+      "value": 32.7,
+      "unit": "g/dL"
+    },
+    {
+      "datetime": "2020-02-06 06:01",
+      "label": "786-4",
+      "value": 32.7,
+      "unit": "g/dL"
+    },
+    {
+      "datetime": "2020-02-06 06:01",
+      "label": "787-2",
+      "value": 91.2,
+      "unit": "fL"
+    },
+    {
+      "datetime": "2020-02-06 06:01",
+      "label": "787-2",
+      "value": 91.2,
+      "unit": "fL"
+    },
+    {
+      "datetime": "2020-02-06 06:01",
+      "label": "788-0",
+      "value": 12.7,
+      "unit": "%"
+    },
+    {
+      "datetime": "2020-02-06 06:01",
+      "label": "788-0",
+      "value": 12.7,
+      "unit": "%"
+    },
+    {
+      "datetime": "2020-02-06 06:01",
+      "label": "789-8",
+      "value": 3.75,
+      "unit": "MIL/uL"
+    },
+    {
+      "datetime": "2020-02-06 06:01",
+      "label": "789-8",
+      "value": 3.75,
+      "unit": "MIL/uL"
+    },
+    {
+      "datetime": "2020-02-06 06:01",
+      "label": "88293-6",
+      "value": 118.0,
+      "unit": "mL/min/1.73 m2"
+    }
+  ],
+  "diagnoses": [
+    {
+      "date": "2020-02-05 00:00",
+      "code": "ICD10CM/J93.83",
+      "description": "ICD10CM/J93.83"
+    },
+    {
+      "date": "2020-02-05 00:00",
+      "code": "ICD10CM/J93.9",
+      "description": "ICD10CM/J93.9"
+    },
+    {
+      "date": "2020-02-05 00:00",
+      "code": "ICD10CM/J98.2",
+      "description": "ICD10CM/J98.2"
+    },
+    {
+      "date": "2020-02-05 00:00",
+      "code": "ICD10CM/J98.2",
+      "description": "ICD10CM/J98.2"
+    },
+    {
+      "date": "2020-02-05 00:00",
+      "code": "ICD10CM/J98.2",
+      "description": "ICD10CM/J98.2"
+    },
+    {
+      "date": "2020-02-05 00:00",
+      "code": "ICD10CM/R00.0",
+      "description": "ICD10CM/R00.0"
+    },
+    {
+      "date": "2020-02-05 00:00",
+      "code": "ICD10CM/R06.00",
+      "description": "ICD10CM/R06.00"
+    },
+    {
+      "date": "2020-02-05 00:00",
+      "code": "ICD10CM/R06.02",
+      "description": "ICD10CM/R06.02"
+    },
+    {
+      "date": "2020-02-05 00:00",
+      "code": "ICD10CM/R07.9",
+      "description": "ICD10CM/R07.9"
+    },
+    {
+      "date": "2020-02-05 00:00",
+      "code": "ICD10CM/R94.31",
+      "description": "ICD10CM/R94.31"
+    },
+    {
+      "date": "2020-02-05 07:30",
+      "code": "ICD10CM/E66.9",
+      "description": "ICD10CM/E66.9"
+    },
+    {
+      "date": "2020-02-05 07:30",
+      "code": "ICD10CM/E87.3",
+      "description": "ICD10CM/E87.3"
+    },
+    {
+      "date": "2020-02-05 07:30",
+      "code": "ICD10CM/F12.10",
+      "description": "ICD10CM/F12.10"
+    },
+    {
+      "date": "2020-02-05 07:30",
+      "code": "ICD10CM/F17.200",
+      "description": "ICD10CM/F17.200"
+    },
+    {
+      "date": "2020-02-05 07:30",
+      "code": "ICD10CM/I24.8",
+      "description": "ICD10CM/I24.8"
+    },
+    {
+      "date": "2020-02-05 07:30",
+      "code": "ICD10CM/J93.9",
+      "description": "ICD10CM/J93.9"
+    },
+    {
+      "date": "2020-02-05 07:30",
+      "code": "ICD10CM/J98.2",
+      "description": "ICD10CM/J98.2"
+    },
+    {
+      "date": "2020-02-05 07:30",
+      "code": "ICD10CM/R07.9",
+      "description": "ICD10CM/R07.9"
+    },
+    {
+      "date": "2020-02-05 07:30",
+      "code": "ICD10CM/R11.0",
+      "description": "ICD10CM/R11.0"
+    },
+    {
+      "date": "2020-02-06 00:00",
+      "code": "ICD10CM/J98.2",
+      "description": "ICD10CM/J98.2"
+    }
+  ],
+  "medications": [
+    {
+      "date": "2020-02-05 16:00",
+      "name": "RxNorm/1659149",
+      "code": "RxNorm/1659149"
+    },
+    {
+      "date": "2020-02-05 16:01",
+      "name": "RxNorm/1010033",
+      "code": "RxNorm/1010033"
+    },
+    {
+      "date": "2020-02-05 16:01",
+      "name": "RxNorm/312507",
+      "code": "RxNorm/312507"
+    },
+    {
+      "date": "2020-02-05 17:11",
+      "name": "RxNorm/1740467",
+      "code": "RxNorm/1740467"
+    },
+    {
+      "date": "2020-02-05 17:11",
+      "name": "RxNorm/238100",
+      "code": "RxNorm/238100"
+    },
+    {
+      "date": "2020-02-05 17:53",
+      "name": "RxNorm/1863605",
+      "code": "RxNorm/1863605"
+    },
+    {
+      "date": "2020-02-05 19:57",
+      "name": "RxNorm/1659137",
+      "code": "RxNorm/1659137"
+    },
+    {
+      "date": "2020-02-05 23:58",
+      "name": "RxNorm/1659137",
+      "code": "RxNorm/1659137"
+    },
+    {
+      "date": "2020-02-06 00:12",
+      "name": "RxNorm/1010033",
+      "code": "RxNorm/1010033"
+    },
+    {
+      "date": "2020-02-06 00:39",
+      "name": "RxNorm/1740467",
+      "code": "RxNorm/1740467"
+    },
+    {
+      "date": "2020-02-06 00:52",
+      "name": "RxNorm/1807513",
+      "code": "RxNorm/1807513"
+    },
+    {
+      "date": "2020-02-06 02:46",
+      "name": "RxNorm/1721315",
+      "code": "RxNorm/1721315"
+    },
+    {
+      "date": "2020-02-06 05:01",
+      "name": "RxNorm/1659137",
+      "code": "RxNorm/1659137"
+    }
+  ],
+  "procedures": [
+    {
+      "date": "2020-02-05 00:00",
+      "code": "CPT4/36415",
+      "description": "CPT4/36415"
+    },
+    {
+      "date": "2020-02-05 00:00",
+      "code": "CPT4/70491",
+      "description": "CPT4/70491"
+    },
+    {
+      "date": "2020-02-05 00:00",
+      "code": "CPT4/70491",
+      "description": "CPT4/70491"
+    },
+    {
+      "date": "2020-02-05 00:00",
+      "code": "CPT4/71045",
+      "description": "CPT4/71045"
+    },
+    {
+      "date": "2020-02-05 00:00",
+      "code": "CPT4/71045",
+      "description": "CPT4/71045"
+    },
+    {
+      "date": "2020-02-05 00:00",
+      "code": "CPT4/71046",
+      "description": "CPT4/71046"
+    },
+    {
+      "date": "2020-02-05 00:00",
+      "code": "CPT4/71046",
+      "description": "CPT4/71046"
+    },
+    {
+      "date": "2020-02-05 00:00",
+      "code": "CPT4/71275",
+      "description": "CPT4/71275"
+    },
+    {
+      "date": "2020-02-05 00:00",
+      "code": "CPT4/71275",
+      "description": "CPT4/71275"
+    },
+    {
+      "date": "2020-02-05 00:00",
+      "code": "CPT4/74240",
+      "description": "CPT4/74240"
+    },
+    {
+      "date": "2020-02-05 00:00",
+      "code": "CPT4/74240",
+      "description": "CPT4/74240"
+    },
+    {
+      "date": "2020-02-05 00:00",
+      "code": "CPT4/74240",
+      "description": "CPT4/74240"
+    },
+    {
+      "date": "2020-02-05 00:00",
+      "code": "CPT4/93005",
+      "description": "CPT4/93005"
+    },
+    {
+      "date": "2020-02-05 00:00",
+      "code": "CPT4/93010",
+      "description": "CPT4/93010"
+    },
+    {
+      "date": "2020-02-05 00:00",
+      "code": "CPT4/96374",
+      "description": "CPT4/96374"
+    },
+    {
+      "date": "2020-02-05 00:00",
+      "code": "CPT4/96375",
+      "description": "CPT4/96375"
+    },
+    {
+      "date": "2020-02-05 00:00",
+      "code": "CPT4/99223",
+      "description": "CPT4/99223"
+    },
+    {
+      "date": "2020-02-05 00:00",
+      "code": "CPT4/99291",
+      "description": "CPT4/99291"
+    },
+    {
+      "date": "2020-02-05 00:00",
+      "code": "CPT4/99291",
+      "description": "CPT4/99291"
+    },
+    {
+      "date": "2020-02-06 00:00",
+      "code": "CPT4/36415",
+      "description": "CPT4/36415"
+    },
+    {
+      "date": "2020-02-06 00:00",
+      "code": "CPT4/71045",
+      "description": "CPT4/71045"
+    },
+    {
+      "date": "2020-02-06 00:00",
+      "code": "CPT4/71045",
+      "description": "CPT4/71045"
+    },
+    {
+      "date": "2020-02-06 00:00",
+      "code": "CPT4/80306",
+      "description": "CPT4/80306"
+    }
+  ],
+  "observations": [
+    {
+      "date": "2020-02-05 00:00",
+      "observation": "OMOP_CONCEPT_ID/45882295",
+      "value": null
+    },
+    {
+      "date": "2020-02-05 00:00",
+      "observation": "OMOP_CONCEPT_ID/45878245",
+      "value": null
+    },
+    {
+      "date": "2020-02-05 00:00",
+      "observation": "OMOP_CONCEPT_ID/45878245",
+      "value": null
+    },
+    {
+      "date": "2020-02-05 00:00",
+      "observation": "OMOP_CONCEPT_ID/45878245",
+      "value": null
+    },
+    {
+      "date": "2020-02-05 00:00",
+      "observation": "OMOP_CONCEPT_ID/45878245",
+      "value": null
+    },
+    {
+      "date": "2020-02-05 00:00",
+      "observation": "OMOP_CONCEPT_ID/45878245",
+      "value": null
+    },
+    {
+      "date": "2020-02-05 00:00",
+      "observation": "OMOP_CONCEPT_ID/45877986",
+      "value": null
+    },
+    {
+      "date": "2020-02-05 07:32",
+      "observation": "LOINC/8327-9",
+      "value": "1.0"
+    },
+    {
+      "date": "2020-02-05 07:32",
+      "observation": "LOINC/LP21258-6",
+      "value": "100.0"
+    },
+    {
+      "date": "2020-02-05 07:36",
+      "observation": "LOINC/LP21258-6",
+      "value": "100.0"
+    },
+    {
+      "date": "2020-02-05 07:45",
+      "observation": "LOINC/LP21258-6",
+      "value": "100.0"
+    },
+    {
+      "date": "2020-02-05 09:15",
+      "observation": "LOINC/LP21258-6",
+      "value": "100.0"
+    },
+    {
+      "date": "2020-02-05 13:30",
+      "observation": "LOINC/LP21258-6",
+      "value": "100.0"
+    },
+    {
+      "date": "2020-02-05 13:45",
+      "observation": "LOINC/LP21258-6",
+      "value": "95.0"
+    },
+    {
+      "date": "2020-02-05 14:30",
+      "observation": "LOINC/LP21258-6",
+      "value": "100.0"
+    },
+    {
+      "date": "2020-02-05 16:07",
+      "observation": "LOINC/LP21258-6",
+      "value": "98.0"
+    },
+    {
+      "date": "2020-02-05 16:59",
+      "observation": "LOINC/8327-9",
+      "value": "1.0"
+    },
+    {
+      "date": "2020-02-05 16:59",
+      "observation": "LOINC/LP21258-6",
+      "value": "98.0"
+    },
+    {
+      "date": "2020-02-05 20:02",
+      "observation": "LOINC/8327-9",
+      "value": "1.0"
+    },
+    {
+      "date": "2020-02-06 00:00",
+      "observation": "OMOP_CONCEPT_ID/36307819",
+      "value": null
+    },
+    {
+      "date": "2020-02-06 00:00",
+      "observation": "OMOP_CONCEPT_ID/36308417",
+      "value": null
+    },
+    {
+      "date": "2020-02-06 00:00",
+      "observation": "OMOP_CONCEPT_ID/45878245",
+      "value": null
+    },
+    {
+      "date": "2020-02-06 00:00",
+      "observation": "OMOP_CONCEPT_ID/45878245",
+      "value": null
+    },
+    {
+      "date": "2020-02-06 00:00",
+      "observation": "OMOP_CONCEPT_ID/45878245",
+      "value": null
+    },
+    {
+      "date": "2020-02-06 00:00",
+      "observation": "OMOP_CONCEPT_ID/45878245",
+      "value": null
+    },
+    {
+      "date": "2020-02-06 00:00",
+      "observation": "OMOP_CONCEPT_ID/45878245",
+      "value": null
+    },
+    {
+      "date": "2020-02-06 00:00",
+      "observation": "OMOP_CONCEPT_ID/45876662",
+      "value": null
+    },
+    {
+      "date": "2020-02-06 01:00",
+      "observation": "LOINC/8327-9",
+      "value": "1.0"
+    },
+    {
+      "date": "2020-02-06 01:00",
+      "observation": "LOINC/LP21258-6",
+      "value": "100.0"
+    },
+    {
+      "date": "2020-02-06 04:11",
+      "observation": "LOINC/8327-9",
+      "value": "1.0"
+    },
+    {
+      "date": "2020-02-06 04:11",
+      "observation": "LOINC/LP21258-6",
+      "value": "98.0"
+    }
+  ],
+  "visit_history": [
+    {
+      "date": "2020-02-05 00:00",
+      "type": "Domain/OMOP generated"
+    },
+    {
+      "date": "2020-02-05 00:00",
+      "type": "STANFORD_VISIT/Emergency||SHC ED Visit"
+    },
+    {
+      "date": "2020-02-05 00:00",
+      "type": "STANFORD_VISIT/||History"
+    },
+    {
+      "date": "2020-02-05 07:31",
+      "type": "STANFORD_VISIT/Inpatient|Emergency|Hospital Encounter"
+    },
+    {
+      "date": "2020-02-05 07:31",
+      "type": "Visit/ER"
+    },
+    {
+      "date": "2020-02-05 07:52",
+      "type": "Domain/OMOP generated"
+    },
+    {
+      "date": "2020-02-05 11:32",
+      "type": "Domain/OMOP generated"
+    },
+    {
+      "date": "2020-02-05 11:32",
+      "type": "Domain/OMOP generated"
+    },
+    {
+      "date": "2020-02-05 14:08",
+      "type": "Domain/OMOP generated"
+    },
+    {
+      "date": "2020-02-05 14:26",
+      "type": "STANFORD_VISIT/Inpatient||Appointment"
+    },
+    {
+      "date": "2020-02-05 16:43",
+      "type": "SNOMED/308335008"
+    },
+    {
+      "date": "2020-02-05 16:48",
+      "type": "Domain/OMOP generated"
+    },
+    {
+      "date": "2020-02-06 00:00",
+      "type": "STANFORD_VISIT/||History"
+    },
+    {
+      "date": "2020-02-06 00:00",
+      "type": "STANFORD_VISIT/||Reconciled Outside Data"
+    },
+    {
+      "date": "2020-02-06 04:37",
+      "type": "Domain/OMOP generated"
+    }
+  ],
+  "data_summary": {
+    "n_lab_rows": 235,
+    "n_diagnoses": 20,
+    "n_medications": 13,
+    "n_procedures": 23,
+    "n_observations": 31,
+    "n_visits": 15,
+    "n_gap_labs": 30
+  }
+}

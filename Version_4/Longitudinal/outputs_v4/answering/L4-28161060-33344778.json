@@ -1,0 +1,35 @@
+{
+  "question_id": "L4-28161060-33344778",
+  "sequence": [
+    "a",
+    "b",
+    "c",
+    "d"
+  ],
+  "anchor_family_hidden": true,
+  "demographics": {
+    "gender": "M",
+    "anchor_age": 58,
+    "admission_type": "OBSERVATION ADMIT",
+    "race": "WHITE"
+  },
+  "steps": {
+    "a": {
+      "stem": "A 58-year-old M patient was admitted to the ICU. Using ONLY the supplemental data you can request (labs and microbiology are available by name/date first; you must justify and request the values you need), determine the SINGLE most likely next major intervention this patient requires, and justify it with a patient-specific causal chain that cites the specific lab values you retrieved.",
+      "question_type": "next_intervention_openended",
+      "tool_use": "Call Access_All_supplementals_no_values(question_id) first, then Request_a_supplemental / Request_values with justification.",
+      "question_id_for_tools": "L4-28161060-33344778"
+    },
+    "b": {
+      "stem": "Given that this patient underwent transfusion (Packed Red Blood Cells), select the core labs whose 72-hour trajectory is most informative and predict each one's direction (Rising / Falling / Stable) with a causal justification and a confidence.",
+      "candidate_labs": []
+    },
+    "d": {
+      "stem": "At discharge, considering this patient's clinical course, predict whether they will die within one year. Give a Yes/No call, a calibrated confidence (0-1), and a causal risk rationale referencing the patient's specific abnormal values/trends.",
+      "options": [
+        "Yes",
+        "No"
+      ]
+    }
+  }
+}

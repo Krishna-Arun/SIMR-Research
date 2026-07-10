@@ -1,0 +1,38 @@
+[1] starting PubMed MCP server ...
+    tools: ['search_articles', 'advanced_search', 'search_by_author', 'search_by_journal', 'search_by_mesh_terms', 'get_trending_articles'] ...
+[2] connecting model backends ...
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/scratch/users/karun09/Version_2/Benchmark_A/Question_Generation/qgen/run_generate.py", line 75, in <module>
+    sys.exit(main())
+             ^^^^^^
+  File "/scratch/users/karun09/Version_2/Benchmark_A/Question_Generation/qgen/run_generate.py", line 55, in main
+    opt_llm = make_chat(cfg["models"]["optimizer"])
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/scratch/users/karun09/Version_2/Benchmark_A/Question_Generation/qgen/hf_backend.py", line 103, in make_chat
+    return HFChat(role_cfg)
+           ^^^^^^^^^^^^^^^^
+  File "/scratch/users/karun09/Version_2/Benchmark_A/Question_Generation/qgen/hf_backend.py", line 67, in __init__
+    self.tok, self.model = _load(self.model_id, self.load_4bit,
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/scratch/users/karun09/Version_2/Benchmark_A/Question_Generation/qgen/hf_backend.py", line 51, in _load
+    model = AutoModelForCausalLM.from_pretrained(model_id, **kwargs)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/scratch/users/karun09/miniforge3/envs/simr/lib/python3.11/site-packages/transformers/models/auto/auto_factory.py", line 406, in from_pretrained
+    return model_class.from_pretrained(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/scratch/users/karun09/miniforge3/envs/simr/lib/python3.11/site-packages/transformers/modeling_utils.py", line 4327, in from_pretrained
+    loading_info, disk_offload_index = cls._load_pretrained_model(model, state_dict, checkpoint_files, load_config)
+                                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/scratch/users/karun09/miniforge3/envs/simr/lib/python3.11/site-packages/transformers/modeling_utils.py", line 4408, in _load_pretrained_model
+    caching_allocator_warmup(model, expanded_device_map, load_config.hf_quantizer)
+  File "/scratch/users/karun09/miniforge3/envs/simr/lib/python3.11/site-packages/transformers/modeling_utils.py", line 5095, in caching_allocator_warmup
+    _ = torch.empty(int(byte_count // 2), dtype=torch.float16, device=device, requires_grad=False)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+RuntimeError: CUDA error: CUDA-capable device(s) is/are busy or unavailable
+CUDA kernel errors might be asynchronously reported at some other API call, so the stacktrace below might be incorrect.
+For debugging consider passing CUDA_LAUNCH_BLOCKING=1
+Compile with `TORCH_USE_CUDA_DSA` to enable device-side assertions.
+

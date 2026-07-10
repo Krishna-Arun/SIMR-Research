@@ -1,0 +1,218 @@
+{
+  "question_id": "L4-24300234-33966594",
+  "sequence": [
+    "a",
+    "b",
+    "c",
+    "d"
+  ],
+  "anchor_family_hidden": true,
+  "demographics": {
+    "gender": "M",
+    "anchor_age": 76,
+    "admission_type": "EW EMER.",
+    "race": "WHITE"
+  },
+  "steps": {
+    "a": {
+      "stem": "A 76-year-old M patient was admitted to the ICU. Using ONLY the supplemental data you can request (labs and microbiology are available by name/date first; you must justify and request the values you need), determine the SINGLE most likely next major intervention this patient requires, and justify it with a patient-specific causal chain that cites the specific lab values you retrieved.",
+      "question_type": "next_intervention_openended",
+      "tool_use": "Call Access_All_supplementals_no_values(question_id) first, then Request_a_supplemental / Request_values with justification.",
+      "question_id_for_tools": "L4-24300234-33966594"
+    },
+    "b": {
+      "stem": "Given that this patient underwent dialysis (Dialysis Catheter), select the core labs whose 72-hour trajectory is most informative and predict each one's direction (Rising / Falling / Stable) with a causal justification and a confidence.",
+      "candidate_labs": [
+        {
+          "lab": "Potassium",
+          "ref_low": 3.3,
+          "ref_high": 5.1,
+          "pre_value": 3.3
+        },
+        {
+          "lab": "MCH",
+          "ref_low": 27.0,
+          "ref_high": 32.0,
+          "pre_value": 33.7
+        },
+        {
+          "lab": "Urea Nitrogen",
+          "ref_low": 6.0,
+          "ref_high": 20.0,
+          "pre_value": 15.0
+        },
+        {
+          "lab": "MCV",
+          "ref_low": 82.0,
+          "ref_high": 98.0,
+          "pre_value": 111.0
+        },
+        {
+          "lab": "PTT",
+          "ref_low": 22.0,
+          "ref_high": 35.0,
+          "pre_value": 37.5
+        },
+        {
+          "lab": "Hematocrit",
+          "ref_low": 40.0,
+          "ref_high": 52.0,
+          "pre_value": 34.4
+        },
+        {
+          "lab": "Red Blood Cells",
+          "ref_low": 4.6,
+          "ref_high": 6.2,
+          "pre_value": 3.11
+        },
+        {
+          "lab": "Phosphate",
+          "ref_low": 2.7,
+          "ref_high": 4.5,
+          "pre_value": 3.8
+        },
+        {
+          "lab": "Hemoglobin",
+          "ref_low": 14.0,
+          "ref_high": 18.0,
+          "pre_value": 10.5
+        },
+        {
+          "lab": "RDW",
+          "ref_low": 10.5,
+          "ref_high": 15.5,
+          "pre_value": 23.3
+        },
+        {
+          "lab": "MCHC",
+          "ref_low": 31.0,
+          "ref_high": 35.0,
+          "pre_value": 30.4
+        },
+        {
+          "lab": "Calcium, Total",
+          "ref_low": 8.4,
+          "ref_high": 10.3,
+          "pre_value": 7.8
+        },
+        {
+          "lab": "Glucose",
+          "ref_low": 70.0,
+          "ref_high": 100.0,
+          "pre_value": 91.0
+        },
+        {
+          "lab": "Chloride",
+          "ref_low": 96.0,
+          "ref_high": 108.0,
+          "pre_value": 104.0
+        },
+        {
+          "lab": "Magnesium",
+          "ref_low": 1.6,
+          "ref_high": 2.6,
+          "pre_value": 1.9
+        },
+        {
+          "lab": "Platelet Count",
+          "ref_low": 150.0,
+          "ref_high": 440.0,
+          "pre_value": 85.0
+        },
+        {
+          "lab": "Creatinine",
+          "ref_low": 0.5,
+          "ref_high": 1.2,
+          "pre_value": 3.9
+        },
+        {
+          "lab": "Sodium",
+          "ref_low": 133.0,
+          "ref_high": 145.0,
+          "pre_value": 142.0
+        },
+        {
+          "lab": "Anion Gap",
+          "ref_low": 8.0,
+          "ref_high": 20.0,
+          "pre_value": 10.0
+        },
+        {
+          "lab": "White Blood Cells",
+          "ref_low": 4.0,
+          "ref_high": 11.0,
+          "pre_value": 5.2
+        },
+        {
+          "lab": "Bicarbonate",
+          "ref_low": 22.0,
+          "ref_high": 32.0,
+          "pre_value": 31.0
+        }
+      ]
+    },
+    "c": {
+      "stem": "Two ICU patients (A and B) with similar baselines underwent DIFFERENT interventions. Given the observed post-intervention labs below, identify which patient they belong to and justify using the causal physiological effect of each intervention.",
+      "shared_labs": [
+        "Glucose",
+        "Hemoglobin",
+        "PTT"
+      ],
+      "observed_post": [
+        {
+          "lab": "Glucose",
+          "value": 94.0
+        },
+        {
+          "lab": "Hemoglobin",
+          "value": 8.8
+        },
+        {
+          "lab": "PTT",
+          "value": 46.1
+        }
+      ],
+      "patient_A": {
+        "procedure": "Dialysis Catheter",
+        "pre_labs": [
+          {
+            "lab": "PTT",
+            "value": 37.5
+          },
+          {
+            "lab": "Hemoglobin",
+            "value": 10.5
+          },
+          {
+            "lab": "Glucose",
+            "value": 91.0
+          }
+        ]
+      },
+      "patient_B": {
+        "procedure": "Packed Red Blood Cells",
+        "pre_labs": [
+          {
+            "lab": "PTT",
+            "value": 37.2
+          },
+          {
+            "lab": "Hemoglobin",
+            "value": 7.2
+          },
+          {
+            "lab": "Glucose",
+            "value": 90.0
+          }
+        ]
+      }
+    },
+    "d": {
+      "stem": "At discharge, considering this patient's clinical course, predict whether they will die within one year. Give a Yes/No call, a calibrated confidence (0-1), and a causal risk rationale referencing the patient's specific abnormal values/trends.",
+      "options": [
+        "Yes",
+        "No"
+      ]
+    }
+  }
+}

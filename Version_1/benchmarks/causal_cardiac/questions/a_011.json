@@ -1,0 +1,27 @@
+{
+  "case_id": "a_011",
+  "benchmark": "intervention_physiological_effect",
+  "hadm_id": 27461446,
+  "procedure": {
+    "title": "Combined right and left heart cardiac catheterization",
+    "date": "2126-11-17 00:00"
+  },
+  "question": {
+    "stem": "Patient hadm_id: 27461446\n\nDemographics: None-year-old Male\nPrimary Diagnosis: Acute diastolic (congestive) heart failure\n\nPre-Procedure Lab Timeline (all available labs before 2126-11-17 00:00):\n\n| Datetime | Lab | Value | Unit | Flag |\n|---|---|---|---|---|\n| 2126-11-16 00:46 | Creatine Kinase (CK) | 100.0 | IU/L | nan |\n| 2126-11-16 00:46 | Creatine Kinase, MB Isoenzyme | 4.0 | ng/mL | nan |\n| 2126-11-16 00:46 | Troponin T | 0.01 | ng/mL | nan |\n| 2126-11-16 07:00 | Urea Nitrogen | 17.0 | mg/dL | nan |\n| 2126-11-16 07:00 | Troponin T | 0.02 | ng/mL | abnormal |\n| 2126-11-16 07:00 | Thyroid Stimulating Hormone | 2.5 | uIU/mL | nan |\n| 2126-11-16 07:00 | Sodium | 143.0 | mEq/L | nan |\n| 2126-11-16 07:00 | Potassium | 4.0 | mEq/L | nan |\n| 2126-11-16 07:00 | Glucose | 98.0 | mg/dL | nan |\n| 2126-11-16 07:00 | Creatinine | 0.9 | mg/dL | nan |\n| 2126-11-16 07:00 | Creatine Kinase, MB Isoenzyme | 3.0 | ng/mL | nan |\n| 2126-11-16 07:00 | Creatine Kinase (CK) | 86.0 | IU/L | nan |\n| 2126-11-16 07:00 | Chloride | 105.0 | mEq/L | nan |\n| 2126-11-16 07:00 | Magnesium | 2.0 | mg/dL | nan |\n| 2126-11-16 07:00 | Anion Gap | 9.0 | mEq/L | nan |\n| 2126-11-16 07:00 | Bicarbonate | 33.0 | mEq/L | abnormal |\n| 2126-11-16 07:00 | Hematocrit | 33.7 | % | abnormal |\n| 2126-11-16 07:00 | Hemoglobin | 10.6 | g/dL | abnormal |\n| 2126-11-16 07:00 | MCHC | 31.6 | % | nan |\n| 2126-11-16 07:00 | MCV | 73.0 | fL | abnormal |\n| 2126-11-16 07:00 | MCH | 23.1 | pg | abnormal |\n| 2126-11-16 07:00 | Platelet Count | 135.0 | K/uL | abnormal |\n| 2126-11-16 07:00 | RDW | 14.7 | % | nan |\n| 2126-11-16 07:00 | Red Blood Cells | 4.61 | m/uL | nan |\n| 2126-11-16 07:00 | White Blood Cells | 7.6 | K/uL | nan |\n\nProcedure Performed: Combined right and left heart cardiac catheterization on 2126-11-17 00:00\n\nAnalyze the pre-intervention lab trajectory and clinical context. Given the patient's state and the intervention performed, describe what physiological changes you would expect to see in the post-intervention period. Specifically discuss expected direction and magnitude of change for key cardiac biomarkers (Troponin, CK, CK-MB).",
+    "type": "intervention_forward_prediction"
+  },
+  "visible_context": {
+    "pre_intervention_labs": 25,
+    "demographics": {
+      "age": null,
+      "gender": "Male"
+    },
+    "primary_diagnosis": "Acute diastolic (congestive) heart failure"
+  },
+  "ground_truth": {
+    "post_intervention_labs": "| Datetime | Lab | Value | Unit | Flag |\n|---|---|---|---|---|\n| 2126-11-17 06:50 | Lactate Dehydrogenase (LD) | 191.0 | IU/L | nan |\n| 2126-11-18 06:55 | Creatine Kinase (CK) | 59.0 | IU/L | nan |\n| 2126-11-18 06:55 | Creatine Kinase, MB Isoenzyme | 2.0 | ng/mL | nan |\n| 2126-11-18 06:55 | Troponin T | 0.02 | ng/mL | abnormal |",
+    "n_post_labs": 4,
+    "expected_troponin_direction": "stable",
+    "expected_troponin_magnitude_pct": 0.0
+  }
+}

@@ -1,0 +1,27 @@
+{
+  "case_id": "a_093",
+  "benchmark": "intervention_physiological_effect",
+  "hadm_id": 20824165,
+  "procedure": {
+    "title": "Percutaneous transluminal coronary angioplasty [PTCA]",
+    "date": "2180-05-28 00:00"
+  },
+  "question": {
+    "stem": "Patient hadm_id: 20824165\n\nDemographics: None-year-old Unknown\nPrimary Diagnosis: Non-ST elevation (NSTEMI) myocardial infarction\n\nPre-Procedure Lab Timeline (all available labs before 2180-05-28 00:00):\n\n| Datetime | Lab | Value | Unit | Flag |\n|---|---|---|---|---|\n| 2180-05-27 02:10 | C-Reactive Protein | 4.9 | mg/L | nan |\n| 2180-05-27 02:10 | Creatine Kinase, MB Isoenzyme | 8.0 | ng/mL | nan |\n| 2180-05-27 02:10 | Troponin T | 0.12 | ng/mL | abnormal |\n| 2180-05-27 08:40 | White Blood Cells | 12.3 | K/uL | abnormal |\n| 2180-05-27 08:40 | Red Blood Cells | 3.89 | m/uL | abnormal |\n| 2180-05-27 08:40 | RDW | 13.7 | % | nan |\n| 2180-05-27 08:40 | Platelet Count | 169.0 | K/uL | nan |\n| 2180-05-27 08:40 | MCV | 94.0 | fL | nan |\n| 2180-05-27 08:40 | MCHC | 35.0 | % | nan |\n| 2180-05-27 08:40 | MCH | 32.9 | pg | abnormal |\n| 2180-05-27 08:40 | Hemoglobin | 12.8 | g/dL | abnormal |\n| 2180-05-27 08:40 | PTT | 150.0 | sec | abnormal |\n| 2180-05-27 08:40 | PT | 12.6 | sec | abnormal |\n| 2180-05-27 08:40 | INR(PT) | 1.2 | nan | abnormal |\n| 2180-05-27 08:40 | Urea Nitrogen | 18.0 | mg/dL | nan |\n| 2180-05-27 08:40 | Hematocrit | 36.6 | % | abnormal |\n| 2180-05-27 08:40 | Sodium | 136.0 | mEq/L | nan |\n| 2180-05-27 08:40 | Troponin T | 0.09 | ng/mL | abnormal |\n| 2180-05-27 08:40 | Bicarbonate | 24.0 | mEq/L | nan |\n| 2180-05-27 08:40 | Calcium, Total | 9.0 | mg/dL | nan |\n| 2180-05-27 08:40 | Chloride | 101.0 | mEq/L | nan |\n| 2180-05-27 08:40 | Creatine Kinase, MB Isoenzyme | 5.0 | ng/mL | nan |\n| 2180-05-27 08:40 | Creatinine | 1.2 | mg/dL | nan |\n| 2180-05-27 08:40 | Anion Gap | 15.0 | mEq/L | nan |\n| 2180-05-27 08:40 | Glucose | 109.0 | mg/dL | abnormal |\n| 2180-05-27 08:40 | Magnesium | 1.7 | mg/dL | nan |\n| 2180-05-27 08:40 | Phosphate | 3.1 | mg/dL | nan |\n| 2180-05-27 08:40 | Potassium | 4.1 | mEq/L | nan |\n| 2180-05-27 08:40 | Estimated GFR (MDRD equation) | nan | nan | nan |\n| 2180-05-27 17:07 | PTT | 77.8 | sec | abnormal |\n\nProcedure Performed: Percutaneous transluminal coronary angioplasty [PTCA] on 2180-05-28 00:00\n\nAnalyze the pre-intervention lab trajectory and clinical context. Given the patient's state and the intervention performed, describe what physiological changes you would expect to see in the post-intervention period. Specifically discuss expected direction and magnitude of change for key cardiac biomarkers (Troponin, CK, CK-MB).",
+    "type": "intervention_forward_prediction"
+  },
+  "visible_context": {
+    "pre_intervention_labs": 30,
+    "demographics": {
+      "age": null,
+      "gender": "Unknown"
+    },
+    "primary_diagnosis": "Non-ST elevation (NSTEMI) myocardial infarction"
+  },
+  "ground_truth": {
+    "post_intervention_labs": "| Datetime | Lab | Value | Unit | Flag |\n|---|---|---|---|---|\n| 2180-05-28 13:35 | Troponin T | 0.1 | ng/mL | abnormal |\n| 2180-05-29 08:41 | Troponin T | 0.16 | ng/mL | abnormal |",
+    "n_post_labs": 2,
+    "expected_troponin_direction": "stable",
+    "expected_troponin_magnitude_pct": 11.111111111111121
+  }
+}

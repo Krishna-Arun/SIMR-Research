@@ -1,0 +1,27 @@
+{
+  "case_id": "a_039",
+  "benchmark": "intervention_physiological_effect",
+  "hadm_id": 22185019,
+  "procedure": {
+    "title": "Injection or infusion of cancer chemotherapeutic substance",
+    "date": "2159-12-19 00:00"
+  },
+  "question": {
+    "stem": "Patient hadm_id: 22185019\n\nDemographics: None-year-old Unknown\nPrimary Diagnosis: Acute on chronic diastolic (congestive) heart failure\n\nPre-Procedure Lab Timeline (all available labs before 2159-12-19 00:00):\n\n| Datetime | Lab | Value | Unit | Flag |\n|---|---|---|---|---|\n| 2159-12-16 20:43 | Creatine Kinase (CK) | 49.0 | IU/L | nan |\n| 2159-12-16 20:43 | Creatine Kinase, MB Isoenzyme | 3.0 | ng/mL | nan |\n| 2159-12-16 20:43 | Troponin T | 0.07 | ng/mL | abnormal |\n| 2159-12-17 04:01 | Bicarbonate | 41.0 | mEq/L | abnormal |\n| 2159-12-17 04:01 | Calcium, Total | 9.2 | mg/dL | nan |\n| 2159-12-17 04:01 | Chloride | 90.0 | mEq/L | abnormal |\n| 2159-12-17 04:01 | Creatine Kinase (CK) | 42.0 | IU/L | nan |\n| 2159-12-17 04:01 | Creatine Kinase, MB Isoenzyme | 3.0 | ng/mL | nan |\n| 2159-12-17 04:01 | Creatinine | 0.7 | mg/dL | nan |\n| 2159-12-17 04:01 | Magnesium | 1.2 | mg/dL | abnormal |\n| 2159-12-17 04:01 | PTT | 24.3 | sec | nan |\n| 2159-12-17 04:01 | Phosphate | 3.1 | mg/dL | nan |\n| 2159-12-17 04:01 | Potassium | 3.6 | mEq/L | nan |\n| 2159-12-17 04:01 | Sodium | 139.0 | mEq/L | nan |\n| 2159-12-17 04:01 | Troponin T | 0.09 | ng/mL | abnormal |\n| 2159-12-17 04:01 | Urea Nitrogen | 18.0 | mg/dL | nan |\n| 2159-12-17 04:01 | Glucose | 69.0 | mg/dL | abnormal |\n| 2159-12-17 04:01 | PT | 12.8 | sec | nan |\n| 2159-12-17 04:01 | Anion Gap | 12.0 | mEq/L | nan |\n| 2159-12-17 04:01 | White Blood Cells | 5.1 | K/uL | nan |\n| 2159-12-17 04:01 | Basophils | 0.7 | % | nan |\n| 2159-12-17 04:01 | Eosinophils | 10.1 | % | abnormal |\n| 2159-12-17 04:01 | Hematocrit | 29.3 | % | abnormal |\n| 2159-12-17 04:01 | INR(PT) | 1.1 | nan | nan |\n| 2159-12-17 04:01 | Lymphocytes | 16.9 | % | abnormal |\n| 2159-12-17 04:01 | MCH | 29.7 | pg | nan |\n| 2159-12-17 04:01 | MCHC | 32.0 | % | nan |\n| 2159-12-17 04:01 | Hemoglobin | 9.4 | g/dL | abnormal |\n| 2159-12-17 04:01 | Monocytes | 5.5 | % | nan |\n| 2159-12-17 04:01 | Neutrophils | 66.7 | % | nan |\n| 2159-12-17 04:01 | Platelet Count | 273.0 | K/uL | nan |\n| 2159-12-17 04:01 | RDW | 15.3 | % | nan |\n| 2159-12-17 04:01 | Red Blood Cells | 3.16 | m/uL | abnormal |\n| 2159-12-17 04:01 | MCV | 93.0 | fL | nan |\n| 2159-12-18 00:15 | MCH | 29.5 | pg | nan |\n| 2159-12-18 00:15 | White Blood Cells | 5.3 | K/uL | nan |\n| 2159-12-18 00:15 | Red Blood Cells | 3.04 | m/uL | abnormal |\n| 2159-12-18 00:15 | RDW | 15.3 | % | nan |\n| 2159-12-18 00:15 | Platelet Count | 304.0 | K/uL | nan |\n| 2159-12-18 00:15 | MCV | 93.0 | fL | nan |\n| 2159-12-18 00:15 | MCHC | 31.9 | % | nan |\n| 2159-12-18 00:15 | Hematocrit | 28.1 | % | abnormal |\n| 2159-12-18 00:15 | Hemoglobin | 9.0 | g/dL | abnormal |\n| 2159-12-18 00:15 | Sodium | 136.0 | mEq/L | nan |\n| 2159-12-18 00:15 | Potassium | 4.1 | mEq/L | nan |\n| 2159-12-18 00:15 | Glucose | 192.0 | mg/dL | abnormal |\n| 2159-12-18 00:15 | Creatinine | 0.9 | mg/dL | nan |\n| 2159-12-18 00:15 | Chloride | 88.0 | mEq/L | abnormal |\n| 2159-12-18 00:15 | Bicarbonate | 40.0 | mEq/L | abnormal |\n| 2159-12-18 00:15 | Anion Gap | 12.0 | mEq/L | nan |\n| 2159-12-18 00:15 | Urea Nitrogen | 20.0 | mg/dL | nan |\n\nProcedure Performed: Injection or infusion of cancer chemotherapeutic substance on 2159-12-19 00:00\n\nAnalyze the pre-intervention lab trajectory and clinical context. Given the patient's state and the intervention performed, describe what physiological changes you would expect to see in the post-intervention period. Specifically discuss expected direction and magnitude of change for key cardiac biomarkers (Troponin, CK, CK-MB).",
+    "type": "intervention_forward_prediction"
+  },
+  "visible_context": {
+    "pre_intervention_labs": 51,
+    "demographics": {
+      "age": null,
+      "gender": "Unknown"
+    },
+    "primary_diagnosis": "Acute on chronic diastolic (congestive) heart failure"
+  },
+  "ground_truth": {
+    "post_intervention_labs": "| Datetime | Lab | Value | Unit | Flag |\n|---|---|---|---|---|\n| 2159-12-19 00:15 | Creatine Kinase (CK) | 36.0 | IU/L | nan |\n| 2159-12-19 00:15 | Creatine Kinase, MB Isoenzyme | 2.0 | ng/mL | nan |\n| 2159-12-19 00:15 | Troponin T | 0.05 | ng/mL | abnormal |\n| 2159-12-19 07:53 | Creatine Kinase (CK) | 32.0 | IU/L | nan |\n| 2159-12-19 07:53 | Creatine Kinase, MB Isoenzyme | 2.0 | ng/mL | nan |\n| 2159-12-19 07:53 | Troponin T | 0.05 | ng/mL | abnormal |",
+    "n_post_labs": 6,
+    "expected_troponin_direction": "falling",
+    "expected_troponin_magnitude_pct": -44.44444444444444
+  }
+}

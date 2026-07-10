@@ -1,0 +1,68 @@
+# MIMIC Multi-Lab Reversal Benchmark Configuration
+
+# Ollama Configuration
+ollama:
+  base_url: ${OLLAMA_BASE_URL:-http://localhost:11434/v1}
+  model: ${OLLAMA_MODEL:-qwen:latest}
+  temperature: 0
+  max_tokens: 4096
+  request_timeout_seconds: 60
+
+# Benchmark Settings
+benchmark:
+  name: mimic_multilab_reversal
+  description: "Multi-lab post-intervention reversal benchmark using MIMIC-IV data"
+  version: "0.1.0"
+
+# Smoke Test Configuration
+smoke_test:
+  enabled: true
+  n_cases: 20
+  phases:
+    - pre_procedure
+    - peri_procedure
+    - immediate_post
+    - short_term_post
+    - medium_term_post
+  reversal_types:
+    - natural_reversal
+    - natural_non_reversal
+    - intervention_reversal
+    - intervention_non_reversal
+    - complication_reversal
+
+# Full Evaluation Configuration (for future use)
+full_evaluation:
+  enabled: false
+  n_cases: 500
+  max_parallel_cases: 5
+  timeout_per_case_seconds: 120
+  results_dir: ./results
+
+# Labs to Score
+labs:
+  primary:
+    - Troponin
+    - CK
+    - Creatinine
+  optional:
+    - BNP
+
+# Scoring Weights
+scoring:
+  direction_accuracy: 0.40
+  reversal_detection: 0.30
+  causal_justification: 0.20
+  confidence_calibration: 0.10
+
+# Confidence Extraction (from token logits)
+confidence:
+  extract_logprobs: true
+  logprob_weight: 0.60
+  entropy_weight: 0.40
+  min_logprob_bound: -15.0
+  max_entropy_bound: 5.0
+  thresholds:
+    high: 0.70
+    medium: 0.40
+    low: 0.0

@@ -1,0 +1,2892 @@
+{
+  "benchmark": "intervention_physiological_effect",
+  "condition": "WITH PubMed",
+  "model": "qwen3.6:latest",
+  "n_cases": 100,
+  "successful": 100,
+  "failed": 0,
+  "timestamp": "2026-06-24T00:41:28.797Z",
+  "confidence_statistics": {
+    "n_scored": 100,
+    "mean_confidence": 0.916,
+    "median_confidence": 0.916,
+    "std_confidence": 0.006,
+    "min_confidence": 0.899,
+    "max_confidence": 0.928,
+    "distribution": {
+      "high": 100,
+      "medium": 0,
+      "low": 0
+    },
+    "note": "Confidence scores extracted from token logits/probabilities. Higher = more confident."
+  },
+  "results": [
+    {
+      "case_id": "a_001",
+      "hadm_id": 23510626,
+      "prediction": {
+        "troponin_direction": "rising",
+        "troponin_magnitude_pct": 100,
+        "ck_direction": "rising",
+        "creatinine_direction": "rising",
+        "causal_justification": "The patient is undergoing a coronary angiography (fluoroscopy of multiple coronary arteries) for a Type 2 MI. While the procedure itself is diagnostic, the administration of iodinated contrast media poses a significant risk for Contrast-Induced Nephropathy (CIN), leading to a rise in Creatinine and BUN. Furthermore, the underlying Type 2 MI (supply/demand mismatch) and the mechanical manipulation of coronary arteries during angiography can cause further myocardial injury, leading to a continued rise in Troponin T and CK-MB as the biomarkers reach their peak. The pre-intervention Troponin T was already elevated (0.07-0.08 ng/mL) and stable/slightly rising, indicating ongoing injury. The procedure does not immediately resolve the supply/demand mismatch, so cardiac biomarkers will likely continue to rise for 24-48 hours post-procedure before plateauing and declining. CK-MB may also rise slightly due to the diagnostic catheterization trauma, but Troponin is more specific. Creatinine rise is expected due to contrast load, typically peaking at 48-72 hours.",
+        "confidence": "high",
+        "potassium_direction": "stable"
+      },
+      "confidence": {
+        "categorical": "high",
+        "score": 0.918,
+        "logprob_avg": -0.86,
+        "entropy": 0.595,
+        "n_tokens": 324
+      },
+      "metadata": {
+        "model": "qwen3.6:latest",
+        "finish_reason": "stop",
+        "usage": {
+          "prompt_tokens": 1001,
+          "completion_tokens": 324
+        }
+      },
+      "success": true
+    },
+    {
+      "case_id": "a_002",
+      "hadm_id": 29866477,
+      "prediction": {
+        "troponin_direction": "rising",
+        "troponin_magnitude_pct": 150,
+        "ck_direction": "rising",
+        "creatinine_direction": "falling",
+        "causal_justification": "The patient is undergoing PTCA for an NSTEMI. The pre-intervention labs show a rising Troponin T trajectory (0.18 -> 0.24 -> 0.43 ng/mL) and elevated Creatinine (4.1 -> 4.5 mg/dL), indicating ongoing myocardial necrosis and significant renal impairment (likely contrast-induced or cardiorenal syndrome). The PTCA procedure will restore coronary blood flow, which is the definitive treatment for the NSTEMI. However, the reperfusion of ischemic myocardium will cause a transient washout of intracellular enzymes (Troponin, CK, CK-MB) into the circulation, leading to a further rise in these biomarkers (the 'reperfusion injury' or 'washout' phenomenon). The magnitude of the Troponin rise is expected to be significant (approx. 150% increase) due to the release of stored troponin from the necrotic tissue. The elevated Creatinine is expected to fall as the underlying cause (ischemia/hypoperfusion) is treated and potentially with hydration, though the baseline is very high.",
+        "confidence": "high",
+        "potassium_direction": "stable"
+      },
+      "confidence": {
+        "categorical": "high",
+        "score": 0.912,
+        "logprob_avg": -0.919,
+        "entropy": 0.638,
+        "n_tokens": 324
+      },
+      "metadata": {
+        "model": "qwen3.6:latest",
+        "finish_reason": "stop",
+        "usage": {
+          "prompt_tokens": 3816,
+          "completion_tokens": 324
+        }
+      },
+      "success": true
+    },
+    {
+      "case_id": "a_003",
+      "hadm_id": 22187984,
+      "prediction": {
+        "troponin_direction": "rising",
+        "troponin_magnitude_pct": 100,
+        "ck_direction": "rising",
+        "creatinine_direction": "stable",
+        "causal_justification": "The patient is undergoing PTCA for an NSTEMI. The pre-procedure labs show a rising trend in Troponin T (0.22 -> 0.65 -> 0.96 ng/mL) and elevated CK/CK-MB, indicating ongoing myocardial necrosis. The PTCA procedure involves mechanical manipulation of the coronary artery, which can cause distal embolization of plaque/thrombus material and reperfusion injury. This typically results in a 'washout' effect, causing a transient spike in cardiac biomarkers (Troponin, CK, CK-MB) as necrotic myocytes release their contents into the circulation. Therefore, a further rise in Troponin is expected, potentially doubling the current peak, as the procedure completes the necrotic process in the affected territory. CK and CK-MB will also rise. Creatinine is expected to remain stable as the patient has normal baseline renal function (0.9 mg/dL) and no indication of contrast-induced nephropathy risk factors other than the procedure itself, which is unlikely to cause immediate changes.",
+        "confidence": "high",
+        "potassium_direction": "stable"
+      },
+      "confidence": {
+        "categorical": "high",
+        "score": 0.921,
+        "logprob_avg": -0.812,
+        "entropy": 0.579,
+        "n_tokens": 311
+      },
+      "metadata": {
+        "model": "qwen3.6:latest",
+        "finish_reason": "stop",
+        "usage": {
+          "prompt_tokens": 1391,
+          "completion_tokens": 311
+        }
+      },
+      "success": true
+    },
+    {
+      "case_id": "a_004",
+      "hadm_id": 29574750,
+      "prediction": {
+        "troponin_direction": "stable",
+        "troponin_magnitude_pct": 0,
+        "ck_direction": "falling",
+        "creatinine_direction": "stable",
+        "causal_justification": "The patient is undergoing a nonoperative removal of a heart assist system (likely a VAD or similar device) rather than a primary revascularization procedure for an acute STEMI. The pre-procedure labs show that the patient is already in the plateau or early decline phase of the biomarker curve (Troponin T is stable at ~1.25-1.32 ng/mL, CK is falling from 653 to 525 to 400+ range). The removal of the device itself does not cause significant new myocardial necrosis, so Troponin T will remain stable (plateau) rather than spiking. CK and CK-MB will continue their natural downward trend as the acute infarction resolves. Creatinine is stable as there is no new nephrotoxic insult or hemodynamic collapse expected from device removal alone.",
+        "confidence": "high",
+        "potassium_direction": "stable"
+      },
+      "confidence": {
+        "categorical": "high",
+        "score": 0.91,
+        "logprob_avg": -1.008,
+        "entropy": 0.621,
+        "n_tokens": 263
+      },
+      "metadata": {
+        "model": "qwen3.6:latest",
+        "finish_reason": "stop",
+        "usage": {
+          "prompt_tokens": 3819,
+          "completion_tokens": 263
+        }
+      },
+      "success": true
+    },
+    {
+      "case_id": "a_005",
+      "hadm_id": 28960005,
+      "prediction": {
+        "troponin_direction": "rising",
+        "troponin_magnitude_pct": 150,
+        "ck_direction": "rising",
+        "creatinine_direction": "falling",
+        "causal_justification": "The patient is undergoing PCI for NSTEMI. Pre-procedure labs show rising Troponin T (0.2 to 0.68 ng/mL) and CK-MB (21 to 31 ng/mL), indicating ongoing myocardial necrosis. PCI will restore flow, but the procedure itself causes mechanical injury to the vessel wall and microvascular damage, leading to a further rise in cardiac biomarkers. The magnitude of the rise is typically 150-200% of the pre-procedure peak due to the combination of resolving ischemia and procedural injury. Creatinine is expected to fall as hydration and contrast-induced nephropathy risk are managed, though contrast exposure may cause a transient rise.",
+        "confidence": "high"
+      },
+      "confidence": {
+        "categorical": "high",
+        "score": 0.899,
+        "logprob_avg": -1.184,
+        "entropy": 0.668,
+        "n_tokens": 197
+      },
+      "metadata": {
+        "model": "qwen3.6:latest",
+        "finish_reason": "stop",
+        "usage": {
+          "prompt_tokens": 1757,
+          "completion_tokens": 197
+        }
+      },
+      "success": true
+    },
+    {
+      "case_id": "a_006",
+      "hadm_id": 20836883,
+      "prediction": {
+        "troponin_direction": "rising",
+        "troponin_magnitude_pct": 150,
+        "ck_direction": "rising",
+        "creatinine_direction": "falling",
+        "causal_justification": "The patient is undergoing PTCA for atherosclerotic heart disease. The procedure involves mechanical manipulation of the coronary artery, which can cause minor myocardial injury (periprocedural MI), leading to a rise in Troponin and CK. The patient has pre-existing renal impairment (Creatinine 3.3 mg/dL), likely due to contrast-induced nephropathy or pre-existing CKD. The administration of contrast media during PTCA may initially worsen renal function, but with hydration and resolution of any acute tubular necrosis, creatinine is expected to fall over the subsequent days. The pre-existing renal impairment also affects the clearance of contrast, necessitating careful monitoring.",
+        "confidence": "high",
+        "potassium_direction": "stable"
+      },
+      "confidence": {
+        "categorical": "high",
+        "score": 0.908,
+        "logprob_avg": -1.108,
+        "entropy": 0.599,
+        "n_tokens": 227
+      },
+      "metadata": {
+        "model": "qwen3.6:latest",
+        "finish_reason": "stop",
+        "usage": {
+          "prompt_tokens": 3749,
+          "completion_tokens": 227
+        }
+      },
+      "success": true
+    },
+    {
+      "case_id": "a_007",
+      "hadm_id": 26696682,
+      "prediction": {
+        "troponin_direction": "rising",
+        "troponin_magnitude_pct": 150,
+        "ck_direction": "rising",
+        "creatinine_direction": "stable",
+        "causal_justification": "The patient is undergoing PTCA for atherosclerotic heart disease. The procedure involves mechanical manipulation of the coronary artery, which can cause minor myocardial injury (periprocedural MI). This typically leads to a rise in cardiac biomarkers. Troponin T is highly specific and sensitive, so it is expected to rise significantly. CK and CK-MB may also rise but are less specific. Creatinine is expected to remain stable as the procedure does not directly impact renal function, although contrast-induced nephropathy is a risk, it is not immediate.",
+        "confidence": "high"
+      },
+      "confidence": {
+        "categorical": "high",
+        "score": 0.912,
+        "logprob_avg": -1.01,
+        "entropy": 0.592,
+        "n_tokens": 187
+      },
+      "metadata": {
+        "model": "qwen3.6:latest",
+        "finish_reason": "stop",
+        "usage": {
+          "prompt_tokens": 671,
+          "completion_tokens": 187
+        }
+      },
+      "success": true
+    },
+    {
+      "case_id": "a_008",
+      "hadm_id": 22791315,
+      "prediction": {
+        "troponin_direction": "rising",
+        "troponin_magnitude_pct": 15,
+        "ck_direction": "falling",
+        "creatinine_direction": "stable",
+        "causal_justification": "The patient is undergoing PCI for an NSTEMI. The pre-procedure labs show a Troponin T level that has plateaued (1.55 -> 1.41 -> 1.36 ng/mL) and CK-MB levels that are already in a significant downward trend (106 -> 53 -> 31 ng/mL). This indicates that the myocardial necrosis event has likely peaked and is resolving. The PCI procedure involves revascularization, which will prevent further necrosis but will not cause a significant new release of biomarkers. Therefore, Troponin T is expected to remain stable or rise slightly due to procedural micro-embolization (typically <20% increase), while CK and CK-MB are expected to continue their downward trend as the enzyme washout from the initial event concludes.",
+        "confidence": "high",
+        "potassium_direction": "stable"
+      },
+      "confidence": {
+        "categorical": "high",
+        "score": 0.911,
+        "logprob_avg": -0.989,
+        "entropy": 0.622,
+        "n_tokens": 258
+      },
+      "metadata": {
+        "model": "qwen3.6:latest",
+        "finish_reason": "stop",
+        "usage": {
+          "prompt_tokens": 1867,
+          "completion_tokens": 258
+        }
+      },
+      "success": true
+    },
+    {
+      "case_id": "a_009",
+      "hadm_id": 22278176,
+      "prediction": {
+        "troponin_direction": "rising",
+        "troponin_magnitude_pct": 10,
+        "ck_direction": "falling",
+        "creatinine_direction": "stable",
+        "causal_justification": "The patient is undergoing an Impella (pulsation balloon) implantation for NSTEMI. The pre-intervention labs show a Troponin T level of 4.15 ng/mL which is already significantly elevated. In the context of an acute MI, Troponin levels typically continue to rise for 24-48 hours post-infarction as the necrotic process completes and the protein washes out into the circulation. The Impella device provides hemodynamic support and reduces myocardial workload, which may help limit further necrosis, but it does not immediately reverse the existing Troponin elevation. Therefore, a continued rise is expected. CK and CK-MB levels are already trending down (CK from 459 to 327 IU/L; CK-MB from 19 to 14 ng/mL), indicating the peak of the enzyme release has likely passed. The Impella will not cause a significant change in these levels immediately, so they are expected to continue their downward trend or remain stable. Creatinine is elevated (2.0 mg/dL) likely due to contrast-induced nephropathy or cardiorenal syndrome, but the Impella itself does not directly impact renal function in the immediate post-procedure period, so it is expected to remain stable.",
+        "confidence": "high",
+        "potassium_direction": "stable"
+      },
+      "confidence": {
+        "categorical": "high",
+        "score": 0.917,
+        "logprob_avg": -0.813,
+        "entropy": 0.627,
+        "n_tokens": 351
+      },
+      "metadata": {
+        "model": "qwen3.6:latest",
+        "finish_reason": "stop",
+        "usage": {
+          "prompt_tokens": 1757,
+          "completion_tokens": 351
+        }
+      },
+      "success": true
+    },
+    {
+      "case_id": "a_010",
+      "hadm_id": 28808203,
+      "prediction": {
+        "troponin_direction": "rising",
+        "troponin_magnitude_pct": 150,
+        "ck_direction": "rising",
+        "creatinine_direction": "rising",
+        "causal_justification": "The patient is undergoing a left heart cardiac catheterization. This procedure involves the mechanical manipulation of the coronary arteries, which can cause minor myocardial injury (periprocedural MI) and the release of cardiac biomarkers. The use of iodinated contrast media for angiography poses a significant risk for contrast-induced nephropathy (CIN), leading to a rise in creatinine and BUN. The patient's baseline creatinine is already elevated (2.0 mg/dL), increasing the risk of further renal impairment.",
+        "confidence": "high",
+        "potassium_direction": "stable"
+      },
+      "confidence": {
+        "categorical": "high",
+        "score": 0.905,
+        "logprob_avg": -1.165,
+        "entropy": 0.603,
+        "n_tokens": 192
+      },
+      "metadata": {
+        "model": "qwen3.6:latest",
+        "finish_reason": "stop",
+        "usage": {
+          "prompt_tokens": 3826,
+          "completion_tokens": 192
+        }
+      },
+      "success": true
+    },
+    {
+      "case_id": "a_011",
+      "hadm_id": 27461446,
+      "prediction": {
+        "troponin_direction": "rising",
+        "troponin_magnitude_pct": 150,
+        "ck_direction": "stable",
+        "creatinine_direction": "rising",
+        "causal_justification": "The patient is undergoing a combined right and left heart cardiac catheterization, which involves the administration of iodinated contrast media. This contrast can cause contrast-induced nephropathy (CIN), leading to a rise in creatinine and BUN. Additionally, the mechanical manipulation of the heart and coronary arteries during the procedure can cause minor myocardial injury, resulting in a rise in troponin levels. CK and CK-MB levels are less likely to change significantly as they are not as sensitive to minor myocardial injury as troponin.",
+        "confidence": "high"
+      },
+      "confidence": {
+        "categorical": "high",
+        "score": 0.909,
+        "logprob_avg": -1.114,
+        "entropy": 0.581,
+        "n_tokens": 156
+      },
+      "metadata": {
+        "model": "qwen3.6:latest",
+        "finish_reason": "stop",
+        "usage": {
+          "prompt_tokens": 1226,
+          "completion_tokens": 156
+        }
+      },
+      "success": true
+    },
+    {
+      "case_id": "a_012",
+      "hadm_id": 28721881,
+      "prediction": {
+        "troponin_direction": "rising",
+        "troponin_magnitude_pct": 150,
+        "ck_direction": "rising",
+        "creatinine_direction": "stable",
+        "causal_justification": "The patient is undergoing PTCA for an NSTEMI. The pre-intervention troponin is elevated but plateauing (0.29 -> 0.21 -> 0.27 -> 0.23 ng/mL), suggesting the acute necrotic event has occurred. The PTCA procedure involves mechanical manipulation of the coronary artery, which can cause minor endothelial injury and distal embolization of plaque debris. This 'no-reflow' or microvascular obstruction phenomenon typically results in a secondary, smaller rise in cardiac biomarkers (Troponin and CK-MB) due to periprocedural myocardial injury. However, since the primary infarction has already happened, the magnitude of this rise is generally smaller than the initial peak of the MI itself. Creatinine is expected to remain stable as the patient has normal baseline renal function (0.7 mg/dL) and the volume of contrast used in a standard PTCA is usually manageable, though hydration status is critical.",
+        "confidence": "high",
+        "potassium_direction": "stable"
+      },
+      "confidence": {
+        "categorical": "high",
+        "score": 0.915,
+        "logprob_avg": -0.872,
+        "entropy": 0.627,
+        "n_tokens": 291
+      },
+      "metadata": {
+        "model": "qwen3.6:latest",
+        "finish_reason": "stop",
+        "usage": {
+          "prompt_tokens": 1541,
+          "completion_tokens": 291
+        }
+      },
+      "success": true
+    },
+    {
+      "case_id": "a_013",
+      "hadm_id": 21557581,
+      "prediction": {
+        "troponin_direction": "rising",
+        "troponin_magnitude_pct": 150,
+        "ck_direction": "rising",
+        "creatinine_direction": "falling",
+        "causal_justification": "The patient is undergoing PTCA for atherosclerotic heart disease. The procedure involves mechanical manipulation of the coronary artery, which typically causes minor myocardial injury (periprocedural MI). This results in a predictable rise in Troponin T and CK-MB due to the release of intracellular enzymes from damaged myocytes. The magnitude is generally modest (1.5-2x baseline) compared to a spontaneous STEMI. Concurrently, the patient has pre-existing renal insufficiency (Creatinine 1.8-1.9 mg/dL) and is at risk for contrast-induced nephropathy (CIN). However, the immediate post-procedure period often sees a transient 'washout' or hemodynamic improvement if the patient was volume overloaded or if hydration protocols are initiated, but more realistically, given the high baseline creatinine and BUN (64 mg/dL), the primary concern is the potential for CIN. However, the prompt asks for expected changes *given the intervention*. In many successful PTCA cases without major complications, renal function may stabilize or improve slightly due to improved cardiac output if there was prior cardiorenal syndrome, but the most distinct *cardiac* biomarker change is the rise in Troponin. The prompt specifically asks for Troponin, CK, CK-MB direction/magnitude. The rise in Troponin is the most consistent and expected finding. The magnitude of 150% (1.5x) is a conservative estimate for a successful PTCA without large infarct size. The CK and CK-MB will also rise but are less sensitive than Troponin. The Creatinine and BUN are less predictable in the immediate short term but the question focuses on cardiac biomarkers primarily. I will focus the justification on the cardiac biomarkers as requested.",
+        "confidence": "high",
+        "potassium_direction": "stable"
+      },
+      "confidence": {
+        "categorical": "high",
+        "score": 0.921,
+        "logprob_avg": -0.671,
+        "entropy": 0.651,
+        "n_tokens": 456
+      },
+      "metadata": {
+        "model": "qwen3.6:latest",
+        "finish_reason": "stop",
+        "usage": {
+          "prompt_tokens": 2878,
+          "completion_tokens": 456
+        }
+      },
+      "success": true
+    },
+    {
+      "case_id": "a_014",
+      "hadm_id": 23422674,
+      "prediction": {
+        "troponin_direction": "rising",
+        "troponin_magnitude_pct": 150,
+        "ck_direction": "falling",
+        "creatinine_direction": "stable",
+        "causal_justification": "The patient is undergoing PTCA for an NSTEMI. Pre-procedure Troponin T is elevated (0.44 ng/mL) and trending down (0.34 ng/mL), while CK and CK-MB are also trending down (CK 363 -> 231, CK-MB 15 -> 7). This indicates the acute infarction event has likely passed its peak. The PTCA procedure itself involves balloon inflation and potential stent deployment, which can cause minor myocardial injury (periprocedural MI), leading to a transient rise in Troponin. However, since the primary ischemic event is resolving, the overall trend for Troponin may show a small bump but not a massive spike like in a new large infarct. CK and CK-MB, which have a shorter half-life than Troponin, will continue to fall as the initial necrotic burden clears. Creatinine is expected to remain stable as the patient has normal baseline renal function (0.7-0.9 mg/dL) and contrast-induced nephropathy risk is low with normal hydration and baseline function.",
+        "confidence": "high",
+        "potassium_direction": "stable"
+      },
+      "confidence": {
+        "categorical": "high",
+        "score": 0.923,
+        "logprob_avg": -0.76,
+        "entropy": 0.588,
+        "n_tokens": 319
+      },
+      "metadata": {
+        "model": "qwen3.6:latest",
+        "finish_reason": "stop",
+        "usage": {
+          "prompt_tokens": 2387,
+          "completion_tokens": 319
+        }
+      },
+      "success": true
+    },
+    {
+      "case_id": "a_015",
+      "hadm_id": 29199280,
+      "prediction": {
+        "troponin_direction": "rising",
+        "troponin_magnitude_pct": 15,
+        "ck_direction": "falling",
+        "creatinine_direction": "falling",
+        "causal_justification": "The patient is undergoing a percutaneous inspection of a lower artery, likely for peripheral vascular disease or an acute limb ischemia event, which is a distinct pathology from the NSTEMI. The NSTEMI biomarkers (Troponin T, CK-MB) are already in a resolving phase (Troponin T peaked at 1.13 ng/mL and CK-MB dropped to 8.0 ng/mL). The procedure itself does not cause myocardial injury, so Troponin T will continue to clear from the circulation, though the rate of decline may be slightly slower due to the patient's severe renal impairment (Creatinine ~10 mg/dL). The CK levels are expected to fall as the skeletal muscle injury from the NSTEMI resolves. The severe renal failure (Creatinine ~10 mg/dL) is the primary driver for the elevated Troponin T baseline and clearance rate, rather than the procedure. The procedure is unlikely to cause a significant rise in Troponin T unless there is a complication such as a distal embolization causing a new infarct, which is not the primary expectation for a simple inspection. The CK-MB index is falling, consistent with the resolution of the acute myocardial injury.",
+        "confidence": "high",
+        "potassium_direction": "falling"
+      },
+      "confidence": {
+        "categorical": "high",
+        "score": 0.907,
+        "logprob_avg": -0.884,
+        "entropy": 0.719,
+        "n_tokens": 344
+      },
+      "metadata": {
+        "model": "qwen3.6:latest",
+        "finish_reason": "stop",
+        "usage": {
+          "prompt_tokens": 2507,
+          "completion_tokens": 344
+        }
+      },
+      "success": true
+    },
+    {
+      "case_id": "a_016",
+      "hadm_id": 27776444,
+      "prediction": {
+        "troponin_direction": "rising",
+        "troponin_magnitude_pct": 15,
+        "ck_direction": "stable",
+        "creatinine_direction": "rising",
+        "causal_justification": "The patient is undergoing a left heart catheterization for an NSTEMI. The pre-intervention Troponin T is already elevated (0.73-0.79 ng/mL) and CK is elevated (278-313 IU/L), indicating ongoing myocardial necrosis. The catheterization itself involves mechanical manipulation of the coronary arteries and the administration of iodinated contrast media. The mechanical manipulation can cause further micro-embolization or endothelial injury, leading to a secondary rise in Troponin T (expected ~15% increase). The iodinated contrast poses a risk for Contrast-Induced Nephropathy (CIN), which typically manifests as a rise in Creatinine and BUN within 24-48 hours post-procedure. Potassium levels are expected to remain stable or slightly decrease due to diuresis or intracellular shift, but no significant hyperkalemia is expected unless renal failure is severe.",
+        "confidence": "high"
+      },
+      "confidence": {
+        "categorical": "high",
+        "score": 0.92,
+        "logprob_avg": -0.832,
+        "entropy": 0.587,
+        "n_tokens": 270
+      },
+      "metadata": {
+        "model": "qwen3.6:latest",
+        "finish_reason": "stop",
+        "usage": {
+          "prompt_tokens": 2611,
+          "completion_tokens": 270
+        }
+      },
+      "success": true
+    },
+    {
+      "case_id": "a_017",
+      "hadm_id": 20185299,
+      "prediction": {
+        "troponin_direction": "rising",
+        "troponin_magnitude_pct": 150,
+        "ck_direction": "rising",
+        "creatinine_direction": "rising",
+        "causal_justification": "The patient is undergoing a combined right and left heart cardiac catheterization. This procedure involves mechanical manipulation of the coronary arteries and cardiac chambers, which can cause minor myocardial injury (leading to a rise in Troponin T and CK-MB) and requires the administration of iodinated contrast media. The patient already has baseline renal insufficiency (Creatinine 1.3 mg/dL) and elevated BUN (36 mg/dL), placing them at high risk for Contrast-Induced Nephropathy (CIN). Therefore, a rise in Creatinine and BUN is expected in the post-intervention period.",
+        "confidence": "high"
+      },
+      "confidence": {
+        "categorical": "high",
+        "score": 0.921,
+        "logprob_avg": -0.961,
+        "entropy": 0.509,
+        "n_tokens": 201
+      },
+      "metadata": {
+        "model": "qwen3.6:latest",
+        "finish_reason": "stop",
+        "usage": {
+          "prompt_tokens": 3774,
+          "completion_tokens": 201
+        }
+      },
+      "success": true
+    },
+    {
+      "case_id": "a_018",
+      "hadm_id": 29220221,
+      "prediction": {
+        "troponin_direction": "rising",
+        "troponin_magnitude_pct": 100,
+        "ck_direction": "falling",
+        "creatinine_direction": "falling",
+        "causal_justification": "The patient is undergoing PTCA for an NSTEMI. The pre-intervention labs show a rising Troponin T trajectory (0.09 -> 0.35 -> 3.13 -> 4.2 ng/mL) and a CK peak (494 IU/L) followed by a decline (368 IU/L). The PTCA will restore coronary blood flow, halting further myocardial necrosis. Consequently, Troponin T will continue to rise as the remaining necrotic tissue releases its full load of biomarkers, peaking within 24-48 hours post-procedure. CK and CK-MB will continue to fall as the source of injury is resolved and the enzymes are cleared. The severe pre-procedure renal failure (Creatinine 9.3 mg/dL) is likely due to contrast-induced nephropathy or cardiorenal syndrome; with the restoration of hemodynamics and cessation of further contrast load, renal function is expected to improve (falling creatinine) over the subsequent days.",
+        "confidence": "high"
+      },
+      "confidence": {
+        "categorical": "high",
+        "score": 0.915,
+        "logprob_avg": -0.876,
+        "entropy": 0.624,
+        "n_tokens": 292
+      },
+      "metadata": {
+        "model": "qwen3.6:latest",
+        "finish_reason": "stop",
+        "usage": {
+          "prompt_tokens": 2574,
+          "completion_tokens": 292
+        }
+      },
+      "success": true
+    },
+    {
+      "case_id": "a_019",
+      "hadm_id": 26014264,
+      "prediction": {
+        "troponin_direction": "rising",
+        "troponin_magnitude_pct": 150,
+        "ck_direction": "rising",
+        "creatinine_direction": "stable",
+        "causal_justification": "The patient is undergoing PTCA for an NSTEMI. The pre-intervention Troponin T is already elevated (0.70 ng/mL) and CK-MB is trending down (8.0 -> 7.0 -> 4.0 ng/mL), suggesting the acute ischemic event is ongoing or the peak has passed. However, the mechanical reperfusion via PTCA causes a 'washout' phenomenon. As blood flow is restored to the previously ischemic myocardium, intracellular enzymes (Troponin, CK, CK-MB) that have accumulated in the interstitial space and myocytes are flushed into the systemic circulation. This results in a transient, sharp rise in serum biomarkers (the 'washout effect') despite successful reperfusion. Troponin T, being more sensitive and having a longer half-life, will show a significant rise (150% increase) peaking within 12-24 hours. CK and CK-MB will also rise but may be less pronounced if the infarct size is small or if the initial peak has already occurred. Creatinine is expected to remain stable as the patient has normal baseline renal function (Cr 0.6 mg/dL) and no signs of contrast-induced nephropathy risk factors other than the procedure itself, which is mitigated by hydration.",
+        "confidence": "high"
+      },
+      "confidence": {
+        "categorical": "high",
+        "score": 0.92,
+        "logprob_avg": -0.781,
+        "entropy": 0.614,
+        "n_tokens": 350
+      },
+      "metadata": {
+        "model": "qwen3.6:latest",
+        "finish_reason": "stop",
+        "usage": {
+          "prompt_tokens": 2348,
+          "completion_tokens": 350
+        }
+      },
+      "success": true
+    },
+    {
+      "case_id": "a_020",
+      "hadm_id": 28496930,
+      "prediction": {
+        "troponin_direction": "rising",
+        "troponin_magnitude_pct": 100,
+        "ck_direction": "rising",
+        "creatinine_direction": "rising",
+        "causal_justification": "The patient is undergoing a PCI for an NSTEMI. The pre-intervention labs show a rising trend in Troponin T (0.45 -> 0.46 -> 0.57 ng/mL) and CK (2011 -> 3068 IU/L), indicating ongoing myocardial necrosis. The procedure involves mechanical reperfusion which will likely cause a 'washout' of intracellular enzymes from the reperfused myocardium, leading to a sharp rise in Troponin and CK levels. Additionally, the use of iodinated contrast for the angiography poses a risk for contrast-induced nephropathy (CIN), which would explain the expected rise in Creatinine and BUN.",
+        "confidence": "high",
+        "potassium_direction": "falling"
+      },
+      "confidence": {
+        "categorical": "high",
+        "score": 0.916,
+        "logprob_avg": -0.973,
+        "entropy": 0.56,
+        "n_tokens": 235
+      },
+      "metadata": {
+        "model": "qwen3.6:latest",
+        "finish_reason": "stop",
+        "usage": {
+          "prompt_tokens": 3442,
+          "completion_tokens": 235
+        }
+      },
+      "success": true
+    },
+    {
+      "case_id": "a_021",
+      "hadm_id": 21157219,
+      "prediction": {
+        "troponin_direction": "rising",
+        "troponin_magnitude_pct": 10,
+        "ck_direction": "stable",
+        "creatinine_direction": "rising",
+        "causal_justification": "The patient is undergoing PTCA for an NSTEMI. The pre-intervention Troponin T is already elevated (1.04 ng/mL) and rising, indicating ongoing myocardial necrosis. The PTCA procedure involves mechanical manipulation of the coronary artery, which can cause distal embolization of plaque debris and microvascular obstruction, leading to a 'no-reflow' phenomenon or further myocardial injury. This procedural injury will cause a further rise in Troponin T. The magnitude is expected to be modest (10%) because the primary event (NSTEMI) is already established, and the procedure aims to restore flow rather than cause massive new necrosis. CK and CK-MB are less sensitive and may not show a significant additional rise. Creatinine may rise due to contrast-induced nephropathy (CIN), especially given the patient's pre-existing hyperglycemia and potential volume status issues.",
+        "confidence": "high",
+        "potassium_direction": "falling"
+      },
+      "confidence": {
+        "categorical": "high",
+        "score": 0.915,
+        "logprob_avg": -0.857,
+        "entropy": 0.635,
+        "n_tokens": 270
+      },
+      "metadata": {
+        "model": "qwen3.6:latest",
+        "finish_reason": "stop",
+        "usage": {
+          "prompt_tokens": 3850,
+          "completion_tokens": 270
+        }
+      },
+      "success": true
+    },
+    {
+      "case_id": "a_022",
+      "hadm_id": 22240233,
+      "prediction": {
+        "troponin_direction": "rising",
+        "troponin_magnitude_pct": 100,
+        "ck_direction": "falling",
+        "creatinine_direction": "rising",
+        "causal_justification": "The patient is undergoing a left heart cardiac catheterization for an NSTEMI. The pre-procedure labs show a rising Troponin T (0.17 -> 0.33 -> 0.45 ng/mL) and a falling CK (317 -> 255 IU/L). The catheterization involves manipulating the coronary arteries, which can cause further myocardial injury (No-reflow phenomenon or distal embolization), leading to a continued rise in Troponin. The CK is already falling, suggesting the peak of the initial infarction has passed, so it will likely continue to fall. The use of iodinated contrast during the catheterization poses a risk for contrast-induced nephropathy (CIN), leading to a rise in Creatinine.",
+        "confidence": "high",
+        "potassium_direction": "stable"
+      },
+      "confidence": {
+        "categorical": "high",
+        "score": 0.922,
+        "logprob_avg": -0.868,
+        "entropy": 0.547,
+        "n_tokens": 247
+      },
+      "metadata": {
+        "model": "qwen3.6:latest",
+        "finish_reason": "stop",
+        "usage": {
+          "prompt_tokens": 3788,
+          "completion_tokens": 247
+        }
+      },
+      "success": true
+    },
+    {
+      "case_id": "a_023",
+      "hadm_id": 23554154,
+      "prediction": {
+        "troponin_direction": "rising",
+        "troponin_magnitude_pct": 150,
+        "ck_direction": "rising",
+        "creatinine_direction": "stable",
+        "causal_justification": "The patient is undergoing PTCA for an NSTEMI. The pre-intervention Troponin T is already elevated (0.79 ng/mL) and trending down (0.57 ng/mL), suggesting the acute infarction event may have occurred slightly prior to the procedure. However, PTCA involves mechanical manipulation of the coronary artery, which can cause minor endothelial injury and micro-embolization, leading to a 'bump' in cardiac biomarkers. Therefore, despite the downtrend, a transient rise is expected post-procedure due to iatrogenic micro-infarction. CK and CK-MB are also expected to rise slightly due to this minor muscle injury. Creatinine is expected to remain stable as the patient has normal baseline renal function (0.7 mg/dL) and the procedure does not typically cause significant renal impairment unless contrast-induced nephropathy occurs, which is less likely with normal baseline and adequate hydration.",
+        "confidence": "high",
+        "potassium_direction": "stable"
+      },
+      "confidence": {
+        "categorical": "high",
+        "score": 0.91,
+        "logprob_avg": -0.972,
+        "entropy": 0.641,
+        "n_tokens": 279
+      },
+      "metadata": {
+        "model": "qwen3.6:latest",
+        "finish_reason": "stop",
+        "usage": {
+          "prompt_tokens": 1986,
+          "completion_tokens": 279
+        }
+      },
+      "success": true
+    },
+    {
+      "case_id": "a_024",
+      "hadm_id": 28666086,
+      "prediction": {
+        "troponin_direction": "rising",
+        "troponin_magnitude_pct": 150,
+        "ck_direction": "rising",
+        "creatinine_direction": "falling",
+        "causal_justification": "The patient is undergoing PTCA for atherosclerotic heart disease. The pre-procedure Troponin T is already elevated (0.32 ng/mL), indicating existing myocardial injury (likely NSTEMI or unstable angina). The PTCA procedure involves mechanical manipulation of the coronary artery, which typically causes further myocardial necrosis due to distal embolization of plaque debris and microvascular obstruction. This procedural injury will cause a significant rise in Troponin T (expected ~150% increase from baseline) and CK-MB. The pre-existing renal impairment (Creatinine 2.6 mg/dL) is a risk factor for contrast-induced nephropathy (CIN), but the immediate post-procedure period may show a slight fall in creatinine due to hydration protocols, though the risk of further rise remains high. The primary expected change is a sharp increase in cardiac biomarkers due to the iatrogenic myocardial injury inherent to the procedure.",
+        "confidence": "high"
+      },
+      "confidence": {
+        "categorical": "high",
+        "score": 0.916,
+        "logprob_avg": -0.83,
+        "entropy": 0.632,
+        "n_tokens": 275
+      },
+      "metadata": {
+        "model": "qwen3.6:latest",
+        "finish_reason": "stop",
+        "usage": {
+          "prompt_tokens": 1899,
+          "completion_tokens": 275
+        }
+      },
+      "success": true
+    },
+    {
+      "case_id": "a_025",
+      "hadm_id": 25187270,
+      "prediction": {
+        "troponin_direction": "rising",
+        "troponin_magnitude_pct": 150,
+        "ck_direction": "rising",
+        "creatinine_direction": "stable",
+        "causal_justification": "The patient is undergoing PTCA for an NSTEMI. The pre-intervention Troponin T is 0.22 ng/mL, indicating ongoing myocardial injury. PTCA involves mechanical manipulation of the coronary artery, which can cause micro-embolization and distal vessel injury, leading to a transient 'washout' or further release of troponin. Therefore, a rise in Troponin is expected as the procedure disrupts the plaque and restores flow, potentially causing reperfusion injury or simply reflecting the peak of the ongoing infarction. CK and CK-MB are less sensitive and may not show a dramatic rise compared to troponin, but a slight increase is possible due to the same mechanism. Creatinine is expected to remain stable as the patient's baseline is normal (0.6-0.7 mg/dL) and there is no indication of contrast-induced nephropathy risk factors like pre-existing renal failure, although contrast load should be monitored.",
+        "confidence": "high",
+        "potassium_direction": "stable"
+      },
+      "confidence": {
+        "categorical": "high",
+        "score": 0.912,
+        "logprob_avg": -0.968,
+        "entropy": 0.617,
+        "n_tokens": 286
+      },
+      "metadata": {
+        "model": "qwen3.6:latest",
+        "finish_reason": "stop",
+        "usage": {
+          "prompt_tokens": 3775,
+          "completion_tokens": 286
+        }
+      },
+      "success": true
+    },
+    {
+      "case_id": "a_026",
+      "hadm_id": 24281895,
+      "prediction": {
+        "troponin_direction": "rising",
+        "troponin_magnitude_pct": 15,
+        "ck_direction": "falling",
+        "creatinine_direction": "falling",
+        "causal_justification": "The patient is undergoing PCI for NSTEMI. Troponin T is expected to rise further (peak) due to the mechanical reperfusion injury (myocardial blush/no-reflow phenomenon) and ongoing necrosis of the border zone, typically peaking 12-24 hours post-procedure. CK-MB is already trending down (98 -> 68 -> 24 -> 16), indicating the acute infarction event is resolving; it will continue to fall. Creatinine is elevated (2.1 -> 2.0) likely due to contrast-induced nephropathy risk or pre-existing CKD; with hydration and cessation of nephrotoxins, it is expected to stabilize or fall slightly, though contrast load may cause a transient bump.",
+        "confidence": "high",
+        "potassium_direction": "stable"
+      },
+      "confidence": {
+        "categorical": "high",
+        "score": 0.912,
+        "logprob_avg": -0.956,
+        "entropy": 0.623,
+        "n_tokens": 243
+      },
+      "metadata": {
+        "model": "qwen3.6:latest",
+        "finish_reason": "stop",
+        "usage": {
+          "prompt_tokens": 3283,
+          "completion_tokens": 243
+        }
+      },
+      "success": true
+    },
+    {
+      "case_id": "a_027",
+      "hadm_id": 27057311,
+      "prediction": {
+        "troponin_direction": "rising",
+        "troponin_magnitude_pct": 150,
+        "ck_direction": "rising",
+        "creatinine_direction": "stable",
+        "causal_justification": "The patient is undergoing PTCA for an NSTEMI. The pre-intervention labs show a rising trend in Troponin T (0.35 to 0.79 ng/mL) and CK-MB (42 to 47 ng/mL), indicating ongoing myocardial necrosis. The PTCA procedure involves mechanical manipulation of the coronary artery, which can cause further endothelial injury and micro-embolization, leading to a 'stunning' effect and additional myocardial damage. This procedural injury typically results in a secondary peak of cardiac biomarkers. Troponin T is highly specific to cardiac muscle and will continue to rise as the necrotic process completes and the procedural injury adds to the total infarct size. CK and CK-MB will also rise, though their kinetics are faster than Troponin. Creatinine is expected to remain stable as the patient's baseline renal function is normal (0.6 mg/dL) and there is no indication of contrast-induced nephropathy risk factors or hemodynamic instability in the pre-procedure data.",
+        "confidence": "high",
+        "potassium_direction": "stable"
+      },
+      "confidence": {
+        "categorical": "high",
+        "score": 0.917,
+        "logprob_avg": -0.882,
+        "entropy": 0.594,
+        "n_tokens": 305
+      },
+      "metadata": {
+        "model": "qwen3.6:latest",
+        "finish_reason": "stop",
+        "usage": {
+          "prompt_tokens": 2602,
+          "completion_tokens": 305
+        }
+      },
+      "success": true
+    },
+    {
+      "case_id": "a_028",
+      "hadm_id": 25500046,
+      "prediction": {
+        "troponin_direction": "rising",
+        "troponin_magnitude_pct": 150,
+        "ck_direction": "rising",
+        "creatinine_direction": "rising",
+        "causal_justification": "The patient is undergoing a coronary angiography (fluoroscopy of multiple coronary arteries) for an NSTEMI. The procedure involves catheter manipulation in the coronary arteries, which can cause minor endothelial injury and plaque disruption, leading to a 'periprocedural myocardial infarction' or 'type 5 MI' in some classifications, though often it is just a transient rise. The contrast load also poses a risk for contrast-induced nephropathy (CIN), leading to a rise in creatinine. The pre-procedure troponin is already elevated (0.29-0.44 ng/mL) due to the NSTEMI. The procedure will likely cause a further rise in troponin due to the mechanical stress and potential micro-embolization. CK and CK-MB may also rise slightly due to muscle trauma from the procedure or the ongoing myocardial injury. Creatinine is expected to rise due to the nephrotoxic effects of the iodinated contrast media, especially given the patient's baseline normal renal function but potential for CIN. BUN may also rise slightly due to dehydration or contrast effects. Potassium is expected to remain stable or rise slightly due to the contrast load and potential renal stress, but the patient's pre-procedure potassium is already elevated (5.3-5.8 mEq/L), so it may not change significantly or may require monitoring for hyperkalemia.",
+        "confidence": "high",
+        "potassium_direction": "stable"
+      },
+      "confidence": {
+        "categorical": "high",
+        "score": 0.923,
+        "logprob_avg": -0.719,
+        "entropy": 0.604,
+        "n_tokens": 374
+      },
+      "metadata": {
+        "model": "qwen3.6:latest",
+        "finish_reason": "stop",
+        "usage": {
+          "prompt_tokens": 3824,
+          "completion_tokens": 374
+        }
+      },
+      "success": true
+    },
+    {
+      "case_id": "a_029",
+      "hadm_id": 20871741,
+      "prediction": {
+        "troponin_direction": "rising",
+        "troponin_magnitude_pct": 150,
+        "ck_direction": "rising",
+        "creatinine_direction": "falling",
+        "causal_justification": "The patient is undergoing a CABG (coronary artery bypass grafting), which involves aortic cross-clamping, cardioplegic arrest, and myocardial ischemia-reperfusion injury. This inevitably causes myocardial cell necrosis, leading to a significant rise in cardiac biomarkers. Troponin T is highly specific and sensitive; given the pre-intervention value of 0.32 ng/mL and the extent of surgical trauma, a 150% rise is expected as the peak occurs 12-24 hours post-op. CK and CK-MB will also rise due to skeletal muscle trauma from sternotomy and myocardial injury, though CK-MB is more specific to the heart. Creatinine is expected to fall as the patient receives aggressive perioperative fluid resuscitation and potentially renal replacement therapy, addressing the pre-existing acute kidney injury (Creatinine 5.4 mg/dL). The pre-intervention trajectory shows improving renal function (Creatinine 7.4 -> 5.4) and stable but elevated troponin, suggesting the surgery is a planned intervention for severe CAD in the context of renal compromise. The rise in troponin is a predictable consequence of the procedure rather than a complication.",
+        "confidence": "high"
+      },
+      "confidence": {
+        "categorical": "high",
+        "score": 0.918,
+        "logprob_avg": -0.776,
+        "entropy": 0.633,
+        "n_tokens": 299
+      },
+      "metadata": {
+        "model": "qwen3.6:latest",
+        "finish_reason": "stop",
+        "usage": {
+          "prompt_tokens": 2924,
+          "completion_tokens": 299
+        }
+      },
+      "success": true
+    },
+    {
+      "case_id": "a_030",
+      "hadm_id": 29003825,
+      "prediction": {
+        "troponin_direction": "rising",
+        "troponin_magnitude_pct": 150,
+        "ck_direction": "rising",
+        "creatinine_direction": "stable",
+        "causal_justification": "The patient is undergoing PTCA for an NSTEMI. The pre-intervention Troponin T is already elevated (0.52 ng/mL) and stable, indicating established myocardial necrosis. The PTCA procedure involves mechanical manipulation of the coronary artery, which can cause micro-embolization of plaque debris and distal microvascular obstruction (no-reflow phenomenon). This typically results in a 're-infarction' or 'periprocedural MI' pattern, characterized by a secondary rise in cardiac biomarkers. The expected rise in Troponin T is significant (often >5x baseline or >20% absolute increase depending on definition, but here we predict a 150% rise from the current plateau as the peak of the procedural injury adds to the existing necrosis). CK and CK-MB will also rise, though Troponin is more sensitive and specific. Creatinine is expected to remain stable as the patient is not showing signs of acute kidney injury pre-procedure (Cr 1.6 is elevated but stable in this context, and no contrast-induced nephropathy is predicted to be severe enough to cause a sharp rise immediately post-procedure in this prediction model).",
+        "confidence": "high"
+      },
+      "confidence": {
+        "categorical": "high",
+        "score": 0.916,
+        "logprob_avg": -0.785,
+        "entropy": 0.663,
+        "n_tokens": 319
+      },
+      "metadata": {
+        "model": "qwen3.6:latest",
+        "finish_reason": "stop",
+        "usage": {
+          "prompt_tokens": 1588,
+          "completion_tokens": 319
+        }
+      },
+      "success": true
+    },
+    {
+      "case_id": "a_031",
+      "hadm_id": 21854291,
+      "prediction": {
+        "troponin_direction": "rising",
+        "troponin_magnitude_pct": 20,
+        "ck_direction": "stable",
+        "creatinine_direction": "stable",
+        "causal_justification": "The patient is undergoing electrical cardioversion for atrial fibrillation. This procedure involves the delivery of a synchronized electrical shock to the myocardium. While the primary goal is to restore sinus rhythm, the electrical current can cause transient myocardial stunning and minor cellular injury, leading to a small, expected rise in cardiac biomarkers. Troponin T is highly sensitive to myocardial injury and is expected to rise slightly (approx. 20%) due to this iatrogenic effect. CK and CK-MB are less sensitive and typically remain stable or show negligible change in this context. Renal function (Creatinine) and electrolytes (Potassium) are not directly affected by the electrical shock itself, though hydration status and medication effects (e.g., anticoagulants, rate control agents) should be monitored. The pre-existing elevated Troponin (0.12 ng/mL) suggests underlying myocardial strain or injury from the AFib itself, which may persist or slightly increase post-procedure.",
+        "confidence": "high",
+        "potassium_direction": "stable"
+      },
+      "confidence": {
+        "categorical": "high",
+        "score": 0.918,
+        "logprob_avg": -0.835,
+        "entropy": 0.607,
+        "n_tokens": 287
+      },
+      "metadata": {
+        "model": "qwen3.6:latest",
+        "finish_reason": "stop",
+        "usage": {
+          "prompt_tokens": 1524,
+          "completion_tokens": 287
+        }
+      },
+      "success": true
+    },
+    {
+      "case_id": "a_032",
+      "hadm_id": 27497725,
+      "prediction": {
+        "troponin_direction": "rising",
+        "troponin_magnitude_pct": 150,
+        "ck_direction": "rising",
+        "creatinine_direction": "falling",
+        "causal_justification": "The patient is undergoing CABG (Coronary Artery Bypass Grafting), a major open-heart surgery involving cardiopulmonary bypass (CPB). CPB induces systemic inflammation and endothelial injury, leading to a predictable rise in cardiac biomarkers. Troponin T is expected to rise significantly (150% increase) due to perioperative myocardial injury (Type 2 MI or surgical trauma), peaking 24-48 hours post-op. CK and CK-MB will also rise due to skeletal muscle trauma from sternotomy and CPB, peaking at 24 hours. Creatinine is expected to fall as the patient is likely receiving aggressive fluid resuscitation and renal replacement therapy (given pre-op Cr of 11.1 mg/dL) to manage contrast-induced or ischemic acute kidney injury, though the trajectory depends heavily on post-op urine output and dialysis initiation.",
+        "confidence": "high"
+      },
+      "confidence": {
+        "categorical": "high",
+        "score": 0.921,
+        "logprob_avg": -0.834,
+        "entropy": 0.569,
+        "n_tokens": 262
+      },
+      "metadata": {
+        "model": "qwen3.6:latest",
+        "finish_reason": "stop",
+        "usage": {
+          "prompt_tokens": 3728,
+          "completion_tokens": 262
+        }
+      },
+      "success": true
+    },
+    {
+      "case_id": "a_033",
+      "hadm_id": 24139633,
+      "prediction": {
+        "troponin_direction": "rising",
+        "troponin_magnitude_pct": 10,
+        "ck_direction": "stable",
+        "creatinine_direction": "stable",
+        "causal_justification": "The patient is undergoing electrical countershock (cardioversion/defibrillation) for an arrhythmia, likely secondary to the NSTEMI. This procedure is not a revascularization (PCI/CABG) and does not directly cause myocardial necrosis. Therefore, cardiac biomarkers (Troponin, CK, CK-MB) are expected to follow their natural trajectory from the ongoing NSTEMI (rising or plateauing) rather than showing a procedural spike. The procedure itself does not significantly impact renal function (Creatinine/BUN) or electrolytes (Potassium) acutely, assuming no contrast was used (which is typical for pure electrical countershock). The slight rise in Troponin is due to the underlying ischemic event continuing or resolving slowly, not the shock.",
+        "confidence": "high",
+        "potassium_direction": "stable"
+      },
+      "confidence": {
+        "categorical": "high",
+        "score": 0.912,
+        "logprob_avg": -0.975,
+        "entropy": 0.616,
+        "n_tokens": 248
+      },
+      "metadata": {
+        "model": "qwen3.6:latest",
+        "finish_reason": "stop",
+        "usage": {
+          "prompt_tokens": 1443,
+          "completion_tokens": 248
+        }
+      },
+      "success": true
+    },
+    {
+      "case_id": "a_034",
+      "hadm_id": 29313695,
+      "prediction": {
+        "troponin_direction": "rising",
+        "troponin_magnitude_pct": 150,
+        "ck_direction": "falling",
+        "creatinine_direction": "stable",
+        "causal_justification": "The patient is undergoing PTCA for an NSTEMI. The pre-intervention Troponin T is already elevated (0.57 ng/mL) and rising, indicating ongoing myocardial necrosis. The procedure involves mechanical reperfusion which can cause 'microvascular obstruction' and 'no-reflow' phenomenon, leading to a transient increase in myocardial injury markers (Troponin) due to distal embolization of plaque debris and reperfusion injury. CK and CK-MB are already trending down (CK 44, CK-MB 6.0), suggesting the acute necrotic event is resolving or the infarct size is limited. The PTCA will restore flow, halting further necrosis, but the immediate post-procedure period often shows a 'washout' or further release of intracellular contents from the stunned myocardium, causing a peak in Troponin. Creatinine is stable (0.8 mg/dL) pre-procedure; while contrast-induced nephropathy is a risk, it typically manifests 24-48 hours later, so immediate post-procedure creatinine is expected to remain stable or show a very slight, transient rise due to hemodynamic shifts, but not a significant change in the immediate window.",
+        "confidence": "high",
+        "potassium_direction": "falling"
+      },
+      "confidence": {
+        "categorical": "high",
+        "score": 0.919,
+        "logprob_avg": -0.765,
+        "entropy": 0.633,
+        "n_tokens": 343
+      },
+      "metadata": {
+        "model": "qwen3.6:latest",
+        "finish_reason": "stop",
+        "usage": {
+          "prompt_tokens": 3856,
+          "completion_tokens": 343
+        }
+      },
+      "success": true
+    },
+    {
+      "case_id": "a_035",
+      "hadm_id": 28725090,
+      "prediction": {
+        "troponin_direction": "rising",
+        "troponin_magnitude_pct": 10,
+        "ck_direction": "stable",
+        "creatinine_direction": "falling",
+        "causal_justification": "The patient is undergoing an IABP insertion for NSTEMI. While the IABP will improve coronary perfusion and reduce myocardial oxygen demand, the underlying infarction process is already established. Troponin levels are expected to continue their natural course of rising to a peak before declining. The IABP will help prevent further myocardial necrosis, potentially blunting the peak, but a continued rise is expected in the immediate post-procedure period. CK and CK-MB are less sensitive and may remain stable or rise slightly due to the procedure itself or ongoing necrosis, but the primary biomarker of interest is Troponin. The improvement in cardiac output will also lead to improved renal perfusion, causing a decrease in Creatinine and BUN.",
+        "confidence": "high"
+      },
+      "confidence": {
+        "categorical": "high",
+        "score": 0.903,
+        "logprob_avg": -1.02,
+        "entropy": 0.702,
+        "n_tokens": 229
+      },
+      "metadata": {
+        "model": "qwen3.6:latest",
+        "finish_reason": "stop",
+        "usage": {
+          "prompt_tokens": 3856,
+          "completion_tokens": 229
+        }
+      },
+      "success": true
+    },
+    {
+      "case_id": "a_036",
+      "hadm_id": 28989380,
+      "prediction": {
+        "troponin_direction": "rising",
+        "troponin_magnitude_pct": 150,
+        "ck_direction": "rising",
+        "creatinine_direction": "stable",
+        "causal_justification": "The patient is undergoing PTCA for an NSTEMI. The pre-intervention labs show a rising Troponin T trajectory (0.37 -> 0.6 -> 0.42 ng/mL) and elevated CK-MB (30 -> 23 ng/mL), indicating ongoing myocardial necrosis. The PTCA procedure involves mechanical manipulation of the coronary artery, which can cause micro-embolization of plaque debris and distal vessel injury. This 'no-reflow' or microvascular obstruction phenomenon typically results in a transient increase in myocardial injury markers immediately post-procedure. Therefore, Troponin T is expected to rise further (peak 150% above pre-intervention baseline) within 6-12 hours post-PTCA due to this iatrogenic micro-infarction, before eventually declining as the vessel is reperfused. CK and CK-MB will also rise transiently but are less sensitive than Troponin. Creatinine is expected to remain stable as the patient's pre-procedure renal function is normal (Cr 1.1 mg/dL) and no significant nephrotoxic contrast load is anticipated in a standard PTCA without complications.",
+        "confidence": "high",
+        "potassium_direction": "stable"
+      },
+      "confidence": {
+        "categorical": "high",
+        "score": 0.915,
+        "logprob_avg": -0.879,
+        "entropy": 0.618,
+        "n_tokens": 334
+      },
+      "metadata": {
+        "model": "qwen3.6:latest",
+        "finish_reason": "stop",
+        "usage": {
+          "prompt_tokens": 1990,
+          "completion_tokens": 334
+        }
+      },
+      "success": true
+    },
+    {
+      "case_id": "a_037",
+      "hadm_id": 26161471,
+      "prediction": {
+        "troponin_direction": "stable",
+        "troponin_magnitude_pct": 0,
+        "ck_direction": "stable",
+        "creatinine_direction": "stable",
+        "causal_justification": "The patient is undergoing a thoracentesis, which is a procedure to remove fluid from the pleural space. This procedure does not involve direct manipulation of the myocardium or coronary arteries. The patient's pre-existing troponin elevation (0.03-0.04 ng/mL) is consistent with Type 2 myocardial injury (supply/demand mismatch) secondary to acute decompensated heart failure and respiratory compromise, rather than acute plaque rupture (Type 1 MI). Therefore, the procedure itself is not expected to cause a significant rise in cardiac biomarkers. The biomarkers should remain stable or slowly trend down as the underlying heart failure is managed.",
+        "confidence": "high"
+      },
+      "confidence": {
+        "categorical": "high",
+        "score": 0.913,
+        "logprob_avg": -1.06,
+        "entropy": 0.562,
+        "n_tokens": 209
+      },
+      "metadata": {
+        "model": "qwen3.6:latest",
+        "finish_reason": "stop",
+        "usage": {
+          "prompt_tokens": 3690,
+          "completion_tokens": 209
+        }
+      },
+      "success": true
+    },
+    {
+      "case_id": "a_038",
+      "hadm_id": 29662253,
+      "prediction": {
+        "troponin_direction": "rising",
+        "troponin_magnitude_pct": 150,
+        "ck_direction": "rising",
+        "creatinine_direction": "falling",
+        "causal_justification": "The patient is undergoing PTCA for an NSTEMI. The procedure involves mechanical reperfusion of the ischemic myocardium. This reperfusion, combined with the mechanical trauma of balloon angioplasty and stent deployment, causes a predictable 'washout' of intracellular cardiac enzymes (Troponin, CK, CK-MB) from the necrotic tissue into the bloodstream, leading to a significant rise in serum levels. Simultaneously, the administration of intravenous contrast media during the angiography/PTCA poses a risk for contrast-induced nephropathy (CIN), which typically manifests as a transient rise in Creatinine and BUN 24-72 hours post-procedure. However, the immediate post-procedure period (first 6-12 hours) often shows a slight improvement in renal function markers if the patient is aggressively hydrated, or stability, before the potential diphasic rise associated with CIN. Given the pre-procedure Creatinine of 1.5 mg/dL and BUN of 48 mg/dL, indicating pre-existing renal insufficiency or prerenal azotemia, the primary expected change in the immediate post-intervention window (0-24h) is the surge in cardiac biomarkers due to reperfusion injury and procedural trauma. The CK-MB and Troponin will rise significantly as the infarct expands slightly due to reperfusion injury before resolving. The Creatinine may remain stable or rise slightly due to contrast load, but the dominant physiological signal is the cardiac enzyme release.",
+        "confidence": "high",
+        "potassium_direction": "stable"
+      },
+      "confidence": {
+        "categorical": "high",
+        "score": 0.921,
+        "logprob_avg": -0.687,
+        "entropy": 0.639,
+        "n_tokens": 397
+      },
+      "metadata": {
+        "model": "qwen3.6:latest",
+        "finish_reason": "stop",
+        "usage": {
+          "prompt_tokens": 3785,
+          "completion_tokens": 397
+        }
+      },
+      "success": true
+    },
+    {
+      "case_id": "a_039",
+      "hadm_id": 22185019,
+      "prediction": {
+        "troponin_direction": "rising",
+        "troponin_magnitude_pct": 150,
+        "ck_direction": "stable",
+        "creatinine_direction": "rising",
+        "causal_justification": "The patient is receiving cancer chemotherapeutic substances, which are known to be cardiotoxic (e.g., anthracyclines). This intervention is expected to cause direct myocardial injury, leading to a significant rise in Troponin T. While CK and CK-MB may show a slight increase due to cellular stress, they are less specific and sensitive than Troponin for this type of injury. The rising Creatinine is likely due to the nephrotoxicity associated with many chemotherapy agents (e.g., cisplatin) or contrast-induced nephropathy if contrast was used, rather than the cardiac procedure itself.",
+        "confidence": "high"
+      },
+      "confidence": {
+        "categorical": "high",
+        "score": 0.914,
+        "logprob_avg": -0.896,
+        "entropy": 0.621,
+        "n_tokens": 198
+      },
+      "metadata": {
+        "model": "qwen3.6:latest",
+        "finish_reason": "stop",
+        "usage": {
+          "prompt_tokens": 2120,
+          "completion_tokens": 198
+        }
+      },
+      "success": true
+    },
+    {
+      "case_id": "a_040",
+      "hadm_id": 28237680,
+      "prediction": {
+        "troponin_direction": "rising",
+        "troponin_magnitude_pct": 150,
+        "ck_direction": "rising",
+        "creatinine_direction": "stable",
+        "causal_justification": "The patient is undergoing a PCI for an NSTEMI. The pre-intervention labs show a plateauing Troponin T (0.68 -> 0.76 -> 0.74 ng/mL) and a falling CK-MB (32 -> 22 -> 11 ng/mL), suggesting the acute ischemic event occurred prior to the procedure. The PCI involves mechanical reperfusion and potential microvascular injury (no-reflow phenomenon), which will cause a 'washout' of intracellular cardiac proteins. Consequently, Troponin T is expected to rise significantly (150% increase) as the necrotic burden is released into the circulation. CK-MB is expected to rise (100% increase) due to the same mechanism, though its peak will be blunted compared to the initial event. Creatinine is expected to remain stable as the patient has normal baseline renal function (0.9 mg/dL) and the contrast load is likely manageable.",
+        "confidence": "high",
+        "potassium_direction": "falling"
+      },
+      "confidence": {
+        "categorical": "high",
+        "score": 0.909,
+        "logprob_avg": -0.986,
+        "entropy": 0.65,
+        "n_tokens": 291
+      },
+      "metadata": {
+        "model": "qwen3.6:latest",
+        "finish_reason": "stop",
+        "usage": {
+          "prompt_tokens": 3219,
+          "completion_tokens": 291
+        }
+      },
+      "success": true
+    },
+    {
+      "case_id": "a_041",
+      "hadm_id": 20334314,
+      "prediction": {
+        "troponin_direction": "rising",
+        "troponin_magnitude_pct": 150,
+        "ck_direction": "rising",
+        "creatinine_direction": "falling",
+        "causal_justification": "The patient is undergoing an endovascular intervention (PCI) for an NSTEMI. The procedure involves mechanical disruption of the plaque and potential micro-embolization, which causes acute myocardial necrosis. This results in a secondary rise in Troponin T and CK-MB (typically 100-200% increase from pre-procedure baseline). Concurrently, the administration of intravenous contrast media for angiography poses a risk for Contrast-Induced Nephropathy (CIN), which typically manifests as a rise in Creatinine and BUN 24-72 hours post-procedure. However, if the patient is volume resuscitated effectively, the immediate post-procedure period may show a slight fall in BUN due to dilution, while Creatinine remains stable or rises slightly. Potassium levels are expected to remain stable or rise slightly due to cellular lysis and potential renal impairment.",
+        "confidence": "high"
+      },
+      "confidence": {
+        "categorical": "high",
+        "score": 0.912,
+        "logprob_avg": -0.888,
+        "entropy": 0.658,
+        "n_tokens": 264
+      },
+      "metadata": {
+        "model": "qwen3.6:latest",
+        "finish_reason": "stop",
+        "usage": {
+          "prompt_tokens": 3293,
+          "completion_tokens": 264
+        }
+      },
+      "success": true
+    },
+    {
+      "case_id": "a_042",
+      "hadm_id": 22271149,
+      "prediction": {
+        "troponin_direction": "rising",
+        "troponin_magnitude_pct": 100,
+        "ck_direction": "falling",
+        "creatinine_direction": "rising",
+        "causal_justification": "The patient is undergoing PTCA for an NSTEMI. The pre-intervention labs show a peak in Troponin T (0.5 ng/mL) followed by a slight decline (0.43 ng/mL), suggesting the infarction event may have occurred slightly before the procedure. However, PTCA involves balloon inflation and potential stent deployment, which can cause minor myocardial injury (periprocedural MI), leading to a secondary rise in Troponin. CK and CK-MB are already trending down (CK from 492 to 432, CK-MB from 17 to 12), indicating the acute necrotic phase is resolving. Creatinine is expected to rise due to contrast-induced nephropathy (CIN) risk from the angiography/PTCA procedure, especially given the baseline elevated creatinine (1.3 mg/dL).",
+        "confidence": "high"
+      },
+      "confidence": {
+        "categorical": "high",
+        "score": 0.925,
+        "logprob_avg": -0.805,
+        "entropy": 0.54,
+        "n_tokens": 257
+      },
+      "metadata": {
+        "model": "qwen3.6:latest",
+        "finish_reason": "stop",
+        "usage": {
+          "prompt_tokens": 1430,
+          "completion_tokens": 257
+        }
+      },
+      "success": true
+    },
+    {
+      "case_id": "a_043",
+      "hadm_id": 22124276,
+      "prediction": {
+        "troponin_direction": "rising",
+        "troponin_magnitude_pct": 150,
+        "ck_direction": "rising",
+        "creatinine_direction": "rising",
+        "causal_justification": "The patient is undergoing a coronary angiography (fluoroscopy) for an NSTEMI. The pre-intervention Troponin T is elevated (0.06-0.07 ng/mL) but CK-MB is normal (1.0 ng/mL). The procedure involves catheter manipulation in the coronary arteries, which can cause micro-embolization of plaque debris or thrombus, leading to 'periprocedural myocardial injury' (Type 4a MI). This typically results in a secondary rise in Troponin T. The patient already has baseline renal insufficiency (Creatinine 1.9 mg/dL), and the administration of iodinated contrast media poses a significant risk for Contrast-Induced Nephropathy (CIN), leading to a further rise in Creatinine and BUN. Potassium is expected to remain stable or rise slightly due to renal impairment and potential hemolysis from the procedure, though it is currently normal.",
+        "confidence": "high",
+        "potassium_direction": "stable"
+      },
+      "confidence": {
+        "categorical": "high",
+        "score": 0.921,
+        "logprob_avg": -0.82,
+        "entropy": 0.573,
+        "n_tokens": 281
+      },
+      "metadata": {
+        "model": "qwen3.6:latest",
+        "finish_reason": "stop",
+        "usage": {
+          "prompt_tokens": 3895,
+          "completion_tokens": 281
+        }
+      },
+      "success": true
+    },
+    {
+      "case_id": "a_044",
+      "hadm_id": 23934124,
+      "prediction": {
+        "troponin_direction": "rising",
+        "troponin_magnitude_pct": 150,
+        "ck_direction": "rising",
+        "creatinine_direction": "rising",
+        "causal_justification": "The patient is undergoing a combined right and left heart catheterization. This procedure involves mechanical manipulation of the coronary arteries and heart chambers, which inevitably causes minor myocardial injury (myocardial stunning or micro-embolization) and requires the administration of iodinated contrast media. The pre-intervention Troponin T is already elevated (0.05 ng/mL), indicating underlying myocardial strain or injury from the acute on chronic systolic heart failure. The mechanical trauma of the catheterization will cause a further release of troponin, leading to a rise. The contrast load, combined with pre-existing renal insufficiency (Creatinine 1.5 mg/dL), poses a significant risk for Contrast-Induced Nephropathy (CIN), leading to a rise in creatinine. CK and CK-MB may also rise slightly due to muscle trauma from the procedure and minor myocardial injury, but the rise is typically less pronounced than troponin.",
+        "confidence": "high",
+        "potassium_direction": "stable"
+      },
+      "confidence": {
+        "categorical": "high",
+        "score": 0.922,
+        "logprob_avg": -0.849,
+        "entropy": 0.551,
+        "n_tokens": 283
+      },
+      "metadata": {
+        "model": "qwen3.6:latest",
+        "finish_reason": "stop",
+        "usage": {
+          "prompt_tokens": 2412,
+          "completion_tokens": 283
+        }
+      },
+      "success": true
+    },
+    {
+      "case_id": "a_045",
+      "hadm_id": 29831794,
+      "prediction": {
+        "troponin_direction": "rising",
+        "troponin_magnitude_pct": 150,
+        "ck_direction": "rising",
+        "creatinine_direction": "stable",
+        "causal_justification": "The patient is undergoing PCI for an NSTEMI. The procedure involves mechanical disruption of the plaque and potential microvascular embolization, which causes additional myocardial necrosis. This procedural injury leads to a secondary rise in Troponin T and CK-MB. The baseline Troponin T is 0.1 ng/mL. A 150% increase is expected due to the 'no-reflow' or microvascular obstruction phenomenon common in PCI, even with successful stenting. Creatinine is expected to remain stable as the patient's baseline is 1.3 mg/dL (mildly elevated) and hydration protocols are typically employed to prevent contrast-induced nephropathy.",
+        "confidence": "high"
+      },
+      "confidence": {
+        "categorical": "high",
+        "score": 0.91,
+        "logprob_avg": -0.974,
+        "entropy": 0.639,
+        "n_tokens": 214
+      },
+      "metadata": {
+        "model": "qwen3.6:latest",
+        "finish_reason": "stop",
+        "usage": {
+          "prompt_tokens": 1328,
+          "completion_tokens": 214
+        }
+      },
+      "success": true
+    },
+    {
+      "case_id": "a_046",
+      "hadm_id": 23919352,
+      "prediction": {
+        "troponin_direction": "rising",
+        "troponin_magnitude_pct": 150,
+        "ck_direction": "rising",
+        "creatinine_direction": "stable",
+        "causal_justification": "The patient is undergoing PCI for an NSTEMI. The procedure involves mechanical manipulation of the coronary artery and deployment of a stent, which causes micro-embolization and endothelial injury. This results in a predictable 'troponin leak' or procedural myocardial injury. While the primary goal is to restore flow and limit infarct size, the act of revascularization itself causes a transient rise in biomarkers. Creatinine is expected to remain stable as the patient has normal baseline renal function and no mention of contrast-induced nephropathy risk factors beyond the procedure itself.",
+        "confidence": "high"
+      },
+      "confidence": {
+        "categorical": "high",
+        "score": 0.907,
+        "logprob_avg": -1.088,
+        "entropy": 0.619,
+        "n_tokens": 191
+      },
+      "metadata": {
+        "model": "qwen3.6:latest",
+        "finish_reason": "stop",
+        "usage": {
+          "prompt_tokens": 1524,
+          "completion_tokens": 191
+        }
+      },
+      "success": true
+    },
+    {
+      "case_id": "a_047",
+      "hadm_id": 21037073,
+      "prediction": {
+        "troponin_direction": "rising",
+        "troponin_magnitude_pct": 150,
+        "ck_direction": "rising",
+        "creatinine_direction": "stable",
+        "causal_justification": "The patient is undergoing PTCA for an NSTEMI. The pre-intervention labs show elevated Troponin T (0.28 -> 0.32 ng/mL) and CK-MB (32 -> 26 ng/mL), indicating ongoing myocardial necrosis. The PTCA procedure involves mechanical manipulation of the coronary artery, which can cause further micro-embolization of plaque debris and distal vessel injury. This 'no-reflow' or microvascular obstruction phenomenon typically leads to a transient increase in myocardial injury markers post-procedure. Therefore, Troponin T is expected to rise significantly (peak often 2-4x baseline) within 12-24 hours post-PTCA. CK and CK-MB may also rise transiently due to the additional necrotic burden, though Troponin is more sensitive and specific. Creatinine is expected to remain stable as the patient has normal baseline renal function (Cr 1.0 mg/dL) and no mention of contrast-induced nephropathy risk factors other than the procedure itself, which is generally low risk with proper hydration.",
+        "confidence": "high",
+        "potassium_direction": "stable"
+      },
+      "confidence": {
+        "categorical": "high",
+        "score": 0.918,
+        "logprob_avg": -0.873,
+        "entropy": 0.583,
+        "n_tokens": 316
+      },
+      "metadata": {
+        "model": "qwen3.6:latest",
+        "finish_reason": "stop",
+        "usage": {
+          "prompt_tokens": 1776,
+          "completion_tokens": 316
+        }
+      },
+      "success": true
+    },
+    {
+      "case_id": "a_048",
+      "hadm_id": 24373310,
+      "prediction": {
+        "troponin_direction": "falling",
+        "troponin_magnitude_pct": -78,
+        "ck_direction": "falling",
+        "creatinine_direction": "stable",
+        "causal_justification": "The patient is presenting with an NSTEMI and has already undergone a period of medical management (evidenced by the falling Troponin T from 0.5 to 0.11 ng/mL and CK-MB from 12.0 to 6.0 ng/mL over the preceding 24 hours). The PTCA procedure performed on 2164-09-13 00:00 is a revascularization intervention intended to restore blood flow to the myocardium. In the context of an NSTEMI where the infarction is likely subacute or resolving (given the downward trend of biomarkers prior to the procedure), the primary goal of PTCA is to prevent further necrosis and stabilize the plaque. Therefore, we expect the cardiac biomarkers to continue their downward trajectory as the acute injury resolves. The magnitude of the fall is significant because the peak injury has likely already passed. Renal function (Creatinine) is expected to remain stable as the patient's baseline is normal (1.1-1.2 mg/dL) and there is no indication of contrast-induced nephropathy risk factors like pre-existing renal failure, although close monitoring is standard. BUN is expected to remain stable or slightly decrease as hydration status is optimized. Potassium is expected to remain stable as the patient is not on diuretics and has normal baseline levels.",
+        "confidence": "high",
+        "potassium_direction": "stable"
+      },
+      "confidence": {
+        "categorical": "high",
+        "score": 0.923,
+        "logprob_avg": -0.77,
+        "entropy": 0.573,
+        "n_tokens": 373
+      },
+      "metadata": {
+        "model": "qwen3.6:latest",
+        "finish_reason": "stop",
+        "usage": {
+          "prompt_tokens": 2850,
+          "completion_tokens": 373
+        }
+      },
+      "success": true
+    },
+    {
+      "case_id": "a_049",
+      "hadm_id": 20205373,
+      "prediction": {
+        "troponin_direction": "rising",
+        "troponin_magnitude_pct": 150,
+        "ck_direction": "rising",
+        "creatinine_direction": "stable",
+        "causal_justification": "The patient is undergoing a catheter ablation for ventricular tachycardia. This procedure involves delivering radiofrequency energy to the myocardium to create controlled lesions (necrosis) to eliminate the arrhythmogenic substrate. This intentional myocardial injury will cause a release of intracellular contents, leading to a rise in Troponin T and CK-MB. The pre-procedure Troponin T was already elevated (0.02-0.08 ng/mL), likely due to the VT itself or underlying structural heart disease. The ablation will add to this burden. Creatinine is expected to remain stable as the procedure is percutaneous and does not typically involve significant nephrotoxic contrast loads compared to coronary angiography, although hydration status should be monitored.",
+        "confidence": "high",
+        "potassium_direction": "falling"
+      },
+      "confidence": {
+        "categorical": "high",
+        "score": 0.915,
+        "logprob_avg": -0.951,
+        "entropy": 0.585,
+        "n_tokens": 244
+      },
+      "metadata": {
+        "model": "qwen3.6:latest",
+        "finish_reason": "stop",
+        "usage": {
+          "prompt_tokens": 3745,
+          "completion_tokens": 244
+        }
+      },
+      "success": true
+    },
+    {
+      "case_id": "a_050",
+      "hadm_id": 24866592,
+      "prediction": {
+        "troponin_direction": "rising",
+        "troponin_magnitude_pct": 150,
+        "ck_direction": "rising",
+        "creatinine_direction": "stable",
+        "causal_justification": "The patient is undergoing angioplasty of a non-coronary vessel. While this procedure is less likely to cause significant myocardial injury compared to coronary interventions, the manipulation of vascular tissue and potential for distal embolization or ischemia can lead to a modest rise in cardiac biomarkers. The pre-procedure Troponin T is already elevated (0.26 ng/mL), indicating existing myocardial strain or injury, likely due to the acute on chronic systolic heart failure. The angioplasty may exacerbate this, leading to a further rise in Troponin T. CK and CK-MB are less specific for cardiac injury and may not show significant changes unless there is substantial muscle damage. Creatinine is expected to remain stable as the procedure does not directly impact renal function, and the patient's pre-procedure creatinine is within a manageable range.",
+        "confidence": "high",
+        "potassium_direction": "stable"
+      },
+      "confidence": {
+        "categorical": "high",
+        "score": 0.921,
+        "logprob_avg": -0.878,
+        "entropy": 0.551,
+        "n_tokens": 261
+      },
+      "metadata": {
+        "model": "qwen3.6:latest",
+        "finish_reason": "stop",
+        "usage": {
+          "prompt_tokens": 3711,
+          "completion_tokens": 261
+        }
+      },
+      "success": true
+    },
+    {
+      "case_id": "a_051",
+      "hadm_id": 28867651,
+      "prediction": {
+        "troponin_direction": "rising",
+        "troponin_magnitude_pct": 15,
+        "ck_direction": "falling",
+        "creatinine_direction": "rising",
+        "causal_justification": "The patient is undergoing PTCA for an NSTEMI. Troponin T is expected to continue its natural course of rising to a peak (typically 24-48 hours post-infarction) before declining, hence a continued rise is expected in the immediate post-intervention period. CK and CK-MB are already on a downward trajectory (from 585 to 446 IU/L) as the acute necrotic event is resolving, so they are expected to continue falling. The administration of iodinated contrast media during the angioplasty procedure poses a risk for contrast-induced nephropathy (CIN), leading to an expected rise in Creatinine and BUN levels.",
+        "confidence": "high"
+      },
+      "confidence": {
+        "categorical": "high",
+        "score": 0.911,
+        "logprob_avg": -0.968,
+        "entropy": 0.624,
+        "n_tokens": 215
+      },
+      "metadata": {
+        "model": "qwen3.6:latest",
+        "finish_reason": "stop",
+        "usage": {
+          "prompt_tokens": 1621,
+          "completion_tokens": 215
+        }
+      },
+      "success": true
+    },
+    {
+      "case_id": "a_052",
+      "hadm_id": 20262572,
+      "prediction": {
+        "troponin_direction": "rising",
+        "troponin_magnitude_pct": 150,
+        "ck_direction": "rising",
+        "creatinine_direction": "rising",
+        "causal_justification": "The patient is undergoing a diagnostic left heart catheterization (measurement of cardiac sampling and pressure). This procedure involves advancing a catheter through the aorta and into the left ventricle. While the primary goal is diagnostic, the mechanical manipulation of the catheter within the coronary ostia and the injection of iodinated contrast media pose specific risks. The expected rise in Troponin T (approx. 150% increase) is due to minor, iatrogenic myocardial injury caused by catheter manipulation, guidewire passage, or contrast-induced micro-embolization. The rise in CK and CK-MB is less pronounced than in therapeutic PCI but still expected due to similar mechanisms of minor myocyte necrosis. The rise in Creatinine is a direct consequence of contrast-induced nephropathy (CIN), particularly given the patient's pre-existing baseline renal insufficiency (Creatinine 1.4 mg/dL). The timeline for Troponin/CK peaks is typically 12-24 hours post-procedure, while Creatinine peaks at 48-72 hours.",
+        "confidence": "high",
+        "potassium_direction": "stable"
+      },
+      "confidence": {
+        "categorical": "high",
+        "score": 0.923,
+        "logprob_avg": -0.791,
+        "entropy": 0.571,
+        "n_tokens": 307
+      },
+      "metadata": {
+        "model": "qwen3.6:latest",
+        "finish_reason": "stop",
+        "usage": {
+          "prompt_tokens": 3841,
+          "completion_tokens": 307
+        }
+      },
+      "success": true
+    },
+    {
+      "case_id": "a_053",
+      "hadm_id": 28415181,
+      "prediction": {
+        "troponin_direction": "rising",
+        "troponin_magnitude_pct": 150,
+        "ck_direction": "rising",
+        "creatinine_direction": "falling",
+        "causal_justification": "The patient is undergoing CABG (Coronary Artery Bypass Grafting), a major cardiac surgery involving cardiopulmonary bypass (CPB). CPB induces systemic inflammation and endothelial injury, leading to a predictable rise in cardiac biomarkers. Troponin T is expected to rise significantly (peak 150% above baseline) due to perioperative myocardial injury from ischemia-reperfusion and surgical manipulation. CK and CK-MB will also rise due to skeletal muscle trauma from sternotomy and CPB, though CK-MB is less specific than Troponin. The patient's pre-existing acute kidney injury (Creatinine 3.3-3.6 mg/dL) is likely to improve post-operatively due to hemodynamic stabilization and potential renal replacement therapy if needed, but the immediate post-op period may show fluctuation. The primary driver for biomarker changes is the surgical trauma and myocardial stunning inherent to CABG.",
+        "confidence": "high",
+        "potassium_direction": "falling"
+      },
+      "confidence": {
+        "categorical": "high",
+        "score": 0.913,
+        "logprob_avg": -0.955,
+        "entropy": 0.607,
+        "n_tokens": 284
+      },
+      "metadata": {
+        "model": "qwen3.6:latest",
+        "finish_reason": "stop",
+        "usage": {
+          "prompt_tokens": 3730,
+          "completion_tokens": 284
+        }
+      },
+      "success": true
+    },
+    {
+      "case_id": "a_054",
+      "hadm_id": 25212824,
+      "prediction": {
+        "troponin_direction": "rising",
+        "troponin_magnitude_pct": 100,
+        "ck_direction": "stable",
+        "creatinine_direction": "stable",
+        "causal_justification": "The patient is undergoing PCI for an NSTEMI. The pre-intervention Troponin T is already elevated (0.12 ng/mL) and rising, indicating ongoing myocardial necrosis. PCI will restore flow and halt further necrosis, but the existing infarction will continue to release troponin into the circulation, causing levels to peak (often 2-3x baseline) before declining. CK and CK-MB are less sensitive and may not show a dramatic rise if the infarct is small or if the patient presents late in the biomarker curve. Renal function (Creatinine) is expected to remain stable as the procedure is low-risk for contrast-induced nephropathy in the immediate term, though hydration status should be monitored.",
+        "confidence": "high"
+      },
+      "confidence": {
+        "categorical": "high",
+        "score": 0.909,
+        "logprob_avg": -0.948,
+        "entropy": 0.67,
+        "n_tokens": 227
+      },
+      "metadata": {
+        "model": "qwen3.6:latest",
+        "finish_reason": "stop",
+        "usage": {
+          "prompt_tokens": 2530,
+          "completion_tokens": 227
+        }
+      },
+      "success": true
+    },
+    {
+      "case_id": "a_055",
+      "hadm_id": 24660046,
+      "prediction": {
+        "troponin_direction": "rising",
+        "troponin_magnitude_pct": 150,
+        "ck_direction": "rising",
+        "creatinine_direction": "falling",
+        "causal_justification": "The patient is undergoing an IABP (Intra-Aortic Balloon Pump) insertion for NSTEMI. The procedure involves mechanical manipulation of the aorta and potential micro-embolization, which can cause a transient rise in cardiac biomarkers (Troponin, CK) due to procedural myocardial injury. However, the primary goal is to improve coronary perfusion and reduce myocardial oxygen demand, which should eventually lead to a stabilization and subsequent fall in biomarkers. The patient's creatinine is elevated (2.4 mg/dL) likely due to contrast-induced nephropathy or hemodynamic compromise; with improved hemodynamics post-IABP, renal perfusion should improve, leading to a fall in creatinine.",
+        "confidence": "high",
+        "potassium_direction": "stable"
+      },
+      "confidence": {
+        "categorical": "high",
+        "score": 0.908,
+        "logprob_avg": -1.107,
+        "entropy": 0.592,
+        "n_tokens": 235
+      },
+      "metadata": {
+        "model": "qwen3.6:latest",
+        "finish_reason": "stop",
+        "usage": {
+          "prompt_tokens": 3805,
+          "completion_tokens": 235
+        }
+      },
+      "success": true
+    },
+    {
+      "case_id": "a_056",
+      "hadm_id": 24747762,
+      "prediction": {
+        "troponin_direction": "rising",
+        "troponin_magnitude_pct": 150,
+        "ck_direction": "stable",
+        "creatinine_direction": "rising",
+        "causal_justification": "The patient is undergoing a left heart cardiac catheterization. This procedure involves the introduction of iodinated contrast media, which poses a significant risk for contrast-induced nephropathy (CIN), particularly in a patient with pre-existing systolic heart failure and baseline renal insufficiency (Creatinine 1.5 mg/dL). The mechanical manipulation of the coronary arteries and potential for micro-embolization or transient ischemia during the procedure will cause further myocardial injury, leading to a rise in Troponin T. CK and CK-MB are less sensitive to the micro-injury of catheterization compared to Troponin and are expected to remain relatively stable or show minimal fluctuation given the baseline trend.",
+        "confidence": "high"
+      },
+      "confidence": {
+        "categorical": "high",
+        "score": 0.913,
+        "logprob_avg": -0.961,
+        "entropy": 0.607,
+        "n_tokens": 218
+      },
+      "metadata": {
+        "model": "qwen3.6:latest",
+        "finish_reason": "stop",
+        "usage": {
+          "prompt_tokens": 3774,
+          "completion_tokens": 218
+        }
+      },
+      "success": true
+    },
+    {
+      "case_id": "a_057",
+      "hadm_id": 27610810,
+      "prediction": {
+        "troponin_direction": "rising",
+        "troponin_magnitude_pct": 150,
+        "ck_direction": "rising",
+        "creatinine_direction": "stable",
+        "causal_justification": "The patient is undergoing PTCA for an inferior STEMI. The reperfusion of the occluded coronary artery will lead to washout of necrotic myocardial tissue into the systemic circulation. This results in a significant rise in Troponin T and CK-MB levels as the infarction completes and necrotic enzymes are released. The magnitude of the rise is expected to be substantial (150% increase) due to the acute nature of the STEMI and the successful restoration of flow which accelerates enzyme clearance from the myocardium into the blood. Creatinine is expected to remain stable as the patient's baseline renal function is normal (Cr 1.2 mg/dL) and there is no indication of contrast-induced nephropathy or hemodynamic collapse severe enough to cause acute kidney injury in the immediate post-procedure period.",
+        "confidence": "high",
+        "potassium_direction": "stable"
+      },
+      "confidence": {
+        "categorical": "high",
+        "score": 0.911,
+        "logprob_avg": -1.034,
+        "entropy": 0.601,
+        "n_tokens": 257
+      },
+      "metadata": {
+        "model": "qwen3.6:latest",
+        "finish_reason": "stop",
+        "usage": {
+          "prompt_tokens": 3813,
+          "completion_tokens": 257
+        }
+      },
+      "success": true
+    },
+    {
+      "case_id": "a_058",
+      "hadm_id": 22760988,
+      "prediction": {
+        "troponin_direction": "rising",
+        "troponin_magnitude_pct": 150,
+        "ck_direction": "stable",
+        "creatinine_direction": "rising",
+        "causal_justification": "The patient is undergoing PTCA for an NSTEMI. The pre-intervention Troponin T is already elevated (0.45 ng/mL) and rising, indicating ongoing myocardial necrosis. The procedure itself (PTCA) involves mechanical manipulation of the coronary artery, which can cause minor endothelial injury and distal embolization of plaque debris, leading to a 'periprocedural MI' or 'type 5 MI'. This typically results in a further rise in Troponin T (often 3-5x baseline, here estimated at 150% increase) peaking 24-48 hours post-procedure. CK and CK-MB are less sensitive and may not show a significant rise if the periprocedural injury is small, hence 'stable' is a reasonable prediction given the pre-procedure CK was already trending down (147 -> 78 -> 54 IU/L). Creatinine is expected to rise due to contrast-induced nephropathy (CIN), a common complication of PCI, especially with pre-existing risk factors (age, diabetes implied by glucose, though not explicitly stated, and baseline Cr 1.3). BUN may rise secondary to CIN or dehydration. Potassium may fluctuate due to contrast load and renal function changes, but is less predictable.",
+        "confidence": "high",
+        "potassium_direction": "falling"
+      },
+      "confidence": {
+        "categorical": "high",
+        "score": 0.923,
+        "logprob_avg": -0.726,
+        "entropy": 0.597,
+        "n_tokens": 357
+      },
+      "metadata": {
+        "model": "qwen3.6:latest",
+        "finish_reason": "stop",
+        "usage": {
+          "prompt_tokens": 3803,
+          "completion_tokens": 357
+        }
+      },
+      "success": true
+    },
+    {
+      "case_id": "a_059",
+      "hadm_id": 28459007,
+      "prediction": {
+        "troponin_direction": "rising",
+        "troponin_magnitude_pct": 150,
+        "ck_direction": "rising",
+        "creatinine_direction": "rising",
+        "causal_justification": "The patient is undergoing CABG, which involves aortic cross-clamping and cardioplegic arrest. This causes significant myocardial injury (surgical infarction) and systemic inflammatory response. Troponin T will rise sharply due to this iatrogenic myocardial necrosis. CK and CK-MB will also rise due to skeletal muscle trauma from sternotomy and myocardial injury. Creatinine may rise due to contrast load (if any pre-op imaging was done) or hemodynamic shifts during bypass, though the primary driver here is the surgical stress and potential for acute kidney injury (AKI) from cardiopulmonary bypass.",
+        "confidence": "high",
+        "potassium_direction": "falling"
+      },
+      "confidence": {
+        "categorical": "high",
+        "score": 0.912,
+        "logprob_avg": -0.996,
+        "entropy": 0.598,
+        "n_tokens": 212
+      },
+      "metadata": {
+        "model": "qwen3.6:latest",
+        "finish_reason": "stop",
+        "usage": {
+          "prompt_tokens": 3842,
+          "completion_tokens": 212
+        }
+      },
+      "success": true
+    },
+    {
+      "case_id": "a_060",
+      "hadm_id": 26625457,
+      "prediction": {
+        "troponin_direction": "rising",
+        "troponin_magnitude_pct": 150,
+        "ck_direction": "rising",
+        "creatinine_direction": "rising",
+        "causal_justification": "The patient is undergoing a coronary angiography (fluoroscopy of multiple coronary arteries) for ventricular tachycardia. The pre-procedure labs show evidence of hepatic congestion (elevated AST/ALT, bilirubin) and worsening renal function (creatinine rising from 1.6 to 1.8 mg/dL). The procedure involves the administration of iodinated contrast media. Given the baseline renal insufficiency (AKI on CKD or acute AKI), there is a high risk of Contrast-Induced Nephropathy (CIN), leading to a further rise in creatinine. The procedure itself, being an invasive coronary angiogram, carries a risk of minor myocardial injury (peri-procedural MI) due to catheter manipulation, embolization, or coronary dissection, which would cause a rise in Troponin and CK-MB. The magnitude of the troponin rise is estimated at 150% due to the potential for significant ischemic injury if the VT is related to an acute coronary occlusion or if the procedure is complicated. The CK rise is expected to be less pronounced than troponin as it is less specific and has a shorter half-life, but still indicative of muscle injury.",
+        "confidence": "high",
+        "potassium_direction": "stable"
+      },
+      "confidence": {
+        "categorical": "high",
+        "score": 0.923,
+        "logprob_avg": -0.757,
+        "entropy": 0.579,
+        "n_tokens": 339
+      },
+      "metadata": {
+        "model": "qwen3.6:latest",
+        "finish_reason": "stop",
+        "usage": {
+          "prompt_tokens": 3840,
+          "completion_tokens": 339
+        }
+      },
+      "success": true
+    },
+    {
+      "case_id": "a_061",
+      "hadm_id": 27734500,
+      "prediction": {
+        "troponin_direction": "rising",
+        "troponin_magnitude_pct": 10,
+        "ck_direction": "falling",
+        "creatinine_direction": "rising",
+        "causal_justification": "The patient is undergoing a cardiac catheterization for an NSTEMI. The pre-procedure labs show a peak in cardiac biomarkers (Troponin T ~4.77 ng/mL, CK ~1350 IU/L) that has already begun to decline, suggesting the acute infarction event has passed its peak. The catheterization itself involves the administration of iodinated contrast media, which poses a significant risk for Contrast-Induced Nephropathy (CIN), leading to a rise in Creatinine and BUN. Additionally, the mechanical manipulation of the coronary arteries and potential reperfusion injury (or further micro-embolization during the procedure) can cause a transient 'washout' or re-elevation of Troponin T levels, despite the overall trend of the infarction resolving. CK and CK-MB are expected to continue their downward trend as the acute myocardial necrosis resolves, though CK-MB may show a small, transient bump due to the procedure.",
+        "confidence": "high"
+      },
+      "confidence": {
+        "categorical": "high",
+        "score": 0.915,
+        "logprob_avg": -0.856,
+        "entropy": 0.633,
+        "n_tokens": 278
+      },
+      "metadata": {
+        "model": "qwen3.6:latest",
+        "finish_reason": "stop",
+        "usage": {
+          "prompt_tokens": 2865,
+          "completion_tokens": 278
+        }
+      },
+      "success": true
+    },
+    {
+      "case_id": "a_062",
+      "hadm_id": 21662376,
+      "prediction": {
+        "troponin_direction": "rising",
+        "troponin_magnitude_pct": 150,
+        "ck_direction": "rising",
+        "creatinine_direction": "falling",
+        "causal_justification": "The patient is undergoing PTCA for an NSTEMI. The pre-intervention Troponin T is already elevated (0.14 ng/mL) but has plateaued. The PTCA procedure involves mechanical manipulation of the coronary artery, which can cause minor endothelial injury and distal embolization of plaque debris, leading to a 'bump' in cardiac biomarkers. This is known as periprocedural myocardial injury. Therefore, Troponin T is expected to rise further (by ~150% from the pre-procedure baseline) within 6-12 hours post-procedure. CK and CK-MB may also rise slightly but are less sensitive than Troponin. The patient has severe acute kidney injury (Creatinine 7.1 mg/dL) likely due to contrast-induced nephropathy or hemodynamic instability. Post-PTCA, if hemodynamics improve and contrast is cleared, Creatinine may stabilize or fall slowly, but the immediate effect is likely stable or slightly rising due to ongoing renal insult. Potassium is currently 5.1 mEq/L and is expected to remain stable or fall slightly as renal function is monitored and potentially treated, but the risk of hyperkalemia persists due to AKI.",
+        "confidence": "high",
+        "potassium_direction": "falling"
+      },
+      "confidence": {
+        "categorical": "high",
+        "score": 0.913,
+        "logprob_avg": -0.878,
+        "entropy": 0.654,
+        "n_tokens": 345
+      },
+      "metadata": {
+        "model": "qwen3.6:latest",
+        "finish_reason": "stop",
+        "usage": {
+          "prompt_tokens": 3808,
+          "completion_tokens": 345
+        }
+      },
+      "success": true
+    },
+    {
+      "case_id": "a_063",
+      "hadm_id": 21986623,
+      "prediction": {
+        "troponin_direction": "rising",
+        "troponin_magnitude_pct": 150,
+        "ck_direction": "stable",
+        "creatinine_direction": "rising",
+        "causal_justification": "The patient is undergoing a left heart cardiac catheterization. This procedure involves the mechanical manipulation of the coronary arteries and the administration of iodinated contrast media. The mechanical manipulation (balloon angioplasty/stenting or even diagnostic catheterization) causes direct myocardial micro-trauma, leading to a predictable rise in Troponin T. The administration of contrast media poses a significant risk for Contrast-Induced Nephropathy (CIN), particularly in a patient who already has baseline renal insufficiency (Creatinine 1.8 mg/dL, BUN 67 mg/dL) and heart failure (reduced renal perfusion). Therefore, a rise in Creatinine and BUN is expected. Troponin T is expected to rise significantly (150% increase) due to the iatrogenic myocardial injury inherent to the procedure. CK and CK-MB are less sensitive and specific for this type of micro-injury and are expected to remain stable or show minimal fluctuation.",
+        "confidence": "high",
+        "potassium_direction": "stable"
+      },
+      "confidence": {
+        "categorical": "high",
+        "score": 0.922,
+        "logprob_avg": -0.809,
+        "entropy": 0.57,
+        "n_tokens": 289
+      },
+      "metadata": {
+        "model": "qwen3.6:latest",
+        "finish_reason": "stop",
+        "usage": {
+          "prompt_tokens": 3870,
+          "completion_tokens": 289
+        }
+      },
+      "success": true
+    },
+    {
+      "case_id": "a_064",
+      "hadm_id": 27858370,
+      "prediction": {
+        "troponin_direction": "rising",
+        "troponin_magnitude_pct": 150,
+        "ck_direction": "rising",
+        "creatinine_direction": "falling",
+        "causal_justification": "The patient is undergoing a right heart catheterization for an anterior STEMI. The procedure involves mechanical reperfusion (PCI) of the occluded artery. While the primary goal is to restore flow and limit infarct size, the reperfusion itself causes a 'washout' phenomenon where accumulated intracellular enzymes (Troponin, CK-MB) are released into the systemic circulation. This leads to a sharp rise in biomarkers peaking 12-24 hours post-procedure. The patient has significant pre-existing acute kidney injury (Creatinine 4.6 mg/dL) likely due to cardiorenal syndrome or contrast-induced nephropathy risk. Successful hemodynamic stabilization via catheterization (potentially with inotropic support or IABP if shock is present) should improve renal perfusion, leading to a gradual decline in Creatinine and BUN over the subsequent 48-72 hours, assuming no further contrast load or hemodynamic collapse.",
+        "confidence": "high",
+        "potassium_direction": "falling"
+      },
+      "confidence": {
+        "categorical": "high",
+        "score": 0.915,
+        "logprob_avg": -0.898,
+        "entropy": 0.611,
+        "n_tokens": 286
+      },
+      "metadata": {
+        "model": "qwen3.6:latest",
+        "finish_reason": "stop",
+        "usage": {
+          "prompt_tokens": 3830,
+          "completion_tokens": 286
+        }
+      },
+      "success": true
+    },
+    {
+      "case_id": "a_065",
+      "hadm_id": 23111609,
+      "prediction": {
+        "troponin_direction": "rising",
+        "troponin_magnitude_pct": 15,
+        "ck_direction": "falling",
+        "creatinine_direction": "stable",
+        "causal_justification": "The patient is undergoing PCI for an NSTEMI. The pre-intervention Troponin T is already elevated (0.99 ng/mL) and rising (2.32 ng/mL), indicating ongoing myocardial necrosis. PCI will restore flow and halt further necrosis, but the existing necrotic tissue will continue to release troponin into the circulation, causing a further rise (peak) before eventual decline. CK-MB is already falling (97 -> 90 -> 55 ng/mL), suggesting the peak of necrosis has passed or the infarct size is limited; it will continue to fall. Creatinine is stable (0.8 mg/dL) and expected to remain stable as there is no indication of contrast-induced nephropathy risk factors or hemodynamic instability.",
+        "confidence": "high"
+      },
+      "confidence": {
+        "categorical": "high",
+        "score": 0.915,
+        "logprob_avg": -0.896,
+        "entropy": 0.612,
+        "n_tokens": 238
+      },
+      "metadata": {
+        "model": "qwen3.6:latest",
+        "finish_reason": "stop",
+        "usage": {
+          "prompt_tokens": 2804,
+          "completion_tokens": 238
+        }
+      },
+      "success": true
+    },
+    {
+      "case_id": "a_066",
+      "hadm_id": 29278627,
+      "prediction": {
+        "troponin_direction": "rising",
+        "troponin_magnitude_pct": 150,
+        "ck_direction": "rising",
+        "creatinine_direction": "falling",
+        "causal_justification": "The patient is undergoing PTCA for an NSTEMI. The procedure involves mechanical reperfusion of the coronary artery, which will restore blood flow to the ischemic myocardium. This reperfusion will lead to a washout of intracellular cardiac enzymes (Troponin, CK, CK-MB) into the bloodstream, causing a transient rise in these biomarkers (the 'reperfusion injury' or 'washout' phenomenon). The patient has significant pre-existing acute kidney injury (Creatinine 3.1-3.4 mg/dL, BUN 107-109 mg/dL) likely due to cardiorenal syndrome or contrast-induced nephropathy risk. Successful revascularization will improve cardiac output and renal perfusion, leading to a gradual improvement in renal function (falling Creatinine and BUN) over the subsequent days, assuming no further insults. Potassium is currently stable (4.7 mEq/L) and is expected to remain stable or slightly fall as renal function improves and if diuretics are used, but the primary driver is the resolution of the acute ischemic event.",
+        "confidence": "high",
+        "potassium_direction": "stable"
+      },
+      "confidence": {
+        "categorical": "high",
+        "score": 0.921,
+        "logprob_avg": -0.858,
+        "entropy": 0.557,
+        "n_tokens": 317
+      },
+      "metadata": {
+        "model": "qwen3.6:latest",
+        "finish_reason": "stop",
+        "usage": {
+          "prompt_tokens": 3791,
+          "completion_tokens": 317
+        }
+      },
+      "success": true
+    },
+    {
+      "case_id": "a_067",
+      "hadm_id": 25417380,
+      "prediction": {
+        "troponin_direction": "rising",
+        "troponin_magnitude_pct": 150,
+        "ck_direction": "rising",
+        "creatinine_direction": "stable",
+        "causal_justification": "The patient is undergoing PCI for NSTEMI. Pre-procedure labs show rising troponin (0.16 to 0.4 ng/mL) and CK-MB (21 to 64 ng/mL), indicating ongoing myocardial necrosis. PCI will restore flow, but the procedure itself causes microvascular injury and distal embolization, leading to a further rise in troponin and CK-MB. Troponin is more sensitive and specific, so it will rise more significantly (150% increase) compared to CK-MB. Creatinine is expected to remain stable as there is no indication of pre-existing renal impairment or contrast-induced nephropathy risk factors.",
+        "confidence": "high"
+      },
+      "confidence": {
+        "categorical": "high",
+        "score": 0.916,
+        "logprob_avg": -0.954,
+        "entropy": 0.572,
+        "n_tokens": 188
+      },
+      "metadata": {
+        "model": "qwen3.6:latest",
+        "finish_reason": "stop",
+        "usage": {
+          "prompt_tokens": 3255,
+          "completion_tokens": 188
+        }
+      },
+      "success": true
+    },
+    {
+      "case_id": "a_068",
+      "hadm_id": 29533104,
+      "prediction": {
+        "troponin_direction": "rising",
+        "troponin_magnitude_pct": 150,
+        "ck_direction": "rising",
+        "creatinine_direction": "falling",
+        "causal_justification": "The patient is undergoing PCI for an NSTEMI. The procedure involves mechanical disruption of the plaque and potential microvascular injury, which typically causes a transient rise in cardiac biomarkers (Troponin and CK-MB) due to myocyte necrosis. The magnitude of the rise is often 1.5-2x the pre-procedure baseline in the immediate post-procedure period (0-24 hours) due to the 'no-reflow' phenomenon or distal embolization, even if the epicardial vessel is successfully opened. Concurrently, the patient has pre-existing acute kidney injury (Creatinine 2.3-2.4 mg/dL) likely due to contrast-induced nephropathy or hemodynamic compromise. Post-PCI, with restoration of hemodynamic stability and potential hydration, renal function is expected to improve (falling Creatinine/BUN) over the next 24-48 hours, assuming no further contrast exposure or hemodynamic collapse.",
+        "confidence": "high",
+        "potassium_direction": "stable"
+      },
+      "confidence": {
+        "categorical": "high",
+        "score": 0.911,
+        "logprob_avg": -0.912,
+        "entropy": 0.655,
+        "n_tokens": 287
+      },
+      "metadata": {
+        "model": "qwen3.6:latest",
+        "finish_reason": "stop",
+        "usage": {
+          "prompt_tokens": 2827,
+          "completion_tokens": 287
+        }
+      },
+      "success": true
+    },
+    {
+      "case_id": "a_069",
+      "hadm_id": 23403554,
+      "prediction": {
+        "troponin_direction": "rising",
+        "troponin_magnitude_pct": 150,
+        "ck_direction": "rising",
+        "creatinine_direction": "falling",
+        "causal_justification": "The patient is undergoing PTCA for an NSTEMI. The pre-intervention labs show a rising trend in Troponin T (0.96 to 1.19 ng/mL) and CK-MB (25 to 29 ng/mL), indicating ongoing myocardial necrosis. The PTCA procedure aims to restore blood flow to the ischemic myocardium. While reperfusion can cause a transient 'washout' of intracellular enzymes leading to a sharp, early peak in biomarkers (often 2-6 hours post-procedure), the primary goal is to halt further necrosis. Therefore, the rising trend is expected to continue briefly due to the washout effect and the finalization of the infarct size, peaking shortly after the procedure, before eventually falling as the myocardium is salvaged and no further necrosis occurs. The pre-existing renal impairment (Creatinine 2.0 mg/dL) is a risk for contrast-induced nephropathy, but the restoration of cardiac output and potential diuresis post-procedure may lead to a gradual improvement in renal function markers (Creatinine, BUN) over the subsequent days, assuming no severe contrast-induced injury occurs.",
+        "confidence": "high"
+      },
+      "confidence": {
+        "categorical": "high",
+        "score": 0.914,
+        "logprob_avg": -0.853,
+        "entropy": 0.648,
+        "n_tokens": 323
+      },
+      "metadata": {
+        "model": "qwen3.6:latest",
+        "finish_reason": "stop",
+        "usage": {
+          "prompt_tokens": 3175,
+          "completion_tokens": 323
+        }
+      },
+      "success": true
+    },
+    {
+      "case_id": "a_070",
+      "hadm_id": 26026254,
+      "prediction": {
+        "troponin_direction": "rising",
+        "troponin_magnitude_pct": 150,
+        "ck_direction": "rising",
+        "creatinine_direction": "stable",
+        "causal_justification": "The patient is undergoing a PCI for NSTEMI. The pre-intervention Troponin T is already elevated (0.19 ng/mL) and rising, indicating ongoing myocardial necrosis. The procedure involves mechanical reperfusion (dilation) and stent placement. While the goal is to restore flow and limit further infarct size, the mechanical manipulation of the vessel and the reperfusion itself often cause a transient 'washout' of intracellular enzymes and a small amount of additional microvascular injury (reperfusion injury). This typically results in a further rise in Troponin T and CK-MB in the immediate post-procedure period (0-24 hours) before the trajectory reverses. The magnitude of this procedural spike is variable but can be significant (up to 100-200% increase from pre-PCI baseline) due to the release of pre-existing necrotic debris and new micro-injury. Creatinine is expected to remain stable as the patient has normal baseline renal function (Cr 1.1 mg/dL) and no mention of contrast-induced nephropathy risk factors or hemodynamic instability requiring aggressive fluid resuscitation that would compromise renal perfusion.",
+        "confidence": "high",
+        "potassium_direction": "stable"
+      },
+      "confidence": {
+        "categorical": "high",
+        "score": 0.914,
+        "logprob_avg": -0.874,
+        "entropy": 0.637,
+        "n_tokens": 333
+      },
+      "metadata": {
+        "model": "qwen3.6:latest",
+        "finish_reason": "stop",
+        "usage": {
+          "prompt_tokens": 2924,
+          "completion_tokens": 333
+        }
+      },
+      "success": true
+    },
+    {
+      "case_id": "a_071",
+      "hadm_id": 24129989,
+      "prediction": {
+        "troponin_direction": "rising",
+        "troponin_magnitude_pct": 150,
+        "ck_direction": "rising",
+        "creatinine_direction": "stable",
+        "causal_justification": "The patient is undergoing PTCA for an NSTEMI. The procedure involves mechanical manipulation of the coronary artery, which can cause minor endothelial injury and distal embolization of plaque debris. This typically results in a transient, modest rise in cardiac biomarkers (Troponin and CK-MB) due to periprocedural myocardial injury. However, since the primary goal is revascularization, the overall trend of the MI should improve. The pre-procedure Troponin T is 0.17 ng/mL. A 150% rise is expected due to the mechanical trauma of the angioplasty itself, peaking within 12-24 hours. Creatinine is expected to remain stable as the patient's baseline is normal (1.1 mg/dL) and there is no indication of severe contrast-induced nephropathy risk factors like pre-existing renal failure, though hydration status should be monitored.",
+        "confidence": "high",
+        "potassium_direction": "stable"
+      },
+      "confidence": {
+        "categorical": "high",
+        "score": 0.912,
+        "logprob_avg": -0.964,
+        "entropy": 0.615,
+        "n_tokens": 277
+      },
+      "metadata": {
+        "model": "qwen3.6:latest",
+        "finish_reason": "stop",
+        "usage": {
+          "prompt_tokens": 3816,
+          "completion_tokens": 277
+        }
+      },
+      "success": true
+    },
+    {
+      "case_id": "a_072",
+      "hadm_id": 29168802,
+      "prediction": {
+        "troponin_direction": "rising",
+        "troponin_magnitude_pct": 150,
+        "ck_direction": "rising",
+        "creatinine_direction": "rising",
+        "causal_justification": "The patient is undergoing PTCA for an NSTEMI. The pre-intervention Troponin T is 0.73 ng/mL and stable, indicating established myocardial necrosis. PTCA involves mechanical reperfusion which can cause 'microvascular obstruction' and 'no-reflow' phenomenon, leading to a transient increase in myocardial injury (troponin leak) due to distal embolization of plaque debris and reperfusion injury. Additionally, the patient has severe pre-existing renal impairment (Creatinine ~4.8-4.9 mg/dL), which significantly delays the clearance of troponin and other biomarkers, prolonging the elevation. The CK-MB is currently low/normal (4.0 ng/mL) but may rise slightly due to the procedure-induced micro-injury, though it is less sensitive than troponin. The creatinine is expected to rise further due to contrast-induced nephropathy (CIN) superimposed on acute kidney injury (AKI) from the NSTEMI (cardiorenal syndrome) and potential hemodynamic shifts during the procedure.",
+        "confidence": "high",
+        "potassium_direction": "stable"
+      },
+      "confidence": {
+        "categorical": "high",
+        "score": 0.916,
+        "logprob_avg": -0.908,
+        "entropy": 0.596,
+        "n_tokens": 312
+      },
+      "metadata": {
+        "model": "qwen3.6:latest",
+        "finish_reason": "stop",
+        "usage": {
+          "prompt_tokens": 3842,
+          "completion_tokens": 312
+        }
+      },
+      "success": true
+    },
+    {
+      "case_id": "a_073",
+      "hadm_id": 23045328,
+      "prediction": {
+        "troponin_direction": "rising",
+        "troponin_magnitude_pct": 150,
+        "ck_direction": "falling",
+        "creatinine_direction": "stable",
+        "causal_justification": "The patient is experiencing an NSTEMI with pre-existing myocardial necrosis, evidenced by elevated Troponin T (0.25 ng/mL) and CK (559 IU/L) prior to the procedure. The PTCA intervention aims to restore coronary blood flow and prevent further infarction. While reperfusion can cause a transient 'washout' effect leading to a slight initial rise in biomarkers, the primary goal is to halt ongoing necrosis. Therefore, the trajectory of Troponin T is expected to continue rising as the peak of the current infarction is reached, but the rate of rise will slow, and subsequent values will begin to decline. CK and CK-MB, which are already trending down (CK from 559 to 459 IU/L), are expected to continue their downward trend as the acute phase of myocardial injury subsides. Creatinine is expected to remain stable as there is no indication of pre-existing renal failure or contrast-induced nephropathy risk factors in the pre-procedure labs (Creatinine 0.9 mg/dL).",
+        "confidence": "high",
+        "potassium_direction": "stable"
+      },
+      "confidence": {
+        "categorical": "high",
+        "score": 0.919,
+        "logprob_avg": -0.865,
+        "entropy": 0.585,
+        "n_tokens": 311
+      },
+      "metadata": {
+        "model": "qwen3.6:latest",
+        "finish_reason": "stop",
+        "usage": {
+          "prompt_tokens": 2080,
+          "completion_tokens": 311
+        }
+      },
+      "success": true
+    },
+    {
+      "case_id": "a_074",
+      "hadm_id": 23709960,
+      "prediction": {
+        "troponin_direction": "rising",
+        "troponin_magnitude_pct": 150,
+        "ck_direction": "rising",
+        "creatinine_direction": "rising",
+        "causal_justification": "The patient is undergoing a left heart cardiac catheterization. This procedure involves the introduction of iodinated contrast media and mechanical manipulation of the coronary arteries. The mechanical manipulation (balloon angioplasty/stenting or even diagnostic catheterization in a diseased vessel) causes micro-trauma to the myocardium, leading to the release of intracellular enzymes. The iodinated contrast poses a significant risk for Contrast-Induced Nephropathy (CIN), especially given the patient's pre-existing renal insufficiency (Creatinine 2.4 mg/dL, BUN 95 mg/dL) and heart failure (cardiorenal syndrome). The rise in Troponin is expected due to periprocedural myocardial injury (Type 2 MI or procedural injury). CK and CK-MB may also rise slightly due to muscle trauma or myocardial injury, but Troponin is more sensitive and specific. The rise in Creatinine is expected due to the nephrotoxic effects of contrast dye on the kidneys, which are already compromised by low perfusion pressure from heart failure.",
+        "confidence": "high",
+        "potassium_direction": "falling"
+      },
+      "confidence": {
+        "categorical": "high",
+        "score": 0.922,
+        "logprob_avg": -0.83,
+        "entropy": 0.56,
+        "n_tokens": 309
+      },
+      "metadata": {
+        "model": "qwen3.6:latest",
+        "finish_reason": "stop",
+        "usage": {
+          "prompt_tokens": 3736,
+          "completion_tokens": 309
+        }
+      },
+      "success": true
+    },
+    {
+      "case_id": "a_075",
+      "hadm_id": 22092144,
+      "prediction": {
+        "troponin_direction": "rising",
+        "troponin_magnitude_pct": 150,
+        "ck_direction": "rising",
+        "creatinine_direction": "stable",
+        "causal_justification": "The patient is undergoing a diagnostic left heart catheterization (measurement of cardiac sampling and pressure) for an NSTEMI. While the procedure itself is diagnostic and not therapeutic (like PCI), the manipulation of catheters within the coronary arteries and the underlying pathophysiology of the NSTEMI (ongoing plaque rupture/thrombosis) will likely lead to a continued rise in myocardial necrosis markers. The pre-intervention Troponin T was 0.22 ng/mL at 17:00 on 08-16. Given the trajectory and the nature of the acute coronary syndrome, a significant rise is expected. CK and CK-MB may also rise or remain elevated as they reflect total muscle necrosis, though Troponin is more specific. Creatinine is expected to remain stable as there is no indication of pre-existing renal failure or contrast-induced nephropathy risk factors in the pre-labs (Creatinine 0.9 mg/dL), and the procedure is diagnostic, likely using minimal contrast.",
+        "confidence": "high",
+        "potassium_direction": "stable"
+      },
+      "confidence": {
+        "categorical": "high",
+        "score": 0.92,
+        "logprob_avg": -0.809,
+        "entropy": 0.591,
+        "n_tokens": 295
+      },
+      "metadata": {
+        "model": "qwen3.6:latest",
+        "finish_reason": "stop",
+        "usage": {
+          "prompt_tokens": 1930,
+          "completion_tokens": 295
+        }
+      },
+      "success": true
+    },
+    {
+      "case_id": "a_076",
+      "hadm_id": 22834326,
+      "prediction": {
+        "troponin_direction": "rising",
+        "troponin_magnitude_pct": 150,
+        "ck_direction": "stable",
+        "creatinine_direction": "falling",
+        "causal_justification": "The patient is undergoing PTCA for an NSTEMI. The pre-intervention Troponin T is already elevated (0.51 -> 1.04 ng/mL) and rising, indicating ongoing myocardial necrosis. The PTCA procedure involves mechanical manipulation of the coronary artery, which can cause minor endothelial injury and distal embolization of plaque debris. This typically results in a further rise in Troponin T (often peaking 12-24 hours post-procedure) due to the 'no-reflow' phenomenon or microvascular obstruction, even if the large vessel is successfully opened. CK and CK-MB are less sensitive and may not show a significant change if the infarct size is small or if the enzyme release is already plateauing. The patient has pre-existing renal impairment (Creatinine 2.5 mg/dL), which delays Troponin clearance, contributing to the rising trend. Post-PTCA, successful reperfusion may eventually lead to a fall in Troponin, but in the immediate post-intervention period (0-24h), a rise is expected due to procedural injury and the natural course of the infarction. The renal function may improve slightly due to hydration and cessation of nephrotoxic agents, but significant improvement is unlikely in the immediate term.",
+        "confidence": "high"
+      },
+      "confidence": {
+        "categorical": "high",
+        "score": 0.92,
+        "logprob_avg": -0.73,
+        "entropy": 0.629,
+        "n_tokens": 345
+      },
+      "metadata": {
+        "model": "qwen3.6:latest",
+        "finish_reason": "stop",
+        "usage": {
+          "prompt_tokens": 3793,
+          "completion_tokens": 345
+        }
+      },
+      "success": true
+    },
+    {
+      "case_id": "a_077",
+      "hadm_id": 23656196,
+      "prediction": {
+        "troponin_direction": "rising",
+        "troponin_magnitude_pct": 150,
+        "ck_direction": "rising",
+        "creatinine_direction": "stable",
+        "causal_justification": "The patient is undergoing PTCA for an NSTEMI. The pre-intervention labs show a rising trend in Troponin T (0.35 -> 0.45 -> 0.38 ng/mL) and CK-MB (4.0 -> 18.0 -> 20.0 -> 18.0 ng/mL), indicating ongoing myocardial necrosis. The PTCA procedure involves mechanical manipulation of the coronary artery, which can cause further micro-embolization and distal vessel injury, leading to a transient 'washout' or further release of cardiac biomarkers. Therefore, a continued rise in Troponin and CK-MB is expected in the immediate post-intervention period (0-24 hours) as the peak of the biomarker curve is reached. Creatinine is expected to remain stable as the patient's baseline is normal (1.1-1.3 mg/dL) and there is no indication of severe contrast-induced nephropathy risk factors like pre-existing renal failure or hemodynamic instability.",
+        "confidence": "high",
+        "potassium_direction": "stable"
+      },
+      "confidence": {
+        "categorical": "high",
+        "score": 0.922,
+        "logprob_avg": -0.878,
+        "entropy": 0.538,
+        "n_tokens": 303
+      },
+      "metadata": {
+        "model": "qwen3.6:latest",
+        "finish_reason": "stop",
+        "usage": {
+          "prompt_tokens": 3840,
+          "completion_tokens": 303
+        }
+      },
+      "success": true
+    },
+    {
+      "case_id": "a_078",
+      "hadm_id": 27558846,
+      "prediction": {
+        "troponin_direction": "rising",
+        "troponin_magnitude_pct": 150,
+        "ck_direction": "rising",
+        "creatinine_direction": "stable",
+        "causal_justification": "The patient is undergoing PTCA for an NSTEMI. The procedure involves mechanical manipulation of the coronary artery, which can cause minor endothelial injury and micro-embolization, leading to a predictable 'troponin leak' or procedural myocardial injury. This typically manifests as a rise in Troponin T levels. CK and CK-MB may also rise slightly due to this minor injury, but the magnitude is generally less than the rise in Troponin. Creatinine is expected to remain stable as the patient's baseline renal function is normal (Cr 1.0-1.1 mg/dL) and there is no indication of contrast-induced nephropathy risk factors beyond the procedure itself, which is usually managed with hydration.",
+        "confidence": "high",
+        "potassium_direction": "stable"
+      },
+      "confidence": {
+        "categorical": "high",
+        "score": 0.908,
+        "logprob_avg": -1.082,
+        "entropy": 0.613,
+        "n_tokens": 236
+      },
+      "metadata": {
+        "model": "qwen3.6:latest",
+        "finish_reason": "stop",
+        "usage": {
+          "prompt_tokens": 3792,
+          "completion_tokens": 236
+        }
+      },
+      "success": true
+    },
+    {
+      "case_id": "a_079",
+      "hadm_id": 22112213,
+      "prediction": {
+        "troponin_direction": "falling",
+        "troponin_magnitude_pct": -15,
+        "ck_direction": "stable",
+        "creatinine_direction": "falling",
+        "causal_justification": "The patient's pre-intervention labs show a stable, mildly elevated Troponin T (0.46-0.54 ng/mL) and CK-MB (3.0-5.0 ng/mL) without a rising trend, which is consistent with chronic myocardial strain from heart failure rather than an acute ischemic event. The procedure performed was a thoracentesis, which relieves pleural effusion and reduces intrathoracic pressure, thereby improving venous return and cardiac output. This hemodynamic improvement reduces myocardial wall stress, leading to a gradual decrease in Troponin T release. Creatinine is expected to fall due to improved renal perfusion (cardiorenal syndrome resolution) following the hemodynamic optimization provided by the thoracentesis.",
+        "confidence": "high"
+      },
+      "confidence": {
+        "categorical": "high",
+        "score": 0.92,
+        "logprob_avg": -0.885,
+        "entropy": 0.557,
+        "n_tokens": 231
+      },
+      "metadata": {
+        "model": "qwen3.6:latest",
+        "finish_reason": "stop",
+        "usage": {
+          "prompt_tokens": 3822,
+          "completion_tokens": 231
+        }
+      },
+      "success": true
+    },
+    {
+      "case_id": "a_080",
+      "hadm_id": 29815513,
+      "prediction": {
+        "troponin_direction": "rising",
+        "troponin_magnitude_pct": 150,
+        "ck_direction": "rising",
+        "creatinine_direction": "rising",
+        "causal_justification": "The patient is undergoing a CABG (Coronary Artery Bypass Grafting) procedure. This is a major cardiac surgery involving cardiopulmonary bypass (CPB), which inherently causes myocardial injury due to ischemia-reperfusion, systemic inflammation, and surgical manipulation. Consequently, cardiac biomarkers like Troponin and CK-MB are expected to rise significantly post-operatively due to this iatrogenic myocardial injury. The magnitude of rise (Troponin ~150% increase) reflects the expected peak of surgical trauma rather than a new ischemic event. Creatinine is expected to rise due to the nephrotoxic effects of CPB, hemodilution, and potential hypotension during surgery, indicating a risk of acute kidney injury (AKI). CK direction is rising due to skeletal muscle trauma from sternotomy and CPB.",
+        "confidence": "high",
+        "potassium_direction": "falling"
+      },
+      "confidence": {
+        "categorical": "high",
+        "score": 0.916,
+        "logprob_avg": -0.966,
+        "entropy": 0.571,
+        "n_tokens": 266
+      },
+      "metadata": {
+        "model": "qwen3.6:latest",
+        "finish_reason": "stop",
+        "usage": {
+          "prompt_tokens": 3801,
+          "completion_tokens": 266
+        }
+      },
+      "success": true
+    },
+    {
+      "case_id": "a_081",
+      "hadm_id": 22561404,
+      "prediction": {
+        "troponin_direction": "rising",
+        "troponin_magnitude_pct": 150,
+        "ck_direction": "rising",
+        "creatinine_direction": "stable",
+        "causal_justification": "The patient is undergoing PCI for an NSTEMI. The pre-intervention Troponin T is already elevated (0.3 ng/mL), indicating ongoing myocardial necrosis. The procedure involves mechanical manipulation of the coronary artery (dilation and stenting). This mechanical trauma to the vessel wall and the myocardium, along with potential micro-embolization of plaque debris, typically causes a 'bump' in cardiac biomarkers known as periprocedural myocardial injury. While the procedure aims to restore flow and limit further infarction, the immediate post-procedural period often sees a transient rise in Troponin and CK-MB due to this iatrogenic injury. The magnitude is estimated at 150% rise from the pre-procedural baseline due to the combination of the underlying infarction and the procedural trauma. Creatinine is expected to remain stable as the patient has normal baseline renal function (Cr 1.1 mg/dL) and no mention of contrast-induced nephropathy risk factors or hemodynamic instability that would precipitate acute kidney injury.",
+        "confidence": "high"
+      },
+      "confidence": {
+        "categorical": "high",
+        "score": 0.919,
+        "logprob_avg": -0.812,
+        "entropy": 0.606,
+        "n_tokens": 295
+      },
+      "metadata": {
+        "model": "qwen3.6:latest",
+        "finish_reason": "stop",
+        "usage": {
+          "prompt_tokens": 2595,
+          "completion_tokens": 295
+        }
+      },
+      "success": true
+    },
+    {
+      "case_id": "a_082",
+      "hadm_id": 25325455,
+      "prediction": {
+        "troponin_direction": "rising",
+        "troponin_magnitude_pct": 150,
+        "ck_direction": "rising",
+        "creatinine_direction": "stable",
+        "causal_justification": "The patient is undergoing a complex PCI (4-vessel DES) for NSTEMI. The pre-intervention labs show a plateauing Troponin T (~0.55-0.59 ng/mL) and a falling CK-MB (16 -> 6 ng/mL), suggesting the initial ischemic event has occurred and the biomarkers are in the clearance phase. However, the intervention itself involves mechanical manipulation of the coronary arteries and the deployment of stents. This process inevitably causes minor myocardial injury (periprocedural MI) due to distal embolization of plaque/thrombus and transient ischemia during balloon inflation. Consequently, despite the pre-intervention plateau, the procedural trauma will cause a secondary rise in Troponin T (expected ~150% increase from baseline) and CK-MB. Creatinine is expected to remain stable as the patient has normal baseline renal function (Cr 0.9) and the contrast load, while significant, is unlikely to cause acute kidney injury in a single procedure without pre-existing renal compromise.",
+        "confidence": "high",
+        "potassium_direction": "falling"
+      },
+      "confidence": {
+        "categorical": "high",
+        "score": 0.906,
+        "logprob_avg": -0.975,
+        "entropy": 0.686,
+        "n_tokens": 304
+      },
+      "metadata": {
+        "model": "qwen3.6:latest",
+        "finish_reason": "stop",
+        "usage": {
+          "prompt_tokens": 1664,
+          "completion_tokens": 304
+        }
+      },
+      "success": true
+    },
+    {
+      "case_id": "a_083",
+      "hadm_id": 25223632,
+      "prediction": {
+        "troponin_direction": "stable",
+        "troponin_magnitude_pct": 0,
+        "ck_direction": "falling",
+        "creatinine_direction": "stable",
+        "causal_justification": "The patient is undergoing an artificial pacemaker rate check, which is a diagnostic procedure involving interrogation of the device settings and lead integrity. It does not involve myocardial tissue injury, contrast administration, or hemodynamic stress. Therefore, cardiac biomarkers like Troponin T, CK, and CK-MB will not be acutely affected by the procedure itself. The observed trends in the pre-intervention period (falling CK/CK-MB, stable Troponin) reflect the natural resolution of the prior NSTEMI event rather than the intervention. Renal markers (Creatinine, BUN) and electrolytes (Potassium) are also expected to remain stable as the procedure does not impact renal perfusion or electrolyte balance.",
+        "confidence": "high",
+        "potassium_direction": "stable"
+      },
+      "confidence": {
+        "categorical": "high",
+        "score": 0.918,
+        "logprob_avg": -0.966,
+        "entropy": 0.542,
+        "n_tokens": 233
+      },
+      "metadata": {
+        "model": "qwen3.6:latest",
+        "finish_reason": "stop",
+        "usage": {
+          "prompt_tokens": 2714,
+          "completion_tokens": 233
+        }
+      },
+      "success": true
+    },
+    {
+      "case_id": "a_084",
+      "hadm_id": 21482208,
+      "prediction": {
+        "troponin_direction": "rising",
+        "troponin_magnitude_pct": 15,
+        "ck_direction": "falling",
+        "creatinine_direction": "falling",
+        "causal_justification": "The patient is undergoing a diagnostic left heart catheterization (measurement of cardiac sampling and pressure) for an NSTEMI. The pre-procedure labs show a plateauing of cardiac biomarkers (Troponin T ~1.5 ng/mL, CK-MB ~48 ng/mL) and improving renal function (Creatinine dropping from 5.0 to 2.4 mg/dL), suggesting the acute ischemic event has passed its peak. The procedure itself is diagnostic and does not involve revascularization (PCI) or thrombolysis. Therefore, we expect the cardiac biomarkers to continue their natural decay phase (falling CK/CK-MB) or remain stable (Troponin), rather than spiking due to procedural myocardial injury. The improving creatinine trend is likely to continue as the patient is hydrated and the contrast load from the diagnostic cath is minimal compared to a full PCI.",
+        "confidence": "high",
+        "potassium_direction": "stable"
+      },
+      "confidence": {
+        "categorical": "high",
+        "score": 0.919,
+        "logprob_avg": -0.852,
+        "entropy": 0.593,
+        "n_tokens": 270
+      },
+      "metadata": {
+        "model": "qwen3.6:latest",
+        "finish_reason": "stop",
+        "usage": {
+          "prompt_tokens": 3831,
+          "completion_tokens": 270
+        }
+      },
+      "success": true
+    },
+    {
+      "case_id": "a_085",
+      "hadm_id": 22323832,
+      "prediction": {
+        "troponin_direction": "falling",
+        "troponin_magnitude_pct": -15,
+        "ck_direction": "stable",
+        "creatinine_direction": "stable",
+        "causal_justification": "The patient has a Type 2 MI (supply/demand mismatch) rather than a Type 1 MI (plaque rupture). The procedure performed is an endoscopic inspection of the upper GI tract, which is a diagnostic/therapeutic intervention for the likely underlying cause (e.g., GI bleed) but does not directly revascularize the heart. The pre-intervention Troponin T trajectory (1.17 -> 1.03 -> 0.97 ng/mL) indicates the myocardial injury has already peaked and is resolving. Therefore, post-intervention, Troponin is expected to continue falling as the supply/demand mismatch is corrected (likely via transfusion or hemodynamic stabilization). CK and CK-MB are not expected to change significantly as the primary insult is not acute necrosis from coronary occlusion, and the procedure does not induce new muscle damage. Creatinine is expected to remain stable as the procedure is non-nephrotoxic and the patient's renal function (Cr ~2.7-2.9) is likely chronic or acute-on-chronic, not acutely worsened by the endoscopy.",
+        "confidence": "high",
+        "potassium_direction": "stable"
+      },
+      "confidence": {
+        "categorical": "high",
+        "score": 0.918,
+        "logprob_avg": -0.791,
+        "entropy": 0.634,
+        "n_tokens": 317
+      },
+      "metadata": {
+        "model": "qwen3.6:latest",
+        "finish_reason": "stop",
+        "usage": {
+          "prompt_tokens": 3784,
+          "completion_tokens": 317
+        }
+      },
+      "success": true
+    },
+    {
+      "case_id": "a_086",
+      "hadm_id": 22688315,
+      "prediction": {
+        "troponin_direction": "rising",
+        "troponin_magnitude_pct": 150,
+        "ck_direction": "stable",
+        "creatinine_direction": "falling",
+        "causal_justification": "The patient is undergoing a left heart catheterization for an NSTEMI. The pre-procedure Troponin T is already elevated (0.36 ng/mL) and rising (0.75 ng/mL), indicating ongoing myocardial necrosis. The procedure itself (PCI) will likely cause a further transient rise in Troponin due to micro-embolization and reperfusion injury, typically peaking 24-48 hours post-procedure. The magnitude of this procedural spike is often 1.5-2x the pre-procedure peak. CK and CK-MB are less sensitive and may not show a significant additional rise compared to Troponin. The patient has severe acute kidney injury (Creatinine 4.6-5.1 mg/dL) likely due to contrast-induced nephropathy or cardiorenal syndrome. Post-procedure, with hydration and cessation of nephrotoxins, Creatinine is expected to fall slowly over days. Potassium is currently normal (3.7 mEq/L) but requires monitoring due to renal dysfunction and potential shifts from reperfusion.",
+        "confidence": "high"
+      },
+      "confidence": {
+        "categorical": "high",
+        "score": 0.922,
+        "logprob_avg": -0.75,
+        "entropy": 0.602,
+        "n_tokens": 301
+      },
+      "metadata": {
+        "model": "qwen3.6:latest",
+        "finish_reason": "stop",
+        "usage": {
+          "prompt_tokens": 2586,
+          "completion_tokens": 301
+        }
+      },
+      "success": true
+    },
+    {
+      "case_id": "a_087",
+      "hadm_id": 26704072,
+      "prediction": {
+        "troponin_direction": "rising",
+        "troponin_magnitude_pct": 100,
+        "ck_direction": "rising",
+        "creatinine_direction": "falling",
+        "causal_justification": "The patient is undergoing PTCA for an NSTEMI. The procedure involves mechanical reperfusion of the ischemic myocardium. While the primary goal is to restore flow and limit further necrosis, the reperfusion itself causes a 'washout' effect of intracellular enzymes (Troponin, CK, CK-MB) from the damaged myocardium into the bloodstream, leading to a transient rise in these biomarkers. Additionally, the mechanical trauma of the angioplasty itself can cause minor myocardial injury, contributing to this rise. The pre-intervention labs show stable but elevated Troponin (0.11 ng/mL) and CK (85 IU/L), indicating ongoing or recent injury. Post-PTCA, we expect a significant spike in Troponin as the necrotic tissue is cleared. Creatinine is expected to fall due to the resolution of any pre-renal azotemia or contrast-induced nephropathy risk mitigation (hydration), although contrast load is a risk factor, the overall clinical improvement in cardiac output often improves renal perfusion.",
+        "confidence": "high",
+        "potassium_direction": "falling"
+      },
+      "confidence": {
+        "categorical": "high",
+        "score": 0.914,
+        "logprob_avg": -0.846,
+        "entropy": 0.652,
+        "n_tokens": 300
+      },
+      "metadata": {
+        "model": "qwen3.6:latest",
+        "finish_reason": "stop",
+        "usage": {
+          "prompt_tokens": 2041,
+          "completion_tokens": 300
+        }
+      },
+      "success": true
+    },
+    {
+      "case_id": "a_088",
+      "hadm_id": 27090769,
+      "prediction": {
+        "troponin_direction": "rising",
+        "troponin_magnitude_pct": 150,
+        "ck_direction": "rising",
+        "creatinine_direction": "stable",
+        "causal_justification": "The patient is undergoing a PCI for NSTEMI. The pre-intervention Troponin T is already elevated (0.1 ng/mL) and CK-MB is elevated (16 ng/mL), indicating ongoing myocardial necrosis. The procedure involves mechanical reperfusion (dilation) and stent placement. While the goal is to restore flow and limit further infarct size, the mechanical manipulation of the vessel and the reperfusion itself often cause a transient 'washout' of intracellular enzymes and a small amount of additional microvascular injury (reperfusion injury). This typically results in a further rise in Troponin and CK-MB levels in the immediate post-procedure period (0-24 hours) before they begin to decline. The magnitude of the rise is variable but often significant (e.g., 1.5-2x peak pre-procedure levels) due to the release of stored troponin from the necrotic zone and the reperfusion phenomenon. Creatinine is expected to remain stable as the patient has normal baseline renal function (Cr 0.7) and the contrast load for a single-vessel PCI is typically manageable, though hydration is critical to prevent CIN.",
+        "confidence": "high",
+        "potassium_direction": "stable"
+      },
+      "confidence": {
+        "categorical": "high",
+        "score": 0.911,
+        "logprob_avg": -0.887,
+        "entropy": 0.665,
+        "n_tokens": 332
+      },
+      "metadata": {
+        "model": "qwen3.6:latest",
+        "finish_reason": "stop",
+        "usage": {
+          "prompt_tokens": 2598,
+          "completion_tokens": 332
+        }
+      },
+      "success": true
+    },
+    {
+      "case_id": "a_089",
+      "hadm_id": 23426019,
+      "prediction": {
+        "troponin_direction": "falling",
+        "troponin_magnitude_pct": -23,
+        "ck_direction": "stable",
+        "creatinine_direction": "stable",
+        "causal_justification": "The patient presents with acute on chronic diastolic heart failure and evidence of myocardial injury (elevated Troponin T and CK-MB) likely due to supply/demand mismatch (Type 2 MI) or acute decompensation rather than acute plaque rupture. The pre-intervention labs show Troponin T peaking at 1.39 ng/mL and beginning to decline to 1.07 ng/mL, while CK-MB is also trending down (23 -> 18 ng/mL). The procedure performed is a 'Venous catheterization, not elsewhere classified' (likely a central line or PICC for medication administration/diuresis). This is a low-risk, non-cardiac intervention that does not directly alter myocardial perfusion or cause further myocardial necrosis. Therefore, the cardiac biomarkers are expected to follow their natural resolution trajectory (falling) as the acute stressor is managed, rather than spiking due to procedural injury. The venous catheterization itself carries a negligible risk of hemolysis or muscle trauma that would significantly impact CK or Troponin levels. The patient's renal function (Creatinine ~3.3 mg/dL) is stable, suggesting no contrast-induced nephropathy (as no contrast was used) or hemodynamic collapse.",
+        "confidence": "high",
+        "potassium_direction": "stable"
+      },
+      "confidence": {
+        "categorical": "high",
+        "score": 0.928,
+        "logprob_avg": -0.697,
+        "entropy": 0.549,
+        "n_tokens": 350
+      },
+      "metadata": {
+        "model": "qwen3.6:latest",
+        "finish_reason": "stop",
+        "usage": {
+          "prompt_tokens": 3800,
+          "completion_tokens": 350
+        }
+      },
+      "success": true
+    },
+    {
+      "case_id": "a_090",
+      "hadm_id": 26968894,
+      "prediction": {
+        "troponin_direction": "rising",
+        "troponin_magnitude_pct": 100,
+        "ck_direction": "falling",
+        "creatinine_direction": "rising",
+        "causal_justification": "The patient is undergoing a left heart cardiac catheterization for an NSTEMI. The pre-procedure Troponin T is elevated (0.26 ng/mL) and stable, indicating ongoing myocardial injury. The procedure involves manipulating the coronary arteries, which can cause further myocardial injury (periprocedural MI) or contrast-induced nephropathy. Therefore, Troponin is expected to rise further as the procedure progresses and the full extent of injury is revealed. CK is expected to fall as the acute phase of the NSTEMI resolves or is managed. Creatinine is expected to rise due to the nephrotoxic effects of the iodinated contrast media used during the catheterization, especially given the patient's pre-existing renal impairment (Creatinine 1.6 mg/dL).",
+        "confidence": "high"
+      },
+      "confidence": {
+        "categorical": "high",
+        "score": 0.92,
+        "logprob_avg": -0.887,
+        "entropy": 0.558,
+        "n_tokens": 237
+      },
+      "metadata": {
+        "model": "qwen3.6:latest",
+        "finish_reason": "stop",
+        "usage": {
+          "prompt_tokens": 1327,
+          "completion_tokens": 237
+        }
+      },
+      "success": true
+    },
+    {
+      "case_id": "a_091",
+      "hadm_id": 25569856,
+      "prediction": {
+        "troponin_direction": "rising",
+        "troponin_magnitude_pct": 150,
+        "ck_direction": "rising",
+        "creatinine_direction": "rising",
+        "causal_justification": "The patient is undergoing a left heart catheterization for an NSTEMI. The procedure involves manipulating catheters within the coronary arteries, which can cause minor endothelial injury and distal embolization of plaque material, leading to a predictable rise in cardiac biomarkers (Troponin and CK) due to iatrogenic myocardial injury. Additionally, the administration of iodinated contrast media poses a significant risk for contrast-induced nephropathy (CIN), especially given the patient's pre-existing renal insufficiency (Creatinine 2.0 mg/dL, BUN 63 mg/dL), leading to a further rise in Creatinine and BUN. The timeline for biomarker rise is typically within 6-12 hours post-procedure, peaking at 24-48 hours. The timeline for renal injury is typically 24-72 hours post-contrast exposure.",
+        "confidence": "high",
+        "potassium_direction": "stable"
+      },
+      "confidence": {
+        "categorical": "high",
+        "score": 0.927,
+        "logprob_avg": -0.811,
+        "entropy": 0.512,
+        "n_tokens": 268
+      },
+      "metadata": {
+        "model": "qwen3.6:latest",
+        "finish_reason": "stop",
+        "usage": {
+          "prompt_tokens": 1972,
+          "completion_tokens": 268
+        }
+      },
+      "success": true
+    },
+    {
+      "case_id": "a_092",
+      "hadm_id": 23900285,
+      "prediction": {
+        "troponin_direction": "rising",
+        "troponin_magnitude_pct": 100,
+        "ck_direction": "falling",
+        "creatinine_direction": "rising",
+        "causal_justification": "The patient is undergoing a left heart cardiac catheterization for an NSTEMI. The pre-procedure labs show a rising Troponin T (0.09 to 0.8 ng/mL) and a CK-MB that has peaked and is now falling (64 to 13 ng/mL). The catheterization involves the administration of iodinated contrast media, which poses a risk for contrast-induced nephropathy (CIN), leading to a rise in Creatinine. The Troponin is expected to continue rising as it reflects the cumulative extent of myocardial necrosis, which is already established. The CK and CK-MB are expected to fall as the acute phase of myocardial injury is resolving and the enzymes are being cleared.",
+        "confidence": "high"
+      },
+      "confidence": {
+        "categorical": "high",
+        "score": 0.917,
+        "logprob_avg": -0.898,
+        "entropy": 0.584,
+        "n_tokens": 228
+      },
+      "metadata": {
+        "model": "qwen3.6:latest",
+        "finish_reason": "stop",
+        "usage": {
+          "prompt_tokens": 2957,
+          "completion_tokens": 228
+        }
+      },
+      "success": true
+    },
+    {
+      "case_id": "a_093",
+      "hadm_id": 20824165,
+      "prediction": {
+        "troponin_direction": "rising",
+        "troponin_magnitude_pct": 150,
+        "ck_direction": "rising",
+        "creatinine_direction": "stable",
+        "causal_justification": "The patient is undergoing PTCA for an NSTEMI. The procedure involves mechanical manipulation of the coronary artery, which can cause minor endothelial injury and micro-embolization of plaque material. This typically results in a transient 'troponin leak' or 'troponin bump' post-procedure due to myocyte necrosis from distal embolization or no-reflow phenomena, even if the procedure is technically successful. The pre-procedure troponin was already elevated (0.09-0.12 ng/mL), indicating ongoing myocardial injury. The mechanical stress of angioplasty will likely exacerbate this, leading to a rise in troponin levels by 150% within 24-48 hours. CK and CK-MB may also rise slightly but are less sensitive than troponin. Creatinine is expected to remain stable as the patient's baseline is normal (1.2 mg/dL) and there is no indication of severe contrast-induced nephropathy risk factors like pre-existing renal failure, though hydration status should be monitored.",
+        "confidence": "high",
+        "potassium_direction": "stable"
+      },
+      "confidence": {
+        "categorical": "high",
+        "score": 0.921,
+        "logprob_avg": -0.824,
+        "entropy": 0.579,
+        "n_tokens": 307
+      },
+      "metadata": {
+        "model": "qwen3.6:latest",
+        "finish_reason": "stop",
+        "usage": {
+          "prompt_tokens": 1391,
+          "completion_tokens": 307
+        }
+      },
+      "success": true
+    },
+    {
+      "case_id": "a_094",
+      "hadm_id": 22606489,
+      "prediction": {
+        "troponin_direction": "falling",
+        "troponin_magnitude_pct": -15,
+        "ck_direction": "falling",
+        "creatinine_direction": "falling",
+        "causal_justification": "The patient underwent percutaneous insertion of a short-term external heart assist system (e.g., Impella or similar) for STEMI. This intervention restores coronary perfusion and unloads the left ventricle, halting ongoing myocardial necrosis. Consequently, the release of cardiac biomarkers (Troponin, CK, CK-MB) into the circulation will decrease as the source of injury is resolved. The improvement in cardiac output will also enhance renal perfusion, leading to a decrease in Creatinine and BUN levels.",
+        "confidence": "high"
+      },
+      "confidence": {
+        "categorical": "high",
+        "score": 0.914,
+        "logprob_avg": -1.058,
+        "entropy": 0.55,
+        "n_tokens": 184
+      },
+      "metadata": {
+        "model": "qwen3.6:latest",
+        "finish_reason": "stop",
+        "usage": {
+          "prompt_tokens": 3875,
+          "completion_tokens": 184
+        }
+      },
+      "success": true
+    },
+    {
+      "case_id": "a_095",
+      "hadm_id": 25909616,
+      "prediction": {
+        "troponin_direction": "rising",
+        "troponin_magnitude_pct": 150,
+        "ck_direction": "rising",
+        "creatinine_direction": "stable",
+        "causal_justification": "The patient is undergoing a percutaneous coronary intervention (PCI) for an NSTEMI. The procedure involves mechanical manipulation of the coronary artery, which typically causes additional myocardial injury (periprocedural MI). This results in a predictable rise in Troponin T and CK-MB due to the release of intracellular enzymes from myocytes damaged by the balloon angioplasty/stenting. The pre-intervention labs show a stable but elevated Troponin T (0.33-0.5 ng/mL) and CK-MB (5-10 ng/mL), indicating ongoing myocardial necrosis. The intervention will likely exacerbate this, leading to a peak in biomarkers 12-24 hours post-procedure. Creatinine is expected to remain stable as the patient's baseline is 1.6-1.7 mg/dL, and while contrast-induced nephropathy is a risk, it typically manifests 24-48 hours later, not immediately post-intervention.",
+        "confidence": "high",
+        "potassium_direction": "stable"
+      },
+      "confidence": {
+        "categorical": "high",
+        "score": 0.915,
+        "logprob_avg": -0.938,
+        "entropy": 0.589,
+        "n_tokens": 291
+      },
+      "metadata": {
+        "model": "qwen3.6:latest",
+        "finish_reason": "stop",
+        "usage": {
+          "prompt_tokens": 3852,
+          "completion_tokens": 291
+        }
+      },
+      "success": true
+    },
+    {
+      "case_id": "a_096",
+      "hadm_id": 22575873,
+      "prediction": {
+        "troponin_direction": "rising",
+        "troponin_magnitude_pct": 150,
+        "ck_direction": "rising",
+        "creatinine_direction": "falling",
+        "causal_justification": "The patient is undergoing a combined right and left heart catheterization. The pre-intervention labs show a rising trend in Creatinine (4.5 -> 4.9 -> 5.2 mg/dL) and BUN (40 -> 53 -> 57 mg/dL), indicating significant pre-existing renal impairment (likely cardiorenal syndrome or acute kidney injury). The pre-procedure Troponin T is elevated at 0.24 ng/mL, suggesting baseline myocardial injury or strain from the acute diastolic heart failure. The procedure involves vascular access and potential manipulation of the coronary arteries. Post-intervention, we expect: 1. Troponin T to rise significantly (approx. 150% increase) due to iatrogenic myocardial injury from catheter manipulation, contrast-induced micro-emboli, or transient ischemia during the procedure. 2. CK and CK-MB to rise moderately (approx. 50-100% increase) as a result of skeletal muscle trauma from vascular access (femoral/radial) and potential myocardial injury. 3. Creatinine and BUN to fall (approx. 20-30% decrease) if the patient receives adequate hydration post-procedure and the contrast load does not exacerbate the AKI, or if the primary driver of renal failure (e.g., hypoperfusion) is addressed by the hemodynamic assessment and subsequent management. However, given the severity of pre-existing renal failure, the fall may be modest or delayed. 4. Potassium is expected to remain stable or rise slightly due to renal impairment and potential hemolysis from the procedure, but is less likely to drop significantly unless aggressive diuresis is initiated.",
+        "confidence": "high",
+        "potassium_direction": "stable"
+      },
+      "confidence": {
+        "categorical": "high",
+        "score": 0.928,
+        "logprob_avg": -0.638,
+        "entropy": 0.579,
+        "n_tokens": 447
+      },
+      "metadata": {
+        "model": "qwen3.6:latest",
+        "finish_reason": "stop",
+        "usage": {
+          "prompt_tokens": 3808,
+          "completion_tokens": 447
+        }
+      },
+      "success": true
+    },
+    {
+      "case_id": "a_097",
+      "hadm_id": 20794194,
+      "prediction": {
+        "troponin_direction": "rising",
+        "troponin_magnitude_pct": 150,
+        "ck_direction": "rising",
+        "creatinine_direction": "stable",
+        "causal_justification": "The patient is undergoing the insertion of a monitoring device into the pulmonary trunk (likely a pulmonary artery catheter or similar hemodynamic monitor). This procedure involves venous access and catheter manipulation within the right heart and pulmonary artery. While generally low-risk, it carries a risk of minor myocardial or vascular endothelial injury due to catheter passage, leading to a small, transient release of cardiac biomarkers. The baseline state of acute on chronic systolic heart failure suggests a vulnerable myocardium, potentially amplifying the biomarker response to mechanical stress. The magnitude is expected to be modest (150% increase) as the procedure is not a primary myocardial infarction but rather a mechanical intervention. Troponin is more specific and sensitive than CK/CK-MB for cardiac injury, hence the larger relative rise. Creatinine is expected to remain stable as the procedure does not directly impact renal perfusion significantly, and the patient's baseline renal function is only mildly impaired (Cr 1.3-1.4 mg/dL).",
+        "confidence": "high",
+        "potassium_direction": "stable"
+      },
+      "confidence": {
+        "categorical": "high",
+        "score": 0.917,
+        "logprob_avg": -0.812,
+        "entropy": 0.638,
+        "n_tokens": 292
+      },
+      "metadata": {
+        "model": "qwen3.6:latest",
+        "finish_reason": "stop",
+        "usage": {
+          "prompt_tokens": 3835,
+          "completion_tokens": 292
+        }
+      },
+      "success": true
+    },
+    {
+      "case_id": "a_098",
+      "hadm_id": 20390579,
+      "prediction": {
+        "troponin_direction": "rising",
+        "troponin_magnitude_pct": 150,
+        "ck_direction": "falling",
+        "creatinine_direction": "stable",
+        "causal_justification": "The patient is undergoing a left heart catheterization for an NSTEMI. The pre-intervention labs show a rising Troponin T (0.29 to 0.35 ng/mL) and falling CK/CK-MB, indicating the peak of myocardial necrosis has likely passed or is plateauing. The catheterization itself involves mechanical manipulation of the coronary arteries and potential stent deployment, which can cause minor additional myocardial injury (peri-procedural MI), leading to a further rise in Troponin. However, since the primary ischemic event is being treated, the overall trend of CK and CK-MB (which have already peaked and are falling) is expected to continue downward. Creatinine is expected to remain stable as the patient's baseline is normal (0.9 mg/dL) and contrast-induced nephropathy is a risk but not a certainty in the immediate post-procedure period.",
+        "confidence": "high"
+      },
+      "confidence": {
+        "categorical": "high",
+        "score": 0.919,
+        "logprob_avg": -0.836,
+        "entropy": 0.595,
+        "n_tokens": 263
+      },
+      "metadata": {
+        "model": "qwen3.6:latest",
+        "finish_reason": "stop",
+        "usage": {
+          "prompt_tokens": 1514,
+          "completion_tokens": 263
+        }
+      },
+      "success": true
+    },
+    {
+      "case_id": "a_099",
+      "hadm_id": 26404074,
+      "prediction": {
+        "troponin_direction": "falling",
+        "troponin_magnitude_pct": -20,
+        "ck_direction": "falling",
+        "creatinine_direction": "stable",
+        "causal_justification": "The patient presents with acute on chronic systolic heart failure and evidence of a prior myocardial injury (elevated Troponin T and CK-MB) that is already in a resolving phase (Troponin T decreasing from 4.3 to 3.03 ng/mL over 24 hours). The procedure performed is a diagnostic Right Heart Catheterization (RHC). RHC is a low-risk diagnostic procedure that does not involve coronary intervention (PCI) or ablation. Therefore, it does not cause new myocardial necrosis. The observed biomarker trends reflect the natural resolution of the initial ischemic event rather than procedural injury. Consequently, Troponin T and CK-MB are expected to continue their downward trajectory as the body clears the necrotic debris. Creatinine is expected to remain stable as RHC involves minimal contrast load compared to coronary angiography, and the patient's baseline renal function (Cr 1.4-1.5 mg/dL) is stable.",
+        "confidence": "high",
+        "potassium_direction": "stable"
+      },
+      "confidence": {
+        "categorical": "high",
+        "score": 0.921,
+        "logprob_avg": -0.881,
+        "entropy": 0.541,
+        "n_tokens": 290
+      },
+      "metadata": {
+        "model": "qwen3.6:latest",
+        "finish_reason": "stop",
+        "usage": {
+          "prompt_tokens": 3833,
+          "completion_tokens": 290
+        }
+      },
+      "success": true
+    },
+    {
+      "case_id": "a_100",
+      "hadm_id": 25083056,
+      "prediction": {
+        "troponin_direction": "rising",
+        "troponin_magnitude_pct": 150,
+        "ck_direction": "rising",
+        "creatinine_direction": "falling",
+        "causal_justification": "The patient is undergoing a percutaneous coronary intervention (PCI) with a drug-eluting stent. PCI involves mechanical manipulation of the coronary artery, which inevitably causes minor myocardial injury (periprocedural myocardial infarction). This mechanical trauma leads to the release of intracellular contents, causing a rise in Troponin T, CK, and CK-MB. The magnitude of the Troponin rise (150%) is consistent with a minor periprocedural MI rather than a large spontaneous event. The pre-procedure trend of rising Creatinine (1.6 to 1.8 mg/dL) suggests pre-existing or contrast-induced nephropathy risk; however, successful revascularization improves renal perfusion, and hydration protocols typically lead to a subsequent fall in Creatinine and BUN post-procedure.",
+        "confidence": "high",
+        "potassium_direction": "stable"
+      },
+      "confidence": {
+        "categorical": "high",
+        "score": 0.925,
+        "logprob_avg": -0.806,
+        "entropy": 0.54,
+        "n_tokens": 253
+      },
+      "metadata": {
+        "model": "qwen3.6:latest",
+        "finish_reason": "stop",
+        "usage": {
+          "prompt_tokens": 2474,
+          "completion_tokens": 253
+        }
+      },
+      "success": true
+    }
+  ]
+}

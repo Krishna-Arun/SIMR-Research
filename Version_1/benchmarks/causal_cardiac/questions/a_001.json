@@ -1,0 +1,27 @@
+{
+  "case_id": "a_001",
+  "benchmark": "intervention_physiological_effect",
+  "hadm_id": 23510626,
+  "procedure": {
+    "title": "Fluoroscopy of Multiple Coronary Arteries using Other Contrast",
+    "date": "2163-01-16 00:00"
+  },
+  "question": {
+    "stem": "Patient hadm_id: 23510626\n\nDemographics: None-year-old Unknown\nPrimary Diagnosis: Myocardial infarction type 2\n\nPre-Procedure Lab Timeline (all available labs before 2163-01-16 00:00):\n\n| Datetime | Lab | Value | Unit | Flag |\n|---|---|---|---|---|\n| 2163-01-14 20:38 | H | 17.0 | nan | nan |\n| 2163-01-14 20:38 | L | 13.0 | nan | nan |\n| 2163-01-14 20:38 | I | 1.0 | nan | nan |\n| 2163-01-14 20:38 | H | 20.0 | nan | nan |\n| 2163-01-14 20:38 | Creatine Kinase, MB Isoenzyme | 6.0 | ng/mL | nan |\n| 2163-01-14 20:38 | Red Top Hold | nan | nan | nan |\n| 2163-01-14 20:38 | L | 6.0 | nan | nan |\n| 2163-01-14 20:38 | Troponin T | 0.07 | ng/mL | abnormal |\n| 2163-01-14 20:38 | I | 1.0 | nan | nan |\n| 2163-01-14 20:38 | Creatine Kinase (CK) | 332.0 | IU/L | abnormal |\n| 2163-01-14 20:47 | Potassium, Whole Blood | 3.8 | mEq/L | nan |\n| 2163-01-15 02:58 | H | 3.0 | nan | nan |\n| 2163-01-15 02:58 | I | 1.0 | nan | nan |\n| 2163-01-15 02:58 | Troponin T | 0.07 | ng/mL | abnormal |\n| 2163-01-15 02:58 | L | 4.0 | nan | nan |\n| 2163-01-15 21:39 | L | 8.0 | nan | nan |\n| 2163-01-15 21:39 | I | 1.0 | nan | nan |\n| 2163-01-15 21:39 | Troponin T | 0.08 | ng/mL | abnormal |\n| 2163-01-15 21:39 | Creatine Kinase, MB Isoenzyme | 5.0 | ng/mL | nan |\n| 2163-01-15 21:39 | H | 4.0 | nan | nan |\n\nProcedure Performed: Fluoroscopy of Multiple Coronary Arteries using Other Contrast on 2163-01-16 00:00\n\nAnalyze the pre-intervention lab trajectory and clinical context. Given the patient's state and the intervention performed, describe what physiological changes you would expect to see in the post-intervention period. Specifically discuss expected direction and magnitude of change for key cardiac biomarkers (Troponin, CK, CK-MB).",
+    "type": "intervention_forward_prediction"
+  },
+  "visible_context": {
+    "pre_intervention_labs": 20,
+    "demographics": {
+      "age": null,
+      "gender": "Unknown"
+    },
+    "primary_diagnosis": "Myocardial infarction type 2"
+  },
+  "ground_truth": {
+    "post_intervention_labs": "| Datetime | Lab | Value | Unit | Flag |\n|---|---|---|---|---|\n| 2163-01-16 05:45 | Creatine Kinase, MB Isoenzyme | 4.0 | ng/mL | nan |\n| 2163-01-16 05:45 | Lactate Dehydrogenase (LD) | 259.0 | IU/L | abnormal |\n| 2163-01-16 05:45 | Troponin T | 0.05 | ng/mL | abnormal |\n| 2163-01-17 07:07 | NTproBNP | 1474.0 | pg/mL | abnormal |",
+    "n_post_labs": 4,
+    "expected_troponin_direction": "falling",
+    "expected_troponin_magnitude_pct": -37.5
+  }
+}

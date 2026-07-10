@@ -1,0 +1,27 @@
+{
+  "case_id": "a_024",
+  "benchmark": "intervention_physiological_effect",
+  "hadm_id": 28666086,
+  "procedure": {
+    "title": "Percutaneous transluminal coronary angioplasty [PTCA]",
+    "date": "2144-12-22 00:00"
+  },
+  "question": {
+    "stem": "Patient hadm_id: 28666086\n\nDemographics: None-year-old Unknown\nPrimary Diagnosis: Atherosclerotic heart disease of native coronary artery without angina pectoris\n\nPre-Procedure Lab Timeline (all available labs before 2144-12-22 00:00):\n\n| Datetime | Lab | Value | Unit | Flag |\n|---|---|---|---|---|\n| 2144-12-20 19:20 | Chloride, Urine | 113.0 | mEq/L | nan |\n| 2144-12-20 19:20 | Length of Urine Collection | nan | nan | nan |\n| 2144-12-20 19:20 | Uhold | nan | nan | nan |\n| 2144-12-20 19:20 | Length of Urine Collection | nan | nan | nan |\n| 2144-12-20 19:20 | Uric Acid, Urine | 13.9 | mg/dL | nan |\n| 2144-12-20 19:20 | Urine tube, held | nan | nan | nan |\n| 2144-12-20 19:20 | Sodium, Urine | 113.0 | mEq/L | nan |\n| 2144-12-20 19:20 | Potassium, Urine | 18.0 | mEq/L | nan |\n| 2144-12-20 19:20 | Length of Urine Collection | nan | nan | nan |\n| 2144-12-20 19:20 | Creatinine, Urine | 53.0 | mg/dL | nan |\n| 2144-12-20 19:20 | Urea Nitrogen, Urine | 412.0 | mg/dL | nan |\n| 2144-12-21 06:45 | Urea Nitrogen | 43.0 | mg/dL | abnormal |\n| 2144-12-21 06:45 | tacroFK | 11.2 | ng/mL | nan |\n| 2144-12-21 06:45 | White Blood Cells | 6.8 | K/uL | nan |\n| 2144-12-21 06:45 | Red Blood Cells | 3.72 | m/uL | abnormal |\n| 2144-12-21 06:45 | RDW | 15.1 | % | nan |\n| 2144-12-21 06:45 | Platelet Count | 150.0 | K/uL | nan |\n| 2144-12-21 06:45 | MCV | 100.0 | fL | abnormal |\n| 2144-12-21 06:45 | MCHC | 31.5 | % | nan |\n| 2144-12-21 06:45 | MCH | 31.4 | pg | nan |\n| 2144-12-21 06:45 | Hematocrit | 37.0 | % | abnormal |\n| 2144-12-21 06:45 | Troponin T | 0.32 | ng/mL | abnormal |\n| 2144-12-21 06:45 | Hemoglobin | 11.7 | g/dL | abnormal |\n| 2144-12-21 06:45 | Potassium | 4.4 | mEq/L | nan |\n| 2144-12-21 06:45 | Phosphate | 4.6 | mg/dL | abnormal |\n| 2144-12-21 06:45 | Magnesium | 2.0 | mg/dL | nan |\n| 2144-12-21 06:45 | Glucose | 129.0 | mg/dL | abnormal |\n| 2144-12-21 06:45 | Creatinine | 2.6 | mg/dL | abnormal |\n| 2144-12-21 06:45 | Creatine Kinase, MB Isoenzyme | 4.0 | ng/mL | nan |\n| 2144-12-21 06:45 | Creatine Kinase (CK) | 48.0 | IU/L | nan |\n| 2144-12-21 06:45 | Chloride | 112.0 | mEq/L | abnormal |\n| 2144-12-21 06:45 | Calcium, Total | 8.6 | mg/dL | nan |\n| 2144-12-21 06:45 | Bicarbonate | 21.0 | mEq/L | abnormal |\n| 2144-12-21 06:45 | Anion Gap | 13.0 | mEq/L | nan |\n| 2144-12-21 06:45 | Sodium | 142.0 | mEq/L | nan |\n| 2144-12-21 12:45 | Urea Nitrogen | 43.0 | mg/dL | abnormal |\n| 2144-12-21 12:45 | Troponin T | 0.32 | ng/mL | abnormal |\n| 2144-12-21 12:45 | Sodium | 141.0 | mEq/L | nan |\n| 2144-12-21 12:45 | Potassium | 4.6 | mEq/L | nan |\n| 2144-12-21 12:45 | Creatinine | 2.6 | mg/dL | abnormal |\n| 2144-12-21 12:45 | Chloride | 109.0 | mEq/L | abnormal |\n| 2144-12-21 12:45 | Bicarbonate | 23.0 | mEq/L | nan |\n| 2144-12-21 12:45 | Anion Gap | 14.0 | mEq/L | nan |\n| 2144-12-21 12:45 | Glucose | 195.0 | mg/dL | abnormal |\n\nProcedure Performed: Percutaneous transluminal coronary angioplasty [PTCA] on 2144-12-22 00:00\n\nAnalyze the pre-intervention lab trajectory and clinical context. Given the patient's state and the intervention performed, describe what physiological changes you would expect to see in the post-intervention period. Specifically discuss expected direction and magnitude of change for key cardiac biomarkers (Troponin, CK, CK-MB).",
+    "type": "intervention_forward_prediction"
+  },
+  "visible_context": {
+    "pre_intervention_labs": 44,
+    "demographics": {
+      "age": null,
+      "gender": "Unknown"
+    },
+    "primary_diagnosis": "Atherosclerotic heart disease of native coronary artery without angina pectoris"
+  },
+  "ground_truth": {
+    "post_intervention_labs": "| Datetime | Lab | Value | Unit | Flag |\n|---|---|---|---|---|\n| 2144-12-22 20:40 | Troponin T | 0.46 | ng/mL | abnormal |\n| 2144-12-23 07:54 | Troponin T | 0.55 | ng/mL | abnormal |",
+    "n_post_labs": 2,
+    "expected_troponin_direction": "rising",
+    "expected_troponin_magnitude_pct": 43.75000000000001
+  }
+}

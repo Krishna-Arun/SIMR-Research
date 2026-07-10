@@ -1,0 +1,28 @@
+[1] starting PubMed MCP server ...
+    tools: ['search_articles', 'advanced_search', 'search_by_author', 'search_by_journal', 'search_by_mesh_terms', 'get_trending_articles'] ...
+[2] connecting model backends ...
+  optimizer endpoint healthy: http://localhost:11434/v1 (qwen2.5:7b)
+  evaluator endpoint healthy: http://localhost:11434/v1 (qwen2.5:7b)
+[3] building cohort store + agents ...
+[4] generating up to 1 questions (resume from 0) ...
+  skip 22143907: context error [Errno 2] No such file or directory: '/Users/krishna_arun/Documents/Summer_Work/SIMR/SIMR-Research/Version_2/Benchmark_A/Question_Generation/hosp/patients.csv'
+  skip 28025785: context error [Errno 2] No such file or directory: '/Users/krishna_arun/Documents/Summer_Work/SIMR/SIMR-Research/Version_2/Benchmark_A/Question_Generation/hosp/patients.csv'
+  skip 23968264: context error [Errno 2] No such file or directory: '/Users/krishna_arun/Documents/Summer_Work/SIMR/SIMR-Research/Version_2/Benchmark_A/Question_Generation/hosp/patients.csv'
+  skip 22030571: context error [Errno 2] No such file or directory: '/Users/krishna_arun/Documents/Summer_Work/SIMR/SIMR-Research/Version_2/Benchmark_A/Question_Generation/hosp/patients.csv'
+  skip 26526989: context error [Errno 2] No such file or directory: '/Users/krishna_arun/Documents/Summer_Work/SIMR/SIMR-Research/Version_2/Benchmark_A/Question_Generation/hosp/patients.csv'
+  skip 28482018: context error [Errno 2] No such file or directory: '/Users/krishna_arun/Documents/Summer_Work/SIMR/SIMR-Research/Version_2/Benchmark_A/Question_Generation/hosp/patients.csv'
+  skip 22023800: context error [Errno 2] No such file or directory: '/Users/krishna_arun/Documents/Summer_Work/SIMR/SIMR-Research/Version_2/Benchmark_A/Question_Generation/hosp/patients.csv'
+  skip 23151360: context error [Errno 2] No such file or directory: '/Users/krishna_arun/Documents/Summer_Work/SIMR/SIMR-Research/Version_2/Benchmark_A/Question_Generation/hosp/patients.csv'
+  skip 22615934: context error [Errno 2] No such file or directory: '/Users/krishna_arun/Documents/Summer_Work/SIMR/SIMR-Research/Version_2/Benchmark_A/Question_Generation/hosp/patients.csv'
+  skip 29034839: context error [Errno 2] No such file or directory: '/Users/krishna_arun/Documents/Summer_Work/SIMR/SIMR-Research/Version_2/Benchmark_A/Question_Generation/hosp/patients.csv'
+  skip 24707802: context error [Errno 2] No such file or directory: '/Users/krishna_arun/Documents/Summer_Work/SIMR/SIMR-Research/Version_2/Benchmark_A/Question_Generation/hosp/patients.csv'
+  skip 29765581: context error [Errno 2] No such file or directory: '/Users/krishna_arun/Documents/Summer_Work/SIMR/SIMR-Research/Version_2/Benchmark_A/Question_Generation/hosp/patients.csv'
+  skip 23291089: context error [Errno 2] No such file or directory: '/Users/krishna_arun/Documents/Summer_Work/SIMR/SIMR-Research/Version_2/Benchmark_A/Question_Generation/hosp/patients.csv'
+  skip 27407088: context error [Errno 2] No such file or directory: '/Users/krishna_arun/Documents/Summer_Work/SIMR/SIMR-Research/Version_2/Benchmark_A/Question_Generation/hosp/patients.csv'
+  skip 21274138: context error [Errno 2] No such file or directory: '/Users/krishna_arun/Documents/Summer_Work/SIMR/SIMR-Research/Version_2/Benchmark_A/Question_Generation/hosp/patients.csv'
+  skip 21513747: context error [Errno 2] No such file or directory: '/Users/krishna_arun/Documents/Summer_Work/SIMR/SIMR-Research/Version_2/Benchmark_A/Question_Generation/hosp/patients.csv'
+  skip 23444650: context error [Errno 2] No such file or directory: '/Users/krishna_arun/Documents/Summer_Work/SIMR/SIMR-Research/Version_2/Benchmark_A/Question_Generation/hosp/patients.csv'
+  skip 24303903: context error [Errno 2] No such file or directory: '/Users/krishna_arun/Documents/Summer_Work/SIMR/SIMR-Research/Version_2/Benchmark_A/Question_Generation/hosp/patients.csv'
+  skip 25855881: context error [Errno 2] No such file or directory: '/Users/krishna_arun/Documents/Summer_Work/SIMR/SIMR-Research/Version_2/Benchmark_A/Question_Generation/hosp/patients.csv'
+  skip 29063130: context error [Errno 2] No such file or directory: '/Users/krishna_arun/Documents/Summer_Work/SIMR/SIMR-Research/Version_2/Benchmark_A/Question_Generation/hosp/patients.csv'
+DONE: 0 questions  {'diagnosis': 0, 'intervention': 0}

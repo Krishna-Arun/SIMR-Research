@@ -1,0 +1,88 @@
+# ─────────────────────────────────────────────────────────────
+# SIMR-Research .gitignore
+# Keep source/code in the repo; keep datasets, model weights,
+# virtualenvs, and generated artifacts OUT.
+# ─────────────────────────────────────────────────────────────
+
+# ── OS / editor cruft ──
+.DS_Store
+**/.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+
+# ── Secrets / credentials (NEVER commit) ──
+.env
+*.env
+**/.env
+*.key
+*.pem
+credentials.json
+
+# ── Datasets (credentialed PhysioNet / MIMIC / EHRSHOT / vocab) ──
+datasets/
+2physionet.org/
+physionet.org/
+mimic-iv-*/
+vocabulary_download_v5_*
+EHRSHOT Hackathon Project/
+**/EHRSHOT Hackathon Project/
+
+# ── Python ──
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+.ipynb_checkpoints/
+
+# ── Virtual environments ──
+.venv/
+.venv_*/
+venv/
+env/
+**/.venv/
+**/.venv_*/
+
+# ── Node ──
+node_modules/
+**/node_modules/
+dist/
+build/
+
+# ── Caches / scratch ──
+cache/
+**/cache/
+.cache/
+scratch_local/
+.huggingface/
+.torch/
+.pip/
+
+# ── Model weights & regenerable artifacts ──
+Version_3/loaded_models/
+Version_3/vjepa2/
+**/loaded_models/
+**/checkpoints/
+**/embeddings/
+**/outputs/
+**/supplementals/
+
+# ── Large data / binary artifact file types ──
+*.safetensors
+*.pt
+*.pth
+*.ckpt
+*.pkl
+*.npy
+*.npz
+*.parquet
+*.faiss
+*.msgpack
+*.csv
+*.zip
+*.tar
+*.tar.gz
+*.tgz
+*.gz
+*.dylib
+*.so

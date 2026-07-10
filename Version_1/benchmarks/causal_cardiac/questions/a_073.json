@@ -1,0 +1,27 @@
+{
+  "case_id": "a_073",
+  "benchmark": "intervention_physiological_effect",
+  "hadm_id": 23045328,
+  "procedure": {
+    "title": "Percutaneous transluminal coronary angioplasty [PTCA]",
+    "date": "2121-03-15 00:00"
+  },
+  "question": {
+    "stem": "Patient hadm_id: 23045328\n\nDemographics: None-year-old Male\nPrimary Diagnosis: Non-ST elevation (NSTEMI) myocardial infarction\n\nPre-Procedure Lab Timeline (all available labs before 2121-03-15 00:00):\n\n| Datetime | Lab | Value | Unit | Flag |\n|---|---|---|---|---|\n| 2121-03-14 04:36 | INR(PT) | 1.2 | nan | abnormal |\n| 2121-03-14 04:36 | Troponin T | 0.25 | ng/mL | abnormal |\n| 2121-03-14 04:36 | Triglycerides | 51.0 | mg/dL | nan |\n| 2121-03-14 04:36 | Sodium | 125.0 | mEq/L | abnormal |\n| 2121-03-14 04:36 | Potassium | 3.5 | mEq/L | nan |\n| 2121-03-14 04:36 | Phosphate | 2.9 | mg/dL | nan |\n| 2121-03-14 04:36 | Magnesium | 1.9 | mg/dL | nan |\n| 2121-03-14 04:36 | Glucose | 124.0 | mg/dL | abnormal |\n| 2121-03-14 04:36 | Creatinine | 0.9 | mg/dL | nan |\n| 2121-03-14 04:36 | Creatine Kinase, MB Isoenzyme | 11.0 | ng/mL | abnormal |\n| 2121-03-14 04:36 | Creatine Kinase (CK) | 559.0 | IU/L | abnormal |\n| 2121-03-14 04:36 | CK-MB Index | 2.0 | % | nan |\n| 2121-03-14 04:36 | Cholesterol, Total | 98.0 | mg/dL | nan |\n| 2121-03-14 04:36 | Cholesterol, LDL, Calculated | 41.0 | mg/dL | nan |\n| 2121-03-14 04:36 | Cholesterol, HDL | 47.0 | mg/dL | nan |\n| 2121-03-14 04:36 | Cholesterol Ratio (Total/HDL) | 2.1 | Ratio | nan |\n| 2121-03-14 04:36 | Urea Nitrogen | 8.0 | mg/dL | nan |\n| 2121-03-14 04:36 | Calcium, Total | 8.9 | mg/dL | nan |\n| 2121-03-14 04:36 | Chloride | 90.0 | mEq/L | abnormal |\n| 2121-03-14 04:36 | PT | 14.4 | sec | abnormal |\n| 2121-03-14 04:36 | Hematocrit | 36.2 | % | abnormal |\n| 2121-03-14 04:36 | Hemoglobin | 12.8 | g/dL | abnormal |\n| 2121-03-14 04:36 | MCH | 33.5 | pg | abnormal |\n| 2121-03-14 04:36 | MCHC | 35.3 | % | abnormal |\n| 2121-03-14 04:36 | PTT | 39.7 | sec | abnormal |\n| 2121-03-14 04:36 | Platelet Count | 230.0 | K/uL | nan |\n| 2121-03-14 04:36 | RDW | 13.5 | % | nan |\n| 2121-03-14 04:36 | Red Blood Cells | 3.81 | m/uL | abnormal |\n| 2121-03-14 04:36 | White Blood Cells | 9.1 | K/uL | nan |\n| 2121-03-14 04:36 | Bicarbonate | 26.0 | mEq/L | nan |\n| 2121-03-14 04:36 | Anion Gap | 13.0 | mEq/L | nan |\n| 2121-03-14 04:36 | MCV | 95.0 | fL | nan |\n| 2121-03-14 06:10 | Urea Nitrogen, Urine | 424.0 | mg/dL | nan |\n| 2121-03-14 06:10 | Sodium, Urine | nan | mEq/L | nan |\n| 2121-03-14 06:10 | Length of Urine Collection | nan | nan | nan |\n| 2121-03-14 06:10 | Creatinine, Urine | 142.0 | mg/dL | nan |\n| 2121-03-14 06:10 | Osmolality, Urine | 293.0 | mOsm/kg | nan |\n| 2121-03-14 11:20 | PTT | 37.4 | sec | abnormal |\n| 2121-03-14 11:57 | Troponin T | 0.22 | ng/mL | abnormal |\n| 2121-03-14 11:57 | Sodium | 127.0 | mEq/L | abnormal |\n| 2121-03-14 11:57 | Lactate Dehydrogenase (LD) | 190.0 | IU/L | nan |\n| 2121-03-14 11:57 | Creatine Kinase, MB Isoenzyme | 8.0 | ng/mL | nan |\n| 2121-03-14 11:57 | Creatine Kinase (CK) | 459.0 | IU/L | abnormal |\n| 2121-03-14 11:57 | Alkaline Phosphatase | 61.0 | IU/L | nan |\n| 2121-03-14 11:57 | Asparate Aminotransferase (AST) | 48.0 | IU/L | abnormal |\n| 2121-03-14 11:57 | Albumin | 4.0 | g/dL | nan |\n| 2121-03-14 11:57 | Alanine Aminotransferase (ALT) | 26.0 | IU/L | nan |\n| 2121-03-14 11:57 | Bilirubin, Total | 1.1 | mg/dL | nan |\n\nProcedure Performed: Percutaneous transluminal coronary angioplasty [PTCA] on 2121-03-15 00:00\n\nAnalyze the pre-intervention lab trajectory and clinical context. Given the patient's state and the intervention performed, describe what physiological changes you would expect to see in the post-intervention period. Specifically discuss expected direction and magnitude of change for key cardiac biomarkers (Troponin, CK, CK-MB).",
+    "type": "intervention_forward_prediction"
+  },
+  "visible_context": {
+    "pre_intervention_labs": 48,
+    "demographics": {
+      "age": null,
+      "gender": "Male"
+    },
+    "primary_diagnosis": "Non-ST elevation (NSTEMI) myocardial infarction"
+  },
+  "ground_truth": {
+    "post_intervention_labs": "| Datetime | Lab | Value | Unit | Flag |\n|---|---|---|---|---|\n| 2121-03-15 05:50 | Troponin T | 0.28 | ng/mL | abnormal |\n| 2121-03-15 05:50 | Lactate Dehydrogenase (LD) | 183.0 | IU/L | nan |\n| 2121-03-15 05:50 | Creatine Kinase, MB Isoenzyme | 4.0 | ng/mL | nan |\n| 2121-03-15 05:50 | Creatine Kinase (CK) | 210.0 | IU/L | abnormal |\n| 2121-03-16 05:53 | CK-MB Index | 6.1 | % | abnormal |\n| 2121-03-16 05:53 | Creatine Kinase (CK) | 474.0 | IU/L | abnormal |\n| 2121-03-16 05:53 | Creatine Kinase, MB Isoenzyme | 29.0 | ng/mL | abnormal |\n| 2121-03-16 10:40 | CK-MB Index | 6.6 | % | abnormal |\n| 2121-03-16 10:40 | Creatine Kinase (CK) | 653.0 | IU/L | abnormal |\n| 2121-03-16 10:40 | Creatine Kinase, MB Isoenzyme | 43.0 | ng/mL | abnormal |\n| 2121-03-16 10:40 | Troponin T | 0.46 | ng/mL | abnormal |",
+    "n_post_labs": 11,
+    "expected_troponin_direction": "rising",
+    "expected_troponin_magnitude_pct": 27.27272727272728
+  }
+}

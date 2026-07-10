@@ -1,0 +1,66 @@
+cohort:
+  caliper: 0.2
+  chunksize: 2000000
+  core_labs:
+  - Creatinine
+  - Urea Nitrogen
+  - Potassium
+  - Sodium
+  - Bicarbonate
+  - Hemoglobin
+  - White Blood Cells
+  - Platelet Count
+  - Lactate
+  diagnosis_filter: cardiovascular_primary
+  max_control_reuse: 2
+  max_smd: 0.15
+  min_post: 2
+  min_pre: 2
+  min_procedure_count: 150
+  pool_size: 4000
+  post_window_h: 72
+  procedure_categories:
+  - Dialysis
+  - 1-Intubation/Extubation
+  - 2-Ventilation
+  procedure_source: icu_procedureevents
+  reuse_from: /Users/krishna_arun/Documents/Summer_Work/SIMR/SIMR-Research/Version_2/Benchmark_B/Question_Generation/outputs
+  top_k_procedures: 12
+data:
+  demo_root: /Users/krishna_arun/Documents/Summer_Work/SIMR/SIMR-Research/mimic-iv-clinical-database-demo-2.2
+  full_root: /Users/krishna_arun/Documents/Summer_Work/SIMR/SIMR-Research/physionet.org/files/mimiciv/3.1
+  out_dir: /Users/krishna_arun/Documents/Summer_Work/SIMR/SIMR-Research/Version_2/Benchmark_C/Question_Generation/outputs
+  source: full
+generation:
+  agent_wall_clock_s: 300
+  concurrency: 2
+  diagnosis_frac: 0.5
+  max_iterations: 2
+  max_tool_calls_per_agent: 2
+  target_n: 500
+models:
+  evaluator:
+    backend: ollama
+    endpoint: http://localhost:11434/v1
+    max_tokens: 768
+    model_id: phi4
+    temperature: 0.0
+    tool_calling: react
+  optimizer:
+    backend: ollama
+    endpoint: http://localhost:11434/v1
+    max_tokens: 768
+    model_id: qwen2.5:7b
+    temperature: 0.2
+    tool_calling: react
+pipeline_version: qgenC-0.1.0
+project: Benchmark_C_QuestionGen
+pubmed_mcp:
+  call_timeout_s: 30
+  entry: build/index.js
+  max_consecutive_failures: 3
+  node_bin: /opt/homebrew/bin/node
+  server_dir: /Users/krishna_arun/Documents/Summer_Work/SIMR/SIMR-Research/Version_2/PubMed-MCP-Server
+seed: 20260627
+time_zero:
+  policy: procedure
