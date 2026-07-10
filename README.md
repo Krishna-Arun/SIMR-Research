@@ -13,9 +13,14 @@ world-modeling on MIMIC-IV, developed on the Stanford Sherlock HPC cluster.
 
 | Path | Contents |
 |------|----------|
+| `baseline/` | Original SIMR-Research project: `benchmarks/`, `kidney-mcp-server/`, `species-benchmark/`, clinical guidelines, and `mimic_explore.ipynb`. |
 | `Version_1/` | Early causal-intervention benchmarks and world-model prototypes: `causal_benchmark_v2/`, `causal_benchmark_v3/`, `CARDIAC_COUNTERFACTUAL/`, `Counterfactual_Algorithm/`, `MIMIC_WORLD_MODEL/`. |
 | `Version_2/` | Current SIMR framework: `Benchmark_A/`, `Benchmark_B/`, `Benchmark_C/` (question generation), `counterfactual_simulation/` (CLMBR world model + LLM coupling), `Eval/` (multi-model evaluation), `scripts/`, `docs/`. |
-| `Version_3/` | Next-iteration smoke tests and readiness checks. |
+| `Version_3/` | Next iteration: `Benchmark_A/B/C/`, `jobs/` (Slurm), smoke tests and readiness checks. |
+
+> **Note:** The project was previously cloned recursively inside `Version_1/` and
+> `Version_3/` (a `SIMR-Research/` checkout that itself contained `Version_2/` and
+> `Version_3/`). That nesting has been flattened — each component now appears once.
 
 ## Excluded from git (must be provided locally)
 

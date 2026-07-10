@@ -1,0 +1,228 @@
+{
+  "case_id": 1,
+  "patient_id": "115967110",
+  "difficulty": "easy",
+  "n_context_troponins": 3,
+  "demographics": {
+    "age": 60,
+    "gender": "Male"
+  },
+  "clinical_context": {
+    "diagnoses": [
+      "Essential (primary) hypertension",
+      "I21.4",
+      "Coronary artery disease, native coronary artery",
+      "I71.2",
+      "R07.9",
+      "R79.89",
+      "E78.5",
+      "I25.82"
+    ],
+    "medications": []
+  },
+  "lab_timeline": [
+    {
+      "datetime": "2019-03-08T05:00",
+      "date": "2019-03-08",
+      "label": "Troponin I",
+      "value": 0.048,
+      "unit": "ng/mL",
+      "flag": "abnormal",
+      "ref_lower": "0",
+      "ref_upper": "0.04"
+    },
+    {
+      "datetime": "2019-07-28T13:32",
+      "date": "2019-07-28",
+      "label": "Troponin I",
+      "value": 1.313,
+      "unit": "ng/mL",
+      "flag": "abnormal",
+      "ref_lower": "0",
+      "ref_upper": "0.04"
+    },
+    {
+      "datetime": "2019-07-28T16:32",
+      "date": "2019-07-28",
+      "label": "ALT",
+      "value": 16.0,
+      "unit": "U/L",
+      "flag": null,
+      "ref_lower": "7",
+      "ref_upper": "56"
+    },
+    {
+      "datetime": "2019-07-28T16:32",
+      "date": "2019-07-28",
+      "label": "Albumin",
+      "value": 4.6,
+      "unit": "g/dL",
+      "flag": null,
+      "ref_lower": "3.5",
+      "ref_upper": "5.0"
+    },
+    {
+      "datetime": "2019-07-28T16:32",
+      "date": "2019-07-28",
+      "label": "Anion Gap",
+      "value": 11.0,
+      "unit": "mmol/L",
+      "flag": null,
+      "ref_lower": "8",
+      "ref_upper": "16"
+    },
+    {
+      "datetime": "2019-07-28T16:32",
+      "date": "2019-07-28",
+      "label": "BUN",
+      "value": 24.0,
+      "unit": "mg/dL",
+      "flag": null,
+      "ref_lower": "7.0",
+      "ref_upper": "25.0"
+    },
+    {
+      "datetime": "2019-07-28T16:32",
+      "date": "2019-07-28",
+      "label": "Calcium",
+      "value": 10.1,
+      "unit": "mg/dL",
+      "flag": null,
+      "ref_lower": "8.5",
+      "ref_upper": "10.5"
+    },
+    {
+      "datetime": "2019-07-28T16:32",
+      "date": "2019-07-28",
+      "label": "Chloride",
+      "value": 104.0,
+      "unit": "mmol/L",
+      "flag": null,
+      "ref_lower": "98",
+      "ref_upper": "107"
+    },
+    {
+      "datetime": "2019-07-28T16:32",
+      "date": "2019-07-28",
+      "label": "Creatinine",
+      "value": 1.02,
+      "unit": "mg/dL",
+      "flag": null,
+      "ref_lower": "0.5",
+      "ref_upper": "1.2"
+    },
+    {
+      "datetime": "2019-07-28T16:32",
+      "date": "2019-07-28",
+      "label": "Glucose",
+      "value": 101.0,
+      "unit": "mg/dL",
+      "flag": "abnormal",
+      "ref_lower": "70",
+      "ref_upper": "99"
+    },
+    {
+      "datetime": "2019-07-28T16:32",
+      "date": "2019-07-28",
+      "label": "Hemoglobin",
+      "value": 14.1,
+      "unit": "g/dL",
+      "flag": null,
+      "ref_lower": "12.0",
+      "ref_upper": "17.5"
+    },
+    {
+      "datetime": "2019-07-28T16:32",
+      "date": "2019-07-28",
+      "label": "Platelets",
+      "value": 197.0,
+      "unit": "K/uL",
+      "flag": null,
+      "ref_lower": "150",
+      "ref_upper": "400"
+    },
+    {
+      "datetime": "2019-07-28T16:32",
+      "date": "2019-07-28",
+      "label": "Potassium",
+      "value": 3.9,
+      "unit": "mmol/L",
+      "flag": null,
+      "ref_lower": "3.5",
+      "ref_upper": "5.0"
+    },
+    {
+      "datetime": "2019-07-28T16:32",
+      "date": "2019-07-28",
+      "label": "Sodium",
+      "value": 143.0,
+      "unit": "mmol/L",
+      "flag": null,
+      "ref_lower": "136",
+      "ref_upper": "145"
+    },
+    {
+      "datetime": "2019-07-28T16:32",
+      "date": "2019-07-28",
+      "label": "Troponin I",
+      "value": 1.259,
+      "unit": "ng/mL",
+      "flag": "abnormal",
+      "ref_lower": "0",
+      "ref_upper": "0.04"
+    },
+    {
+      "datetime": "2019-07-28T16:32",
+      "date": "2019-07-28",
+      "label": "eGFR",
+      "value": 80.0,
+      "unit": "mL/min/1.73 m2",
+      "flag": null,
+      "ref_lower": "60",
+      "ref_upper": "120"
+    }
+  ],
+  "context_cutoff": "2019-07-28T16:32",
+  "troponin_series": [
+    {
+      "datetime": "2019-03-08T05:00",
+      "value": 0.048,
+      "unit": "ng/mL",
+      "flag": "abnormal"
+    },
+    {
+      "datetime": "2019-07-28T13:32",
+      "value": 1.313,
+      "unit": "ng/mL",
+      "flag": "abnormal"
+    },
+    {
+      "datetime": "2019-07-28T16:32",
+      "value": 1.259,
+      "unit": "ng/mL",
+      "flag": "abnormal"
+    }
+  ],
+  "question": {
+    "stem": "Patient subject_id: 115967110\n\nA 60-year-old Male presents with chest symptoms. Current diagnoses: Essential (primary) hypertension; I21.4; Coronary artery disease, native coronary artery; I71.2; R07.9; R79.89; E78.5; I25.82. Current medications: not recorded.\n\nThe lab timeline below shows all available measurements up to 2019-07-28 16:32 (3 prior Troponin I value(s) visible in context).\n\nThe next Troponin I measurement is scheduled for 2019-07-28 20:01 (3.5 hours after the most recent measurement).\n\nBased on this patient's lab history and clinical context, predict the Troponin I value at 2019-07-28 20:01.",
+    "target_lab": "Troponin I",
+    "target_datetime": "2019-07-28T20:01",
+    "hours_ahead": 3.5
+  },
+  "ground_truth": {
+    "lab_name": "Troponin I",
+    "datetime": "2019-07-28T20:01",
+    "value": 1.106,
+    "unit": "ng/mL",
+    "flag": "abnormal",
+    "direction": "stable",
+    "pct_change": -12.2
+  },
+  "scoring_guide": {
+    "direction_correct": 0.4,
+    "within_50pct_error": 0.35,
+    "within_20pct_error": 0.25,
+    "max_score": 1.0,
+    "note": "Score = direction_correct (0.4 if direction matches, else 0) + within_50pct (0.35 if |error| \u2264 50%, else 0) + within_20pct (0.25 if |error| \u2264 20%, else 0). Max = 1.0."
+  }
+}

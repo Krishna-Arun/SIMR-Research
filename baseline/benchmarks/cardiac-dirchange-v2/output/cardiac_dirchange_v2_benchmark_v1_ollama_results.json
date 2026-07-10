@@ -1,0 +1,180 @@
+{
+  "benchmark": "cardiac_dirchange_v2_ollama",
+  "model": "qwen3.6:latest",
+  "n_cases": 4,
+  "mean_score": 0.3,
+  "direction_accuracy": 0.75,
+  "within_50pct_rate": 0,
+  "within_20pct_rate": 0,
+  "analysis": "The model demonstrates strong qualitative performance in predicting direction changes, achieving a 75% accuracy rate across four cases. It correctly identified the reversal trajectory in three out of four instances (rising→falling, falling→rising, and stable→rising), though it incorrectly predicted a rising trend for case 3 where the ground truth was falling. Quantitative calibration is notably poor, with 0% of predictions meeting the 50% or 20% error thresholds. Absolute value errors ranged from 90% to 210%, indicating that while the model effectively captures trajectory shifts using cross-lab signals and clinical context, it struggles with precise magnitude forecasting due to variable biomarker clearance kinetics, baseline differences, and acute phase dynamics. Future iterations should prioritize improving absolute value calibration and uncertainty quantification while preserving directional sensitivity for clinical triage utility.",
+  "per_case": [
+    {
+      "case_id": 1,
+      "patient_id": "115968758",
+      "reversal_type": "rising→falling",
+      "prediction": {
+        "predicted_value": 4,
+        "predicted_unit": "ng/mL",
+        "direction": "falling",
+        "confidence": "medium",
+        "reasoning": "The visible troponin trend peaked at 7.8 ng/mL on 09-27, aligning with the typical 12-48 hour peak window for acute myocardial injury. The gap window reveals severe transaminitis (ALT/AST >1000/2000) and worsening coagulopathy alongside stabilizing vital signs, indicating that the initial hemodynamic insult or cardiogenic shock is resolving rather than progressing. Given the ~47-hour interval since the last measurement and the natural clearance kinetics of Troponin I, the trajectory has definitively reversed from rising to falling as the acute necrotic phase concludes."
+      },
+      "ground_truth": {
+        "lab_name": "Troponin I",
+        "datetime": "2009-09-29T11:45",
+        "value": 2.1,
+        "unit": "ng/mL",
+        "flag": "abnormal",
+        "direction": "falling",
+        "pct_change": -73.1,
+        "last_visible": 7.8,
+        "visible_trend": "rising",
+        "reversal_type": "rising→falling"
+      },
+      "scoring_guide": {
+        "direction_correct": 0.4,
+        "within_50pct_error": 0.35,
+        "within_20pct_error": 0.25,
+        "max_score": 1,
+        "note": "Score = direction_correct (0.4 if direction matches, else 0) + within_50pct (0.35 if |error| <= 50%, else 0) + within_20pct (0.25 if |error| <= 20%, else 0). Max = 1.0. Note: direction_correct uses the reversed direction (the actual direction at target), NOT the visible trend — both last-value and trend-extrapolation heuristics fail by design."
+      },
+      "visible_trend": "rising",
+      "breakdown": {
+        "dir_correct": true,
+        "dir_score": 0.4,
+        "err_pct": 90,
+        "w50": false,
+        "w50_score": 0,
+        "w20": false,
+        "w20_score": 0,
+        "total": 0.4
+      }
+    },
+    {
+      "case_id": 3,
+      "patient_id": "115969698",
+      "reversal_type": "stable→falling",
+      "prediction": {
+        "predicted_value": 27.5,
+        "predicted_unit": "ng/mL",
+        "direction": "rising",
+        "confidence": "medium",
+        "reasoning": "The visible troponin trend was falling/stable, but cross-lab signals in the gap window indicate escalating systemic stress, including high fever (peaking at 101.7°F), tachypnea (RR up to 28), hypokalemia, and rising BUN/glucose. These metabolic and inflammatory derangements increase myocardial oxygen demand and suggest a new ischemic event or worsening heart failure, prompting a reversal of the troponin trajectory toward a rising pattern."
+      },
+      "ground_truth": {
+        "lab_name": "Troponin I",
+        "datetime": "2019-12-25T15:24",
+        "value": 8.864,
+        "unit": "ng/mL",
+        "flag": "abnormal",
+        "direction": "falling",
+        "pct_change": -52.2,
+        "last_visible": 18.546,
+        "visible_trend": "stable",
+        "reversal_type": "stable→falling"
+      },
+      "scoring_guide": {
+        "direction_correct": 0.4,
+        "within_50pct_error": 0.35,
+        "within_20pct_error": 0.25,
+        "max_score": 1,
+        "note": "Score = direction_correct (0.4 if direction matches, else 0) + within_50pct (0.35 if |error| <= 50%, else 0) + within_20pct (0.25 if |error| <= 20%, else 0). Max = 1.0. Note: direction_correct uses the reversed direction (the actual direction at target), NOT the visible trend — both last-value and trend-extrapolation heuristics fail by design."
+      },
+      "visible_trend": "stable",
+      "breakdown": {
+        "dir_correct": false,
+        "dir_score": 0,
+        "err_pct": 210,
+        "w50": false,
+        "w50_score": 0,
+        "w20": false,
+        "w20_score": 0,
+        "total": 0
+      }
+    },
+    {
+      "case_id": 4,
+      "patient_id": "115967848",
+      "reversal_type": "falling→rising",
+      "prediction": {
+        "predicted_value": 1.9,
+        "predicted_unit": "ng/mL",
+        "direction": "rising",
+        "confidence": "high",
+        "reasoning": "The explicit reversal of the troponin trend is strongly corroborated by cross-lab signals of severe and worsening systemic injury. The CK level rises precipitously from 3008 to 4713 U/L, signaling extensive ongoing muscle or myocardial necrosis. Concurrent profound hypothermia, hyperkalemia, and persistent acute kidney failure indicate evolving cardiogenic shock or multi-organ collapse, which clinically mandates a significant upward shift in cardiac biomarkers rather than a continued decline."
+      },
+      "ground_truth": {
+        "lab_name": "Troponin I",
+        "datetime": "2009-11-25T05:30",
+        "value": 40,
+        "unit": "ng/mL",
+        "flag": "abnormal",
+        "direction": "rising",
+        "pct_change": 24900,
+        "last_visible": 0.16,
+        "visible_trend": "falling",
+        "reversal_type": "falling→rising"
+      },
+      "scoring_guide": {
+        "direction_correct": 0.4,
+        "within_50pct_error": 0.35,
+        "within_20pct_error": 0.25,
+        "max_score": 1,
+        "note": "Score = direction_correct (0.4 if direction matches, else 0) + within_50pct (0.35 if |error| <= 50%, else 0) + within_20pct (0.25 if |error| <= 20%, else 0). Max = 1.0. Note: direction_correct uses the reversed direction (the actual direction at target), NOT the visible trend — both last-value and trend-extrapolation heuristics fail by design."
+      },
+      "visible_trend": "falling",
+      "breakdown": {
+        "dir_correct": true,
+        "dir_score": 0.4,
+        "err_pct": 95,
+        "w50": false,
+        "w50_score": 0,
+        "w20": false,
+        "w20_score": 0,
+        "total": 0.4
+      }
+    },
+    {
+      "case_id": 8,
+      "patient_id": "115973302",
+      "reversal_type": "stable→rising",
+      "prediction": {
+        "predicted_value": 0.85,
+        "predicted_unit": "ng/mL",
+        "direction": "rising",
+        "confidence": "high",
+        "reasoning": "The patient is exhibiting signs of severe septic shock or systemic inflammatory response, characterized by profound hypotension (SBP dropping to 77 mmHg), persistent tachycardia (>120 bpm), hyperthermia (up to 39.2°C), and rising lactate (3.7 to 4.0 mmol/L). These cross-lab signals indicate worsening tissue hypoperfusion and significant myocardial strain, which typically precipitate a sharp increase in cardiac troponin due to supply-demand mismatch or direct inflammatory injury. Consequently, the previously stable troponin trend will reverse and rise significantly at the target time."
+      },
+      "ground_truth": {
+        "lab_name": "Troponin I",
+        "datetime": "2020-12-26T09:20",
+        "value": 14.344,
+        "unit": "ng/mL",
+        "flag": "abnormal",
+        "direction": "rising",
+        "pct_change": 84276.5,
+        "last_visible": 0.017,
+        "visible_trend": "stable",
+        "reversal_type": "stable→rising"
+      },
+      "scoring_guide": {
+        "direction_correct": 0.4,
+        "within_50pct_error": 0.35,
+        "within_20pct_error": 0.25,
+        "max_score": 1,
+        "note": "Score = direction_correct (0.4 if direction matches, else 0) + within_50pct (0.35 if |error| <= 50%, else 0) + within_20pct (0.25 if |error| <= 20%, else 0). Max = 1.0. Note: direction_correct uses the reversed direction (the actual direction at target), NOT the visible trend — both last-value and trend-extrapolation heuristics fail by design."
+      },
+      "visible_trend": "stable",
+      "breakdown": {
+        "dir_correct": true,
+        "dir_score": 0.4,
+        "err_pct": 94,
+        "w50": false,
+        "w50_score": 0,
+        "w20": false,
+        "w20_score": 0,
+        "total": 0.4
+      }
+    }
+  ]
+}

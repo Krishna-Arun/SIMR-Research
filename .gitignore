@@ -99,15 +99,17 @@ miniforge3/
 containers/
 
 # ---- Nested git repositories (tracked separately on their own remotes) -----
-Version_1/SIMR-Research/
-Version_3/SIMR-Research/
 **/PubMed-MCP-Server/
+
+# ---- Reversible reorg backup (old SIMR-Research clones; delete when happy) --
+.reorg_trash/
 
 # ---- Logs / session scratch / runtime junk ---------------------------------
 **/logs/
 *.log
 **/h100_session/
 **/l40s_session/
+**/.race/
 slurm-*.out
 
 # ---- Python bytecode / build artifacts -------------------------------------

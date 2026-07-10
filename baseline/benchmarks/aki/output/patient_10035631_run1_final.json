@@ -1,0 +1,286 @@
+{
+  "summary": "AKI next-event benchmark — patient 10035631 (63M) ground truth: Performance of Urinary Filtration, Single",
+  "agentCount": 5,
+  "logs": [
+    "Round 1 / 5: generating question ...",
+    "Round 1: evaluating ...",
+    "Round 1: REJECTED — regenerating.",
+    "Round 2 / 5: generating question ...",
+    "Round 2: evaluating ...",
+    "Question PASSED all four criteria at round 2.",
+    "Generating scoring rubric ..."
+  ],
+  "result": {
+    "patient_id": "10035631",
+    "rounds_taken": 2,
+    "passed_evaluation": true,
+    "question": {
+      "stem": "A 63-year-old Male with a complex oncologic history presents to the ICU with acute respiratory failure with hypoxia, tumor lysis syndrome, severe sepsis, Pneumocystosis, pulmonary Aspergillosis, pleural effusion, and metabolic acidosis. His past medical history is significant for acute myeloid leukemia initially diagnosed several years prior, complicated by multiple relapses, an allogeneic hematopoietic stem cell transplant from a live related donor, and a subsequent breast malignancy requiring mastectomy. He has undergone multiple prior hospitalizations for chemotherapy, central line infections, aspergillosis-related pneumonia, neutropenia, pancytopenia, and transfusion-dependent cytopenias. He is currently immunocompromised on tacrolimus-based immunosuppression and has received multiple nephrotoxic agents over the course of his illness. On this admission he is found to have evidence of acute kidney injury and electrolyte derangements in the context of ongoing tumor lysis. Serial laboratory values are obtained to characterize the severity of renal impairment, uremic solute accumulation, and acid-base status. Based on the pattern and degree of these laboratory findings, what is the next most probable major procedural intervention for this patient?",
+      "reasoning_gap": "The decision to initiate continuous renal replacement therapy (CRRT) hinges on confirming the degree of AKI by KDIGO staging criteria (serum creatinine), the presence of life-threatening hyperkalemia and refractory metabolic acidosis (potassium, bicarbonate, anion gap), the severity of uremia (BUN), and the TLS-specific nephrotoxin burden (uric acid and phosphate) that is driving ongoing renal tubular injury and precluding spontaneous recovery — none of these thresholds can be determined from the clinical narrative alone.",
+      "lab_sets": {
+        "L_core": [
+          {
+            "lab_name": "Creatinine",
+            "clinical_rationale": "Central to KDIGO 2012 AKI staging (Stages 1–3 defined by magnitude of creatinine rise from baseline); determines whether AKI severity meets the threshold at which RRT is indicated. Referenced in KDIGO 2012 Sections 2.1–2.3 and validated across outcomes studies (PMID 30819553)."
+          },
+          {
+            "lab_name": "Potassium",
+            "clinical_rationale": "Hyperkalemia is a direct, life-threatening indication for emergent RRT per KDIGO 2012 Section 5.6; TLS-associated hyperkalemia refractory to medical management is the most urgent driver of CRRT initiation. The specific potassium value is required to determine whether the absolute threshold for emergent RRT has been crossed (PMID 37664024)."
+          },
+          {
+            "lab_name": "Bicarbonate",
+            "clinical_rationale": "Refractory metabolic acidosis (low bicarbonate) is a primary KDIGO 2012 indication for RRT (Section 5.6); in the setting of sepsis and AKI, the bicarbonate level determines whether endogenous acid clearance is inadequate enough to require extracorporeal support — a determination that cannot be made from the narrative alone."
+          },
+          {
+            "lab_name": "Anion Gap",
+            "clinical_rationale": "Elevated anion gap confirms high-gap metabolic acidosis (from urate, lactate, and uremic acids), corroborating the severity and mixed etiology of the acid-base disturbance; the specific anion gap value is required to characterize the degree of metabolic acidosis that informs urgency of CRRT initiation per KDIGO 2012 criteria."
+          },
+          {
+            "lab_name": "BUN",
+            "clinical_rationale": "BUN reflects uremic solute accumulation; KDIGO 2012 Section 5.6 identifies severe azotemia as a standard indication for RRT. The specific BUN value is needed to determine whether the degree of uremia crosses the threshold for intervention rather than continued conservative management."
+          },
+          {
+            "lab_name": "Uric Acid",
+            "clinical_rationale": "Uric acid is the primary nephrotoxin in TLS, causing obstructive nephropathy and tubular injury; its level is a recognized indication for CRRT in TLS-associated AKI when rasburicase and allopurinol fail, and the specific value determines the adequacy of ongoing medical therapy (PMID 22879434, PMID 37664024)."
+          },
+          {
+            "lab_name": "Phosphate",
+            "clinical_rationale": "Hyperphosphatemia in TLS directly precipitates calcium-phosphate deposits in renal tubules, worsening AKI; per Anderson et al. (PMID 37664024), pre-CRRT phosphorus level is the laboratory value most significantly associated with severe AKI in TLS patients, making it a key trigger for CRRT initiation when elevated above threshold."
+          }
+        ],
+        "L_optional": [
+          {
+            "lab_name": "Sodium",
+            "clinical_rationale": "Hyponatremia reflects fluid and electrolyte dysregulation relevant to CRRT prescription (replacement fluid composition, ultrafiltration rate); monitored closely during RRT initiation."
+          },
+          {
+            "lab_name": "Lactate",
+            "clinical_rationale": "Elevated lactate quantifies the severity of sepsis-driven tissue hypoperfusion and contributes to the high anion gap metabolic acidosis; informs urgency and hemodynamic approach to CRRT in septic AKI."
+          },
+          {
+            "lab_name": "Calcium, Total",
+            "clinical_rationale": "Secondary hypocalcemia is a cardinal TLS metabolic complication caused by precipitation of calcium with excess phosphate; monitoring calcium is essential for safe CRRT replacement fluid dosing (PMID 22879434, PMID 37579533)."
+          },
+          {
+            "lab_name": "Albumin",
+            "clinical_rationale": "Low albumin reflects critical illness severity and malnutrition in this immunocompromised patient; hypoalbuminemia affects oncotic pressure, fluid management decisions, and may influence CRRT timing."
+          },
+          {
+            "lab_name": "Urine Casts",
+            "clinical_rationale": "Granular or muddy-brown casts on urinalysis indicate tubular injury consistent with intrinsic AKI from TLS or sepsis, supporting the clinical diagnosis of AKI and informing the likelihood of renal recovery without RRT."
+          },
+          {
+            "lab_name": "WBC",
+            "clinical_rationale": "Markedly elevated WBC reflects the leukemic burden and sepsis, providing context for TLS risk (tumor cell lysis burden) and infectious severity; guides overall ICU management concurrent with CRRT."
+          },
+          {
+            "lab_name": "Chloride",
+            "clinical_rationale": "Chloride is used alongside sodium and bicarbonate to verify the anion gap calculation and assess hyperchloremic versus high-gap components of metabolic acidosis in this complex acid-base picture."
+          },
+          {
+            "lab_name": "BNP",
+            "clinical_rationale": "Elevated BNP suggests volume overload or myocardial stress in the setting of sepsis and AKI; fluid overload is a recognized secondary indication for CRRT per KDIGO 2012 and clinical practice (PMID 42146991)."
+          }
+        ],
+        "L_irrelevant": [
+          {
+            "lab_name": "Troponin T",
+            "why_irrelevant": "Cardiac biomarker for myocardial injury; does not inform the decision to initiate CRRT for AKI, TLS, or metabolic acidosis in this patient."
+          },
+          {
+            "lab_name": "CK",
+            "why_irrelevant": "Creatine kinase elevation would suggest rhabdomyolysis, but the dominant renal injury mechanism here is TLS and sepsis; CK does not alter the CRRT indication in this context."
+          },
+          {
+            "lab_name": "CK-MB",
+            "why_irrelevant": "Cardiac isoenzyme of CK; irrelevant to AKI staging or RRT indications and not part of KDIGO 2012 criteria for renal replacement therapy."
+          },
+          {
+            "lab_name": "Lipase",
+            "why_irrelevant": "Elevated lipase suggests pancreatitis but does not influence the decision for CRRT in a patient with AKI from TLS and sepsis; a separate clinical issue not driving the procedural intervention."
+          },
+          {
+            "lab_name": "INR",
+            "why_irrelevant": "Coagulation metric relevant to anticoagulation strategy during CRRT circuit management, but not a trigger or criterion for initiating RRT per KDIGO 2012."
+          },
+          {
+            "lab_name": "PT",
+            "why_irrelevant": "Prothrombin time reflects coagulopathy but does not constitute an indication for CRRT; not a KDIGO criterion for RRT initiation."
+          },
+          {
+            "lab_name": "Prothrombin Time",
+            "why_irrelevant": "Reflects hepatic synthetic function and coagulopathy but is not a criterion for CRRT initiation in AKI guidelines per KDIGO 2012."
+          },
+          {
+            "lab_name": "Hemoglobin",
+            "why_irrelevant": "Anemia in this patient is attributable to AML, chemotherapy, and bone marrow failure — not to AKI per se — and does not factor into KDIGO RRT indications."
+          },
+          {
+            "lab_name": "Hematocrit",
+            "why_irrelevant": "Parallel to hemoglobin; reflects disease-related anemia rather than a CRRT trigger or KDIGO AKI staging criterion."
+          },
+          {
+            "lab_name": "Platelet Count",
+            "why_irrelevant": "Severe thrombocytopenia reflects AML and chemotherapy-induced bone marrow suppression; relevant for anticoagulation considerations during CRRT but is not an indication for initiating renal replacement therapy."
+          },
+          {
+            "lab_name": "ALT",
+            "why_irrelevant": "Mildly elevated liver enzyme suggesting hepatic injury; does not contribute to KDIGO AKI staging or the decision to initiate CRRT."
+          },
+          {
+            "lab_name": "AST",
+            "why_irrelevant": "Mildly elevated liver enzyme; similarly does not inform CRRT initiation criteria per KDIGO 2012 in this clinical scenario."
+          },
+          {
+            "lab_name": "Bands",
+            "why_irrelevant": "Left shift in WBC differential indicates bacterial infection/sepsis but provides no additional information specific to AKI staging or the RRT decision beyond what WBC and clinical context already supply."
+          },
+          {
+            "lab_name": "Neutrophils",
+            "why_irrelevant": "Low absolute neutrophil percentage reflects leukemic dysmaturity or bone marrow suppression; not a criterion for CRRT or AKI management per KDIGO 2012."
+          },
+          {
+            "lab_name": "Eosinophils",
+            "why_irrelevant": "Eosinopenia in critical illness is a nonspecific finding; not relevant to AKI staging or renal replacement therapy indications."
+          },
+          {
+            "lab_name": "Lymphocytes",
+            "why_irrelevant": "Lymphocyte count reflects immune status in this immunocompromised patient but plays no role in the KDIGO-based decision to initiate CRRT."
+          },
+          {
+            "lab_name": "Glucose",
+            "why_irrelevant": "Blood glucose requires monitoring in any critically ill patient but is not a criterion for CRRT initiation in AKI; hyperglycemia is managed with insulin infusion, not renal replacement therapy."
+          },
+          {
+            "lab_name": "Magnesium",
+            "why_irrelevant": "Mild hypermagnesemia in the setting of AKI is expected but is not a recognized independent indication for CRRT per KDIGO 2012; managed conservatively unless severe."
+          }
+        ]
+      }
+    },
+    "rubric": {
+      "answer_rubric": {
+        "c1_exact_answer": "Performance of Urinary Filtration, Single",
+        "c1_accepted_synonyms": [
+          "Hemodialysis, single session",
+          "Intermittent hemodialysis (IHD)",
+          "Renal replacement therapy (RRT)",
+          "Acute hemodialysis",
+          "Dialysis",
+          "IHD",
+          "RRT",
+          "Performance of Urinary Filtration",
+          "5A1D00Z"
+        ],
+        "c1_scoring_guidance": "Award full credit for any answer that correctly identifies hemodialysis or renal replacement therapy as the next major procedural intervention. The ICD-10-PCS term 'Performance of Urinary Filtration, Single' refers to a single session of hemodialysis. Accept clinical synonyms (hemodialysis, IHD, RRT, dialysis) and the procedure code 5A1D00Z. Do not penalize for omitting 'Single' if hemodialysis intent is clear. Partial credit (0.5) may be given for 'continuous renal replacement therapy (CRRT)' or 'ultrafiltration' since these are related but distinct modalities; they address the same underlying indication but are not the exact coded procedure. Zero credit for procedures unrelated to renal replacement (e.g., intubation, thoracentesis, bronchoscopy, bone marrow biopsy, central line placement).",
+        "c1_wrong_answers": [
+          "Mechanical ventilation / intubation",
+          "Thoracentesis (for pleural effusion)",
+          "Bronchoscopy",
+          "Bone marrow biopsy",
+          "Central venous catheter placement",
+          "Plasmapheresis",
+          "Pericardiocentesis",
+          "Transfusion",
+          "Rasburicase administration",
+          "Allopurinol administration"
+        ],
+        "c2_required_labs_summary": "Uric Acid (100 mg/dL) — massively elevated (normal ~3–7 mg/dL), hallmark of severe tumor lysis syndrome causing obstructive nephropathy and uremic solute burden that is not clearable by conservative means alone, primary driver for dialysis.\nCreatinine (1.9 mg/dL) — elevated above reference (0.5–1.2), confirms established AKI with reduced glomerular filtration; combined with clinical context meets KDIGO Stage 1–2 AKI threshold.\nBUN (24 mg/dL) — mildly elevated above reference (6–20), indicates accumulation of nitrogenous waste; mild uremia contributing to overall solute burden.\nPotassium (5.6 mEq/L) — hyperkalemia above reference (3.3–5.1), life-threatening electrolyte derangement from tumor lysis; a primary indication for emergent dialysis when refractory to medical management.\nBicarbonate (20 mEq/L) — below reference (22–32), confirms metabolic acidosis; AKI-associated bicarbonate loss and acid accumulation are standard dialysis indications when severe or refractory.\nAnion Gap (21 mEq/L) — above reference (8–20), indicates high anion-gap metabolic acidosis consistent with uremic acid accumulation and lactic acidosis; elevated AG in the setting of AKI and tumor lysis supports dialysis indication.\nPhosphate (2.6 mg/dL) — at lower end of reference (2.7–4.5), slightly low possibly due to dilution or redistribution; in tumor lysis context hyperphosphatemia is expected, the relatively low value does not negate dialysis need but weakens the phosphate-driven indication.",
+        "c2_scoring_guidance": "Full credit requires identifying at least Uric Acid AND either Creatinine/BUN (renal function) AND either Potassium or Bicarbonate/Anion Gap (electrolyte/acid-base indications). Uric Acid at 100 mg/dL is the single most compelling lab in this case and must be mentioned for full credit on this criterion. Award partial credit if 2 of the 3 categories (renal function, electrolyte, acid-base) are addressed with correct values and correct directional reasoning.",
+        "c2_insufficient_examples": [
+          "Citing only Creatinine without noting the massively elevated Uric Acid in the context of tumor lysis syndrome",
+          "Citing Phosphate as a primary dialysis driver when it is only borderline low in this patient",
+          "Citing only CBC findings (WBC, Hemoglobin, Platelets) without any metabolic or renal function labs",
+          "Citing Troponin T or CK-MB as driving the procedural decision toward dialysis",
+          "Noting BUN is 24 without acknowledging Uric Acid 100 and the severe tumor lysis context"
+        ],
+        "c3_causal_chain": "Patient has AML with multiple relapses and allogeneic HSCT on tacrolimus immunosuppression → develops tumor lysis syndrome → massive release of intracellular uric acid (uric acid = 100 mg/dL), potassium (K = 5.6 mEq/L), and phosphate from lysed tumor cells → uric acid crystals precipitate in renal tubules causing obstructive nephropathy and direct tubular injury → creatinine rises to 1.9 mg/dL (above normal 0.5–1.2), BUN rises to 24 mg/dL → kidneys unable to excrete the surge of nitrogenous waste, acid load, and electrolytes → metabolic acidosis develops (bicarbonate 20 mEq/L, anion gap 21 mEq/L) → concurrent severe sepsis and multiple nephrotoxic drug exposures (tacrolimus, prior chemotherapy) compound AKI → elevated lactate (2.8 mmol/L) from septic hypoperfusion adds to acid burden → hyperkalemia (K 5.6) poses immediate cardiac risk → conservative medical measures (rasburicase, hydration, kayexalate) insufficient given severity and tumor lysis burden → KDIGO AKI indications for dialysis met: refractory hyperkalemia, metabolic acidosis, uremic solute accumulation in the setting of oliguria/non-responsiveness → hemodialysis (Performance of Urinary Filtration, Single) initiated to mechanically remove uric acid, potassium, excess phosphate, and correct acid-base status",
+        "c3_required_steps": [
+          "Recognize tumor lysis syndrome as the primary driver of AKI in this AML/HSCT patient",
+          "Connect massively elevated Uric Acid (100 mg/dL) to tubular obstruction and AKI mechanism",
+          "Identify elevated Creatinine (1.9 mg/dL) and BUN (24 mg/dL) as markers of reduced renal clearance",
+          "Identify hyperkalemia (K 5.6 mEq/L) as a life-threatening electrolyte derangement and dialysis indication",
+          "Identify metabolic acidosis (bicarbonate 20, anion gap 21) as a dialysis indication",
+          "Recognize that immunosuppression (tacrolimus) and nephrotoxic history compound AKI severity",
+          "Conclude that conservative management is insufficient given the severity of combined tumor lysis + AKI + electrolyte derangements",
+          "Arrive at hemodialysis (Performance of Urinary Filtration, Single) as the next major procedural intervention"
+        ],
+        "c3_scoring_guidance": "Award full credit for a response that traces the pathophysiologic chain from tumor lysis syndrome → uric acid nephropathy → AKI → failed electrolyte/acid-base homeostasis → dialysis indication, using the patient's actual laboratory values as evidence at each step. Partial credit if the chain is present but values are not cited or one link is missing (e.g., explains AKI and dialysis need but does not connect tumor lysis/uric acid as the mechanism). No credit if the reasoning bypasses the renal mechanism (e.g., proceeds directly from sepsis to intubation, or from pleural effusion to thoracentesis).",
+        "c3_broken_chain_examples": [
+          "Stating 'the patient needs dialysis because of sepsis' without connecting tumor lysis syndrome and uric acid nephropathy",
+          "Recommending thoracentesis because of pleural effusion without engaging the AKI/metabolic laboratory data",
+          "Citing respiratory failure as the primary driver and concluding mechanical ventilation is the next procedure",
+          "Noting creatinine is elevated but attributing AKI solely to sepsis-induced hypoperfusion without acknowledging the uric acid of 100 mg/dL"
+        ],
+        "c4_required_patient_facts": "63-year-old Male with AML and multiple relapses — establishes high tumor burden and likelihood of tumor lysis syndrome as a recurrent risk.\nAllogeneic hematopoietic stem cell transplant (allo-HSCT) from live related donor — explains immunosuppression requirement and graft-versus-host disease prophylaxis context.\nTacrolimus-based immunosuppression — tacrolimus is directly nephrotoxic; chronic calcineurin inhibitor use compounds AKI risk and reduces renal reserve.\nMultiple prior nephrotoxic agent exposures (chemotherapy, antifungals) — cumulative nephrotoxic burden lowers the kidney's ability to compensate for acute insults.\nCurrent diagnosis of Tumor Lysis Syndrome — the proximate cause of massive uric acid release and electrolyte derangements that drive the dialysis indication.\nSevere sepsis — contributes to hemodynamic compromise, renal hypoperfusion, and lactic acidosis (lactate 2.8), compounding AKI.\nMetabolic acidosis (coded diagnosis) — directly listed as an active problem, confirming acid-base failure as a concurrent dialysis indication alongside electrolyte derangement.\nImmunocompromised state (Pneumocystosis, pulmonary Aspergillosis) — reflects profound immunosuppression and explains the severity and breadth of concurrent infections that worsen systemic physiology.",
+        "c4_scoring_guidance": "Full credit requires identifying at least: (1) tumor lysis syndrome as the primary AKI mechanism in this patient, (2) the nephrotoxic medication history (tacrolimus and/or prior chemo) as a compounding factor, and (3) the severity/acuity framing (multiple simultaneous organ stressors: sepsis, acidosis, electrolyte derangement) that makes conservative management inadequate. Partial credit if only 2 of 3 elements are present. No credit for responses that ignore the oncologic history and tumor lysis syndrome entirely.",
+        "c4_critical_errors": [
+          "Attributing AKI solely to contrast nephropathy or hypovolemia without mentioning tumor lysis syndrome",
+          "Ignoring tacrolimus nephrotoxicity as a compounding factor",
+          "Treating this as a de novo presentation without oncologic history context",
+          "Recommending non-renal procedures (bronchoscopy for aspergillosis, thoracentesis for effusion) as the 'next most probable major procedural intervention' without engaging the renal/metabolic data"
+        ]
+      },
+      "lab_scoring_rubric": {
+        "L_core_summary": "Creatinine (1.9 mg/dL) — CORE — elevated above reference (0.5–1.2), confirms AKI and reduced GFR, essential for staging renal impairment and dialysis threshold decision.\nPotassium (5.6 mEq/L) — CORE — hyperkalemia above reference (3.3–5.1), tumor lysis-driven, life-threatening electrolyte derangement and primary dialysis indication.\nBicarbonate (20 mEq/L) — CORE — below reference (22–32), confirms metabolic acidosis from AKI and tumor lysis acid load, supports dialysis indication.\nAnion Gap (21 mEq/L) — CORE — above reference (8–20), high-AG metabolic acidosis from uremic acids and lactate, confirms AKI-driven acid-base failure.\nBUN (24 mg/dL) — CORE — above reference (6–20), mild uremic solute accumulation, corroborates AKI severity alongside creatinine.\nUric Acid (100 mg/dL) — CORE — massively elevated (normal ~3–7 mg/dL), the dominant tumor lysis marker; primary cause of urate nephropathy driving AKI and primary indication for hemodialysis to remove uric acid load.\nPhosphate (2.6 mg/dL) — CORE — borderline low vs reference (2.7–4.5); in tumor lysis context hyperphosphatemia is typical, so this low-normal value suggests early phase or dilution; weakens but does not negate the overall dialysis indication.",
+        "L_optional_summary": "Sodium (130 mEq/L) — OPTIONAL — hyponatremia below reference (133–145), reflects dilutional effect and SIADH from severe illness; supports overall fluid-electrolyte dysregulation picture but is not a primary dialysis indication here.\nLactate (2.8 mmol/L) — OPTIONAL — elevated above reference (0.5–2.0), indicates tissue hypoperfusion from sepsis, contributes to anion gap acidosis, corroborates severity but is not the primary driver of the dialysis decision.\nCalcium, Total (8.2 mg/dL) — OPTIONAL — slightly below reference (8.4–10.3), mild hypocalcemia; in tumor lysis phosphate binding can cause hypocalcemia, mildly relevant but not a primary dialysis driver in this case.\nAlbumin (2.2 g/dL) — OPTIONAL — significantly below reference (3.5–5.2), hypoalbuminemia reflects chronic malnutrition and illness; lowers corrected calcium and affects drug binding (tacrolimus levels), contextually relevant.\nUrine Casts (6.0) — OPTIONAL — within the listed reference range (5–8) but present; muddy brown/granular casts in AKI context suggest intrinsic tubular injury; supports AKI diagnosis but value is not flagged as abnormal.\nWBC (41.2 K/uL) — OPTIONAL — markedly elevated above reference (4–10), leukocytosis from AML/tumor lysis/sepsis; contextualizes the oncologic burden driving tumor lysis but does not directly drive the dialysis decision.\nChloride (95 mEq/L) — OPTIONAL — slightly below reference (96–108); contributes to anion gap calculation interpretation; minor role in confirming metabolic derangement.\nBNP (32 pg/mL) — OPTIONAL — slightly above reference (21–30), mildly elevated, suggests mild cardiac stress but not diagnostic of volume overload requiring ultrafiltration as the primary indication.",
+        "L_irrelevant_summary": "Troponin T (___) — IRRELEVANT — cardiac biomarker for myocardial injury; no value given; not relevant to the renal/dialysis decision in this case.\nCK (___) — IRRELEVANT — skeletal muscle marker for rhabdomyolysis; no value given; rhabdomyolysis is not the primary AKI mechanism here (tumor lysis is).\nCK-MB (12 U/L) — IRRELEVANT — mildly elevated cardiac isoenzyme; does not alter the renal replacement therapy decision.\nLipase (192 U/L) — IRRELEVANT — elevated, suggests pancreatitis (possibly from medications), but pancreatic pathology does not drive the procedural intervention identified.\nINR (1.3) — IRRELEVANT — mildly elevated coagulation marker; does not influence dialysis decision.\nPT (24.4 sec) — IRRELEVANT — within reference (25–36.5), essentially normal; no coagulation-driven procedural decision.\nProthrombin Time (14.5 sec) — IRRELEVANT — mildly elevated above reference (9.4–12.5), minor coagulopathy context but irrelevant to dialysis decision.\nHemoglobin (10.2 g/dL) — IRRELEVANT — anemia present but not a dialysis indication and does not drive the procedural choice toward renal filtration.\nHematocrit (30.3%) — IRRELEVANT — confirms anemia; same reasoning as hemoglobin.\nPlatelet Count (27 K/uL) — IRRELEVANT — severe thrombocytopenia from pancytopenia/AML; relevant to procedural bleeding risk but does not drive dialysis indication.\nALT (48 U/L) — IRRELEVANT — mildly elevated, mild hepatocellular injury; does not change the dialysis decision.\nAST (73 U/L) — IRRELEVANT — mildly elevated, hepatocellular pattern; does not drive the procedural choice.\nBands (6%) — IRRELEVANT — slightly elevated bands suggest left shift and bacterial infection; confirms sepsis picture but does not alter dialysis decision.\nNeutrophils (8%) — IRRELEVANT — low relative neutrophils in the context of leukocytosis; hematologic context only.\nEosinophils (0%) — IRRELEVANT — low eosinophils, minor differential finding; no procedural relevance.\nLymphocytes (2%) — IRRELEVANT — lymphopenia in immunocompromised patient; contextual but not procedurally decisive.\nGlucose (___) — IRRELEVANT — no value given; glucose management is relevant in critical illness but not a dialysis indication here.\nMagnesium (2.7 mEq/L) — IRRELEVANT — slightly above reference (1.6–2.6), mild hypermagnesemia; not a primary dialysis indication in this context.",
+        "R_core_formula": "R_core = (number of correctly identified and correctly interpreted L_core labs) / (total number of L_core labs = 7)",
+        "R_core_weight": 0.35,
+        "R_core_interpretation": "A model response earns R_core credit for each of the 7 core labs (Creatinine, Potassium, Bicarbonate, Anion Gap, BUN, Uric Acid, Phosphate) that it correctly identifies as relevant AND correctly interprets in the direction and magnitude of its contribution to the dialysis decision. Uric Acid at 100 mg/dL is the highest-impact single lab; failure to cite it is a significant loss. Phosphate at 2.6 (borderline low) is correctly interpreted only if the model notes it is not a major driver or addresses the atypical value in tumor lysis context.",
+        "R_wrong_formula": "R_wrong = (number of L_irrelevant labs incorrectly cited as driving the dialysis decision) / (total number of L_irrelevant labs = 19); R_wrong penalty applied as: penalty = w2 * R_wrong",
+        "R_wrong_weight": 0.2,
+        "R_wrong_interpretation": "For this patient, citing Troponin T, CK, CK-MB, Lipase, INR, PT, Prothrombin Time, Hemoglobin, Hematocrit, Platelet Count, ALT, AST, Bands, Neutrophils, Eosinophils, Lymphocytes, Glucose, or Magnesium as primary drivers of the hemodialysis decision constitutes an error. The most common wrong citation would be elevated Lipase (suggesting pancreatitis intervention) or Troponin (suggesting cardiac intervention) being used to redirect toward a non-renal procedure.",
+        "R_under_formula": "R_under = max(0, (β * (number of missing L_core labs cited) / 7) - ε) where β=2",
+        "R_under_weight": 0.1,
+        "R_under_beta": 2,
+        "R_under_interpretation": "Underciting occurs when the model omits core labs that materially support the dialysis decision. The most critical omission would be Uric Acid (100 mg/dL), which is the defining marker of tumor lysis nephropathy in this case. Omitting Potassium and Bicarbonate/Anion Gap would also constitute significant underciting, as these represent the canonical AEIOU indications for dialysis (Acidosis, Electrolytes, Intoxication, Overload, Uremia).",
+        "R_over_formula": "R_over = max(0, (number of L_irrelevant labs cited) / (total L_irrelevant = 19) - α) where α=0.5",
+        "R_over_weight": 0.2,
+        "R_over_alpha": 0.5,
+        "R_over_interpretation": "Overciting occurs when the model brings in irrelevant labs (from L_irrelevant) to support its reasoning. Given 19 irrelevant labs, citing up to 9–10 (the α=0.5 threshold) before penalty applies. In practice, a well-reasoned response should cite fewer than 5 irrelevant labs. Citing Troponin, CK/CK-MB, or Lipase as drivers would be the most diagnostically confusing overcitations in this patient.",
+        "justification_weight": 0.15,
+        "justification_score_0": "Score 0: The justification contains no patient-specific reasoning, is entirely generic, fails to connect any laboratory value to the dialysis decision, or actively contradicts the correct procedure (e.g., recommending bronchoscopy for aspergillosis treatment as the 'next major procedure'). Also score 0 if the response states the correct answer without any supporting rationale.",
+        "justification_score_0_5": "Score 0.5: The justification demonstrates partial patient-specific reasoning. The model identifies AKI and the need for dialysis but does not fully integrate the tumor lysis syndrome context with the specific laboratory values. For example: correctly noting elevated creatinine and hyperkalemia as dialysis indications but failing to mention the uric acid of 100 mg/dL or the AML/tumor lysis mechanism. Or: correctly identifying the procedure but attributing it primarily to sepsis-induced AKI without connecting it to the dominant tumor lysis pathophysiology.",
+        "justification_score_1": "Score 1: The justification provides complete, patient-specific reasoning that connects this patient's AML/HSCT history and tumor lysis syndrome to the specific laboratory abnormalities (especially Uric Acid 100 mg/dL, Potassium 5.6, Bicarbonate 20, Anion Gap 21, Creatinine 1.9), explains why conservative management is insufficient, and correctly concludes that hemodialysis (Performance of Urinary Filtration, Single) is the next major procedural intervention.",
+        "justification_patient_examples": [
+          "This patient with AML and active tumor lysis syndrome has a uric acid of 100 mg/dL — far exceeding the normal range of 3–7 mg/dL — causing urate crystal deposition in renal tubules, which together with rising creatinine (1.9 mg/dL), hyperkalemia (K 5.6 mEq/L), and high-anion-gap metabolic acidosis (AG 21, bicarb 20) meets multiple KDIGO indications for acute hemodialysis. The tacrolimus nephrotoxicity and sepsis-driven hypoperfusion further compromise renal recovery, making hemodialysis the necessary next intervention.",
+          "In the context of this immunocompromised patient with active tumor lysis from AML relapse post-HSCT, the combination of a massively elevated uric acid (100 mg/dL), refractory hyperkalemia (K 5.6 mEq/L), metabolic acidosis (bicarbonate 20, anion gap 21), and established AKI (creatinine 1.9, BUN 24) — compounded by nephrotoxic tacrolimus immunosuppression — indicates that hemodialysis is needed to mechanically clear urate, correct electrolytes, and restore acid-base homeostasis.",
+          "The Uric Acid of 100 mg/dL in this AML/tumor lysis patient is the dominant laboratory driver: at this level, uric acid nephropathy is the primary AKI mechanism, and rasburicase/hydration alone are insufficient. Combined with hyperkalemia (5.6 mEq/L) and acidosis (bicarbonate 20, anion gap 21) in a patient with compromised renal reserve from tacrolimus and prior nephrotoxic exposures, Performance of Urinary Filtration (single hemodialysis session) is the expected next major procedural intervention."
+        ],
+        "justification_generic_examples": [
+          "The patient has AKI with electrolyte abnormalities and acidosis, so dialysis is indicated.",
+          "Elevated creatinine and potassium in the setting of renal failure suggest the need for renal replacement therapy.",
+          "Given the metabolic acidosis and hyperkalemia, hemodialysis should be performed."
+        ]
+      },
+      "final_reward_formula": {
+        "formula_string": "Total = w1*R_core + w2*(1 - R_wrong) + w3*(1 - R_under) + w4*(1 - R_over) + w5*R_justification + answer_score",
+        "max_lab_score": 0.7,
+        "max_answer_score": 1,
+        "notes": "Weights sum to 1.0 for the lab scoring component: w1=0.35 (R_core), w2=0.20 (R_wrong penalty inverted), w3=0.10 (R_under penalty inverted), w4=0.20 (R_over penalty inverted), w5=0.15 (R_justification). The lab score component contributes a maximum of 0.70. The answer_score for correctly identifying 'Performance of Urinary Filtration, Single' (or accepted synonyms) contributes up to 1.0, yielding a maximum combined total of 1.70. R_wrong is a penalty: a model that cites no irrelevant labs earns the full 0.20; each irrelevant lab cited reduces this. R_under applies when fewer than the expected core labs are cited (β=2 amplifies the penalty). R_over applies only when more than α=0.5 fraction of irrelevant labs are cited (ε=0.000001 prevents zero-division edge cases). R_justification is scored 0, 0.5, or 1.0 on the scale defined in the rubric."
+      }
+    },
+    "ground_truth": "Performance of Urinary Filtration, Single",
+    "scoring_params": {
+      "weights": {
+        "w1": 0.35,
+        "w2": 0.2,
+        "w3": 0.1,
+        "w4": 0.2,
+        "w5": 0.15
+      },
+      "penalty_params": {
+        "beta": 2,
+        "alpha": 0.5,
+        "epsilon": 0.000001
+      }
+    },
+    "eval_summary": {
+      "criterion_a": "PASS",
+      "criterion_b": "PASS",
+      "criterion_c": "PASS",
+      "criterion_d": "PASS"
+    }
+  }
+}
