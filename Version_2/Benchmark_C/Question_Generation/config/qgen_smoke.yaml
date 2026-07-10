@@ -1,0 +1,80 @@
+project: Benchmark_C_QuestionGen
+pipeline_version: qgenC-0.1.0
+seed: 20260627
+data:
+  source: full
+  full_root: /scratch/users/karun09/physionet.org/files/mimiciv/3.1
+  demo_root: /scratch/users/karun09/Version_1/SIMR-Research/mimic-iv-clinical-database-demo-2.2
+  out_dir: /scratch/users/karun09/Version_2/Benchmark_C/Question_Generation/outputs
+cohort:
+  diagnosis_filter: cardiovascular_primary
+  procedure_source: icu_procedureevents
+  procedure_categories:
+  - Dialysis
+  - 1-Intubation/Extubation
+  - 2-Ventilation
+  core_labs:
+  - Creatinine
+  - Urea Nitrogen
+  - Potassium
+  - Sodium
+  - Bicarbonate
+  - Hemoglobin
+  - White Blood Cells
+  - Platelet Count
+  - Lactate
+  post_window_h: 72
+  min_pre: 2
+  min_post: 2
+  reuse_from: /scratch/users/karun09/Version_2/Benchmark_B/Question_Generation/outputs
+  chunksize: 2000000
+  top_k_procedures: 12
+  min_procedure_count: 150
+  caliper: 0.2
+  max_smd: 0.15
+  max_control_reuse: 2
+  pool_size: 4000
+time_zero:
+  policy: procedure
+generation:
+  concurrency: 8
+  target_n: 500
+  diagnosis_frac: 0.5
+  max_iterations: 3
+  max_tool_calls_per_agent: 6
+  agent_wall_clock_s: 300
+models:
+  optimizer:
+    model_id: Qwen/Qwen2.5-7B-Instruct
+    cuda_device: cuda:0
+    backend: hf
+    load_4bit: false
+    max_memory_per_gpu: 22GiB
+    endpoint: http://localhost:8000/v1
+    port: 8000
+    tensor_parallel_size: 4
+    quantization: null
+    max_model_len: 16384
+    gpu_memory_utilization: 0.9
+    tool_calling: react
+    temperature: 0.2
+  evaluator:
+    model_id: deepseek-ai/DeepSeek-R1-Distill-Qwen-7B
+    cuda_device: cuda:1
+    backend: hf
+    load_4bit: false
+    max_memory_per_gpu: 22GiB
+    endpoint: http://localhost:8001/v1
+    port: 8001
+    tensor_parallel_size: 1
+    quantization: null
+    max_model_len: 16384
+    gpu_memory_utilization: 0.9
+    tool_calling: react
+    temperature: 0.0
+pubmed_mcp:
+  server_dir: /scratch/users/karun09/Version_2/PubMed-MCP-Server
+  node_bin: /share/software/user/open/nodejs/25.3.0/bin/node
+  entry: build/index.js
+  call_timeout_s: 30
+  max_consecutive_failures: 3

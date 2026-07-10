@@ -1,0 +1,64 @@
+# Counterfactual simulation engine — config (reconstructed 2026-07-01).
+# Data paths point at the Version_2 cardiovascular cohort work; scripts live in Version_1/Counterfactual_Algorithm.
+seed: 0
+
+data:
+  # MIMIC-IV source (full v3.1 is fully downloaded; demo kept for smoke tests)
+  source: full
+  full_root: /scratch/users/karun09/physionet.org/files/mimiciv/3.1
+  demo_root: /scratch/users/karun09/SIMR-Research/mimic-iv-clinical-database-demo-2.2
+  # artifacts (trajectories, encoded states) + MEDS + Athena all under the Version_2 cohort area
+  out_dir:     /scratch/users/karun09/Version_2/counterfactual_simulation/data
+  meds_dir:    /scratch/users/karun09/Version_2/counterfactual_simulation/data/mimic_meds
+  athena_raw:  "/scratch/users/karun09/Version_2/vocabulary_download_v5_{e770b936-2d4a-4239-ad97-64ef3269a20d}_1782458474101"
+  athena_path: /scratch/users/karun09/Version_2/counterfactual_simulation/data/athena_clean
+  # our cardiovascular cohort + code crosswalks (new; used when restricting/relabelling events)
+  cohort_parquet:  /scratch/users/karun09/Version_2/counterfactual_simulation/cohort/cohort_v1.parquet
+  lab_loinc_map:   /scratch/users/karun09/Version_2/counterfactual_simulation/cohort/lab_loinc_final.json
+  med_rxnorm_map:  /scratch/users/karun09/Version_2/counterfactual_simulation/cohort/med_rxnorm_crosswalk.json
+
+preprocess:
+  min_events_per_patient: 2
+  max_labs_per_patient: 5000
+  bucket_hours: 1            # hourly state grid
+
+encoder:
+  kind: clmbr               # gru | clmbr
+  clmbr_model: StanfordShahLab/clmbr-t-base
+  clmbr_dim: 768
+  gru:
+    embed_dim: 64
+    hidden_dim: 256
+    num_layers: 2
+    dropout: 0.2
+    max_vocab: 20000
+
+world_model:
+  kind: gaussian            # deterministic | gaussian | mdn  (gaussian gives calibrated uncertainty)
+  action_embed_dim: 32
+  dt_embed_dim: 16
+  hidden_dim: 256
+  num_layers: 3
+  mdn_components: 5
+  k_step: 4                 # multi-step latent-consistency horizon (JEPA rollout loss)
+
+deconfound:
+  enabled: true            # stabilized IPW + CRN-style adversarial balancing (on by default now)
+  use_ipw: true
+  ipw_clip: 10.0
+  balance_dim: 128
+  adv_lambda: 0.5
+  propensity_epochs: 30
+
+train:
+  device: cuda
+  lr: 1.0e-3
+  epochs: 50
+  batch_size: 64
+  val_frac: 0.2
+
+simulation:
+  max_steps: 128
+
+rl:
+  gamma: 0.99

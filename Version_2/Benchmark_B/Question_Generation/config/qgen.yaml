@@ -1,0 +1,82 @@
+# Benchmark B — Question-Generation config: post-procedure lab TRAJECTORY prediction.
+# Given a patient's pre-procedure state + the ICU procedure, predict each core lab's post-procedure
+# direction (Rising/Falling/Stable). Stable = stays within the lab's reference range. Mirrors A's
+# Evaluator-Optimizer + agentic PubMed. NOT a clinical tool. Scratch-only; PHI never leaves the node.
+
+project: Benchmark_B_QuestionGen
+pipeline_version: qgenB-0.1.0
+seed: 20260627
+
+data:
+  source: full
+  full_root: /scratch/users/karun09/physionet.org/files/mimiciv/3.1
+  demo_root: /scratch/users/karun09/Version_1/SIMR-Research/mimic-iv-clinical-database-demo-2.2
+  out_dir: /scratch/users/karun09/Version_2/Benchmark_B/Question_Generation/outputs
+
+# ── cohort: ICU-procedure-anchored admissions with repeated core labs pre+post ────────────────
+cohort:
+  diagnosis_filter: cardiovascular_primary  # restrict to admissions whose PRIMARY dx is cardiac/vascular (excl cerebrovascular)
+  procedure_source: icu_procedureevents      # icu/procedureevents (timestamped)
+  procedure_categories: [Dialysis, 1-Intubation/Extubation, 2-Ventilation]  # therapeutic, lab-moving only
+  core_labs: [Creatinine, Urea Nitrogen, Potassium, Sodium, Bicarbonate, Hemoglobin,
+              White Blood Cells, Platelet Count, Lactate]
+  post_window_h: 72                          # data-driven: coverage plateaus after 72h
+  min_pre: 2                                 # >=2 pre-procedure measurements per core lab
+  min_post: 2                                # >=2 post-procedure measurements within window
+  min_labs_with_traj: 1                      # keep a procedure if >=1 core lab is trajectory-able
+  min_procedure_gap_h: 6                     # ignore procedures < this from ICU start (artifacts)
+  chunksize: 2000000
+  pool_size: 5000
+
+# ── time-zero = procedure start ──────────────────────────────────────────────────────────────
+time_zero:
+  policy: procedure
+
+generation:
+  concurrency: 8                     # questions in flight (thread pool)
+  target_n: 500
+  diagnosis_frac: 0.5            # unused for B (kept for schema parity)
+  max_iterations: 3
+  max_tool_calls_per_agent: 6
+  agent_wall_clock_s: 300
+
+models:
+  optimizer:
+    model_id: openai/gpt-oss-20b   # neutral-family generator (distinct from any model under test)
+    cuda_device: cuda:0
+    backend: vllm
+    load_4bit: false
+    max_memory_per_gpu: 22GiB        # (HF-backend only; ignored by vllm)
+    endpoint: http://localhost:8000/v1
+    port: 8000
+    tensor_parallel_size: 1          # single H100; both 14B models share it
+    quantization: null
+    max_model_len: 16384
+    max_tokens: 6000                 # output cap (reasoning + final)
+    gpu_memory_utilization: 0.45     # two servers on one 80GB H100 -> ~0.45 each
+    tool_calling: native
+    reasoning_effort: low
+    temperature: 0.2
+  evaluator:
+    model_id: openai/gpt-oss-20b   # single-model: same server as optimizer (:8000)
+    cuda_device: cuda:0
+    backend: vllm
+    load_4bit: false
+    max_memory_per_gpu: 22GiB        # (HF-backend only; ignored by vllm)
+    endpoint: http://localhost:8000/v1
+    port: 8000
+    tensor_parallel_size: 1
+    quantization: null
+    max_model_len: 16384
+    max_tokens: 8000                 # R1 reasoning headroom so verdict JSON never truncates
+    gpu_memory_utilization: 0.45
+    tool_calling: native
+    reasoning_effort: low
+    temperature: 0.0
+
+pubmed_mcp:
+  server_dir: /scratch/users/karun09/Version_2/PubMed-MCP-Server
+  node_bin: /share/software/user/open/nodejs/25.3.0/bin/node
+  entry: build/index.js
+  call_timeout_s: 30
+  max_consecutive_failures: 3

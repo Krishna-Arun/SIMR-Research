@@ -1,0 +1,126 @@
+# ============================================================================
+# SIMR-Research .gitignore
+# Repo root = $SCRATCH (/scratch/users/karun09). This tree contains the user's
+# entire Sherlock environment (conda, caches, model weights) plus credentialed
+# MIMIC data. Only code/docs are tracked; everything below is EXCLUDED.
+# ============================================================================
+
+# ---- Secrets / credentials (NEVER commit) ----------------------------------
+.hf_token
+**/.hf_token
+.env
+**/.env
+*.env
+.netrc
+**/.netrc
+*.pem
+*credential*
+*secret*
+token.txt
+
+# ---- Credentialed datasets (MIMIC-IV / PhysioNet — data use agreement) ------
+physionet.org/
+**/physionet.org/
+**/physionet.org.old/
+**/mimiciv/
+**/mimiciv_4/
+**/MIMIC_WORLD_MODEL/data/
+**/mimic*/
+
+# ---- OMOP / Athena vocabularies & other bulk datasets ----------------------
+**/vocab_data/
+**/vocabulary_download*/
+**/athena_clean/
+**/CONCEPT*.csv
+**/data/
+**/data_icu/
+**/datasets/
+
+# ---- Model weights & downloaded checkpoints --------------------------------
+loaded_models/
+**/loaded_models/
+*.safetensors
+*.gguf
+*.ckpt
+*.onnx
+*.pt
+*.pth
+*.bin
+consolidated.*.pth
+
+# ---- Serialized arrays / tables (datasets, not code) -----------------------
+*.pkl
+*.pkl.bak
+*.pickle
+*.npy
+*.npz
+*.h5
+*.hdf5
+*.arrow
+*.feather
+*.parquet
+*.csv
+*.tsv
+*.incomplete
+
+# ---- Toolchain / package managers (huge, machine-specific) -----------------
+miniforge3/
+.conda/
+**/.conda/
+.pip/
+**/.pip/
+.pip_cache/
+.npm-cache/
+.ollama/
+.torch/
+.apptainer/
+.huggingface/
+**/.huggingface/
+.cache/
+**/.cache/
+.nv/
+**/.nv/
+.pylibs/
+**/.pylibs/
+.schrodinger/
+**/.schrodinger/
+.vscode/
+
+# ---- Python virtual environments -------------------------------------------
+**/envs/
+**/venv/
+**/.venv/
+**/boot*/
+**/site-packages/
+
+# ---- Container images ------------------------------------------------------
+*.sif
+*.simg
+containers/
+
+# ---- Nested git repositories (tracked separately on their own remotes) -----
+Version_1/SIMR-Research/
+Version_3/SIMR-Research/
+**/PubMed-MCP-Server/
+
+# ---- Logs / session scratch / runtime junk ---------------------------------
+**/logs/
+*.log
+**/h100_session/
+**/l40s_session/
+slurm-*.out
+
+# ---- Python bytecode / build artifacts -------------------------------------
+__pycache__/
+**/__pycache__/
+*.py[cod]
+*.egg-info/
+.ipynb_checkpoints/
+
+# ---- OS / editor cruft -----------------------------------------------------
+.DS_Store
+*.swp
+*~
+
+# ---- Claude Code local state -----------------------------------------------
+.claude/

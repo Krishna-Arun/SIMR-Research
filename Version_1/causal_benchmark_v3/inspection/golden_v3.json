@@ -1,0 +1,2293 @@
+{
+  "n": 10,
+  "models": [
+    "Qwen3-8B / cot",
+    "Qwen3-8B / zero_shot",
+    "DeepSeek-R1-7B / zero_shot",
+    "DeepSeek-R1-7B / cot"
+  ],
+  "samples": [
+    {
+      "pair_id": "pair_000001",
+      "tag": "known case + scale anomaly",
+      "contrast": "pci_vs_control",
+      "treated": "ep_pci_00000",
+      "untreated": "ep_control_00076",
+      "arm_a": "pci",
+      "arm_b": "control",
+      "match_quality": {
+        "score": 1.585,
+        "comorbidity_distance": 1,
+        "baseline_a": 2.29,
+        "baseline_b": 1.62,
+        "dir_a": "falling",
+        "dir_b": "falling"
+      },
+      "markers": [
+        "Troponin T"
+      ],
+      "per_marker": {
+        "Troponin T": {
+          "role": "positive",
+          "gt": {
+            "baseline_a": 2.29,
+            "final_a": 2.77,
+            "baseline_b": 1.62,
+            "final_b": 1.98,
+            "benefit_label": "no-different",
+            "did": -0.013
+          },
+          "models": {
+            "Qwen3-8B / cot": {
+              "A": {
+                "start": 0.8,
+                "final": 0.1,
+                "parsed_dir": "falling",
+                "logit_probs": {
+                  "rising": 0.551,
+                  "falling": 0.019,
+                  "stable": 0.429
+                },
+                "logit_argmax": "rising"
+              },
+              "B": {
+                "start": 1.62,
+                "final": 0.5,
+                "parsed_dir": "falling",
+                "logit_probs": {
+                  "rising": 0.257,
+                  "falling": 0.022,
+                  "stable": 0.721
+                },
+                "logit_argmax": "stable"
+              },
+              "pred_benefit": "helps",
+              "benefit_correct": false,
+              "parse_ne_logit": true,
+              "scale_off": true,
+              "garbage": false
+            },
+            "Qwen3-8B / zero_shot": {
+              "A": {
+                "start": 1.5,
+                "final": 0.1,
+                "parsed_dir": "falling",
+                "logit_probs": {
+                  "rising": 0.551,
+                  "falling": 0.019,
+                  "stable": 0.429
+                },
+                "logit_argmax": "rising"
+              },
+              "B": {
+                "start": 1.62,
+                "final": 0.5,
+                "parsed_dir": "falling",
+                "logit_probs": {
+                  "rising": 0.257,
+                  "falling": 0.022,
+                  "stable": 0.721
+                },
+                "logit_argmax": "stable"
+              },
+              "pred_benefit": "helps",
+              "benefit_correct": false,
+              "parse_ne_logit": true,
+              "scale_off": false,
+              "garbage": false
+            },
+            "DeepSeek-R1-7B / zero_shot": {
+              "A": {
+                "start": 1.5,
+                "final": 0.2,
+                "parsed_dir": "falling",
+                "logit_probs": {
+                  "rising": 0.777,
+                  "falling": 0.027,
+                  "stable": 0.196
+                },
+                "logit_argmax": "rising"
+              },
+              "B": {
+                "start": 0.0,
+                "final": 0.0,
+                "parsed_dir": "stable",
+                "logit_probs": {
+                  "rising": 0.7,
+                  "falling": 0.026,
+                  "stable": 0.274
+                },
+                "logit_argmax": "rising"
+              },
+              "pred_benefit": "hurts",
+              "benefit_correct": false,
+              "parse_ne_logit": true,
+              "scale_off": false,
+              "garbage": false
+            },
+            "DeepSeek-R1-7B / cot": {
+              "A": {
+                "start": 1.5,
+                "final": 0.6,
+                "parsed_dir": "falling",
+                "logit_probs": {
+                  "rising": 0.777,
+                  "falling": 0.027,
+                  "stable": 0.196
+                },
+                "logit_argmax": "rising"
+              },
+              "B": {
+                "start": 1.62,
+                "final": 1.62,
+                "parsed_dir": "falling",
+                "logit_probs": {
+                  "rising": 0.7,
+                  "falling": 0.026,
+                  "stable": 0.274
+                },
+                "logit_argmax": "rising"
+              },
+              "pred_benefit": "helps",
+              "benefit_correct": false,
+              "parse_ne_logit": true,
+              "scale_off": false,
+              "garbage": false
+            }
+          }
+        }
+      }
+    },
+    {
+      "pair_id": "pair_000004",
+      "tag": "scores Sodium neg-control",
+      "contrast": "pci_vs_control",
+      "treated": "ep_pci_00001",
+      "untreated": "ep_control_00211",
+      "arm_a": "pci",
+      "arm_b": "control",
+      "match_quality": {
+        "score": 1.8,
+        "comorbidity_distance": 1,
+        "baseline_a": 0.03,
+        "baseline_b": 0.05,
+        "dir_a": "falling",
+        "dir_b": "falling"
+      },
+      "markers": [
+        "Sodium",
+        "Troponin T"
+      ],
+      "per_marker": {
+        "Sodium": {
+          "role": "negative_control",
+          "gt": {
+            "baseline_a": 141.0,
+            "final_a": 142.0,
+            "baseline_b": 137.0,
+            "final_b": 139.0,
+            "benefit_label": "no-different",
+            "did": -0.008
+          },
+          "models": {
+            "Qwen3-8B / cot": {
+              "A": {
+                "start": 141.0,
+                "final": 141.0,
+                "parsed_dir": "stable",
+                "logit_probs": null,
+                "logit_argmax": null
+              },
+              "B": {
+                "start": 137.0,
+                "final": 137.0,
+                "parsed_dir": "stable",
+                "logit_probs": null,
+                "logit_argmax": null
+              },
+              "pred_benefit": "no-different",
+              "benefit_correct": true,
+              "parse_ne_logit": false,
+              "scale_off": false,
+              "garbage": false
+            },
+            "Qwen3-8B / zero_shot": {
+              "A": {
+                "start": 141.0,
+                "final": 141.0,
+                "parsed_dir": "stable",
+                "logit_probs": null,
+                "logit_argmax": null
+              },
+              "B": {
+                "start": 137.0,
+                "final": 137.0,
+                "parsed_dir": "stable",
+                "logit_probs": null,
+                "logit_argmax": null
+              },
+              "pred_benefit": "no-different",
+              "benefit_correct": true,
+              "parse_ne_logit": false,
+              "scale_off": false,
+              "garbage": false
+            },
+            "DeepSeek-R1-7B / zero_shot": {
+              "A": {
+                "start": 141.0,
+                "final": 141.0,
+                "parsed_dir": "stable",
+                "logit_probs": null,
+                "logit_argmax": null
+              },
+              "B": {
+                "start": 137.0,
+                "final": 137.0,
+                "parsed_dir": "stable",
+                "logit_probs": null,
+                "logit_argmax": null
+              },
+              "pred_benefit": "no-different",
+              "benefit_correct": true,
+              "parse_ne_logit": false,
+              "scale_off": false,
+              "garbage": false
+            },
+            "DeepSeek-R1-7B / cot": {
+              "A": {
+                "start": 143.0,
+                "final": 150.0,
+                "parsed_dir": "rising",
+                "logit_probs": null,
+                "logit_argmax": null
+              },
+              "B": {
+                "start": 137.0,
+                "final": 150.0,
+                "parsed_dir": "rising",
+                "logit_probs": null,
+                "logit_argmax": null
+              },
+              "pred_benefit": "no-different",
+              "benefit_correct": true,
+              "parse_ne_logit": false,
+              "scale_off": false,
+              "garbage": false
+            }
+          }
+        },
+        "Troponin T": {
+          "role": "positive",
+          "gt": {
+            "baseline_a": 0.03,
+            "final_a": 0.01,
+            "baseline_b": 0.05,
+            "final_b": 0.05,
+            "benefit_label": "helps",
+            "did": -0.667
+          },
+          "models": {
+            "Qwen3-8B / cot": {
+              "A": {
+                "start": 0.05,
+                "final": 0.2,
+                "parsed_dir": "rising",
+                "logit_probs": {
+                  "rising": 0.289,
+                  "falling": 0.016,
+                  "stable": 0.694
+                },
+                "logit_argmax": "stable"
+              },
+              "B": {
+                "start": 0.05,
+                "final": 0.05,
+                "parsed_dir": "stable",
+                "logit_probs": {
+                  "rising": 0.184,
+                  "falling": 0.016,
+                  "stable": 0.8
+                },
+                "logit_argmax": "stable"
+              },
+              "pred_benefit": "hurts",
+              "benefit_correct": false,
+              "parse_ne_logit": true,
+              "scale_off": true,
+              "garbage": false
+            },
+            "Qwen3-8B / zero_shot": {
+              "A": {
+                "start": 0.05,
+                "final": 0.2,
+                "parsed_dir": "rising",
+                "logit_probs": {
+                  "rising": 0.289,
+                  "falling": 0.016,
+                  "stable": 0.694
+                },
+                "logit_argmax": "stable"
+              },
+              "B": {
+                "start": 0.05,
+                "final": 0.11,
+                "parsed_dir": "rising",
+                "logit_probs": {
+                  "rising": 0.184,
+                  "falling": 0.016,
+                  "stable": 0.8
+                },
+                "logit_argmax": "stable"
+              },
+              "pred_benefit": "hurts",
+              "benefit_correct": false,
+              "parse_ne_logit": true,
+              "scale_off": true,
+              "garbage": false
+            },
+            "DeepSeek-R1-7B / zero_shot": {
+              "A": {
+                "start": 0.03,
+                "final": 0.03,
+                "parsed_dir": "falling",
+                "logit_probs": {
+                  "rising": 0.667,
+                  "falling": 0.028,
+                  "stable": 0.305
+                },
+                "logit_argmax": "rising"
+              },
+              "B": {
+                "start": 0.04,
+                "final": 0.01,
+                "parsed_dir": "falling",
+                "logit_probs": {
+                  "rising": 0.64,
+                  "falling": 0.023,
+                  "stable": 0.337
+                },
+                "logit_argmax": "rising"
+              },
+              "pred_benefit": "hurts",
+              "benefit_correct": false,
+              "parse_ne_logit": true,
+              "scale_off": false,
+              "garbage": false
+            },
+            "DeepSeek-R1-7B / cot": {
+              "A": {
+                "start": 0.02,
+                "final": 0.003,
+                "parsed_dir": "falling",
+                "logit_probs": {
+                  "rising": 0.667,
+                  "falling": 0.028,
+                  "stable": 0.305
+                },
+                "logit_argmax": "rising"
+              },
+              "B": {
+                "start": 0.05,
+                "final": 0.05,
+                "parsed_dir": "stable",
+                "logit_probs": {
+                  "rising": 0.64,
+                  "falling": 0.023,
+                  "stable": 0.337
+                },
+                "logit_argmax": "rising"
+              },
+              "pred_benefit": "helps",
+              "benefit_correct": true,
+              "parse_ne_logit": true,
+              "scale_off": false,
+              "garbage": false
+            }
+          }
+        }
+      }
+    },
+    {
+      "pair_id": "pair_000005",
+      "tag": "scores Sodium neg-control",
+      "contrast": "pci_vs_control",
+      "treated": "ep_pci_00001",
+      "untreated": "ep_control_00344",
+      "arm_a": "pci",
+      "arm_b": "control",
+      "match_quality": {
+        "score": 1.854,
+        "comorbidity_distance": 0,
+        "baseline_a": 0.03,
+        "baseline_b": 0.41,
+        "dir_a": "falling",
+        "dir_b": "falling"
+      },
+      "markers": [
+        "Sodium",
+        "Troponin T"
+      ],
+      "per_marker": {
+        "Sodium": {
+          "role": "negative_control",
+          "gt": {
+            "baseline_a": 141.0,
+            "final_a": 142.0,
+            "baseline_b": 136.0,
+            "final_b": 136.0,
+            "benefit_label": "no-different",
+            "did": 0.007
+          },
+          "models": {
+            "Qwen3-8B / cot": {
+              "A": {
+                "start": 141.0,
+                "final": 141.0,
+                "parsed_dir": "stable",
+                "logit_probs": null,
+                "logit_argmax": null
+              },
+              "B": {
+                "start": 136.0,
+                "final": 136.0,
+                "parsed_dir": "stable",
+                "logit_probs": null,
+                "logit_argmax": null
+              },
+              "pred_benefit": "no-different",
+              "benefit_correct": true,
+              "parse_ne_logit": false,
+              "scale_off": false,
+              "garbage": false
+            },
+            "Qwen3-8B / zero_shot": {
+              "A": {
+                "start": 141.0,
+                "final": 141.0,
+                "parsed_dir": "stable",
+                "logit_probs": null,
+                "logit_argmax": null
+              },
+              "B": {
+                "start": 136.0,
+                "final": 136.0,
+                "parsed_dir": "stable",
+                "logit_probs": null,
+                "logit_argmax": null
+              },
+              "pred_benefit": "no-different",
+              "benefit_correct": true,
+              "parse_ne_logit": false,
+              "scale_off": false,
+              "garbage": false
+            },
+            "DeepSeek-R1-7B / zero_shot": {
+              "A": {
+                "start": 141.0,
+                "final": 141.0,
+                "parsed_dir": "stable",
+                "logit_probs": null,
+                "logit_argmax": null
+              },
+              "B": {
+                "start": 0.0,
+                "final": 0.0,
+                "parsed_dir": "stable",
+                "logit_probs": null,
+                "logit_argmax": null
+              },
+              "pred_benefit": "hurts",
+              "benefit_correct": false,
+              "parse_ne_logit": false,
+              "scale_off": false,
+              "garbage": false
+            },
+            "DeepSeek-R1-7B / cot": {
+              "A": {
+                "start": 143.0,
+                "final": 150.0,
+                "parsed_dir": "rising",
+                "logit_probs": null,
+                "logit_argmax": null
+              },
+              "B": {
+                "start": 0.0,
+                "final": 0.0,
+                "parsed_dir": "stable",
+                "logit_probs": null,
+                "logit_argmax": null
+              },
+              "pred_benefit": "hurts",
+              "benefit_correct": false,
+              "parse_ne_logit": false,
+              "scale_off": false,
+              "garbage": false
+            }
+          }
+        },
+        "Troponin T": {
+          "role": "positive",
+          "gt": {
+            "baseline_a": 0.03,
+            "final_a": 0.01,
+            "baseline_b": 0.41,
+            "final_b": 0.2,
+            "benefit_label": "helps",
+            "did": -0.154
+          },
+          "models": {
+            "Qwen3-8B / cot": {
+              "A": {
+                "start": 0.05,
+                "final": 0.2,
+                "parsed_dir": "rising",
+                "logit_probs": {
+                  "rising": 0.289,
+                  "falling": 0.016,
+                  "stable": 0.694
+                },
+                "logit_argmax": "stable"
+              },
+              "B": {
+                "start": 0.41,
+                "final": 0.15,
+                "parsed_dir": "falling",
+                "logit_probs": {
+                  "rising": 0.219,
+                  "falling": 0.019,
+                  "stable": 0.763
+                },
+                "logit_argmax": "stable"
+              },
+              "pred_benefit": "hurts",
+              "benefit_correct": false,
+              "parse_ne_logit": true,
+              "scale_off": true,
+              "garbage": false
+            },
+            "Qwen3-8B / zero_shot": {
+              "A": {
+                "start": 0.05,
+                "final": 0.2,
+                "parsed_dir": "rising",
+                "logit_probs": {
+                  "rising": 0.289,
+                  "falling": 0.016,
+                  "stable": 0.694
+                },
+                "logit_argmax": "stable"
+              },
+              "B": {
+                "start": 0.41,
+                "final": 0.05,
+                "parsed_dir": "falling",
+                "logit_probs": {
+                  "rising": 0.219,
+                  "falling": 0.019,
+                  "stable": 0.763
+                },
+                "logit_argmax": "stable"
+              },
+              "pred_benefit": "hurts",
+              "benefit_correct": false,
+              "parse_ne_logit": true,
+              "scale_off": true,
+              "garbage": false
+            },
+            "DeepSeek-R1-7B / zero_shot": {
+              "A": {
+                "start": 0.03,
+                "final": 0.03,
+                "parsed_dir": "falling",
+                "logit_probs": {
+                  "rising": 0.667,
+                  "falling": 0.028,
+                  "stable": 0.305
+                },
+                "logit_argmax": "rising"
+              },
+              "B": {
+                "start": 0.0,
+                "final": 0.0,
+                "parsed_dir": "stable",
+                "logit_probs": {
+                  "rising": 0.701,
+                  "falling": 0.029,
+                  "stable": 0.27
+                },
+                "logit_argmax": "rising"
+              },
+              "pred_benefit": "hurts",
+              "benefit_correct": false,
+              "parse_ne_logit": true,
+              "scale_off": false,
+              "garbage": false
+            },
+            "DeepSeek-R1-7B / cot": {
+              "A": {
+                "start": 0.02,
+                "final": 0.003,
+                "parsed_dir": "falling",
+                "logit_probs": {
+                  "rising": 0.667,
+                  "falling": 0.028,
+                  "stable": 0.305
+                },
+                "logit_argmax": "rising"
+              },
+              "B": {
+                "start": 0.0,
+                "final": 1.0,
+                "parsed_dir": "falling",
+                "logit_probs": {
+                  "rising": 0.701,
+                  "falling": 0.029,
+                  "stable": 0.27
+                },
+                "logit_argmax": "rising"
+              },
+              "pred_benefit": "helps",
+              "benefit_correct": true,
+              "parse_ne_logit": true,
+              "scale_off": false,
+              "garbage": false
+            }
+          }
+        }
+      }
+    },
+    {
+      "pair_id": "pair_000007",
+      "tag": "scores CK-MB",
+      "contrast": "pci_vs_control",
+      "treated": "ep_pci_00002",
+      "untreated": "ep_control_00368",
+      "arm_a": "pci",
+      "arm_b": "control",
+      "match_quality": {
+        "score": 1.296,
+        "comorbidity_distance": 0,
+        "baseline_a": 11.94,
+        "baseline_b": 4.2,
+        "dir_a": "rising",
+        "dir_b": "rising"
+      },
+      "markers": [
+        "Creatine Kinase, MB Isoenzyme",
+        "Sodium",
+        "Troponin T"
+      ],
+      "per_marker": {
+        "Creatine Kinase, MB Isoenzyme": {
+          "role": "positive",
+          "gt": {
+            "baseline_a": 250.0,
+            "final_a": 130.0,
+            "baseline_b": 105.0,
+            "final_b": 129.0,
+            "benefit_label": "helps",
+            "did": -0.709
+          },
+          "models": {
+            "Qwen3-8B / cot": {
+              "A": {
+                "start": 250.0,
+                "final": 50.0,
+                "parsed_dir": "falling",
+                "logit_probs": null,
+                "logit_argmax": null
+              },
+              "B": {
+                "start": 95.0,
+                "final": 30.0,
+                "parsed_dir": "falling",
+                "logit_probs": null,
+                "logit_argmax": null
+              },
+              "pred_benefit": "helps",
+              "benefit_correct": true,
+              "parse_ne_logit": false,
+              "scale_off": false,
+              "garbage": false
+            },
+            "Qwen3-8B / zero_shot": {
+              "A": {
+                "start": 250.0,
+                "final": 50.0,
+                "parsed_dir": "falling",
+                "logit_probs": null,
+                "logit_argmax": null
+              },
+              "B": {
+                "start": 105.0,
+                "final": 45.0,
+                "parsed_dir": "falling",
+                "logit_probs": null,
+                "logit_argmax": null
+              },
+              "pred_benefit": "helps",
+              "benefit_correct": true,
+              "parse_ne_logit": false,
+              "scale_off": false,
+              "garbage": false
+            },
+            "DeepSeek-R1-7B / zero_shot": {
+              "A": {
+                "start": 1.0,
+                "final": 0.0,
+                "parsed_dir": "falling",
+                "logit_probs": null,
+                "logit_argmax": null
+              },
+              "B": {
+                "start": 80.0,
+                "final": 50.0,
+                "parsed_dir": "falling",
+                "logit_probs": null,
+                "logit_argmax": null
+              },
+              "pred_benefit": "helps",
+              "benefit_correct": true,
+              "parse_ne_logit": false,
+              "scale_off": true,
+              "garbage": false
+            },
+            "DeepSeek-R1-7B / cot": {
+              "A": {
+                "start": 250.0,
+                "final": 75.0,
+                "parsed_dir": "falling",
+                "logit_probs": null,
+                "logit_argmax": null
+              },
+              "B": {
+                "start": 105.0,
+                "final": 105.0,
+                "parsed_dir": "stable",
+                "logit_probs": null,
+                "logit_argmax": null
+              },
+              "pred_benefit": "helps",
+              "benefit_correct": true,
+              "parse_ne_logit": false,
+              "scale_off": false,
+              "garbage": false
+            }
+          }
+        },
+        "Sodium": {
+          "role": "negative_control",
+          "gt": {
+            "baseline_a": 138.0,
+            "final_a": 144.0,
+            "baseline_b": 131.0,
+            "final_b": 133.0,
+            "benefit_label": "no-different",
+            "did": 0.028
+          },
+          "models": {
+            "Qwen3-8B / cot": {
+              "A": {
+                "start": 138.0,
+                "final": 138.0,
+                "parsed_dir": "stable",
+                "logit_probs": null,
+                "logit_argmax": null
+              },
+              "B": {
+                "start": 131.0,
+                "final": 131.0,
+                "parsed_dir": "stable",
+                "logit_probs": null,
+                "logit_argmax": null
+              },
+              "pred_benefit": "no-different",
+              "benefit_correct": true,
+              "parse_ne_logit": false,
+              "scale_off": false,
+              "garbage": false
+            },
+            "Qwen3-8B / zero_shot": {
+              "A": {
+                "start": 138.0,
+                "final": 138.0,
+                "parsed_dir": "stable",
+                "logit_probs": null,
+                "logit_argmax": null
+              },
+              "B": {
+                "start": 131.0,
+                "final": 131.0,
+                "parsed_dir": "stable",
+                "logit_probs": null,
+                "logit_argmax": null
+              },
+              "pred_benefit": "no-different",
+              "benefit_correct": true,
+              "parse_ne_logit": false,
+              "scale_off": false,
+              "garbage": false
+            },
+            "DeepSeek-R1-7B / zero_shot": {
+              "A": {
+                "start": 0.0,
+                "final": 0.0,
+                "parsed_dir": "falling",
+                "logit_probs": null,
+                "logit_argmax": null
+              },
+              "B": {
+                "start": 128.0,
+                "final": 125.0,
+                "parsed_dir": "falling",
+                "logit_probs": null,
+                "logit_argmax": null
+              },
+              "pred_benefit": "helps",
+              "benefit_correct": false,
+              "parse_ne_logit": false,
+              "scale_off": true,
+              "garbage": true
+            },
+            "DeepSeek-R1-7B / cot": {
+              "A": {
+                "start": 142.0,
+                "final": 142.0,
+                "parsed_dir": "stable",
+                "logit_probs": null,
+                "logit_argmax": null
+              },
+              "B": {
+                "start": 131.0,
+                "final": 128.0,
+                "parsed_dir": "falling",
+                "logit_probs": null,
+                "logit_argmax": null
+              },
+              "pred_benefit": "hurts",
+              "benefit_correct": false,
+              "parse_ne_logit": false,
+              "scale_off": false,
+              "garbage": false
+            }
+          }
+        },
+        "Troponin T": {
+          "role": "positive",
+          "gt": {
+            "baseline_a": 11.94,
+            "final_a": 22.37,
+            "baseline_b": 4.2,
+            "final_b": 6.2,
+            "benefit_label": "hurts",
+            "did": 0.397
+          },
+          "models": {
+            "Qwen3-8B / cot": {
+              "A": {
+                "start": 11.94,
+                "final": 2.5,
+                "parsed_dir": "falling",
+                "logit_probs": {
+                  "rising": 0.391,
+                  "falling": 0.023,
+                  "stable": 0.587
+                },
+                "logit_argmax": "stable"
+              },
+              "B": {
+                "start": 4.0,
+                "final": 4.0,
+                "parsed_dir": "stable",
+                "logit_probs": {
+                  "rising": 0.235,
+                  "falling": 0.017,
+                  "stable": 0.748
+                },
+                "logit_argmax": "stable"
+              },
+              "pred_benefit": "helps",
+              "benefit_correct": false,
+              "parse_ne_logit": true,
+              "scale_off": false,
+              "garbage": false
+            },
+            "Qwen3-8B / zero_shot": {
+              "A": {
+                "start": 11.94,
+                "final": 3.0,
+                "parsed_dir": "falling",
+                "logit_probs": {
+                  "rising": 0.391,
+                  "falling": 0.023,
+                  "stable": 0.587
+                },
+                "logit_argmax": "stable"
+              },
+              "B": {
+                "start": 4.2,
+                "final": 4.2,
+                "parsed_dir": "stable",
+                "logit_probs": {
+                  "rising": 0.235,
+                  "falling": 0.017,
+                  "stable": 0.748
+                },
+                "logit_argmax": "stable"
+              },
+              "pred_benefit": "helps",
+              "benefit_correct": false,
+              "parse_ne_logit": true,
+              "scale_off": false,
+              "garbage": false
+            },
+            "DeepSeek-R1-7B / zero_shot": {
+              "A": {
+                "start": 0.0,
+                "final": 0.0,
+                "parsed_dir": "falling",
+                "logit_probs": {
+                  "rising": 0.655,
+                  "falling": 0.03,
+                  "stable": 0.314
+                },
+                "logit_argmax": "rising"
+              },
+              "B": {
+                "start": 3.5,
+                "final": 2.0,
+                "parsed_dir": "falling",
+                "logit_probs": {
+                  "rising": 0.613,
+                  "falling": 0.021,
+                  "stable": 0.366
+                },
+                "logit_argmax": "rising"
+              },
+              "pred_benefit": "helps",
+              "benefit_correct": false,
+              "parse_ne_logit": true,
+              "scale_off": true,
+              "garbage": true
+            },
+            "DeepSeek-R1-7B / cot": {
+              "A": {
+                "start": 11.94,
+                "final": 3.0,
+                "parsed_dir": "falling",
+                "logit_probs": {
+                  "rising": 0.655,
+                  "falling": 0.03,
+                  "stable": 0.314
+                },
+                "logit_argmax": "rising"
+              },
+              "B": {
+                "start": 4.2,
+                "final": 5.1,
+                "parsed_dir": "rising",
+                "logit_probs": {
+                  "rising": 0.613,
+                  "falling": 0.021,
+                  "stable": 0.366
+                },
+                "logit_argmax": "rising"
+              },
+              "pred_benefit": "helps",
+              "benefit_correct": false,
+              "parse_ne_logit": true,
+              "scale_off": false,
+              "garbage": false
+            }
+          }
+        }
+      }
+    },
+    {
+      "pair_id": "pair_000009",
+      "tag": "scores CK-MB",
+      "contrast": "pci_vs_control",
+      "treated": "ep_pci_00002",
+      "untreated": "ep_control_00044",
+      "arm_a": "pci",
+      "arm_b": "control",
+      "match_quality": {
+        "score": 1.439,
+        "comorbidity_distance": 1,
+        "baseline_a": 11.94,
+        "baseline_b": 15.3,
+        "dir_a": "rising",
+        "dir_b": "rising"
+      },
+      "markers": [
+        "Creatine Kinase, MB Isoenzyme",
+        "Sodium",
+        "Troponin T"
+      ],
+      "per_marker": {
+        "Creatine Kinase, MB Isoenzyme": {
+          "role": "positive",
+          "gt": {
+            "baseline_a": 250.0,
+            "final_a": 130.0,
+            "baseline_b": 8.0,
+            "final_b": 7.0,
+            "benefit_label": "helps",
+            "did": -0.355
+          },
+          "models": {
+            "Qwen3-8B / cot": {
+              "A": {
+                "start": 250.0,
+                "final": 50.0,
+                "parsed_dir": "falling",
+                "logit_probs": null,
+                "logit_argmax": null
+              },
+              "B": {
+                "start": 8.0,
+                "final": 4.0,
+                "parsed_dir": "falling",
+                "logit_probs": null,
+                "logit_argmax": null
+              },
+              "pred_benefit": "helps",
+              "benefit_correct": true,
+              "parse_ne_logit": false,
+              "scale_off": false,
+              "garbage": false
+            },
+            "Qwen3-8B / zero_shot": {
+              "A": {
+                "start": 250.0,
+                "final": 50.0,
+                "parsed_dir": "falling",
+                "logit_probs": null,
+                "logit_argmax": null
+              },
+              "B": {
+                "start": 8.0,
+                "final": 4.0,
+                "parsed_dir": "falling",
+                "logit_probs": null,
+                "logit_argmax": null
+              },
+              "pred_benefit": "helps",
+              "benefit_correct": true,
+              "parse_ne_logit": false,
+              "scale_off": false,
+              "garbage": false
+            },
+            "DeepSeek-R1-7B / zero_shot": {
+              "A": {
+                "start": 1.0,
+                "final": 0.0,
+                "parsed_dir": "falling",
+                "logit_probs": null,
+                "logit_argmax": null
+              },
+              "B": {
+                "start": 8.0,
+                "final": 8.0,
+                "parsed_dir": "stable",
+                "logit_probs": null,
+                "logit_argmax": null
+              },
+              "pred_benefit": "helps",
+              "benefit_correct": true,
+              "parse_ne_logit": false,
+              "scale_off": true,
+              "garbage": false
+            },
+            "DeepSeek-R1-7B / cot": {
+              "A": {
+                "start": 250.0,
+                "final": 75.0,
+                "parsed_dir": "falling",
+                "logit_probs": null,
+                "logit_argmax": null
+              },
+              "B": {
+                "start": 8.0,
+                "final": 8.0,
+                "parsed_dir": "stable",
+                "logit_probs": null,
+                "logit_argmax": null
+              },
+              "pred_benefit": "helps",
+              "benefit_correct": true,
+              "parse_ne_logit": false,
+              "scale_off": false,
+              "garbage": false
+            }
+          }
+        },
+        "Sodium": {
+          "role": "negative_control",
+          "gt": {
+            "baseline_a": 138.0,
+            "final_a": 144.0,
+            "baseline_b": 139.0,
+            "final_b": 138.0,
+            "benefit_label": "hurts",
+            "did": 0.051
+          },
+          "models": {
+            "Qwen3-8B / cot": {
+              "A": {
+                "start": 138.0,
+                "final": 138.0,
+                "parsed_dir": "stable",
+                "logit_probs": null,
+                "logit_argmax": null
+              },
+              "B": {
+                "start": 139.0,
+                "final": 139.0,
+                "parsed_dir": "stable",
+                "logit_probs": null,
+                "logit_argmax": null
+              },
+              "pred_benefit": "no-different",
+              "benefit_correct": false,
+              "parse_ne_logit": false,
+              "scale_off": false,
+              "garbage": false
+            },
+            "Qwen3-8B / zero_shot": {
+              "A": {
+                "start": 138.0,
+                "final": 138.0,
+                "parsed_dir": "stable",
+                "logit_probs": null,
+                "logit_argmax": null
+              },
+              "B": {
+                "start": 139.0,
+                "final": 139.0,
+                "parsed_dir": "stable",
+                "logit_probs": null,
+                "logit_argmax": null
+              },
+              "pred_benefit": "no-different",
+              "benefit_correct": false,
+              "parse_ne_logit": false,
+              "scale_off": false,
+              "garbage": false
+            },
+            "DeepSeek-R1-7B / zero_shot": {
+              "A": {
+                "start": 0.0,
+                "final": 0.0,
+                "parsed_dir": "falling",
+                "logit_probs": null,
+                "logit_argmax": null
+              },
+              "B": {
+                "start": 139.0,
+                "final": 137.0,
+                "parsed_dir": "falling",
+                "logit_probs": null,
+                "logit_argmax": null
+              },
+              "pred_benefit": "helps",
+              "benefit_correct": false,
+              "parse_ne_logit": false,
+              "scale_off": true,
+              "garbage": true
+            },
+            "DeepSeek-R1-7B / cot": {
+              "A": {
+                "start": 142.0,
+                "final": 142.0,
+                "parsed_dir": "stable",
+                "logit_probs": null,
+                "logit_argmax": null
+              },
+              "B": {
+                "start": 139.0,
+                "final": 139.0,
+                "parsed_dir": "stable",
+                "logit_probs": null,
+                "logit_argmax": null
+              },
+              "pred_benefit": "no-different",
+              "benefit_correct": false,
+              "parse_ne_logit": false,
+              "scale_off": false,
+              "garbage": false
+            }
+          }
+        },
+        "Troponin T": {
+          "role": "positive",
+          "gt": {
+            "baseline_a": 11.94,
+            "final_a": 22.37,
+            "baseline_b": 15.3,
+            "final_b": 12.15,
+            "benefit_label": "hurts",
+            "did": 1.079
+          },
+          "models": {
+            "Qwen3-8B / cot": {
+              "A": {
+                "start": 11.94,
+                "final": 2.5,
+                "parsed_dir": "falling",
+                "logit_probs": {
+                  "rising": 0.391,
+                  "falling": 0.023,
+                  "stable": 0.587
+                },
+                "logit_argmax": "stable"
+              },
+              "B": {
+                "start": 15.3,
+                "final": 8.0,
+                "parsed_dir": "falling",
+                "logit_probs": {
+                  "rising": 0.309,
+                  "falling": 0.015,
+                  "stable": 0.675
+                },
+                "logit_argmax": "stable"
+              },
+              "pred_benefit": "helps",
+              "benefit_correct": false,
+              "parse_ne_logit": true,
+              "scale_off": false,
+              "garbage": false
+            },
+            "Qwen3-8B / zero_shot": {
+              "A": {
+                "start": 11.94,
+                "final": 3.0,
+                "parsed_dir": "falling",
+                "logit_probs": {
+                  "rising": 0.391,
+                  "falling": 0.023,
+                  "stable": 0.587
+                },
+                "logit_argmax": "stable"
+              },
+              "B": {
+                "start": 15.3,
+                "final": 24.0,
+                "parsed_dir": "rising",
+                "logit_probs": {
+                  "rising": 0.309,
+                  "falling": 0.015,
+                  "stable": 0.675
+                },
+                "logit_argmax": "stable"
+              },
+              "pred_benefit": "helps",
+              "benefit_correct": false,
+              "parse_ne_logit": true,
+              "scale_off": false,
+              "garbage": false
+            },
+            "DeepSeek-R1-7B / zero_shot": {
+              "A": {
+                "start": 0.0,
+                "final": 0.0,
+                "parsed_dir": "falling",
+                "logit_probs": {
+                  "rising": 0.655,
+                  "falling": 0.03,
+                  "stable": 0.314
+                },
+                "logit_argmax": "rising"
+              },
+              "B": {
+                "start": 15.3,
+                "final": 6.0,
+                "parsed_dir": "falling",
+                "logit_probs": {
+                  "rising": 0.606,
+                  "falling": 0.026,
+                  "stable": 0.368
+                },
+                "logit_argmax": "rising"
+              },
+              "pred_benefit": "helps",
+              "benefit_correct": false,
+              "parse_ne_logit": true,
+              "scale_off": true,
+              "garbage": true
+            },
+            "DeepSeek-R1-7B / cot": {
+              "A": {
+                "start": 11.94,
+                "final": 3.0,
+                "parsed_dir": "falling",
+                "logit_probs": {
+                  "rising": 0.655,
+                  "falling": 0.03,
+                  "stable": 0.314
+                },
+                "logit_argmax": "rising"
+              },
+              "B": {
+                "start": 15.3,
+                "final": 7.0,
+                "parsed_dir": "falling",
+                "logit_probs": {
+                  "rising": 0.606,
+                  "falling": 0.026,
+                  "stable": 0.368
+                },
+                "logit_argmax": "rising"
+              },
+              "pred_benefit": "helps",
+              "benefit_correct": false,
+              "parse_ne_logit": true,
+              "scale_off": false,
+              "garbage": false
+            }
+          }
+        }
+      }
+    },
+    {
+      "pair_id": "pair_000142",
+      "tag": "best match-quality",
+      "contrast": "pci_vs_control",
+      "treated": "ep_pci_00047",
+      "untreated": "ep_control_00211",
+      "arm_a": "pci",
+      "arm_b": "control",
+      "match_quality": {
+        "score": 0.0,
+        "comorbidity_distance": 0,
+        "baseline_a": 0.05,
+        "baseline_b": 0.05,
+        "dir_a": "falling",
+        "dir_b": "falling"
+      },
+      "markers": [
+        "Troponin T"
+      ],
+      "per_marker": {
+        "Troponin T": {
+          "role": "positive",
+          "gt": {
+            "baseline_a": 0.05,
+            "final_a": 0.03,
+            "baseline_b": 0.05,
+            "final_b": 0.05,
+            "benefit_label": "helps",
+            "did": -0.4
+          },
+          "models": {
+            "Qwen3-8B / cot": {
+              "A": {
+                "start": 0.03,
+                "final": 0.01,
+                "parsed_dir": "falling",
+                "logit_probs": {
+                  "rising": 0.268,
+                  "falling": 0.024,
+                  "stable": 0.707
+                },
+                "logit_argmax": "stable"
+              },
+              "B": {
+                "start": 0.05,
+                "final": 0.05,
+                "parsed_dir": "stable",
+                "logit_probs": {
+                  "rising": 0.184,
+                  "falling": 0.016,
+                  "stable": 0.8
+                },
+                "logit_argmax": "stable"
+              },
+              "pred_benefit": "helps",
+              "benefit_correct": true,
+              "parse_ne_logit": true,
+              "scale_off": false,
+              "garbage": false
+            },
+            "Qwen3-8B / zero_shot": {
+              "A": {
+                "start": 0.03,
+                "final": 0.0,
+                "parsed_dir": "falling",
+                "logit_probs": {
+                  "rising": 0.268,
+                  "falling": 0.024,
+                  "stable": 0.707
+                },
+                "logit_argmax": "stable"
+              },
+              "B": {
+                "start": 0.05,
+                "final": 0.11,
+                "parsed_dir": "rising",
+                "logit_probs": {
+                  "rising": 0.184,
+                  "falling": 0.016,
+                  "stable": 0.8
+                },
+                "logit_argmax": "stable"
+              },
+              "pred_benefit": "helps",
+              "benefit_correct": true,
+              "parse_ne_logit": true,
+              "scale_off": false,
+              "garbage": false
+            },
+            "DeepSeek-R1-7B / zero_shot": {
+              "A": {
+                "start": 0.03,
+                "final": 0.0,
+                "parsed_dir": "falling",
+                "logit_probs": {
+                  "rising": 0.757,
+                  "falling": 0.026,
+                  "stable": 0.217
+                },
+                "logit_argmax": "rising"
+              },
+              "B": {
+                "start": 0.04,
+                "final": 0.01,
+                "parsed_dir": "falling",
+                "logit_probs": {
+                  "rising": 0.64,
+                  "falling": 0.023,
+                  "stable": 0.337
+                },
+                "logit_argmax": "rising"
+              },
+              "pred_benefit": "helps",
+              "benefit_correct": true,
+              "parse_ne_logit": true,
+              "scale_off": false,
+              "garbage": false
+            },
+            "DeepSeek-R1-7B / cot": {
+              "A": {
+                "start": 0.03,
+                "final": 0.01,
+                "parsed_dir": "falling",
+                "logit_probs": {
+                  "rising": 0.757,
+                  "falling": 0.026,
+                  "stable": 0.217
+                },
+                "logit_argmax": "rising"
+              },
+              "B": {
+                "start": 0.05,
+                "final": 0.05,
+                "parsed_dir": "stable",
+                "logit_probs": {
+                  "rising": 0.64,
+                  "falling": 0.023,
+                  "stable": 0.337
+                },
+                "logit_argmax": "rising"
+              },
+              "pred_benefit": "helps",
+              "benefit_correct": true,
+              "parse_ne_logit": true,
+              "scale_off": false,
+              "garbage": false
+            }
+          }
+        }
+      }
+    },
+    {
+      "pair_id": "pair_000414",
+      "tag": "worst match-quality",
+      "contrast": "pci_vs_control",
+      "treated": "ep_pci_00137",
+      "untreated": "ep_control_00093",
+      "arm_a": "pci",
+      "arm_b": "control",
+      "match_quality": {
+        "score": 4.0,
+        "comorbidity_distance": 4,
+        "baseline_a": 0.02,
+        "baseline_b": 0.02,
+        "dir_a": "stable",
+        "dir_b": "stable"
+      },
+      "markers": [
+        "Troponin T"
+      ],
+      "per_marker": {
+        "Troponin T": {
+          "role": "positive",
+          "gt": {
+            "baseline_a": 0.02,
+            "final_a": 0.01,
+            "baseline_b": 0.02,
+            "final_b": 0.03,
+            "benefit_label": "helps",
+            "did": -1.0
+          },
+          "models": {
+            "Qwen3-8B / cot": {
+              "A": {
+                "start": 0.03,
+                "final": 0.1,
+                "parsed_dir": "rising",
+                "logit_probs": {
+                  "rising": 0.236,
+                  "falling": 0.014,
+                  "stable": 0.75
+                },
+                "logit_argmax": "stable"
+              },
+              "B": {
+                "start": 0.02,
+                "final": 0.02,
+                "parsed_dir": "stable",
+                "logit_probs": {
+                  "rising": 0.109,
+                  "falling": 0.01,
+                  "stable": 0.882
+                },
+                "logit_argmax": "stable"
+              },
+              "pred_benefit": "hurts",
+              "benefit_correct": false,
+              "parse_ne_logit": true,
+              "scale_off": false,
+              "garbage": false
+            },
+            "Qwen3-8B / zero_shot": {
+              "A": {
+                "start": 0.03,
+                "final": 0.12,
+                "parsed_dir": "rising",
+                "logit_probs": {
+                  "rising": 0.236,
+                  "falling": 0.014,
+                  "stable": 0.75
+                },
+                "logit_argmax": "stable"
+              },
+              "B": {
+                "start": 0.02,
+                "final": 0.02,
+                "parsed_dir": "stable",
+                "logit_probs": {
+                  "rising": 0.109,
+                  "falling": 0.01,
+                  "stable": 0.882
+                },
+                "logit_argmax": "stable"
+              },
+              "pred_benefit": "hurts",
+              "benefit_correct": false,
+              "parse_ne_logit": true,
+              "scale_off": false,
+              "garbage": false
+            },
+            "DeepSeek-R1-7B / zero_shot": {
+              "A": {
+                "start": 0.01,
+                "final": 0.004,
+                "parsed_dir": "falling",
+                "logit_probs": {
+                  "rising": 0.632,
+                  "falling": 0.025,
+                  "stable": 0.343
+                },
+                "logit_argmax": "rising"
+              },
+              "B": {
+                "start": 0.0,
+                "final": 0.0,
+                "parsed_dir": "stable",
+                "logit_probs": {
+                  "rising": 0.705,
+                  "falling": 0.027,
+                  "stable": 0.268
+                },
+                "logit_argmax": "rising"
+              },
+              "pred_benefit": "hurts",
+              "benefit_correct": false,
+              "parse_ne_logit": true,
+              "scale_off": false,
+              "garbage": false
+            },
+            "DeepSeek-R1-7B / cot": {
+              "A": {
+                "start": 4.0,
+                "final": 2.5,
+                "parsed_dir": "falling",
+                "logit_probs": {
+                  "rising": 0.632,
+                  "falling": 0.025,
+                  "stable": 0.343
+                },
+                "logit_argmax": "rising"
+              },
+              "B": {
+                "start": 0.0,
+                "final": 0.0,
+                "parsed_dir": "stable",
+                "logit_probs": {
+                  "rising": 0.705,
+                  "falling": 0.027,
+                  "stable": 0.268
+                },
+                "logit_argmax": "rising"
+              },
+              "pred_benefit": "hurts",
+              "benefit_correct": false,
+              "parse_ne_logit": true,
+              "scale_off": true,
+              "garbage": false
+            }
+          }
+        }
+      }
+    },
+    {
+      "pair_id": "pair_000364",
+      "tag": "GT: treatment HELPS",
+      "contrast": "pci_vs_control",
+      "treated": "ep_pci_00121",
+      "untreated": "ep_control_00386",
+      "arm_a": "pci",
+      "arm_b": "control",
+      "match_quality": {
+        "score": 0.056,
+        "comorbidity_distance": 0,
+        "baseline_a": 0.71,
+        "baseline_b": 0.69,
+        "dir_a": "rising",
+        "dir_b": "rising"
+      },
+      "markers": [
+        "Troponin T"
+      ],
+      "per_marker": {
+        "Troponin T": {
+          "role": "positive",
+          "gt": {
+            "baseline_a": 0.71,
+            "final_a": 0.78,
+            "baseline_b": 0.69,
+            "final_b": 1.08,
+            "benefit_label": "helps",
+            "did": -0.467
+          },
+          "models": {
+            "Qwen3-8B / cot": {
+              "A": {
+                "start": 0.5,
+                "final": 0.0,
+                "parsed_dir": "falling",
+                "logit_probs": {
+                  "rising": 0.436,
+                  "falling": 0.022,
+                  "stable": 0.542
+                },
+                "logit_argmax": "stable"
+              },
+              "B": {
+                "start": 0.69,
+                "final": 0.69,
+                "parsed_dir": "stable",
+                "logit_probs": {
+                  "rising": 0.295,
+                  "falling": 0.018,
+                  "stable": 0.686
+                },
+                "logit_argmax": "stable"
+              },
+              "pred_benefit": "helps",
+              "benefit_correct": true,
+              "parse_ne_logit": true,
+              "scale_off": false,
+              "garbage": false
+            },
+            "Qwen3-8B / zero_shot": {
+              "A": {
+                "start": 0.5,
+                "final": 0.0,
+                "parsed_dir": "falling",
+                "logit_probs": {
+                  "rising": 0.436,
+                  "falling": 0.022,
+                  "stable": 0.542
+                },
+                "logit_argmax": "stable"
+              },
+              "B": {
+                "start": 0.69,
+                "final": 0.69,
+                "parsed_dir": "stable",
+                "logit_probs": {
+                  "rising": 0.295,
+                  "falling": 0.018,
+                  "stable": 0.686
+                },
+                "logit_argmax": "stable"
+              },
+              "pred_benefit": "helps",
+              "benefit_correct": true,
+              "parse_ne_logit": true,
+              "scale_off": false,
+              "garbage": false
+            },
+            "DeepSeek-R1-7B / zero_shot": {
+              "A": {
+                "start": 0.5,
+                "final": 0.2,
+                "parsed_dir": "falling",
+                "logit_probs": {
+                  "rising": 0.763,
+                  "falling": 0.025,
+                  "stable": 0.212
+                },
+                "logit_argmax": "rising"
+              },
+              "B": {
+                "start": 0.45,
+                "final": 0.69,
+                "parsed_dir": "rising",
+                "logit_probs": {
+                  "rising": 0.649,
+                  "falling": 0.024,
+                  "stable": 0.327
+                },
+                "logit_argmax": "rising"
+              },
+              "pred_benefit": "helps",
+              "benefit_correct": true,
+              "parse_ne_logit": true,
+              "scale_off": false,
+              "garbage": false
+            },
+            "DeepSeek-R1-7B / cot": {
+              "A": {
+                "start": 0.71,
+                "final": 0.15,
+                "parsed_dir": "falling",
+                "logit_probs": {
+                  "rising": 0.763,
+                  "falling": 0.025,
+                  "stable": 0.212
+                },
+                "logit_argmax": "rising"
+              },
+              "B": {
+                "start": 0.69,
+                "final": 0.69,
+                "parsed_dir": "rising",
+                "logit_probs": {
+                  "rising": 0.649,
+                  "falling": 0.024,
+                  "stable": 0.327
+                },
+                "logit_argmax": "rising"
+              },
+              "pred_benefit": "helps",
+              "benefit_correct": true,
+              "parse_ne_logit": true,
+              "scale_off": false,
+              "garbage": false
+            }
+          }
+        }
+      }
+    },
+    {
+      "pair_id": "pair_000310",
+      "tag": "GT: treatment HURTS",
+      "contrast": "pci_vs_control",
+      "treated": "ep_pci_00103",
+      "untreated": "ep_control_00117",
+      "arm_a": "pci",
+      "arm_b": "control",
+      "match_quality": {
+        "score": 0.0,
+        "comorbidity_distance": 0,
+        "baseline_a": 0.01,
+        "baseline_b": 0.01,
+        "dir_a": "falling",
+        "dir_b": "falling"
+      },
+      "markers": [
+        "Troponin T"
+      ],
+      "per_marker": {
+        "Troponin T": {
+          "role": "positive",
+          "gt": {
+            "baseline_a": 0.01,
+            "final_a": 0.62,
+            "baseline_b": 0.01,
+            "final_b": 0.02,
+            "benefit_label": "hurts",
+            "did": 60.0
+          },
+          "models": {
+            "Qwen3-8B / cot": {
+              "A": {
+                "start": 0.01,
+                "final": 0.04,
+                "parsed_dir": "rising",
+                "logit_probs": {
+                  "rising": 0.194,
+                  "falling": 0.015,
+                  "stable": 0.791
+                },
+                "logit_argmax": "stable"
+              },
+              "B": {
+                "start": 0.005,
+                "final": 0.0,
+                "parsed_dir": "falling",
+                "logit_probs": {
+                  "rising": 0.15,
+                  "falling": 0.015,
+                  "stable": 0.835
+                },
+                "logit_argmax": "stable"
+              },
+              "pred_benefit": "hurts",
+              "benefit_correct": true,
+              "parse_ne_logit": true,
+              "scale_off": false,
+              "garbage": false
+            },
+            "Qwen3-8B / zero_shot": {
+              "A": {
+                "start": 0.02,
+                "final": 0.08,
+                "parsed_dir": "rising",
+                "logit_probs": {
+                  "rising": 0.194,
+                  "falling": 0.015,
+                  "stable": 0.791
+                },
+                "logit_argmax": "stable"
+              },
+              "B": {
+                "start": 0.01,
+                "final": 0.002,
+                "parsed_dir": "falling",
+                "logit_probs": {
+                  "rising": 0.15,
+                  "falling": 0.015,
+                  "stable": 0.835
+                },
+                "logit_argmax": "stable"
+              },
+              "pred_benefit": "hurts",
+              "benefit_correct": true,
+              "parse_ne_logit": true,
+              "scale_off": true,
+              "garbage": false
+            },
+            "DeepSeek-R1-7B / zero_shot": {
+              "A": {
+                "start": 1.0,
+                "final": 4.0,
+                "parsed_dir": "rising",
+                "logit_probs": {
+                  "rising": 0.571,
+                  "falling": 0.024,
+                  "stable": 0.405
+                },
+                "logit_argmax": "rising"
+              },
+              "B": {
+                "start": 0.01,
+                "final": 0.002,
+                "parsed_dir": "falling",
+                "logit_probs": {
+                  "rising": 0.789,
+                  "falling": 0.021,
+                  "stable": 0.19
+                },
+                "logit_argmax": "rising"
+              },
+              "pred_benefit": "hurts",
+              "benefit_correct": true,
+              "parse_ne_logit": false,
+              "scale_off": true,
+              "garbage": false
+            },
+            "DeepSeek-R1-7B / cot": {
+              "A": {
+                "start": 0.005,
+                "final": 0.001,
+                "parsed_dir": "falling",
+                "logit_probs": {
+                  "rising": 0.571,
+                  "falling": 0.024,
+                  "stable": 0.405
+                },
+                "logit_argmax": "rising"
+              },
+              "B": {
+                "start": 0.01,
+                "final": 0.01,
+                "parsed_dir": "stable",
+                "logit_probs": {
+                  "rising": 0.789,
+                  "falling": 0.021,
+                  "stable": 0.19
+                },
+                "logit_argmax": "rising"
+              },
+              "pred_benefit": "helps",
+              "benefit_correct": false,
+              "parse_ne_logit": true,
+              "scale_off": false,
+              "garbage": false
+            }
+          }
+        }
+      }
+    },
+    {
+      "pair_id": "pair_000655",
+      "tag": "multivessel vs single",
+      "contrast": "multivessel_vs_singlevessel_pci",
+      "treated": "ep_pci_00002",
+      "untreated": "ep_pci_00133",
+      "arm_a": "pci_multivessel",
+      "arm_b": "pci_singlevessel",
+      "match_quality": {
+        "score": 1.621,
+        "comorbidity_distance": 0,
+        "baseline_a": 11.94,
+        "baseline_b": 2.26,
+        "dir_a": "rising",
+        "dir_b": "rising"
+      },
+      "markers": [
+        "Creatine Kinase, MB Isoenzyme",
+        "Sodium",
+        "Troponin T"
+      ],
+      "per_marker": {
+        "Creatine Kinase, MB Isoenzyme": {
+          "role": "positive",
+          "gt": {
+            "baseline_a": 250.0,
+            "final_a": 130.0,
+            "baseline_b": 61.0,
+            "final_b": 5.0,
+            "benefit_label": "hurts",
+            "did": 0.438
+          },
+          "models": {
+            "Qwen3-8B / cot": {
+              "A": {
+                "start": 250.0,
+                "final": 50.0,
+                "parsed_dir": "falling",
+                "logit_probs": null,
+                "logit_argmax": null
+              },
+              "B": {
+                "start": 61.0,
+                "final": 42.0,
+                "parsed_dir": "falling",
+                "logit_probs": null,
+                "logit_argmax": null
+              },
+              "pred_benefit": "helps",
+              "benefit_correct": false,
+              "parse_ne_logit": false,
+              "scale_off": false,
+              "garbage": false
+            },
+            "Qwen3-8B / zero_shot": {
+              "A": {
+                "start": 250.0,
+                "final": 50.0,
+                "parsed_dir": "falling",
+                "logit_probs": null,
+                "logit_argmax": null
+              },
+              "B": {
+                "start": 61.0,
+                "final": 42.0,
+                "parsed_dir": "falling",
+                "logit_probs": null,
+                "logit_argmax": null
+              },
+              "pred_benefit": "helps",
+              "benefit_correct": false,
+              "parse_ne_logit": false,
+              "scale_off": false,
+              "garbage": false
+            },
+            "DeepSeek-R1-7B / zero_shot": {
+              "A": {
+                "start": 1.0,
+                "final": 0.0,
+                "parsed_dir": "falling",
+                "logit_probs": null,
+                "logit_argmax": null
+              },
+              "B": null,
+              "pred_benefit": null,
+              "benefit_correct": null,
+              "parse_ne_logit": false,
+              "scale_off": true,
+              "garbage": false
+            },
+            "DeepSeek-R1-7B / cot": {
+              "A": {
+                "start": 250.0,
+                "final": 75.0,
+                "parsed_dir": "falling",
+                "logit_probs": null,
+                "logit_argmax": null
+              },
+              "B": {
+                "start": 1.0,
+                "final": 4.0,
+                "parsed_dir": "falling",
+                "logit_probs": null,
+                "logit_argmax": null
+              },
+              "pred_benefit": "hurts",
+              "benefit_correct": true,
+              "parse_ne_logit": false,
+              "scale_off": false,
+              "garbage": false
+            }
+          }
+        },
+        "Sodium": {
+          "role": "negative_control",
+          "gt": {
+            "baseline_a": 138.0,
+            "final_a": 144.0,
+            "baseline_b": 139.0,
+            "final_b": 141.0,
+            "benefit_label": "no-different",
+            "did": 0.029
+          },
+          "models": {
+            "Qwen3-8B / cot": {
+              "A": {
+                "start": 138.0,
+                "final": 138.0,
+                "parsed_dir": "stable",
+                "logit_probs": null,
+                "logit_argmax": null
+              },
+              "B": {
+                "start": 139.0,
+                "final": 139.0,
+                "parsed_dir": "stable",
+                "logit_probs": null,
+                "logit_argmax": null
+              },
+              "pred_benefit": "no-different",
+              "benefit_correct": true,
+              "parse_ne_logit": false,
+              "scale_off": false,
+              "garbage": false
+            },
+            "Qwen3-8B / zero_shot": {
+              "A": {
+                "start": 138.0,
+                "final": 138.0,
+                "parsed_dir": "stable",
+                "logit_probs": null,
+                "logit_argmax": null
+              },
+              "B": {
+                "start": 139.0,
+                "final": 139.0,
+                "parsed_dir": "stable",
+                "logit_probs": null,
+                "logit_argmax": null
+              },
+              "pred_benefit": "no-different",
+              "benefit_correct": true,
+              "parse_ne_logit": false,
+              "scale_off": false,
+              "garbage": false
+            },
+            "DeepSeek-R1-7B / zero_shot": {
+              "A": {
+                "start": 0.0,
+                "final": 0.0,
+                "parsed_dir": "falling",
+                "logit_probs": null,
+                "logit_argmax": null
+              },
+              "B": null,
+              "pred_benefit": null,
+              "benefit_correct": null,
+              "parse_ne_logit": false,
+              "scale_off": true,
+              "garbage": true
+            },
+            "DeepSeek-R1-7B / cot": {
+              "A": {
+                "start": 142.0,
+                "final": 142.0,
+                "parsed_dir": "stable",
+                "logit_probs": null,
+                "logit_argmax": null
+              },
+              "B": {
+                "start": 0.0,
+                "final": 0.0,
+                "parsed_dir": "stable",
+                "logit_probs": null,
+                "logit_argmax": null
+              },
+              "pred_benefit": "hurts",
+              "benefit_correct": false,
+              "parse_ne_logit": false,
+              "scale_off": false,
+              "garbage": false
+            }
+          }
+        },
+        "Troponin T": {
+          "role": "positive",
+          "gt": {
+            "baseline_a": 11.94,
+            "final_a": 22.37,
+            "baseline_b": 2.26,
+            "final_b": 5.98,
+            "benefit_label": "helps",
+            "did": -0.772
+          },
+          "models": {
+            "Qwen3-8B / cot": {
+              "A": {
+                "start": 11.94,
+                "final": 2.5,
+                "parsed_dir": "falling",
+                "logit_probs": {
+                  "rising": 0.391,
+                  "falling": 0.023,
+                  "stable": 0.587
+                },
+                "logit_argmax": "stable"
+              },
+              "B": {
+                "start": 2.26,
+                "final": 0.9,
+                "parsed_dir": "falling",
+                "logit_probs": {
+                  "rising": 0.333,
+                  "falling": 0.025,
+                  "stable": 0.642
+                },
+                "logit_argmax": "stable"
+              },
+              "pred_benefit": "helps",
+              "benefit_correct": true,
+              "parse_ne_logit": true,
+              "scale_off": false,
+              "garbage": false
+            },
+            "Qwen3-8B / zero_shot": {
+              "A": {
+                "start": 11.94,
+                "final": 3.0,
+                "parsed_dir": "falling",
+                "logit_probs": {
+                  "rising": 0.391,
+                  "falling": 0.023,
+                  "stable": 0.587
+                },
+                "logit_argmax": "stable"
+              },
+              "B": {
+                "start": 2.26,
+                "final": 2.26,
+                "parsed_dir": "stable",
+                "logit_probs": {
+                  "rising": 0.333,
+                  "falling": 0.025,
+                  "stable": 0.642
+                },
+                "logit_argmax": "stable"
+              },
+              "pred_benefit": "helps",
+              "benefit_correct": true,
+              "parse_ne_logit": true,
+              "scale_off": false,
+              "garbage": false
+            },
+            "DeepSeek-R1-7B / zero_shot": {
+              "A": {
+                "start": 0.0,
+                "final": 0.0,
+                "parsed_dir": "falling",
+                "logit_probs": {
+                  "rising": 0.655,
+                  "falling": 0.03,
+                  "stable": 0.314
+                },
+                "logit_argmax": "rising"
+              },
+              "B": {
+                "start": 24.0,
+                "final": 96.0,
+                "parsed_dir": "rising",
+                "logit_probs": {
+                  "rising": 0.617,
+                  "falling": 0.026,
+                  "stable": 0.357
+                },
+                "logit_argmax": "rising"
+              },
+              "pred_benefit": "helps",
+              "benefit_correct": true,
+              "parse_ne_logit": true,
+              "scale_off": true,
+              "garbage": true
+            },
+            "DeepSeek-R1-7B / cot": {
+              "A": {
+                "start": 11.94,
+                "final": 3.0,
+                "parsed_dir": "falling",
+                "logit_probs": {
+                  "rising": 0.655,
+                  "falling": 0.03,
+                  "stable": 0.314
+                },
+                "logit_argmax": "rising"
+              },
+              "B": {
+                "start": 1.0,
+                "final": 4.0,
+                "parsed_dir": "falling",
+                "logit_probs": {
+                  "rising": 0.617,
+                  "falling": 0.026,
+                  "stable": 0.357
+                },
+                "logit_argmax": "rising"
+              },
+              "pred_benefit": "helps",
+              "benefit_correct": true,
+              "parse_ne_logit": true,
+              "scale_off": false,
+              "garbage": false
+            }
+          }
+        }
+      }
+    }
+  ]
+}

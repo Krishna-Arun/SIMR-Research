@@ -1,0 +1,62 @@
+{
+  "task": "multiarm_revascularization",
+  "primary_outcome": "readmission_30d",
+  "secondary_outcome": "aki",
+  "answerkey_present": false,
+  "methods": {
+    "mock [zero_shot]": {
+      "n": 400,
+      "outcomes": {
+        "readmit30": {
+          "n_factual": 400,
+          "factual_auc": 0.5,
+          "factual_brier": 0.1885,
+          "calibration_ece": 0.0475,
+          "mean_intervention_spread": 0.0,
+          "best_arm_mix": {
+            "pci": 1.0,
+            "cabg": 0.0,
+            "medical": 0.0
+          },
+          "justification": {
+            "mean": 0.482,
+            "n": 1200,
+            "dist": {
+              "0.0": 0.035,
+              "0.5": 0.965,
+              "1.0": 0.0
+            },
+            "top_reasons": {
+              "general_or_unverified": 1158,
+              "hallucinated_facts": 42
+            }
+          }
+        },
+        "aki": {
+          "n_factual": 356,
+          "factual_auc": 0.4852,
+          "factual_brier": 0.2274,
+          "calibration_ece": 0.1343,
+          "mean_intervention_spread": 0.1125,
+          "best_arm_mix": {
+            "pci": 0.0,
+            "cabg": 0.0,
+            "medical": 1.0
+          },
+          "justification": {
+            "mean": 0.5,
+            "n": 1200,
+            "dist": {
+              "0.0": 0.0,
+              "0.5": 1.0,
+              "1.0": 0.0
+            },
+            "top_reasons": {
+              "general_or_unverified": 1200
+            }
+          }
+        }
+      }
+    }
+  }
+}

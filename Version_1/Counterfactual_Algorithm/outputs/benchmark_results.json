@@ -1,0 +1,35 @@
+{
+  "latent_dim": 256,
+  "horizon": 32,
+  "n_initial_states": 40,
+  "disclaimer": "Learned simulator self-consistency/stability \u2014 NOT causal validity.",
+  "task1_intervention_swap": {
+    "action_a": "revascularization_pci",
+    "action_b": "cabg",
+    "mean_final_latent_divergence": 8.164426732063294,
+    "mean_decoded_mortality_divergence": 0.01392107903957367,
+    "nonzero_divergence": true
+  },
+  "task2_trajectory_stability": {
+    "perturbation": "single-step action flip (no_op -> pci)",
+    "mean_sensitivity": 0.14468347658074743,
+    "max_sensitivity": 0.15708178124702277,
+    "smooth": true
+  },
+  "task3_multistep_consistency": {
+    "horizon": 128,
+    "frac_finite": 1.0,
+    "frac_collapsed": 0.0,
+    "frac_exploded": 0.0,
+    "mean_rel_growth": 3.98672167051172,
+    "stable": true
+  },
+  "task4_plausibility": {
+    "ref_norm_band": [
+      14.162,
+      15.171
+    ],
+    "mean_on_manifold_frac": 0.0,
+    "note": "Calibration-under-intervention-shift extension is a TODO (needs held-out factuals)."
+  }
+}

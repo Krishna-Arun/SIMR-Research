@@ -1,0 +1,242 @@
+{
+  "benchmark": "causal_intervention_episodes_v1",
+  "timestamp": "2026-06-25T12:12:28.293098",
+  "n_episodes": 630,
+  "n_pairs": 724,
+  "results": [
+    {
+      "contrasts": {
+        "pci_vs_control": {
+          "per_marker": {
+            "Troponin T": {
+              "role": "positive",
+              "n_pairs": 654,
+              "mccs": 0.44801223241590216,
+              "tcae": 31.0,
+              "iec": 0.6781824057514821,
+              "nonstable_rate_treated": 0.8807339449541285,
+              "n_treated_scored": 218
+            },
+            "Creatine Kinase, MB Isoenzyme": {
+              "role": "positive",
+              "n_pairs": 304,
+              "mccs": 0.444015444015444,
+              "tcae": 23.0,
+              "iec": 0.6677446337577415,
+              "nonstable_rate_treated": 0.8842975206611571,
+              "n_treated_scored": 121
+            },
+            "Sodium": {
+              "role": "negative_control",
+              "n_pairs": 322,
+              "mccs": 0.4690909090909091,
+              "tcae": 31.0,
+              "iec": 0.6152867758222308,
+              "nonstable_rate_treated": 0.3448275862068966,
+              "n_treated_scored": 145
+            }
+          },
+          "nc_discrimination": 0.5377
+        },
+        "multivessel_vs_singlevessel_pci": {
+          "per_marker": {
+            "Troponin T": {
+              "role": "positive",
+              "n_pairs": 70,
+              "mccs": 0.5142857142857142,
+              "tcae": 27.0,
+              "iec": 0.7592933269304055,
+              "nonstable_rate_treated": 0.8571428571428571,
+              "n_treated_scored": 35
+            },
+            "Creatine Kinase, MB Isoenzyme": {
+              "role": "positive",
+              "n_pairs": 22,
+              "mccs": 0.5909090909090909,
+              "tcae": 23.0,
+              "iec": 0.5924271152792087,
+              "nonstable_rate_treated": 0.8571428571428571,
+              "n_treated_scored": 14
+            },
+            "Sodium": {
+              "role": "negative_control",
+              "n_pairs": 46,
+              "mccs": 0.36363636363636365,
+              "tcae": 31.0,
+              "iec": 0.6654300779381951,
+              "nonstable_rate_treated": 0.2857142857142857,
+              "n_treated_scored": 28
+            }
+          },
+          "nc_discrimination": 0.5714
+        }
+      },
+      "calibration": {
+        "n": 502,
+        "ece": 0.2721,
+        "overall_accuracy": 0.3825,
+        "overall_confidence": 0.6546,
+        "reliability": [
+          {
+            "bin": [
+              0.4,
+              0.6
+            ],
+            "n": 85,
+            "mean_conf": 0.577,
+            "accuracy": 0.494
+          },
+          {
+            "bin": [
+              0.6,
+              0.8
+            ],
+            "n": 413,
+            "mean_conf": 0.669,
+            "accuracy": 0.363
+          },
+          {
+            "bin": [
+              0.8,
+              1.0
+            ],
+            "n": 4,
+            "mean_conf": 0.812,
+            "accuracy": 0.0
+          }
+        ]
+      },
+      "intervention_sensitivity": {
+        "n": 501,
+        "mean_rel_change": 0.5954,
+        "direction_flip_rate": 0.6028
+      },
+      "mccs": 0.44801223241590216,
+      "tcae": 31.0,
+      "iec": 0.6781824057514821,
+      "model": "deepseek-ai/DeepSeek-R1-Distill-Qwen-7B",
+      "backend": "huggingface",
+      "prompt_style": "cot",
+      "timestamp": "2026-06-25T12:12:28.210179",
+      "n_episodes": 502,
+      "n_pairs": 724
+    },
+    {
+      "contrasts": {
+        "pci_vs_control": {
+          "per_marker": {
+            "Troponin T": {
+              "role": "positive",
+              "n_pairs": 654,
+              "mccs": 0.4418960244648318,
+              "tcae": 23.0,
+              "iec": 0.6581307160876452,
+              "nonstable_rate_treated": 0.8623853211009175,
+              "n_treated_scored": 218
+            },
+            "Creatine Kinase, MB Isoenzyme": {
+              "role": "positive",
+              "n_pairs": 304,
+              "mccs": 0.3828996282527881,
+              "tcae": 18.599999999999994,
+              "iec": 0.6858219257497942,
+              "nonstable_rate_treated": 0.8135593220338984,
+              "n_treated_scored": 118
+            },
+            "Sodium": {
+              "role": "negative_control",
+              "n_pairs": 322,
+              "mccs": 0.43986254295532645,
+              "tcae": 31.0,
+              "iec": 0.5321931622025189,
+              "nonstable_rate_treated": 0.3835616438356164,
+              "n_treated_scored": 146
+            }
+          },
+          "nc_discrimination": 0.4544
+        },
+        "multivessel_vs_singlevessel_pci": {
+          "per_marker": {
+            "Troponin T": {
+              "role": "positive",
+              "n_pairs": 70,
+              "mccs": 0.5285714285714286,
+              "tcae": 11.5,
+              "iec": 0.6594679462772861,
+              "nonstable_rate_treated": 0.8857142857142857,
+              "n_treated_scored": 35
+            },
+            "Creatine Kinase, MB Isoenzyme": {
+              "role": "positive",
+              "n_pairs": 22,
+              "mccs": 0.5882352941176471,
+              "tcae": 37.8,
+              "iec": 0.5805021843300694,
+              "nonstable_rate_treated": 0.9285714285714286,
+              "n_treated_scored": 14
+            },
+            "Sodium": {
+              "role": "negative_control",
+              "n_pairs": 46,
+              "mccs": 0.46153846153846156,
+              "tcae": 31.0,
+              "iec": 0.4612870162627145,
+              "nonstable_rate_treated": 0.25,
+              "n_treated_scored": 28
+            }
+          },
+          "nc_discrimination": 0.6571
+        }
+      },
+      "calibration": {
+        "n": 502,
+        "ece": 0.2721,
+        "overall_accuracy": 0.3825,
+        "overall_confidence": 0.6546,
+        "reliability": [
+          {
+            "bin": [
+              0.4,
+              0.6
+            ],
+            "n": 85,
+            "mean_conf": 0.577,
+            "accuracy": 0.494
+          },
+          {
+            "bin": [
+              0.6,
+              0.8
+            ],
+            "n": 413,
+            "mean_conf": 0.669,
+            "accuracy": 0.363
+          },
+          {
+            "bin": [
+              0.8,
+              1.0
+            ],
+            "n": 4,
+            "mean_conf": 0.812,
+            "accuracy": 0.0
+          }
+        ]
+      },
+      "intervention_sensitivity": {
+        "n": 502,
+        "mean_rel_change": 0.5568,
+        "direction_flip_rate": 0.6076
+      },
+      "mccs": 0.4418960244648318,
+      "tcae": 23.0,
+      "iec": 0.6581307160876452,
+      "model": "deepseek-ai/DeepSeek-R1-Distill-Qwen-7B",
+      "backend": "huggingface",
+      "prompt_style": "zero_shot",
+      "timestamp": "2026-06-25T10:03:02.312679",
+      "n_episodes": 502,
+      "n_pairs": 724
+    }
+  ]
+}

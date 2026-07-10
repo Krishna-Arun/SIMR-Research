@@ -1,0 +1,1438 @@
+{
+  "patient_id": 10092171,
+  "arm": "medical",
+  "horizon_steps": 5,
+  "MC_samples": 64,
+  "delta_t_hours": [
+    2.1,
+    0.4,
+    0.7,
+    1.5,
+    2.5
+  ],
+  "labs_show": [
+    "creatinine",
+    "bun",
+    "potassium",
+    "sodium",
+    "glucose",
+    "hemoglobin"
+  ],
+  "actual_outcome": {
+    "mortality": 0,
+    "mortality_30d": 0
+  },
+  "plans": {
+    "factual": {
+      "lab_trajectory": [
+        {
+          "creatinine": {
+            "mean": 1.15,
+            "lo": 0.34,
+            "hi": 2.04
+          },
+          "bun": {
+            "mean": 30.36,
+            "lo": 4.61,
+            "hi": 64.38
+          },
+          "potassium": {
+            "mean": 4.35,
+            "lo": 3.42,
+            "hi": 5.28
+          },
+          "sodium": {
+            "mean": 139.1,
+            "lo": 133.68,
+            "hi": 144.26
+          },
+          "glucose": {
+            "mean": 253.23,
+            "lo": 107.28,
+            "hi": 446.38
+          },
+          "hemoglobin": {
+            "mean": 14.79,
+            "lo": 11.43,
+            "hi": 17.79
+          }
+        },
+        {
+          "creatinine": {
+            "mean": 1.99,
+            "lo": -0.04,
+            "hi": 4.3
+          },
+          "bun": {
+            "mean": 55.83,
+            "lo": 1.53,
+            "hi": 125.03
+          },
+          "potassium": {
+            "mean": 4.52,
+            "lo": 3.06,
+            "hi": 5.89
+          },
+          "sodium": {
+            "mean": 139.13,
+            "lo": 130.2,
+            "hi": 147.99
+          },
+          "glucose": {
+            "mean": 309.42,
+            "lo": 104.45,
+            "hi": 565.7
+          },
+          "hemoglobin": {
+            "mean": 14.55,
+            "lo": 10.45,
+            "hi": 18.32
+          }
+        },
+        {
+          "creatinine": {
+            "mean": 3.01,
+            "lo": -0.14,
+            "hi": 6.6
+          },
+          "bun": {
+            "mean": 85.17,
+            "lo": 5.82,
+            "hi": 206.62
+          },
+          "potassium": {
+            "mean": 4.6,
+            "lo": 3.15,
+            "hi": 6.03
+          },
+          "sodium": {
+            "mean": 139.12,
+            "lo": 128.63,
+            "hi": 148.27
+          },
+          "glucose": {
+            "mean": 392.4,
+            "lo": 72.59,
+            "hi": 730.99
+          },
+          "hemoglobin": {
+            "mean": 14.83,
+            "lo": 9.84,
+            "hi": 19.4
+          }
+        },
+        {
+          "creatinine": {
+            "mean": 4.45,
+            "lo": 0.14,
+            "hi": 10.46
+          },
+          "bun": {
+            "mean": 99.28,
+            "lo": 9.21,
+            "hi": 231.95
+          },
+          "potassium": {
+            "mean": 4.92,
+            "lo": 3.25,
+            "hi": 6.78
+          },
+          "sodium": {
+            "mean": 137.53,
+            "lo": 123.6,
+            "hi": 149.9
+          },
+          "glucose": {
+            "mean": 475.03,
+            "lo": 125.59,
+            "hi": 936.1
+          },
+          "hemoglobin": {
+            "mean": 14.69,
+            "lo": 9.68,
+            "hi": 21.0
+          }
+        },
+        {
+          "creatinine": {
+            "mean": 5.26,
+            "lo": 0.08,
+            "hi": 14.45
+          },
+          "bun": {
+            "mean": 117.54,
+            "lo": -8.13,
+            "hi": 261.97
+          },
+          "potassium": {
+            "mean": 4.97,
+            "lo": 2.96,
+            "hi": 7.54
+          },
+          "sodium": {
+            "mean": 136.47,
+            "lo": 120.2,
+            "hi": 151.47
+          },
+          "glucose": {
+            "mean": 547.17,
+            "lo": 159.15,
+            "hi": 1051.11
+          },
+          "hemoglobin": {
+            "mean": 14.5,
+            "lo": 8.7,
+            "hi": 21.45
+          }
+        }
+      ],
+      "outcome_risk_trajectory": [
+        {
+          "mortality": {
+            "mean": 0.06,
+            "lo": 0.0,
+            "hi": 0.03
+          },
+          "mortality_30d": {
+            "mean": 0.06,
+            "lo": 0.0,
+            "hi": 0.11
+          }
+        },
+        {
+          "mortality": {
+            "mean": 0.06,
+            "lo": 0.0,
+            "hi": 0.04
+          },
+          "mortality_30d": {
+            "mean": 0.1,
+            "lo": 0.0,
+            "hi": 0.57
+          }
+        },
+        {
+          "mortality": {
+            "mean": 0.05,
+            "lo": 0.0,
+            "hi": 0.0
+          },
+          "mortality_30d": {
+            "mean": 0.11,
+            "lo": 0.0,
+            "hi": 0.46
+          }
+        },
+        {
+          "mortality": {
+            "mean": 0.08,
+            "lo": 0.0,
+            "hi": 0.19
+          },
+          "mortality_30d": {
+            "mean": 0.2,
+            "lo": 0.0,
+            "hi": 0.99
+          }
+        },
+        {
+          "mortality": {
+            "mean": 0.13,
+            "lo": 0.0,
+            "hi": 0.71
+          },
+          "mortality_30d": {
+            "mean": 0.28,
+            "lo": 0.0,
+            "hi": 1.0
+          }
+        }
+      ],
+      "final_mortality_risk": {
+        "mean": 0.13,
+        "lo": 0.0,
+        "hi": 0.71
+      }
+    },
+    "no_treatment": {
+      "lab_trajectory": [
+        {
+          "creatinine": {
+            "mean": 1.23,
+            "lo": 0.36,
+            "hi": 2.37
+          },
+          "bun": {
+            "mean": 31.55,
+            "lo": 2.5,
+            "hi": 67.32
+          },
+          "potassium": {
+            "mean": 4.52,
+            "lo": 3.49,
+            "hi": 5.35
+          },
+          "sodium": {
+            "mean": 140.24,
+            "lo": 134.52,
+            "hi": 145.91
+          },
+          "glucose": {
+            "mean": 217.91,
+            "lo": 107.72,
+            "hi": 360.56
+          },
+          "hemoglobin": {
+            "mean": 14.94,
+            "lo": 12.15,
+            "hi": 18.09
+          }
+        },
+        {
+          "creatinine": {
+            "mean": 2.36,
+            "lo": 0.2,
+            "hi": 5.75
+          },
+          "bun": {
+            "mean": 59.95,
+            "lo": 12.0,
+            "hi": 128.49
+          },
+          "potassium": {
+            "mean": 4.69,
+            "lo": 3.29,
+            "hi": 5.78
+          },
+          "sodium": {
+            "mean": 141.87,
+            "lo": 132.51,
+            "hi": 152.18
+          },
+          "glucose": {
+            "mean": 251.39,
+            "lo": 61.28,
+            "hi": 477.37
+          },
+          "hemoglobin": {
+            "mean": 14.48,
+            "lo": 10.03,
+            "hi": 18.64
+          }
+        },
+        {
+          "creatinine": {
+            "mean": 3.15,
+            "lo": -0.07,
+            "hi": 8.39
+          },
+          "bun": {
+            "mean": 82.3,
+            "lo": -1.31,
+            "hi": 191.29
+          },
+          "potassium": {
+            "mean": 4.85,
+            "lo": 2.96,
+            "hi": 6.75
+          },
+          "sodium": {
+            "mean": 140.28,
+            "lo": 130.03,
+            "hi": 151.74
+          },
+          "glucose": {
+            "mean": 338.79,
+            "lo": 41.79,
+            "hi": 649.75
+          },
+          "hemoglobin": {
+            "mean": 14.45,
+            "lo": 9.87,
+            "hi": 18.79
+          }
+        },
+        {
+          "creatinine": {
+            "mean": 4.14,
+            "lo": -0.49,
+            "hi": 11.32
+          },
+          "bun": {
+            "mean": 89.04,
+            "lo": 5.81,
+            "hi": 210.63
+          },
+          "potassium": {
+            "mean": 5.1,
+            "lo": 2.61,
+            "hi": 7.45
+          },
+          "sodium": {
+            "mean": 138.28,
+            "lo": 124.43,
+            "hi": 151.05
+          },
+          "glucose": {
+            "mean": 376.3,
+            "lo": 54.2,
+            "hi": 748.16
+          },
+          "hemoglobin": {
+            "mean": 14.47,
+            "lo": 8.25,
+            "hi": 20.81
+          }
+        },
+        {
+          "creatinine": {
+            "mean": 4.64,
+            "lo": -0.42,
+            "hi": 12.08
+          },
+          "bun": {
+            "mean": 98.39,
+            "lo": 8.36,
+            "hi": 223.01
+          },
+          "potassium": {
+            "mean": 5.29,
+            "lo": 2.69,
+            "hi": 8.38
+          },
+          "sodium": {
+            "mean": 137.96,
+            "lo": 124.53,
+            "hi": 156.25
+          },
+          "glucose": {
+            "mean": 400.33,
+            "lo": 13.05,
+            "hi": 738.58
+          },
+          "hemoglobin": {
+            "mean": 14.68,
+            "lo": 6.98,
+            "hi": 22.18
+          }
+        }
+      ],
+      "outcome_risk_trajectory": [
+        {
+          "mortality": {
+            "mean": 0.01,
+            "lo": 0.0,
+            "hi": 0.01
+          },
+          "mortality_30d": {
+            "mean": 0.02,
+            "lo": 0.0,
+            "hi": 0.01
+          }
+        },
+        {
+          "mortality": {
+            "mean": 0.11,
+            "lo": 0.0,
+            "hi": 0.51
+          },
+          "mortality_30d": {
+            "mean": 0.19,
+            "lo": 0.0,
+            "hi": 0.98
+          }
+        },
+        {
+          "mortality": {
+            "mean": 0.08,
+            "lo": 0.0,
+            "hi": 0.15
+          },
+          "mortality_30d": {
+            "mean": 0.21,
+            "lo": 0.0,
+            "hi": 1.0
+          }
+        },
+        {
+          "mortality": {
+            "mean": 0.07,
+            "lo": 0.0,
+            "hi": 0.03
+          },
+          "mortality_30d": {
+            "mean": 0.22,
+            "lo": 0.0,
+            "hi": 1.0
+          }
+        },
+        {
+          "mortality": {
+            "mean": 0.01,
+            "lo": 0.0,
+            "hi": 0.01
+          },
+          "mortality_30d": {
+            "mean": 0.19,
+            "lo": 0.0,
+            "hi": 1.0
+          }
+        }
+      ],
+      "final_mortality_risk": {
+        "mean": 0.01,
+        "lo": 0.0,
+        "hi": 0.01
+      }
+    },
+    "alt_arm_pci": {
+      "lab_trajectory": [
+        {
+          "creatinine": {
+            "mean": 1.48,
+            "lo": 0.58,
+            "hi": 2.77
+          },
+          "bun": {
+            "mean": 35.65,
+            "lo": 6.86,
+            "hi": 73.97
+          },
+          "potassium": {
+            "mean": 4.24,
+            "lo": 3.45,
+            "hi": 4.99
+          },
+          "sodium": {
+            "mean": 140.59,
+            "lo": 134.58,
+            "hi": 147.52
+          },
+          "glucose": {
+            "mean": 219.23,
+            "lo": 104.07,
+            "hi": 345.46
+          },
+          "hemoglobin": {
+            "mean": 15.1,
+            "lo": 11.99,
+            "hi": 18.48
+          }
+        },
+        {
+          "creatinine": {
+            "mean": 2.19,
+            "lo": 0.19,
+            "hi": 4.56
+          },
+          "bun": {
+            "mean": 61.78,
+            "lo": 15.76,
+            "hi": 109.77
+          },
+          "potassium": {
+            "mean": 4.26,
+            "lo": 2.95,
+            "hi": 5.92
+          },
+          "sodium": {
+            "mean": 141.58,
+            "lo": 131.63,
+            "hi": 152.44
+          },
+          "glucose": {
+            "mean": 254.54,
+            "lo": 79.45,
+            "hi": 467.47
+          },
+          "hemoglobin": {
+            "mean": 14.51,
+            "lo": 11.05,
+            "hi": 18.66
+          }
+        },
+        {
+          "creatinine": {
+            "mean": 2.81,
+            "lo": -0.11,
+            "hi": 5.99
+          },
+          "bun": {
+            "mean": 74.93,
+            "lo": 14.61,
+            "hi": 170.3
+          },
+          "potassium": {
+            "mean": 4.56,
+            "lo": 2.87,
+            "hi": 6.45
+          },
+          "sodium": {
+            "mean": 140.45,
+            "lo": 128.5,
+            "hi": 154.12
+          },
+          "glucose": {
+            "mean": 332.22,
+            "lo": 89.26,
+            "hi": 644.1
+          },
+          "hemoglobin": {
+            "mean": 15.54,
+            "lo": 10.69,
+            "hi": 21.92
+          }
+        },
+        {
+          "creatinine": {
+            "mean": 4.23,
+            "lo": 0.53,
+            "hi": 9.97
+          },
+          "bun": {
+            "mean": 89.46,
+            "lo": 8.13,
+            "hi": 201.85
+          },
+          "potassium": {
+            "mean": 4.81,
+            "lo": 2.57,
+            "hi": 7.17
+          },
+          "sodium": {
+            "mean": 139.57,
+            "lo": 124.07,
+            "hi": 152.41
+          },
+          "glucose": {
+            "mean": 371.18,
+            "lo": 88.98,
+            "hi": 659.53
+          },
+          "hemoglobin": {
+            "mean": 15.69,
+            "lo": 10.47,
+            "hi": 23.41
+          }
+        },
+        {
+          "creatinine": {
+            "mean": 5.14,
+            "lo": 0.06,
+            "hi": 12.47
+          },
+          "bun": {
+            "mean": 103.77,
+            "lo": 7.72,
+            "hi": 231.74
+          },
+          "potassium": {
+            "mean": 5.02,
+            "lo": 2.83,
+            "hi": 7.37
+          },
+          "sodium": {
+            "mean": 137.91,
+            "lo": 120.35,
+            "hi": 153.33
+          },
+          "glucose": {
+            "mean": 439.43,
+            "lo": 44.96,
+            "hi": 819.65
+          },
+          "hemoglobin": {
+            "mean": 16.11,
+            "lo": 9.39,
+            "hi": 22.15
+          }
+        }
+      ],
+      "outcome_risk_trajectory": [
+        {
+          "mortality": {
+            "mean": 0.07,
+            "lo": 0.0,
+            "hi": 0.03
+          },
+          "mortality_30d": {
+            "mean": 0.1,
+            "lo": 0.0,
+            "hi": 0.31
+          }
+        },
+        {
+          "mortality": {
+            "mean": 0.11,
+            "lo": 0.0,
+            "hi": 0.82
+          },
+          "mortality_30d": {
+            "mean": 0.14,
+            "lo": 0.0,
+            "hi": 0.85
+          }
+        },
+        {
+          "mortality": {
+            "mean": 0.06,
+            "lo": 0.0,
+            "hi": 0.02
+          },
+          "mortality_30d": {
+            "mean": 0.14,
+            "lo": 0.0,
+            "hi": 0.62
+          }
+        },
+        {
+          "mortality": {
+            "mean": 0.07,
+            "lo": 0.0,
+            "hi": 0.07
+          },
+          "mortality_30d": {
+            "mean": 0.18,
+            "lo": 0.0,
+            "hi": 1.0
+          }
+        },
+        {
+          "mortality": {
+            "mean": 0.08,
+            "lo": 0.0,
+            "hi": 0.13
+          },
+          "mortality_30d": {
+            "mean": 0.23,
+            "lo": 0.0,
+            "hi": 1.0
+          }
+        }
+      ],
+      "final_mortality_risk": {
+        "mean": 0.08,
+        "lo": 0.0,
+        "hi": 0.13
+      }
+    },
+    "remove_norepinephrine": {
+      "lab_trajectory": [
+        {
+          "creatinine": {
+            "mean": 1.36,
+            "lo": 0.47,
+            "hi": 2.34
+          },
+          "bun": {
+            "mean": 33.45,
+            "lo": 5.61,
+            "hi": 68.28
+          },
+          "potassium": {
+            "mean": 4.27,
+            "lo": 3.35,
+            "hi": 5.14
+          },
+          "sodium": {
+            "mean": 139.86,
+            "lo": 134.35,
+            "hi": 146.01
+          },
+          "glucose": {
+            "mean": 255.48,
+            "lo": 127.68,
+            "hi": 429.96
+          },
+          "hemoglobin": {
+            "mean": 14.7,
+            "lo": 11.85,
+            "hi": 17.6
+          }
+        },
+        {
+          "creatinine": {
+            "mean": 2.22,
+            "lo": 0.08,
+            "hi": 4.98
+          },
+          "bun": {
+            "mean": 56.63,
+            "lo": 3.52,
+            "hi": 111.07
+          },
+          "potassium": {
+            "mean": 4.51,
+            "lo": 3.15,
+            "hi": 6.38
+          },
+          "sodium": {
+            "mean": 140.32,
+            "lo": 132.61,
+            "hi": 148.72
+          },
+          "glucose": {
+            "mean": 271.13,
+            "lo": 101.26,
+            "hi": 524.79
+          },
+          "hemoglobin": {
+            "mean": 14.35,
+            "lo": 11.3,
+            "hi": 18.71
+          }
+        },
+        {
+          "creatinine": {
+            "mean": 3.25,
+            "lo": -0.37,
+            "hi": 7.03
+          },
+          "bun": {
+            "mean": 75.39,
+            "lo": -9.66,
+            "hi": 165.28
+          },
+          "potassium": {
+            "mean": 4.64,
+            "lo": 2.36,
+            "hi": 7.17
+          },
+          "sodium": {
+            "mean": 138.77,
+            "lo": 127.93,
+            "hi": 151.3
+          },
+          "glucose": {
+            "mean": 288.87,
+            "lo": 91.87,
+            "hi": 593.31
+          },
+          "hemoglobin": {
+            "mean": 14.4,
+            "lo": 9.66,
+            "hi": 20.05
+          }
+        },
+        {
+          "creatinine": {
+            "mean": 4.61,
+            "lo": 0.38,
+            "hi": 10.36
+          },
+          "bun": {
+            "mean": 101.57,
+            "lo": 3.12,
+            "hi": 200.11
+          },
+          "potassium": {
+            "mean": 5.03,
+            "lo": 2.6,
+            "hi": 7.81
+          },
+          "sodium": {
+            "mean": 137.86,
+            "lo": 123.22,
+            "hi": 154.17
+          },
+          "glucose": {
+            "mean": 341.98,
+            "lo": 26.51,
+            "hi": 737.69
+          },
+          "hemoglobin": {
+            "mean": 14.41,
+            "lo": 8.69,
+            "hi": 20.22
+          }
+        },
+        {
+          "creatinine": {
+            "mean": 5.65,
+            "lo": 0.17,
+            "hi": 11.89
+          },
+          "bun": {
+            "mean": 111.63,
+            "lo": -18.12,
+            "hi": 241.4
+          },
+          "potassium": {
+            "mean": 5.12,
+            "lo": 2.05,
+            "hi": 9.03
+          },
+          "sodium": {
+            "mean": 137.28,
+            "lo": 118.67,
+            "hi": 157.03
+          },
+          "glucose": {
+            "mean": 380.44,
+            "lo": 27.11,
+            "hi": 845.62
+          },
+          "hemoglobin": {
+            "mean": 14.75,
+            "lo": 8.54,
+            "hi": 21.31
+          }
+        }
+      ],
+      "outcome_risk_trajectory": [
+        {
+          "mortality": {
+            "mean": 0.04,
+            "lo": 0.0,
+            "hi": 0.0
+          },
+          "mortality_30d": {
+            "mean": 0.04,
+            "lo": 0.0,
+            "hi": 0.01
+          }
+        },
+        {
+          "mortality": {
+            "mean": 0.04,
+            "lo": 0.0,
+            "hi": 0.03
+          },
+          "mortality_30d": {
+            "mean": 0.09,
+            "lo": 0.0,
+            "hi": 0.3
+          }
+        },
+        {
+          "mortality": {
+            "mean": 0.05,
+            "lo": 0.0,
+            "hi": 0.02
+          },
+          "mortality_30d": {
+            "mean": 0.15,
+            "lo": 0.0,
+            "hi": 0.92
+          }
+        },
+        {
+          "mortality": {
+            "mean": 0.09,
+            "lo": 0.0,
+            "hi": 0.34
+          },
+          "mortality_30d": {
+            "mean": 0.17,
+            "lo": 0.0,
+            "hi": 1.0
+          }
+        },
+        {
+          "mortality": {
+            "mean": 0.11,
+            "lo": 0.0,
+            "hi": 0.65
+          },
+          "mortality_30d": {
+            "mean": 0.27,
+            "lo": 0.0,
+            "hi": 1.0
+          }
+        }
+      ],
+      "final_mortality_risk": {
+        "mean": 0.11,
+        "lo": 0.0,
+        "hi": 0.65
+      }
+    },
+    "remove_midazolam": {
+      "lab_trajectory": [
+        {
+          "creatinine": {
+            "mean": 1.29,
+            "lo": 0.54,
+            "hi": 2.19
+          },
+          "bun": {
+            "mean": 28.84,
+            "lo": 6.76,
+            "hi": 59.22
+          },
+          "potassium": {
+            "mean": 4.4,
+            "lo": 3.67,
+            "hi": 5.13
+          },
+          "sodium": {
+            "mean": 140.47,
+            "lo": 134.91,
+            "hi": 145.62
+          },
+          "glucose": {
+            "mean": 207.86,
+            "lo": 97.75,
+            "hi": 333.0
+          },
+          "hemoglobin": {
+            "mean": 15.29,
+            "lo": 12.37,
+            "hi": 19.01
+          }
+        },
+        {
+          "creatinine": {
+            "mean": 2.19,
+            "lo": 0.18,
+            "hi": 4.88
+          },
+          "bun": {
+            "mean": 52.73,
+            "lo": -3.27,
+            "hi": 134.7
+          },
+          "potassium": {
+            "mean": 4.56,
+            "lo": 3.39,
+            "hi": 5.69
+          },
+          "sodium": {
+            "mean": 140.91,
+            "lo": 131.6,
+            "hi": 148.8
+          },
+          "glucose": {
+            "mean": 257.22,
+            "lo": 106.41,
+            "hi": 478.9
+          },
+          "hemoglobin": {
+            "mean": 14.83,
+            "lo": 10.39,
+            "hi": 19.53
+          }
+        },
+        {
+          "creatinine": {
+            "mean": 3.52,
+            "lo": 0.07,
+            "hi": 7.08
+          },
+          "bun": {
+            "mean": 66.22,
+            "lo": 4.47,
+            "hi": 149.29
+          },
+          "potassium": {
+            "mean": 4.88,
+            "lo": 3.45,
+            "hi": 6.53
+          },
+          "sodium": {
+            "mean": 140.85,
+            "lo": 131.31,
+            "hi": 150.77
+          },
+          "glucose": {
+            "mean": 326.07,
+            "lo": 54.55,
+            "hi": 704.49
+          },
+          "hemoglobin": {
+            "mean": 15.5,
+            "lo": 10.23,
+            "hi": 21.35
+          }
+        },
+        {
+          "creatinine": {
+            "mean": 5.08,
+            "lo": 0.08,
+            "hi": 9.88
+          },
+          "bun": {
+            "mean": 84.86,
+            "lo": 8.14,
+            "hi": 180.16
+          },
+          "potassium": {
+            "mean": 4.96,
+            "lo": 3.03,
+            "hi": 7.02
+          },
+          "sodium": {
+            "mean": 139.26,
+            "lo": 128.06,
+            "hi": 150.58
+          },
+          "glucose": {
+            "mean": 383.87,
+            "lo": 36.6,
+            "hi": 795.07
+          },
+          "hemoglobin": {
+            "mean": 15.62,
+            "lo": 10.44,
+            "hi": 22.64
+          }
+        },
+        {
+          "creatinine": {
+            "mean": 5.59,
+            "lo": 0.38,
+            "hi": 12.77
+          },
+          "bun": {
+            "mean": 91.71,
+            "lo": -11.95,
+            "hi": 215.88
+          },
+          "potassium": {
+            "mean": 5.17,
+            "lo": 2.93,
+            "hi": 7.91
+          },
+          "sodium": {
+            "mean": 137.93,
+            "lo": 124.9,
+            "hi": 150.63
+          },
+          "glucose": {
+            "mean": 412.29,
+            "lo": 48.4,
+            "hi": 803.75
+          },
+          "hemoglobin": {
+            "mean": 15.95,
+            "lo": 8.85,
+            "hi": 22.84
+          }
+        }
+      ],
+      "outcome_risk_trajectory": [
+        {
+          "mortality": {
+            "mean": 0.04,
+            "lo": 0.0,
+            "hi": 0.06
+          },
+          "mortality_30d": {
+            "mean": 0.07,
+            "lo": 0.0,
+            "hi": 0.11
+          }
+        },
+        {
+          "mortality": {
+            "mean": 0.13,
+            "lo": 0.0,
+            "hi": 0.61
+          },
+          "mortality_30d": {
+            "mean": 0.16,
+            "lo": 0.0,
+            "hi": 0.83
+          }
+        },
+        {
+          "mortality": {
+            "mean": 0.15,
+            "lo": 0.0,
+            "hi": 0.93
+          },
+          "mortality_30d": {
+            "mean": 0.21,
+            "lo": 0.0,
+            "hi": 1.0
+          }
+        },
+        {
+          "mortality": {
+            "mean": 0.16,
+            "lo": 0.0,
+            "hi": 0.99
+          },
+          "mortality_30d": {
+            "mean": 0.23,
+            "lo": 0.0,
+            "hi": 1.0
+          }
+        },
+        {
+          "mortality": {
+            "mean": 0.14,
+            "lo": 0.0,
+            "hi": 0.78
+          },
+          "mortality_30d": {
+            "mean": 0.25,
+            "lo": 0.0,
+            "hi": 1.0
+          }
+        }
+      ],
+      "final_mortality_risk": {
+        "mean": 0.14,
+        "lo": 0.0,
+        "hi": 0.78
+      }
+    },
+    "remove_fentanyl": {
+      "lab_trajectory": [
+        {
+          "creatinine": {
+            "mean": 1.37,
+            "lo": 0.36,
+            "hi": 2.5
+          },
+          "bun": {
+            "mean": 36.43,
+            "lo": 7.33,
+            "hi": 61.78
+          },
+          "potassium": {
+            "mean": 4.23,
+            "lo": 3.18,
+            "hi": 5.26
+          },
+          "sodium": {
+            "mean": 140.06,
+            "lo": 134.81,
+            "hi": 145.49
+          },
+          "glucose": {
+            "mean": 232.89,
+            "lo": 102.18,
+            "hi": 414.61
+          },
+          "hemoglobin": {
+            "mean": 14.83,
+            "lo": 11.65,
+            "hi": 17.96
+          }
+        },
+        {
+          "creatinine": {
+            "mean": 2.13,
+            "lo": 0.32,
+            "hi": 4.21
+          },
+          "bun": {
+            "mean": 60.5,
+            "lo": 4.95,
+            "hi": 141.04
+          },
+          "potassium": {
+            "mean": 4.58,
+            "lo": 3.13,
+            "hi": 5.91
+          },
+          "sodium": {
+            "mean": 141.08,
+            "lo": 134.55,
+            "hi": 148.5
+          },
+          "glucose": {
+            "mean": 249.5,
+            "lo": 68.97,
+            "hi": 452.75
+          },
+          "hemoglobin": {
+            "mean": 14.61,
+            "lo": 10.01,
+            "hi": 18.79
+          }
+        },
+        {
+          "creatinine": {
+            "mean": 3.41,
+            "lo": -0.3,
+            "hi": 6.58
+          },
+          "bun": {
+            "mean": 83.32,
+            "lo": 4.36,
+            "hi": 177.54
+          },
+          "potassium": {
+            "mean": 4.72,
+            "lo": 3.12,
+            "hi": 6.85
+          },
+          "sodium": {
+            "mean": 139.97,
+            "lo": 129.21,
+            "hi": 148.85
+          },
+          "glucose": {
+            "mean": 366.11,
+            "lo": 92.61,
+            "hi": 768.03
+          },
+          "hemoglobin": {
+            "mean": 15.61,
+            "lo": 10.41,
+            "hi": 21.71
+          }
+        },
+        {
+          "creatinine": {
+            "mean": 4.07,
+            "lo": -0.38,
+            "hi": 8.45
+          },
+          "bun": {
+            "mean": 93.53,
+            "lo": 12.13,
+            "hi": 182.44
+          },
+          "potassium": {
+            "mean": 4.97,
+            "lo": 2.5,
+            "hi": 7.81
+          },
+          "sodium": {
+            "mean": 139.48,
+            "lo": 127.01,
+            "hi": 149.78
+          },
+          "glucose": {
+            "mean": 421.14,
+            "lo": 62.82,
+            "hi": 853.77
+          },
+          "hemoglobin": {
+            "mean": 15.92,
+            "lo": 8.62,
+            "hi": 22.29
+          }
+        },
+        {
+          "creatinine": {
+            "mean": 5.08,
+            "lo": -0.67,
+            "hi": 10.74
+          },
+          "bun": {
+            "mean": 106.59,
+            "lo": 7.11,
+            "hi": 214.82
+          },
+          "potassium": {
+            "mean": 5.25,
+            "lo": 2.63,
+            "hi": 8.48
+          },
+          "sodium": {
+            "mean": 139.36,
+            "lo": 122.34,
+            "hi": 152.17
+          },
+          "glucose": {
+            "mean": 456.43,
+            "lo": 82.94,
+            "hi": 907.25
+          },
+          "hemoglobin": {
+            "mean": 15.86,
+            "lo": 8.56,
+            "hi": 23.52
+          }
+        }
+      ],
+      "outcome_risk_trajectory": [
+        {
+          "mortality": {
+            "mean": 0.06,
+            "lo": 0.0,
+            "hi": 0.07
+          },
+          "mortality_30d": {
+            "mean": 0.06,
+            "lo": 0.0,
+            "hi": 0.12
+          }
+        },
+        {
+          "mortality": {
+            "mean": 0.12,
+            "lo": 0.0,
+            "hi": 0.58
+          },
+          "mortality_30d": {
+            "mean": 0.18,
+            "lo": 0.0,
+            "hi": 0.9
+          }
+        },
+        {
+          "mortality": {
+            "mean": 0.09,
+            "lo": 0.0,
+            "hi": 0.24
+          },
+          "mortality_30d": {
+            "mean": 0.17,
+            "lo": 0.0,
+            "hi": 0.91
+          }
+        },
+        {
+          "mortality": {
+            "mean": 0.07,
+            "lo": 0.0,
+            "hi": 0.15
+          },
+          "mortality_30d": {
+            "mean": 0.18,
+            "lo": 0.0,
+            "hi": 0.93
+          }
+        },
+        {
+          "mortality": {
+            "mean": 0.11,
+            "lo": 0.0,
+            "hi": 0.47
+          },
+          "mortality_30d": {
+            "mean": 0.32,
+            "lo": 0.0,
+            "hi": 1.0
+          }
+        }
+      ],
+      "final_mortality_risk": {
+        "mean": 0.11,
+        "lo": 0.0,
+        "hi": 0.47
+      }
+    }
+  },
+  "treatment_contrast": {
+    "baseline_plan": "no_treatment",
+    "baseline_final_mortality": 0.01,
+    "deltas": {
+      "factual": 0.12,
+      "alt_arm_pci": 0.07,
+      "remove_norepinephrine": 0.1,
+      "remove_midazolam": 0.13,
+      "remove_fentanyl": 0.1
+    }
+  },
+  "baseline_labs": {
+    "creatinine": 1.14,
+    "bun": 19.39,
+    "potassium": 4.17,
+    "sodium": 140.87,
+    "glucose": 233.0,
+    "hemoglobin": 16.35
+  },
+  "reliability": {
+    "abnormal_baseline_labs": [
+      "glucose"
+    ],
+    "flag": "RELIABLE (dynamic case \u2014 sim beats persistence here)"
+  }
+}

@@ -1,0 +1,127 @@
+{
+  "primary_outcome": "delta_creatinine_72h",
+  "secondary_outcome": "peak_troponin_72h",
+  "matched_estimator_factual_validation": {
+    "rmse": 0.6492,
+    "nrmse": 1.0049,
+    "n": 608
+  },
+  "n_matched_episodes": 625,
+  "methods": {
+    "baseline_matched_nn (proxy ceiling)": {
+      "n": 541,
+      "effect_sign_agreement": {
+        "sign_acc": 1.0,
+        "n": 541
+      },
+      "factual_rmse": {
+        "rmse": 0.6571,
+        "nrmse": 0.9984,
+        "n": 539
+      },
+      "factual_rmse_log10": null,
+      "proxy_pehe": {
+        "pehe": 0.0,
+        "n": 541
+      },
+      "policy_value": {
+        "policy_value": -0.0537,
+        "observed_mean": 0.1993,
+        "improvement_vs_observed": 0.2529,
+        "frac_recommend_treat": 0.479,
+        "n": 541
+      }
+    },
+    "baseline_T_learner": {
+      "n": 625,
+      "effect_sign_agreement": {
+        "sign_acc": 0.4436,
+        "n": 541
+      },
+      "factual_rmse": {
+        "rmse": 0.6267,
+        "nrmse": 0.9738,
+        "n": 615
+      },
+      "factual_rmse_log10": null,
+      "proxy_pehe": {
+        "pehe": 0.9095,
+        "n": 541
+      },
+      "policy_value": {
+        "policy_value": 0.2119,
+        "observed_mean": 0.2021,
+        "improvement_vs_observed": -0.0098,
+        "frac_recommend_treat": 0.489,
+        "n": 615
+      }
+    },
+    "baseline_S_learner": {
+      "n": 625,
+      "effect_sign_agreement": {
+        "sign_acc": 0.2551,
+        "n": 541
+      },
+      "factual_rmse": {
+        "rmse": 0.6365,
+        "nrmse": 0.9891,
+        "n": 615
+      },
+      "factual_rmse_log10": null,
+      "proxy_pehe": {
+        "pehe": 0.7204,
+        "n": 541
+      },
+      "policy_value": {
+        "policy_value": 0.1715,
+        "observed_mean": 0.2021,
+        "improvement_vs_observed": 0.0307,
+        "frac_recommend_treat": 0.099,
+        "n": 615
+      }
+    },
+    "mock [zero_shot]": {
+      "n": 625,
+      "effect_sign_agreement": {
+        "sign_acc": 0.4769,
+        "n": 541
+      },
+      "factual_rmse": {
+        "rmse": 0.6598,
+        "nrmse": 1.0253,
+        "n": 615
+      },
+      "factual_rmse_log10": null,
+      "proxy_pehe": {
+        "pehe": 0.7476,
+        "n": 541
+      },
+      "policy_value": {
+        "policy_value": 0.1736,
+        "observed_mean": 0.2021,
+        "improvement_vs_observed": 0.0285,
+        "frac_recommend_treat": 0.0,
+        "n": 615
+      },
+      "factual_direction_acc": {
+        "acc": 0.4732,
+        "n": 615
+      },
+      "confidence_ece": {
+        "ece": 0.2268,
+        "overall_acc": 0.4732,
+        "overall_conf": 0.7,
+        "n": 615
+      },
+      "cf_direction_acc_vs_proxy": {
+        "acc": 0.4955,
+        "n": 551
+      },
+      "intervention_sensitivity": {
+        "mean_rel_change": 1.0,
+        "direction_flip_rate": 1.0,
+        "n": 625
+      }
+    }
+  }
+}

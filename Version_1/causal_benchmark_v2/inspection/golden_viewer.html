@@ -1,0 +1,277 @@
+<!doctype html><html><head><meta charset="utf-8"><title>Golden Sample Inspection</title><style>
+body{font:14px/1.5 -apple-system,system-ui,sans-serif;margin:0;background:#0d1117;color:#e6edf3}
+.wrap{max-width:1100px;margin:0 auto;padding:24px}
+h1{font-size:22px} h2{font-size:16px;margin:18px 0 8px}
+section{background:#161b22;border:1px solid #30363d;border-radius:10px;padding:16px;margin:16px 0}
+.tag{font-size:11px;background:#1f6feb33;color:#79c0ff;padding:2px 8px;border-radius:10px;margin-left:6px}
+.sub{font-size:12px;color:#8b949e;font-weight:400;margin-left:8px}
+.marker{margin:10px 0;border-left:3px solid #30363d;padding-left:12px}
+.mname{font-weight:700;color:#d2a8ff;margin-bottom:4px}
+.gt{background:#0d1117;border:1px solid #30363d;border-radius:6px;padding:6px 10px;margin-bottom:6px;font-size:13px}
+.truth{color:#f0883e;font-weight:700;margin-left:8px}
+table{width:100%;border-collapse:collapse;font-size:12.5px}
+td{border-top:1px solid #21262d;padding:6px 8px;vertical-align:top}
+td:first-child{font-weight:600;width:200px;color:#adbac7}
+.off{background:#f8514922;border-radius:4px}
+.chip{display:inline-block;font-size:10.5px;padding:2px 7px;border-radius:9px;margin:1px 2px;font-weight:700}
+.ok{background:#2ea04333;color:#3fb950} .bad{background:#f8514933;color:#ff7b72}
+.warn{background:#d2992233;color:#e3b341} .muted{color:#6e7681}
+details{margin-top:8px} summary{cursor:pointer;color:#8b949e;font-size:12px}
+pre{white-space:pre-wrap;background:#0d1117;border:1px solid #30363d;border-radius:6px;padding:10px;font-size:11.5px;color:#adbac7}
+mark{background:#bb800933;color:#e3b341;padding:0 2px}
+.flaws{background:#161b22;border:1px solid #f85149;border-radius:10px;padding:16px;margin:16px 0}
+.flaws li{margin:7px 0}
+</style></head>
+<body><div class="wrap">
+<h1>Causal Benchmark — Golden Sample Inspection (10 pairs × 3 models)</h1>
+<p class="sub">Side-by-side raw inputs, predictions, and ground truth. Local file (MIMIC DUA — not uploaded externally).</p>
+
+<div class="flaws">
+<h2>Systemic flaws this view exposes (that aggregate MCCS hides)</h2>
+<ol>
+<li><b>The MCCS label rewards the WRONG clinical reasoning.</b> For PCI episodes troponin <i>rises</i>
+(periprocedural injury, e.g. 2.29→2.77) while matched controls fall. So a model that correctly reasons
+"PCI lowers troponin" is marked <b>WRONG</b>. The benchmark scores the acute-hump artifact, not whether
+the model understands the intervention's purpose.</li>
+<li><b>Pairs are not independent.</b> The same treated episode (e.g. ep_pci_00000) appears in many pairs
+(reused ×3). n=654 "pairs" ≈ 218 unique PCI episodes. Aggregate significance is inflated ~3×.</li>
+<li><b>The Sodium negative control is trivially gamed.</b> Every model just echoes the baseline and predicts
+"stable", so Sodium-MCCS collapses to "is baseline_A &gt; baseline_B" — it measures input copying, not causality.</li>
+<li><b>Two contradictory "directions" are recorded.</b> The parsed-text direction disagrees with the
+logit-confidence direction in 68–83% of episodes. ECE (uses conf-dir) and MCCS (uses trajectory) grade
+incompatible signals.</li>
+<li><b>Broken/garbage outputs are scored as real.</b> DeepSeek frequently emits 0.0 or wrong-scale values
+(e.g. troponin 0.0→0.0, or 24→96); these enter MCCS as if valid, so its score is mostly a broken-output rate.</li>
+<li><b>MCCS credit on near-zero noise.</b> "Best match" pairs distinguish 0.01 vs 0.05 troponin — within
+assay noise, clinically meaningless — yet score full credit.</li>
+<li><b>Raw model text is NOT stored.</b> Only parsed trajectories survive, so a wrong score can't be
+attributed to model vs parser. v2 must capture raw text.</li>
+</ol>
+</div>
+<section><h2>pair_000001 <span class="tag">scale-anomaly + known GT</span> <span class="sub">pci vs control · match=1.585 · comorbid Δ=1</span><span class="chip bad">HPI LEAKS POST-PROCEDURE</span></h2><div class="marker"><div class="mname">Troponin T</div><div class="gt">GT &nbsp; <b>A</b> 2.29→2.77 <i>(rising)</i> &nbsp;|&nbsp; <b>B</b> 1.62→1.98 <i>(rising)</i> &nbsp; <span class="truth">truth: A_final &gt; B_final</span></div><table><tr><td>Qwen3-8B / cot</td><td class="off">A 0.8→<b>0.1</b><br><i>falling / conf:rising</i></td><td>B 1.62→<b>0.5</b><br><i>falling</i></td><td><span class="chip bad">MCCS ✗</span><span class="chip warn">dir≠conf</span><span class="chip warn">scale-off</span></td></tr><tr><td>Qwen3-8B / zero_shot</td><td class="">A 1.5→<b>0.1</b><br><i>falling / conf:rising</i></td><td>B 1.62→<b>0.5</b><br><i>falling</i></td><td><span class="chip bad">MCCS ✗</span><span class="chip warn">dir≠conf</span></td></tr><tr><td>DeepSeek-R1-7B / zero_shot</td><td class="">A 1.5→<b>0.2</b><br><i>falling / conf:rising</i></td><td>B 0.0→<b>0.0</b><br><i>stable</i></td><td><span class="chip ok">MCCS ✓</span><span class="chip warn">dir≠conf</span></td></tr></table></div><details><summary>HPI shown to model (episode A) — leak terms highlighted</summary><pre>:
+Mr. ___ is a ___ yo man with h/o CAD <mark>s/p PCI</mark> in ___, 
+symptomatic bradycardia s/p PPM, who presents with chest pain.
+
+Patient reported right sided chest pain at 1 pm lasting 
+approximately 5 minutes. Reportedly this felt similar to a prior 
+infection in the area. He had no shortness of breath of 
+diaphoresis associated with this.
+
+In the ED, initial vitals were unremarkable. Patient reported 
+ongoing mild ___ chest pain. ECG showed ST depression in V1-V6. 
+Labs were notable for a troponin-T of 2.49 with CK-MB of 7. CXR 
+showed increased cardiomegaly and new pulmonary edema and small 
+pleural effusions bilaterally. Patient was given full dose 
+aspirin and started on a heparin gtt.
+
+After arrival on the cardiology ward, the patient and his wife 
+were interviewed with the assistance by telephone of a ___ 
+interpreter. He endorsed sudden onset right sided chest pain 
+along with dyspnea on exertion. The pain lasted &quot;a few minutes&quot; 
+then subsided, and he noted coincident loss of appetite without 
+nausea or emesis. Since, he has noted slightly worsening dyspnea 
+on exertion, feeling out of breath when just walking 5 minutes. 
+He also noticed feeling dizzy at times, noting his SBP in the</pre></details></section><section><h2>pair_000004 <span class="tag">scores Sodium (neg control)</span> <span class="sub">pci vs control · match=1.8 · comorbid Δ=1</span><span class="chip bad">HPI LEAKS POST-PROCEDURE</span></h2><div class="marker"><div class="mname">Sodium</div><div class="gt">GT &nbsp; <b>A</b> 141.0→142.0 <i>(stable)</i> &nbsp;|&nbsp; <b>B</b> 137.0→139.0 <i>(stable)</i> &nbsp; <span class="truth">truth: A_final &gt; B_final</span></div><table><tr><td>Qwen3-8B / cot</td><td class="">A 141.0→<b>141.0</b><br><i>stable / conf:None</i></td><td>B 137.0→<b>137.0</b><br><i>stable</i></td><td><span class="chip ok">MCCS ✓</span></td></tr><tr><td>Qwen3-8B / zero_shot</td><td class="">A 141.0→<b>141.0</b><br><i>stable / conf:None</i></td><td>B 137.0→<b>137.0</b><br><i>stable</i></td><td><span class="chip ok">MCCS ✓</span></td></tr><tr><td>DeepSeek-R1-7B / zero_shot</td><td class="">A 141.0→<b>141.0</b><br><i>stable / conf:None</i></td><td>B 137.0→<b>137.0</b><br><i>stable</i></td><td><span class="chip ok">MCCS ✓</span></td></tr></table></div><div class="marker"><div class="mname">Troponin T</div><div class="gt">GT &nbsp; <b>A</b> 0.03→0.01 <i>(falling)</i> &nbsp;|&nbsp; <b>B</b> 0.05→0.05 <i>(stable)</i> &nbsp; <span class="truth">truth: A_final &lt; B_final</span></div><table><tr><td>Qwen3-8B / cot</td><td class="off">A 0.05→<b>0.2</b><br><i>rising / conf:stable</i></td><td>B 0.05→<b>0.05</b><br><i>stable</i></td><td><span class="chip bad">MCCS ✗</span><span class="chip warn">dir≠conf</span><span class="chip warn">scale-off</span></td></tr><tr><td>Qwen3-8B / zero_shot</td><td class="off">A 0.05→<b>0.2</b><br><i>rising / conf:stable</i></td><td>B 0.05→<b>0.11</b><br><i>rising</i></td><td><span class="chip bad">MCCS ✗</span><span class="chip warn">dir≠conf</span><span class="chip warn">scale-off</span></td></tr><tr><td>DeepSeek-R1-7B / zero_shot</td><td class="">A 0.03→<b>0.03</b><br><i>falling / conf:rising</i></td><td>B 0.04→<b>0.01</b><br><i>falling</i></td><td><span class="chip bad">MCCS ✗</span><span class="chip warn">dir≠conf</span></td></tr></table></div><details><summary>HPI shown to model (episode A) — leak terms highlighted</summary><pre>:
+Mr. ___ is a ___ with h/o CAD s/p DES to the LAD on 
+___, who presented to an OSH earlier today with recurrent 
+chest pain, then transferred to ___.
+Mr. ___ had a ___ and stenting of his proximal LAD on 
+___ at ___ in response to a likely NSTEMI that had occured 
+in the few days prior to admission. He was discharged on high 
+dose atorvastatin, aspirin and plavix and had been taking these 
+medications reliably since discharge. He was notably not 
+discharged on a beta-blocker due to bradycardia throughout his 
+hospitalization. Earlier today he developed dyspnea on exertion 
+with some aching pain going into his left arm and presented to 
+an OSH (___, ___). At the OSH his blood pressure and heart 
+rate were normal, EKG was nonischemic and the pain was nitrate 
+responseive and he <mark>was transferred</mark> for further evaluation.
+In the ED, initial vitals were 97.6 55 131/64 16 inital troponin 
+was 0.05 and he was seen by the cardiology consult who felt that 
+given his recent intervention treatment with heparin gtt was 
+warranted, but did not feel he was having a significant in-stent 
+thrombosis. Pain was managed with nitrates (0.4mg SL x1) and he 
+was admitted for monitoring.
+Currently, he is s</pre></details></section><section><h2>pair_000005 <span class="tag">scores Sodium (neg control)</span> <span class="sub">pci vs control · match=1.854 · comorbid Δ=0</span><span class="chip bad">HPI LEAKS POST-PROCEDURE</span></h2><div class="marker"><div class="mname">Sodium</div><div class="gt">GT &nbsp; <b>A</b> 141.0→142.0 <i>(stable)</i> &nbsp;|&nbsp; <b>B</b> 136.0→136.0 <i>(stable)</i> &nbsp; <span class="truth">truth: A_final &gt; B_final</span></div><table><tr><td>Qwen3-8B / cot</td><td class="">A 141.0→<b>141.0</b><br><i>stable / conf:None</i></td><td>B 136.0→<b>136.0</b><br><i>stable</i></td><td><span class="chip ok">MCCS ✓</span></td></tr><tr><td>Qwen3-8B / zero_shot</td><td class="">A 141.0→<b>141.0</b><br><i>stable / conf:None</i></td><td>B 136.0→<b>136.0</b><br><i>stable</i></td><td><span class="chip ok">MCCS ✓</span></td></tr><tr><td>DeepSeek-R1-7B / zero_shot</td><td class="">A 141.0→<b>141.0</b><br><i>stable / conf:None</i></td><td>B 0.0→<b>0.0</b><br><i>stable</i></td><td><span class="chip ok">MCCS ✓</span></td></tr></table></div><div class="marker"><div class="mname">Troponin T</div><div class="gt">GT &nbsp; <b>A</b> 0.03→0.01 <i>(falling)</i> &nbsp;|&nbsp; <b>B</b> 0.41→0.2 <i>(falling)</i> &nbsp; <span class="truth">truth: A_final &lt; B_final</span></div><table><tr><td>Qwen3-8B / cot</td><td class="off">A 0.05→<b>0.2</b><br><i>rising / conf:stable</i></td><td>B 0.41→<b>0.15</b><br><i>falling</i></td><td><span class="chip bad">MCCS ✗</span><span class="chip warn">dir≠conf</span><span class="chip warn">scale-off</span></td></tr><tr><td>Qwen3-8B / zero_shot</td><td class="off">A 0.05→<b>0.2</b><br><i>rising / conf:stable</i></td><td>B 0.41→<b>0.05</b><br><i>falling</i></td><td><span class="chip bad">MCCS ✗</span><span class="chip warn">dir≠conf</span><span class="chip warn">scale-off</span></td></tr><tr><td>DeepSeek-R1-7B / zero_shot</td><td class="">A 0.03→<b>0.03</b><br><i>falling / conf:rising</i></td><td>B 0.0→<b>0.0</b><br><i>stable</i></td><td><span class="chip bad">MCCS ✗</span><span class="chip warn">dir≠conf</span></td></tr></table></div><details><summary>HPI shown to model (episode A) — leak terms highlighted</summary><pre>:
+Mr. ___ is a ___ with h/o CAD s/p DES to the LAD on 
+___, who presented to an OSH earlier today with recurrent 
+chest pain, then transferred to ___.
+Mr. ___ had a ___ and stenting of his proximal LAD on 
+___ at ___ in response to a likely NSTEMI that had occured 
+in the few days prior to admission. He was discharged on high 
+dose atorvastatin, aspirin and plavix and had been taking these 
+medications reliably since discharge. He was notably not 
+discharged on a beta-blocker due to bradycardia throughout his 
+hospitalization. Earlier today he developed dyspnea on exertion 
+with some aching pain going into his left arm and presented to 
+an OSH (___, ___). At the OSH his blood pressure and heart 
+rate were normal, EKG was nonischemic and the pain was nitrate 
+responseive and he <mark>was transferred</mark> for further evaluation.
+In the ED, initial vitals were 97.6 55 131/64 16 inital troponin 
+was 0.05 and he was seen by the cardiology consult who felt that 
+given his recent intervention treatment with heparin gtt was 
+warranted, but did not feel he was having a significant in-stent 
+thrombosis. Pain was managed with nitrates (0.4mg SL x1) and he 
+was admitted for monitoring.
+Currently, he is s</pre></details></section><section><h2>pair_000007 <span class="tag">scores CK-MB</span> <span class="sub">pci vs control · match=1.296 · comorbid Δ=0</span><span class="chip bad">HPI LEAKS POST-PROCEDURE</span></h2><div class="marker"><div class="mname">Creatine Kinase, MB Isoenzyme</div><div class="gt">GT &nbsp; <b>A</b> 250.0→130.0 <i>(falling)</i> &nbsp;|&nbsp; <b>B</b> 105.0→129.0 <i>(rising)</i> &nbsp; <span class="truth">truth: A_final &gt; B_final</span></div><table><tr><td>Qwen3-8B / cot</td><td class="">A 250.0→<b>50.0</b><br><i>falling / conf:None</i></td><td>B 95.0→<b>30.0</b><br><i>falling</i></td><td><span class="chip ok">MCCS ✓</span></td></tr><tr><td>Qwen3-8B / zero_shot</td><td class="">A 250.0→<b>50.0</b><br><i>falling / conf:None</i></td><td>B 105.0→<b>45.0</b><br><i>falling</i></td><td><span class="chip ok">MCCS ✓</span></td></tr><tr><td>DeepSeek-R1-7B / zero_shot</td><td class="off">A 1.0→<b>0.0</b><br><i>falling / conf:None</i></td><td>B 80.0→<b>50.0</b><br><i>falling</i></td><td><span class="chip bad">MCCS ✗</span><span class="chip warn">scale-off</span></td></tr></table></div><div class="marker"><div class="mname">Sodium</div><div class="gt">GT &nbsp; <b>A</b> 138.0→144.0 <i>(stable)</i> &nbsp;|&nbsp; <b>B</b> 131.0→133.0 <i>(stable)</i> &nbsp; <span class="truth">truth: A_final &gt; B_final</span></div><table><tr><td>Qwen3-8B / cot</td><td class="">A 138.0→<b>138.0</b><br><i>stable / conf:None</i></td><td>B 131.0→<b>131.0</b><br><i>stable</i></td><td><span class="chip ok">MCCS ✓</span></td></tr><tr><td>Qwen3-8B / zero_shot</td><td class="">A 138.0→<b>138.0</b><br><i>stable / conf:None</i></td><td>B 131.0→<b>131.0</b><br><i>stable</i></td><td><span class="chip ok">MCCS ✓</span></td></tr><tr><td>DeepSeek-R1-7B / zero_shot</td><td class="off">A 0.0→<b>0.0</b><br><i>falling / conf:None</i></td><td>B 128.0→<b>125.0</b><br><i>falling</i></td><td><span class="chip bad">MCCS ✗</span><span class="chip warn">scale-off</span></td></tr></table></div><div class="marker"><div class="mname">Troponin T</div><div class="gt">GT &nbsp; <b>A</b> 11.94→22.37 <i>(rising)</i> &nbsp;|&nbsp; <b>B</b> 4.2→6.2 <i>(rising)</i> &nbsp; <span class="truth">truth: A_final &gt; B_final</span></div><table><tr><td>Qwen3-8B / cot</td><td class="">A 11.94→<b>2.5</b><br><i>falling / conf:stable</i></td><td>B 4.0→<b>4.0</b><br><i>stable</i></td><td><span class="chip bad">MCCS ✗</span><span class="chip warn">dir≠conf</span></td></tr><tr><td>Qwen3-8B / zero_shot</td><td class="">A 11.94→<b>3.0</b><br><i>falling / conf:stable</i></td><td>B 4.2→<b>4.2</b><br><i>stable</i></td><td><span class="chip bad">MCCS ✗</span><span class="chip warn">dir≠conf</span></td></tr><tr><td>DeepSeek-R1-7B / zero_shot</td><td class="off">A 0.0→<b>0.0</b><br><i>falling / conf:rising</i></td><td>B 3.5→<b>2.0</b><br><i>falling</i></td><td><span class="chip bad">MCCS ✗</span><span class="chip warn">dir≠conf</span><span class="chip warn">scale-off</span></td></tr></table></div><details><summary>HPI shown to model (episode A) — leak terms highlighted</summary><pre>:
+Mr. ___ is an ___ M with CAD, PVD, CKD (baseline Cr 3.4-3.5), 
+and HTN who <mark>was transferred</mark> to ___ on ___ from ___ with 
+new onset DOE and lower extremity edema, now transferred to the 
+CCU after developing STEMI on the floor.
+
+Per report, patient initially presented to his PCP&#x27;s office c/o 
+worsening DOE, ___ edema and left sided chest tightness. He was 
+admitted to ___ where he was noted to have troponin rise 
+from 0.11, to 0.57, then 0.41. Labs were notable for BUN 80, Cr 
+4.1 and  BNP&gt;1000. CXR consistent with CHF and EKG notable for 
+known LBBB. He was diuresed with IV lasix 40-60mg and finally 
+3mg bumex without good response before transfer to ___ for 
+further management. 
+
+On arrival to the floor, patient initially reported feeling well 
+without chest pain, but did have some SOB and was noted to be 
+hypervolemic. EKG showed IVCD with a pseudo LBBB pattern. He was 
+given 120mg IV lasix on the evening of ___. 
+
+Overnight he was noted to have new onset CP, EKG showed complete 
+LBBB with &gt;5mm STE in precordial leads. Repeat  STEMI in 
+percordial leads. Patient was taken to cath lab where he was 
+noted to have 100% occlusion of LAD with bifurcating DES to 
+LAD/D2. Patient was t</pre></details></section><section><h2>pair_000009 <span class="tag">scores CK-MB</span> <span class="sub">pci vs control · match=1.439 · comorbid Δ=1</span><span class="chip bad">HPI LEAKS POST-PROCEDURE</span></h2><div class="marker"><div class="mname">Creatine Kinase, MB Isoenzyme</div><div class="gt">GT &nbsp; <b>A</b> 250.0→130.0 <i>(falling)</i> &nbsp;|&nbsp; <b>B</b> 8.0→7.0 <i>(stable)</i> &nbsp; <span class="truth">truth: A_final &gt; B_final</span></div><table><tr><td>Qwen3-8B / cot</td><td class="">A 250.0→<b>50.0</b><br><i>falling / conf:None</i></td><td>B 8.0→<b>4.0</b><br><i>falling</i></td><td><span class="chip ok">MCCS ✓</span></td></tr><tr><td>Qwen3-8B / zero_shot</td><td class="">A 250.0→<b>50.0</b><br><i>falling / conf:None</i></td><td>B 8.0→<b>4.0</b><br><i>falling</i></td><td><span class="chip ok">MCCS ✓</span></td></tr><tr><td>DeepSeek-R1-7B / zero_shot</td><td class="off">A 1.0→<b>0.0</b><br><i>falling / conf:None</i></td><td>B 8.0→<b>8.0</b><br><i>stable</i></td><td><span class="chip bad">MCCS ✗</span><span class="chip warn">scale-off</span></td></tr></table></div><div class="marker"><div class="mname">Sodium</div><div class="gt">GT &nbsp; <b>A</b> 138.0→144.0 <i>(stable)</i> &nbsp;|&nbsp; <b>B</b> 139.0→138.0 <i>(stable)</i> &nbsp; <span class="truth">truth: A_final &gt; B_final</span></div><table><tr><td>Qwen3-8B / cot</td><td class="">A 138.0→<b>138.0</b><br><i>stable / conf:None</i></td><td>B 139.0→<b>139.0</b><br><i>stable</i></td><td><span class="chip bad">MCCS ✗</span></td></tr><tr><td>Qwen3-8B / zero_shot</td><td class="">A 138.0→<b>138.0</b><br><i>stable / conf:None</i></td><td>B 139.0→<b>139.0</b><br><i>stable</i></td><td><span class="chip bad">MCCS ✗</span></td></tr><tr><td>DeepSeek-R1-7B / zero_shot</td><td class="off">A 0.0→<b>0.0</b><br><i>falling / conf:None</i></td><td>B 139.0→<b>137.0</b><br><i>falling</i></td><td><span class="chip bad">MCCS ✗</span><span class="chip warn">scale-off</span></td></tr></table></div><div class="marker"><div class="mname">Troponin T</div><div class="gt">GT &nbsp; <b>A</b> 11.94→22.37 <i>(rising)</i> &nbsp;|&nbsp; <b>B</b> 15.3→12.15 <i>(falling)</i> &nbsp; <span class="truth">truth: A_final &gt; B_final</span></div><table><tr><td>Qwen3-8B / cot</td><td class="">A 11.94→<b>2.5</b><br><i>falling / conf:stable</i></td><td>B 15.3→<b>8.0</b><br><i>falling</i></td><td><span class="chip bad">MCCS ✗</span><span class="chip warn">dir≠conf</span></td></tr><tr><td>Qwen3-8B / zero_shot</td><td class="">A 11.94→<b>3.0</b><br><i>falling / conf:stable</i></td><td>B 15.3→<b>24.0</b><br><i>rising</i></td><td><span class="chip bad">MCCS ✗</span><span class="chip warn">dir≠conf</span></td></tr><tr><td>DeepSeek-R1-7B / zero_shot</td><td class="off">A 0.0→<b>0.0</b><br><i>falling / conf:rising</i></td><td>B 15.3→<b>6.0</b><br><i>falling</i></td><td><span class="chip bad">MCCS ✗</span><span class="chip warn">dir≠conf</span><span class="chip warn">scale-off</span></td></tr></table></div><details><summary>HPI shown to model (episode A) — leak terms highlighted</summary><pre>:
+Mr. ___ is an ___ M with CAD, PVD, CKD (baseline Cr 3.4-3.5), 
+and HTN who <mark>was transferred</mark> to ___ on ___ from ___ with 
+new onset DOE and lower extremity edema, now transferred to the 
+CCU after developing STEMI on the floor.
+
+Per report, patient initially presented to his PCP&#x27;s office c/o 
+worsening DOE, ___ edema and left sided chest tightness. He was 
+admitted to ___ where he was noted to have troponin rise 
+from 0.11, to 0.57, then 0.41. Labs were notable for BUN 80, Cr 
+4.1 and  BNP&gt;1000. CXR consistent with CHF and EKG notable for 
+known LBBB. He was diuresed with IV lasix 40-60mg and finally 
+3mg bumex without good response before transfer to ___ for 
+further management. 
+
+On arrival to the floor, patient initially reported feeling well 
+without chest pain, but did have some SOB and was noted to be 
+hypervolemic. EKG showed IVCD with a pseudo LBBB pattern. He was 
+given 120mg IV lasix on the evening of ___. 
+
+Overnight he was noted to have new onset CP, EKG showed complete 
+LBBB with &gt;5mm STE in precordial leads. Repeat  STEMI in 
+percordial leads. Patient was taken to cath lab where he was 
+noted to have 100% occlusion of LAD with bifurcating DES to 
+LAD/D2. Patient was t</pre></details></section><section><h2>pair_000002 <span class="tag">HPI leaks post-procedure</span> <span class="sub">pci vs control · match=1.969 · comorbid Δ=1</span><span class="chip bad">HPI LEAKS POST-PROCEDURE</span></h2><div class="marker"><div class="mname">Troponin T</div><div class="gt">GT &nbsp; <b>A</b> 2.29→2.77 <i>(rising)</i> &nbsp;|&nbsp; <b>B</b> 1.18→0.19 <i>(falling)</i> &nbsp; <span class="truth">truth: A_final &gt; B_final</span></div><table><tr><td>Qwen3-8B / cot</td><td class="off">A 0.8→<b>0.1</b><br><i>falling / conf:rising</i></td><td>B 1.18→<b>0.55</b><br><i>falling</i></td><td><span class="chip bad">MCCS ✗</span><span class="chip warn">dir≠conf</span><span class="chip warn">scale-off</span></td></tr><tr><td>Qwen3-8B / zero_shot</td><td class="">A 1.5→<b>0.1</b><br><i>falling / conf:rising</i></td><td>B 1.18→<b>0.5</b><br><i>falling</i></td><td><span class="chip bad">MCCS ✗</span><span class="chip warn">dir≠conf</span></td></tr><tr><td>DeepSeek-R1-7B / zero_shot</td><td class="">A 1.5→<b>0.2</b><br><i>falling / conf:rising</i></td><td>B 1.18→<b>1.18</b><br><i>stable</i></td><td><span class="chip bad">MCCS ✗</span><span class="chip warn">dir≠conf</span></td></tr></table></div><details><summary>HPI shown to model (episode A) — leak terms highlighted</summary><pre>:
+Mr. ___ is a ___ yo man with h/o CAD <mark>s/p PCI</mark> in ___, 
+symptomatic bradycardia s/p PPM, who presents with chest pain.
+
+Patient reported right sided chest pain at 1 pm lasting 
+approximately 5 minutes. Reportedly this felt similar to a prior 
+infection in the area. He had no shortness of breath of 
+diaphoresis associated with this.
+
+In the ED, initial vitals were unremarkable. Patient reported 
+ongoing mild ___ chest pain. ECG showed ST depression in V1-V6. 
+Labs were notable for a troponin-T of 2.49 with CK-MB of 7. CXR 
+showed increased cardiomegaly and new pulmonary edema and small 
+pleural effusions bilaterally. Patient was given full dose 
+aspirin and started on a heparin gtt.
+
+After arrival on the cardiology ward, the patient and his wife 
+were interviewed with the assistance by telephone of a ___ 
+interpreter. He endorsed sudden onset right sided chest pain 
+along with dyspnea on exertion. The pain lasted &quot;a few minutes&quot; 
+then subsided, and he noted coincident loss of appetite without 
+nausea or emesis. Since, he has noted slightly worsening dyspnea 
+on exertion, feeling out of breath when just walking 5 minutes. 
+He also noticed feeling dizzy at times, noting his SBP in the</pre></details></section><section><h2>pair_000003 <span class="tag">HPI leaks post-procedure</span> <span class="sub">pci vs control · match=2.07 · comorbid Δ=2</span><span class="chip bad">HPI LEAKS POST-PROCEDURE</span></h2><div class="marker"><div class="mname">Troponin T</div><div class="gt">GT &nbsp; <b>A</b> 2.29→2.77 <i>(rising)</i> &nbsp;|&nbsp; <b>B</b> 2.21→1.67 <i>(falling)</i> &nbsp; <span class="truth">truth: A_final &gt; B_final</span></div><table><tr><td>Qwen3-8B / cot</td><td class="off">A 0.8→<b>0.1</b><br><i>falling / conf:rising</i></td><td>B 2.21→<b>1.1</b><br><i>falling</i></td><td><span class="chip bad">MCCS ✗</span><span class="chip warn">dir≠conf</span><span class="chip warn">scale-off</span></td></tr><tr><td>Qwen3-8B / zero_shot</td><td class="">A 1.5→<b>0.1</b><br><i>falling / conf:rising</i></td><td>B 2.21→<b>1.1</b><br><i>falling</i></td><td><span class="chip bad">MCCS ✗</span><span class="chip warn">dir≠conf</span></td></tr><tr><td>DeepSeek-R1-7B / zero_shot</td><td class="">A 1.5→<b>0.2</b><br><i>falling / conf:rising</i></td><td>B 2.21→<b>2.21</b><br><i>stable</i></td><td><span class="chip bad">MCCS ✗</span><span class="chip warn">dir≠conf</span></td></tr></table></div><details><summary>HPI shown to model (episode A) — leak terms highlighted</summary><pre>:
+Mr. ___ is a ___ yo man with h/o CAD <mark>s/p PCI</mark> in ___, 
+symptomatic bradycardia s/p PPM, who presents with chest pain.
+
+Patient reported right sided chest pain at 1 pm lasting 
+approximately 5 minutes. Reportedly this felt similar to a prior 
+infection in the area. He had no shortness of breath of 
+diaphoresis associated with this.
+
+In the ED, initial vitals were unremarkable. Patient reported 
+ongoing mild ___ chest pain. ECG showed ST depression in V1-V6. 
+Labs were notable for a troponin-T of 2.49 with CK-MB of 7. CXR 
+showed increased cardiomegaly and new pulmonary edema and small 
+pleural effusions bilaterally. Patient was given full dose 
+aspirin and started on a heparin gtt.
+
+After arrival on the cardiology ward, the patient and his wife 
+were interviewed with the assistance by telephone of a ___ 
+interpreter. He endorsed sudden onset right sided chest pain 
+along with dyspnea on exertion. The pain lasted &quot;a few minutes&quot; 
+then subsided, and he noted coincident loss of appetite without 
+nausea or emesis. Since, he has noted slightly worsening dyspnea 
+on exertion, feeling out of breath when just walking 5 minutes. 
+He also noticed feeling dizzy at times, noting his SBP in the</pre></details></section><section><h2>pair_000142 <span class="tag">best match-quality</span> <span class="sub">pci vs control · match=0.0 · comorbid Δ=0</span></h2><div class="marker"><div class="mname">Troponin T</div><div class="gt">GT &nbsp; <b>A</b> 0.05→0.03 <i>(falling)</i> &nbsp;|&nbsp; <b>B</b> 0.05→0.05 <i>(stable)</i> &nbsp; <span class="truth">truth: A_final &lt; B_final</span></div><table><tr><td>Qwen3-8B / cot</td><td class="">A 0.03→<b>0.01</b><br><i>falling / conf:stable</i></td><td>B 0.05→<b>0.05</b><br><i>stable</i></td><td><span class="chip ok">MCCS ✓</span><span class="chip warn">dir≠conf</span></td></tr><tr><td>Qwen3-8B / zero_shot</td><td class="">A 0.03→<b>0.0</b><br><i>falling / conf:stable</i></td><td>B 0.05→<b>0.11</b><br><i>rising</i></td><td><span class="chip ok">MCCS ✓</span><span class="chip warn">dir≠conf</span></td></tr><tr><td>DeepSeek-R1-7B / zero_shot</td><td class="">A 0.03→<b>0.0</b><br><i>falling / conf:rising</i></td><td>B 0.04→<b>0.01</b><br><i>falling</i></td><td><span class="chip ok">MCCS ✓</span><span class="chip warn">dir≠conf</span></td></tr></table></div><details><summary>HPI shown to model (episode A) — leak terms highlighted</summary><pre>:
+Patient is a ___ M with history of CAD s/p MI ___ yrs ago with 
+NSTEMI ___, s/p recent hospitalization at ___ with PCI 
+(drug-eluting stent of the proximal LAD) who presents to the ED 
+w/ syncope. 
+
+Patient reports that on the AM of admission, patient was going 
+from the bathroom to the kitchen when he suddenly fell. Patient 
+describes that his &#x27;body let loose.&#x27; He describes his legs and 
+arms caving in. He reports hitting his head. The next thing he 
+remember is being in the ambulance. He denies any symptoms of 
+nausea, dizziness/lightheadedness or flushing. He is unsure of 
+whether of not he had chest pain. The patient denies 
+fevers/chills as well as sick contacts. He reports a poor 
+appetite the past couple of days, but has been drinking bottled 
+water. The patient reports that on the AM of presentation, he 
+woke up in a drenching sweat, but he denies chest pain being the 
+cause of waking him up from sleep. The patient denies chest 
+pains or discomfort in the days leading up to the patient&#x27;s 
+admission tonight. He reports that he has been compliant with 
+his medications including his Plavix, but he has not taken it 
+today given today&#x27;s events. He denies loss of bowel or bladd</pre></details></section><section><h2>pair_000414 <span class="tag">worst match-quality</span> <span class="sub">pci vs control · match=4.0 · comorbid Δ=4</span></h2><div class="marker"><div class="mname">Troponin T</div><div class="gt">GT &nbsp; <b>A</b> 0.02→0.01 <i>(falling)</i> &nbsp;|&nbsp; <b>B</b> 0.02→0.03 <i>(rising)</i> &nbsp; <span class="truth">truth: A_final &lt; B_final</span></div><table><tr><td>Qwen3-8B / cot</td><td class="">A 0.03→<b>0.1</b><br><i>rising / conf:stable</i></td><td>B 0.02→<b>0.02</b><br><i>stable</i></td><td><span class="chip bad">MCCS ✗</span><span class="chip warn">dir≠conf</span></td></tr><tr><td>Qwen3-8B / zero_shot</td><td class="">A 0.03→<b>0.12</b><br><i>rising / conf:stable</i></td><td>B 0.02→<b>0.02</b><br><i>stable</i></td><td><span class="chip bad">MCCS ✗</span><span class="chip warn">dir≠conf</span></td></tr><tr><td>DeepSeek-R1-7B / zero_shot</td><td class="">A 0.01→<b>0.004</b><br><i>falling / conf:rising</i></td><td>B 0.0→<b>0.0</b><br><i>stable</i></td><td><span class="chip bad">MCCS ✗</span><span class="chip warn">dir≠conf</span></td></tr></table></div><details><summary>HPI shown to model (episode A) — leak terms highlighted</summary><pre>:
+___ with history of type 2 diabetes mellitus, hypertension, and 
+hyperlipidemia presenting for evaluation of exertional chest 
+pain and dyspnea.
+
+He reports new symptoms occurring with any exertional activity, 
+e.g., walking up stairs for the past 3 days. He notices it when 
+taking a hot shower. The discomfort is retrosternal with 
+radiation to the left arm. It is associated with shortness of 
+breath. It is relieved with rest after 5 minutes. He has never 
+had chest pain like this previously. He also noticed flushing 
+and mood changes within the past three days. He lives in a four 
+story house and could walk up and down all the flights of stairs 
+with no shortness of breath prior to this. He denied nausea or 
+vomiting. He tried a double dose of omeprazole which did not 
+help symptoms. He has had stress tests in the past, none within 
+the past ___ years, but all those had been normal. He had a 
+cardiac catheterization back in the ___, and his cardiologist 
+said he could &quot;drive a truck through your arteries.&quot; Patient has 
+noted that his lower extremities have worsening swelling over 
+the past 1+ year, but has not been started on a diuretic. He was 
+seen by his PCP ___ on ___ ECG an</pre></details></section><section><h2>pair_000655 <span class="tag">multivessel vs single PCI</span> <span class="sub">pci_multivessel vs pci_singlevessel · match=1.621 · comorbid Δ=0</span><span class="chip bad">HPI LEAKS POST-PROCEDURE</span></h2><div class="marker"><div class="mname">Creatine Kinase, MB Isoenzyme</div><div class="gt">GT &nbsp; <b>A</b> 250.0→130.0 <i>(falling)</i> &nbsp;|&nbsp; <b>B</b> 61.0→5.0 <i>(falling)</i> &nbsp; <span class="truth">truth: A_final &gt; B_final</span></div><table><tr><td>Qwen3-8B / cot</td><td class="">A 250.0→<b>50.0</b><br><i>falling / conf:None</i></td><td>B 61.0→<b>42.0</b><br><i>falling</i></td><td><span class="chip ok">MCCS ✓</span></td></tr><tr><td>Qwen3-8B / zero_shot</td><td class="">A 250.0→<b>50.0</b><br><i>falling / conf:None</i></td><td>B 61.0→<b>42.0</b><br><i>falling</i></td><td><span class="chip ok">MCCS ✓</span></td></tr><tr><td>DeepSeek-R1-7B / zero_shot</td><td colspan="3" class="muted">(missing / unparsed)</td></tr></table></div><div class="marker"><div class="mname">Sodium</div><div class="gt">GT &nbsp; <b>A</b> 138.0→144.0 <i>(stable)</i> &nbsp;|&nbsp; <b>B</b> 139.0→141.0 <i>(stable)</i> &nbsp; <span class="truth">truth: A_final &gt; B_final</span></div><table><tr><td>Qwen3-8B / cot</td><td class="">A 138.0→<b>138.0</b><br><i>stable / conf:None</i></td><td>B 139.0→<b>139.0</b><br><i>stable</i></td><td><span class="chip bad">MCCS ✗</span></td></tr><tr><td>Qwen3-8B / zero_shot</td><td class="">A 138.0→<b>138.0</b><br><i>stable / conf:None</i></td><td>B 139.0→<b>139.0</b><br><i>stable</i></td><td><span class="chip bad">MCCS ✗</span></td></tr><tr><td>DeepSeek-R1-7B / zero_shot</td><td colspan="3" class="muted">(missing / unparsed)</td></tr></table></div><div class="marker"><div class="mname">Troponin T</div><div class="gt">GT &nbsp; <b>A</b> 11.94→22.37 <i>(rising)</i> &nbsp;|&nbsp; <b>B</b> 2.26→5.98 <i>(rising)</i> &nbsp; <span class="truth">truth: A_final &gt; B_final</span></div><table><tr><td>Qwen3-8B / cot</td><td class="">A 11.94→<b>2.5</b><br><i>falling / conf:stable</i></td><td>B 2.26→<b>0.9</b><br><i>falling</i></td><td><span class="chip ok">MCCS ✓</span><span class="chip warn">dir≠conf</span></td></tr><tr><td>Qwen3-8B / zero_shot</td><td class="">A 11.94→<b>3.0</b><br><i>falling / conf:stable</i></td><td>B 2.26→<b>2.26</b><br><i>stable</i></td><td><span class="chip ok">MCCS ✓</span><span class="chip warn">dir≠conf</span></td></tr><tr><td>DeepSeek-R1-7B / zero_shot</td><td class="off">A 0.0→<b>0.0</b><br><i>falling / conf:rising</i></td><td>B 24.0→<b>96.0</b><br><i>rising</i></td><td><span class="chip bad">MCCS ✗</span><span class="chip warn">dir≠conf</span><span class="chip warn">scale-off</span></td></tr></table></div><details><summary>HPI shown to model (episode A) — leak terms highlighted</summary><pre>:
+Mr. ___ is an ___ M with CAD, PVD, CKD (baseline Cr 3.4-3.5), 
+and HTN who <mark>was transferred</mark> to ___ on ___ from ___ with 
+new onset DOE and lower extremity edema, now transferred to the 
+CCU after developing STEMI on the floor.
+
+Per report, patient initially presented to his PCP&#x27;s office c/o 
+worsening DOE, ___ edema and left sided chest tightness. He was 
+admitted to ___ where he was noted to have troponin rise 
+from 0.11, to 0.57, then 0.41. Labs were notable for BUN 80, Cr 
+4.1 and  BNP&gt;1000. CXR consistent with CHF and EKG notable for 
+known LBBB. He was diuresed with IV lasix 40-60mg and finally 
+3mg bumex without good response before transfer to ___ for 
+further management. 
+
+On arrival to the floor, patient initially reported feeling well 
+without chest pain, but did have some SOB and was noted to be 
+hypervolemic. EKG showed IVCD with a pseudo LBBB pattern. He was 
+given 120mg IV lasix on the evening of ___. 
+
+Overnight he was noted to have new onset CP, EKG showed complete 
+LBBB with &gt;5mm STE in precordial leads. Repeat  STEMI in 
+percordial leads. Patient was taken to cath lab where he was 
+noted to have 100% occlusion of LAD with bifurcating DES to 
+LAD/D2. Patient was t</pre></details></section>
+</div></body></html>

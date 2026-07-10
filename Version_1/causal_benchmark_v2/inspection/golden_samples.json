@@ -1,0 +1,2015 @@
+{
+  "n": 10,
+  "models": [
+    "Qwen3-8B / cot",
+    "Qwen3-8B / zero_shot",
+    "DeepSeek-R1-7B / zero_shot"
+  ],
+  "samples": [
+    {
+      "pair_id": "pair_000001",
+      "tag": "scale-anomaly + known GT",
+      "contrast": "pci_vs_control",
+      "episode_a": "ep_pci_00000",
+      "episode_b": "ep_control_00076",
+      "intervention_a": "pci",
+      "intervention_b": "control",
+      "match_quality": {
+        "score": 1.585,
+        "comorbidity_distance": 1,
+        "baseline_a": 2.29,
+        "baseline_b": 1.62,
+        "dir_a": "falling",
+        "dir_b": "falling"
+      },
+      "hpi_leak_a": true,
+      "hpi_leak_b": false,
+      "scored_markers": [
+        "Troponin T"
+      ],
+      "ground_truth": {
+        "Troponin T": {
+          "A": {
+            "baseline": 2.29,
+            "post_final": 2.77,
+            "post_traj": [
+              2.89,
+              2.77
+            ],
+            "pct_change": 21.0,
+            "direction": "rising"
+          },
+          "B": {
+            "baseline": 1.62,
+            "post_final": 1.98,
+            "post_traj": [
+              2.26,
+              1.98
+            ],
+            "pct_change": 22.2,
+            "direction": "rising"
+          }
+        }
+      },
+      "models": {
+        "Qwen3-8B / cot": {
+          "Troponin T": {
+            "A": {
+              "start": 0.8,
+              "final": 0.1,
+              "parsed_dir": "falling",
+              "conf_dir": "rising",
+              "conf_p": 0.551
+            },
+            "B": {
+              "start": 1.62,
+              "final": 0.5,
+              "parsed_dir": "falling",
+              "conf_dir": "stable",
+              "conf_p": 0.721
+            },
+            "mccs_correct": false,
+            "dir_conf_disagree_A": true,
+            "scale_off_A": true
+          }
+        },
+        "Qwen3-8B / zero_shot": {
+          "Troponin T": {
+            "A": {
+              "start": 1.5,
+              "final": 0.1,
+              "parsed_dir": "falling",
+              "conf_dir": "rising",
+              "conf_p": 0.551
+            },
+            "B": {
+              "start": 1.62,
+              "final": 0.5,
+              "parsed_dir": "falling",
+              "conf_dir": "stable",
+              "conf_p": 0.721
+            },
+            "mccs_correct": false,
+            "dir_conf_disagree_A": true,
+            "scale_off_A": false
+          }
+        },
+        "DeepSeek-R1-7B / zero_shot": {
+          "Troponin T": {
+            "A": {
+              "start": 1.5,
+              "final": 0.2,
+              "parsed_dir": "falling",
+              "conf_dir": "rising",
+              "conf_p": 0.777
+            },
+            "B": {
+              "start": 0.0,
+              "final": 0.0,
+              "parsed_dir": "stable",
+              "conf_dir": "rising",
+              "conf_p": 0.7
+            },
+            "mccs_correct": true,
+            "dir_conf_disagree_A": true,
+            "scale_off_A": false
+          }
+        }
+      },
+      "hpi_a": ":\nMr. ___ is a ___ yo man with h/o CAD s/p PCI in ___, \nsymptomatic bradycardia s/p PPM, who presents with chest pain.\n\nPatient reported right sided chest pain at 1 pm lasting \napproximately 5 minutes. Reportedly this felt similar to a prior \ninfection in the area. He had no shortness of breath of \ndiaphoresis associated with this.\n\nIn the ED, initial vitals were unremarkable. Patient reported \nongoing mild ___ chest pain. ECG showed ST depression in V1-V6. \nLabs were notable for a troponin-T of 2.49 with CK-MB of 7. CXR \nshowed increased cardiomegaly and new pulmonary edema and small \npleural effusions bilaterally. Patient was given full dose \naspirin and started on a heparin gtt.\n\nAfter arrival on the cardiology ward, the patient and his wife \nwere interviewed with the assistance by telephone of a ___ \ninterpreter. He endorsed sudden onset right sided chest pain \nalong with dyspnea on exertion. The pain lasted \"a few minutes\" \nthen subsided, and he noted coincident loss of appetite without \nnausea or emesis. Since, he has noted slightly worsening dyspnea \non exertion, feeling out of breath when just walking 5 minutes. \nHe also noticed feeling dizzy at times, noting his SBP in the",
+      "comorbidities_a": {
+        "diabetes": 0,
+        "hypertension": 1,
+        "ckd": 1,
+        "heart_failure": 1,
+        "afib": 0,
+        "prior_mi": 1,
+        "hyperlipidemia": 1,
+        "copd": 0,
+        "cad": 1,
+        "valve": 1
+      },
+      "comorbidities_b": {
+        "diabetes": 0,
+        "hypertension": 1,
+        "ckd": 1,
+        "heart_failure": 1,
+        "afib": 1,
+        "prior_mi": 1,
+        "hyperlipidemia": 1,
+        "copd": 0,
+        "cad": 1,
+        "valve": 1
+      }
+    },
+    {
+      "pair_id": "pair_000004",
+      "tag": "scores Sodium (neg control)",
+      "contrast": "pci_vs_control",
+      "episode_a": "ep_pci_00001",
+      "episode_b": "ep_control_00211",
+      "intervention_a": "pci",
+      "intervention_b": "control",
+      "match_quality": {
+        "score": 1.8,
+        "comorbidity_distance": 1,
+        "baseline_a": 0.03,
+        "baseline_b": 0.05,
+        "dir_a": "falling",
+        "dir_b": "falling"
+      },
+      "hpi_leak_a": true,
+      "hpi_leak_b": false,
+      "scored_markers": [
+        "Sodium",
+        "Troponin T"
+      ],
+      "ground_truth": {
+        "Sodium": {
+          "A": {
+            "baseline": 141.0,
+            "post_final": 142.0,
+            "post_traj": [
+              139.0,
+              142.0
+            ],
+            "pct_change": 0.7,
+            "direction": "stable"
+          },
+          "B": {
+            "baseline": 137.0,
+            "post_final": 139.0,
+            "post_traj": [
+              137.0,
+              139.0,
+              141.0,
+              139.0
+            ],
+            "pct_change": 1.5,
+            "direction": "stable"
+          }
+        },
+        "Troponin T": {
+          "A": {
+            "baseline": 0.03,
+            "post_final": 0.01,
+            "post_traj": [
+              0.01
+            ],
+            "pct_change": -66.7,
+            "direction": "falling"
+          },
+          "B": {
+            "baseline": 0.05,
+            "post_final": 0.05,
+            "post_traj": [
+              0.05,
+              0.05
+            ],
+            "pct_change": 0.0,
+            "direction": "stable"
+          }
+        }
+      },
+      "models": {
+        "Qwen3-8B / cot": {
+          "Sodium": {
+            "A": {
+              "start": 141.0,
+              "final": 141.0,
+              "parsed_dir": "stable",
+              "conf_dir": null,
+              "conf_p": 0.694
+            },
+            "B": {
+              "start": 137.0,
+              "final": 137.0,
+              "parsed_dir": "stable",
+              "conf_dir": null,
+              "conf_p": 0.8
+            },
+            "mccs_correct": true,
+            "dir_conf_disagree_A": false,
+            "scale_off_A": false
+          },
+          "Troponin T": {
+            "A": {
+              "start": 0.05,
+              "final": 0.2,
+              "parsed_dir": "rising",
+              "conf_dir": "stable",
+              "conf_p": 0.694
+            },
+            "B": {
+              "start": 0.05,
+              "final": 0.05,
+              "parsed_dir": "stable",
+              "conf_dir": "stable",
+              "conf_p": 0.8
+            },
+            "mccs_correct": false,
+            "dir_conf_disagree_A": true,
+            "scale_off_A": true
+          }
+        },
+        "Qwen3-8B / zero_shot": {
+          "Sodium": {
+            "A": {
+              "start": 141.0,
+              "final": 141.0,
+              "parsed_dir": "stable",
+              "conf_dir": null,
+              "conf_p": 0.694
+            },
+            "B": {
+              "start": 137.0,
+              "final": 137.0,
+              "parsed_dir": "stable",
+              "conf_dir": null,
+              "conf_p": 0.8
+            },
+            "mccs_correct": true,
+            "dir_conf_disagree_A": false,
+            "scale_off_A": false
+          },
+          "Troponin T": {
+            "A": {
+              "start": 0.05,
+              "final": 0.2,
+              "parsed_dir": "rising",
+              "conf_dir": "stable",
+              "conf_p": 0.694
+            },
+            "B": {
+              "start": 0.05,
+              "final": 0.11,
+              "parsed_dir": "rising",
+              "conf_dir": "stable",
+              "conf_p": 0.8
+            },
+            "mccs_correct": false,
+            "dir_conf_disagree_A": true,
+            "scale_off_A": true
+          }
+        },
+        "DeepSeek-R1-7B / zero_shot": {
+          "Sodium": {
+            "A": {
+              "start": 141.0,
+              "final": 141.0,
+              "parsed_dir": "stable",
+              "conf_dir": null,
+              "conf_p": 0.667
+            },
+            "B": {
+              "start": 137.0,
+              "final": 137.0,
+              "parsed_dir": "stable",
+              "conf_dir": null,
+              "conf_p": 0.64
+            },
+            "mccs_correct": true,
+            "dir_conf_disagree_A": false,
+            "scale_off_A": false
+          },
+          "Troponin T": {
+            "A": {
+              "start": 0.03,
+              "final": 0.03,
+              "parsed_dir": "falling",
+              "conf_dir": "rising",
+              "conf_p": 0.667
+            },
+            "B": {
+              "start": 0.04,
+              "final": 0.01,
+              "parsed_dir": "falling",
+              "conf_dir": "rising",
+              "conf_p": 0.64
+            },
+            "mccs_correct": false,
+            "dir_conf_disagree_A": true,
+            "scale_off_A": false
+          }
+        }
+      },
+      "hpi_a": ":\nMr. ___ is a ___ with h/o CAD s/p DES to the LAD on \n___, who presented to an OSH earlier today with recurrent \nchest pain, then transferred to ___.\nMr. ___ had a ___ and stenting of his proximal LAD on \n___ at ___ in response to a likely NSTEMI that had occured \nin the few days prior to admission. He was discharged on high \ndose atorvastatin, aspirin and plavix and had been taking these \nmedications reliably since discharge. He was notably not \ndischarged on a beta-blocker due to bradycardia throughout his \nhospitalization. Earlier today he developed dyspnea on exertion \nwith some aching pain going into his left arm and presented to \nan OSH (___, ___). At the OSH his blood pressure and heart \nrate were normal, EKG was nonischemic and the pain was nitrate \nresponseive and he was transferred for further evaluation.\nIn the ED, initial vitals were 97.6 55 131/64 16 inital troponin \nwas 0.05 and he was seen by the cardiology consult who felt that \ngiven his recent intervention treatment with heparin gtt was \nwarranted, but did not feel he was having a significant in-stent \nthrombosis. Pain was managed with nitrates (0.4mg SL x1) and he \nwas admitted for monitoring.\nCurrently, he is s",
+      "comorbidities_a": {
+        "diabetes": 0,
+        "hypertension": 1,
+        "ckd": 0,
+        "heart_failure": 0,
+        "afib": 0,
+        "prior_mi": 1,
+        "hyperlipidemia": 1,
+        "copd": 0,
+        "cad": 1,
+        "valve": 0
+      },
+      "comorbidities_b": {
+        "diabetes": 0,
+        "hypertension": 1,
+        "ckd": 1,
+        "heart_failure": 0,
+        "afib": 0,
+        "prior_mi": 1,
+        "hyperlipidemia": 1,
+        "copd": 0,
+        "cad": 1,
+        "valve": 0
+      }
+    },
+    {
+      "pair_id": "pair_000005",
+      "tag": "scores Sodium (neg control)",
+      "contrast": "pci_vs_control",
+      "episode_a": "ep_pci_00001",
+      "episode_b": "ep_control_00344",
+      "intervention_a": "pci",
+      "intervention_b": "control",
+      "match_quality": {
+        "score": 1.854,
+        "comorbidity_distance": 0,
+        "baseline_a": 0.03,
+        "baseline_b": 0.41,
+        "dir_a": "falling",
+        "dir_b": "falling"
+      },
+      "hpi_leak_a": true,
+      "hpi_leak_b": false,
+      "scored_markers": [
+        "Sodium",
+        "Troponin T"
+      ],
+      "ground_truth": {
+        "Sodium": {
+          "A": {
+            "baseline": 141.0,
+            "post_final": 142.0,
+            "post_traj": [
+              139.0,
+              142.0
+            ],
+            "pct_change": 0.7,
+            "direction": "stable"
+          },
+          "B": {
+            "baseline": 136.0,
+            "post_final": 136.0,
+            "post_traj": [
+              139.0,
+              138.0,
+              135.0,
+              136.0
+            ],
+            "pct_change": 0.0,
+            "direction": "stable"
+          }
+        },
+        "Troponin T": {
+          "A": {
+            "baseline": 0.03,
+            "post_final": 0.01,
+            "post_traj": [
+              0.01
+            ],
+            "pct_change": -66.7,
+            "direction": "falling"
+          },
+          "B": {
+            "baseline": 0.41,
+            "post_final": 0.2,
+            "post_traj": [
+              0.2
+            ],
+            "pct_change": -51.2,
+            "direction": "falling"
+          }
+        }
+      },
+      "models": {
+        "Qwen3-8B / cot": {
+          "Sodium": {
+            "A": {
+              "start": 141.0,
+              "final": 141.0,
+              "parsed_dir": "stable",
+              "conf_dir": null,
+              "conf_p": 0.694
+            },
+            "B": {
+              "start": 136.0,
+              "final": 136.0,
+              "parsed_dir": "stable",
+              "conf_dir": null,
+              "conf_p": 0.763
+            },
+            "mccs_correct": true,
+            "dir_conf_disagree_A": false,
+            "scale_off_A": false
+          },
+          "Troponin T": {
+            "A": {
+              "start": 0.05,
+              "final": 0.2,
+              "parsed_dir": "rising",
+              "conf_dir": "stable",
+              "conf_p": 0.694
+            },
+            "B": {
+              "start": 0.41,
+              "final": 0.15,
+              "parsed_dir": "falling",
+              "conf_dir": "stable",
+              "conf_p": 0.763
+            },
+            "mccs_correct": false,
+            "dir_conf_disagree_A": true,
+            "scale_off_A": true
+          }
+        },
+        "Qwen3-8B / zero_shot": {
+          "Sodium": {
+            "A": {
+              "start": 141.0,
+              "final": 141.0,
+              "parsed_dir": "stable",
+              "conf_dir": null,
+              "conf_p": 0.694
+            },
+            "B": {
+              "start": 136.0,
+              "final": 136.0,
+              "parsed_dir": "stable",
+              "conf_dir": null,
+              "conf_p": 0.763
+            },
+            "mccs_correct": true,
+            "dir_conf_disagree_A": false,
+            "scale_off_A": false
+          },
+          "Troponin T": {
+            "A": {
+              "start": 0.05,
+              "final": 0.2,
+              "parsed_dir": "rising",
+              "conf_dir": "stable",
+              "conf_p": 0.694
+            },
+            "B": {
+              "start": 0.41,
+              "final": 0.05,
+              "parsed_dir": "falling",
+              "conf_dir": "stable",
+              "conf_p": 0.763
+            },
+            "mccs_correct": false,
+            "dir_conf_disagree_A": true,
+            "scale_off_A": true
+          }
+        },
+        "DeepSeek-R1-7B / zero_shot": {
+          "Sodium": {
+            "A": {
+              "start": 141.0,
+              "final": 141.0,
+              "parsed_dir": "stable",
+              "conf_dir": null,
+              "conf_p": 0.667
+            },
+            "B": {
+              "start": 0.0,
+              "final": 0.0,
+              "parsed_dir": "stable",
+              "conf_dir": null,
+              "conf_p": 0.701
+            },
+            "mccs_correct": true,
+            "dir_conf_disagree_A": false,
+            "scale_off_A": false
+          },
+          "Troponin T": {
+            "A": {
+              "start": 0.03,
+              "final": 0.03,
+              "parsed_dir": "falling",
+              "conf_dir": "rising",
+              "conf_p": 0.667
+            },
+            "B": {
+              "start": 0.0,
+              "final": 0.0,
+              "parsed_dir": "stable",
+              "conf_dir": "rising",
+              "conf_p": 0.701
+            },
+            "mccs_correct": false,
+            "dir_conf_disagree_A": true,
+            "scale_off_A": false
+          }
+        }
+      },
+      "hpi_a": ":\nMr. ___ is a ___ with h/o CAD s/p DES to the LAD on \n___, who presented to an OSH earlier today with recurrent \nchest pain, then transferred to ___.\nMr. ___ had a ___ and stenting of his proximal LAD on \n___ at ___ in response to a likely NSTEMI that had occured \nin the few days prior to admission. He was discharged on high \ndose atorvastatin, aspirin and plavix and had been taking these \nmedications reliably since discharge. He was notably not \ndischarged on a beta-blocker due to bradycardia throughout his \nhospitalization. Earlier today he developed dyspnea on exertion \nwith some aching pain going into his left arm and presented to \nan OSH (___, ___). At the OSH his blood pressure and heart \nrate were normal, EKG was nonischemic and the pain was nitrate \nresponseive and he was transferred for further evaluation.\nIn the ED, initial vitals were 97.6 55 131/64 16 inital troponin \nwas 0.05 and he was seen by the cardiology consult who felt that \ngiven his recent intervention treatment with heparin gtt was \nwarranted, but did not feel he was having a significant in-stent \nthrombosis. Pain was managed with nitrates (0.4mg SL x1) and he \nwas admitted for monitoring.\nCurrently, he is s",
+      "comorbidities_a": {
+        "diabetes": 0,
+        "hypertension": 1,
+        "ckd": 0,
+        "heart_failure": 0,
+        "afib": 0,
+        "prior_mi": 1,
+        "hyperlipidemia": 1,
+        "copd": 0,
+        "cad": 1,
+        "valve": 0
+      },
+      "comorbidities_b": {
+        "diabetes": 0,
+        "hypertension": 1,
+        "ckd": 0,
+        "heart_failure": 0,
+        "afib": 0,
+        "prior_mi": 1,
+        "hyperlipidemia": 1,
+        "copd": 0,
+        "cad": 1,
+        "valve": 0
+      }
+    },
+    {
+      "pair_id": "pair_000007",
+      "tag": "scores CK-MB",
+      "contrast": "pci_vs_control",
+      "episode_a": "ep_pci_00002",
+      "episode_b": "ep_control_00368",
+      "intervention_a": "pci",
+      "intervention_b": "control",
+      "match_quality": {
+        "score": 1.296,
+        "comorbidity_distance": 0,
+        "baseline_a": 11.94,
+        "baseline_b": 4.2,
+        "dir_a": "rising",
+        "dir_b": "rising"
+      },
+      "hpi_leak_a": true,
+      "hpi_leak_b": true,
+      "scored_markers": [
+        "Creatine Kinase, MB Isoenzyme",
+        "Sodium",
+        "Troponin T"
+      ],
+      "ground_truth": {
+        "Creatine Kinase, MB Isoenzyme": {
+          "A": {
+            "baseline": 250.0,
+            "post_final": 130.0,
+            "post_traj": [
+              285.0,
+              130.0
+            ],
+            "pct_change": -48.0,
+            "direction": "falling"
+          },
+          "B": {
+            "baseline": 105.0,
+            "post_final": 129.0,
+            "post_traj": [
+              116.0,
+              129.0
+            ],
+            "pct_change": 22.9,
+            "direction": "rising"
+          }
+        },
+        "Sodium": {
+          "A": {
+            "baseline": 138.0,
+            "post_final": 144.0,
+            "post_traj": [
+              140.0,
+              140.0,
+              143.0,
+              139.0,
+              143.0,
+              142.0,
+              144.0
+            ],
+            "pct_change": 4.3,
+            "direction": "stable"
+          },
+          "B": {
+            "baseline": 131.0,
+            "post_final": 133.0,
+            "post_traj": [
+              132.0,
+              133.0
+            ],
+            "pct_change": 1.5,
+            "direction": "stable"
+          }
+        },
+        "Troponin T": {
+          "A": {
+            "baseline": 11.94,
+            "post_final": 22.37,
+            "post_traj": [
+              25.0,
+              22.37
+            ],
+            "pct_change": 87.4,
+            "direction": "rising"
+          },
+          "B": {
+            "baseline": 4.2,
+            "post_final": 6.2,
+            "post_traj": [
+              5.0,
+              6.2
+            ],
+            "pct_change": 47.6,
+            "direction": "rising"
+          }
+        }
+      },
+      "models": {
+        "Qwen3-8B / cot": {
+          "Creatine Kinase, MB Isoenzyme": {
+            "A": {
+              "start": 250.0,
+              "final": 50.0,
+              "parsed_dir": "falling",
+              "conf_dir": null,
+              "conf_p": 0.587
+            },
+            "B": {
+              "start": 95.0,
+              "final": 30.0,
+              "parsed_dir": "falling",
+              "conf_dir": null,
+              "conf_p": 0.748
+            },
+            "mccs_correct": true,
+            "dir_conf_disagree_A": false,
+            "scale_off_A": false
+          },
+          "Sodium": {
+            "A": {
+              "start": 138.0,
+              "final": 138.0,
+              "parsed_dir": "stable",
+              "conf_dir": null,
+              "conf_p": 0.587
+            },
+            "B": {
+              "start": 131.0,
+              "final": 131.0,
+              "parsed_dir": "stable",
+              "conf_dir": null,
+              "conf_p": 0.748
+            },
+            "mccs_correct": true,
+            "dir_conf_disagree_A": false,
+            "scale_off_A": false
+          },
+          "Troponin T": {
+            "A": {
+              "start": 11.94,
+              "final": 2.5,
+              "parsed_dir": "falling",
+              "conf_dir": "stable",
+              "conf_p": 0.587
+            },
+            "B": {
+              "start": 4.0,
+              "final": 4.0,
+              "parsed_dir": "stable",
+              "conf_dir": "stable",
+              "conf_p": 0.748
+            },
+            "mccs_correct": false,
+            "dir_conf_disagree_A": true,
+            "scale_off_A": false
+          }
+        },
+        "Qwen3-8B / zero_shot": {
+          "Creatine Kinase, MB Isoenzyme": {
+            "A": {
+              "start": 250.0,
+              "final": 50.0,
+              "parsed_dir": "falling",
+              "conf_dir": null,
+              "conf_p": 0.587
+            },
+            "B": {
+              "start": 105.0,
+              "final": 45.0,
+              "parsed_dir": "falling",
+              "conf_dir": null,
+              "conf_p": 0.748
+            },
+            "mccs_correct": true,
+            "dir_conf_disagree_A": false,
+            "scale_off_A": false
+          },
+          "Sodium": {
+            "A": {
+              "start": 138.0,
+              "final": 138.0,
+              "parsed_dir": "stable",
+              "conf_dir": null,
+              "conf_p": 0.587
+            },
+            "B": {
+              "start": 131.0,
+              "final": 131.0,
+              "parsed_dir": "stable",
+              "conf_dir": null,
+              "conf_p": 0.748
+            },
+            "mccs_correct": true,
+            "dir_conf_disagree_A": false,
+            "scale_off_A": false
+          },
+          "Troponin T": {
+            "A": {
+              "start": 11.94,
+              "final": 3.0,
+              "parsed_dir": "falling",
+              "conf_dir": "stable",
+              "conf_p": 0.587
+            },
+            "B": {
+              "start": 4.2,
+              "final": 4.2,
+              "parsed_dir": "stable",
+              "conf_dir": "stable",
+              "conf_p": 0.748
+            },
+            "mccs_correct": false,
+            "dir_conf_disagree_A": true,
+            "scale_off_A": false
+          }
+        },
+        "DeepSeek-R1-7B / zero_shot": {
+          "Creatine Kinase, MB Isoenzyme": {
+            "A": {
+              "start": 1.0,
+              "final": 0.0,
+              "parsed_dir": "falling",
+              "conf_dir": null,
+              "conf_p": 0.655
+            },
+            "B": {
+              "start": 80.0,
+              "final": 50.0,
+              "parsed_dir": "falling",
+              "conf_dir": null,
+              "conf_p": 0.613
+            },
+            "mccs_correct": false,
+            "dir_conf_disagree_A": false,
+            "scale_off_A": true
+          },
+          "Sodium": {
+            "A": {
+              "start": 0.0,
+              "final": 0.0,
+              "parsed_dir": "falling",
+              "conf_dir": null,
+              "conf_p": 0.655
+            },
+            "B": {
+              "start": 128.0,
+              "final": 125.0,
+              "parsed_dir": "falling",
+              "conf_dir": null,
+              "conf_p": 0.613
+            },
+            "mccs_correct": false,
+            "dir_conf_disagree_A": false,
+            "scale_off_A": true
+          },
+          "Troponin T": {
+            "A": {
+              "start": 0.0,
+              "final": 0.0,
+              "parsed_dir": "falling",
+              "conf_dir": "rising",
+              "conf_p": 0.655
+            },
+            "B": {
+              "start": 3.5,
+              "final": 2.0,
+              "parsed_dir": "falling",
+              "conf_dir": "rising",
+              "conf_p": 0.613
+            },
+            "mccs_correct": false,
+            "dir_conf_disagree_A": true,
+            "scale_off_A": true
+          }
+        }
+      },
+      "hpi_a": ":\nMr. ___ is an ___ M with CAD, PVD, CKD (baseline Cr 3.4-3.5), \nand HTN who was transferred to ___ on ___ from ___ with \nnew onset DOE and lower extremity edema, now transferred to the \nCCU after developing STEMI on the floor.\n\nPer report, patient initially presented to his PCP's office c/o \nworsening DOE, ___ edema and left sided chest tightness. He was \nadmitted to ___ where he was noted to have troponin rise \nfrom 0.11, to 0.57, then 0.41. Labs were notable for BUN 80, Cr \n4.1 and  BNP>1000. CXR consistent with CHF and EKG notable for \nknown LBBB. He was diuresed with IV lasix 40-60mg and finally \n3mg bumex without good response before transfer to ___ for \nfurther management. \n\nOn arrival to the floor, patient initially reported feeling well \nwithout chest pain, but did have some SOB and was noted to be \nhypervolemic. EKG showed IVCD with a pseudo LBBB pattern. He was \ngiven 120mg IV lasix on the evening of ___. \n\nOvernight he was noted to have new onset CP, EKG showed complete \nLBBB with >5mm STE in precordial leads. Repeat  STEMI in \npercordial leads. Patient was taken to cath lab where he was \nnoted to have 100% occlusion of LAD with bifurcating DES to \nLAD/D2. Patient was t",
+      "comorbidities_a": {
+        "diabetes": 0,
+        "hypertension": 1,
+        "ckd": 1,
+        "heart_failure": 1,
+        "afib": 0,
+        "prior_mi": 1,
+        "hyperlipidemia": 0,
+        "copd": 0,
+        "cad": 1,
+        "valve": 0
+      },
+      "comorbidities_b": {
+        "diabetes": 0,
+        "hypertension": 1,
+        "ckd": 1,
+        "heart_failure": 1,
+        "afib": 0,
+        "prior_mi": 1,
+        "hyperlipidemia": 0,
+        "copd": 0,
+        "cad": 1,
+        "valve": 0
+      }
+    },
+    {
+      "pair_id": "pair_000009",
+      "tag": "scores CK-MB",
+      "contrast": "pci_vs_control",
+      "episode_a": "ep_pci_00002",
+      "episode_b": "ep_control_00044",
+      "intervention_a": "pci",
+      "intervention_b": "control",
+      "match_quality": {
+        "score": 1.439,
+        "comorbidity_distance": 1,
+        "baseline_a": 11.94,
+        "baseline_b": 15.3,
+        "dir_a": "rising",
+        "dir_b": "rising"
+      },
+      "hpi_leak_a": true,
+      "hpi_leak_b": false,
+      "scored_markers": [
+        "Creatine Kinase, MB Isoenzyme",
+        "Sodium",
+        "Troponin T"
+      ],
+      "ground_truth": {
+        "Creatine Kinase, MB Isoenzyme": {
+          "A": {
+            "baseline": 250.0,
+            "post_final": 130.0,
+            "post_traj": [
+              285.0,
+              130.0
+            ],
+            "pct_change": -48.0,
+            "direction": "falling"
+          },
+          "B": {
+            "baseline": 8.0,
+            "post_final": 7.0,
+            "post_traj": [
+              7.0
+            ],
+            "pct_change": -12.5,
+            "direction": "stable"
+          }
+        },
+        "Sodium": {
+          "A": {
+            "baseline": 138.0,
+            "post_final": 144.0,
+            "post_traj": [
+              140.0,
+              140.0,
+              143.0,
+              139.0,
+              143.0,
+              142.0,
+              144.0
+            ],
+            "pct_change": 4.3,
+            "direction": "stable"
+          },
+          "B": {
+            "baseline": 139.0,
+            "post_final": 138.0,
+            "post_traj": [
+              140.0,
+              141.0,
+              142.0,
+              138.0
+            ],
+            "pct_change": -0.7,
+            "direction": "stable"
+          }
+        },
+        "Troponin T": {
+          "A": {
+            "baseline": 11.94,
+            "post_final": 22.37,
+            "post_traj": [
+              25.0,
+              22.37
+            ],
+            "pct_change": 87.4,
+            "direction": "rising"
+          },
+          "B": {
+            "baseline": 15.3,
+            "post_final": 12.15,
+            "post_traj": [
+              12.15
+            ],
+            "pct_change": -20.6,
+            "direction": "falling"
+          }
+        }
+      },
+      "models": {
+        "Qwen3-8B / cot": {
+          "Creatine Kinase, MB Isoenzyme": {
+            "A": {
+              "start": 250.0,
+              "final": 50.0,
+              "parsed_dir": "falling",
+              "conf_dir": null,
+              "conf_p": 0.587
+            },
+            "B": {
+              "start": 8.0,
+              "final": 4.0,
+              "parsed_dir": "falling",
+              "conf_dir": null,
+              "conf_p": 0.675
+            },
+            "mccs_correct": true,
+            "dir_conf_disagree_A": false,
+            "scale_off_A": false
+          },
+          "Sodium": {
+            "A": {
+              "start": 138.0,
+              "final": 138.0,
+              "parsed_dir": "stable",
+              "conf_dir": null,
+              "conf_p": 0.587
+            },
+            "B": {
+              "start": 139.0,
+              "final": 139.0,
+              "parsed_dir": "stable",
+              "conf_dir": null,
+              "conf_p": 0.675
+            },
+            "mccs_correct": false,
+            "dir_conf_disagree_A": false,
+            "scale_off_A": false
+          },
+          "Troponin T": {
+            "A": {
+              "start": 11.94,
+              "final": 2.5,
+              "parsed_dir": "falling",
+              "conf_dir": "stable",
+              "conf_p": 0.587
+            },
+            "B": {
+              "start": 15.3,
+              "final": 8.0,
+              "parsed_dir": "falling",
+              "conf_dir": "stable",
+              "conf_p": 0.675
+            },
+            "mccs_correct": false,
+            "dir_conf_disagree_A": true,
+            "scale_off_A": false
+          }
+        },
+        "Qwen3-8B / zero_shot": {
+          "Creatine Kinase, MB Isoenzyme": {
+            "A": {
+              "start": 250.0,
+              "final": 50.0,
+              "parsed_dir": "falling",
+              "conf_dir": null,
+              "conf_p": 0.587
+            },
+            "B": {
+              "start": 8.0,
+              "final": 4.0,
+              "parsed_dir": "falling",
+              "conf_dir": null,
+              "conf_p": 0.675
+            },
+            "mccs_correct": true,
+            "dir_conf_disagree_A": false,
+            "scale_off_A": false
+          },
+          "Sodium": {
+            "A": {
+              "start": 138.0,
+              "final": 138.0,
+              "parsed_dir": "stable",
+              "conf_dir": null,
+              "conf_p": 0.587
+            },
+            "B": {
+              "start": 139.0,
+              "final": 139.0,
+              "parsed_dir": "stable",
+              "conf_dir": null,
+              "conf_p": 0.675
+            },
+            "mccs_correct": false,
+            "dir_conf_disagree_A": false,
+            "scale_off_A": false
+          },
+          "Troponin T": {
+            "A": {
+              "start": 11.94,
+              "final": 3.0,
+              "parsed_dir": "falling",
+              "conf_dir": "stable",
+              "conf_p": 0.587
+            },
+            "B": {
+              "start": 15.3,
+              "final": 24.0,
+              "parsed_dir": "rising",
+              "conf_dir": "stable",
+              "conf_p": 0.675
+            },
+            "mccs_correct": false,
+            "dir_conf_disagree_A": true,
+            "scale_off_A": false
+          }
+        },
+        "DeepSeek-R1-7B / zero_shot": {
+          "Creatine Kinase, MB Isoenzyme": {
+            "A": {
+              "start": 1.0,
+              "final": 0.0,
+              "parsed_dir": "falling",
+              "conf_dir": null,
+              "conf_p": 0.655
+            },
+            "B": {
+              "start": 8.0,
+              "final": 8.0,
+              "parsed_dir": "stable",
+              "conf_dir": null,
+              "conf_p": 0.606
+            },
+            "mccs_correct": false,
+            "dir_conf_disagree_A": false,
+            "scale_off_A": true
+          },
+          "Sodium": {
+            "A": {
+              "start": 0.0,
+              "final": 0.0,
+              "parsed_dir": "falling",
+              "conf_dir": null,
+              "conf_p": 0.655
+            },
+            "B": {
+              "start": 139.0,
+              "final": 137.0,
+              "parsed_dir": "falling",
+              "conf_dir": null,
+              "conf_p": 0.606
+            },
+            "mccs_correct": false,
+            "dir_conf_disagree_A": false,
+            "scale_off_A": true
+          },
+          "Troponin T": {
+            "A": {
+              "start": 0.0,
+              "final": 0.0,
+              "parsed_dir": "falling",
+              "conf_dir": "rising",
+              "conf_p": 0.655
+            },
+            "B": {
+              "start": 15.3,
+              "final": 6.0,
+              "parsed_dir": "falling",
+              "conf_dir": "rising",
+              "conf_p": 0.606
+            },
+            "mccs_correct": false,
+            "dir_conf_disagree_A": true,
+            "scale_off_A": true
+          }
+        }
+      },
+      "hpi_a": ":\nMr. ___ is an ___ M with CAD, PVD, CKD (baseline Cr 3.4-3.5), \nand HTN who was transferred to ___ on ___ from ___ with \nnew onset DOE and lower extremity edema, now transferred to the \nCCU after developing STEMI on the floor.\n\nPer report, patient initially presented to his PCP's office c/o \nworsening DOE, ___ edema and left sided chest tightness. He was \nadmitted to ___ where he was noted to have troponin rise \nfrom 0.11, to 0.57, then 0.41. Labs were notable for BUN 80, Cr \n4.1 and  BNP>1000. CXR consistent with CHF and EKG notable for \nknown LBBB. He was diuresed with IV lasix 40-60mg and finally \n3mg bumex without good response before transfer to ___ for \nfurther management. \n\nOn arrival to the floor, patient initially reported feeling well \nwithout chest pain, but did have some SOB and was noted to be \nhypervolemic. EKG showed IVCD with a pseudo LBBB pattern. He was \ngiven 120mg IV lasix on the evening of ___. \n\nOvernight he was noted to have new onset CP, EKG showed complete \nLBBB with >5mm STE in precordial leads. Repeat  STEMI in \npercordial leads. Patient was taken to cath lab where he was \nnoted to have 100% occlusion of LAD with bifurcating DES to \nLAD/D2. Patient was t",
+      "comorbidities_a": {
+        "diabetes": 0,
+        "hypertension": 1,
+        "ckd": 1,
+        "heart_failure": 1,
+        "afib": 0,
+        "prior_mi": 1,
+        "hyperlipidemia": 0,
+        "copd": 0,
+        "cad": 1,
+        "valve": 0
+      },
+      "comorbidities_b": {
+        "diabetes": 0,
+        "hypertension": 1,
+        "ckd": 1,
+        "heart_failure": 1,
+        "afib": 0,
+        "prior_mi": 1,
+        "hyperlipidemia": 1,
+        "copd": 0,
+        "cad": 1,
+        "valve": 0
+      }
+    },
+    {
+      "pair_id": "pair_000002",
+      "tag": "HPI leaks post-procedure",
+      "contrast": "pci_vs_control",
+      "episode_a": "ep_pci_00000",
+      "episode_b": "ep_control_00255",
+      "intervention_a": "pci",
+      "intervention_b": "control",
+      "match_quality": {
+        "score": 1.969,
+        "comorbidity_distance": 1,
+        "baseline_a": 2.29,
+        "baseline_b": 1.18,
+        "dir_a": "falling",
+        "dir_b": "falling"
+      },
+      "hpi_leak_a": true,
+      "hpi_leak_b": true,
+      "scored_markers": [
+        "Troponin T"
+      ],
+      "ground_truth": {
+        "Troponin T": {
+          "A": {
+            "baseline": 2.29,
+            "post_final": 2.77,
+            "post_traj": [
+              2.89,
+              2.77
+            ],
+            "pct_change": 21.0,
+            "direction": "rising"
+          },
+          "B": {
+            "baseline": 1.18,
+            "post_final": 0.19,
+            "post_traj": [
+              0.19
+            ],
+            "pct_change": -83.9,
+            "direction": "falling"
+          }
+        }
+      },
+      "models": {
+        "Qwen3-8B / cot": {
+          "Troponin T": {
+            "A": {
+              "start": 0.8,
+              "final": 0.1,
+              "parsed_dir": "falling",
+              "conf_dir": "rising",
+              "conf_p": 0.551
+            },
+            "B": {
+              "start": 1.18,
+              "final": 0.55,
+              "parsed_dir": "falling",
+              "conf_dir": "stable",
+              "conf_p": 0.735
+            },
+            "mccs_correct": false,
+            "dir_conf_disagree_A": true,
+            "scale_off_A": true
+          }
+        },
+        "Qwen3-8B / zero_shot": {
+          "Troponin T": {
+            "A": {
+              "start": 1.5,
+              "final": 0.1,
+              "parsed_dir": "falling",
+              "conf_dir": "rising",
+              "conf_p": 0.551
+            },
+            "B": {
+              "start": 1.18,
+              "final": 0.5,
+              "parsed_dir": "falling",
+              "conf_dir": "stable",
+              "conf_p": 0.735
+            },
+            "mccs_correct": false,
+            "dir_conf_disagree_A": true,
+            "scale_off_A": false
+          }
+        },
+        "DeepSeek-R1-7B / zero_shot": {
+          "Troponin T": {
+            "A": {
+              "start": 1.5,
+              "final": 0.2,
+              "parsed_dir": "falling",
+              "conf_dir": "rising",
+              "conf_p": 0.777
+            },
+            "B": {
+              "start": 1.18,
+              "final": 1.18,
+              "parsed_dir": "stable",
+              "conf_dir": "rising",
+              "conf_p": 0.77
+            },
+            "mccs_correct": false,
+            "dir_conf_disagree_A": true,
+            "scale_off_A": false
+          }
+        }
+      },
+      "hpi_a": ":\nMr. ___ is a ___ yo man with h/o CAD s/p PCI in ___, \nsymptomatic bradycardia s/p PPM, who presents with chest pain.\n\nPatient reported right sided chest pain at 1 pm lasting \napproximately 5 minutes. Reportedly this felt similar to a prior \ninfection in the area. He had no shortness of breath of \ndiaphoresis associated with this.\n\nIn the ED, initial vitals were unremarkable. Patient reported \nongoing mild ___ chest pain. ECG showed ST depression in V1-V6. \nLabs were notable for a troponin-T of 2.49 with CK-MB of 7. CXR \nshowed increased cardiomegaly and new pulmonary edema and small \npleural effusions bilaterally. Patient was given full dose \naspirin and started on a heparin gtt.\n\nAfter arrival on the cardiology ward, the patient and his wife \nwere interviewed with the assistance by telephone of a ___ \ninterpreter. He endorsed sudden onset right sided chest pain \nalong with dyspnea on exertion. The pain lasted \"a few minutes\" \nthen subsided, and he noted coincident loss of appetite without \nnausea or emesis. Since, he has noted slightly worsening dyspnea \non exertion, feeling out of breath when just walking 5 minutes. \nHe also noticed feeling dizzy at times, noting his SBP in the",
+      "comorbidities_a": {
+        "diabetes": 0,
+        "hypertension": 1,
+        "ckd": 1,
+        "heart_failure": 1,
+        "afib": 0,
+        "prior_mi": 1,
+        "hyperlipidemia": 1,
+        "copd": 0,
+        "cad": 1,
+        "valve": 1
+      },
+      "comorbidities_b": {
+        "diabetes": 1,
+        "hypertension": 1,
+        "ckd": 1,
+        "heart_failure": 1,
+        "afib": 0,
+        "prior_mi": 1,
+        "hyperlipidemia": 1,
+        "copd": 0,
+        "cad": 1,
+        "valve": 1
+      }
+    },
+    {
+      "pair_id": "pair_000003",
+      "tag": "HPI leaks post-procedure",
+      "contrast": "pci_vs_control",
+      "episode_a": "ep_pci_00000",
+      "episode_b": "ep_control_00053",
+      "intervention_a": "pci",
+      "intervention_b": "control",
+      "match_quality": {
+        "score": 2.07,
+        "comorbidity_distance": 2,
+        "baseline_a": 2.29,
+        "baseline_b": 2.21,
+        "dir_a": "falling",
+        "dir_b": "falling"
+      },
+      "hpi_leak_a": true,
+      "hpi_leak_b": false,
+      "scored_markers": [
+        "Troponin T"
+      ],
+      "ground_truth": {
+        "Troponin T": {
+          "A": {
+            "baseline": 2.29,
+            "post_final": 2.77,
+            "post_traj": [
+              2.89,
+              2.77
+            ],
+            "pct_change": 21.0,
+            "direction": "rising"
+          },
+          "B": {
+            "baseline": 2.21,
+            "post_final": 1.67,
+            "post_traj": [
+              1.87,
+              1.67
+            ],
+            "pct_change": -24.4,
+            "direction": "falling"
+          }
+        }
+      },
+      "models": {
+        "Qwen3-8B / cot": {
+          "Troponin T": {
+            "A": {
+              "start": 0.8,
+              "final": 0.1,
+              "parsed_dir": "falling",
+              "conf_dir": "rising",
+              "conf_p": 0.551
+            },
+            "B": {
+              "start": 2.21,
+              "final": 1.1,
+              "parsed_dir": "falling",
+              "conf_dir": "stable",
+              "conf_p": 0.8
+            },
+            "mccs_correct": false,
+            "dir_conf_disagree_A": true,
+            "scale_off_A": true
+          }
+        },
+        "Qwen3-8B / zero_shot": {
+          "Troponin T": {
+            "A": {
+              "start": 1.5,
+              "final": 0.1,
+              "parsed_dir": "falling",
+              "conf_dir": "rising",
+              "conf_p": 0.551
+            },
+            "B": {
+              "start": 2.21,
+              "final": 1.1,
+              "parsed_dir": "falling",
+              "conf_dir": "stable",
+              "conf_p": 0.8
+            },
+            "mccs_correct": false,
+            "dir_conf_disagree_A": true,
+            "scale_off_A": false
+          }
+        },
+        "DeepSeek-R1-7B / zero_shot": {
+          "Troponin T": {
+            "A": {
+              "start": 1.5,
+              "final": 0.2,
+              "parsed_dir": "falling",
+              "conf_dir": "rising",
+              "conf_p": 0.777
+            },
+            "B": {
+              "start": 2.21,
+              "final": 2.21,
+              "parsed_dir": "stable",
+              "conf_dir": "rising",
+              "conf_p": 0.575
+            },
+            "mccs_correct": false,
+            "dir_conf_disagree_A": true,
+            "scale_off_A": false
+          }
+        }
+      },
+      "hpi_a": ":\nMr. ___ is a ___ yo man with h/o CAD s/p PCI in ___, \nsymptomatic bradycardia s/p PPM, who presents with chest pain.\n\nPatient reported right sided chest pain at 1 pm lasting \napproximately 5 minutes. Reportedly this felt similar to a prior \ninfection in the area. He had no shortness of breath of \ndiaphoresis associated with this.\n\nIn the ED, initial vitals were unremarkable. Patient reported \nongoing mild ___ chest pain. ECG showed ST depression in V1-V6. \nLabs were notable for a troponin-T of 2.49 with CK-MB of 7. CXR \nshowed increased cardiomegaly and new pulmonary edema and small \npleural effusions bilaterally. Patient was given full dose \naspirin and started on a heparin gtt.\n\nAfter arrival on the cardiology ward, the patient and his wife \nwere interviewed with the assistance by telephone of a ___ \ninterpreter. He endorsed sudden onset right sided chest pain \nalong with dyspnea on exertion. The pain lasted \"a few minutes\" \nthen subsided, and he noted coincident loss of appetite without \nnausea or emesis. Since, he has noted slightly worsening dyspnea \non exertion, feeling out of breath when just walking 5 minutes. \nHe also noticed feeling dizzy at times, noting his SBP in the",
+      "comorbidities_a": {
+        "diabetes": 0,
+        "hypertension": 1,
+        "ckd": 1,
+        "heart_failure": 1,
+        "afib": 0,
+        "prior_mi": 1,
+        "hyperlipidemia": 1,
+        "copd": 0,
+        "cad": 1,
+        "valve": 1
+      },
+      "comorbidities_b": {
+        "diabetes": 1,
+        "hypertension": 1,
+        "ckd": 1,
+        "heart_failure": 1,
+        "afib": 0,
+        "prior_mi": 1,
+        "hyperlipidemia": 1,
+        "copd": 0,
+        "cad": 1,
+        "valve": 0
+      }
+    },
+    {
+      "pair_id": "pair_000142",
+      "tag": "best match-quality",
+      "contrast": "pci_vs_control",
+      "episode_a": "ep_pci_00047",
+      "episode_b": "ep_control_00211",
+      "intervention_a": "pci",
+      "intervention_b": "control",
+      "match_quality": {
+        "score": 0.0,
+        "comorbidity_distance": 0,
+        "baseline_a": 0.05,
+        "baseline_b": 0.05,
+        "dir_a": "falling",
+        "dir_b": "falling"
+      },
+      "hpi_leak_a": false,
+      "hpi_leak_b": false,
+      "scored_markers": [
+        "Troponin T"
+      ],
+      "ground_truth": {
+        "Troponin T": {
+          "A": {
+            "baseline": 0.05,
+            "post_final": 0.03,
+            "post_traj": [
+              0.03
+            ],
+            "pct_change": -40.0,
+            "direction": "falling"
+          },
+          "B": {
+            "baseline": 0.05,
+            "post_final": 0.05,
+            "post_traj": [
+              0.05,
+              0.05
+            ],
+            "pct_change": 0.0,
+            "direction": "stable"
+          }
+        }
+      },
+      "models": {
+        "Qwen3-8B / cot": {
+          "Troponin T": {
+            "A": {
+              "start": 0.03,
+              "final": 0.01,
+              "parsed_dir": "falling",
+              "conf_dir": "stable",
+              "conf_p": 0.707
+            },
+            "B": {
+              "start": 0.05,
+              "final": 0.05,
+              "parsed_dir": "stable",
+              "conf_dir": "stable",
+              "conf_p": 0.8
+            },
+            "mccs_correct": true,
+            "dir_conf_disagree_A": true,
+            "scale_off_A": false
+          }
+        },
+        "Qwen3-8B / zero_shot": {
+          "Troponin T": {
+            "A": {
+              "start": 0.03,
+              "final": 0.0,
+              "parsed_dir": "falling",
+              "conf_dir": "stable",
+              "conf_p": 0.707
+            },
+            "B": {
+              "start": 0.05,
+              "final": 0.11,
+              "parsed_dir": "rising",
+              "conf_dir": "stable",
+              "conf_p": 0.8
+            },
+            "mccs_correct": true,
+            "dir_conf_disagree_A": true,
+            "scale_off_A": false
+          }
+        },
+        "DeepSeek-R1-7B / zero_shot": {
+          "Troponin T": {
+            "A": {
+              "start": 0.03,
+              "final": 0.0,
+              "parsed_dir": "falling",
+              "conf_dir": "rising",
+              "conf_p": 0.757
+            },
+            "B": {
+              "start": 0.04,
+              "final": 0.01,
+              "parsed_dir": "falling",
+              "conf_dir": "rising",
+              "conf_p": 0.64
+            },
+            "mccs_correct": true,
+            "dir_conf_disagree_A": true,
+            "scale_off_A": false
+          }
+        }
+      },
+      "hpi_a": ":\nPatient is a ___ M with history of CAD s/p MI ___ yrs ago with \nNSTEMI ___, s/p recent hospitalization at ___ with PCI \n(drug-eluting stent of the proximal LAD) who presents to the ED \nw/ syncope. \n\nPatient reports that on the AM of admission, patient was going \nfrom the bathroom to the kitchen when he suddenly fell. Patient \ndescribes that his 'body let loose.' He describes his legs and \narms caving in. He reports hitting his head. The next thing he \nremember is being in the ambulance. He denies any symptoms of \nnausea, dizziness/lightheadedness or flushing. He is unsure of \nwhether of not he had chest pain. The patient denies \nfevers/chills as well as sick contacts. He reports a poor \nappetite the past couple of days, but has been drinking bottled \nwater. The patient reports that on the AM of presentation, he \nwoke up in a drenching sweat, but he denies chest pain being the \ncause of waking him up from sleep. The patient denies chest \npains or discomfort in the days leading up to the patient's \nadmission tonight. He reports that he has been compliant with \nhis medications including his Plavix, but he has not taken it \ntoday given today's events. He denies loss of bowel or bladd",
+      "comorbidities_a": {
+        "diabetes": 0,
+        "hypertension": 1,
+        "ckd": 1,
+        "heart_failure": 0,
+        "afib": 0,
+        "prior_mi": 1,
+        "hyperlipidemia": 1,
+        "copd": 0,
+        "cad": 1,
+        "valve": 0
+      },
+      "comorbidities_b": {
+        "diabetes": 0,
+        "hypertension": 1,
+        "ckd": 1,
+        "heart_failure": 0,
+        "afib": 0,
+        "prior_mi": 1,
+        "hyperlipidemia": 1,
+        "copd": 0,
+        "cad": 1,
+        "valve": 0
+      }
+    },
+    {
+      "pair_id": "pair_000414",
+      "tag": "worst match-quality",
+      "contrast": "pci_vs_control",
+      "episode_a": "ep_pci_00137",
+      "episode_b": "ep_control_00093",
+      "intervention_a": "pci",
+      "intervention_b": "control",
+      "match_quality": {
+        "score": 4.0,
+        "comorbidity_distance": 4,
+        "baseline_a": 0.02,
+        "baseline_b": 0.02,
+        "dir_a": "stable",
+        "dir_b": "stable"
+      },
+      "hpi_leak_a": false,
+      "hpi_leak_b": false,
+      "scored_markers": [
+        "Troponin T"
+      ],
+      "ground_truth": {
+        "Troponin T": {
+          "A": {
+            "baseline": 0.02,
+            "post_final": 0.01,
+            "post_traj": [
+              0.01,
+              0.01
+            ],
+            "pct_change": -50.0,
+            "direction": "falling"
+          },
+          "B": {
+            "baseline": 0.02,
+            "post_final": 0.03,
+            "post_traj": [
+              0.03,
+              0.03,
+              0.03
+            ],
+            "pct_change": 50.0,
+            "direction": "rising"
+          }
+        }
+      },
+      "models": {
+        "Qwen3-8B / cot": {
+          "Troponin T": {
+            "A": {
+              "start": 0.03,
+              "final": 0.1,
+              "parsed_dir": "rising",
+              "conf_dir": "stable",
+              "conf_p": 0.75
+            },
+            "B": {
+              "start": 0.02,
+              "final": 0.02,
+              "parsed_dir": "stable",
+              "conf_dir": "stable",
+              "conf_p": 0.882
+            },
+            "mccs_correct": false,
+            "dir_conf_disagree_A": true,
+            "scale_off_A": false
+          }
+        },
+        "Qwen3-8B / zero_shot": {
+          "Troponin T": {
+            "A": {
+              "start": 0.03,
+              "final": 0.12,
+              "parsed_dir": "rising",
+              "conf_dir": "stable",
+              "conf_p": 0.75
+            },
+            "B": {
+              "start": 0.02,
+              "final": 0.02,
+              "parsed_dir": "stable",
+              "conf_dir": "stable",
+              "conf_p": 0.882
+            },
+            "mccs_correct": false,
+            "dir_conf_disagree_A": true,
+            "scale_off_A": false
+          }
+        },
+        "DeepSeek-R1-7B / zero_shot": {
+          "Troponin T": {
+            "A": {
+              "start": 0.01,
+              "final": 0.004,
+              "parsed_dir": "falling",
+              "conf_dir": "rising",
+              "conf_p": 0.632
+            },
+            "B": {
+              "start": 0.0,
+              "final": 0.0,
+              "parsed_dir": "stable",
+              "conf_dir": "rising",
+              "conf_p": 0.705
+            },
+            "mccs_correct": false,
+            "dir_conf_disagree_A": true,
+            "scale_off_A": false
+          }
+        }
+      },
+      "hpi_a": ":\n___ with history of type 2 diabetes mellitus, hypertension, and \nhyperlipidemia presenting for evaluation of exertional chest \npain and dyspnea.\n\nHe reports new symptoms occurring with any exertional activity, \ne.g., walking up stairs for the past 3 days. He notices it when \ntaking a hot shower. The discomfort is retrosternal with \nradiation to the left arm. It is associated with shortness of \nbreath. It is relieved with rest after 5 minutes. He has never \nhad chest pain like this previously. He also noticed flushing \nand mood changes within the past three days. He lives in a four \nstory house and could walk up and down all the flights of stairs \nwith no shortness of breath prior to this. He denied nausea or \nvomiting. He tried a double dose of omeprazole which did not \nhelp symptoms. He has had stress tests in the past, none within \nthe past ___ years, but all those had been normal. He had a \ncardiac catheterization back in the ___, and his cardiologist \nsaid he could \"drive a truck through your arteries.\" Patient has \nnoted that his lower extremities have worsening swelling over \nthe past 1+ year, but has not been started on a diuretic. He was \nseen by his PCP ___ on ___ ECG an",
+      "comorbidities_a": {
+        "diabetes": 1,
+        "hypertension": 1,
+        "ckd": 0,
+        "heart_failure": 0,
+        "afib": 0,
+        "prior_mi": 0,
+        "hyperlipidemia": 1,
+        "copd": 0,
+        "cad": 1,
+        "valve": 0
+      },
+      "comorbidities_b": {
+        "diabetes": 0,
+        "hypertension": 1,
+        "ckd": 1,
+        "heart_failure": 1,
+        "afib": 1,
+        "prior_mi": 0,
+        "hyperlipidemia": 1,
+        "copd": 0,
+        "cad": 1,
+        "valve": 0
+      }
+    },
+    {
+      "pair_id": "pair_000655",
+      "tag": "multivessel vs single PCI",
+      "contrast": "multivessel_vs_singlevessel_pci",
+      "episode_a": "ep_pci_00002",
+      "episode_b": "ep_pci_00133",
+      "intervention_a": "pci_multivessel",
+      "intervention_b": "pci_singlevessel",
+      "match_quality": {
+        "score": 1.621,
+        "comorbidity_distance": 0,
+        "baseline_a": 11.94,
+        "baseline_b": 2.26,
+        "dir_a": "rising",
+        "dir_b": "rising"
+      },
+      "hpi_leak_a": true,
+      "hpi_leak_b": true,
+      "scored_markers": [
+        "Creatine Kinase, MB Isoenzyme",
+        "Sodium",
+        "Troponin T"
+      ],
+      "ground_truth": {
+        "Creatine Kinase, MB Isoenzyme": {
+          "A": {
+            "baseline": 250.0,
+            "post_final": 130.0,
+            "post_traj": [
+              285.0,
+              130.0
+            ],
+            "pct_change": -48.0,
+            "direction": "falling"
+          },
+          "B": {
+            "baseline": 61.0,
+            "post_final": 5.0,
+            "post_traj": [
+              40.0,
+              13.0,
+              5.0
+            ],
+            "pct_change": -91.8,
+            "direction": "falling"
+          }
+        },
+        "Sodium": {
+          "A": {
+            "baseline": 138.0,
+            "post_final": 144.0,
+            "post_traj": [
+              140.0,
+              140.0,
+              143.0,
+              139.0,
+              143.0,
+              142.0,
+              144.0
+            ],
+            "pct_change": 4.3,
+            "direction": "stable"
+          },
+          "B": {
+            "baseline": 139.0,
+            "post_final": 141.0,
+            "post_traj": [
+              137.0,
+              139.0,
+              140.0,
+              141.0
+            ],
+            "pct_change": 1.4,
+            "direction": "stable"
+          }
+        },
+        "Troponin T": {
+          "A": {
+            "baseline": 11.94,
+            "post_final": 22.37,
+            "post_traj": [
+              25.0,
+              22.37
+            ],
+            "pct_change": 87.4,
+            "direction": "rising"
+          },
+          "B": {
+            "baseline": 2.26,
+            "post_final": 5.98,
+            "post_traj": [
+              5.98
+            ],
+            "pct_change": 164.6,
+            "direction": "rising"
+          }
+        }
+      },
+      "models": {
+        "Qwen3-8B / cot": {
+          "Creatine Kinase, MB Isoenzyme": {
+            "A": {
+              "start": 250.0,
+              "final": 50.0,
+              "parsed_dir": "falling",
+              "conf_dir": null,
+              "conf_p": 0.587
+            },
+            "B": {
+              "start": 61.0,
+              "final": 42.0,
+              "parsed_dir": "falling",
+              "conf_dir": null,
+              "conf_p": 0.642
+            },
+            "mccs_correct": true,
+            "dir_conf_disagree_A": false,
+            "scale_off_A": false
+          },
+          "Sodium": {
+            "A": {
+              "start": 138.0,
+              "final": 138.0,
+              "parsed_dir": "stable",
+              "conf_dir": null,
+              "conf_p": 0.587
+            },
+            "B": {
+              "start": 139.0,
+              "final": 139.0,
+              "parsed_dir": "stable",
+              "conf_dir": null,
+              "conf_p": 0.642
+            },
+            "mccs_correct": false,
+            "dir_conf_disagree_A": false,
+            "scale_off_A": false
+          },
+          "Troponin T": {
+            "A": {
+              "start": 11.94,
+              "final": 2.5,
+              "parsed_dir": "falling",
+              "conf_dir": "stable",
+              "conf_p": 0.587
+            },
+            "B": {
+              "start": 2.26,
+              "final": 0.9,
+              "parsed_dir": "falling",
+              "conf_dir": "stable",
+              "conf_p": 0.642
+            },
+            "mccs_correct": true,
+            "dir_conf_disagree_A": true,
+            "scale_off_A": false
+          }
+        },
+        "Qwen3-8B / zero_shot": {
+          "Creatine Kinase, MB Isoenzyme": {
+            "A": {
+              "start": 250.0,
+              "final": 50.0,
+              "parsed_dir": "falling",
+              "conf_dir": null,
+              "conf_p": 0.587
+            },
+            "B": {
+              "start": 61.0,
+              "final": 42.0,
+              "parsed_dir": "falling",
+              "conf_dir": null,
+              "conf_p": 0.642
+            },
+            "mccs_correct": true,
+            "dir_conf_disagree_A": false,
+            "scale_off_A": false
+          },
+          "Sodium": {
+            "A": {
+              "start": 138.0,
+              "final": 138.0,
+              "parsed_dir": "stable",
+              "conf_dir": null,
+              "conf_p": 0.587
+            },
+            "B": {
+              "start": 139.0,
+              "final": 139.0,
+              "parsed_dir": "stable",
+              "conf_dir": null,
+              "conf_p": 0.642
+            },
+            "mccs_correct": false,
+            "dir_conf_disagree_A": false,
+            "scale_off_A": false
+          },
+          "Troponin T": {
+            "A": {
+              "start": 11.94,
+              "final": 3.0,
+              "parsed_dir": "falling",
+              "conf_dir": "stable",
+              "conf_p": 0.587
+            },
+            "B": {
+              "start": 2.26,
+              "final": 2.26,
+              "parsed_dir": "stable",
+              "conf_dir": "stable",
+              "conf_p": 0.642
+            },
+            "mccs_correct": true,
+            "dir_conf_disagree_A": true,
+            "scale_off_A": false
+          }
+        },
+        "DeepSeek-R1-7B / zero_shot": {
+          "Creatine Kinase, MB Isoenzyme": {
+            "A": {
+              "start": 1.0,
+              "final": 0.0,
+              "parsed_dir": "falling",
+              "conf_dir": null,
+              "conf_p": 0.655
+            },
+            "B": null,
+            "mccs_correct": null,
+            "dir_conf_disagree_A": false,
+            "scale_off_A": true
+          },
+          "Sodium": {
+            "A": {
+              "start": 0.0,
+              "final": 0.0,
+              "parsed_dir": "falling",
+              "conf_dir": null,
+              "conf_p": 0.655
+            },
+            "B": null,
+            "mccs_correct": null,
+            "dir_conf_disagree_A": false,
+            "scale_off_A": true
+          },
+          "Troponin T": {
+            "A": {
+              "start": 0.0,
+              "final": 0.0,
+              "parsed_dir": "falling",
+              "conf_dir": "rising",
+              "conf_p": 0.655
+            },
+            "B": {
+              "start": 24.0,
+              "final": 96.0,
+              "parsed_dir": "rising",
+              "conf_dir": "rising",
+              "conf_p": 0.617
+            },
+            "mccs_correct": false,
+            "dir_conf_disagree_A": true,
+            "scale_off_A": true
+          }
+        }
+      },
+      "hpi_a": ":\nMr. ___ is an ___ M with CAD, PVD, CKD (baseline Cr 3.4-3.5), \nand HTN who was transferred to ___ on ___ from ___ with \nnew onset DOE and lower extremity edema, now transferred to the \nCCU after developing STEMI on the floor.\n\nPer report, patient initially presented to his PCP's office c/o \nworsening DOE, ___ edema and left sided chest tightness. He was \nadmitted to ___ where he was noted to have troponin rise \nfrom 0.11, to 0.57, then 0.41. Labs were notable for BUN 80, Cr \n4.1 and  BNP>1000. CXR consistent with CHF and EKG notable for \nknown LBBB. He was diuresed with IV lasix 40-60mg and finally \n3mg bumex without good response before transfer to ___ for \nfurther management. \n\nOn arrival to the floor, patient initially reported feeling well \nwithout chest pain, but did have some SOB and was noted to be \nhypervolemic. EKG showed IVCD with a pseudo LBBB pattern. He was \ngiven 120mg IV lasix on the evening of ___. \n\nOvernight he was noted to have new onset CP, EKG showed complete \nLBBB with >5mm STE in precordial leads. Repeat  STEMI in \npercordial leads. Patient was taken to cath lab where he was \nnoted to have 100% occlusion of LAD with bifurcating DES to \nLAD/D2. Patient was t",
+      "comorbidities_a": {
+        "diabetes": 0,
+        "hypertension": 1,
+        "ckd": 1,
+        "heart_failure": 1,
+        "afib": 0,
+        "prior_mi": 1,
+        "hyperlipidemia": 0,
+        "copd": 0,
+        "cad": 1,
+        "valve": 0
+      },
+      "comorbidities_b": {
+        "diabetes": 0,
+        "hypertension": 1,
+        "ckd": 1,
+        "heart_failure": 1,
+        "afib": 0,
+        "prior_mi": 1,
+        "hyperlipidemia": 0,
+        "copd": 0,
+        "cad": 1,
+        "valve": 0
+      }
+    }
+  ]
+}

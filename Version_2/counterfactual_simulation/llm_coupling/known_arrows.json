@@ -1,0 +1,24 @@
+{
+  "_doc": "Literature-anchored causal sign priors for counterfactual (Route C) question labels. Only targets present in the 14-lab CLMBR decoder panel are listed, so every arrow is checkable. 'dir' is the sign of the effect of ADDING/INCREASING the intervention on the target lab. These are LABELS derived from pharmacology/guidelines, NOT from the world model. Keyed by action_schema group name.",
+  "arrows": {
+    "insulin": {
+      "glucose": {"dir": "down", "mechanism": "insulin drives cellular glucose uptake", "cite": "ADA Standards of Care; inpatient hyperglycemia management"},
+      "potassium": {"dir": "down", "mechanism": "insulin shifts K+ intracellularly", "cite": "hyperkalemia treatment guidelines"}
+    },
+    "furosemide_iv": {
+      "potassium": {"dir": "down", "mechanism": "loop diuretic increases distal K+ secretion / kaliuresis", "cite": "loop diuretic pharmacology"},
+      "bun": {"dir": "up", "mechanism": "diuresis -> intravascular volume depletion -> prerenal azotemia", "cite": "prerenal physiology"},
+      "bicarbonate": {"dir": "up", "mechanism": "contraction alkalosis from volume loss", "cite": "acid-base physiology"}
+    },
+    "dialysis": {
+      "creatinine": {"dir": "down", "mechanism": "extracorporeal clearance of creatinine", "cite": "KDIGO AKI / RRT"},
+      "bun": {"dir": "down", "mechanism": "extracorporeal urea clearance", "cite": "KDIGO AKI / RRT"},
+      "potassium": {"dir": "down", "mechanism": "dialysate K+ gradient clears serum K+", "cite": "KDIGO AKI / RRT"}
+    }
+  },
+  "no_checkable_lab": {
+    "norepinephrine": "raises MAP; MAP not in the lab panel",
+    "vasopressin": "raises MAP / SVR; not in lab panel",
+    "phenylephrine": "raises MAP; not in lab panel"
+  }
+}

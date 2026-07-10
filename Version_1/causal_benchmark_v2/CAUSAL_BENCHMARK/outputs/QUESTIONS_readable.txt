@@ -1,0 +1,1771 @@
+################################################################################
+# ep_pci_00000  (pci)
+################################################################################
+You are a clinical reasoning expert. Predict how key lab values evolve following a clinical management decision.
+
+## Patient chart up to the index time
+**Chief complaint:** Chest pain
+
+**History of present illness:**
+:
+Mr. ___ is a ___ yo man with h/o CAD s/p PCI in ___, 
+symptomatic bradycardia s/p PPM, who presents with chest pain.
+
+Patient reported right sided chest pain at 1 pm lasting 
+approximately 5 minutes. Reportedly this felt similar to a prior 
+infection in the area. He had no shortness of breath of 
+diaphoresis associated with this.
+
+In the ED, initial vitals were unremarkable. Patient reported 
+ongoing mild ___ chest pain. ECG showed ST depression in V1-V6. 
+Labs were notable for a troponin-T of 2.49 with CK-MB of 7. CXR 
+showed increased cardiomegaly and new pulmonary edema and small 
+pleural effusions bilaterally. Patient was given full dose 
+aspirin and started on a heparin gtt.
+
+After arrival on the cardiology ward, the patient and his wife 
+were interviewed with the assistance by telephone of a ___ 
+interpreter. He endorsed sudden onset right sided chest pain 
+along with dyspnea on exertion. The pain lasted "a few minutes" 
+then subsided, and he noted coincident loss of appetite without 
+nausea or emesis. Since, he has noted slightly worsening dyspnea 
+on exertion, feeling out of breath when just walking 5 minutes. 
+He also noticed feeling dizzy at times, noting his SBP in the 
+100s, which he typically runs in the mid ___. Today, while at 
+his PCP, he endorsed repeat right sided chest pain that was more 
+intense, prompting today's visit. The pain subsided shortly 
+after arriving at the emergency department. At admission, he was 
+without chest pain and dyspnea. He denied orthopnea.
+
+REVIEW OF SYSTEMS:
+Positive per HPI.
+Cardiac review of systems is notable for absence of paroxysmal 
+nocturnal dyspnea, orthopnea, ankle edema, palpitations, 
+syncope, or presyncope.
+On further review of systems, he denied fevers or chills, any 
+prior history of stroke, TIA, bleeding at  …[truncated]
+
+**Admission physical exam:**
+On admission
+GENERAL: Well developed, well nourished elderly East Asian man 
+in NAD. Oriented x3. Mood, affect appropriate.
+VS: T 97.4 BP 122/70 HR 75 RR 24 SaO2 97% on O2 2 LPM via NC
+Admit wt: 66.3  kg
+HEENT: Normocephalic atraumatic. Sclera anicteric. PERRL. EOMI. 
+Conjunctiva were pink. No pallor or cyanosis of the oral mucosa. 
+No xanthelasma.
+NECK: Supple. JVP elevated to earlobe.
+CARDIAC: PMI located in ___ intercostal space, midclavicular 
+line. Regular rate and rhythm. Normal S1, S2. No murmurs, rubs, 
+or gallops. No thrills or lifts.
+LUNGS: No chest wall deformities or tenderness. Respiration 
+unlabored with no accessory muscle use. Crackles throughout 
+bilateral posterior lung fields up to scapula
+ABDOMEN: Soft, non-tender, non-distended. No hepatomegaly. No 
+splenomegaly.
+EXTREMITIES: Warm, well perfused. No clubbing, cyanosis, or 
+peripheral edema.
+SKIN: No significant skin lesions or rashes.
+PULSES: Distal pulses palpable and symmetric.
+
+**All labs measured before the index (latest [range], n):**
+- Alanine Aminotransferase (ALT): 72.0 IU/L (range 72.0–72.0, n=1)
+- Albumin: 3.4 g/dL (range 3.4–3.4, n=1)
+- Alkaline Phosphatase: 48.0 IU/L (range 48.0–48.0, n=1)
+- Anion Gap: 17.0 mEq/L (range 17.0–17.0, n=1)
+- Asparate Aminotransferase (AST): 87.0 IU/L (range 87.0–87.0, n=1)
+- Bicarbonate: 21.0 mEq/L (range 21.0–21.0, n=1)
+- Bilirubin, Total: 0.9 mg/dL (range 0.9–0.9, n=1)
+- Calcium, Total: 8.3 mg/dL (range 8.3–8.3, n=1)
+- Chloride: 104.0 mEq/L (range 104.0–104.0, n=1)
+- Creatine Kinase, MB Isoenzyme: 5.0 ng/mL (range 5.0–6.0, n=2)
+- Creatinine: 1.0 mg/dL (range 1.0–1.0, n=1)
+- Glucose: 98.0 mg/dL (range 98.0–98.0, n=1)
+- H: 71.0 (range 0.0–71.0, n=2)
+- Hematocrit: 36.7 % (range 36.7–36.7, n=1)
+- Hemoglobin: 12.1 g/dL (range 12.1–12.1, n=1)
+- I: 1.0 (range 1.0–1.0, n=2)
+- L: 17.0 (range 8.0–17.0, n=2)
+- Lactate Dehydrogenase (LD): 624.0 IU/L (range 624.0–624.0, n=1)
+- MCH: 32.4 pg (range 32.4–32.4, n=1)
+- MCHC: 33.0 g/dL (range 33.0–33.0, n=1)
+- MCV: 98.0 fL (range 98.0–98.0, n=1)
+- Magnesium: 2.3 mg/dL (range 2.3–2.3, n=1)
+- NTproBNP: 2055.0 pg/mL (range 2055.0–2055.0, n=1)
+- PTT: 34.9 sec (range 34.9–52.8, n=2)
+- Phosphate: 2.6 mg/dL (range 2.6–2.6, n=1)
+- Platelet Count: 142.0 K/uL (range 142.0–142.0, n=1)
+- Potassium: 4.4 mEq/L (range 4.4–4.4, n=1)
+- RDW: 12.9 % (range 12.9–12.9, n=1)
+- RDW-SD: 46.1 fL (range 46.1–46.1, n=1)
+- Red Blood Cells: 3.73 m/uL (range 3.73–3.73, n=1)
+- Sodium: 138.0 mEq/L (range 138.0–138.0, n=1)
+- Troponin T: 2.29 ng/mL (range 2.29–2.47, n=2)
+- Urea Nitrogen: 24.0 mg/dL (range 24.0–24.0, n=1)
+- White Blood Cells: 6.5 K/uL (range 6.5–6.5, n=1)
+
+## Cardiac markers to predict (pre-intervention series)
+**Cardiac Markers (pre-intervention, value @ hours-before-index):**
+- Troponin T: 2 measurements [2.470@12h, 2.290@5h], latest=2.290
+
+## Clinical Management
+Percutaneous coronary intervention (PCI) — coronary revascularization was performed.
+Index time: 2190-05-01T12:00:00
+
+## Task
+For EACH lab below, predict its trajectory over the 96 hours after the index time:
+  - "troponin"  (Troponin T)
+
+Return ONLY a JSON object keyed by lab id. Each entry has a direction ("rising" | "falling" | "stable") and 4 values [at 24h, 48h, 72h, 96h].
+Example format:
+{"troponin": {"direction": "stable", "values": [0, 0, 0, 0]}}
+
+Return ONLY the JSON, no other text.
+
+
+>>> HIDDEN ANSWER (troponin post): [(2.89, '+14h'), (2.77, '+20h')]
+
+
+################################################################################
+# ep_pci_00001  (pci)
+################################################################################
+You are a clinical reasoning expert. Predict how key lab values evolve following a clinical management decision.
+
+## Patient chart up to the index time
+**Chief complaint:** chest pain
+
+**History of present illness:**
+:
+Mr. ___ is a ___ with h/o CAD s/p DES to the LAD on 
+___, who presented to an OSH earlier today with recurrent 
+chest pain, then transferred to ___.
+Mr. ___ had a ___ and stenting of his proximal LAD on 
+___ at ___ in response to a likely NSTEMI that had occured 
+in the few days prior to admission. He was discharged on high 
+dose atorvastatin, aspirin and plavix and had been taking these 
+medications reliably since discharge. He was notably not 
+discharged on a beta-blocker due to bradycardia throughout his 
+hospitalization. Earlier today he developed dyspnea on exertion 
+with some aching pain going into his left arm and presented to 
+an OSH (___, ___). At the OSH his blood pressure and heart 
+rate were normal, EKG was nonischemic and the pain was nitrate 
+responseive and he was transferred for further evaluation.
+In the ED, initial vitals were 97.6 55 131/64 16 inital troponin 
+was 0.05 and he was seen by the cardiology consult who felt that 
+given his recent intervention treatment with heparin gtt was 
+warranted, but did not feel he was having a significant in-stent 
+thrombosis. Pain was managed with nitrates (0.4mg SL x1) and he 
+was admitted for monitoring.
+Currently, he is stable, though still has ___ chest 
+discomfort, and no other complaints.
+ROS is positive per the HPI otherwise a 12 system review is 
+negative.
+
+**Admission physical exam:**
+ADMISSION PHYSICAL EXAMINATION:
+VS: 97.6 60 108/67 16 99%ra
+GENERAL: NAD
+HEENT: NCAT. Sclera anicteric. PERRL, EOMI. Conjunctiva were 
+pink, no pallor or cyanosis of the oral mucosa. No xanthelasma.
+NECK: Supple with JVP of 8 cm.
+CARDIAC: PMI located in ___ intercostal space, midclavicular 
+line. RR, normal S1, S2. No m/r/g. No S3 or S4.
+LUNGS: Resp were unlabored, no accessory muscle use. CTAB, no 
+crackles, wheezes or rhonchi.
+ABDOMEN: Soft, NTND. No HSM or tenderness.
+EXTREMITIES: No c/c/e. No femoral bruits.
+SKIN: No stasis dermatitis, ulcers, scars, or xanthomas.
+PULSES:
+Right: Carotid 2+ Femoral 2+ Popliteal 2+ DP 2+ ___ 2+
+Left: Carotid 2+ Femoral 2+ Popliteal 2+ DP 2+ ___ 2+
+NEURO: A+Ox3, CN2-12 intact, moving all extremities
+
+**All labs measured before the index (latest [range], n):**
+- Anion Gap: 18.0 mEq/L (range 18.0–19.0, n=2)
+- Basophils: 1.0 % (range 1.0–1.0, n=1)
+- Bicarbonate: 23.0 mEq/L (range 22.0–23.0, n=2)
+- Calcium, Total: 9.2 mg/dL (range 9.2–9.2, n=1)
+- Chloride: 105.0 mEq/L (range 105.0–105.0, n=2)
+- Creatine Kinase, MB Isoenzyme: 2.0 ng/mL (range 2.0–2.0, n=1)
+- Creatinine: 1.1 mg/dL (range 1.1–1.2, n=2)
+- Eosinophils: 6.8 % (range 6.8–6.8, n=1)
+- Glucose: 98.0 mg/dL (range 98.0–117.0, n=2)
+- Hematocrit: 40.4 % (range 40.4–42.2, n=2)
+- Hemoglobin: 13.7 g/dL (range 13.7–14.5, n=2)
+- INR(PT): 1.0 (range 0.9–1.0, n=2)
+- Lymphocytes: 27.8 % (range 27.8–27.8, n=1)
+- MCH: 31.7 pg (range 31.7–32.0, n=2)
+- MCHC: 34.0 % (range 34.0–34.5, n=2)
+- MCV: 93.0 fL (range 93.0–93.0, n=2)
+- Magnesium: 2.3 mg/dL (range 2.3–2.3, n=1)
+- Monocytes: 7.2 % (range 7.2–7.2, n=1)
+- Neutrophils: 57.3 % (range 57.3–57.3, n=1)
+- PT: 10.4 sec (range 10.3–10.4, n=2)
+- PTT: 62.0 sec (range 29.9–62.0, n=2)
+- Phosphate: 3.7 mg/dL (range 3.7–3.7, n=1)
+- Platelet Count: 224.0 K/uL (range 224.0–262.0, n=2)
+- Potassium: 4.5 mEq/L (range 3.5–4.5, n=2)
+- RDW: 12.1 % (range 12.0–12.1, n=2)
+- Red Blood Cells: 4.33 m/uL (range 4.33–4.55, n=2)
+- Sodium: 141.0 mEq/L (range 141.0–142.0, n=2)
+- Troponin T: 0.03 ng/mL (range 0.03–0.05, n=2)
+- Urea Nitrogen: 23.0 mg/dL (range 23.0–26.0, n=2)
+- White Blood Cells: 6.9 K/uL (range 6.9–7.6, n=2)
+
+## Cardiac markers to predict (pre-intervention series)
+**Cardiac Markers (pre-intervention, value @ hours-before-index):**
+- Sodium: 2 measurements [142.000@12h, 141.000@4h], latest=141.000
+- Troponin T: 2 measurements [0.050@12h, 0.030@4h], latest=0.030
+
+## Clinical Management
+Percutaneous coronary intervention (PCI) — coronary revascularization was performed.
+Index time: 2187-05-16T12:00:00
+
+## Task
+For EACH lab below, predict its trajectory over the 96 hours after the index time:
+  - "sodium"  (Sodium)
+  - "troponin"  (Troponin T)
+
+Return ONLY a JSON object keyed by lab id. Each entry has a direction ("rising" | "falling" | "stable") and 4 values [at 24h, 48h, 72h, 96h].
+Example format:
+{"sodium": {"direction": "stable", "values": [0, 0, 0, 0]}, "troponin": {"direction": "stable", "values": [0, 0, 0, 0]}}
+
+Return ONLY the JSON, no other text.
+
+
+>>> HIDDEN ANSWER (troponin post): [(0.01, '+1h')]
+
+
+################################################################################
+# ep_pci_00002  (pci)
+################################################################################
+You are a clinical reasoning expert. Predict how key lab values evolve following a clinical management decision.
+
+## Patient chart up to the index time
+**Chief complaint:** dyspnea on exertion
+
+**History of present illness:**
+:
+Mr. ___ is an ___ M with CAD, PVD, CKD (baseline Cr 3.4-3.5), 
+and HTN who was transferred to ___ on ___ from ___ with 
+new onset DOE and lower extremity edema, now transferred to the 
+CCU after developing STEMI on the floor.
+
+Per report, patient initially presented to his PCP's office c/o 
+worsening DOE, ___ edema and left sided chest tightness. He was 
+admitted to ___ where he was noted to have troponin rise 
+from 0.11, to 0.57, then 0.41. Labs were notable for BUN 80, Cr 
+4.1 and  BNP>1000. CXR consistent with CHF and EKG notable for 
+known LBBB. He was diuresed with IV lasix 40-60mg and finally 
+3mg bumex without good response before transfer to ___ for 
+further management. 
+
+On arrival to the floor, patient initially reported feeling well 
+without chest pain, but did have some SOB and was noted to be 
+hypervolemic. EKG showed IVCD with a pseudo LBBB pattern. He was 
+given 120mg IV lasix on the evening of ___. 
+
+Overnight he was noted to have new onset CP, EKG showed complete 
+LBBB with >5mm STE in precordial leads. Repeat  STEMI in 
+percordial leads. Patient was taken to cath lab where he was 
+noted to have 100% occlusion of LAD with bifurcating DES to 
+LAD/D2. Patient was then transferred to the CCU in good 
+condition.
+
+Upon arrival to the unit patient notes about ___ chest 
+pressure, down from ___ prior. Denies SOB.
+
+REVIEW OF SYSTEMS:
+(+) Per HPI
+(-) Denies fever, chills, night sweats, recent weight loss or 
+gain. Denies headache, sinus tenderness, rhinorrhea or 
+congestion. Denies cough, shortness of breath. Denies chest pain 
+or tightness, palpitations. Denies nausea, vomiting, diarrhea, 
+constipation or abdominal pain. No recent change in bowel or 
+bladder habits. No dysuria. Denies arthralgias or myalgias. Ten 
+point review of systems is otherwise negative …[truncated]
+
+**Admission physical exam:**
+ADMISSION PHYSICAL EXAM ___
+============================
+Vitals: BP 124/58: HR 66: RR: 16 02 sat: 96% RA  
+GENERAL: NAD, awake and alert  
+HEENT: AT/NC, EOMI, anicteric sclera, pink conjunctiva, wears 
+dentures  
+NECK: nontender and supple, no LAD, no JVP elevated to mandible
+
+**All labs measured before the index (latest [range], n):**
+- Albumin: 4.2 g/dL (range 4.2–4.2, n=1)
+- Anion Gap: 21.0 mEq/L (range 18.0–21.0, n=3)
+- Base Excess: -10.0 mEq/L (range -10.0–-7.0, n=2)
+- Bicarbonate: 16.0 mEq/L (range 16.0–19.0, n=3)
+- Calcium, Total: 9.8 mg/dL (range 8.4–9.8, n=3)
+- Calculated Total CO2: 17.0 mEq/L (range 17.0–20.0, n=2)
+- Chloride: 106.0 mEq/L (range 106.0–110.0, n=3)
+- Creatine Kinase (CK): 91.0 IU/L (range 91.0–91.0, n=1)
+- Creatine Kinase, MB Isoenzyme: 250.0 ng/mL (range 5.0–250.0, n=3)
+- Creatinine: 4.4 mg/dL (range 4.3–4.4, n=3)
+- Glucose: 395.0 mg/dL (range 132.0–395.0, n=3)
+- Hematocrit: 29.5 % (range 29.5–31.7, n=3)
+- Hematocrit, Calculated: 26.0 % (range 26.0–26.0, n=1)
+- Hemoglobin: 8.8 g/dL (range 8.8–9.7, n=4)
+- INR(PT): 1.0 (range 1.0–1.0, n=2)
+- MCH: 29.3 pg (range 29.3–30.3, n=3)
+- MCHC: 29.8 % (range 29.8–31.0, n=3)
+- MCV: 98.0 fL (range 98.0–98.0, n=3)
+- Magnesium: 2.5 mg/dL (range 2.0–2.5, n=3)
+- Oxygen Saturation: 98.0 % (range 98.0–98.0, n=1)
+- PT: 11.2 sec (range 11.1–11.2, n=2)
+- PTT: 29.3 sec (range 29.3–30.0, n=2)
+- Phosphate: 5.5 mg/dL (range 4.7–5.5, n=3)
+- Platelet Count: 105.0 K/uL (range 105.0–123.0, n=3)
+- Potassium: 4.7 mEq/L (range 3.7–4.7, n=3)
+- RDW: 15.6 % (range 15.5–15.6, n=3)
+- Red Blood Cells: 3.0 m/uL (range 3.0–3.22, n=3)
+- Sodium: 138.0 mEq/L (range 138.0–142.0, n=3)
+- Troponin T: 11.94 ng/mL (range 0.43–11.94, n=3)
+- Urea Nitrogen: 87.0 mg/dL (range 87.0–96.0, n=3)
+- White Blood Cells: 5.9 K/uL (range 5.8–6.7, n=3)
+- pCO2: 38.0 mm Hg (range 38.0–40.0, n=2)
+- pH: 7.24 units (range 7.24–7.28, n=2)
+- pO2: 57.0 mm Hg (range 57.0–139.0, n=2)
+
+**Microbiology before the index:**
+- MRSA SCREEN/MRSA SCREEN
+
+## Cardiac markers to predict (pre-intervention series)
+**Cardiac Markers (pre-intervention, value @ hours-before-index):**
+- Creatine Kinase, MB Isoenzyme: 3 measurements [5.000@17h, 5.000@6h, 250.000@1h], latest=250.000
+- Sodium: 3 measurements [142.000@17h, 142.000@6h, 138.000@1h], latest=138.000
+- Troponin T: 3 measurements [0.450@17h, 0.430@6h, 11.940@1h], latest=11.940
+
+## Clinical Management
+Percutaneous coronary intervention (PCI) — coronary revascularization was performed.
+Index time: 2163-07-05T12:00:00
+
+## Task
+For EACH lab below, predict its trajectory over the 96 hours after the index time:
+  - "ck_mb"  (Creatine Kinase, MB Isoenzyme)
+  - "sodium"  (Sodium)
+  - "troponin"  (Troponin T)
+
+Return ONLY a JSON object keyed by lab id. Each entry has a direction ("rising" | "falling" | "stable") and 4 values [at 24h, 48h, 72h, 96h].
+Example format:
+{"ck_mb": {"direction": "stable", "values": [0, 0, 0, 0]}, "sodium": {"direction": "stable", "values": [0, 0, 0, 0]}, "troponin": {"direction": "stable", "values": [0, 0, 0, 0]}}
+
+Return ONLY the JSON, no other text.
+
+
+>>> HIDDEN ANSWER (troponin post): [(25.0, '+8h'), (22.37, '+17h')]
+
+
+################################################################################
+# ep_pci_00003  (pci)
+################################################################################
+You are a clinical reasoning expert. Predict how key lab values evolve following a clinical management decision.
+
+## Patient chart up to the index time
+**Chief complaint:** STEMI
+
+**History of present illness:**
+:
+Pt is a ___ yo M w/ PVD, CHF who was brought to the ED by EMS for 
+worsening dyspnea. History was obtained from his daughter, who 
+reports that starting around 6pm, he developed shortness of 
+breath that progressed over the evening. EMS was called, who 
+brought him to the ED. 
+
+He has a history of a recently positive nuclear stress test, 
+previously diagnosis of CMP. Previous EKGs have demonstrated LVH 
+and repolarization abnormalities, though EKG changes are more 
+dramatic currently. In the ED, he was noted to have ST 
+elevations in leads V1-V4. CXR was obtained, which demonstrated 
+pulmonary edema. He was given 650mg ASA PR and started on a 
+heparin gtt. He became hypoxic and was subsequently intubated, 
+and then taken immediately to the cath lab. In the cath lab, his 
+RCA looked fine, but he had a totally occluded proximal LAD, 
+with left main disease extending into the proximal circumflex. 
+While attempting to access the left main, he became hypotensive 
+and bradycardic. CPR was initiated and he was started on 
+dopamine. CPR lasted for about ___ minutes, and one BMS was 
+put in from the left main to the proximal circumflex with 
+subsequent restoration of blood flow. His LAD was shown to be 
+chronically occluded with collaterals from the RCA. There was 
+another decent sized diagonal branch that was potentially lost. 
+  
+Upon arrival to the CCU, he is intubated, on dopamine.  He does 
+not follow commands, but moves spontaneously, though not 
+purposefully. 
+ 
+ 
+REVIEW OF SYSTEMS  
+On review of systems, s/he denies any prior history of stroke, 
+TIA, deep venous thrombosis, pulmonary embolism, bleeding at the 
+time of surgery, myalgias, joint pains, cough, hemoptysis, black 
+stools or red stools. S/he denies recent fevers, chills or 
+rigors. S/he denies exertional butt …[truncated]
+
+**Admission physical exam:**
+ADMISSION PHYSICAL EXAMINATION:  
+VS: T=92.6 BP=108/59 HR=129 RR=21 O2sat=95%   
+General: pt is intubated and sedated 
+HEENT: normoocephalic, right pupil fixed and dilated, left pupil 
+hazy   
+Neck: supple, no obvious JVD; will reassess this AM  
+CV: soft S1 and S2, tachycardic, palpable heave at LLSB 
+Lungs: crackles heard bilaterally  
+Abdomen: soft, nontender, bowel sounds heard in all quadrants 
+GU: Foley catheter in place, draining trace clear yellow urine 
+Ext: 2+ pedal edema bilaterally, no cyanosis  
+Neuro: Babinski sign upgoing bilaterally, moves all extremities 
+spontaneously; sensory and CN exam unable to be performed in 
+setting of sedation and intubation 
+Skin: cool, dry 
+Pulses: no Dopplerable pulses bilaterally DP or ___, 2+ left 
+radial pulse, right radial pulse not assessed due to TR band
+
+**All labs measured before the index (latest [range], n):**
+- Alanine Aminotransferase (ALT): 214.0 IU/L (range 214.0–214.0, n=1)
+- Albumin: 2.8 g/dL (range 2.8–2.8, n=1)
+- Alkaline Phosphatase: 86.0 IU/L (range 86.0–86.0, n=1)
+- Anion Gap: 13.0 mEq/L (range 13.0–19.0, n=2)
+- Asparate Aminotransferase (AST): 301.0 IU/L (range 301.0–301.0, n=1)
+- Base Excess: -6.0 mEq/L (range -11.0–-6.0, n=3)
+- Bicarbonate: 17.0 mEq/L (range 17.0–19.0, n=2)
+- Bilirubin, Total: 0.3 mg/dL (range 0.3–0.3, n=1)
+- CK-MB Index: 8.2 % (range 5.6–8.2, n=2)
+- Calcium, Total: 7.2 mg/dL (range 7.1–7.2, n=2)
+- Calculated Total CO2: 20.0 mEq/L (range 17.0–20.0, n=3)
+- Chloride: 107.0 mEq/L (range 95.0–107.0, n=2)
+- Creatine Kinase (CK): 1089.0 IU/L (range 178.0–1089.0, n=2)
+- Creatine Kinase, MB Isoenzyme: 89.0 ng/mL (range 10.0–89.0, n=2)
+- Creatinine: 2.2 mg/dL (range 2.2–2.4, n=2)
+- Glucose: 78.0 mg/dL (range 78.0–211.0, n=2)
+- Hematocrit: 36.9 % (range 36.9–36.9, n=1)
+- Hemoglobin: 11.7 g/dL (range 11.7–11.7, n=1)
+- INR(PT): 1.1 (range 1.1–1.1, n=1)
+- Lactate: 1.7 mmol/L (range 1.7–4.3, n=2)
+- MCH: 25.4 pg (range 25.4–25.4, n=1)
+- MCHC: 31.8 % (range 31.8–31.8, n=1)
+- MCV: 80.0 fL (range 80.0–80.0, n=1)
+- Magnesium: 1.7 mg/dL (range 1.7–2.3, n=2)
+- PT: 11.6 sec (range 11.6–11.6, n=1)
+- PTT: 98.5 sec (range 98.5–98.5, n=1)
+- Phosphate: 2.4 mg/dL (range 2.4–4.1, n=2)
+- Platelet Count: 191.0 K/uL (range 191.0–191.0, n=1)
+- Potassium: 4.3 mEq/L (range 4.3–7.0, n=2)
+- RDW: 14.1 % (range 14.1–14.1, n=1)
+- Red Blood Cells: 4.62 m/uL (range 4.62–4.62, n=1)
+- Sodium: 133.0 mEq/L (range 126.0–133.0, n=2)
+- Troponin T: 1.97 ng/mL (range 0.25–1.97, n=2)
+- Urea Nitrogen: 32.0 mg/dL (range 32.0–36.0, n=2)
+- White Blood Cells: 14.7 K/uL (range 14.7–14.7, n=1)
+- pCO2: 36.0 mm Hg (range 36.0–44.0, n=3)
+- pH: 7.33 units (range 7.18–7.33, n=3)
+- pO2: 115.0 mm Hg (range 67.0–115.0, n=3)
+
+**Microbiology before the index:**
+- MRSA SCREEN/MRSA SCREEN
+
+## Cardiac markers to predict (pre-intervention series)
+**Cardiac Markers (pre-intervention, value @ hours-before-index):**
+- Creatine Kinase, MB Isoenzyme: 2 measurements [10.000@9h, 89.000@7h], latest=89.000
+- Sodium: 2 measurements [126.000@7h, 133.000@3h], latest=133.000
+- Troponin T: 2 measurements [0.250@9h, 1.970@7h], latest=1.970
+
+## Clinical Management
+Percutaneous coronary intervention (PCI) — coronary revascularization was performed.
+Index time: 2147-10-17T12:00:00
+
+## Task
+For EACH lab below, predict its trajectory over the 96 hours after the index time:
+  - "ck_mb"  (Creatine Kinase, MB Isoenzyme)
+  - "sodium"  (Sodium)
+  - "troponin"  (Troponin T)
+
+Return ONLY a JSON object keyed by lab id. Each entry has a direction ("rising" | "falling" | "stable") and 4 values [at 24h, 48h, 72h, 96h].
+Example format:
+{"ck_mb": {"direction": "stable", "values": [0, 0, 0, 0]}, "sodium": {"direction": "stable", "values": [0, 0, 0, 0]}, "troponin": {"direction": "stable", "values": [0, 0, 0, 0]}}
+
+Return ONLY the JSON, no other text.
+
+
+>>> HIDDEN ANSWER (troponin post): [(21.95, '+5h'), (18.45, '+11h'), (9.94, '+40h'), (11.32, '+65h')]
+
+
+################################################################################
+# ep_pci_00004  (pci)
+################################################################################
+You are a clinical reasoning expert. Predict how key lab values evolve following a clinical management decision.
+
+## Patient chart up to the index time
+**Chief complaint:** Dyspnea
+
+**History of present illness:**
+:
+___ year old ___ female with HTN, DM2 
+(diet-controlled), and newly-diagnosed severe AS who presented 
+to the cardiology clinic for further evaluation of her AS and is 
+being admitted for acute on chronic heart failure in addition to 
+TAVR work up.  
+ 
+The following history is obtained from a combination of using 
+her daughter as an interpreter and from the cardiology note. 
+Patient reports having an TTE done first in ___ for evaluation 
+of a murmur which at the time demonstrated moderate AS ___ 1, 
+PG 41, MG 21) which has been repeated for follow up with her 
+last TTE ___, showing progression of her AS to severe with 
+PG ___, MG 65, ___ 0.5 and pulmonary hypertension. The patient's 
+last known weight at her pcp ___ week and half ago was 187 pounds 
+as per her daughter, but she has an unknown dry weight.  
+
+She lives alone and walks with a walker and notes over the last 
+several years worsening dyspnea on walking to get her mail. Her 
+daughter reports that she was having worsening SOB over the past 
+few years requiring her to rest frequently, which has occurred 
+more frequently. During the last two weeks, she had worsening of 
+her dyspnea and her daughter reports that she used to sleep with 
+1 pillow, but now has 3 pillow orthopnea and they will also 
+notice PND when she sits down. 
+ 
+She denies any chest pain, but occasionally will have chest 
+tightness with deep inspiration as per her daughter. She has 
+also noted increasing lower extremity edema despite being on 
+furosemide.  
+ 
+In the ED intial vitals were: 97.2 83 138/85 16 95% ra  
+EKG:  
+Labs/studies notable for: BNP ___, BUN 42, Cr 1.2 (unknown 
+baseline),  
+Patient was given 10mg furosemide IV  
+ROS: On review of systems, denies any prior history of stroke, 
+TIA, deep venous thrombosis, pulmonary embolism, bl …[truncated]
+
+**Admission physical exam:**
+On admission:
+GENERAL: WDWN NAD. Oriented x3.  
+HEENT: NCAT. Sclera anicteric. PERRL, EOMI.  
+NECK: JVP elevated to angle of mandible  
+CARDIAC: III/VI SEM heard loudest at LUSB  
+LUNGS: Crackles to mid lung bilaterally, decreased breath sounds 
+on right lung base  
+ABDOMEN: Soft, NTND. large umbilical hernia that is easily 
+reducible.  
+EXTREMITIES: 2+ ___ pitting edema up to thighs, legs are warm  
+SKIN: erythematous rash under breasts and in groin.  
+PULSES: Distal pulses palpable and symmetric
+
+**All labs measured before the index (latest [range], n):**
+- % Hemoglobin A1c: 7.0 % (range 7.0–7.0, n=1)
+- Alanine Aminotransferase (ALT): 29.0 IU/L (range 29.0–29.0, n=1)
+- Albumin: 3.5 g/dL (range 3.5–3.5, n=1)
+- Alkaline Phosphatase: 194.0 IU/L (range 194.0–194.0, n=1)
+- Anion Gap: 11.0 mEq/L (range 11.0–19.0, n=12)
+- Asparate Aminotransferase (AST): 30.0 IU/L (range 30.0–30.0, n=1)
+- Bicarbonate: 35.0 mEq/L (range 26.0–35.0, n=12)
+- Bilirubin, Total: 1.0 mg/dL (range 1.0–1.0, n=1)
+- Calcium, Total: 9.2 mg/dL (range 9.2–10.0, n=7)
+- Chloride: 102.0 mEq/L (range 98.0–102.0, n=12)
+- Creatine Kinase (CK): 74.0 IU/L (range 74.0–74.0, n=1)
+- Creatine Kinase, MB Isoenzyme: 3.0 ng/mL (range 3.0–4.0, n=4)
+- Creatinine: 1.0 mg/dL (range 1.0–1.2, n=12)
+- Epithelial Cells: 4.0 #/hpf (range 4.0–4.0, n=1)
+- Glucose: 137.0 mg/dL (range 117.0–185.0, n=12)
+- Hematocrit: 40.7 % (range 35.3–41.2, n=8)
+- Hemoglobin: 12.3 g/dL (range 11.1–13.0, n=8)
+- INR(PT): 1.4 (range 1.4–1.4, n=1)
+- Lactate Dehydrogenase (LD): 283.0 IU/L (range 283.0–283.0, n=1)
+- MCH: 26.4 pg (range 25.9–27.5, n=8)
+- MCHC: 30.3 % (range 30.3–32.4, n=8)
+- MCV: 87.0 fL (range 85.0–87.0, n=8)
+- Magnesium: 2.1 mg/dL (range 1.7–2.1, n=12)
+- PT: 15.6 sec (range 15.6–15.6, n=1)
+- PTT: 67.1 sec (range 44.8–124.3, n=8)
+- Phosphate: 3.4 mg/dL (range 3.3–4.1, n=7)
+- Platelet Count: 138.0 K/uL (range 119.0–156.0, n=8)
+- Potassium: 3.6 mEq/L (range 3.5–5.0, n=12)
+- Protein: 30.0 mg/dL (range 30.0–30.0, n=1)
+- RBC: 6.0 #/hpf (range 6.0–102.0, n=2)
+- RDW: 15.4 % (range 14.9–15.6, n=8)
+- Red Blood Cells: 4.67 m/uL (range 4.11–4.83, n=8)
+- Sodium: 144.0 mEq/L (range 137.0–145.0, n=12)
+- Specific Gravity: 1.023   (range 1.012–1.023, n=2)
+- Transitional Epithelial Cells: 1.0 #/hpf (range 1.0–1.0, n=1)
+- Troponin T: 0.12 ng/mL (range 0.08–0.12, n=5)
+- Urea Nitrogen: 32.0 mg/dL (range 29.0–39.0, n=12)
+- Urobilinogen: 8.0 mg/dL (range 2.0–8.0, n=2)
+- WBC: 22.0 #/hpf (range 22.0–74.0, n=2)
+- White Blood Cells: 7.5 K/uL (range 5.6–7.8, n=8)
+- eAG: 154.0 mg/dL (range 154.0–154.0, n=1)
+- pH: 6.5 units (range 6.5–6.5, n=2)
+
+**Microbiology before the index:**
+- URINE/URINE CULTURE → ESCHERICHIA COLI [S]
+- URINE/URINE CULTURE → ESCHERICHIA COLI [S]
+- URINE/URINE CULTURE → ESCHERICHIA COLI [S]
+- URINE/URINE CULTURE → ESCHERICHIA COLI [S]
+- URINE/URINE CULTURE → ESCHERICHIA COLI [S]
+- URINE/URINE CULTURE → ESCHERICHIA COLI [S]
+- URINE/URINE CULTURE → ESCHERICHIA COLI [S]
+- URINE/URINE CULTURE → ESCHERICHIA COLI [S]
+- URINE/URINE CULTURE → ESCHERICHIA COLI [S]
+- URINE/URINE CULTURE → ESCHERICHIA COLI [S]
+- URINE/URINE CULTURE → ESCHERICHIA COLI [S]
+- URINE/URINE CULTURE → ESCHERICHIA COLI [S]
+- URINE/URINE CULTURE → ESCHERICHIA COLI [S]
+- URINE/URINE CULTURE → ESCHERICHIA COLI
+
+## Cardiac markers to predict (pre-intervention series)
+**Cardiac Markers (pre-intervention, value @ hours-before-index):**
+- Sodium: 12 measurements [143.000@52h, 142.000@41h, 143.000@30h, 145.000@22h, 144.000@3h], latest=144.000
+- Troponin T: 5 measurements [0.080@155h, 0.110@105h, 0.120@95h, 0.120@52h, 0.120@41h], latest=0.120
+
+## Clinical Management
+Percutaneous coronary intervention (PCI) — coronary revascularization was performed.
+Index time: 2177-12-20T12:00:00
+
+## Task
+For EACH lab below, predict its trajectory over the 96 hours after the index time:
+  - "sodium"  (Sodium)
+  - "troponin"  (Troponin T)
+
+Return ONLY a JSON object keyed by lab id. Each entry has a direction ("rising" | "falling" | "stable") and 4 values [at 24h, 48h, 72h, 96h].
+Example format:
+{"sodium": {"direction": "stable", "values": [0, 0, 0, 0]}, "troponin": {"direction": "stable", "values": [0, 0, 0, 0]}}
+
+Return ONLY the JSON, no other text.
+
+
+>>> HIDDEN ANSWER (troponin post): [(0.1, '+17h')]
+
+
+################################################################################
+# ep_pci_00005  (pci)
+################################################################################
+You are a clinical reasoning expert. Predict how key lab values evolve following a clinical management decision.
+
+## Patient chart up to the index time
+**Chief complaint:** chest heaviness
+
+**History of present illness:**
+:
+___ yo male with a strong FH of premature CAD but no personal 
+cardiac history admitted after an episode of ___ chest 
+heaviness that occured earlier today. The patient, who has 
+multiple sclerosis, was engaged in his normal, wheelchair-based 
+exercise routine this morning when - just after he stopped - he 
+experienced the rapid onset of chest heaviness and a general 
+sense of "feeling funny." This radiated up to his neck and jaw, 
+left ear and later down his left arm. The pain subsided a bit on 
+its own, but by the time he had arrived at work it was back. He 
+took two SL NTG from his office's emergency kit (pt is a 
+dentist) and this resulted in near complete resolution of his 
+sxs. He then presented to his PCPs office, which is in the same 
+building, and was referred to the ED. In the ER, his ECG was 
+unremarkable and an initial set of CEs negative. Based on his 
+history, however, he was given ASA and metoprolol and started on 
+a heparin gtt. He has been completely pain free since this time. 
+
+.
+On review of systems, he denies any prior history of stroke, 
+TIA, deep venous thrombosis, pulmonary embolism, bleeding at the 
+time of surgery, myalgias, joint pains, cough, hemoptysis, black 
+stools or red stools. He denies exertional buttock or calf pain. 
+All of the other review of systems were negative.  He endorses a 
+recent viral syndrom approximately two weeks ago which was 
+associated with some chills. 
+Cardiac review of systems is notable for absence of current 
+chest pain, dyspnea on exertion, paroxysmal nocturnal dyspnea, 
+orthopnea, ankle edema, palpitations, syncope or presyncope.
+
+**Admission physical exam:**
+VS - T 97.3  P 66  R 16  118/60  96% RA
+Gen: WDWN middle aged male in NAD. Oriented x3. Mood, affect 
+appropriate.  
+HEENT: NCAT. Sclera anicteric. PERRL, EOMI. Conjunctiva were 
+pink, no pallor or cyanosis of the oral mucosa. No xanthalesma.
+
+**All labs measured before the index (latest [range], n):**
+- % Hemoglobin A1c: 5.5 % (range 5.5–5.5, n=1)
+- Anion Gap: 13.0 mEq/L (range 13.0–13.0, n=1)
+- Bicarbonate: 27.0 mEq/L (range 27.0–27.0, n=1)
+- CK-MB Index: 10.9 % (range 10.7–10.9, n=2)
+- Calcium, Total: 9.1 mg/dL (range 9.1–9.1, n=1)
+- Chloride: 106.0 mEq/L (range 106.0–106.0, n=1)
+- Creatine Kinase (CK): 119.0 IU/L (range 112.0–125.0, n=3)
+- Creatine Kinase, MB Isoenzyme: 13.0 ng/mL (range 12.0–17.0, n=3)
+- Creatinine: 0.7 mg/dL (range 0.7–0.7, n=1)
+- Glucose: 96.0 mg/dL (range 96.0–96.0, n=1)
+- Hematocrit: 39.0 % (range 39.0–39.0, n=1)
+- Hemoglobin: 13.5 g/dL (range 13.5–13.5, n=1)
+- MCH: 29.6 pg (range 29.6–29.6, n=1)
+- MCHC: 34.7 % (range 34.7–34.7, n=1)
+- MCV: 85.0 fL (range 85.0–85.0, n=1)
+- Magnesium: 2.1 mg/dL (range 2.1–2.1, n=1)
+- PTT: 48.1 sec (range 48.1–92.5, n=2)
+- Phosphate: 2.5 mg/dL (range 2.5–2.5, n=1)
+- Platelet Count: 229.0 K/uL (range 229.0–229.0, n=1)
+- Potassium: 3.9 mEq/L (range 3.9–3.9, n=1)
+- RDW: 13.3 % (range 13.3–13.3, n=1)
+- Red Blood Cells: 4.57 m/uL (range 4.57–4.57, n=1)
+- Sodium: 142.0 mEq/L (range 142.0–142.0, n=1)
+- Troponin T: 0.14 ng/mL (range 0.06–0.14, n=3)
+- Urea Nitrogen: 11.0 mg/dL (range 11.0–11.0, n=1)
+- White Blood Cells: 9.0 K/uL (range 9.0–9.0, n=1)
+
+## Cardiac markers to predict (pre-intervention series)
+**Cardiac Markers (pre-intervention, value @ hours-before-index):**
+- Creatine Kinase, MB Isoenzyme: 3 measurements [12.000@17h, 17.000@11h, 13.000@3h], latest=13.000
+- Troponin T: 3 measurements [0.060@17h, 0.120@11h, 0.140@3h], latest=0.140
+
+## Clinical Management
+Percutaneous coronary intervention (PCI) — coronary revascularization was performed.
+Index time: 2140-03-20T12:00:00
+
+## Task
+For EACH lab below, predict its trajectory over the 96 hours after the index time:
+  - "ck_mb"  (Creatine Kinase, MB Isoenzyme)
+  - "troponin"  (Troponin T)
+
+Return ONLY a JSON object keyed by lab id. Each entry has a direction ("rising" | "falling" | "stable") and 4 values [at 24h, 48h, 72h, 96h].
+Example format:
+{"ck_mb": {"direction": "stable", "values": [0, 0, 0, 0]}, "troponin": {"direction": "stable", "values": [0, 0, 0, 0]}}
+
+Return ONLY the JSON, no other text.
+
+
+>>> HIDDEN ANSWER (troponin post): [(0.13, '+3h')]
+
+
+################################################################################
+# ep_pci_00006  (pci)
+################################################################################
+You are a clinical reasoning expert. Predict how key lab values evolve following a clinical management decision.
+
+## Patient chart up to the index time
+**Chief complaint:** Chest pain
+
+**History of present illness:**
+:
+___ man with no ___ transferred from ___ 
+after ED visit for chest pain.
+
+The patient notes that at 9 AM on the day of presentation, he 
+had a sensation of "pressure like a bubble" in his chest. Over 
+the course of the day, this sensation, which he states was not 
+"pain", continued waxing and waning leading to his ED 
+presentation at ___. He denied associated nausea, vomiting, 
+diaphoresis, radiation to back or arm or jaw, lightheadedness, 
+or palpitations. He noted transient shortness of breath with 
+discomfort which resolved rapidly and denied orthopnea. He was 
+found to have a troponin-I of 40 and EKG with Q waves anteriorly 
+and poor R-wave progression. He was started on heparin drip, 
+given aspirin, and transferred. The patient notes that chest 
+discomfort resolved spontaneously while at outside hospital. Of 
+note, patient has family history of a brother who died at age ___ 
+of an MI. In the ___ ED initial vitals were T 98.8 HR 94 BP 
+150/104 RR 14 SaO2 96%. Labs were significant for WBC 13.4 with 
+75% PMN, Bicarb 20, troponin-T 3.28. Patient was given heparin 
+gtt, clopidogrel 600 mg, metoprolol 12.5mg, and atorvastatin 80 
+mg. Cardiology reviewed the ECG from ___ and noted some 
+evidence for a STEMI, but after discussion with attending, they 
+determined that due to development of Q waves and resolution of 
+chest pain, emergent cardiac catheterization on ___ 
+___ or early ___ morning was not indicated and patient 
+be admitted to the Cardiology Service for medical management 
+prior to coronary angiography. Vitals prior to transfer were T 
+98.0 HR 85 BP 141/91 RR 18 SaO2 96% on RA. After arrival to the 
+cardiology ward, patient reported feeling well without 
+complaint, stating that chest pain stopped while in X-ray at 
+___.
+
+Review of Systems: As per HPI, otherwis …[truncated]
+
+**Admission physical exam:**
+GENERAL: Well appearing young Caucasian man lying in bed in NAD
+Vitals - T: 98.0 BP: 144/91 HR: 87 RR: 20 02 sat: 97% on RA
+HEENT: AT/NC, EOMI, PERRL, anicteric sclera, pink conjunctiva, 
+MMM, no elevated JVP
+CARDIAC: RRR, S1/S2; no murmurs, gallops, or rubs
+LUNG: CTAB--no wheezes, rales, rhonchi; breathing comfortably 
+without use of accessory muscles
+ABDOMEN: non-distended, +BS, non-tender in all quadrants, no 
+rebound/guarding, no hepatosplenomegaly
+EXTREMITIES: no cyanosis, clubbing or edema; moving all 4 
+extremities with purpose
+PULSES: 2+ DP pulses bilaterally
+NEURO: AAOx3, motor and sensory exam grossly intact
+SKIN: warm and well perfused, no excoriations or lesions, no 
+rashes
+
+**All labs measured before the index (latest [range], n):**
+- % Hemoglobin A1c: 5.6 % (range 5.6–5.6, n=1)
+- Alanine Aminotransferase (ALT): 109.0 IU/L (range 109.0–109.0, n=1)
+- Alkaline Phosphatase: 86.0 IU/L (range 86.0–86.0, n=1)
+- Anion Gap: 17.0 mEq/L (range 13.0–17.0, n=2)
+- Asparate Aminotransferase (AST): 400.0 IU/L (range 400.0–400.0, n=1)
+- Bicarbonate: 22.0 mEq/L (range 22.0–24.0, n=2)
+- Bilirubin, Total: 1.3 mg/dL (range 1.3–1.3, n=1)
+- Calcium, Total: 9.0 mg/dL (range 9.0–9.5, n=2)
+- Chloride: 100.0 mEq/L (range 100.0–101.0, n=2)
+- Cholesterol Ratio (Total/HDL): 2.7 Ratio (range 2.7–2.7, n=1)
+- Cholesterol, HDL: 55.0 mg/dL (range 55.0–55.0, n=1)
+- Cholesterol, LDL, Calculated: 77.0 mg/dL (range 77.0–77.0, n=1)
+- Cholesterol, Total: 149.0 mg/dL (range 149.0–149.0, n=1)
+- Creatine Kinase, MB Isoenzyme: 23.0 ng/mL (range 23.0–275.0, n=3)
+- Creatinine: 1.4 mg/dL (range 1.1–1.4, n=2)
+- Glucose: 112.0 mg/dL (range 112.0–132.0, n=2)
+- Hematocrit: 43.2 % (range 43.2–43.7, n=2)
+- Hemoglobin: 15.7 g/dL (range 15.7–15.8, n=2)
+- INR(PT): 1.3 (range 1.1–1.3, n=2)
+- MCH: 32.1 pg (range 31.6–32.1, n=2)
+- MCHC: 36.4 % (range 36.1–36.4, n=2)
+- MCV: 88.0 fL (range 88.0–88.0, n=2)
+- Magnesium: 2.1 mg/dL (range 2.1–2.2, n=2)
+- PT: 14.0 sec (range 12.2–14.0, n=2)
+- PTT: 43.7 sec (range 32.7–50.5, n=4)
+- Phosphate: 2.8 mg/dL (range 2.8–3.6, n=2)
+- Platelet Count: 183.0 K/uL (range 183.0–213.0, n=2)
+- Potassium: 3.3 mEq/L (range 3.3–3.8, n=2)
+- RDW: 13.3 % (range 13.3–13.5, n=2)
+- Red Blood Cells: 4.9 m/uL (range 4.9–5.0, n=2)
+- Sodium: 136.0 mEq/L (range 134.0–136.0, n=2)
+- Triglycerides: 85.0 mg/dL (range 85.0–85.0, n=1)
+- Troponin T: 2.73 ng/mL (range 2.73–4.27, n=3)
+- Urea Nitrogen: 23.0 mg/dL (range 18.0–23.0, n=2)
+- White Blood Cells: 19.1 K/uL (range 14.3–19.1, n=2)
+- eAG: 114.0 mg/dL (range 114.0–114.0, n=1)
+
+## Cardiac markers to predict (pre-intervention series)
+**Cardiac Markers (pre-intervention, value @ hours-before-index):**
+- Creatine Kinase, MB Isoenzyme: 3 measurements [275.000@29h, 113.000@20h, 23.000@4h], latest=23.000
+- Sodium: 2 measurements [134.000@29h, 136.000@4h], latest=136.000
+- Troponin T: 3 measurements [4.270@29h, 2.810@20h, 2.730@4h], latest=2.730
+
+## Clinical Management
+Percutaneous coronary intervention (PCI) — coronary revascularization was performed.
+Index time: 2157-01-24T12:00:00
+
+## Task
+For EACH lab below, predict its trajectory over the 96 hours after the index time:
+  - "ck_mb"  (Creatine Kinase, MB Isoenzyme)
+  - "sodium"  (Sodium)
+  - "troponin"  (Troponin T)
+
+Return ONLY a JSON object keyed by lab id. Each entry has a direction ("rising" | "falling" | "stable") and 4 values [at 24h, 48h, 72h, 96h].
+Example format:
+{"ck_mb": {"direction": "stable", "values": [0, 0, 0, 0]}, "sodium": {"direction": "stable", "values": [0, 0, 0, 0]}, "troponin": {"direction": "stable", "values": [0, 0, 0, 0]}}
+
+Return ONLY the JSON, no other text.
+
+
+>>> HIDDEN ANSWER (troponin post): [(2.62, '+18h')]
+
+
+################################################################################
+# ep_pci_00007  (pci)
+################################################################################
+You are a clinical reasoning expert. Predict how key lab values evolve following a clinical management decision.
+
+## Patient chart up to the index time
+**Chief complaint:** ___ yo M with acute on chronic systolic heart failure, persistent 
+chest pain, presented from OSH to r/o ACS
+
+**History of present illness:**
+:
+___ yo M with CAD, s/p MI ___, s/p LAD and mid-RCA stent 
+placement in ___ with cardiac cath in ___ which revealed a 
+right-dominant system, LMCA with no angiographically apparent 
+disease, LAD with mild luminal irregularities, patent stents and 
+mid-vessel 50% stenosis, LCx with proximal 50% stenosis, RCA 
+with 90% ostial in-stent restenosis with moderate luminal 
+irregularies, s/p successful PTCA and stenting of the ostial 
+RCA. The cath also revealed normal right-sided filling 
+pressures, low-normal left-sided filling pressures with a 
+depressed cardiac index and elevated systemic vascular 
+resistence. He also has PMH of CHF s/p Bi-V ICD placed about ___ 
+years ago. He presents to the CCU with acute excerbation of 
+systolic heart failure, persistent chest pain, and r/o ACS from 
+OSH.
+.
+At ___, patient presented with chest pain and was 
+treated with morphine and nitro gtt, which reportedly dropped 
+his SBP to ___ and only converted his chest pain to a ___ 
+(previously ___ and was r/o'd for MI. He was also treated as 
+an acute on chronic systolic heart failure exacerbation and 
+diuresed by IV lasix. At OSH, noted to have U/A with 2+ 
+leukocytes, + nitrites, 80-100 WBC. Today, patient developed 
+substernal chest pressure, diaphoresis, received nitro and 
+morphine which dropped his blood pressure, not given aspirin or 
+heparin.  Was transferred here, had continued chest pain en 
+route, but resolved upon arrival.  Since arrival here has been 
+chest pain free.
+.  
+On review of systems, patient has a history of hematuria, he 
+denies any prior history of stroke, TIA, deep venous 
+thrombosis,pulmonary embolism, bleeding after surgery,cough, 
+hemoptysis, black stools or red stools. He denies recent fevers, 
+chills or rigors. He denies exertional buttock or calf pain. All 
+of …[truncated]
+
+**Admission physical exam:**
+VS: T=96.4, BP=114-120/70-84, HR=paced at 93-98, ___, O2 
+sat= 97% RA  
+GENERAL: NAD. Oriented x3. Mood, affect appropriate.  
+HEENT: NCAT. Sclera anicteric. PERRL, EOMI. Conjunctiva were 
+pink, no pallor or cyanosis of the oral mucosa. No xanthalesma.
+
+**All labs measured before the index (latest [range], n):**
+- Anion Gap: 17.0 mEq/L (range 15.0–17.0, n=2)
+- Bicarbonate: 26.0 mEq/L (range 26.0–29.0, n=2)
+- CK-MB Index: 15.2 % (range 15.2–16.2, n=3)
+- Calcium, Total: 9.9 mg/dL (range 9.9–10.1, n=2)
+- Chloride: 99.0 mEq/L (range 99.0–99.0, n=2)
+- Creatine Kinase (CK): 565.0 IU/L (range 360.0–635.0, n=3)
+- Creatine Kinase, MB Isoenzyme: 86.0 ng/mL (range 57.0–103.0, n=3)
+- Creatinine: 2.0 mg/dL (range 2.0–2.0, n=2)
+- Digoxin: 0.3 ng/mL (range 0.3–0.3, n=1)
+- Glucose: 162.0 mg/dL (range 152.0–162.0, n=2)
+- Hematocrit: 42.3 % (range 42.3–43.5, n=2)
+- Hemoglobin: 13.6 g/dL (range 13.6–13.9, n=2)
+- INR(PT): 1.1 (range 1.1–1.1, n=1)
+- MCH: 28.2 pg (range 28.1–28.2, n=2)
+- MCHC: 32.1 % (range 31.9–32.1, n=2)
+- MCV: 88.0 fL (range 88.0–88.0, n=2)
+- Magnesium: 2.5 mg/dL (range 2.5–2.5, n=2)
+- PT: 12.8 sec (range 12.8–12.8, n=1)
+- PTT: 23.2 sec (range 23.2–23.2, n=1)
+- Phosphate: 5.1 mg/dL (range 5.1–5.2, n=2)
+- Platelet Count: 259.0 K/uL (range 259.0–267.0, n=2)
+- Potassium: 4.2 mEq/L (range 4.2–4.2, n=2)
+- RDW: 14.2 % (range 14.2–14.8, n=2)
+- Red Blood Cells: 4.81 m/uL (range 4.81–4.95, n=2)
+- Sodium: 138.0 mEq/L (range 138.0–139.0, n=2)
+- Specific Gravity: 1.008   (range 1.008–1.008, n=1)
+- Troponin T: 1.63 ng/mL (range 0.67–1.63, n=2)
+- Urea Nitrogen: 51.0 mg/dL (range 49.0–51.0, n=2)
+- White Blood Cells: 13.6 K/uL (range 11.4–13.6, n=2)
+- pH: 5.0 units (range 5.0–5.0, n=1)
+
+**Microbiology before the index:**
+- URINE/URINE CULTURE → ESCHERICHIA COLI [S]
+- URINE/URINE CULTURE → ESCHERICHIA COLI [S]
+- URINE/URINE CULTURE → ESCHERICHIA COLI [S]
+- URINE/URINE CULTURE → ESCHERICHIA COLI [S]
+- URINE/URINE CULTURE → ESCHERICHIA COLI [S]
+- URINE/URINE CULTURE → ESCHERICHIA COLI [S]
+- URINE/URINE CULTURE → ESCHERICHIA COLI [S]
+- URINE/URINE CULTURE → CORYNEBACTERIUM SPECIES (DIPHTHEROIDS)
+- URINE/URINE CULTURE → ESCHERICHIA COLI [S]
+- URINE/URINE CULTURE → ESCHERICHIA COLI [S]
+- URINE/URINE CULTURE → ESCHERICHIA COLI [S]
+- URINE/URINE CULTURE → ESCHERICHIA COLI [S]
+- URINE/URINE CULTURE → ESCHERICHIA COLI [S]
+- URINE/URINE CULTURE → ESCHERICHIA COLI [S]
+- URINE/URINE CULTURE → ESCHERICHIA COLI [S]
+
+## Cardiac markers to predict (pre-intervention series)
+**Cardiac Markers (pre-intervention, value @ hours-before-index):**
+- Creatine Kinase, MB Isoenzyme: 3 measurements [57.000@11h, 103.000@6h, 86.000@0h], latest=86.000
+- Sodium: 2 measurements [139.000@11h, 138.000@6h], latest=138.000
+- Troponin T: 2 measurements [0.670@11h, 1.630@6h], latest=1.630
+
+## Clinical Management
+Percutaneous coronary intervention (PCI) — coronary revascularization was performed.
+Index time: 2112-03-07T12:00:00
+
+## Task
+For EACH lab below, predict its trajectory over the 96 hours after the index time:
+  - "ck_mb"  (Creatine Kinase, MB Isoenzyme)
+  - "sodium"  (Sodium)
+  - "troponin"  (Troponin T)
+
+Return ONLY a JSON object keyed by lab id. Each entry has a direction ("rising" | "falling" | "stable") and 4 values [at 24h, 48h, 72h, 96h].
+Example format:
+{"ck_mb": {"direction": "stable", "values": [0, 0, 0, 0]}, "sodium": {"direction": "stable", "values": [0, 0, 0, 0]}, "troponin": {"direction": "stable", "values": [0, 0, 0, 0]}}
+
+Return ONLY the JSON, no other text.
+
+
+>>> HIDDEN ANSWER (troponin post): [(3.32, '+16h'), (2.97, '+35h'), (2.98, '+42h'), (2.86, '+48h')]
+
+
+################################################################################
+# ep_pci_00008  (pci)
+################################################################################
+You are a clinical reasoning expert. Predict how key lab values evolve following a clinical management decision.
+
+## Patient chart up to the index time
+**Chief complaint:** Chest pain
+
+**History of present illness:**
+:
+___ transferred from ___ for 4 d of Chest pain with nausea. 
+Patient recently had a friend die of MI one week early after 
+hockey game. This ___, at the end of skating, he started 
+feeling some substernal chest pressure, moderate, associated 
+with severe nausea that cause him to dry heave. It did not 
+radiate, and there was no associated shortness of breath, 
+diaphoresis or palpitations. It resolved in its own after a few 
+minutes.  
+For the next few days, the pain recurred intermittently. It was 
+associated with some bloating and was occasionally relieved with 
+belching. Prior to these episodes, he had never had any chest 
+pain or dyspnea on exertion.  
+THe patient has a significant family history or cardiac disease, 
+bit his father and uncle died of MI's in their ___ and ___. 
+Because the chest pain persisted, he decided to come for 
+evaluation.  
+At ___: EKG demonstrating ST depressions V2-V5, TropI was 
+0.39; received asa, ativan 2mg, nitro paste and was started on 
+heparin and nitro drips and was transferred to ___ for further 
+care.  
+___ ___ Course  
+he last felt CP at this afternoon on his way to ___, in ER he 
+felt asymptomatic except for anxiety  
+- Initial Vitals 98.2 84 131/70 20 96% 0  
+- Labs notable for: TropT .16, EKG: NSR, no ST changes 
+Concern for NSTEMI given elevated trop so pt was continued on 
+hep drip and nitro drip  
+On the floor, patient was again very anxious but denied any 
+chest discomfort.
+
+**Admission physical exam:**
+ADMISSION PHYSICAL EXAM
+Vitals- Wt 114.8, T 97.9, BP 160/95 (Repeat 127/78), HR 79, RR 
+20, 99% RA  
+General- Alert, oriented, no acute distress, but very anxious  
+HEENT- PERRL, EOMI, Sclera anicteric, MMM, oropharynx clear  
+Neck- supple, JVP not elevated, no LAD  
+Lungs- Clear to auscultation bilaterally, no wheezes, rales, 
+ronchi  
+CV- Regular rate and rhythm, normal S1 + S2, no murmurs, rubs, 
+gallops  
+Abdomen- soft, non-tender, non-distended, bowel sounds present, 
+no rebound tenderness or guarding, no organomegaly  
+GU- no foley  
+Ext- warm, well perfused, 2+ radial/femoral/DP pulses, no 
+clubbing, cyanosis or edema  
+Neuro- CNs2-12 intact, motor function grossly normal
+
+**All labs measured before the index (latest [range], n):**
+- % Hemoglobin A1c: 5.1 % (range 5.1–5.1, n=1)
+- Anion Gap: 14.0 mEq/L (range 14.0–19.0, n=2)
+- Basophils: 0.7 % (range 0.7–0.7, n=1)
+- Bicarbonate: 25.0 mEq/L (range 21.0–25.0, n=2)
+- Calcium, Total: 9.0 mg/dL (range 9.0–9.0, n=1)
+- Chloride: 103.0 mEq/L (range 102.0–103.0, n=2)
+- Cholesterol, LDL, Measured: 159.0 mg/dL (range 159.0–159.0, n=1)
+- Creatine Kinase, MB Isoenzyme: 4.0 ng/mL (range 4.0–4.0, n=1)
+- Creatinine: 1.1 mg/dL (range 1.1–1.2, n=2)
+- Eosinophils: 1.4 % (range 1.4–1.4, n=1)
+- Glucose: 104.0 mg/dL (range 102.0–104.0, n=2)
+- Hematocrit: 43.3 % (range 43.3–45.9, n=2)
+- Hemoglobin: 15.0 g/dL (range 15.0–15.6, n=2)
+- INR(PT): 1.0 (range 1.0–1.0, n=1)
+- Lymphocytes: 16.0 % (range 16.0–16.0, n=1)
+- MCH: 30.3 pg (range 29.7–30.3, n=2)
+- MCHC: 34.7 % (range 34.0–34.7, n=2)
+- MCV: 87.0 fL (range 87.0–87.0, n=2)
+- Magnesium: 2.1 mg/dL (range 2.1–2.1, n=1)
+- Monocytes: 4.8 % (range 4.8–4.8, n=1)
+- Neutrophils: 77.1 % (range 77.1–77.1, n=1)
+- PT: 10.6 sec (range 10.6–10.6, n=1)
+- PTT: 34.3 sec (range 34.3–108.5, n=3)
+- Phosphate: 3.6 mg/dL (range 3.6–3.6, n=1)
+- Platelet Count: 289.0 K/uL (range 289.0–314.0, n=2)
+- Potassium: 4.0 mEq/L (range 3.5–4.0, n=2)
+- RDW: 13.1 % (range 13.1–13.2, n=2)
+- Red Blood Cells: 4.96 m/uL (range 4.96–5.25, n=2)
+- Sodium: 138.0 mEq/L (range 138.0–138.0, n=2)
+- Troponin T: 0.18 ng/mL (range 0.16–0.18, n=2)
+- Urea Nitrogen: 15.0 mg/dL (range 15.0–17.0, n=2)
+- White Blood Cells: 8.6 K/uL (range 8.6–11.2, n=2)
+- eAG: 100.0 mg/dL (range 100.0–100.0, n=1)
+
+## Cardiac markers to predict (pre-intervention series)
+**Cardiac Markers (pre-intervention, value @ hours-before-index):**
+- Sodium: 2 measurements [138.000@13h, 138.000@5h], latest=138.000
+- Troponin T: 2 measurements [0.160@13h, 0.180@5h], latest=0.180
+
+## Clinical Management
+Percutaneous coronary intervention (PCI) — coronary revascularization was performed.
+Index time: 2169-10-02T12:00:00
+
+## Task
+For EACH lab below, predict its trajectory over the 96 hours after the index time:
+  - "sodium"  (Sodium)
+  - "troponin"  (Troponin T)
+
+Return ONLY a JSON object keyed by lab id. Each entry has a direction ("rising" | "falling" | "stable") and 4 values [at 24h, 48h, 72h, 96h].
+Example format:
+{"sodium": {"direction": "stable", "values": [0, 0, 0, 0]}, "troponin": {"direction": "stable", "values": [0, 0, 0, 0]}}
+
+Return ONLY the JSON, no other text.
+
+
+>>> HIDDEN ANSWER (troponin post): [(0.31, '+9h')]
+
+
+################################################################################
+# ep_pci_00009  (pci)
+################################################################################
+You are a clinical reasoning expert. Predict how key lab values evolve following a clinical management decision.
+
+## Patient chart up to the index time
+**Chief complaint:** Chest pain
+
+**History of present illness:**
+:
+___ yo man with hypertension, current smoker, non-alcoholic fatty 
+liver disease (NAFLD), who woke up this morning with chest 
+pressure, cold sweats, headache, and nausea. He went back to 
+sleep, but then woke up again with similar symptoms. He states 
+that the pressure was severe, radiated to left arm, and felt as 
+though someone was kneading dough in his chest. This sensation 
+was persistent, and he finally called his PCP who recommended 
+that he present to the ED. EMS gave the patient aspirin ___s nitroglycerin. Per report, he became hypotensive with 
+nitroglycerin.
+
+In the ED intial vitals were: Pain 4 HR 84 BP 97/62 RR 18 SaO2 
+99% on RA. Patient was given morphine 5 mg. Troponin elevated to 
+0.49. Patient was started on heparin drip. Rectal exam with 
+guaiac negative stool. ECG with new Q-waves in inferior leads as 
+well as diffuse anterolateral T wave flattening.
+
+On the cardiology floor, patient reported feeling improved, but 
+still endorsing ___ chest pressure. He denied dyspnea with 
+exertion or at night, orthopnea, weight gain.
+
+**Admission physical exam:**
+On Admission
+GENERAL: Middle aged man in NAD
+VS: T=98.4 BP=113/80 HR=80s RR=12 O2 sat=100% on RA
+NECK: Supple with JVP of 7 cm.
+CARDIAC: RRR, ectopy; no murmurs, rubs or gallops
+LUNGS: Mild wheezing which resolved
+ABDOMEN: Soft non tender
+EXTREMITIES: No edema. 2+ pulsesAt Discharge
+GENERAL: NAD
+VS: T 99.4 Tmax 98.8 BP 97-138/64-71 HR ___ RR 18 SaO2 95-100% 
+on RA
+WT ___ kg
+NECK: Supple with JVP not elevated.
+CARDIAC: RRR; no murmurs, rubs or gallops.
+LUNGS: CTAB
+ABDOMEN: Soft non tender
+EXTREMITIES: No edema. 2+ pulses
+
+**All labs measured before the index (latest [range], n):**
+- Anion Gap: 11.0 mEq/L (range 11.0–13.0, n=2)
+- Bicarbonate: 27.0 mEq/L (range 27.0–28.0, n=2)
+- CK-MB Index: 3.6 % (range 3.6–9.0, n=2)
+- Calcium, Total: 9.2 mg/dL (range 9.2–9.2, n=1)
+- Chloride: 107.0 mEq/L (range 106.0–107.0, n=2)
+- Creatine Kinase (CK): 1290.0 IU/L (range 1290.0–2335.0, n=2)
+- Creatine Kinase, MB Isoenzyme: 46.0 ng/mL (range 46.0–210.0, n=2)
+- Creatinine: 0.9 mg/dL (range 0.9–1.0, n=2)
+- Glucose: 85.0 mg/dL (range 85.0–94.0, n=2)
+- Hematocrit: 40.3 % (range 40.3–44.2, n=2)
+- Hemoglobin: 13.1 g/dL (range 13.1–14.3, n=2)
+- MCH: 30.5 pg (range 30.5–30.5, n=2)
+- MCHC: 32.4 % (range 32.2–32.4, n=2)
+- MCV: 94.0 fL (range 94.0–95.0, n=2)
+- Magnesium: 1.9 mg/dL (range 1.9–2.1, n=2)
+- PTT: 62.2 sec (range 61.8–62.2, n=2)
+- Phosphate: 3.2 mg/dL (range 3.2–3.2, n=1)
+- Platelet Count: 222.0 K/uL (range 222.0–251.0, n=2)
+- Potassium: 3.9 mEq/L (range 3.9–4.2, n=2)
+- RDW: 12.5 % (range 12.5–12.5, n=2)
+- Red Blood Cells: 4.29 m/uL (range 4.29–4.68, n=2)
+- Sodium: 141.0 mEq/L (range 141.0–143.0, n=2)
+- Troponin T: 4.82 ng/mL (range 3.67–4.82, n=2)
+- Urea Nitrogen: 13.0 mg/dL (range 13.0–16.0, n=2)
+- White Blood Cells: 11.7 K/uL (range 9.3–11.7, n=2)
+
+## Cardiac markers to predict (pre-intervention series)
+**Cardiac Markers (pre-intervention, value @ hours-before-index):**
+- Creatine Kinase, MB Isoenzyme: 2 measurements [210.000@29h, 46.000@5h], latest=46.000
+- Sodium: 2 measurements [143.000@29h, 141.000@5h], latest=141.000
+- Troponin T: 2 measurements [3.670@29h, 4.820@5h], latest=4.820
+
+## Clinical Management
+Percutaneous coronary intervention (PCI) — coronary revascularization was performed.
+Index time: 2164-07-04T12:00:00
+
+## Task
+For EACH lab below, predict its trajectory over the 96 hours after the index time:
+  - "ck_mb"  (Creatine Kinase, MB Isoenzyme)
+  - "sodium"  (Sodium)
+  - "troponin"  (Troponin T)
+
+Return ONLY a JSON object keyed by lab id. Each entry has a direction ("rising" | "falling" | "stable") and 4 values [at 24h, 48h, 72h, 96h].
+Example format:
+{"ck_mb": {"direction": "stable", "values": [0, 0, 0, 0]}, "sodium": {"direction": "stable", "values": [0, 0, 0, 0]}, "troponin": {"direction": "stable", "values": [0, 0, 0, 0]}}
+
+Return ONLY the JSON, no other text.
+
+
+>>> HIDDEN ANSWER (troponin post): [(4.86, '+19h')]
+
+
+################################################################################
+# ep_pci_00010  (pci)
+################################################################################
+You are a clinical reasoning expert. Predict how key lab values evolve following a clinical management decision.
+
+## Patient chart up to the index time
+**Chief complaint:** Chest pain
+
+**History of present illness:**
+:
+___ y/o man with H/O single vessel CAD, PAD, atrial fibrillation 
+on warfarin, colonic adenoma, hypertension, PCKD s/p renal 
+transplant, SCC of the tongue, recurrent hemoptysis with pleural 
+scarring, oral lesion scheduled for biopsy ___ (last dose 
+warfarin ___ referred from ___ today with chest pain and 
+lateral ischemic signs on EKG.
+
+Patient reports 4 days of intermittent chest pain. He first 
+noted pain in the afternoon of ___ after walking approximately 
+300 ft. Patient has some difficulty providing detail about his 
+symptoms, but believes that the pain was midline, burning, 
+nonradiating and not associated with nausea or diaphoresis. It 
+was of unclear duration, but he believes the episodes lasted ~1 
+hour. Patient presented to his PCP's office today and was found 
+to have lateral EKG changes concerning for ischemia, so he was 
+given ASA 325mg x 1 and referred to ED.
+
+In the ED, initial vitals were T 98 HR 76 BP 143/91 RR 18 SaO2 
+98%. Labs were notable for Trop-T 0.07, Cr 1.5, INR 1.3. CXR 
+showed no acute process. EKG showed ST depressions in lateral 
+leads. Patient was started on heparin gtt. Cardiology and renal 
+were consulted, and patient was transferred to floor for IV 
+hydration for renal protection prior to coronary angiography. 
+Transfer vital signs were T 98 HR 86 BP 110/94 RR 20 SaO2 98%. 
+Upon arrival to the floor, patient denied chest pain or 
+shortness of breath.
+
+On review of systems, patient denies any prior history of 
+stroke, deep venous thrombosis, pulmonary embolism, black stools 
+or red stools, recent fevers, chills. Cardiac review of systems 
+is notable for absence of dyspnea on exertion, paroxysmal 
+nocturnal dyspnea, orthopnea, ankle edema, palpitations, syncope 
+or presyncope.
+
+**Admission physical exam:**
+On Admission
+GENERAL: overweight elderly man sitting up in bed in NAD. 
+Oriented x3. Mood, affect appropriate.
+VS: T 97.4 BP 158/93 HR 85 RR 18 SaO2 98% on RA
+HEENT: NCAT. Sclera anicteric. PERRL, EOMI. Conjunctiva were 
+pink, no pallor or cyanosis of the oral mucosa. No xanthelasma.
+NECK: Supple with JVP of 10 cm at 45 degrees.
+CARDIAC: PMI located in ___ intercostal space, midclavicular 
+line. irregularly irregular, normal S1, S2. No murmurs, rubs or 
+gallops. No thrills, lifts.
+LUNGS: No chest wall deformities, scoliosis or kyphosis. Resp 
+were unlabored, no accessory muscle use. CTAB-no crackles, 
+wheezes or rhonchi.
+ABDOMEN: Soft, non-tender, not distended. No HSM or tenderness. 
+Abd aorta not enlarged by palpation. No abdominal bruits.
+EXTREMITIES: No clubbing, cyanosis or edema. No femoral bruits.
+SKIN: No stasis dermatitis, ulcers, scars, or xanthomas.
+PULSES:
+Right: Carotid 2+ Femoral 2+ Popliteal 2+ DP 2+ ___ 2+
+Left:  Carotid 2+ Femoral 2+ Popliteal 2+ DP 2+ ___ 2+On Discharge:
+Tm 98 T 97.5 BP 111-142/70-97 HR 62-101 R 18 SaO2 96-99% on RA
+
+**All labs measured before the index (latest [range], n):**
+- Anion Gap: 19.0 mEq/L (range 19.0–19.0, n=1)
+- Bicarbonate: 20.0 mEq/L (range 20.0–20.0, n=1)
+- Calcium, Total: 10.0 mg/dL (range 10.0–10.0, n=1)
+- Chloride: 103.0 mEq/L (range 103.0–103.0, n=1)
+- Creatine Kinase, MB Isoenzyme: 12.0 ng/mL (range 12.0–12.0, n=2)
+- Creatinine: 1.3 mg/dL (range 1.3–1.3, n=1)
+- Glucose: 61.0 mg/dL (range 61.0–61.0, n=1)
+- Hematocrit: 48.1 % (range 48.1–48.1, n=1)
+- Hemoglobin: 15.9 g/dL (range 15.9–15.9, n=1)
+- INR(PT): 1.3 (range 1.3–1.3, n=1)
+- MCH: 28.2 pg (range 28.2–28.2, n=1)
+- MCHC: 33.1 % (range 33.1–33.1, n=1)
+- MCV: 85.0 fL (range 85.0–85.0, n=1)
+- Magnesium: 2.0 mg/dL (range 2.0–2.0, n=1)
+- PT: 14.2 sec (range 14.2–14.2, n=1)
+- PTT: 40.7 sec (range 40.7–150.0, n=2)
+- Phosphate: 2.5 mg/dL (range 2.5–2.5, n=1)
+- Platelet Count: 195.0 K/uL (range 195.0–195.0, n=1)
+- Potassium: 4.3 mEq/L (range 4.3–4.3, n=1)
+- RDW: 16.8 % (range 16.8–16.8, n=1)
+- Red Blood Cells: 5.65 m/uL (range 5.65–5.65, n=1)
+- Sodium: 138.0 mEq/L (range 138.0–138.0, n=1)
+- Troponin T: 0.3 ng/mL (range 0.22–0.3, n=2)
+- Urea Nitrogen: 33.0 mg/dL (range 33.0–33.0, n=1)
+- White Blood Cells: 6.0 K/uL (range 6.0–6.0, n=1)
+- tacroFK: 5.7 ng/mL (range 5.7–5.7, n=1)
+
+## Cardiac markers to predict (pre-intervention series)
+**Cardiac Markers (pre-intervention, value @ hours-before-index):**
+- Creatine Kinase, MB Isoenzyme: 2 measurements [12.000@15h, 12.000@4h], latest=12.000
+- Troponin T: 2 measurements [0.220@15h, 0.300@4h], latest=0.300
+
+## Clinical Management
+Percutaneous coronary intervention (PCI) — coronary revascularization was performed.
+Index time: 2153-06-14T12:00:00
+
+## Task
+For EACH lab below, predict its trajectory over the 96 hours after the index time:
+  - "ck_mb"  (Creatine Kinase, MB Isoenzyme)
+  - "troponin"  (Troponin T)
+
+Return ONLY a JSON object keyed by lab id. Each entry has a direction ("rising" | "falling" | "stable") and 4 values [at 24h, 48h, 72h, 96h].
+Example format:
+{"ck_mb": {"direction": "stable", "values": [0, 0, 0, 0]}, "troponin": {"direction": "stable", "values": [0, 0, 0, 0]}}
+
+Return ONLY the JSON, no other text.
+
+
+>>> HIDDEN ANSWER (troponin post): [(0.32, '+6h'), (0.32, '+19h')]
+
+
+################################################################################
+# ep_pci_00011  (pci)
+################################################################################
+You are a clinical reasoning expert. Predict how key lab values evolve following a clinical management decision.
+
+## Patient chart up to the index time
+**Chief complaint:** chest pain
+
+**History of present illness:**
+:
+___ yo M w/ h/o CKD (stage IIIb), HTN, HLD, PVD, remote PE, who 
+presents with 1 day of pleuritic chest pain that started this 
+AM. Pt had 1 episode of sudden onset leftsided chest pain 
+radiating down L arm this AM that occurred after eating 
+breakfast. Worsened by deep inspiration and walking around. Has 
+been steadily improving as the day has gone on, now chest pain 
+free. He took ASA 325 this AM. Denies any recent immobility, leg 
+pain, or viral symptoms.  
+Presented to ___ where he was noted to have EKG changes 
+and a mildly pos troponin/MB that were rising (trop T 0.05->0.1 
+w/ MB 6.2-> 9.3). Cr and elevated WBCs at baseline. CXR was 
+negative. He was placed on a heparin gtt and transferred to 
+___.  
+In the ED intial vitals were: 98 64 163/72 18 96% RA  
+Patient was given: Heparin gtt  
+Vitals on transfer: 65 145/68 18 99% RA  
+On the floor pt is chest pain free.  
+ROS: On review of systems, denies any prior history of stroke, 
+TIA, bleeding at the time of surgery, myalgias, joint pains, 
+cough, hemoptysis, black stools or red stools. Denies recent 
+fevers, chills or rigors. Denies exertional buttock or calf 
+pain. All of the other review of systems were negative.  
+Cardiac review of systems is notable for absence of chest pain, 
+dyspnea on exertion, paroxysmal nocturnal dyspnea, orthopnea, 
+ankle edema, palpitations, syncope or presyncope.
+
+**Admission physical exam:**
+ADMISSION PHYSICAL EXAMINATION:  
+VS: 98.2 136/80 65 16 98% RA  
+GENERAL: WDWN in NAD. Oriented x3. Mood, affect appropriate.  
+HEENT: NCAT. Sclera anicteric. PERRL, EOMI. Conjunctiva were 
+pink, no pallor or cyanosis of the oral mucosa. No xanthelasma.
+
+**All labs measured before the index (latest [range], n):**
+- Anion Gap: 8.0 mEq/L (range 8.0–15.0, n=2)
+- Bicarbonate: 30.0 mEq/L (range 24.0–30.0, n=2)
+- C-Reactive Protein: 4.9 mg/L (range 4.9–4.9, n=1)
+- Calcium, Total: 9.0 mg/dL (range 9.0–9.0, n=2)
+- Chloride: 103.0 mEq/L (range 101.0–103.0, n=2)
+- Creatine Kinase, MB Isoenzyme: 5.0 ng/mL (range 5.0–8.0, n=2)
+- Creatinine: 1.4 mg/dL (range 1.2–1.4, n=2)
+- Glucose: 113.0 mg/dL (range 109.0–113.0, n=2)
+- Hematocrit: 34.8 % (range 34.8–36.6, n=2)
+- Hemoglobin: 12.1 g/dL (range 12.1–12.8, n=2)
+- INR(PT): 1.1 (range 1.1–1.2, n=2)
+- MCH: 32.7 pg (range 32.7–32.9, n=2)
+- MCHC: 34.7 % (range 34.7–35.0, n=2)
+- MCV: 94.0 fL (range 94.0–94.0, n=2)
+- Magnesium: 2.0 mg/dL (range 1.7–2.0, n=2)
+- PT: 11.9 sec (range 11.9–12.6, n=2)
+- PTT: 67.6 sec (range 67.6–150.0, n=4)
+- Phosphate: 3.2 mg/dL (range 3.1–3.2, n=2)
+- Platelet Count: 172.0 K/uL (range 169.0–172.0, n=2)
+- Potassium: 4.2 mEq/L (range 4.1–4.2, n=2)
+- RDW: 13.9 % (range 13.7–13.9, n=2)
+- Red Blood Cells: 3.69 m/uL (range 3.69–3.89, n=2)
+- Sodium: 137.0 mEq/L (range 136.0–137.0, n=2)
+- Troponin T: 0.09 ng/mL (range 0.09–0.12, n=2)
+- Urea Nitrogen: 21.0 mg/dL (range 18.0–21.0, n=2)
+- White Blood Cells: 11.9 K/uL (range 11.9–12.3, n=2)
+
+## Cardiac markers to predict (pre-intervention series)
+**Cardiac Markers (pre-intervention, value @ hours-before-index):**
+- Sodium: 2 measurements [136.000@27h, 137.000@4h], latest=137.000
+- Troponin T: 2 measurements [0.120@34h, 0.090@27h], latest=0.090
+
+## Clinical Management
+Percutaneous coronary intervention (PCI) — coronary revascularization was performed.
+Index time: 2180-05-28T12:00:00
+
+## Task
+For EACH lab below, predict its trajectory over the 96 hours after the index time:
+  - "sodium"  (Sodium)
+  - "troponin"  (Troponin T)
+
+Return ONLY a JSON object keyed by lab id. Each entry has a direction ("rising" | "falling" | "stable") and 4 values [at 24h, 48h, 72h, 96h].
+Example format:
+{"sodium": {"direction": "stable", "values": [0, 0, 0, 0]}, "troponin": {"direction": "stable", "values": [0, 0, 0, 0]}}
+
+Return ONLY the JSON, no other text.
+
+
+>>> HIDDEN ANSWER (troponin post): [(0.1, '+2h'), (0.16, '+21h')]
+
+
+################################################################################
+# ep_pci_00012  (pci)
+################################################################################
+You are a clinical reasoning expert. Predict how key lab values evolve following a clinical management decision.
+
+## Patient chart up to the index time
+**Chief complaint:** Orthopnea
+
+**History of present illness:**
+:
+___ HTN, HLD, IDDM2, CKD, CAD s/p stent ___ ___ p/w orthopnea, 
+abnormal exercise MIBI for LHC.
+
+Pt was in USOH until 6 months ago when she began to develop 
+claudication in her legs and thighs on exercise. Over the past 
+several months, she has develoed an insidious, dry cough. 2 
+weeks ago her chronic "acid reflux" type pain began to occur 
+more frequently and was no longer solely associated with meals. 
+1 week ago she experienced profound orthopnea upon going to bed 
+and has slept propped up since (has not subsequently tried to 
+lay flat). She has also been light-headed on standing over the 
+past week. Over the past few days she has had some nausea and 
+episodic neck pain that does not seem to be exertional.  
+
+Pt seen for stress MIBI on ___ with estimated EF 28% (stress 
+echo on ___ showed LVEF of 40-45%) and medium area of mild to 
+moderate ___ stress induced myocardial ischemia in the 
+distribution of the LAD coronary artery with Regadenoson (and 
+walking). Patient referred to ___ for pre-cath hydration and 
+LHC ___.
+
+At time of interview, patient is sitting in chair and symptom 
+free. Denies any shortness of breath at rest in chair, chest 
+discomfort, light-headedness, dizziness, palpitation, lower 
+extremity edema. No PND but orthopnea mild when supine now.
+
+**Admission physical exam:**
+Admission exam:
+VS: 98 119/56 66 20 94 RA
+GEN: NAD NT ND
+HEENT: NCAT pupils round, equal. Neck non-ttp with full ROM and 
+mild pain on extension. 
+NECK: no JVD
+CARD: RRR no m/r/g
+PULM: mildly diminished at left base otherwise ctab no r/r/w. 
+Lung fields ? hyper-expanded.  Speaks full sentences without 
+AMU.
+ABD: nabs, NT ND no hsm no r/g
+SKIN: No rash
+EXTREM: WWP, no c/c/e, DPs 1+ right, not palpable on left
+
+**All labs measured before the index (latest [range], n):**
+- Alanine Aminotransferase (ALT): 16.0 IU/L (range 16.0–16.0, n=2)
+- Albumin: 4.0 g/dL (range 4.0–4.0, n=1)
+- Alkaline Phosphatase: 70.0 IU/L (range 68.0–70.0, n=2)
+- Anion Gap: 20.0 mEq/L (range 13.0–20.0, n=6)
+- Asparate Aminotransferase (AST): 21.0 IU/L (range 19.0–21.0, n=2)
+- Basophils: 0.4 % (range 0.4–0.4, n=1)
+- Bicarbonate: 23.0 mEq/L (range 23.0–27.0, n=6)
+- Bilirubin, Total: 0.3 mg/dL (range 0.2–0.3, n=2)
+- Calcium, Total: 9.3 mg/dL (range 9.0–9.6, n=6)
+- Chloride: 106.0 mEq/L (range 106.0–112.0, n=6)
+- Chloride, Urine: 54.0 mEq/L (range 54.0–54.0, n=1)
+- Creatine Kinase (CK): 108.0 IU/L (range 108.0–137.0, n=2)
+- Creatine Kinase, MB Isoenzyme: 3.0 ng/mL (range 3.0–3.0, n=2)
+- Creatinine: 3.7 mg/dL (range 2.9–3.7, n=6)
+- Creatinine, Urine: 100.0 mg/dL (range 100.0–100.0, n=1)
+- Eosinophils: 3.7 % (range 3.7–3.7, n=1)
+- Epithelial Cells: 20.0 #/hpf (range 20.0–20.0, n=1)
+- Glucose: 141.0 mg/dL (range 59.0–226.0, n=6)
+- Hematocrit: 35.2 % (range 31.8–35.2, n=6)
+- Hemoglobin: 11.6 g/dL (range 10.6–11.6, n=6)
+- Hyaline Casts: 8.0 #/lpf (range 8.0–8.0, n=1)
+- INR(PT): 1.1 (range 1.0–1.1, n=3)
+- Lactate Dehydrogenase (LD): 198.0 IU/L (range 198.0–198.0, n=1)
+- Lymphocytes: 29.0 % (range 29.0–29.0, n=1)
+- MCH: 32.1 pg (range 31.9–32.9, n=6)
+- MCHC: 32.9 % (range 32.3–33.7, n=6)
+- MCV: 98.0 fL (range 96.0–99.0, n=6)
+- Magnesium: 2.3 mg/dL (range 2.2–2.4, n=6)
+- Monocytes: 4.9 % (range 4.9–4.9, n=1)
+- NTproBNP: 6228.0 pg/mL (range 6228.0–6228.0, n=1)
+- Neutrophils: 62.0 % (range 62.0–62.0, n=1)
+- Osmolality, Urine: 505.0 mOsm/kg (range 505.0–505.0, n=1)
+- PT: 11.9 sec (range 11.2–11.9, n=3)
+- PTT: 59.7 sec (range 28.0–114.9, n=4)
+- Phosphate: 5.5 mg/dL (range 3.8–5.5, n=6)
+- Platelet Count: 196.0 K/uL (range 159.0–196.0, n=6)
+- Potassium: 4.6 mEq/L (range 4.5–4.9, n=6)
+- Potassium, Urine: 34.0 mEq/L (range 34.0–34.0, n=1)
+- Protein/Creatinine Ratio: 0.2 mg/mg (range 0.2–0.2, n=1)
+- RBC: 4.0 #/hpf (range 3.0–4.0, n=2)
+- RDW: 14.3 % (range 13.9–14.4, n=6)
+- Red Blood Cells: 3.61 m/uL (range 3.27–3.61, n=6)
+- Sodium: 144.0 mEq/L (range 141.0–148.0, n=6)
+- Sodium, Urine: 72.0 mEq/L (range 72.0–72.0, n=1)
+- Specific Gravity: 1.005   (range 1.005–1.011, n=2)
+- Thyroid Stimulating Hormone: 0.86 uIU/mL (range 0.86–0.86, n=1)
+- Total Protein, Urine: 18.0 mg/dL (range 18.0–18.0, n=1)
+- Troponin T: 0.06 ng/mL (range 0.06–0.08, n=2)
+- Urea Nitrogen: 73.0 mg/dL (range 59.0–73.0, n=6)
+- Urea Nitrogen, Urine: 797.0 mg/dL (range 797.0–797.0, n=1)
+- Vitamin B12: 1143.0 pg/mL (range 1143.0–1143.0, n=1)
+- WBC: 1.0 #/hpf (range 1.0–13.0, n=2)
+- White Blood Cells: 7.3 K/uL (range 5.6–7.3, n=6)
+- pH: 5.0 units (range 5.0–5.5, n=2)
+
+**Microbiology before the index:**
+- SEROLOGY/BLOOD/RAPID PLASMA REAGIN TEST
+- URINE/URINE CULTURE
+
+## Cardiac markers to predict (pre-intervention series)
+**Cardiac Markers (pre-intervention, value @ hours-before-index):**
+- Creatine Kinase, MB Isoenzyme: 2 measurements [3.000@111h, 3.000@100h], latest=3.000
+- Sodium: 6 measurements [146.000@100h, 148.000@77h, 141.000@53h, 143.000@28h, 144.000@5h], latest=144.000
+- Troponin T: 2 measurements [0.080@111h, 0.060@100h], latest=0.060
+
+## Clinical Management
+Percutaneous coronary intervention (PCI) — coronary revascularization was performed.
+Index time: 2141-11-01T12:00:00
+
+## Task
+For EACH lab below, predict its trajectory over the 96 hours after the index time:
+  - "ck_mb"  (Creatine Kinase, MB Isoenzyme)
+  - "sodium"  (Sodium)
+  - "troponin"  (Troponin T)
+
+Return ONLY a JSON object keyed by lab id. Each entry has a direction ("rising" | "falling" | "stable") and 4 values [at 24h, 48h, 72h, 96h].
+Example format:
+{"ck_mb": {"direction": "stable", "values": [0, 0, 0, 0]}, "sodium": {"direction": "stable", "values": [0, 0, 0, 0]}, "troponin": {"direction": "stable", "values": [0, 0, 0, 0]}}
+
+Return ONLY the JSON, no other text.
+
+
+>>> HIDDEN ANSWER (troponin post): [(0.02, '+5h'), (0.09, '+12h'), (0.37, '+20h'), (0.45, '+25h'), (0.42, '+32h')]
+
+
+################################################################################
+# ep_pci_00013  (pci)
+################################################################################
+You are a clinical reasoning expert. Predict how key lab values evolve following a clinical management decision.
+
+## Patient chart up to the index time
+**Chief complaint:** Chest Pain
+
+**History of present illness:**
+:
+This is a ___ year-old male with a history of CAD s/p CABG ___ 
+(LIMA>LAD, SVG>RCA, SVG>D1>OM2>OM3, and redo CABG ___ 
+SVG>PDA with AVR for severe aortic stenosis s/p PCI/, bare metal 
+stent placement x 2 of SVG to diagonal ___ and ___, s/p 
+AICD ___ upgrade to BiV ___, hypertension, dyslipidemia who 
+presents with recurrent chest pain similar to first MI in ___. 
+Chest pain started 2 days PTA while in ___. Had neg ED eval 
+at that time then drove back to ___. Pain described as 
+burning, ___, substernal, radiating to left arm, and associated 
+with dizziness and lightheadedness. It is worsened with activity 
+and deep breathing and relieved with rest and Imdur which he has 
+been taking BID. No relief with Tums. No nausea, diaphoresis, or 
+shortness of breath. Denies h/o CP since surgery in ___. 
+Denies exertional dyspnea, PND, orthopnea, presyncope, syncope, 
+leg edema, or palpitations. Currently, only reports L arm 
+heaviness and chest tightness. Pain now ___.  
+ 
+In the ED, initial vitals were HR:91 BP:129/87 RR:24 O2Sat:98%. 
+Patient received ASA 325 x 1 and was admitted for further 
+evaluation and management.
+
+**Admission physical exam:**
+VS T 98.0 BP 127-133/86-91 HR 91 RR ___ 98-100%RA  
+Gen: WDWN middle aged male in NAD. Oriented x3. Mood, affect 
+appropriate.  
+HEENT: NCAT. Sclera anicteric. PERRL, EOMI. Conjunctiva were 
+pink, no pallor or cyanosis of the oral mucosa. MMM. No 
+xanthalesma.  
+Neck: Supple with JVP of 8 cm with hepatojugular reflex.  
+CV: RR, normal S1, loud S2 with click secondary to mechanical 
+valve. No m/r/g. No thrills, lifts. No S3 or S4.  
+Chest: Sternotomy scar well healed. No chest wall deformities, 
+scoliosis or kyphosis. No TTP. Resp were unlabored, no accessory 
+muscle use. CTAB, no crackles, wheezes or rhonchi.  
+Abd: Soft, NTND. No HSM or tenderness. Abd aorta not enlarged by 
+palpation. No abdominial bruits.  
+Ext: No c/c/e. No femoral bruits.  
+Skin: No stasis dermatitis, ulcers, or xanthomas.  
+.  
+Pulses:  
+Right: Carotid 2+ Femoral 2+ Popliteal 2+ DP 2+ ___ 2+  
+Left: Carotid 2+ Femoral 2+ Popliteal 2+ DP 2+ ___ 2+
+
+**All labs measured before the index (latest [range], n):**
+- Anion Gap: 16.0 mEq/L (range 13.0–16.0, n=3)
+- Bicarbonate: 26.0 mEq/L (range 26.0–28.0, n=3)
+- Calcium, Total: 9.1 mg/dL (range 9.1–9.3, n=2)
+- Chloride: 106.0 mEq/L (range 106.0–106.0, n=3)
+- Creatine Kinase (CK): 35.0 IU/L (range 35.0–50.0, n=3)
+- Creatinine: 1.4 mg/dL (range 1.4–1.5, n=3)
+- Glucose: 102.0 mg/dL (range 89.0–102.0, n=3)
+- Hematocrit: 35.8 % (range 35.8–36.8, n=3)
+- Hemoglobin: 11.7 g/dL (range 11.7–12.0, n=3)
+- INR(PT): 1.9 (range 1.9–2.7, n=5)
+- MCH: 29.6 pg (range 29.4–29.6, n=3)
+- MCHC: 32.8 % (range 32.6–32.8, n=3)
+- MCV: 90.0 fL (range 90.0–90.0, n=3)
+- Magnesium: 2.2 mg/dL (range 2.2–2.3, n=2)
+- PT: 20.3 sec (range 20.3–27.4, n=5)
+- PTT: 44.2 sec (range 34.9–150.0, n=6)
+- Phosphate: 3.5 mg/dL (range 3.5–3.7, n=2)
+- Platelet Count: 95.0 K/uL (range 85.0–98.0, n=3)
+- Potassium: 4.1 mEq/L (range 3.6–4.1, n=3)
+- RDW: 17.4 % (range 17.4–17.7, n=3)
+- Red Blood Cells: 3.96 m/uL (range 3.96–4.07, n=3)
+- Sodium: 144.0 mEq/L (range 143.0–144.0, n=3)
+- Troponin T: 0.06 ng/mL (range 0.05–0.06, n=3)
+- Urea Nitrogen: 23.0 mg/dL (range 23.0–25.0, n=3)
+- White Blood Cells: 6.2 K/uL (range 5.8–6.2, n=3)
+
+## Cardiac markers to predict (pre-intervention series)
+**Cardiac Markers (pre-intervention, value @ hours-before-index):**
+- Sodium: 3 measurements [143.000@54h, 144.000@30h, 144.000@5h], latest=144.000
+- Troponin T: 3 measurements [0.050@63h, 0.050@54h, 0.060@30h], latest=0.060
+
+## Clinical Management
+Percutaneous coronary intervention (PCI) — coronary revascularization was performed.
+Index time: 2178-06-05T12:00:00
+
+## Task
+For EACH lab below, predict its trajectory over the 96 hours after the index time:
+  - "sodium"  (Sodium)
+  - "troponin"  (Troponin T)
+
+Return ONLY a JSON object keyed by lab id. Each entry has a direction ("rising" | "falling" | "stable") and 4 values [at 24h, 48h, 72h, 96h].
+Example format:
+{"sodium": {"direction": "stable", "values": [0, 0, 0, 0]}, "troponin": {"direction": "stable", "values": [0, 0, 0, 0]}}
+
+Return ONLY the JSON, no other text.
+
+
+>>> HIDDEN ANSWER (troponin post): [(0.06, '+9h'), (0.05, '+18h')]
+
+
+################################################################################
+# ep_pci_00014  (pci)
+################################################################################
+You are a clinical reasoning expert. Predict how key lab values evolve following a clinical management decision.
+
+## Patient chart up to the index time
+**Chief complaint:** chest pain
+
+**History of present illness:**
+:
+___ w/ h/o HTN, DMII, HLD who presents for acute chest pain 
+radiating to her left arm x1d. She describes light, 
+intermittent, substernal pain, ___. Not associated with 
+exertion. No clear triggers. Lasts for a few minutes before 
+subsiding. No history of similar pain. She presented to her PCP, 
+and an EKG there reportedly showed TWI in V4, V6, HR 66. 
+
+No fevers, chills, SOB, N/V, abdominal pain. Has had loose 
+stools for 2 days that were not watery.  
+
+In the ED initial vitals were:  97.7 63 127/57 16 100% RA 
+EKG: NSR, HR 62, NANI, diffuse TWI, STD in V1, V2. 
+Labs/studies notable for:  
+Trop-T: 0.44 
+
+133  97  15  147   
+------------< 
+4.8  22  0.8 
+
+9.6 > 12.6 < 232 
+      38.7  
+ 
+
+Patient was given: ASA 324mg, lorazepam 0.5mg, heparin drip.
+
+On the floor, patient denies any CP, SOB.   
+
+REVIEW OF SYSTEMS:  
+Positive per HPI.
+
+**Admission physical exam:**
+ADMISSION PHYSICAL EXAMINATION:  
+VS: 98.1 157/79 65 16 98%RA
+GENERAL: WDWN in NAD. Oriented x3. Mood, affect appropriate.  
+HEENT: NCAT. Sclera anicteric. PERRL, EOMI. Conjunctiva were 
+pink, no pallor or cyanosis of the oral mucosa. No xanthelasma.
+
+**All labs measured before the index (latest [range], n):**
+- Anion Gap: 20.0 mEq/L (range 14.0–20.0, n=3)
+- Bicarbonate: 21.0 mEq/L (range 21.0–26.0, n=3)
+- Calcium, Total: 9.7 mg/dL (range 9.0–9.7, n=3)
+- Chloride: 98.0 mEq/L (range 98.0–98.0, n=3)
+- Creatine Kinase (CK): 95.0 IU/L (range 95.0–104.0, n=2)
+- Creatine Kinase, MB Isoenzyme: 3.0 ng/mL (range 3.0–4.0, n=2)
+- Creatinine: 0.9 mg/dL (range 0.8–0.9, n=3)
+- Glucose: 172.0 mg/dL (range 151.0–185.0, n=3)
+- H: 166.0 (range 12.0–166.0, n=6)
+- Hematocrit: 42.4 % (range 35.9–42.4, n=3)
+- Hemoglobin: 13.4 g/dL (range 12.1–13.4, n=3)
+- I: 1.0 (range 1.0–1.0, n=6)
+- INR(PT): 1.0 (range 1.0–1.1, n=3)
+- L: 13.0 (range 4.0–13.0, n=6)
+- MCH: 29.0 pg (range 29.0–30.0, n=3)
+- MCHC: 31.6 g/dL (range 31.6–33.7, n=3)
+- MCV: 92.0 fL (range 89.0–92.0, n=3)
+- Magnesium: 1.9 mg/dL (range 1.5–1.9, n=2)
+- PT: 10.8 sec (range 10.7–11.4, n=3)
+- PTT: 46.7 sec (range 46.7–63.1, n=4)
+- Phosphate: 3.6 mg/dL (range 3.4–3.7, n=3)
+- Platelet Count: 255.0 K/uL (range 219.0–255.0, n=3)
+- Potassium: 5.1 mEq/L (range 3.7–5.1, n=3)
+- RDW: 14.3 % (range 14.2–14.3, n=3)
+- RDW-SD: 47.9 fL (range 46.0–47.9, n=3)
+- Red Blood Cells: 4.62 m/uL (range 4.03–4.62, n=3)
+- Sodium: 134.0 mEq/L (range 132.0–138.0, n=3)
+- Troponin T: 0.7 ng/mL (range 0.7–1.08, n=6)
+- Urea Nitrogen: 21.0 mg/dL (range 13.0–21.0, n=3)
+- White Blood Cells: 6.6 K/uL (range 6.6–7.0, n=3)
+
+## Cardiac markers to predict (pre-intervention series)
+**Cardiac Markers (pre-intervention, value @ hours-before-index):**
+- Creatine Kinase, MB Isoenzyme: 2 measurements [4.000@19h, 3.000@3h], latest=3.000
+- Sodium: 3 measurements [138.000@54h, 132.000@29h, 134.000@3h], latest=134.000
+- Troponin T: 6 measurements [0.830@54h, 0.900@47h, 1.080@29h, 0.840@19h, 0.700@3h], latest=0.700
+
+## Clinical Management
+Percutaneous coronary intervention (PCI) — coronary revascularization was performed.
+Index time: 2114-06-19T12:00:00
+
+## Task
+For EACH lab below, predict its trajectory over the 96 hours after the index time:
+  - "ck_mb"  (Creatine Kinase, MB Isoenzyme)
+  - "sodium"  (Sodium)
+  - "troponin"  (Troponin T)
+
+Return ONLY a JSON object keyed by lab id. Each entry has a direction ("rising" | "falling" | "stable") and 4 values [at 24h, 48h, 72h, 96h].
+Example format:
+{"ck_mb": {"direction": "stable", "values": [0, 0, 0, 0]}, "sodium": {"direction": "stable", "values": [0, 0, 0, 0]}, "troponin": {"direction": "stable", "values": [0, 0, 0, 0]}}
+
+Return ONLY the JSON, no other text.
+
+
+>>> HIDDEN ANSWER (troponin post): [(0.6, '+22h')]
+
+

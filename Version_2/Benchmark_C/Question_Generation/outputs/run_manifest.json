@@ -1,0 +1,48 @@
+{
+  "pipeline_version": "qgenC-0.1.0",
+  "n_questions": 100,
+  "type_counts": {
+    "identification": 100
+  },
+  "seed": 20260627,
+  "data_source": "full",
+  "models": {
+    "optimizer": "openai/gpt-oss-20b",
+    "evaluator": "openai/gpt-oss-20b"
+  },
+  "time_zero": {
+    "policy": "procedure"
+  },
+  "cohort": {
+    "diagnosis_filter": "cardiovascular_primary",
+    "procedure_source": "icu_procedureevents",
+    "procedure_categories": [
+      "Dialysis",
+      "1-Intubation/Extubation",
+      "2-Ventilation"
+    ],
+    "core_labs": [
+      "Creatinine",
+      "Urea Nitrogen",
+      "Potassium",
+      "Sodium",
+      "Bicarbonate",
+      "Hemoglobin",
+      "White Blood Cells",
+      "Platelet Count",
+      "Lactate"
+    ],
+    "post_window_h": 72,
+    "min_pre": 2,
+    "min_post": 2,
+    "reuse_from": "/scratch/users/karun09/Version_2/Benchmark_B/Question_Generation/outputs",
+    "chunksize": 2000000,
+    "top_k_procedures": 12,
+    "min_procedure_count": 150,
+    "caliper": 0.2,
+    "max_smd": 0.15,
+    "max_control_reuse": 2,
+    "pool_size": 4000
+  },
+  "attempts": 107
+}

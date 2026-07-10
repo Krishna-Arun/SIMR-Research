@@ -1,0 +1,85 @@
+# Benchmark C — Question-Generation config: counterfactual INTERVENTION identification.
+# Two real patients who each had a DIFFERENT ICU procedure, baseline-overlap-matched. Show both
+# pre-procedure states + ONE patient's post-procedure labs; identify which patient/procedure produced
+# them. Mirrors A's Evaluator-Optimizer + agentic PubMed. NOT a clinical tool. Scratch-only.
+
+project: Benchmark_C_QuestionGen
+pipeline_version: qgenC-0.1.0
+seed: 20260627
+
+data:
+  source: full
+  full_root: /scratch/users/karun09/physionet.org/files/mimiciv/3.1
+  demo_root: /scratch/users/karun09/Version_1/SIMR-Research/mimic-iv-clinical-database-demo-2.2
+  out_dir: /scratch/users/karun09/Version_2/Benchmark_C/Question_Generation/outputs
+
+cohort:
+  diagnosis_filter: cardiovascular_primary  # restrict to admissions whose PRIMARY dx is cardiac/vascular (excl cerebrovascular)
+  procedure_source: icu_procedureevents
+  procedure_categories: [Dialysis, 1-Intubation/Extubation, 2-Ventilation]  # therapeutic, lab-moving only
+  core_labs: [Creatinine, Urea Nitrogen, Potassium, Sodium, Bicarbonate, Hemoglobin,
+              White Blood Cells, Platelet Count, Lactate]
+  post_window_h: 72
+  min_pre: 2                 # baseline covariates need >=2 pre measurements
+  min_post: 2               # the shown post-state needs >=2 post measurements
+  reuse_from: /scratch/users/karun09/Version_2/Benchmark_B/Question_Generation/outputs  # reuse procedures+core_labs scan
+  chunksize: 2000000
+  # ── overlap / matching ──
+  top_k_procedures: 12      # consider pairs among the K most common ICU procedures
+  min_procedure_count: 150  # a procedure must have >= this many eligible patients to pair
+  caliper: 0.2              # propensity caliper in SD units
+  max_smd: 0.15             # accept a pair set only if max standardized mean diff <= this
+  max_control_reuse: 2
+  pool_size: 4000
+
+time_zero:
+  policy: procedure
+
+generation:
+  concurrency: 8                     # questions in flight (thread pool)
+  target_n: 500
+  diagnosis_frac: 0.5       # unused for C
+  max_iterations: 3
+  max_tool_calls_per_agent: 6
+  agent_wall_clock_s: 300
+
+models:
+  optimizer:
+    model_id: openai/gpt-oss-20b   # neutral-family generator (distinct from any model under test)
+    cuda_device: cuda:0
+    backend: vllm
+    load_4bit: false
+    max_memory_per_gpu: 22GiB        # (HF-backend only; ignored by vllm)
+    endpoint: http://localhost:8000/v1
+    port: 8000
+    tensor_parallel_size: 1          # single H100; both 14B models share it
+    quantization: null
+    max_model_len: 16384
+    max_tokens: 6000                 # output cap (reasoning + final)
+    gpu_memory_utilization: 0.45     # two servers on one 80GB H100 -> ~0.45 each
+    tool_calling: native
+    reasoning_effort: low
+    temperature: 0.2
+  evaluator:
+    model_id: openai/gpt-oss-20b   # single-model: same server as optimizer (:8000)
+    cuda_device: cuda:0
+    backend: vllm
+    load_4bit: false
+    max_memory_per_gpu: 22GiB        # (HF-backend only; ignored by vllm)
+    endpoint: http://localhost:8000/v1
+    port: 8000
+    tensor_parallel_size: 1
+    quantization: null
+    max_model_len: 16384
+    max_tokens: 8000                 # R1 reasoning headroom so verdict JSON never truncates
+    gpu_memory_utilization: 0.45
+    tool_calling: native
+    reasoning_effort: low
+    temperature: 0.0
+
+pubmed_mcp:
+  server_dir: /scratch/users/karun09/Version_2/PubMed-MCP-Server
+  node_bin: /share/software/user/open/nodejs/25.3.0/bin/node
+  entry: build/index.js
+  call_timeout_s: 30
+  max_consecutive_failures: 3

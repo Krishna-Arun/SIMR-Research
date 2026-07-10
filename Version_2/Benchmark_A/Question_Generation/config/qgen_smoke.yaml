@@ -1,0 +1,62 @@
+project: Benchmark_A_QuestionGen
+pipeline_version: qgen-0.1.0
+seed: 20260627
+data:
+  source: full
+  full_root: /scratch/users/karun09/physionet.org/files/mimiciv/3.1
+  demo_root: /scratch/users/karun09/Version_1/SIMR-Research/mimic-iv-clinical-database-demo-2.2
+  out_dir: /scratch/users/karun09/Version_2/Benchmark_A/Question_Generation/outputs
+cohort:
+  diagnosis_filter: cardiovascular_primary
+  require_icu: true
+  require_micro_events: 1
+  min_distinct_labs: 20
+  min_lab_measurements: 50
+  chunksize: 2000000
+  materialize_slices: true
+  pool_size: 5000
+time_zero:
+  policy: icu_intime_plus
+  offset_hours: 24
+generation:
+  concurrency: 8
+  target_n: 500
+  diagnosis_frac: 0.5
+  max_iterations: 3
+  max_tool_calls_per_agent: 6
+  agent_wall_clock_s: 300
+models:
+  optimizer:
+    model_id: Qwen/Qwen2.5-7B-Instruct
+    cuda_device: cuda:0
+    backend: hf
+    load_4bit: false
+    max_memory_per_gpu: 22GiB
+    endpoint: http://localhost:8000/v1
+    port: 8000
+    tensor_parallel_size: 4
+    quantization: null
+    max_model_len: 16384
+    gpu_memory_utilization: 0.9
+    tool_calling: react
+    temperature: 0.2
+  evaluator:
+    model_id: deepseek-ai/DeepSeek-R1-Distill-Qwen-7B
+    cuda_device: cuda:1
+    backend: hf
+    load_4bit: false
+    max_memory_per_gpu: 22GiB
+    endpoint: http://localhost:8001/v1
+    port: 8001
+    tensor_parallel_size: 1
+    quantization: null
+    max_model_len: 16384
+    gpu_memory_utilization: 0.9
+    tool_calling: react
+    temperature: 0.0
+pubmed_mcp:
+  server_dir: /scratch/users/karun09/Version_2/PubMed-MCP-Server
+  node_bin: /share/software/user/open/nodejs/25.3.0/bin/node
+  entry: build/index.js
+  call_timeout_s: 30
+  max_consecutive_failures: 3
