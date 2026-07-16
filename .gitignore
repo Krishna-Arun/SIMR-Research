@@ -86,3 +86,19 @@ Version_3/vjepa2/
 *.gz
 *.dylib
 *.so
+
+# ── Version_6 derived data (MIMIC-derived patient-level; regenerable from code) ──
+Version_6/acute_hf_cohort/
+Version_6/**/*.jsonl
+Version_6/Benchmark_A/index/
+Version_6/Benchmark_A/questions.jsonl
+Version_6/Benchmark_A/complete_set_pairs.json
+Version_6/Benchmark_A/complete_set_case_ids.txt
+Version_6/WorldModel/action_space.json
+Version_6/WorldModel/split.json
+Version_6/**/*_hadm*.txt
+Version_6/**/cohort_*ids.txt
+Version_6/Benchmark_A/vignette_examples.json
+Version_6/Benchmark_A/scores_verify.json
+Version_6/Benchmark_A/scores.json
+Version_6/Benchmark_B/results.jsonl

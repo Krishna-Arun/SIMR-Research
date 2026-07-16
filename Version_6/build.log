@@ -1,0 +1,48 @@
+==================================================================
+ Acute-HF cohort builder
+ Source : /Users/krishna_arun/Documents/Summer_Work/SIMR/SIMR-Research/datasets/2physionet.org/files/mimiciv/3.1
+ Output : /Users/krishna_arun/Documents/Summer_Work/SIMR/SIMR-Research/Version_6/acute_hf_cohort
+==================================================================
+[1/3] Scanning diagnoses_icd for acute-HF patients ...
+      -> 17463 unique acute-HF patients
+[2/3] Filtering tables ...
+  -- hosp --
+      filter admissions.csv.gz            (subject_id col 1)
+      copy   d_hcpcs.csv.gz               (no subject_id)
+      copy   d_icd_diagnoses.csv.gz       (no subject_id)
+      copy   d_icd_procedures.csv.gz      (no subject_id)
+      copy   d_labitems.csv.gz            (no subject_id)
+      filter diagnoses_icd.csv.gz         (subject_id col 1)
+      filter drgcodes.csv.gz              (subject_id col 1)
+      filter emar.csv.gz                  (subject_id col 1)
+      filter emar_detail.csv.gz           (subject_id col 1)
+      filter hcpcsevents.csv.gz           (subject_id col 1)
+      filter labevents.csv.gz             (subject_id col 2)
+      filter microbiologyevents.csv.gz    (subject_id col 2)
+      filter omr.csv.gz                   (subject_id col 1)
+      filter patients.csv.gz              (subject_id col 1)
+      filter pharmacy.csv.gz              (subject_id col 1)
+      filter poe.csv.gz                   (subject_id col 3)
+      filter poe_detail.csv.gz            (subject_id col 3)
+      filter prescriptions.csv.gz         (subject_id col 1)
+      filter procedures_icd.csv.gz        (subject_id col 1)
+      copy   provider.csv.gz              (no subject_id)
+      filter services.csv.gz              (subject_id col 1)
+      filter transfers.csv.gz             (subject_id col 1)
+  -- icu --
+      copy   caregiver.csv.gz             (no subject_id)
+      filter chartevents.csv.gz           (subject_id col 1)
+      copy   d_items.csv.gz               (no subject_id)
+      filter datetimeevents.csv.gz        (subject_id col 1)
+      filter icustays.csv.gz              (subject_id col 1)
+      filter ingredientevents.csv.gz      (subject_id col 1)
+      filter inputevents.csv.gz           (subject_id col 1)
+      filter outputevents.csv.gz          (subject_id col 1)
+      filter procedureevents.csv.gz       (subject_id col 1)
+[3/3] Copying metadata + writing manifest ...
+==================================================================
+ DONE.
+   Patients   : 17463
+   Admissions : 91298
+   Output     : /Users/krishna_arun/Documents/Summer_Work/SIMR/SIMR-Research/Version_6/acute_hf_cohort
+==================================================================

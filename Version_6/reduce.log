@@ -1,0 +1,45 @@
+==================================================================
+ Reducing acute-HF cohort to ICU-during-acute-HF-admission patients
+==================================================================
+[1/4] Finding acute-HF admissions ...
+      -> 31077 acute-HF admissions
+[2/4] Deriving keep-set (patients w/ ICU stay during acute-HF admission) ...
+      -> 9236 patients kept
+[3/4] Re-filtering tables in place ...
+  -- hosp --
+      reduce admissions.csv.gz            (subject_id col 1)
+      keep   d_hcpcs.csv.gz               (dictionary, unchanged)
+      keep   d_icd_diagnoses.csv.gz       (dictionary, unchanged)
+      keep   d_icd_procedures.csv.gz      (dictionary, unchanged)
+      keep   d_labitems.csv.gz            (dictionary, unchanged)
+      reduce diagnoses_icd.csv.gz         (subject_id col 1)
+      reduce drgcodes.csv.gz              (subject_id col 1)
+      reduce emar.csv.gz                  (subject_id col 1)
+      reduce emar_detail.csv.gz           (subject_id col 1)
+      reduce hcpcsevents.csv.gz           (subject_id col 1)
+      reduce labevents.csv.gz             (subject_id col 2)
+      reduce microbiologyevents.csv.gz    (subject_id col 2)
+      reduce omr.csv.gz                   (subject_id col 1)
+      reduce patients.csv.gz              (subject_id col 1)
+      reduce pharmacy.csv.gz              (subject_id col 1)
+      reduce poe.csv.gz                   (subject_id col 3)
+      reduce poe_detail.csv.gz            (subject_id col 3)
+      reduce prescriptions.csv.gz         (subject_id col 1)
+      reduce procedures_icd.csv.gz        (subject_id col 1)
+      keep   provider.csv.gz              (dictionary, unchanged)
+      reduce services.csv.gz              (subject_id col 1)
+      reduce transfers.csv.gz             (subject_id col 1)
+  -- icu --
+      keep   caregiver.csv.gz             (dictionary, unchanged)
+      reduce chartevents.csv.gz           (subject_id col 1)
+      keep   d_items.csv.gz               (dictionary, unchanged)
+      reduce datetimeevents.csv.gz        (subject_id col 1)
+      reduce icustays.csv.gz              (subject_id col 1)
+      reduce ingredientevents.csv.gz      (subject_id col 1)
+      reduce inputevents.csv.gz           (subject_id col 1)
+      reduce outputevents.csv.gz          (subject_id col 1)
+      reduce procedureevents.csv.gz       (subject_id col 1)
+[4/4] Refreshing manifest ...
+==================================================================
+ DONE. Patients: 9236  Admissions: 47917
+==================================================================

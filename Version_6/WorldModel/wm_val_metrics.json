@@ -1,0 +1,71 @@
+{
+ "val": {
+  "membership_acc": 0.7925,
+  "persistence_acc": 0.7819,
+  "n_eval": 1600,
+  "per_lab": {
+   "Creatinine": {
+    "mae": 0.587,
+    "r2": 0.335,
+    "n": 400
+   },
+   "BUN (Urea Nitrogen)": {
+    "mae": 14.174,
+    "r2": 0.336,
+    "n": 400
+   },
+   "Potassium": {
+    "mae": 0.378,
+    "r2": 0.013,
+    "n": 400
+   },
+   "Bicarbonate": {
+    "mae": 4.051,
+    "r2": 0.257,
+    "n": 400
+   }
+  }
+ },
+ "test": {
+  "membership_acc": 0.7839,
+  "persistence_acc": 0.7772,
+  "n_eval": 2096,
+  "per_lab": {
+   "Creatinine": {
+    "mae": 0.628,
+    "r2": 0.315,
+    "n": 524
+   },
+   "BUN (Urea Nitrogen)": {
+    "mae": 14.047,
+    "r2": 0.403,
+    "n": 524
+   },
+   "Potassium": {
+    "mae": 0.369,
+    "r2": 0.047,
+    "n": 524
+   },
+   "Bicarbonate": {
+    "mae": 3.952,
+    "r2": 0.234,
+    "n": 524
+   }
+  }
+ },
+ "disc_val": {
+  "disc_acc": 0.9425,
+  "majority_baseline": 0.85,
+  "n": 400,
+  "n_dialysis": 60,
+  "n_diuretic": 340
+ },
+ "disc_test": {
+  "disc_acc": 0.9599,
+  "majority_baseline": 0.8511,
+  "n": 524,
+  "n_dialysis": 78,
+  "n_diuretic": 446
+ },
+ "best_val_mse": 0.5485544490814209
+}
