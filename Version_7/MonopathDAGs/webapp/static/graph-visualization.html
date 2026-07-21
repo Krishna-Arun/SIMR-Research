@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Dynamic Graph Viewer</title>
+  <script>
+    function getCookieValue(name) {
+        const cookies = document.cookie.split('; ');
+        const cookie = cookies.find(row => row.startsWith(name + '='));
+        return cookie ? decodeURIComponent(cookie.split('=')[1]) : null;
+    }
+
+    const userId = getCookieValue('user_name');
+    if (!userId) {
+        window.location.href = '/';  // or '/login'
+    }
+</script>
+  <link rel="stylesheet" href="/static/css/style.css">
+  <script type="module" src="/static/js/graph.js"></script>
+  
+</head>
+<body>
+  <div id="container">
+    <div id="mynetwork"></div>
+    <div id="divider"></div>
+    <div id="sidebar">
+
+        <button onclick="logout()">Logout</button>
+        
+        <h2>Selection Info</h2>
+        <button id="nextSampleButton"  style="margin-bottom: 5%;"> Next Sample </button>
+
+        <div id="info">Click a node or edge to view details here.</div>
+    </div>
+</div>
+  </body>
+  
+<script>
+
+  const divider = document.getElementById('divider');
+  const sidebar = document.getElementById('sidebar');
+  const container = document.getElementById('container');
+  
+  let isDragging = false;
+  
+  divider.addEventListener('mousedown', (e) => {
+      isDragging = true;
+      document.body.style.cursor = 'col-resize';
+      document.body.style.userSelect = 'none';  // disable text selection
+  });
+  
+  document.addEventListener('mousemove', (e) => {
+      if (!isDragging) return;
+  
+      const containerRect = container.getBoundingClientRect();
+      const newSidebarWidth = containerRect.right - e.clientX;
+  
+      if (newSidebarWidth > 150 && newSidebarWidth < containerRect.width * 0.6) {
+          sidebar.style.width = `${newSidebarWidth}px`;
+      }
+  });
+  
+  document.addEventListener('mouseup', () => {
+      isDragging = false;
+      document.body.style.cursor = 'default';
+      document.body.style.userSelect = 'auto';  // re-enable text selection
+  });
+  
+  async function logout() {
+      const response = await fetch("/logout");
+      if (response.ok) {
+          window.location.href = "/";  // Redirect to root, which now loads login page
+      } else {
+          console.error("Failed to logout");
+      }
+  }
+
+
+
+  
+
+  </script>
+  <script type="module">
+    import { Network } from "https://esm.sh/vis-network/peer";
+    import { DataSet } from "https://esm.sh/vis-data/peer";
+    import { updateGraphData } from '/static/js/graph.js';
+
+    // === Persistent counters at module scope ===
+    let currentGraphIndex = 1;
+    const totalGraphs = 900;
+
+    document.getElementById('nextSampleButton').addEventListener('click', async () => {
+        const graphFile = `/static/user_data/graph_test.json`;
+
+        try {
+            const response = await fetch(graphFile);
+            if (!response.ok) {
+                throw new Error(`Failed to load ${graphFile}: ${response.statusText}`);
+            }
+
+            const graphData = await response.json();
+            const nodes = new DataSet(graphData.nodes);
+            const edges = new DataSet(graphData.edges);
+
+            updateGraphData(nodes, edges);
+            console.log(`✅ Loaded graph ${currentGraphIndex}`);
+
+            // Increment and wrap around
+            currentGraphIndex++;
+            if (currentGraphIndex > totalGraphs) {
+                currentGraphIndex = 1;
+            }
+        } catch (error) {
+            console.error('❌ Error loading graph:', error);
+        }
+    });
+
+
+</script>
+
+
+
+</html>

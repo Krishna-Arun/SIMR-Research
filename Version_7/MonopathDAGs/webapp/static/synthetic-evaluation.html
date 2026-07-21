@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Synthetic Case Report Evaluation</title>
+    <script>
+        function getCookieValue(name) {
+            const cookies = document.cookie.split('; ');
+            const cookie = cookies.find(row => row.startsWith(name + '='));
+            return cookie ? decodeURIComponent(cookie.split('=')[1]) : null;
+        }
+    
+        const userId = getCookieValue('user_name');
+        if (!userId) {
+            window.location.href = '/';  // or '/login'
+        }
+    </script>
+    
+    <style>
+        body { font-family: Arial, sans-serif; margin: 2rem; background-color: #f9f9f9; }
+        .report { background: #fff; padding: 1rem; margin-bottom: 1rem; border-radius: 8px; box-shadow: 0 0 5px rgba(0,0,0,0.1); }
+        .question-group { margin: 1rem 0; }
+        .nav-buttons { margin-top: 1rem; }
+        button { margin-right: 0.5rem; padding: 0.5rem 1rem; }
+        .option-labels { display: flex; justify-content: space-between; font-size: 0.9rem; color: #555; margin-top: 0.25rem; }
+    </style>
+</head>
+<body>
+    <h2>Evaluate Case Reports</h2>
+    <div class="report">
+        <h3 id="report-title"></h3>
+        <p id="report-content"></p>
+    </div>
+    <form id="rating-form"></form>
+
+    <div class="nav-buttons">
+        <button onclick="prevReport()">Previous</button>
+        <button onclick="nextReport()">Next</button>
+        <button onclick="submitRatings()">Submit All</button>
+    </div>
+
+    <script>
+        function getCookieValue(name) {
+            const cookies = document.cookie.split('; ');
+            const cookie = cookies.find(row => row.startsWith(name + '='));
+            return cookie ? decodeURIComponent(cookie.split('=')[1]) : null;
+        }
+
+        const username = getCookieValue('user_name');
+        if (!username) window.location.href = '/';
+
+        const storageKey = `answers_${username}`;
+        const indexKey = `index_${username}`;
+        let reports = [];
+        let currentIndex = parseInt(localStorage.getItem(indexKey)) || 0;
+        let answers = loadFromLocalStorage();
+
+        const questions = [
+            "The case actions and insights are clinically sound based on your experience or any resource?",
+            "The timeline progression is clinically oriented appropriate?",
+            "The case is specific and granular enough to make any next clinical decision?",
+            "The case is specific and granular enough to make safe clinical decisions with high certainty?",
+            "Is the language and information appropriate for the medical context?"
+        ];
+
+        const labels = ["Strongly Disagree", "Disagree", "Neutral", "Agree", "Strongly Agree"];
+
+        function loadFromLocalStorage() {
+            try {
+                const raw = localStorage.getItem(storageKey);
+                return raw ? JSON.parse(raw) : {};
+            } catch (_) {
+                return {};
+            }
+        }
+
+        function saveToLocalStorage() {
+            localStorage.setItem(storageKey, JSON.stringify(answers));
+            localStorage.setItem(indexKey, currentIndex);
+        }
+
+        function isReportComplete(uid) {
+            const a = answers[uid];
+            return a && Object.keys(a).length === 5 &&
+                   ["Q1", "Q2", "Q3", "Q4", "Q5"].every(k => a[k]);
+        }
+
+        async function loadReports() {
+            const indexPath = `/static/user_data/${username}_synth_eval_index.json`;
+            const response = await fetch(indexPath);
+            const evalIndex = await response.json();
+        
+            // Store full metadata globally for submission
+            window.allReports = evalIndex;
+        
+            // Only show incomplete ones
+            const incomplete = evalIndex.filter(entry => {
+                const fromFile = entry.status === "completed";
+                const fromLocal = isReportComplete(entry.uid);
+                return !(fromFile || fromLocal);
+            });
+        
+            reports = await Promise.all(
+                incomplete.map(async entry => {
+                    const filePath = `/static/synthetic_outputs/${entry.text_file}`;
+                    try {
+                        const res = await fetch(filePath);
+                        if (!res.ok) return null;
+                        const text = await res.text();
+                        return {
+                            uid: entry.uid,
+                            graph_id: entry.graph_id,
+                            group: entry.group,
+                            text: text
+                        };
+                    } catch (_) {
+                        return null;
+                    }
+                })
+            );
+        
+            reports = reports.filter(r => r !== null);
+        
+            if (currentIndex >= reports.length || isReportComplete(reports[currentIndex]?.uid)) {
+                currentIndex = findNextIncomplete(0);
+            }
+        
+            renderReport();
+        }
+        
+        function renderReport() {
+            if (!reports.length || currentIndex >= reports.length) {
+                document.getElementById('report-title').textContent = "[No Report]";
+                document.getElementById('report-content').textContent = "✅ All reports completed!";
+                document.getElementById('rating-form').innerHTML = '';
+                return;
+            }
+
+            const report = reports[currentIndex];
+            const status = isReportComplete(report.uid) ? "✅ Completed" : "🕗 Incomplete";
+            document.getElementById('report-title').textContent =
+                `UID: ${report.uid} | (${status})`;
+            document.getElementById('report-content').innerHTML = report.text;
+
+            const form = document.getElementById('rating-form');
+            form.innerHTML = '';
+
+            questions.forEach((q, i) => {
+                const group = document.createElement('div');
+                group.className = 'question-group';
+                group.innerHTML = `<strong>Q${i + 1}: ${q}</strong><br>`;
+
+                for (let j = 1; j <= 5; j++) {
+                    const inputId = `${report.uid}-Q${i + 1}-${j}`;
+                    group.innerHTML += `
+                        <label style="margin-right: 1rem;">
+                            <input type="radio" name="Q${i + 1}" value="${j}" id="${inputId}" ${getStoredAnswer(report.uid, `Q${i + 1}`) == j ? 'checked' : ''}>
+                            ${labels[j - 1]} (${j})
+                        </label>
+                    `;
+                }
+                form.appendChild(group);
+            });
+        }
+
+        function storeCurrentAnswers() {
+            if (!reports.length || currentIndex >= reports.length) return;
+
+            const report = reports[currentIndex];
+            const reportId = report.uid;
+            if (!answers[reportId]) answers[reportId] = {};
+
+            for (let i = 1; i <= 5; i++) {
+                const selected = document.querySelector(`input[name="Q${i}"]:checked`);
+                if (selected) {
+                    answers[reportId][`Q${i}`] = selected.value;
+                }
+            }
+
+            saveToLocalStorage();
+        }
+
+        function getStoredAnswer(reportId, question) {
+            return answers[reportId] ? answers[reportId][question] : null;
+        }
+
+        function findNextIncomplete(fromIndex) {
+            for (let i = fromIndex; i < reports.length; i++) {
+                if (!isReportComplete(reports[i].uid)) return i;
+            }
+            return reports.length;
+        }
+
+        function findPrevIncomplete(fromIndex) {
+            for (let i = fromIndex; i >= 0; i--) {
+                if (!isReportComplete(reports[i].uid)) return i;
+            }
+            return -1;
+        }
+
+        function nextReport() {
+            storeCurrentAnswers();
+            const next = findNextIncomplete(currentIndex + 1);
+            currentIndex = next < reports.length ? next : reports.length;
+            renderReport();
+        }
+
+        function prevReport() {
+            storeCurrentAnswers();
+            const prev = findPrevIncomplete(currentIndex - 1);
+            currentIndex = prev >= 0 ? prev : currentIndex;
+            renderReport();
+        }
+
+        async function submitRatings() {
+            storeCurrentAnswers();
+        
+            const payload = Object.entries(answers)
+                .map(([uid, ratings]) => {
+                    const report = window.allReports.find(r => String(r.uid).trim() === String(uid).trim());
+                    if (!report) {
+                        console.warn("‼️ No metadata for UID:", uid);
+                        return null;
+                    }
+                    return {
+                        username: username,
+                        graph_id: report.graph_id,
+                        element_id: uid,
+                        ...ratings
+                    };
+                })
+                .filter(Boolean);
+        
+            const response = await fetch('/api/submit-synthetic-evals', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(payload)
+            });
+        
+            if (response.ok) {
+                localStorage.removeItem(storageKey);
+                localStorage.removeItem(indexKey);
+            } else {
+                alert('Submission failed.');
+            }
+        }
+        
+
+        loadReports();
+    </script>
+</body>
+</html>

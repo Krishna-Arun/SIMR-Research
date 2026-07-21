@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Node & Edge Evaluation</title>
+    <script>
+        function getCookieValue(name) {
+            const cookies = document.cookie.split('; ');
+            const cookie = cookies.find(row => row.startsWith(name + '='));
+            return cookie ? decodeURIComponent(cookie.split('=')[1]) : null;
+        }
+    
+        const userId = getCookieValue('user_name');
+        if (!userId) {
+            window.location.href = '/';  // or '/login'
+        }
+    </script>
+    
+    <style>
+        body, html { margin: 0; padding: 0; height: 100%; font-family: Arial, sans-serif; background: #f9f9f9; }
+        .container { display: flex; flex-direction: column; height: 100vh; }
+        .graph-area { flex: 1 1 auto; background: #fff; border-bottom: 1px solid #ddd; }
+        .html-viewer { flex: 1 1 auto; overflow-y: auto; background: #fff; padding: 0.5rem; }
+        .eval-panel { flex: 0 0 auto; background: #f0f0f0; border-top: 1px solid #ccc; padding: 1rem; }
+        @media (min-width: 768px) {
+            .container { flex-direction: row; }
+            .graph-area, .html-viewer { flex: 2 1 60%; border-right: 1px solid #ccc; }
+            .eval-panel { flex: 1 1 40%; border-top: none; border-left: 1px solid #ccc; overflow-y: auto; }
+        }
+        button { padding: 0.5rem 1rem; margin-top: 0.5rem; }
+        .question-group { margin-bottom: 1rem; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="html-viewer" id="html-viewer">
+            <h3>Case Report Viewer</h3>
+            <div id="report-content"><em>Loading case report...</em></div>
+        </div>
+
+        <div class="graph-area" id="graph-container"></div>
+
+        <div class="eval-panel" id="eval-panel">
+            <h3 id="eval-title">Evaluation Details</h3>
+            <div id="node-info"><em>Select a node or edge to see details.</em></div>
+            <form id="eval-form">
+                <div class="question-group">
+                    <label>Correct Order?</label><br>
+                    <input type="radio" name="order" value="yes"> Yes
+                    <input type="radio" name="order" value="no"> No
+                </div>
+                <div class="question-group">
+                    <label>Accurate to Case?</label><br>
+                    <input type="radio" name="accuracy" value="yes"> Yes
+                    <input type="radio" name="accuracy" value="no"> No
+                </div>
+            </form>
+            <button id="submit-all-btn">Submit All Evaluations</button>
+            <button id="next-graph-btn">Next Graph</button>
+        </div>
+    </div>
+
+    <script src="https://unpkg.com/vis-network/standalone/umd/vis-network.min.js"></script>
+    <script>
+        let network;
+        let nodes = new vis.DataSet([]);
+        let edges = new vis.DataSet([]);
+        let evalIndex = [];
+        let graphMetadata = [];
+        let completedGraphIds = [];
+        let currentGraphId = null;
+        let currentSourceFile = null;
+        let selectedElementId = null;
+        let evaluationState = {}; // { element_id: {order: 'yes', accuracy: 'no'} }
+
+        function getCookieValue(name) {
+            const cookies = document.cookie.split('; ');
+            const cookie = cookies.find(row => row.startsWith(name + '='));
+            return cookie ? decodeURIComponent(cookie.split('=')[1]) : null;
+        }
+
+        const CURRENT_USER_ID = getCookieValue('user_name');
+        console.log(CURRENT_USER_ID);
+
+        async function loadEvalIndex() {
+            const evalIndexUrl = `/static/user_data/${CURRENT_USER_ID}_eval_index.json`;
+            const res = await fetch(evalIndexUrl);
+            if (!res.ok) throw new Error(`Failed to load evaluation index for ${CURRENT_USER_ID}`);
+            return await res.json();
+        }
+
+        async function loadGraphMetadata() {
+            const res = await fetch('/static/graphs/mapping/graph_metadata_true.json');
+            if (!res.ok) throw new Error('Metadata fetch failed.');
+            return await res.json();
+        }
+
+        function pickNextIncompleteGraph() {
+            const incompleteIds = evalIndex
+                .filter(entry => entry.status !== 'completed' && !completedGraphIds.includes(entry.graph_id))
+                .map(entry => entry.graph_id);
+        
+            for (const id of incompleteIds) {
+                const meta = graphMetadata.find(m => m.graph_id === id);
+                if (meta) return meta;
+            }
+            return null;
+        }
+        
+
+        async function loadGraph(jsonPath) {
+            const normalizedPath = normalizeStaticPath(jsonPath);
+            const res = await fetch(normalizedPath);
+            if (!res.ok) throw new Error(`Failed to load graph JSON at ${normalizedPath}`);
+            const data = await res.json();
+            nodes = new vis.DataSet(data.nodes);
+            edges = new vis.DataSet(data.edges);
+        }
+
+        async function loadHtml(sourceFile) {
+            const normalizedPath = normalizeStaticPath(sourceFile);
+            const res = await fetch(normalizedPath);
+            if (!res.ok) throw new Error(`Failed to load HTML at ${normalizedPath}`);
+            const htmlText = await res.text();
+            const parser = new DOMParser();
+            const doc = parser.parseFromString(htmlText, 'text/html');
+            doc.querySelectorAll('script, link, iframe, svg, image').forEach(el => el.remove());
+            doc.querySelectorAll('img').forEach(el => { el.setAttribute('src', ''); });
+            doc.querySelectorAll('[style]').forEach(el => { el.style.backgroundImage = 'none'; });
+            doc.querySelectorAll('style').forEach(styleEl => { styleEl.textContent = styleEl.textContent.replace(/url\([^)]+\)/g, 'none'); });
+            document.getElementById('report-content').innerHTML = doc.body.innerHTML;
+        }
+
+        function normalizeStaticPath(path) {
+            if (path.startsWith('webapp/static/')) return path.replace('webapp/static/', '/static/');
+            if (path.startsWith('./pmc_htmls/')) return path.replace('./pmc_htmls/', '/static/pmc_htmls/');
+            return path;
+        }
+
+        function initializeGraph() {
+            const container = document.getElementById('graph-container');
+            const data = { nodes, edges };
+            const options = { interaction: { hover: true }, nodes: { shape: 'dot', size: 20 }, edges: { arrows: 'to' } };
+            network = new vis.Network(container, data, options);
+            network.on("select", params => {
+                resetStyles();
+                if (params.nodes.length > 0) {
+                    const nodeObj = nodes.get(params.nodes[0]);
+                    selectedElementId = nodeObj.custom_id;
+                    highlightSelected('node', nodeObj.id);
+                    displayDetails('node', nodeObj.id, nodeObj);
+                } else if (params.edges.length > 0) {
+                    const edgeObj = edges.get(params.edges[0]);
+                    selectedElementId = edgeObj.custom_id;
+                    highlightSelected('edge', edgeObj.id);
+                    displayDetails('edge', edgeObj.id, edgeObj);
+                } else {
+                    document.getElementById('node-info').innerHTML = `<em>No selection.</em>`;
+                }
+            });
+        }
+        function resetStyles() {
+            nodes.forEach(node => {
+                const isEvaluated = evaluationState[node.custom_id] !== undefined;
+        
+                let baseColor = isEvaluated ? 'green' : '#97C2FC';
+        
+                nodes.update({
+                    id: node.id,
+                    color: {
+                        background: baseColor,
+                        border: 'black',
+                        highlight: { background: baseColor, border: 'black' }
+                    }
+                });
+            });
+        
+            edges.forEach(edge => {
+                const isEvaluated = evaluationState[edge.custom_id] !== undefined;
+        
+                let baseColor = isEvaluated ? 'green' : '#848484';
+        
+                edges.update({
+                    id: edge.id,
+                    color: {
+                        color: baseColor,
+                        highlight: baseColor,
+                        hover: baseColor
+                    }
+                });
+            });
+        }
+        
+
+  function highlightSelected(type, id) {
+    if (type === 'node') {
+        const nodeObj = nodes.get(id);
+        const isEvaluated = evaluationState[nodeObj.custom_id] !== undefined;
+
+        const color = isEvaluated ? 'purple' : 'yellow';
+
+        nodes.update({
+            id: id,
+            color: {
+                background: color,
+                border: 'black',
+                highlight: { background: color, border: 'black' }
+            }
+        });
+    } else if (type === 'edge') {
+        const edgeObj = edges.get(id);
+        const isEvaluated = evaluationState[edgeObj.custom_id] !== undefined;
+
+        const color = isEvaluated ? 'purple' : 'yellow';
+
+        edges.update({
+            id: id,
+            color: {
+                color: color,
+                highlight: color,
+                hover: color
+            }
+        });
+    }
+}
+function saveEvaluationState() {
+    const storageKey = `evalState_${CURRENT_USER_ID}_${currentGraphId}`;
+    localStorage.setItem(storageKey, JSON.stringify(evaluationState));
+}
+
+function loadEvaluationState() {
+    const storageKey = `evalState_${CURRENT_USER_ID}_${currentGraphId}`;
+    const saved = localStorage.getItem(storageKey);
+    if (saved) {
+        evaluationState = JSON.parse(saved);
+        console.log(`Loaded saved evaluationState for ${currentGraphId}`, evaluationState);
+    } else {
+        evaluationState = {};  // reset for new graph
+    }
+}
+
+        function formatDataAsHtml(obj) {
+            const skipKeys = ['color', 'font', 'physics'];
+            let html = '<ul>';
+            for (const [key, value] of Object.entries(obj)) {
+                if (skipKeys.includes(key)) continue;
+                if (typeof value === 'object' && value !== null) {
+                    html += `<li><strong>${key}:</strong> ${formatDataAsHtml(value)}</li>`;
+                } else {
+                    html += `<li><strong>${key}:</strong> ${value}</li>`;
+                }
+            }
+            html += '</ul>';
+            return html;
+        }
+
+        function displayDetails(type, id, dataObj) {
+            let infoHtml = `<strong>Selected ${type} ${id}</strong>`;
+            if (dataObj) {
+                infoHtml += formatDataAsHtml(dataObj);
+            } else {
+                infoHtml += `<em>No data available.</em>`;
+            }
+            document.getElementById('node-info').innerHTML = infoHtml;
+
+            const saved = evaluationState[selectedElementId];
+            document.querySelectorAll('#eval-form input[type=radio]').forEach(input => input.checked = false);
+            if (saved) {
+                const orderInput = document.querySelector(`#eval-form input[name="order"][value="${saved.order}"]`);
+                if (orderInput) orderInput.checked = true;
+                const relInput = document.querySelector(`#eval-form input[name="accuracy"][value="${saved.accuracy}"]`);
+                if (relInput) relInput.checked = true;
+            }
+        }
+
+        function isGraphEvaluationComplete() {
+            const requiredIds = [
+                ...nodes.getIds().map(id => nodes.get(id).custom_id),
+                ...edges.getIds().map(id => edges.get(id).custom_id)
+            ];
+            return requiredIds.every(id => evaluationState[id]);
+        }
+
+        function updateSubmitButtonState() {
+            const btn = document.getElementById('submit-all-btn');
+            btn.disabled = !isGraphEvaluationComplete();
+        }
+
+        document.querySelectorAll('#eval-form input').forEach(input => {
+            input.addEventListener('change', () => {
+                if (!selectedElementId) return;
+                const form = document.getElementById('eval-form');
+                evaluationState[selectedElementId] = {
+                    order: form.order.value,
+                    accuracy: form.accuracy.value
+                };
+                console.log("Saved evaluation for", selectedElementId, evaluationState[selectedElementId]);
+                updateSubmitButtonState();
+                saveEvaluationState();
+            });
+        });
+
+        async function submitAllEvaluations() {
+            const payload = Object.entries(evaluationState)
+                .filter(([key, _]) => key !== 'markCompleted')
+                .map(([element_id, answers]) => ({
+                    element_id,
+                    username: CURRENT_USER_ID,
+                    graph_id: currentGraphId,
+                    ...answers
+                }));
+        
+            try {
+                const res = await fetch('/api/submit-batch-eval', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(payload)
+                });
+        
+                if (res.ok) {
+                    alert('All evaluations submitted!');
+                    // ✅ mark current graph complete
+                    const indexEntry = evalIndex.find(entry => entry.graph_id === currentGraphId);
+                    if (indexEntry) {
+                        indexEntry.status = 'completed';
+                        console.log(`Graph ${currentGraphId} marked complete.`);
+                        localStorage.removeItem(`evalState_${CURRENT_USER_ID}_${currentGraphId}`);
+                        console.log(`Cleared saved state for ${currentGraphId}`);
+                    }
+                } else {
+                    alert('Failed to submit evaluations.');
+                }
+            } catch (err) {
+                console.error(err);
+                alert('Error submitting evaluations.');
+            }
+        }
+        
+        async function loadAndDisplayGraph(nextGraph) {
+             
+            if (!nextGraph) { alert("All graphs completed!"); return; }
+            currentGraphId = nextGraph.graph_id;
+            currentSourceFile = nextGraph.source_file;
+            completedGraphIds.push(currentGraphId);
+            const filename = currentSourceFile.split('/').pop();
+            document.getElementById('eval-title').innerText = `Evaluation Details (Graph: ${currentGraphId}, File: ${filename})`;
+            await loadGraph(nextGraph.json_path);
+            await loadHtml(nextGraph.source_file);
+            loadEvaluationState();
+            initializeGraph();
+            const firstNodeId = nodes.getIds()[0];
+            if (firstNodeId) {
+                selectedElementId = nodes.get(firstNodeId).custom_id;
+                highlightSelected('node', firstNodeId);
+                displayDetails('node', firstNodeId, nodes.get(firstNodeId));
+            }
+            updateSubmitButtonState();
+        }
+
+        (async () => {
+            try {
+                evalIndex = await loadEvalIndex();
+                completedGraphIds = evalIndex
+                    .filter(entry => entry.status === 'completed')
+                    .map(entry => entry.graph_id);
+            } catch (err) {
+                console.error(err);
+                alert("Unable to load your evaluation index. Please contact admin.");
+                return;
+            }
+        
+            graphMetadata = await loadGraphMetadata();
+            const nextGraph = pickNextIncompleteGraph();
+            
+            await loadAndDisplayGraph(nextGraph);
+        
+            document.getElementById('next-graph-btn').addEventListener('click', async () => {
+                const nextGraph = pickNextIncompleteGraph();
+                await loadAndDisplayGraph(nextGraph);
+            });
+        
+            document.getElementById('submit-all-btn').addEventListener('click', async () => {
+                await submitAllEvaluations();
+            });
+        })();
+        
+    </script>
+</body>
+</html>

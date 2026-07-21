@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Main Interface</title>
+    <script>
+        function getCookieValue(name) {
+            const cookies = document.cookie.split('; ');
+            const cookie = cookies.find(row => row.startsWith(name + '='));
+            return cookie ? decodeURIComponent(cookie.split('=')[1]) : null;
+        }
+    
+        const userId = getCookieValue('user_name');
+        if (!userId) {
+            window.location.href = '/';  // or '/login'
+        }
+    </script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .container {
+            background-color: #fff;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            max-width: 600px;
+            width: 100%;
+            text-align: center;
+        }
+        h2 {
+            margin-bottom: 1rem;
+        }
+        .button-group {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+        .button-group button {
+            padding: 0.7rem;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 1rem;
+        }
+        .button-group button:hover {
+            background-color: #45a049;
+        }
+        .description {
+            font-size: 0.9rem;
+            color: #555;
+            margin-bottom: 1.5rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Welcome to the Evaluation Interface</h2>
+        <div class="button-group">
+            <div>
+                <button onclick="window.location.href='static/node-evaluation.html'">Node Evaluation</button>
+                <div class="description">
+                    Check node order and correctness in relation to a case report.
+                </div>
+            </div>
+            <div>
+                <button onclick="window.location.href='static/synthetic-evaluation.html'">Evaluate Synthetic Reports</button>
+                <div class="description">
+                    Compare different synthetic case reports and rank them 0–5 on multiple questions.
+                </div>
+            </div>
+            <div>
+                <button onclick="window.location.href='static/graph-visualization.html'">Visualize Graphs</button>
+                <div class="description">
+                    Access the graph visualization interface (current index page).
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
